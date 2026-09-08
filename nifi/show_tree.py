@@ -16,6 +16,9 @@ import sys
 import requests
 import urllib3
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
@@ -47,7 +50,7 @@ def main():
                   f"{len(flow['connections'])} conns")
         if args.markdown:
             pad = "  " * depth
-            print(f"{pad}- [{nm}]({ui}/{gid}) — {counts}")
+            print(f"{pad}- [{nm}]({ui}/{gid}) - {counts}")
         else:
             pad = "    " * depth
             print(f"{pad}{nm}   ({counts})")
