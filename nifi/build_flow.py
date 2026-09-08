@@ -89,8 +89,15 @@ class Nifi:
             sys.exit(f"PUT {p} -> {r.status_code}\n{r.text[:900]}")
         return r.json()
 
-    def delete(self, p, params=None):
-        return self.s.delete(f"{BASE}{p}", params=params, timeout=60)
+    def delete(self, p, params=None, expect_ok=True):
+        r = self.s.delete(f"{BASE}{p}", params=params, timeout=60)
+        # An unchecked delete is worse than a failed one: NiFi returns 409 when
+        # a group still has enabled controller services, and swallowing that
+        # left a duplicate process group sitting under the new one at the same
+        # canvas position, invisible until someone counted the groups.
+        if expect_ok and not r.ok:
+            sys.exit(f"DELETE {p} -> {r.status_code}\n{r.text[:600]}")
+        return r
 
 
 def rev(entity):
@@ -150,10 +157,19 @@ def main():
             gid = g["id"]
             n.put(f"/flow/process-groups/{gid}",
                   {"id": gid, "state": "STOPPED", "disconnectedNodeAcknowledged": False})
+
+            # Controller services must be disabled before the group will delete;
+            # otherwise NiFi answers 409 and the old group survives.
+            svcs = n.get(f"/flow/process-groups/{gid}/controller-services"
+                         "?includeAncestorGroups=false")["controllerServices"]
+            for s_ in svcs:
+                n.put(f"/controller-services/{s_['id']}/run-status",
+                      {"revision": rev(s_), "state": "DISABLED"})
+
             ent = n.get(f"/process-groups/{gid}")
             n.delete(f"/process-groups/{gid}",
                      params={"version": ent["revision"]["version"], "clientId": "ry-builder"})
-            print(f"removed previous {PG_NAME}")
+            print(f"removed previous {PG_NAME} ({len(svcs)} services disabled first)")
 
     for c in n.get("/flow/parameter-contexts")["parameterContexts"]:
         if c["component"]["name"] == CTX_NAME:
@@ -178,14 +194,28 @@ def main():
     ctx_id = ctx["id"]
     print(f"parameter context {CTX_NAME} ({len(PARAMETERS)} parameters)")
 
-    # -- process group --------------------------------------------------------
-    pg = n.post(f"/process-groups/{root}/process-groups", {
-        "revision": {"version": 0, "clientId": "ry-builder"},
-        "component": {"name": PG_NAME, "position": {"x": 100.0, "y": 100.0},
-                      "comments": "Salesforce CRM -> OneLake bronze -> Fabric. "
-                                  "Built by nifi/build_flow.py."},
-    })
-    pg_id = pg["id"]
+    # -- process groups -------------------------------------------------------
+    # NiFi has exactly one root per instance, so a "project" is a top-level
+    # process group and its stages are nested groups inside it. Keeping the
+    # stages in separate groups means each can be started, stopped and
+    # version-controlled on its own, and the canvas stays readable.
+    #
+    # This instance's root is named LYRA, so everything - including this project
+    # - renders beneath that name. That is a naming artefact of the root, not a
+    # containment relationship with the LYRA flows.
+    def new_group(parent, name, x, y, comments):
+        e = n.post(f"/process-groups/{parent}/process-groups", {
+            "revision": {"version": 0, "clientId": "ry-builder"},
+            "component": {"name": name, "position": {"x": float(x), "y": float(y)},
+                          "comments": comments},
+        })
+        return e["id"]
+
+    pg_id = new_group(root, PG_NAME, 240, 840,
+                      "Red & Yellow: Salesforce CRM -> OneLake bronze -> Fabric.\n"
+                      "Built and rebuilt idempotently by nifi/build_flow.py.\n"
+                      "Stages are nested groups; parameters and controller "
+                      "services live here and are inherited by both.")
     cur = n.get(f"/process-groups/{pg_id}")
     n.put(f"/process-groups/{pg_id}", {
         "revision": rev(cur),
@@ -226,9 +256,34 @@ def main():
                "Service Principal Client ID": "#{fabric.sp.id}",
                "Service Principal Client Secret": "#{fabric.sp.secret}"})
 
+    # Stage groups. Controller services stay on the project group above and are
+    # inherited, so the two stages cannot drift onto different connection pools.
+    extract_id = new_group(pg_id, "01_Extract_Salesforce", 40, 40,
+                           "Incremental SOQL reads, one processor per sObject. "
+                           "High-water mark is held in processor state.")
+    land_id = new_group(pg_id, "02_Land_OneLake_Bronze", 640, 40,
+                        "Batches records and writes them to the lakehouse bronze "
+                        "layer, partitioned by object and ingest date.")
+
+    n.post(f"/process-groups/{pg_id}/labels", {
+        "revision": {"version": 0, "clientId": "ry-builder"},
+        "component": {"position": {"x": 40.0, "y": 340.0},
+                      "width": 1180.0, "height": 130.0,
+                      "label": "Red & Yellow - Salesforce to Fabric\n\n"
+                               "01 Extract   incremental on SystemModstamp, "
+                               "state-tracked, 15 min schedule\n"
+                               "02 Land      bin-packed batches to "
+                               "OneLake Files/bronze/<object>/ingest_date=<date>\n\n"
+                               "Credentials come from the parameter context "
+                               "RY_Salesforce_Fabric_Params. Sensitive parameters "
+                               "are empty in source control, so processors are "
+                               "invalid until an operator supplies them.",
+                      "style": {"font-size": "13px"}},
+    })
+
     # -- processors -----------------------------------------------------------
-    def proc(cls, name, x, y, props=None, sched=None, autoterm=None):
-        e = n.post(f"/process-groups/{pg_id}/processors", {
+    def proc(cls, name, x, y, props=None, sched=None, autoterm=None, group=None):
+        e = n.post(f"/process-groups/{group or pg_id}/processors", {
             "revision": {"version": 0, "clientId": "ry-builder"},
             "component": {"type": cls, "name": name, "position": {"x": float(x), "y": float(y)}},
         })
@@ -249,8 +304,8 @@ def main():
     queries = []
     for i, (obj, fields) in enumerate(SF_OBJECTS.items()):
         p = proc("org.apache.nifi.processors.salesforce.QuerySalesforceObject",
-                 f"Query {obj}", 0, 40 + i * 190,
-                 {"Salesforce Instance URL": "#{sf.instance.url}",
+                 f"Query {obj}", 0, 40 + i * 190, group=extract_id,
+                 props={"Salesforce Instance URL": "#{sf.instance.url}",
                   "API Version": "#{sf.api.version}",
                   "sObject Name": obj,
                   "Field Names": fields,
@@ -264,9 +319,22 @@ def main():
                  sched={"schedulingPeriod": "15 min", "schedulingStrategy": "TIMER_DRIVEN"})
         queries.append(p)
 
+    # Ports are what let the stages be separate groups: the extract group hands
+    # flowfiles out through an output port, the landing group takes them in
+    # through an input port, and the two are wired together at project level.
+    out_port = n.post(f"/process-groups/{extract_id}/output-ports", {
+        "revision": {"version": 0, "clientId": "ry-builder"},
+        "component": {"name": "extracted_records", "position": {"x": 520.0, "y": 420.0},
+                      "comments": "Cleaned Salesforce record batches, one file per poll."},
+    })
+    in_port = n.post(f"/process-groups/{land_id}/input-ports", {
+        "revision": {"version": 0, "clientId": "ry-builder"},
+        "component": {"name": "records_to_land", "position": {"x": 0.0, "y": 40.0}},
+    })
+
     merge = proc("org.apache.nifi.processors.standard.MergeRecord",
-                 "Batch Records", 480, 380,
-                 {"Record Reader": reader, "Record Writer": writer,
+                 "Batch Records", 360, 40, group=land_id,
+                 props={"Record Reader": reader, "Record Writer": writer,
                   "Merge Strategy": "Bin-Packing Algorithm",
                   "Minimum Number of Records": "1000",
                   "Maximum Number of Records": "100000",
@@ -274,8 +342,8 @@ def main():
                  autoterm=["original", "failure"])
 
     land = proc("org.apache.nifi.processors.azure.storage.PutAzureDataLakeStorage",
-                "Land to OneLake bronze", 900, 380,
-                {"ADLS Credentials": adls,
+                "Land to OneLake bronze", 760, 40, group=land_id,
+                props={"ADLS Credentials": adls,
                  "Filesystem Name": "#{fabric.workspace}",
                  "Directory Name": "#{bronze.path}/${sobject:default('unknown')}/"
                                    "ingest_date=${now():format('yyyy-MM-dd')}",
@@ -283,36 +351,46 @@ def main():
                  "Conflict Resolution Strategy": "replace"})
 
     retry = proc("org.apache.nifi.processors.standard.RetryFlowFile",
-                 "Retry OneLake Write", 900, 620,
-                 {"Maximum Retries": "3", "Retry Attribute": "onelake.retries"},
+                 "Retry OneLake Write", 760, 280, group=land_id,
+                 props={"Maximum Retries": "3", "Retry Attribute": "onelake.retries"},
                  autoterm=["failure"])
 
     audit = proc("org.apache.nifi.processors.standard.LogAttribute",
-                 "Audit Landed Batch", 1320, 380,
-                 {"Log Level": "info",
+                 "Audit Landed Batch", 1160, 40, group=land_id,
+                 props={"Log Level": "info",
                   "Attributes to Log": "filename,sobject,record.count,azure.filesystem"},
                  autoterm=["success"])
 
     # -- connections ----------------------------------------------------------
-    def conn(src, dst, rels):
-        n.post(f"/process-groups/{pg_id}/connections", {
+    def conn(group, src, dst, rels, src_type="PROCESSOR", dst_type="PROCESSOR"):
+        n.post(f"/process-groups/{group}/connections", {
             "revision": {"version": 0, "clientId": "ry-builder"},
             "component": {
-                "source": {"id": src["id"], "groupId": pg_id, "type": "PROCESSOR"},
-                "destination": {"id": dst["id"], "groupId": pg_id, "type": "PROCESSOR"},
+                "source": {"id": src["id"], "groupId": src.get("_group", group),
+                           "type": src_type},
+                "destination": {"id": dst["id"], "groupId": dst.get("_group", group),
+                                "type": dst_type},
                 "selectedRelationships": rels,
+                # Back-pressure so a stalled OneLake write applies brake pressure
+                # back up the chain instead of filling the content repository.
                 "backPressureObjectThreshold": 20000,
                 "backPressureDataSizeThreshold": "1 GB",
             },
         })
 
     for q in queries:
-        conn(q, merge, ["success"])
-    conn(merge, land, ["merged"])
-    conn(land, audit, ["success"])
-    conn(land, retry, ["failure"])
-    conn(retry, land, ["retry"])
-    print(f"  connections {len(queries) + 4}")
+        conn(extract_id, q, out_port, ["success"], dst_type="OUTPUT_PORT")
+
+    conn(pg_id, dict(out_port, _group=extract_id), dict(in_port, _group=land_id),
+         [""], src_type="OUTPUT_PORT", dst_type="INPUT_PORT")
+
+    conn(land_id, in_port, merge, [""], src_type="INPUT_PORT")
+    conn(land_id, merge, land, ["merged"])
+    conn(land_id, land, audit, ["success"])
+    conn(land_id, land, retry, ["failure"])
+    conn(land_id, retry, land, ["retry"])
+
+    print(f"  connections {len(queries) + 6} across 2 stage groups")
 
     # Enable the services that need no secrets; the rest wait for credentials.
     for sid, nm in [(web, "RY_WebClient"), (reader, "RY_JsonReader"), (writer, "RY_CsvWriter")]:
