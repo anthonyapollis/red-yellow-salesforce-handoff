@@ -1,0 +1,78 @@
+table dim_campaign
+	lineageTag: b96148ad-06e7-4ed0-ad96-109584ce7368
+
+	column campaign_external_id
+		dataType: string
+		lineageTag: f364c00c-5047-483b-81d9-6f40fb27b66a
+		summarizeBy: none
+		sourceColumn: campaign_external_id
+
+	column campaign_name
+		dataType: string
+		lineageTag: 36d85504-3ed2-431c-b348-892b20d17f51
+		summarizeBy: none
+		sourceColumn: campaign_name
+
+	column channel
+		dataType: string
+		lineageTag: 9f88b7a0-21af-4740-a7e6-53bb6b8fbcd6
+		summarizeBy: none
+		sourceColumn: channel
+
+	column start_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 92102018-94a5-4056-98ad-b1df7f378728
+		summarizeBy: none
+		sourceColumn: start_date
+
+	column end_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 53f043b6-ce77-441e-a921-f31903fa06a5
+		summarizeBy: none
+		sourceColumn: end_date
+
+	column spend_zar
+		dataType: double
+		formatString: "R"#,0
+		lineageTag: b897144a-4808-44e8-a212-bf8e2b03ea54
+		summarizeBy: sum
+		sourceColumn: spend_zar
+
+	column is_spend_missing
+		dataType: int64
+		formatString: "R"#,0
+		lineageTag: 698e3be3-7b0f-4125-a1c5-04fa6c6a51f4
+		summarizeBy: sum
+		sourceColumn: is_spend_missing
+
+	column is_active
+		dataType: boolean
+		lineageTag: 6cdf8ba6-64f3-4e26-b9c3-f9fc4097a551
+		summarizeBy: none
+		sourceColumn: is_active
+
+	column campaign_year
+		dataType: int64
+		formatString: #,0
+		lineageTag: 17442ca7-7feb-46ac-af69-bd056b10f067
+		summarizeBy: sum
+		sourceColumn: campaign_year
+
+	column duration_days
+		dataType: int64
+		formatString: #,0
+		lineageTag: dfe29e5f-29be-4e5c-a8fe-ababe5e7774d
+		summarizeBy: sum
+		sourceColumn: duration_days
+
+	partition dim_campaign = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\dim_campaign.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

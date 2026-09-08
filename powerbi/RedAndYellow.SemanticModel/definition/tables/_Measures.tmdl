@@ -1,0 +1,172 @@
+table _Measures
+	lineageTag: 258bc7da-5335-4bc4-8077-0e1eb5427dc4
+
+	measure 'Leads' = COUNTROWS(fct_lead_conversion)
+		formatString: #,0
+		displayFolder: 01 Marketing
+		lineageTag: 2be199be-56b2-493c-be4d-6c9a8934a482
+
+	measure 'Contacts' = COUNTROWS(dim_contact)
+		formatString: #,0
+		displayFolder: 01 Marketing
+		lineageTag: 34539150-13a3-4999-9aa7-b9d50d1807c9
+
+	measure 'Marketing Spend' = SUM(dim_campaign[spend_zar])
+		formatString: "R"#,0
+		displayFolder: 01 Marketing
+		lineageTag: 3d5dc012-fe0e-4c63-8a4b-1c8bc4df8534
+
+	measure 'Campaign Members' = SUM(fct_campaign_performance[members])
+		formatString: #,0
+		displayFolder: 01 Marketing
+		lineageTag: 9fa18759-9e20-430c-b262-ac1c3410ef51
+
+	measure 'Engaged Members' = SUM(fct_campaign_performance[engaged_members])
+		formatString: #,0
+		displayFolder: 01 Marketing
+		lineageTag: f97901f6-f315-4d3c-9161-f91ea2f9965f
+
+	measure 'Engagement Rate' = DIVIDE([Engaged Members], [Campaign Members])
+		formatString: 0.0%
+		displayFolder: 01 Marketing
+		lineageTag: d37ef4a7-b0b6-4104-af07-891eb20d8d82
+
+	measure 'Enrolled Revenue' = SUM(fct_campaign_performance[enrolled_revenue_zar])
+		formatString: "R"#,0
+		displayFolder: 01 Marketing
+		lineageTag: 960f6560-5169-4d90-a389-3a5144aee20b
+
+	measure 'Cost per Enrolment' = DIVIDE([Marketing Spend], [Campaign Enrolments])
+		formatString: "R"#,0
+		displayFolder: 01 Marketing
+		lineageTag: a09bbff8-bdb8-4d45-977a-6218da621d42
+
+	measure 'Return on Ad Spend' = DIVIDE([Enrolled Revenue], [Marketing Spend])
+		formatString: 0.00
+		displayFolder: 01 Marketing
+		lineageTag: 614f59ee-5846-4069-9dae-3875ddbc9c47
+
+	measure 'Campaign Enrolments' = SUM(fct_campaign_performance[enrolments])
+		formatString: #,0
+		displayFolder: 01 Marketing
+		lineageTag: 5f66b004-d2e9-4c1a-aef9-ee8bf886b579
+
+	measure 'Opportunities' = COUNTROWS(fct_admissions_funnel)
+		formatString: #,0
+		displayFolder: 02 Admissions
+		lineageTag: cc0db20d-3b32-4c26-8ba2-bf54451f5b1a
+
+	measure 'Applications' = CALCULATE(COUNTROWS(fct_admissions_funnel), NOT ISBLANK(fct_admissions_funnel[application_external_id]))
+		formatString: #,0
+		displayFolder: 02 Admissions
+		lineageTag: d42b401b-b4b5-4e2e-acb8-cd85481ce946
+
+	measure 'Enrolments' = SUM(fct_admissions_funnel[is_enrolled])
+		formatString: #,0
+		displayFolder: 02 Admissions
+		lineageTag: d37310f5-e21a-4d7f-b5c2-89cf3c63bce0
+
+	measure 'Opportunity to Application' = DIVIDE([Applications], [Opportunities])
+		formatString: 0.0%
+		displayFolder: 02 Admissions
+		lineageTag: 09b9340c-c43d-4f65-86af-6e513960d5ed
+
+	measure 'Application to Enrolment' = DIVIDE([Enrolments], [Applications])
+		formatString: 0.0%
+		displayFolder: 02 Admissions
+		lineageTag: ea79b93d-b5ef-46c2-bd17-680ba486f210
+
+	measure 'Opportunity to Enrolment' = DIVIDE([Enrolments], [Opportunities])
+		formatString: 0.0%
+		displayFolder: 02 Admissions
+		lineageTag: 9fb61177-54c3-47e4-adfe-8dfde1fe9b4a
+
+	measure 'Pipeline Value' = SUM(fct_admissions_funnel[expected_value_zar])
+		formatString: "R"#,0
+		displayFolder: 02 Admissions
+		lineageTag: 98db2875-4ab0-4b72-a55e-5b53908043c9
+
+	measure 'Agreed Fees' = SUM(fct_admissions_funnel[agreed_fee_zar])
+		formatString: "R"#,0
+		displayFolder: 02 Admissions
+		lineageTag: abef809c-ff2f-45a8-92cd-deb2ca7f7cc4
+
+	measure 'Average Discount' = AVERAGE(fct_admissions_funnel[discount_pct])
+		formatString: 0.0
+		displayFolder: 02 Admissions
+		lineageTag: 47780b55-a160-47b7-91ba-03122c00f83e
+
+	measure 'Avg Days to Decision' = AVERAGE(fct_admissions_funnel[days_to_decision])
+		formatString: #,0.0
+		displayFolder: 02 Admissions
+		lineageTag: 35d8735e-47b8-4b02-b8d5-2be369893ebe
+
+	measure 'Tracked Weeks' = COUNTROWS(fct_student_progress_weekly)
+		formatString: #,0
+		displayFolder: 03 Student Success
+		lineageTag: c6075ef6-997f-40e3-b665-d6cc4513dfda
+
+	measure 'Students At Risk' = CALCULATE(DISTINCTCOUNT(fct_student_progress_weekly[enrolment_external_id]), fct_student_progress_weekly[is_at_risk] = 1)
+		formatString: #,0
+		displayFolder: 03 Student Success
+		lineageTag: f99bf321-3572-429b-9760-5a2d253f13e1
+
+	measure 'At Risk Rate' = DIVIDE(SUM(fct_student_progress_weekly[is_at_risk]), [Tracked Weeks])
+		formatString: 0.0%
+		displayFolder: 03 Student Success
+		lineageTag: 6650951d-cadf-4281-b26b-37534e46ba25
+
+	measure 'Avg Attendance' = AVERAGE(fct_student_progress_weekly[attendance_pct])
+		formatString: 0.0
+		displayFolder: 03 Student Success
+		lineageTag: dca6bfca-dcb7-421b-8c31-334999ce442b
+
+	measure 'Avg Assessment' = AVERAGE(fct_student_progress_weekly[assessment_average_pct])
+		formatString: 0.0
+		displayFolder: 03 Student Success
+		lineageTag: eb4214d5-c6c6-4948-85a9-efe912422966
+
+	measure 'Overdue Assignments' = SUM(fct_student_progress_weekly[overdue_assignments])
+		formatString: #,0
+		displayFolder: 03 Student Success
+		lineageTag: 0b38fb3d-fcf5-452d-9436-cd08a982a661
+
+	measure 'Quality Issues' = COUNTROWS(dq_issue_log)
+		formatString: #,0
+		displayFolder: 04 Data Quality
+		lineageTag: 832a1ffe-ac35-4248-909b-e5bc2e3ade81
+
+	measure 'Duplicate Contacts' = CALCULATE([Quality Issues], dq_issue_log[issue_code] = "duplicate_person")
+		formatString: #,0
+		displayFolder: 04 Data Quality
+		lineageTag: a75efb49-5d2b-417c-aaac-a5f389f374a8
+
+	measure 'Contacts With Duplicates' = CALCULATE(COUNTROWS(dim_contact), dim_contact[has_duplicates] = 1)
+		formatString: #,0
+		displayFolder: 04 Data Quality
+		lineageTag: 53aad188-fcdd-41bf-8b5e-bdb3e0bf1e8d
+
+	measure 'Duplicate Rate' = DIVIDE([Contacts With Duplicates], [Contacts])
+		formatString: 0.0%
+		displayFolder: 04 Data Quality
+		lineageTag: fdc98159-6e5a-42ec-a01a-02587da126fa
+
+	measure 'Unresolved Provinces' = CALCULATE(COUNTROWS(dim_contact), dim_contact[province] = "Unknown")
+		formatString: #,0
+		displayFolder: 04 Data Quality
+		lineageTag: 3c0acd53-3f79-41d2-8aa5-95e1cc6b34a3
+
+	column _placeholder
+		isHidden
+		dataType: string
+		lineageTag: 1313de8f-2088-4b71-969e-09019e8868bb
+		summarizeBy: none
+		sourceColumn: _placeholder
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = #table(type table [_placeholder = text], {{""}})
+				in
+				    Source

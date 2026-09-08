@@ -1,0 +1,128 @@
+table fct_campaign_performance
+	lineageTag: b4210f3b-7f3a-45d9-bf2d-e36900bc1af0
+
+	column campaign_external_id
+		dataType: string
+		lineageTag: d6a7dc9e-e0a7-44f9-ab75-a0286d9f34dd
+		summarizeBy: none
+		sourceColumn: campaign_external_id
+
+	column campaign_name
+		dataType: string
+		lineageTag: b41afa31-171e-4141-b346-c87f4bec3e46
+		summarizeBy: none
+		sourceColumn: campaign_name
+
+	column channel
+		dataType: string
+		lineageTag: 98fed712-a6e9-49bc-815b-cc27890260e2
+		summarizeBy: none
+		sourceColumn: channel
+
+	column start_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 92e8cca8-26bb-48fe-afc3-a58c9e112714
+		summarizeBy: none
+		sourceColumn: start_date
+
+	column campaign_year
+		dataType: int64
+		formatString: #,0
+		lineageTag: 9a1c3eb0-3848-41a9-bda4-f437b75c0fca
+		summarizeBy: sum
+		sourceColumn: campaign_year
+
+	column spend_zar
+		dataType: double
+		formatString: "R"#,0
+		lineageTag: a034ebd6-59b5-4077-a2da-8c4aecbef9c3
+		summarizeBy: sum
+		sourceColumn: spend_zar
+
+	column members
+		dataType: int64
+		formatString: #,0
+		lineageTag: 41da02a4-5f10-470c-8acb-75b193aa54dd
+		summarizeBy: sum
+		sourceColumn: members
+
+	column engaged_members
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 2cc88106-7a01-4d60-a1d9-3e260f32320c
+		summarizeBy: sum
+		sourceColumn: engaged_members
+
+	column opportunities
+		dataType: int64
+		formatString: #,0
+		lineageTag: db71bf59-a36c-4dd8-8bda-a2653dd7052d
+		summarizeBy: sum
+		sourceColumn: opportunities
+
+	column won_opportunities
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 6f74d393-543c-41eb-ac96-93ded22b5eba
+		summarizeBy: sum
+		sourceColumn: won_opportunities
+
+	column enrolments
+		dataType: int64
+		formatString: #,0
+		lineageTag: 97a3bd4d-5b24-4968-9394-ebfd3c436875
+		summarizeBy: sum
+		sourceColumn: enrolments
+
+	column pipeline_value_zar
+		dataType: double
+		formatString: "R"#,0
+		lineageTag: d9785daf-0855-4d0a-8754-84e7af03718a
+		summarizeBy: sum
+		sourceColumn: pipeline_value_zar
+
+	column enrolled_revenue_zar
+		dataType: double
+		formatString: "R"#,0
+		lineageTag: 8ba38900-9295-43d4-b892-ba510bad1c45
+		summarizeBy: sum
+		sourceColumn: enrolled_revenue_zar
+
+	column member_to_opp_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: c173849b-67d9-489d-9d87-cd1a662c49e8
+		summarizeBy: sum
+		sourceColumn: member_to_opp_pct
+
+	column opp_to_enrol_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 825726d8-82c3-403c-8ece-4de120d9b0dc
+		summarizeBy: sum
+		sourceColumn: opp_to_enrol_pct
+
+	column cost_per_enrolment_zar
+		dataType: double
+		formatString: "R"#,0
+		lineageTag: af0232b2-337f-45b6-a84f-cb0a0b240867
+		summarizeBy: sum
+		sourceColumn: cost_per_enrolment_zar
+
+	column roas
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b125aae0-093b-475b-bb55-9b9014e86051
+		summarizeBy: sum
+		sourceColumn: roas
+
+	partition fct_campaign_performance = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\fct_campaign_performance.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

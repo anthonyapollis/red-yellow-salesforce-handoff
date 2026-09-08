@@ -1,0 +1,89 @@
+table dim_date
+	lineageTag: 84005b45-4359-4dbc-ae03-baec6210ecbe
+	dataCategory: Time
+
+	column date_day
+		dataType: dateTime
+		isKey
+		formatString: yyyy-mm-dd
+		lineageTag: f1cd1993-cd88-458f-84b6-b9c186c130ea
+		summarizeBy: none
+		sourceColumn: date_day
+
+	column date_key
+		dataType: int64
+		formatString: #,0
+		lineageTag: 37e24e03-6f6b-4d26-ba36-093ef1fed286
+		summarizeBy: sum
+		sourceColumn: date_key
+
+	column calendar_year
+		dataType: int64
+		formatString: #,0
+		lineageTag: 538b0b7d-6dd0-4ba4-97a9-261fed7271d8
+		summarizeBy: sum
+		sourceColumn: calendar_year
+
+	column calendar_month
+		dataType: int64
+		formatString: #,0
+		lineageTag: 9a2bf578-788f-4922-9d68-3e629b0101e2
+		summarizeBy: sum
+		sourceColumn: calendar_month
+
+	column month_name
+		dataType: string
+		lineageTag: 3661e772-d3c2-4ae0-8f0d-31c72ba0e353
+		summarizeBy: none
+		sourceColumn: month_name
+
+	column calendar_quarter
+		dataType: int64
+		formatString: #,0
+		lineageTag: 1ea8fb99-a3bb-46f0-b6cf-81fbf22c6063
+		summarizeBy: sum
+		sourceColumn: calendar_quarter
+
+	column iso_week
+		dataType: int64
+		formatString: #,0
+		lineageTag: cf30fec4-4521-49ae-b315-a8fe9641a5f2
+		summarizeBy: sum
+		sourceColumn: iso_week
+
+	column week_start
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: a3bad6b7-473a-4b9a-8974-6a84d0f28d9f
+		summarizeBy: none
+		sourceColumn: week_start
+
+	column month_start
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: e32af60d-3131-4ca7-948b-0e3e5cd7f717
+		summarizeBy: none
+		sourceColumn: month_start
+
+	column is_weekend
+		dataType: int64
+		formatString: #,0
+		lineageTag: 24e42785-80ad-46d0-bc0d-62f0a0bd5947
+		summarizeBy: sum
+		sourceColumn: is_weekend
+
+	column intake_season
+		dataType: string
+		lineageTag: e4abfb59-ccf2-45a2-a605-495828d302aa
+		summarizeBy: none
+		sourceColumn: intake_season
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\dim_date.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

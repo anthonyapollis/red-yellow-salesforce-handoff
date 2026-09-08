@@ -1,0 +1,90 @@
+table fct_lead_conversion
+	lineageTag: 2cc6377b-3ba5-4eb5-83ba-e9c0355fab26
+
+	column lead_external_id
+		dataType: string
+		lineageTag: 7ada926b-efe9-4e37-8373-024514161c63
+		summarizeBy: none
+		sourceColumn: lead_external_id
+
+	column lead_source
+		dataType: string
+		lineageTag: fba3ec7b-c4fd-42d2-aa37-81043c287a9c
+		summarizeBy: none
+		sourceColumn: lead_source
+
+	column lead_status
+		dataType: string
+		lineageTag: ca5a8992-cced-401c-b5de-caa9f0a2ee04
+		summarizeBy: none
+		sourceColumn: lead_status
+
+	column province
+		dataType: string
+		lineageTag: 22cad902-a9f7-4263-b19c-9f1f0594dc82
+		summarizeBy: none
+		sourceColumn: province
+
+	column campaign_external_id
+		dataType: string
+		lineageTag: 8ce8568f-3400-4579-ae5d-6cab7f821b02
+		summarizeBy: none
+		sourceColumn: campaign_external_id
+
+	column created_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 009e7ea5-a072-42d4-a1be-cd2a929dfc3b
+		summarizeBy: none
+		sourceColumn: created_date
+
+	column is_converted
+		dataType: int64
+		formatString: #,0
+		lineageTag: f4fca42b-aba4-4104-aae2-fe64dbeff97d
+		summarizeBy: sum
+		sourceColumn: is_converted
+
+	column contact_external_id
+		dataType: string
+		lineageTag: 4bf8f898-6a30-48bb-ba5c-c993bbfbc1e1
+		summarizeBy: none
+		sourceColumn: contact_external_id
+
+	column contact_created_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: b02edfdf-a30e-4d19-a3ae-df26c2328f1a
+		summarizeBy: none
+		sourceColumn: contact_created_date
+
+	column days_to_convert
+		dataType: int64
+		formatString: #,0
+		lineageTag: 463f1733-d08b-4579-beab-cb0580c1a74b
+		summarizeBy: sum
+		sourceColumn: days_to_convert
+
+	column reached_opportunity
+		dataType: int64
+		formatString: #,0
+		lineageTag: 9da10a51-a146-441c-adc4-c82cead5b78d
+		summarizeBy: sum
+		sourceColumn: reached_opportunity
+
+	column reached_enrolment
+		dataType: int64
+		formatString: #,0
+		lineageTag: 5ba763c4-5045-4b2f-a75a-89ac3512b750
+		summarizeBy: sum
+		sourceColumn: reached_enrolment
+
+	partition fct_lead_conversion = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\fct_lead_conversion.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

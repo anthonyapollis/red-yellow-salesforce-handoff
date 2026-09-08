@@ -10,7 +10,7 @@ answer to all six.
 | ERDs for internal systems incl. CRM | `erds/03_salesforce_canonical.mmd` | ✅ from the original handoff |
 | ETL/ELT pipelines, preferably Apache NiFi | `nifi/build_flow.py` | ✅ built in a live NiFi |
 | Salesforce CRM extract / transform / analyse | `salesforce/`, `tools/import_salesforce.py` | ✅ load built, org not authed |
-| Power BI dashboards | `reporting/` marts + workbook | ✅ marts + Excel; PBIX pending |
+| Power BI dashboards | `powerbi/RedAndYellow.pbip` + `reporting/` | ✅ semantic model verified; visuals to lay out |
 | Data quality and accuracy | `models/quality/`, 51 dbt tests | ✅ scored against ground truth |
 
 ---
@@ -94,6 +94,7 @@ nifi/               builds the Salesforce→OneLake flow via the NiFi REST API
 fabric/             workspace/lakehouse provisioning + OneLake upload
 salesforce/         cuts the CRM slice; force-app metadata from the handoff
 reporting/          Excel workbook + ebook builders
+powerbi/            PBIP semantic model - 11 tables, 31 measures, 7 relationships
 warehouse/          generated data + DuckDB (gitignored)
 ```
 

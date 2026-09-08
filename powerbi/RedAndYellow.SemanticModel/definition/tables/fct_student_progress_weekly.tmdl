@@ -1,0 +1,116 @@
+table fct_student_progress_weekly
+	lineageTag: fa92c0d4-7425-4f2c-8c23-24dc6236b138
+
+	column progress_external_id
+		dataType: string
+		lineageTag: b68bc564-5c29-463f-82c8-b0c8e7f70a04
+		summarizeBy: none
+		sourceColumn: progress_external_id
+
+	column enrolment_external_id
+		dataType: string
+		lineageTag: ad00c112-f153-4bef-bc6a-d8e4f52f6b8d
+		summarizeBy: none
+		sourceColumn: enrolment_external_id
+
+	column student_external_id
+		dataType: string
+		lineageTag: 70613bac-34ad-430a-97f9-c7c01d6db69b
+		summarizeBy: none
+		sourceColumn: student_external_id
+
+	column intake_external_id
+		dataType: string
+		lineageTag: 00b5426f-86a8-44b2-b341-5b2dad5327f5
+		summarizeBy: none
+		sourceColumn: intake_external_id
+
+	column programme_title
+		dataType: string
+		lineageTag: 7fa6cff2-bec2-49d9-be86-7e592d9e345c
+		summarizeBy: none
+		sourceColumn: programme_title
+
+	column delivery_mode
+		dataType: string
+		lineageTag: 439b69e3-68e4-407a-9538-bc872d9350b6
+		summarizeBy: none
+		sourceColumn: delivery_mode
+
+	column week_start
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: f3fbc0a3-0d46-4a15-b788-e59b85b57523
+		summarizeBy: none
+		sourceColumn: week_start
+
+	column week_number
+		dataType: int64
+		formatString: #,0
+		lineageTag: 2ff2f097-adb8-41b9-8819-1c084bc3ead7
+		summarizeBy: sum
+		sourceColumn: week_number
+
+	column attendance_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: e3acd4fb-1136-4b2d-9121-d9cdcf3b2ba6
+		summarizeBy: sum
+		sourceColumn: attendance_pct
+
+	column assessment_average_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b3610b10-d53b-4141-a4bc-52b7c684e81a
+		summarizeBy: sum
+		sourceColumn: assessment_average_pct
+
+	column overdue_assignments
+		dataType: int64
+		formatString: #,0
+		lineageTag: a207a4e7-9d48-4c9f-9f47-429c0f07a617
+		summarizeBy: sum
+		sourceColumn: overdue_assignments
+
+	column risk_band
+		dataType: string
+		lineageTag: 1d9827a6-3dc1-4cb0-9fad-8b21a9cdf576
+		summarizeBy: none
+		sourceColumn: risk_band
+
+	column is_attendance_missing
+		dataType: int64
+		formatString: #,0
+		lineageTag: f74e8c4e-94a4-4632-8753-51c684b3e606
+		summarizeBy: sum
+		sourceColumn: is_attendance_missing
+
+	column enrolment_status
+		dataType: string
+		lineageTag: 51cc30c1-ad15-45a9-8b33-67a02996b26e
+		summarizeBy: none
+		sourceColumn: enrolment_status
+
+	column is_at_risk
+		dataType: int64
+		formatString: #,0
+		lineageTag: ebc741f9-8a40-4855-927b-1159f2c84ea2
+		summarizeBy: sum
+		sourceColumn: is_at_risk
+
+	column attendance_4wk_avg
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 246aacaa-664c-4d6b-80c3-b2eda87f2477
+		summarizeBy: sum
+		sourceColumn: attendance_4wk_avg
+
+	partition fct_student_progress_weekly = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\fct_student_progress_weekly.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

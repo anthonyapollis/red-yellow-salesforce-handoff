@@ -1,0 +1,36 @@
+table dq_issue_log
+	lineageTag: e55dcc19-ef2f-4938-8b6f-7edadb56c4b8
+
+	column entity
+		dataType: string
+		lineageTag: 72afb500-bd56-410e-954b-f98e079f3a2b
+		summarizeBy: none
+		sourceColumn: entity
+
+	column record_id
+		dataType: string
+		lineageTag: c8945baf-bc33-47bd-b031-be16ebc7ad47
+		summarizeBy: none
+		sourceColumn: record_id
+
+	column issue_code
+		dataType: string
+		lineageTag: 7627ec0e-0538-4f36-92e8-9691c70bc582
+		summarizeBy: none
+		sourceColumn: issue_code
+
+	column issue_description
+		dataType: string
+		lineageTag: 742a3ba1-2226-4375-9f4f-4f92641e5c4a
+		summarizeBy: none
+		sourceColumn: issue_description
+
+	partition dq_issue_log = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\dq_issue_log.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

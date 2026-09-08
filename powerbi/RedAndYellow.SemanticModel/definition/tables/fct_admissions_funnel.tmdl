@@ -1,0 +1,199 @@
+table fct_admissions_funnel
+	lineageTag: 81bd47a3-2975-427c-ace8-42216c79e928
+
+	column opportunity_external_id
+		dataType: string
+		lineageTag: 32da7e43-611e-4f69-9f85-a74967b61dec
+		summarizeBy: none
+		sourceColumn: opportunity_external_id
+
+	column contact_external_id
+		dataType: string
+		lineageTag: 744701ae-69cc-4048-9985-5004cde2e122
+		summarizeBy: none
+		sourceColumn: contact_external_id
+
+	column province
+		dataType: string
+		lineageTag: 3d1ae14e-10b9-4a70-9c92-11d487952c56
+		summarizeBy: none
+		sourceColumn: province
+
+	column acquisition_path
+		dataType: string
+		lineageTag: 7ae00419-669a-4687-bffe-a062ec34ca6c
+		summarizeBy: none
+		sourceColumn: acquisition_path
+
+	column primary_campaign_external_id
+		dataType: string
+		lineageTag: 65abfda1-00bd-4a50-b344-e7df1bf9d7da
+		summarizeBy: none
+		sourceColumn: primary_campaign_external_id
+
+	column intake_external_id
+		dataType: string
+		lineageTag: 676ae0a2-adf6-480d-ad0c-3898ad6d2441
+		summarizeBy: none
+		sourceColumn: intake_external_id
+
+	column offering_external_id
+		dataType: string
+		lineageTag: 2fb231c2-1aba-49c3-9ea0-3b7766b98c08
+		summarizeBy: none
+		sourceColumn: offering_external_id
+
+	column programme_title
+		dataType: string
+		lineageTag: 8a72f1ca-30e3-4cfc-a476-4ed8c8208743
+		summarizeBy: none
+		sourceColumn: programme_title
+
+	column category
+		dataType: string
+		lineageTag: 48364ca5-8fe7-4937-a5cb-15221e901162
+		summarizeBy: none
+		sourceColumn: category
+
+	column delivery_mode
+		dataType: string
+		lineageTag: fa810ed5-bd4a-4e7b-a7da-ea29e837361f
+		summarizeBy: none
+		sourceColumn: delivery_mode
+
+	column advertised_fee_zar
+		dataType: double
+		formatString: "R"#,0
+		lineageTag: f26bea11-1195-4eae-a759-aaa06d8fca8b
+		summarizeBy: sum
+		sourceColumn: advertised_fee_zar
+
+	column stage_name
+		dataType: string
+		lineageTag: 9ddccfbd-8a16-42b6-93e5-b911c74e4ffa
+		summarizeBy: none
+		sourceColumn: stage_name
+
+	column opportunity_created_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: e4aba048-f0ee-46ff-a3dd-b7d6fbf88255
+		summarizeBy: none
+		sourceColumn: opportunity_created_date
+
+	column close_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 20c1cf5f-7ad4-4421-8c2f-9eb91a585585
+		summarizeBy: none
+		sourceColumn: close_date
+
+	column days_to_close
+		dataType: int64
+		formatString: #,0
+		lineageTag: d7ebe387-8b5d-45b2-91da-643d210b4259
+		summarizeBy: sum
+		sourceColumn: days_to_close
+
+	column expected_value_zar
+		dataType: double
+		formatString: "R"#,0
+		lineageTag: 361f81c4-5483-4aab-a4c9-87690bcd60a7
+		summarizeBy: sum
+		sourceColumn: expected_value_zar
+
+	column is_won
+		dataType: boolean
+		lineageTag: 4ffa2b6c-b434-4207-8db7-27925a9ed60f
+		summarizeBy: none
+		sourceColumn: is_won
+
+	column application_external_id
+		dataType: string
+		lineageTag: d64fe370-0c85-4989-bbf6-b2704ca4a737
+		summarizeBy: none
+		sourceColumn: application_external_id
+
+	column submitted_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 46e2e160-4801-4366-8301-42bfaa56a1f1
+		summarizeBy: none
+		sourceColumn: submitted_date
+
+	column decision_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 1ef17224-c0fb-45f3-8a9e-65b89c9d14d3
+		summarizeBy: none
+		sourceColumn: decision_date
+
+	column application_status
+		dataType: string
+		lineageTag: eb5de166-9f92-4b4c-a9b1-7ad2593e1170
+		summarizeBy: none
+		sourceColumn: application_status
+
+	column days_to_decision
+		dataType: int64
+		formatString: #,0
+		lineageTag: 0c7b8b76-472a-471b-86a6-462bb0cec4b8
+		summarizeBy: sum
+		sourceColumn: days_to_decision
+
+	column is_date_inverted
+		dataType: int64
+		formatString: #,0
+		lineageTag: ec019db7-93ca-44c2-b506-9d212c2bbcec
+		summarizeBy: sum
+		sourceColumn: is_date_inverted
+
+	column enrolment_external_id
+		dataType: string
+		lineageTag: 00c05d9a-589f-45e5-b4cf-fbd977635b9d
+		summarizeBy: none
+		sourceColumn: enrolment_external_id
+
+	column enrolled_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 18840916-f4c9-4c16-b66a-f32ec8e18f3a
+		summarizeBy: none
+		sourceColumn: enrolled_date
+
+	column agreed_fee_zar
+		dataType: double
+		formatString: "R"#,0
+		lineageTag: 1986ce2a-b2a2-472e-a245-4411ebfe98a3
+		summarizeBy: sum
+		sourceColumn: agreed_fee_zar
+
+	column enrolment_status
+		dataType: string
+		lineageTag: 98a5434c-7b01-455a-892b-ffc93da8f56f
+		summarizeBy: none
+		sourceColumn: enrolment_status
+
+	column is_enrolled
+		dataType: int64
+		formatString: #,0
+		lineageTag: 4bb5a055-7371-4bc5-ba83-e24467d2cf6b
+		summarizeBy: sum
+		sourceColumn: is_enrolled
+
+	column discount_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 0a1722e9-d19d-4d58-8025-09562ca61af9
+		summarizeBy: sum
+		sourceColumn: discount_pct
+
+	partition fct_admissions_funnel = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\fct_admissions_funnel.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

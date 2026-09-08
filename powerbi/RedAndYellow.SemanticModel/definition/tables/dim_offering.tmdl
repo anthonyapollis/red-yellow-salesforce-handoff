@@ -1,0 +1,119 @@
+table dim_offering
+	lineageTag: 04ccc3ae-f01a-46c4-b80a-15dc47bdbfd8
+
+	column offering_external_id
+		dataType: string
+		lineageTag: a21f5f90-0907-4ba6-8fd6-a05ec6c29c5e
+		summarizeBy: none
+		sourceColumn: offering_external_id
+
+	column programme_external_id
+		dataType: string
+		lineageTag: 5f357d57-7ecf-46a7-987c-40fc8d25a4a4
+		summarizeBy: none
+		sourceColumn: programme_external_id
+
+	column programme_title
+		dataType: string
+		lineageTag: 207e2791-fd9a-4672-b3a5-5f5cd0e3f653
+		summarizeBy: none
+		sourceColumn: programme_title
+
+	column category
+		dataType: string
+		lineageTag: 57fe22fb-c94d-44c6-a63e-9fe34ddab832
+		summarizeBy: none
+		sourceColumn: category
+
+	column listed_body
+		dataType: string
+		lineageTag: ea38f538-d65a-45c6-aeaf-8426b4658222
+		summarizeBy: none
+		sourceColumn: listed_body
+
+	column offering_title
+		dataType: string
+		lineageTag: 35f67339-6e04-4f53-9c21-c97507fe4eb3
+		summarizeBy: none
+		sourceColumn: offering_title
+
+	column catalogue_section
+		dataType: string
+		lineageTag: e9a862d5-6f5d-4634-b05b-49c67ab97f5b
+		summarizeBy: none
+		sourceColumn: catalogue_section
+
+	column delivery_mode
+		dataType: string
+		lineageTag: b50e455f-85b7-4685-83db-45bf20db7432
+		summarizeBy: none
+		sourceColumn: delivery_mode
+
+	column study_pace
+		dataType: string
+		lineageTag: 86bfb287-93e5-40a2-bbe1-425de7823d19
+		summarizeBy: none
+		sourceColumn: study_pace
+
+	column duration_value
+		dataType: double
+		formatString: "R"#,0
+		lineageTag: 28d43bc6-d175-4145-a4fb-f49356b0cc4c
+		summarizeBy: sum
+		sourceColumn: duration_value
+
+	column duration_unit
+		dataType: string
+		lineageTag: 9a37d849-d2eb-408e-b0cd-cedeaa40c2f1
+		summarizeBy: none
+		sourceColumn: duration_unit
+
+	column advertised_fee_zar
+		dataType: double
+		formatString: "R"#,0
+		lineageTag: b1908228-279a-43c5-9dbc-149d13949486
+		summarizeBy: sum
+		sourceColumn: advertised_fee_zar
+
+	column price_status
+		dataType: string
+		lineageTag: fe830ba5-44e7-4930-bb5c-013bb3c69f3f
+		summarizeBy: none
+		sourceColumn: price_status
+
+	column is_price_on_enquiry
+		dataType: int64
+		formatString: #,0
+		lineageTag: 5d95d379-123b-49e5-9c7d-eb843ec7366e
+		summarizeBy: sum
+		sourceColumn: is_price_on_enquiry
+
+	column source_url
+		dataType: string
+		lineageTag: 6a86bcf6-390b-4287-9cbb-b4cd7c0ea619
+		summarizeBy: none
+		sourceColumn: source_url
+
+	column observed_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: d9b2c0db-cce8-4e23-afc9-a7e14bd5f78a
+		summarizeBy: none
+		sourceColumn: observed_date
+
+	column dated_intake_count
+		dataType: int64
+		formatString: #,0
+		lineageTag: 3a57645b-bf5b-4ff9-8531-47a0b52d3c85
+		summarizeBy: sum
+		sourceColumn: dated_intake_count
+
+	partition dim_offering = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\dim_offering.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

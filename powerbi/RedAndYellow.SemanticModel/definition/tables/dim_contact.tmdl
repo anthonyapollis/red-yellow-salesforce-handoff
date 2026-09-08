@@ -1,0 +1,107 @@
+table dim_contact
+	lineageTag: f59041a3-4683-405e-9f87-7c10ffb94a23
+
+	column contact_external_id
+		dataType: string
+		lineageTag: c120a699-754e-41cf-97e9-ac202fe2dd00
+		summarizeBy: none
+		sourceColumn: contact_external_id
+
+	column person_key
+		dataType: string
+		lineageTag: af7e62d9-3b1f-4659-bee1-2957bea44b2c
+		summarizeBy: none
+		sourceColumn: person_key
+
+	column first_name
+		dataType: string
+		lineageTag: 5af34f19-8ef3-4925-94e5-e27420f7e802
+		summarizeBy: none
+		sourceColumn: first_name
+
+	column last_name
+		dataType: string
+		lineageTag: 4ab4f290-24c2-4da8-93fd-dd850f8d8da5
+		summarizeBy: none
+		sourceColumn: last_name
+
+	column full_name
+		dataType: string
+		lineageTag: b334e316-48d1-4740-8abe-3687cd3b9b43
+		summarizeBy: none
+		sourceColumn: full_name
+
+	column email
+		dataType: string
+		lineageTag: a0e06a0e-033e-4f40-9963-3875799faf80
+		summarizeBy: none
+		sourceColumn: email
+
+	column phone_e164
+		dataType: string
+		lineageTag: 4f262ae7-09ca-477b-ab21-77491a06fa93
+		summarizeBy: none
+		sourceColumn: phone_e164
+
+	column province
+		dataType: string
+		lineageTag: c2dc8d56-0fe5-415a-82d8-a197d5e1c5c7
+		summarizeBy: none
+		sourceColumn: province
+
+	column city
+		dataType: string
+		lineageTag: 2842be96-1009-4a6b-9499-8431efb64a2e
+		summarizeBy: none
+		sourceColumn: city
+
+	column created_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 8c7626ca-6060-441c-a420-bae4d0c24d51
+		summarizeBy: none
+		sourceColumn: created_date
+
+	column person_record_count
+		dataType: int64
+		formatString: #,0
+		lineageTag: 0c76a57f-fe4c-4cc3-9318-43d7e9a0eab8
+		summarizeBy: sum
+		sourceColumn: person_record_count
+
+	column has_duplicates
+		dataType: int64
+		formatString: #,0
+		lineageTag: 2b524224-3be4-4e13-832b-9feaa1809871
+		summarizeBy: sum
+		sourceColumn: has_duplicates
+
+	column acquisition_path
+		dataType: string
+		lineageTag: 3ad5228a-cc7d-4802-8cda-61d4da77e37b
+		summarizeBy: none
+		sourceColumn: acquisition_path
+
+	column is_email_invalid
+		dataType: int64
+		formatString: #,0
+		lineageTag: 7aa4b1fc-ac76-4a84-87f7-d9d3e0aad9bc
+		summarizeBy: sum
+		sourceColumn: is_email_invalid
+
+	column is_late_arriving
+		dataType: int64
+		formatString: #,0
+		lineageTag: 6e5d1027-344d-4d24-9d4d-cc17d4a99f68
+		summarizeBy: sum
+		sourceColumn: is_late_arriving
+
+	partition dim_contact = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\dim_contact.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
