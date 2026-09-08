@@ -1,0 +1,143 @@
+version: 2
+
+models:
+  - name: stg_lead
+    description: >
+      Prospective students from Salesforce, cleansed. Email is validated and
+      lowercased, phone normalised to E.164, province collapsed to the nine
+      official names. Invalid values become null and are flagged, never guessed.
+    columns:
+      - name: lead_external_id
+        description: Stable external key used for upsert into Salesforce.
+        data_tests: [unique, not_null]
+      - name: email
+        description: Cleaned address, or null when the source value was unusable.
+      - name: lead_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["Open - Not Contacted", "Working - Contacted", "Nurture",
+                         "Qualified", "Converted", "Unqualified"]
+
+  - name: stg_contact
+    description: >
+      Known people, with duplicates resolved. Two match keys (email, and
+      phone-plus-surname) are anchored independently then propagated once, so a
+      phone-only record links to the emailed record it shares a handset with.
+      Duplicates are flagged, not deleted - is_golden_record marks the survivor.
+    columns:
+      - name: contact_external_id
+        data_tests: [unique, not_null]
+      - name: person_key
+        description: Resolved cluster identifier. Shared by every record for one human.
+        data_tests: [not_null]
+      - name: is_golden_record
+        description: 1 for the earliest record in a person cluster, 0 for its duplicates.
+        data_tests:
+          - accepted_values:
+              arguments: {values: [0, 1]}
+
+  - name: stg_campaign
+    description: Marketing campaigns with spend. Negative spend is nulled and flagged.
+    columns:
+      - name: campaign_external_id
+        data_tests: [unique, not_null]
+
+  - name: stg_campaign_member
+    description: >
+      Campaign participation. Each member appears against a campaign once;
+      repeat rows are flagged via is_unique_membership rather than dropped.
+    columns:
+      - name: campaign_member_external_id
+        data_tests: [not_null]
+      - name: campaign_external_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_campaign')
+                field: campaign_external_id
+
+  - name: stg_opportunity
+    description: Admissions pipeline. One opportunity is one applicant pursuing one intake.
+    columns:
+      - name: opportunity_external_id
+        data_tests: [unique, not_null]
+      - name: expected_value_zar
+        description: Negative values are treated as data entry errors and nulled.
+
+  - name: stg_application
+    description: >
+      Applications against an intake. Decision-before-submission is preserved and
+      flagged - the row is real even though the dates are impossible.
+    columns:
+      - name: application_external_id
+        data_tests: [unique, not_null]
+      - name: opportunity_external_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_opportunity')
+                field: opportunity_external_id
+
+  - name: stg_enrolment
+    description: Enrolments, carrying the agreed fee rather than the advertised price.
+    columns:
+      - name: enrolment_external_id
+        data_tests: [unique, not_null]
+      - name: application_external_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_application')
+                field: application_external_id
+
+  - name: stg_student
+    description: Students, one per accepted applicant.
+    columns:
+      - name: student_external_id
+        data_tests: [unique, not_null]
+
+  - name: stg_student_progress
+    description: Weekly attendance, assessment average and overdue work per enrolment.
+    columns:
+      - name: progress_external_id
+        data_tests: [unique, not_null]
+      - name: enrolment_external_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_enrolment')
+                field: enrolment_external_id
+
+  - name: stg_programme
+    description: "REAL catalogue: 83 programme identities transcribed from the public site."
+    columns:
+      - name: programme_external_id
+        data_tests: [unique, not_null]
+
+  - name: stg_programme_offering
+    description: >
+      REAL catalogue: 89 offerings. An offering is a programme in one delivery
+      mode and pace. advertised_fee_zar is null where the site says
+      "Enquire for price" - that null is the true value and is never zero.
+    columns:
+      - name: offering_external_id
+        data_tests: [unique, not_null]
+      - name: programme_external_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_programme')
+                field: programme_external_id
+
+  - name: stg_intake
+    description: "REAL catalogue: 47 intakes that had a visible start date."
+    columns:
+      - name: intake_external_id
+        data_tests: [unique, not_null]
+
+  - name: stg_programme_enquiry
+    description: Enquiries about a specific offering, before any formal application.
+    columns:
+      - name: enquiry_external_id
+        data_tests: [unique, not_null]

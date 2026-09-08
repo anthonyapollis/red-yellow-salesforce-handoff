@@ -6,3 +6,11 @@ __pycache__/
 run_results/
 .sf/
 .sfdx/
+warehouse/
+_truth/
+*.pyc
+__pycache__/
+.env
+target/
+dbt_packages/
+logs/

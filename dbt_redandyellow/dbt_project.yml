@@ -1,0 +1,36 @@
+name: redandyellow
+version: "1.0.0"
+config-version: 2
+profile: redandyellow
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # Anything enquired about before this is historical noise, not pipeline.
+  reporting_start_date: "2022-01-01"
+  capture_date: "2026-09-08"
+  # Absolute, because DuckDB resolves read_parquet() against the process working
+  # directory - not the project directory. With a relative path the staging views
+  # silently stop resolving the moment anything queries the .duckdb file from
+  # somewhere other than this folder. Re-run scaffold_dbt.py to re-stamp it.
+  raw_path: "C:/Users/Anthony.DESKTOP-ES5HL78/Downloads/red-yellow-salesforce-handoff/warehouse/raw"
+
+models:
+  redandyellow:
+    +persist_docs:
+      relation: true
+      columns: true
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts
+    quality:
+      +materialized: table
+      +schema: quality

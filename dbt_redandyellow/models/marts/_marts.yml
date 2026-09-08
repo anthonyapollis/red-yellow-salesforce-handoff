@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: dim_contact
+    description: One row per resolved human. Duplicates collapse onto the golden record.
+    columns:
+      - name: contact_external_id
+        data_tests: [unique, not_null]
+      - name: province
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["Western Cape", "Gauteng", "KwaZulu-Natal", "Eastern Cape",
+                         "Free State", "Limpopo", "Mpumalanga", "North West",
+                         "Northern Cape", "Outside South Africa", "Unknown"]
+
+  - name: dim_offering
+    description: >
+      The catalogue flattened to one row per offering. Intakes are counted in a
+      subquery rather than joined, so this dimension cannot fan out the facts
+      that join it.
+    columns:
+      - name: offering_external_id
+        data_tests: [unique, not_null]
+
+  - name: dim_campaign
+    columns:
+      - name: campaign_external_id
+        data_tests: [unique, not_null]
+
+  - name: dim_date
+    columns:
+      - name: date_day
+        data_tests: [unique, not_null]
+
+  - name: fct_campaign_performance
+    description: >
+      Campaign economics. Members, opportunities and enrolments are aggregated
+      to campaign grain BEFORE spend is attached, so a campaign's cost is never
+      multiplied by its downstream row count.
+    columns:
+      - name: campaign_external_id
+        data_tests: [unique, not_null]
+
+  - name: fct_admissions_funnel
+    description: One row per opportunity, carrying the whole enquiry-to-enrolment journey.
+    columns:
+      - name: opportunity_external_id
+        data_tests: [unique, not_null]
+
+  - name: fct_student_progress_weekly
+    description: Weekly academic health with a single consistent at-risk definition.
+    columns:
+      - name: progress_external_id
+        data_tests: [unique, not_null]
+
+  - name: fct_lead_conversion
+    description: Lead-to-enrolment journey, the headline marketing conversion metric.

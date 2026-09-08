@@ -1,0 +1,196 @@
+[
+ {
+  "object": "Account",
+  "file": "data/crm_load/Account.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {},
+  "required": []
+ },
+ {
+  "object": "Campaign",
+  "file": "data/crm_load/Campaign.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {},
+  "required": []
+ },
+ {
+  "object": "Contact",
+  "file": "data/crm_load/Contact.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Account_Key": [
+    "AccountId",
+    "Account"
+   ]
+  },
+  "required": [
+   "LastName"
+  ]
+ },
+ {
+  "object": "Lead",
+  "file": "data/crm_load/Lead.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {},
+  "required": [
+   "LastName",
+   "Company"
+  ]
+ },
+ {
+  "object": "CampaignMember",
+  "file": "data/crm_load/CampaignMember.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Campaign_Key": [
+    "CampaignId",
+    "Campaign"
+   ],
+   "Contact_Key": [
+    "ContactId",
+    "Contact"
+   ],
+   "Lead_Key": [
+    "LeadId",
+    "Lead"
+   ]
+  },
+  "required": [
+   "Campaign_Key"
+  ]
+ },
+ {
+  "object": "Opportunity",
+  "file": "data/crm_load/Opportunity.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Account_Key": [
+    "AccountId",
+    "Account"
+   ],
+   "Applicant_Key": [
+    "RY_Applicant__c",
+    "Contact"
+   ],
+   "Campaign_Key": [
+    "CampaignId",
+    "Campaign"
+   ],
+   "Intake_Key": [
+    "RY_Intake__c",
+    "RY_Intake__c"
+   ]
+  },
+  "required": [
+   "Name",
+   "CloseDate",
+   "Applicant_Key",
+   "Intake_Key"
+  ]
+ },
+ {
+  "object": "RY_Programme_Enquiry__c",
+  "file": "data/crm_load/RY_Programme_Enquiry__c.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Contact_Key": [
+    "Contact__c",
+    "Contact"
+   ],
+   "Lead_Key": [
+    "Lead__c",
+    "Lead"
+   ],
+   "Offering_Key": [
+    "Offering__c",
+    "RY_Programme_Offering__c"
+   ]
+  },
+  "required": [
+   "Offering_Key"
+  ]
+ },
+ {
+  "object": "RY_Application__c",
+  "file": "data/crm_load/RY_Application__c.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Contact_Key": [
+    "Contact__c",
+    "Contact"
+   ],
+   "Intake_Key": [
+    "Intake__c",
+    "RY_Intake__c"
+   ],
+   "Opportunity_Key": [
+    "Opportunity__c",
+    "Opportunity"
+   ]
+  },
+  "required": [
+   "Contact_Key",
+   "Intake_Key",
+   "Opportunity_Key"
+  ]
+ },
+ {
+  "object": "RY_Student__c",
+  "file": "data/crm_load/RY_Student__c.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Contact_Key": [
+    "Contact__c",
+    "Contact"
+   ]
+  },
+  "required": [
+   "Contact_Key"
+  ]
+ },
+ {
+  "object": "RY_Enrolment__c",
+  "file": "data/crm_load/RY_Enrolment__c.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Student_Key": [
+    "Student__c",
+    "RY_Student__c"
+   ],
+   "Application_Key": [
+    "Application__c",
+    "RY_Application__c"
+   ]
+  },
+  "required": [
+   "Student_Key",
+   "Application_Key"
+  ]
+ },
+ {
+  "object": "RY_Student_Progress__c",
+  "file": "data/crm_load/RY_Student_Progress__c.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Enrolment_Key": [
+    "Enrolment__c",
+    "RY_Enrolment__c"
+   ]
+  },
+  "required": [
+   "Enrolment_Key",
+   "Week_Start__c"
+  ]
+ }
+]

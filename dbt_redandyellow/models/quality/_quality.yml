@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dq_issue_log
+    description: >
+      One row per detected defect. Issue codes align with the ground-truth
+      manifest at warehouse/_truth/defects.json so detection can be scored as
+      recall rather than asserted.
+  - name: dq_summary
+    description: Detected defects rolled up by entity and issue type.
