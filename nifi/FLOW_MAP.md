@@ -1,0 +1,11 @@
+- [NiFi_Local_Dev](https://localhost:8443/nifi/#/process-groups/6f4031c1-019e-1000-7830-a7e15dc25e2e) — 3 proc, 3 groups, 2 conns
+  - [LYRA_ELT](https://localhost:8443/nifi/#/process-groups/a943f2de-019e-1000-8b22-f728212f5165) — 0 proc, 5 groups, 0 conns
+    - [01_Reference_Dims](https://localhost:8443/nifi/#/process-groups/a943f2f9-019e-1000-b285-5863ff31b54c) — 15 proc, 0 groups, 14 conns
+    - [02_Client_Dims](https://localhost:8443/nifi/#/process-groups/a9440d6f-019e-1000-2e4a-d12a029964ae) — 9 proc, 0 groups, 8 conns
+    - [03_Person_Dims](https://localhost:8443/nifi/#/process-groups/a9442317-019e-1000-5c9c-eec0ed00d660) — 7 proc, 0 groups, 6 conns
+    - [04_Bridge_Facts](https://localhost:8443/nifi/#/process-groups/a9443763-019e-1000-26c8-4e4aedc80c9a) — 5 proc, 0 groups, 4 conns
+    - [05_NHC](https://localhost:8443/nifi/#/process-groups/a9444a9e-019e-1000-7350-702821a27b30) — 3 proc, 0 groups, 2 conns
+  - [LYRA_Snowflake](https://localhost:8443/nifi/#/process-groups/84275a08-019e-1000-a995-62a9e5f0565c) — 2 proc, 0 groups, 1 conns
+  - [RY_Salesforce_to_Fabric](https://localhost:8443/nifi/#/process-groups/827980e5-01a0-1000-d8b8-a55b8b8665ad) — 0 proc, 2 groups, 1 conns
+    - [01_Extract_Salesforce](https://localhost:8443/nifi/#/process-groups/8279f651-01a0-1000-28ec-9605189f5d77) — 5 proc, 0 groups, 5 conns
+    - [02_Land_OneLake_Bronze](https://localhost:8443/nifi/#/process-groups/8279fffe-01a0-1000-2543-4fe54f5c2836) — 4 proc, 0 groups, 5 conns
