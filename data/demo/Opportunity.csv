@@ -1,0 +1,4 @@
+RY_External_ID__c,Name,Account_Key,Applicant_Key,Campaign_Key,Intake_Key,CloseDate,RY_Sample_Stage__c,RY_Expected_Value_ZAR__c
+RY-DEMO-OPP-001,DEMO - Data Analysis - applicant 1,RY-DEMO-ACC-001,RY-DEMO-CON-001,RY-DEMO-CAM-001,RY-INTAKE-021,2026-09-25,Enrolled,13500
+RY-DEMO-OPP-002,DEMO - Business Analysis - applicant 2,RY-DEMO-ACC-001,RY-DEMO-CON-002,RY-DEMO-CAM-001,RY-INTAKE-020,2026-09-25,Application submitted,14900
+RY-DEMO-OPP-003,DEMO - Design Thinking - applicant 3,RY-DEMO-ACC-001,RY-DEMO-CON-003,RY-DEMO-CAM-001,RY-INTAKE-016,2026-09-25,Offer accepted,13500

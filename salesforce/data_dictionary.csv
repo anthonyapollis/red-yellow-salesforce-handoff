@@ -1,0 +1,66 @@
+object_api_name,field_api_name,type,reference_to,required_by_metadata,description
+RY_Programme__c,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+RY_Programme__c,Title__c,Text,,False,Title
+RY_Programme__c,Category__c,Text,,False,Category
+RY_Programme__c,Credential_Text__c,Text,,False,Credential Text
+RY_Programme__c,Listed_Body__c,Text,,False,Listed Body
+RY_Programme_Offering__c,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+RY_Programme_Offering__c,Programme__c,Lookup,RY_Programme__c,False,Programme
+RY_Programme_Offering__c,Title__c,Text,,False,Title
+RY_Programme_Offering__c,Catalogue_Section__c,Text,,False,Catalogue Section
+RY_Programme_Offering__c,Delivery_Mode__c,Text,,False,Delivery Mode
+RY_Programme_Offering__c,Study_Pace__c,Text,,False,Study Pace
+RY_Programme_Offering__c,Duration_Value__c,Number,,False,Duration Value
+RY_Programme_Offering__c,Duration_Unit__c,Text,,False,Duration Unit
+RY_Programme_Offering__c,Advertised_Fee_ZAR__c,Decimal,,False,ZAR amount stored as Number to avoid inheriting an unknown org currency
+RY_Programme_Offering__c,Price_Status__c,Text,,False,Price Status
+RY_Programme_Offering__c,Source_URL__c,Url,,False,Source URL
+RY_Programme_Offering__c,Source_Refs__c,Text,,False,Source Refs
+RY_Programme_Offering__c,Observed_Date__c,Date,,False,Observed Date
+RY_Programme_Offering__c,Notes__c,LongTextArea,,False,Notes
+RY_Intake__c,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+RY_Intake__c,Offering__c,Lookup,RY_Programme_Offering__c,False,Offering
+RY_Intake__c,Start_Date__c,Date,,False,Start Date
+Account,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+Contact,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+Lead,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+Lead,RY_Sample_Status__c,Text,,False,Sample Status
+Campaign,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+Campaign,RY_Channel__c,Text,,False,Channel
+Campaign,RY_Spend_ZAR__c,Decimal,,False,ZAR amount stored as Number to avoid inheriting an unknown org currency
+CampaignMember,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+Opportunity,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+Opportunity,RY_Applicant__c,Lookup,Contact,False,Applicant
+Opportunity,RY_Intake__c,Lookup,RY_Intake__c,False,Intake
+Opportunity,RY_Sample_Stage__c,Text,,False,Sample Stage
+Opportunity,RY_Expected_Value_ZAR__c,Decimal,,False,ZAR amount stored as Number to avoid inheriting an unknown org currency
+RY_Programme_Enquiry__c,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+RY_Programme_Enquiry__c,Contact__c,Lookup,Contact,False,Contact
+RY_Programme_Enquiry__c,Lead__c,Lookup,Lead,False,Lead
+RY_Programme_Enquiry__c,Offering__c,Lookup,RY_Programme_Offering__c,False,Offering
+RY_Programme_Enquiry__c,Enquiry_Date__c,Date,,False,Enquiry Date
+RY_Programme_Enquiry__c,Channel__c,Text,,False,Channel
+RY_Programme_Enquiry__c,Status__c,Text,,False,Status
+RY_Application__c,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+RY_Application__c,Contact__c,Lookup,Contact,False,Contact
+RY_Application__c,Intake__c,Lookup,RY_Intake__c,False,Intake
+RY_Application__c,Opportunity__c,Lookup,Opportunity,False,Opportunity
+RY_Application__c,Submitted_Date__c,Date,,False,Submitted Date
+RY_Application__c,Status__c,Text,,False,Status
+RY_Application__c,Decision_Date__c,Date,,False,Decision Date
+RY_Student__c,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+RY_Student__c,Contact__c,Lookup,Contact,False,Contact
+RY_Student__c,Student_Number__c,Text,,False,Student Number
+RY_Enrolment__c,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+RY_Enrolment__c,Student__c,Lookup,RY_Student__c,False,Student
+RY_Enrolment__c,Application__c,Lookup,RY_Application__c,False,Application
+RY_Enrolment__c,Enrolled_Date__c,Date,,False,Enrolled Date
+RY_Enrolment__c,Status__c,Text,,False,Status
+RY_Enrolment__c,Agreed_Fee_ZAR__c,Decimal,,False,ZAR amount stored as Number to avoid inheriting an unknown org currency
+RY_Student_Progress__c,RY_External_ID__c,ExternalID,,False,Stable package key for idempotent upsert
+RY_Student_Progress__c,Enrolment__c,Lookup,RY_Enrolment__c,False,Enrolment
+RY_Student_Progress__c,Week_Start__c,Date,,False,Week Start
+RY_Student_Progress__c,Attendance_Pct__c,Decimal,,False,Attendance Pct
+RY_Student_Progress__c,Assessment_Average_Pct__c,Decimal,,False,Assessment Average Pct
+RY_Student_Progress__c,Overdue_Assignments__c,Number,,False,Overdue Assignments
+RY_Student_Progress__c,Risk_Band__c,Text,,False,Risk Band

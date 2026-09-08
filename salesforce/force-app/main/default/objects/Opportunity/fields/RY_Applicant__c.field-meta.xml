@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata"><fullName>RY_Applicant__c</fullName><deleteConstraint>SetNull</deleteConstraint><label>Applicant</label><referenceTo>Contact</referenceTo><relationshipLabel>Applicant Records</relationshipLabel><relationshipName>RY_Opportunity_RY_Applicant</relationshipName><required>false</required><type>Lookup</type></CustomField>

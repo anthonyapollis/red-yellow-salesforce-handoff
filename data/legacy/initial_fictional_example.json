@@ -1,0 +1,80 @@
+{
+  "notice": "ARCHIVE ONLY. Fictional first ERD example; excluded from every import plan. Local keys are not Salesforce IDs.",
+  "CAMPAIGN": {
+    "id": "CAM001",
+    "name": "July Digital Marketing Intake",
+    "channel": "Paid social",
+    "start_date": "2026-04-01",
+    "spend_zar": 20000
+  },
+  "LEAD": {
+    "id": "L001",
+    "name": "Lerato Dlamini",
+    "email": "lerato@example.com",
+    "status": "Converted",
+    "created_date": "2026-04-10",
+    "converted_contact_id": "C001"
+  },
+  "CAMPAIGN_MEMBER": {
+    "id": "CM001",
+    "campaign_id": "CAM001",
+    "contact_id": "C001",
+    "lead_id": null,
+    "responded_date": "2026-04-10"
+  },
+  "CONTACT": {
+    "id": "C001",
+    "name": "Lerato Dlamini",
+    "email": "lerato@example.com"
+  },
+  "OPPORTUNITY": {
+    "id": "O001",
+    "applicant_contact_id": "C001",
+    "campaign_id": "CAM001",
+    "stage": "Closed Won",
+    "value_zar": 18000
+  },
+  "PROGRAMME": {
+    "id": "P001",
+    "name": "Digital Marketing Short Course",
+    "qualification_type": "Short course",
+    "duration_weeks": 12
+  },
+  "INTAKE": {
+    "id": "I001",
+    "programme_id": "P001",
+    "start_date": "2026-07-06",
+    "delivery_mode": "Online",
+    "capacity": 40
+  },
+  "APPLICATION": {
+    "id": "A001",
+    "opportunity_id": "O001",
+    "intake_id": "I001",
+    "submitted_date": "2026-05-12",
+    "decision_date": "2026-05-20",
+    "status": "Accepted"
+  },
+  "STUDENT": {
+    "id": "S001",
+    "contact_id": "C001",
+    "student_number": "RY2026001"
+  },
+  "ENROLMENT": {
+    "id": "E001",
+    "student_id": "S001",
+    "application_id": "A001",
+    "enrolled_date": "2026-06-01",
+    "status": "Active",
+    "agreed_fee_zar": 18000
+  },
+  "STUDENT_PROGRESS": {
+    "id": "PR001",
+    "enrolment_id": "E001",
+    "week_start": "2026-08-31",
+    "attendance_pct": 60,
+    "assessment_average_pct": 48,
+    "overdue_assignments": 2,
+    "risk_band": "High"
+  }
+}

@@ -1,0 +1,3 @@
+RY_External_ID__c,Student_Key,Application_Key,Enrolled_Date__c,Status__c,Agreed_Fee_ZAR__c
+RY-DEMO-ENR-001,RY-DEMO-STU-001,RY-DEMO-APP-001,2026-09-01,Registered,13500
+RY-DEMO-ENR-003,RY-DEMO-STU-003,RY-DEMO-APP-003,2026-09-02,Registered,12500

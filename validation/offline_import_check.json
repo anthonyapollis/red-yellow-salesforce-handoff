@@ -1,0 +1,19 @@
+{
+  "offline_validation": "PASS",
+  "selected_counts": {
+    "RY_Programme__c": 83,
+    "RY_Programme_Offering__c": 89,
+    "RY_Intake__c": 47,
+    "Account": 1,
+    "Contact": 3,
+    "Lead": 1,
+    "Campaign": 1,
+    "CampaignMember": 2,
+    "Opportunity": 3,
+    "RY_Programme_Enquiry__c": 2,
+    "RY_Application__c": 3,
+    "RY_Student__c": 2,
+    "RY_Enrolment__c": 2,
+    "RY_Student_Progress__c": 2
+  }
+}

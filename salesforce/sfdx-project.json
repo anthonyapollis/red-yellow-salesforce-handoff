@@ -1,0 +1,11 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "red-yellow-demo",
+  "namespace": "",
+  "sourceApiVersion": "66.0"
+}

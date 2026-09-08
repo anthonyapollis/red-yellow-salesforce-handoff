@@ -1,0 +1,95 @@
+erDiagram
+    CAMPAIGN ||--o{ CAMPAIGN_MEMBER : includes
+    LEAD o|--o{ CAMPAIGN_MEMBER : participates
+    CONTACT o|--o{ CAMPAIGN_MEMBER : participates
+    CONTACT o|--o{ LEAD : converted_into
+    CONTACT ||--o{ OPPORTUNITY : applicant_for
+    CAMPAIGN o|--o{ OPPORTUNITY : primary_source
+    OPPORTUNITY ||--o| APPLICATION : produces
+    PROGRAMME ||--o{ INTAKE : offers
+    INTAKE ||--o{ APPLICATION : receives
+    CONTACT ||--o| STUDENT : becomes
+    STUDENT ||--o{ ENROLMENT : has
+    APPLICATION ||--o| ENROLMENT : results_in
+    ENROLMENT ||--o{ STUDENT_PROGRESS : tracks
+    CAMPAIGN {
+        string campaign_id PK
+        string campaign_name
+        string channel
+        date start_date
+        decimal spend_zar
+    }
+    LEAD {
+        string lead_id PK
+        string full_name
+        string email
+        string lead_source
+        string status
+        datetime created_at
+        string converted_contact_id FK
+    }
+    CAMPAIGN_MEMBER {
+        string campaign_member_id PK
+        string campaign_id FK
+        string lead_id FK
+        string contact_id FK
+        string response_status
+        datetime first_responded_at
+    }
+    CONTACT {
+        string contact_id PK
+        string full_name
+        string email
+        string phone
+    }
+    OPPORTUNITY {
+        string opportunity_id PK
+        string applicant_contact_id FK
+        string primary_campaign_id FK
+        string stage
+        decimal expected_value_zar
+        date expected_close_date
+    }
+    PROGRAMME {
+        string programme_id PK
+        string programme_name
+        string qualification_type
+        int duration_weeks
+    }
+    INTAKE {
+        string intake_id PK
+        string programme_id FK
+        date start_date
+        string delivery_mode
+        int capacity
+    }
+    APPLICATION {
+        string application_id PK
+        string opportunity_id FK
+        string intake_id FK
+        date submitted_date
+        string status
+        date decision_date
+    }
+    STUDENT {
+        string student_id PK
+        string contact_id FK
+        string student_number UK
+    }
+    ENROLMENT {
+        string enrolment_id PK
+        string student_id FK
+        string application_id FK
+        date enrolled_date
+        string status
+        decimal agreed_fee_zar
+    }
+    STUDENT_PROGRESS {
+        string progress_id PK
+        string enrolment_id FK
+        date week_start
+        decimal attendance_pct
+        decimal assessment_average_pct
+        int overdue_assignments
+        string risk_band
+    }

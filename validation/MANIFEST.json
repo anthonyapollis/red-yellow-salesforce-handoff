@@ -1,0 +1,542 @@
+{
+  "data/all_records.json": {
+    "bytes": 94033,
+    "sha256": "6001c319aaaebbf492c4434c5bc7f6924c8fa3fbbac72be3f12a194427ac9e30"
+  },
+  "data/catalogue/catalogue_observations.csv": {
+    "bytes": 27232,
+    "sha256": "24cd64ef82eca1dcdf124abb57b5df90a148c54388d65f9c836e7a70232953d4"
+  },
+  "data/catalogue/RY_Intake__c.csv": {
+    "bytes": 1879,
+    "sha256": "e0a19a06c98cb993fa9c9e8efb44397d08370690710331195de51c3f41880225"
+  },
+  "data/catalogue/RY_Programme__c.csv": {
+    "bytes": 7353,
+    "sha256": "eb98e3d7ca1b5c182c3154c4cd102e1ce6f4946e833ec24ae225adee6f7d99a4"
+  },
+  "data/catalogue/RY_Programme_Offering__c.csv": {
+    "bytes": 25089,
+    "sha256": "a3f8dd16ac7e5d9354c31839e479416a677f160819bd33c36411e0dc056f1052"
+  },
+  "data/demo/Account.csv": {
+    "bytes": 70,
+    "sha256": "a9320c680dc28b8b7b9efd2858dd49a692b562d372798f71e35c56614b201d93"
+  },
+  "data/demo/Campaign.csv": {
+    "bytes": 155,
+    "sha256": "0958304e06a6595274b1fdc3048c5da2aa56f6563b880e78c70b7fcaede4f637"
+  },
+  "data/demo/CampaignMember.csv": {
+    "bytes": 152,
+    "sha256": "7590d487267c11416f7a3b0d1e94bd72f2b58fd44314328faf115421b9aa7eb0"
+  },
+  "data/demo/Contact.csv": {
+    "bytes": 253,
+    "sha256": "f077e6c7a492994399f2d59d49f83da6d6f9ada95efd16ece158e57aa3e04055"
+  },
+  "data/demo/Lead.csv": {
+    "bytes": 153,
+    "sha256": "dc079ad3bd83bd4ccd023ba3d05d83afbf3a868fe1720dfbfd3ed07bbac1b74b"
+  },
+  "data/demo/Opportunity.csv": {
+    "bytes": 573,
+    "sha256": "17b42bace4fa0ec7da3b66dea221025610eed985ad8c8024682b25a3f0c44146"
+  },
+  "data/demo/RY_Application__c.csv": {
+    "bytes": 376,
+    "sha256": "756d912b5c1b7796387f80dbcad858ab509ab70591d077b4746afa0c071cce0b"
+  },
+  "data/demo/RY_Enrolment__c.csv": {
+    "bytes": 246,
+    "sha256": "1dc78698e9b7b169d8a5b449f0414873ca876d30d5e4936d494721c9fbe628d8"
+  },
+  "data/demo/RY_Programme_Enquiry__c.csv": {
+    "bytes": 248,
+    "sha256": "1929f78c69b9309b9a8dd487ffa8d7a53289e8e734e849322cd13b0007ba879d"
+  },
+  "data/demo/RY_Student__c.csv": {
+    "bytes": 145,
+    "sha256": "ec1e9a59868db49d87975975f51f2a629c76dee6072705ae53968a980333463d"
+  },
+  "data/demo/RY_Student_Progress__c.csv": {
+    "bytes": 242,
+    "sha256": "ece2004959bd59ee9dae1e00c226b5f2514c3168e81c4aeeebf18fc442feb598"
+  },
+  "data/legacy/catalogue_example_keys.json": {
+    "bytes": 346,
+    "sha256": "589083295ca0f084f2004c57213c192fc91ad7416298476bf42bbd087e2e918c"
+  },
+  "data/legacy/initial_fictional_example.json": {
+    "bytes": 1987,
+    "sha256": "9e21a61029948e2d76410d2ac39c2a4068e745b841f63310eea862f7c4ba4c60"
+  },
+  "docs/ANALYTICS_INTEGRATION.md": {
+    "bytes": 801,
+    "sha256": "e26a989561b4bf301da734a31ab3c8f685e96d65deed3e105c775202f673714f"
+  },
+  "docs/BUSINESS_RULES.md": {
+    "bytes": 1585,
+    "sha256": "89552cde80821d3e6e2971edf3c16cdb8313bf0fc4e0cb940e84460163a5d16a"
+  },
+  "docs/DATA_NOTES.md": {
+    "bytes": 3102,
+    "sha256": "c7bd64e8a09024dee3628b8e7edf27c685c0fda1fc4dc20f9b43154a6e82cb78"
+  },
+  "docs/IMPORT_GUIDE.md": {
+    "bytes": 3366,
+    "sha256": "9741f1af6513155586e351954dd7fd0bd4c560efffe7720b13555913a1e718be"
+  },
+  "docs/REFERENCES.md": {
+    "bytes": 859,
+    "sha256": "189afbc9313d486203ed05eb1bd914b8497b1b5f9777337de0c7eb7ff49d514b"
+  },
+  "erds/01_original_conceptual_ARCHIVE.mmd": {
+    "bytes": 2627,
+    "sha256": "df2a689fa391ee0b201b077c02dba9c704c39c5fbe1f8187878beb64ef999096"
+  },
+  "erds/02_catalogue_revision_ARCHIVE.mmd": {
+    "bytes": 1742,
+    "sha256": "e69ad42a4ecc7ee89f108d53f7607d185384de96462915d25bff3874eade84cd"
+  },
+  "erds/03_salesforce_canonical.mmd": {
+    "bytes": 4341,
+    "sha256": "afb20f32b86b906c77179e346fde8f87e0a343e83cc10860d64de887ba66202f"
+  },
+  "erds/04_analytics_pipeline.mmd": {
+    "bytes": 314,
+    "sha256": "46bd231598c577ef265a212c0e056d9324ef76a3d2d0128bbe94a71f693b1e1c"
+  },
+  "erds/ALL_ERDS.md": {
+    "bytes": 9323,
+    "sha256": "db6ba484fcf9ed1001bf28b58d8d6a3b564895bfa86bfe6c76156dfaa009b858"
+  },
+  "erds/index.html": {
+    "bytes": 19579,
+    "sha256": "18a147e4f93d4adae62a765ea9905e1f5326908ceaf65aa060da3aec88031d39"
+  },
+  "erds/overview.svg": {
+    "bytes": 5767,
+    "sha256": "5b530b75f52aebe93d82c8f669c21a8c0d8ebcde9e24f5602483f1ad27418ce7"
+  },
+  "erds/README.md": {
+    "bytes": 610,
+    "sha256": "440a1e7aa6b2fed5c9c75222b8eaded0e168d58e15c5dba2df1d3b778f567cfc"
+  },
+  "README.md": {
+    "bytes": 1737,
+    "sha256": "45d478f15aca5fb6097ecebe600152b186aa68bbd0ef2b0e87bb945ae8b08ada"
+  },
+  "salesforce/data_dictionary.csv": {
+    "bytes": 4835,
+    "sha256": "b916adc30b64fe63465cebee2a11ac14694b2cf8a5bbf7c27f588320bf60b39c"
+  },
+  "salesforce/force-app/main/default/objects/Account/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/Campaign/fields/RY_Channel__c.field-meta.xml": {
+    "bytes": 236,
+    "sha256": "ec0b78d1d925393a3a78de52eaac4688e0b7bea1399d940d473d5bbe2edc09e4"
+  },
+  "salesforce/force-app/main/default/objects/Campaign/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/Campaign/fields/RY_Spend_ZAR__c.field-meta.xml": {
+    "bytes": 263,
+    "sha256": "02689c2e7d2ccabff6af7ff71cb1b2bacb023d258e740fb42539d3a94a63a22b"
+  },
+  "salesforce/force-app/main/default/objects/CampaignMember/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/Contact/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/Lead/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/Lead/fields/RY_Sample_Status__c.field-meta.xml": {
+    "bytes": 248,
+    "sha256": "f20ec335bb15447ec5f46f282c9a93f0fdb31541e454876da7061f28bb86782d"
+  },
+  "salesforce/force-app/main/default/objects/Opportunity/fields/RY_Applicant__c.field-meta.xml": {
+    "bytes": 420,
+    "sha256": "261b7ac4da9d8e5ead460a8548255d656f16428dc7c56ac13a4dd997f00e404a"
+  },
+  "salesforce/force-app/main/default/objects/Opportunity/fields/RY_Expected_Value_ZAR__c.field-meta.xml": {
+    "bytes": 281,
+    "sha256": "ea3e6a40c43b94f1d75a7280744b93f459c938c0522c037bb305eaf6a0c7442e"
+  },
+  "salesforce/force-app/main/default/objects/Opportunity/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/Opportunity/fields/RY_Intake__c.field-meta.xml": {
+    "bytes": 413,
+    "sha256": "25487baf8b384a6b9ff1e5097378fe4db61f9f31b183d62aca96811cd218f606"
+  },
+  "salesforce/force-app/main/default/objects/Opportunity/fields/RY_Sample_Stage__c.field-meta.xml": {
+    "bytes": 246,
+    "sha256": "feef3168c8d0c28c0d908247c68d96aedd9c13bbcbeec68d2bd5d71977b5b8a4"
+  },
+  "salesforce/force-app/main/default/objects/RY_Application__c/fields/Contact__c.field-meta.xml": {
+    "bytes": 406,
+    "sha256": "a36dc145930348740f214f721412c07f506a93172360fdd295c600e5c1b82c89"
+  },
+  "salesforce/force-app/main/default/objects/RY_Application__c/fields/Decision_Date__c.field-meta.xml": {
+    "bytes": 225,
+    "sha256": "818628fad5075e184912ee173adcc646b0059a8680274335f9b25592c81b1d23"
+  },
+  "salesforce/force-app/main/default/objects/RY_Application__c/fields/Intake__c.field-meta.xml": {
+    "bytes": 407,
+    "sha256": "a161e250f928c840f81d769683c69470109bed561bf87618ce95b4ff2ede64e6"
+  },
+  "salesforce/force-app/main/default/objects/RY_Application__c/fields/Opportunity__c.field-meta.xml": {
+    "bytes": 426,
+    "sha256": "5c96f78bff06bfd1f4febd09584540e8fa65868f9f7020889cd5464715fadd99"
+  },
+  "salesforce/force-app/main/default/objects/RY_Application__c/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/RY_Application__c/fields/Status__c.field-meta.xml": {
+    "bytes": 231,
+    "sha256": "b583c8ced1b1b6af2e92981172c9a4ea596f77d4f9e5af827e0c3e5535fd42ae"
+  },
+  "salesforce/force-app/main/default/objects/RY_Application__c/fields/Submitted_Date__c.field-meta.xml": {
+    "bytes": 227,
+    "sha256": "0a393c90bf299eaa95776e5c8ddc571f30dd6d36e58e0f3865b3bddfd981c39e"
+  },
+  "salesforce/force-app/main/default/objects/RY_Application__c/RY_Application__c.object-meta.xml": {
+    "bytes": 545,
+    "sha256": "b303952c9f04ea6bc2af6e0dfaf8bb51df136a89e70998aa107b148e96501c6d"
+  },
+  "salesforce/force-app/main/default/objects/RY_Enrolment__c/fields/Agreed_Fee_ZAR__c.field-meta.xml": {
+    "bytes": 270,
+    "sha256": "06f820b2dbbf735d4b83f556bf73ddc89b8b54dae2bfa292f65558958241eb47"
+  },
+  "salesforce/force-app/main/default/objects/RY_Enrolment__c/fields/Application__c.field-meta.xml": {
+    "bytes": 430,
+    "sha256": "2b1c69bb6b47f15dcfbd87e08844c03ab5fd187c65ba67f62e57e0a0bcdd67b4"
+  },
+  "salesforce/force-app/main/default/objects/RY_Enrolment__c/fields/Enrolled_Date__c.field-meta.xml": {
+    "bytes": 225,
+    "sha256": "a50569d5e064e1df6352a5031dbe27025ab8997e13d9caab2a80d66196bad9b8"
+  },
+  "salesforce/force-app/main/default/objects/RY_Enrolment__c/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/RY_Enrolment__c/fields/Status__c.field-meta.xml": {
+    "bytes": 231,
+    "sha256": "b583c8ced1b1b6af2e92981172c9a4ea596f77d4f9e5af827e0c3e5535fd42ae"
+  },
+  "salesforce/force-app/main/default/objects/RY_Enrolment__c/fields/Student__c.field-meta.xml": {
+    "bytes": 410,
+    "sha256": "ec6b13da1f431e813f057fc5920dddfc8494a8a2e83b589304c37555e12c6911"
+  },
+  "salesforce/force-app/main/default/objects/RY_Enrolment__c/RY_Enrolment__c.object-meta.xml": {
+    "bytes": 539,
+    "sha256": "2bce55ec854d30aa65d49cf8034a80ed85e42141bc76004605819ea389f0716d"
+  },
+  "salesforce/force-app/main/default/objects/RY_Intake__c/fields/Offering__c.field-meta.xml": {
+    "bytes": 422,
+    "sha256": "dae77ccbd4aad7966cde434f148a9cadb851d8ef9626252e605a0b54fedc7fee"
+  },
+  "salesforce/force-app/main/default/objects/RY_Intake__c/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/RY_Intake__c/fields/Start_Date__c.field-meta.xml": {
+    "bytes": 219,
+    "sha256": "37789e1769498a5e98b14bff8f09ac98cbe3cac361800f184f43e1566a75de2f"
+  },
+  "salesforce/force-app/main/default/objects/RY_Intake__c/RY_Intake__c.object-meta.xml": {
+    "bytes": 530,
+    "sha256": "af4683f8ba1cca235f70a5e99ec8c78d21ec8822c4870be8397d4a03484fb498"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme__c/fields/Category__c.field-meta.xml": {
+    "bytes": 235,
+    "sha256": "62b0e19e346a2f488b3a60438c2124cf372e281d12853cc07fb075abdd31f862"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme__c/fields/Credential_Text__c.field-meta.xml": {
+    "bytes": 249,
+    "sha256": "0a2897d34c76c4262ebf07d55592df63becf63c98a89f6f63c4ae5f64e976504"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme__c/fields/Listed_Body__c.field-meta.xml": {
+    "bytes": 241,
+    "sha256": "2728ddcdba9901b0a85b10348becd182ab2d42f35c3831238484b19dc3aa6835"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme__c/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme__c/fields/Title__c.field-meta.xml": {
+    "bytes": 229,
+    "sha256": "d41a3c35ad10323b0abbd6ef9f17248cf75c420b4aac6b137e349e041e826b1b"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme__c/RY_Programme__c.object-meta.xml": {
+    "bytes": 539,
+    "sha256": "2d1ea8681428260e4007863bc8006f03cf4d58a917fec4fa17912bb971a8453b"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Enquiry__c/fields/Channel__c.field-meta.xml": {
+    "bytes": 233,
+    "sha256": "8a7b25260afe19742d3ea060f9debda4e696382192d18b39dd6b95444728d02f"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Enquiry__c/fields/Contact__c.field-meta.xml": {
+    "bytes": 412,
+    "sha256": "6b6e1264172a2ad258cced4d0ed834f8c040d33031711c7ae6b2983c7a4fd1fd"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Enquiry__c/fields/Enquiry_Date__c.field-meta.xml": {
+    "bytes": 223,
+    "sha256": "4bb28b8a8ed0275cef59efb61c8a7be28121ee7c7ac981eb082be13cffa4c8f7"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Enquiry__c/fields/Lead__c.field-meta.xml": {
+    "bytes": 397,
+    "sha256": "2ce506b46d732d30e0e1217cf62bfee361f8b9629058f2efc3ad69a1222c5702"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Enquiry__c/fields/Offering__c.field-meta.xml": {
+    "bytes": 433,
+    "sha256": "d88bd2716377c65dd2c10adf51a83ff7a50022377107574e0e59c19fe21f1ab8"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Enquiry__c/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Enquiry__c/fields/Status__c.field-meta.xml": {
+    "bytes": 231,
+    "sha256": "b583c8ced1b1b6af2e92981172c9a4ea596f77d4f9e5af827e0c3e5535fd42ae"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Enquiry__c/RY_Programme_Enquiry__c.object-meta.xml": {
+    "bytes": 563,
+    "sha256": "43b62031e40314368bee7a1e4ad26fdbfdd56b0d6ecc87330b6b90eba621715b"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Advertised_Fee_ZAR__c.field-meta.xml": {
+    "bytes": 278,
+    "sha256": "38bf21f31ecb8f9f99f4fa683d4a58735dc73f453b15d1dcea4515fef5202f10"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Catalogue_Section__c.field-meta.xml": {
+    "bytes": 253,
+    "sha256": "6e310c7a32dd1e1ec35a83ce8d7bb8ad8acdd2c1f9a587cab70381a615e8608f"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Delivery_Mode__c.field-meta.xml": {
+    "bytes": 245,
+    "sha256": "fde2c4565d5bc222cca2adb35e03c4f286897c18a5da0bb4293fcd58c2fa6983"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Duration_Unit__c.field-meta.xml": {
+    "bytes": 245,
+    "sha256": "9e6b8e864b10855c3e95838a9f9c039e513dee6f84864793e7b61c8fc30f7758"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Duration_Value__c.field-meta.xml": {
+    "bytes": 270,
+    "sha256": "e9b1d7545628e9f365ca1ebbc53a3caa98257364a618136ed0d480029d08fc6a"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Notes__c.field-meta.xml": {
+    "bytes": 243,
+    "sha256": "43d83d56e1f65b3d8438a28dd0dc1b5843420deedd71ae97ea2b2db9244ca803"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Observed_Date__c.field-meta.xml": {
+    "bytes": 225,
+    "sha256": "bb645fa368802b17f3ad023a9772e894390aaf79c1fd08ad197db1ae6f23c2d7"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Price_Status__c.field-meta.xml": {
+    "bytes": 243,
+    "sha256": "f0d6d1b5339de7d232a85da5029e20d54e61a4cc998e8b921a07ca92a557158a"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Programme__c.field-meta.xml": {
+    "bytes": 429,
+    "sha256": "17c673e761db34d43fa3fb4fb80af481edfedb7d57b1db9a5cf0e67570881b7b"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Source_Refs__c.field-meta.xml": {
+    "bytes": 241,
+    "sha256": "631e0011e70dbebecf60d823522b6081ec8564aa0dc9c406868af6c73ccf1673"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Source_URL__c.field-meta.xml": {
+    "bytes": 218,
+    "sha256": "42540e94bcee9e4c720dbea049aba1f4241951babde19996588d337afb73c38f"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Study_Pace__c.field-meta.xml": {
+    "bytes": 239,
+    "sha256": "8e632fe3e3d4000809ee4c62268a06014275c6a14754c212f5ba7a9a655cdb85"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/fields/Title__c.field-meta.xml": {
+    "bytes": 229,
+    "sha256": "d41a3c35ad10323b0abbd6ef9f17248cf75c420b4aac6b137e349e041e826b1b"
+  },
+  "salesforce/force-app/main/default/objects/RY_Programme_Offering__c/RY_Programme_Offering__c.object-meta.xml": {
+    "bytes": 566,
+    "sha256": "c682b18b04a6383c48a48d6cf1cf58557e0c0fe9066f9a31a488047c735cd9aa"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student__c/fields/Contact__c.field-meta.xml": {
+    "bytes": 402,
+    "sha256": "cd16d2a6ffe177ce9a4ebc72ae02529ba0db8b9679f93c92c79940f102ade63d"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student__c/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student__c/fields/Student_Number__c.field-meta.xml": {
+    "bytes": 247,
+    "sha256": "b9cb45f08ea1d6046d052c4d9a68a28e50f08a4b540820342a76695d1ed93b43"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student__c/RY_Student__c.object-meta.xml": {
+    "bytes": 533,
+    "sha256": "af4f53d6ebe72b7633cb8f0e8b2dbd9f855d319ef0fa169ebec6cd137f67a965"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student_Progress__c/fields/Assessment_Average_Pct__c.field-meta.xml": {
+    "bytes": 286,
+    "sha256": "dd2927431cd3b2ba25e6f2b440582bf5397d157338b459f6e1093b65d49151b4"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student_Progress__c/fields/Attendance_Pct__c.field-meta.xml": {
+    "bytes": 270,
+    "sha256": "76eaefd4ca730b56cd7b1a9635f0219fa604384f9b0d92862ef31b2da7062f26"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student_Progress__c/fields/Enrolment__c.field-meta.xml": {
+    "bytes": 427,
+    "sha256": "8d740b980deddb5affff17cbb95bbabb2e03b5708920c04b0feaeb977726be03"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student_Progress__c/fields/Overdue_Assignments__c.field-meta.xml": {
+    "bytes": 280,
+    "sha256": "31dd53fd78dbca3eb8b5d3943d68735414c54f204b085e8d22200b805423a226"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student_Progress__c/fields/Risk_Band__c.field-meta.xml": {
+    "bytes": 237,
+    "sha256": "a193cc365602509e66241335a0c76ec941d207cc9d24ddf00fc68cffef2b6fa0"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student_Progress__c/fields/RY_External_ID__c.field-meta.xml": {
+    "bytes": 330,
+    "sha256": "c3ca5756fea8a7df3cea6333e684e2bdf7850faa95268eaf08eeae7ddf1e42cc"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student_Progress__c/fields/Week_Start__c.field-meta.xml": {
+    "bytes": 219,
+    "sha256": "e96f450940f63a884cb9ca605770eded365dad0020b7a0d764bf41a7173b8804"
+  },
+  "salesforce/force-app/main/default/objects/RY_Student_Progress__c/RY_Student_Progress__c.object-meta.xml": {
+    "bytes": 560,
+    "sha256": "186c758a3474e4640fdf4554f0c442600141c61859b192a9230994f048d6a157"
+  },
+  "salesforce/force-app/main/default/permissionsets/RY_Demo_Import.permissionset-meta.xml": {
+    "bytes": 11042,
+    "sha256": "fbcf912419812f6cdadcedda551547050305d74e55f488aeaa98df2fb7328c06"
+  },
+  "salesforce/import_plan.json": {
+    "bytes": 4959,
+    "sha256": "6f6aa7b37ac3ae845dec801a9162fd61fc3918653c7c8e2346ade437d908e3b2"
+  },
+  "salesforce/schema.json": {
+    "bytes": 4410,
+    "sha256": "8cf83831d11be4c47411d5d28e077fa2a58572b97fbde4243ecd06dbc3a8b4a7"
+  },
+  "salesforce/sfdx-project.json": {
+    "bytes": 182,
+    "sha256": "597fab07d9757ddc0af0d7609b9e58c7d3c184fda16b4615ae6a34e7c8d9410d"
+  },
+  "sources/images/A01_codex-clipboard-59e7126e-7c23-4744-9a0d-cf777a6556e5.png": {
+    "bytes": 330595,
+    "sha256": "48736537d41c2ac5f8e4759f8ac9e06c9b95e2a495dc4015ad92d979137af31b"
+  },
+  "sources/images/A02_codex-clipboard-6d5646b9-d5df-4404-b069-e6a58a6465bd.png": {
+    "bytes": 420765,
+    "sha256": "8e8c51a3c61d4fdfee478b80724321177eeb5f7d8d44688f14e2bc432d28560b"
+  },
+  "sources/images/A03_codex-clipboard-a373b098-a694-4b07-9850-aa473c2b8516.png": {
+    "bytes": 383739,
+    "sha256": "231d0ff3cb890833abf6b40a2aebad112af9ef2aff1e68f81a64f58209b55ed7"
+  },
+  "sources/images/A04_codex-clipboard-f9c5d2eb-ca98-4717-a593-78e738fc489f.png": {
+    "bytes": 305302,
+    "sha256": "41b1731de187be4b5b74f586d9c8726adef3273a14906f98eb40be98ed2d5f53"
+  },
+  "sources/images/A05_codex-clipboard-83c9df33-4325-4012-bf47-2edca86e68c1.png": {
+    "bytes": 649534,
+    "sha256": "7e77272edc5353824b1baa228ac01e4fdef7826cdab1faa8a5e4b01282b31a4b"
+  },
+  "sources/images/A06_codex-clipboard-9ab6ca35-4b3c-4e31-aaf8-0b785ecbb657.png": {
+    "bytes": 639161,
+    "sha256": "ad4551e2c2fd435edc48909fb5e1c5ba6075a913e9b007e00590f2a9c8d27c4c"
+  },
+  "sources/images/A07_codex-clipboard-1ae79cbb-5720-43b8-ae03-74a68e95297e.png": {
+    "bytes": 552525,
+    "sha256": "0ab48452f3bb29d030b28bdb0d85b22e6f146a097c94d76a7c33eed5adc38808"
+  },
+  "sources/images/A08_codex-clipboard-81a12309-6753-43eb-9a7c-478cebdb3641.png": {
+    "bytes": 475686,
+    "sha256": "d93f97580fe3326750a06d6d279f8249cf3992cc0fe4150245c8ce3381f2a790"
+  },
+  "sources/images/A09_codex-clipboard-ffb065a1-9fca-48d6-b926-3d8b88214726.png": {
+    "bytes": 261725,
+    "sha256": "5048bb24dd4c299acb4742c57f5e413b5e8e3eebd7760d3ceb91a7636cb9a545"
+  },
+  "sources/images/A10_codex-clipboard-faed3cc6-aa37-4a99-a492-b1817e82f678.png": {
+    "bytes": 494616,
+    "sha256": "09910f47c892b5d4bddc71f37177cf77bd8151cb8cddcb5f6602e6f64eeaaea8"
+  },
+  "sources/images/A11_codex-clipboard-db679a91-c14c-4d64-a500-6b1032e1f72a.png": {
+    "bytes": 528275,
+    "sha256": "b8de8eaa568bb0c6edbfa1130902b9a5f3ada275600c10beaa0caf010f2404e8"
+  },
+  "sources/images/B01_codex-clipboard-0376d102-fedd-4820-949a-614ede45a0c6.png": {
+    "bytes": 564880,
+    "sha256": "5ee28240abfb41d9138b1f3c923f114efc42bc96866b702a2401f4f0f271f785"
+  },
+  "sources/images/B02_codex-clipboard-4044dfbc-3d5b-4643-aec6-4dc470a2c46f.png": {
+    "bytes": 659556,
+    "sha256": "3c2d247d74fcfdbb7d965ff017f46e326e1e9c8fd015daf8c127e62d13561059"
+  },
+  "sources/images/B03_codex-clipboard-55b98147-7b28-4ba3-88b1-1a274299e31a.png": {
+    "bytes": 581027,
+    "sha256": "05b9956e604af603c8ca1b737ea5b216a2c58a889d82981303ad58941174e829"
+  },
+  "sources/images/B04_codex-clipboard-e0bb78d1-958c-4df6-ac29-f5f0f7e4e939.png": {
+    "bytes": 655212,
+    "sha256": "1b4c666a77c358fc71b844ffb72ace8b68bf0f3f1f4d23b13b35514463c0d9bb"
+  },
+  "sources/images/B05_codex-clipboard-ffc3aa1e-f55f-411a-bcc5-e18b701769c7.png": {
+    "bytes": 483034,
+    "sha256": "707a7657a379e4ce91d0be02032c62963b806fb972274adb97da9760c48d2611"
+  },
+  "sources/images/B06_codex-clipboard-12cbc0e6-32f8-4eda-804b-1662b9d10d4f.png": {
+    "bytes": 345198,
+    "sha256": "233b0764d5a88695f27bf9df245d51960a306f5d0651638a271806c3d29fab61"
+  },
+  "sources/screenshots.csv": {
+    "bytes": 3595,
+    "sha256": "8df6affeb95c4f6ca467d87947d8ba25168b9c5fdd06688f419c937b6efc036e"
+  },
+  "START_HERE_CLAUDE.md": {
+    "bytes": 2692,
+    "sha256": "f7b0d1953797cc2b0669028494eb9ebbb0bd6dd1026480f90e8874180c086187"
+  },
+  "tools/import_salesforce.py": {
+    "bytes": 10052,
+    "sha256": "3e5424619949be9da34e5feea2e4c84806dee5368de29215e7f9f55a4d6f28dd"
+  },
+  "tools/test_importer.py": {
+    "bytes": 2827,
+    "sha256": "44f1cb4206b6530269cd26e4d951b7ac8dbbcf9b1450665cc0f07c1e11f9f600"
+  },
+  "validation/counts.json": {
+    "bytes": 480,
+    "sha256": "6b8615a323f1c24dbab817a7983081076accfcba1fdfb7b664c6a73685792148"
+  },
+  "validation/offline_import_check.json": {
+    "bytes": 430,
+    "sha256": "ee61e0566df2115490322d71c5f43d97b29947afd29818748c51070c4a597322"
+  },
+  "validation/REPORT.json": {
+    "bytes": 1141,
+    "sha256": "3dfccea075e91f950a2168c78ca58b0f8c329ffcd9f94a22ac7a4e3a6bc4404f"
+  },
+  "validation/tests.txt": {
+    "bytes": 1010,
+    "sha256": "6192c421d143e26184275c632411e73fb2f478ff107c56e83e29cb2a4838a5b5"
+  }
+}

@@ -1,0 +1,7 @@
+flowchart LR
+    A["Salesforce: Leads, Contacts, Campaigns, Opportunities"] --> B["Apache NiFi: Extract and load"]
+    B --> C[("Database: raw Salesforce tables")]
+    C --> D["dbt: clean, join and test"]
+    E["Student and academic systems"] --> B
+    D --> F[("Reporting tables")]
+    F --> G["Power BI"]

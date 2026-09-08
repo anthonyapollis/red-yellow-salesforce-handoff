@@ -1,0 +1,13 @@
+{
+  "notice": "Historical example aliases, not loadable Salesforce IDs.",
+  "offering_aliases": {
+    "OF001": "RY-OFFER-021",
+    "OF002": "RY-OFFER-016",
+    "OF003": "RY-OFFER-020",
+    "OF004": "RY-OFFER-018",
+    "OF005": "RY-OFFER-006",
+    "OF006": "RY-OFFER-009",
+    "OF007": "RY-OFFER-045",
+    "OF008": "RY-OFFER-042"
+  }
+}

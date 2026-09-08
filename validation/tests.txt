@@ -1,0 +1,15 @@
+test_broken_parent_rejected (__main__.ImportTests.test_broken_parent_rejected) ... ok
+test_campaign_member_xor (__main__.ImportTests.test_campaign_member_xor) ... ok
+test_duplicate_key_rejected (__main__.ImportTests.test_duplicate_key_rejected) ... ok
+test_enquire_not_zero (__main__.ImportTests.test_enquire_not_zero) ... ok
+test_payload_resolves_parent_and_numeric_and_omits_blank (__main__.ImportTests.test_payload_resolves_parent_and_numeric_and_omits_blank) ... ok
+test_percent_range_rejected (__main__.ImportTests.test_percent_range_rejected) ... ok
+test_plain_http_rejected (__main__.ImportTests.test_plain_http_rejected) ... ok
+test_progress_grain_rejected (__main__.ImportTests.test_progress_grain_rejected) ... ok
+test_student_application_consistency (__main__.ImportTests.test_student_application_consistency) ... ok
+test_valid_package (__main__.ImportTests.test_valid_package) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.416s
+
+OK

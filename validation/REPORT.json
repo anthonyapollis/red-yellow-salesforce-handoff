@@ -1,0 +1,35 @@
+{
+  "status": "PASS - LOCAL VALIDATION ONLY",
+  "tests_passed": 10,
+  "metadata_xml_files_parsed": 74,
+  "catalogue_observations": 89,
+  "programme_records": 83,
+  "offering_records": 89,
+  "dated_intakes": 47,
+  "fictional_demo_records": 22,
+  "source_screenshots_included": 17,
+  "diagram_sources": 4,
+  "checks": [
+    "CSV target fields match schema",
+    "Every reference resolves",
+    "External IDs unique",
+    "Campaign/enquiry lead-contact XOR",
+    "Student-applicant consistency",
+    "Unique progress enrolment/week",
+    "Percent ranges",
+    "Unknown prices preserved",
+    "JSON/CSV parity",
+    "Metadata XML well formed",
+    "Lookup relationship names unique per parent",
+    "Importer AST valid",
+    "10 offline tests passed"
+  ],
+  "not_performed": [
+    "Live Salesforce deployment",
+    "Live Salesforce import",
+    "Live org permissions/flows/validation rules check",
+    "Live website price verification",
+    "Mermaid browser rendering"
+  ],
+  "notes": "Metadata XML parsing is not Salesforce Metadata API validation. Source is portable; HTML Mermaid rendering needs internet."
+}

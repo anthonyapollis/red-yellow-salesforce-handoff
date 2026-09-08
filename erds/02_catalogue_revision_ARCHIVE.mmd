@@ -1,0 +1,62 @@
+erDiagram
+    PROGRAMME ||--o{ PROGRAMME_OFFERING : available_as
+    PROGRAMME_OFFERING ||--o{ INTAKE : scheduled_for
+    CONTACT ||--o{ PROGRAMME_ENQUIRY : makes
+    PROGRAMME_OFFERING ||--o{ PROGRAMME_ENQUIRY : receives
+    CONTACT ||--o{ APPLICATION : submits
+    INTAKE ||--o{ APPLICATION : receives
+    APPLICATION ||--o| ENROLMENT : becomes
+    PROGRAMME {
+        string programme_id PK
+        string programme_name
+        string qualification_type
+        string listed_awarding_or_quality_body
+    }
+    PROGRAMME_OFFERING {
+        string offering_id PK
+        string programme_id FK
+        string delivery_mode
+        string study_pace
+        int duration_value
+        string duration_unit
+        string source_url
+    }
+    INTAKE {
+        string intake_id PK
+        string offering_id FK
+        date start_date
+        decimal advertised_fee
+        string currency
+        string price_status
+        datetime observed_at
+    }
+    CONTACT {
+        string contact_id PK
+        string salesforce_contact_id UK
+        string full_name
+        string email
+    }
+    PROGRAMME_ENQUIRY {
+        string enquiry_id PK
+        string contact_id FK
+        string offering_id FK
+        datetime enquiry_date
+        string channel
+        string status
+    }
+    APPLICATION {
+        string application_id PK
+        string contact_id FK
+        string intake_id FK
+        string salesforce_opportunity_id
+        date application_date
+        string status
+    }
+    ENROLMENT {
+        string enrolment_id PK
+        string application_id FK
+        string student_id FK
+        date enrolment_date
+        decimal agreed_fee
+        string status
+    }
