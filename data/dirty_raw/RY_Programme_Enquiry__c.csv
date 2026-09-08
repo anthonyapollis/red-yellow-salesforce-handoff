@@ -1,0 +1,3 @@
+RY_External_ID__c,Contact_Key,Lead_Key,Offering_Key,Enquiry_Date__c,Channel__c,Status__c
+RY-DIRTY-DEMO-ENQ-001,RY-DIRTY-DEMO-CON-001,,RY-DIRTY-OFFER-021,2026-08-15,web form,Application received
+RY-DIRTY-DEMO-ENQ-002,,,RY-DIRTY-OFFER-060,2026-09-01,Website,new 

@@ -1,0 +1,3 @@
+RY_External_ID__c,Name,IsActive,StartDate,RY_Channel__c,RY_Spend_ZAR__c
+RY-DIRTY-DEMO-CAM-001,DEMO - September Data Courses,false,2026-08-01,paid_social ,20000
+RY-DIRTY-DEMO-CAM-001-DUP01,demo - september data courses ,false,2026-08-01,paid_social ,20000

@@ -1,7 +1,7 @@
 [
   {
     "object": "RY_Programme__c",
-    "file": "data/dirty_loadable/RY_Programme__c.csv",
+    "file": "data/catalogue/RY_Programme__c.csv",
     "group": "catalogue",
     "external_id": "RY_External_ID__c",
     "references": {},
@@ -11,7 +11,7 @@
   },
   {
     "object": "RY_Programme_Offering__c",
-    "file": "data/dirty_loadable/RY_Programme_Offering__c.csv",
+    "file": "data/catalogue/RY_Programme_Offering__c.csv",
     "group": "catalogue",
     "external_id": "RY_External_ID__c",
     "references": {
@@ -27,7 +27,7 @@
   },
   {
     "object": "RY_Intake__c",
-    "file": "data/dirty_loadable/RY_Intake__c.csv",
+    "file": "data/catalogue/RY_Intake__c.csv",
     "group": "catalogue",
     "external_id": "RY_External_ID__c",
     "references": {
@@ -43,7 +43,7 @@
   },
   {
     "object": "Account",
-    "file": "data/dirty_loadable/Account.csv",
+    "file": "data/demo/Account.csv",
     "group": "demo",
     "external_id": "RY_External_ID__c",
     "references": {},
@@ -51,7 +51,7 @@
   },
   {
     "object": "Contact",
-    "file": "data/dirty_loadable/Contact.csv",
+    "file": "data/demo/Contact.csv",
     "group": "demo",
     "external_id": "RY_External_ID__c",
     "references": {
@@ -66,7 +66,7 @@
   },
   {
     "object": "Lead",
-    "file": "data/dirty_loadable/Lead.csv",
+    "file": "data/demo/Lead.csv",
     "group": "demo",
     "external_id": "RY_External_ID__c",
     "references": {},
@@ -77,7 +77,7 @@
   },
   {
     "object": "Campaign",
-    "file": "data/dirty_loadable/Campaign.csv",
+    "file": "data/demo/Campaign.csv",
     "group": "demo",
     "external_id": "RY_External_ID__c",
     "references": {},
@@ -85,7 +85,7 @@
   },
   {
     "object": "CampaignMember",
-    "file": "data/dirty_loadable/CampaignMember.csv",
+    "file": "data/demo/CampaignMember.csv",
     "group": "demo",
     "external_id": "RY_External_ID__c",
     "references": {
@@ -108,7 +108,7 @@
   },
   {
     "object": "Opportunity",
-    "file": "data/dirty_loadable/Opportunity.csv",
+    "file": "data/demo/Opportunity.csv",
     "group": "demo",
     "external_id": "RY_External_ID__c",
     "references": {
@@ -138,7 +138,7 @@
   },
   {
     "object": "RY_Programme_Enquiry__c",
-    "file": "data/dirty_loadable/RY_Programme_Enquiry__c.csv",
+    "file": "data/demo/RY_Programme_Enquiry__c.csv",
     "group": "demo",
     "external_id": "RY_External_ID__c",
     "references": {
@@ -161,7 +161,7 @@
   },
   {
     "object": "RY_Application__c",
-    "file": "data/dirty_loadable/RY_Application__c.csv",
+    "file": "data/demo/RY_Application__c.csv",
     "group": "demo",
     "external_id": "RY_External_ID__c",
     "references": {
@@ -186,7 +186,7 @@
   },
   {
     "object": "RY_Student__c",
-    "file": "data/dirty_loadable/RY_Student__c.csv",
+    "file": "data/demo/RY_Student__c.csv",
     "group": "demo",
     "external_id": "RY_External_ID__c",
     "references": {
@@ -201,7 +201,7 @@
   },
   {
     "object": "RY_Enrolment__c",
-    "file": "data/dirty_loadable/RY_Enrolment__c.csv",
+    "file": "data/demo/RY_Enrolment__c.csv",
     "group": "demo",
     "external_id": "RY_External_ID__c",
     "references": {
@@ -221,7 +221,7 @@
   },
   {
     "object": "RY_Student_Progress__c",
-    "file": "data/dirty_loadable/RY_Student_Progress__c.csv",
+    "file": "data/demo/RY_Student_Progress__c.csv",
     "group": "demo",
     "external_id": "RY_External_ID__c",
     "references": {

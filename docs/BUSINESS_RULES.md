@@ -1,3 +1,6 @@
+# DIRTY-DATA EXERCISE UPDATE
+Original reference assumptions/rules follow below. The user now requires deliberately dirty data: default imports use data/dirty_loadable. Semantic rules below are intentionally violated in selected records; treat them as profiling checks, not automatic cleaning instructions. See DIRTY_DATA_GUIDE.md and ISSUE_REGISTER.csv. Original source observations remain unchanged.
+
 # Business rules
 The ERD represents intended business rules. Scaffold lookup fields are optional for staged loads. The local validator checks this seed; implement relevant validation/uniqueness in the org before ongoing use.
 

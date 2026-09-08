@@ -1,3 +1,6 @@
+# CURRENT DEFAULT: INTENTIONALLY DIRTY
+The default plan reads data/dirty_loadable. Use --include-demo for the complete dirty CRM/student scenario. Preserve semantic defects. data/dirty_raw must not be imported directly. The original clean plan is archived as salesforce/reference_clean_import_plan.json; the CLI uses import_plan.json only. See DIRTY_DATA_GUIDE.md.
+
 # Import guide
 Inspect and authenticate the intended org first. Map to existing education objects if appropriate.
 

@@ -1,606 +1,592 @@
 {
   "RY_Programme__c": [
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-001",
+      "RY_External_ID__c": "RY-PROG-001",
       "Title__c": "Advanced Diploma in Copywriting",
-      "Category__c": "advanced diploma ",
+      "Category__c": "Advanced diploma",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-002",
+      "RY_External_ID__c": "RY-PROG-002",
       "Title__c": "Bachelor of Arts Honours in Visual Communication Design",
       "Category__c": "Postgraduate programme",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-003",
+      "RY_External_ID__c": "RY-PROG-003",
       "Title__c": "Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing",
       "Category__c": "Certificate",
       "Credential_Text__c": "",
       "Listed_Body__c": "Quality Council for Trades and Occupations (QCTO)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-004",
+      "RY_External_ID__c": "RY-PROG-004",
       "Title__c": "Bachelor of Arts in Visual Communication",
-      "Category__c": "degree ",
+      "Category__c": "Degree",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-005",
+      "RY_External_ID__c": "RY-PROG-005",
       "Title__c": "Bachelor of Business Administration in Marketing and Brand Management",
       "Category__c": "Degree",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-006",
+      "RY_External_ID__c": "RY-PROG-006",
       "Title__c": "Bachelor of Commerce in Marketing",
       "Category__c": "Degree",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-007",
+      "RY_External_ID__c": "RY-PROG-007",
       "Title__c": "Advanced Diploma in User Centered Design",
-      "Category__c": "advanced diploma ",
+      "Category__c": "Advanced diploma",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-008",
+      "RY_External_ID__c": "RY-PROG-008",
       "Title__c": "Postgraduate Diploma: Creative Leadership",
       "Category__c": "Postgraduate programme",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-009",
+      "RY_External_ID__c": "RY-PROG-009",
       "Title__c": "Higher Certificate in Business Management",
       "Category__c": "Certificate",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-010",
+      "RY_External_ID__c": "RY-PROG-010",
       "Title__c": "Higher Certificate in Creating Digital Content",
-      "Category__c": "certificate ",
+      "Category__c": "Certificate",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-011",
+      "RY_External_ID__c": "RY-PROG-011",
       "Title__c": "Higher Certificate in Graphic Design",
       "Category__c": "Certificate",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-012",
+      "RY_External_ID__c": "RY-PROG-012",
       "Title__c": "Higher Certificate in Marketing and Branding",
       "Category__c": "Certificate",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-013",
+      "RY_External_ID__c": "RY-PROG-013",
       "Title__c": "Postgraduate Diploma in Management",
-      "Category__c": "postgraduate programme ",
+      "Category__c": "Postgraduate programme",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-014",
+      "RY_External_ID__c": "RY-PROG-014",
       "Title__c": "Postgraduate Diploma in Digital Marketing",
       "Category__c": "Postgraduate programme",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-015",
+      "RY_External_ID__c": "RY-PROG-015",
       "Title__c": "Advanced Diploma in Marketing & Advertising Communications",
       "Category__c": "Advanced diploma",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-016",
+      "RY_External_ID__c": "RY-PROG-016",
       "Title__c": "Design Thinking",
-      "Category__c": "short course ",
+      "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-017",
+      "RY_External_ID__c": "RY-PROG-017",
       "Title__c": "Performance Marketing",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-018",
+      "RY_External_ID__c": "RY-PROG-018",
       "Title__c": "Graphic Design Beginner",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-019",
+      "RY_External_ID__c": "RY-PROG-019",
       "Title__c": "User Experience Design",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-020",
+      "RY_External_ID__c": "RY-PROG-020",
       "Title__c": "Business Analysis",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-021",
+      "RY_External_ID__c": "RY-PROG-021",
       "Title__c": "Data Analysis",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-022",
+      "RY_External_ID__c": "RY-PROG-022",
       "Title__c": "Storytelling for Impact & Influence",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-023",
+      "RY_External_ID__c": "RY-PROG-023",
       "Title__c": "Interior Decorating",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-024",
+      "RY_External_ID__c": "RY-PROG-024",
       "Title__c": "Creative Thinking",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-025",
+      "RY_External_ID__c": "RY-PROG-025",
       "Title__c": "Project Management",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-026",
+      "RY_External_ID__c": "RY-PROG-026",
       "Title__c": "Media Planning",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-027",
+      "RY_External_ID__c": "RY-PROG-027",
       "Title__c": "Mentorship",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-028",
+      "RY_External_ID__c": "RY-PROG-028",
       "Title__c": "Sales & Account Management",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-029",
+      "RY_External_ID__c": "RY-PROG-029",
       "Title__c": "Digital Content & Copywriting",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-030",
+      "RY_External_ID__c": "RY-PROG-030",
       "Title__c": "Copywriting",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-031",
+      "RY_External_ID__c": "RY-PROG-031",
       "Title__c": "Data Visualisation for Designers",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-032",
+      "RY_External_ID__c": "RY-PROG-032",
       "Title__c": "Graphic Design Intermediate with Adobe Photoshop",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-033",
+      "RY_External_ID__c": "RY-PROG-033",
       "Title__c": "Customer Experience",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-034",
+      "RY_External_ID__c": "RY-PROG-034",
       "Title__c": "Data Analysis for Marketers",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-035",
+      "RY_External_ID__c": "RY-PROG-035",
       "Title__c": "Marketing Strategy",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-036",
+      "RY_External_ID__c": "RY-PROG-036",
       "Title__c": "Digital Marketing Professional",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-037",
+      "RY_External_ID__c": "RY-PROG-037",
       "Title__c": "Social Media Marketing",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-038",
+      "RY_External_ID__c": "RY-PROG-038",
       "Title__c": "Desktop Publishing with InDesign",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-039",
+      "RY_External_ID__c": "RY-PROG-039",
       "Title__c": "Shopper Marketing",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-040",
+      "RY_External_ID__c": "RY-PROG-040",
       "Title__c": "Part-Time Postgraduate Diploma in Management",
       "Category__c": "Postgraduate programme",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-041",
+      "RY_External_ID__c": "RY-PROG-041",
       "Title__c": "Part-Time Higher Certificate in Business Management",
       "Category__c": "Certificate",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-042",
+      "RY_External_ID__c": "RY-PROG-042",
       "Title__c": "Part-Time Higher Certificate in Marketing and Branding",
       "Category__c": "Certificate",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-043",
+      "RY_External_ID__c": "RY-PROG-043",
       "Title__c": "Brand as Capital",
       "Category__c": "Executive education",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-044",
+      "RY_External_ID__c": "RY-PROG-044",
       "Title__c": "Rebel Leadership",
       "Category__c": "Executive education",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-045",
+      "RY_External_ID__c": "RY-PROG-045",
       "Title__c": "Management Development Programme: Agency Leadership",
       "Category__c": "Executive education",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-046",
+      "RY_External_ID__c": "RY-PROG-046",
       "Title__c": "Sports Sponsorship Marketing",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-047",
+      "RY_External_ID__c": "RY-PROG-047",
       "Title__c": "Sustainable Marketing",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-048",
+      "RY_External_ID__c": "RY-PROG-048",
       "Title__c": "Operational Finance",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-049",
+      "RY_External_ID__c": "RY-PROG-049",
       "Title__c": "Part-Time Postgraduate Diploma in Digital Marketing",
       "Category__c": "Postgraduate programme",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-050",
+      "RY_External_ID__c": "RY-PROG-050",
       "Title__c": "Part-Time Higher Certificate in Graphic Design",
       "Category__c": "Certificate",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-051",
+      "RY_External_ID__c": "RY-PROG-051",
       "Title__c": "Strategic Foresight for Leaders",
       "Category__c": "Executive education",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-052",
+      "RY_External_ID__c": "RY-PROG-052",
       "Title__c": "AI & Executive Judgement",
       "Category__c": "Executive education",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-053",
+      "RY_External_ID__c": "RY-PROG-053",
       "Title__c": "People Management",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-054",
+      "RY_External_ID__c": "RY-PROG-054",
       "Title__c": "Public Relations",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-055",
+      "RY_External_ID__c": "RY-PROG-055",
       "Title__c": "Account Leadership",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-056",
+      "RY_External_ID__c": "RY-PROG-056",
       "Title__c": "B2B Marketing",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-057",
+      "RY_External_ID__c": "RY-PROG-057",
       "Title__c": "AI for Copywriting",
       "Category__c": "Micro course",
       "Credential_Text__c": "",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-058",
+      "RY_External_ID__c": "RY-PROG-058",
       "Title__c": "AI for Design Thinking",
       "Category__c": "Micro course",
       "Credential_Text__c": "",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-059",
+      "RY_External_ID__c": "RY-PROG-059",
       "Title__c": "AI for Educators",
       "Category__c": "Micro course",
       "Credential_Text__c": "",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-060",
+      "RY_External_ID__c": "RY-PROG-060",
       "Title__c": "AI for HR",
       "Category__c": "Micro course",
       "Credential_Text__c": "",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-061",
+      "RY_External_ID__c": "RY-PROG-061",
       "Title__c": "AI for Management Insights",
       "Category__c": "Micro course",
       "Credential_Text__c": "",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-062",
+      "RY_External_ID__c": "RY-PROG-062",
       "Title__c": "AI for User Experience",
       "Category__c": "Micro course",
       "Credential_Text__c": "",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-063",
+      "RY_External_ID__c": "RY-PROG-063",
       "Title__c": "Prompt Engineering",
       "Category__c": "Micro course",
       "Credential_Text__c": "",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-064",
+      "RY_External_ID__c": "RY-PROG-064",
       "Title__c": "Responsible Advertising and the Advertising Regulatory Board",
       "Category__c": "Micro course",
       "Credential_Text__c": "",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-065",
+      "RY_External_ID__c": "RY-PROG-065",
       "Title__c": "Responsible Influencer Marketing",
       "Category__c": "Micro course",
       "Credential_Text__c": "",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-066",
+      "RY_External_ID__c": "RY-PROG-066",
       "Title__c": "AI for Graphic Designers",
       "Category__c": "Micro course",
       "Credential_Text__c": "",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-067",
+      "RY_External_ID__c": "RY-PROG-067",
       "Title__c": "Generative AI for Business",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-068",
+      "RY_External_ID__c": "RY-PROG-068",
       "Title__c": "Work Readiness",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-069",
+      "RY_External_ID__c": "RY-PROG-069",
       "Title__c": "Instructional Design",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-070",
+      "RY_External_ID__c": "RY-PROG-070",
       "Title__c": "Customer Service Course",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-071",
+      "RY_External_ID__c": "RY-PROG-071",
       "Title__c": "Digital Marketing",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-072",
+      "RY_External_ID__c": "RY-PROG-072",
       "Title__c": "Search Engine Optimisation",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-073",
+      "RY_External_ID__c": "RY-PROG-073",
       "Title__c": "Front-End Web Development",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-074",
+      "RY_External_ID__c": "RY-PROG-074",
       "Title__c": "Website Design",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-075",
+      "RY_External_ID__c": "RY-PROG-075",
       "Title__c": "MarTech & CRM Strategy",
       "Category__c": "Short course",
       "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-076",
+      "RY_External_ID__c": "RY-PROG-076",
       "Title__c": "ACA Graduate Programme for Agencies",
       "Category__c": "Qualification",
       "Credential_Text__c": "",
       "Listed_Body__c": "Skills Education Training Authority (SETA)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-077",
+      "RY_External_ID__c": "RY-PROG-077",
       "Title__c": "Part-Time Advanced Diploma in Digital Marketing",
       "Category__c": "Advanced diploma",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-078",
+      "RY_External_ID__c": "RY-PROG-078",
       "Title__c": "Design Thinking Practitioner",
       "Category__c": "Qualification",
       "Credential_Text__c": "",
       "Listed_Body__c": "Quality Council for Trades and Occupations (QCTO)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-079",
+      "RY_External_ID__c": "RY-PROG-079",
       "Title__c": "Project Manager",
       "Category__c": "Qualification",
       "Credential_Text__c": "",
       "Listed_Body__c": "Quality Council for Trades and Occupations (QCTO)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-080",
+      "RY_External_ID__c": "RY-PROG-080",
       "Title__c": "Part-Time Advanced Diploma in User Centered Design",
       "Category__c": "Advanced diploma",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-081",
+      "RY_External_ID__c": "RY-PROG-081",
       "Title__c": "Part-Time Advanced Diploma in Copywriting",
       "Category__c": "Advanced diploma",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-082",
+      "RY_External_ID__c": "RY-PROG-082",
       "Title__c": "Part-Time Advanced Diploma in Marketing & Advertising Communications",
       "Category__c": "Advanced diploma",
       "Credential_Text__c": "",
       "Listed_Body__c": "Council on Higher Education (CHE)"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-083",
+      "RY_External_ID__c": "RY-PROG-083",
       "Title__c": "Bachelor of Business Administration: Marketing and Brand Management",
       "Category__c": "Degree",
       "Credential_Text__c": "",
-      "Listed_Body__c": ""
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-PROG-001-DUP01",
-      "Title__c": "advanced diploma in copywriting ",
-      "Category__c": "advanced diploma ",
-      "Credential_Text__c": "",
-      "Listed_Body__c": "Council on Higher Education (CHE)"
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-PROG-021-DUP02",
-      "Title__c": "DATA ANALYSIS",
-      "Category__c": "Short course",
-      "Credential_Text__c": "R&Y Certificate of Completion",
       "Listed_Body__c": ""
     }
   ],
   "RY_Programme_Offering__c": [
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-001",
-      "Programme_Key": "RY-DIRTY-PROG-001",
-      "Title__c": "  ADVANCED DIPLOMA IN COPYWRITING  ",
+      "RY_External_ID__c": "RY-OFFER-001",
+      "Programme_Key": "RY-PROG-001",
+      "Title__c": "Advanced Diploma in Copywriting",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
       "Study_Pace__c": "Not stated",
@@ -611,11 +597,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated."
+      "Notes__c": "No visible start date; no intake fabricated."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-002",
-      "Programme_Key": "RY-DIRTY-PROG-002",
+      "RY_External_ID__c": "RY-OFFER-002",
+      "Programme_Key": "RY-PROG-002",
       "Title__c": "Bachelor of Arts Honours in Visual Communication Design",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -627,11 +613,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated."
+      "Notes__c": "No visible start date; no intake fabricated."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-003",
-      "Programme_Key": "RY-DIRTY-PROG-003",
+      "RY_External_ID__c": "RY-OFFER-003",
+      "Programme_Key": "RY-PROG-003",
       "Title__c": "Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -643,11 +629,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. "
+      "Notes__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-004",
-      "Programme_Key": "RY-DIRTY-PROG-004",
+      "RY_External_ID__c": "RY-OFFER-004",
+      "Programme_Key": "RY-PROG-004",
       "Title__c": "Bachelor of Arts in Visual Communication",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -659,11 +645,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated."
+      "Notes__c": "No visible start date; no intake fabricated."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-005",
-      "Programme_Key": "RY-DIRTY-PROG-005",
+      "RY_External_ID__c": "RY-OFFER-005",
+      "Programme_Key": "RY-PROG-005",
       "Title__c": "Bachelor of Business Administration in Marketing and Brand Management",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -675,12 +661,12 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated."
+      "Notes__c": "No visible start date; no intake fabricated."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-006",
-      "Programme_Key": "RY-DIRTY-PROG-006",
-      "Title__c": "  BACHELOR OF COMMERCE IN MARKETING  ",
+      "RY_External_ID__c": "RY-OFFER-006",
+      "Programme_Key": "RY-PROG-006",
+      "Title__c": "Bachelor of Commerce in Marketing",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
       "Study_Pace__c": "Not stated",
@@ -691,11 +677,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated."
+      "Notes__c": "No visible start date; no intake fabricated."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-007",
-      "Programme_Key": "RY-DIRTY-PROG-007",
+      "RY_External_ID__c": "RY-OFFER-007",
+      "Programme_Key": "RY-PROG-007",
       "Title__c": "Advanced Diploma in User Centered Design",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -707,11 +693,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated."
+      "Notes__c": "No visible start date; no intake fabricated."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-008",
-      "Programme_Key": "RY-DIRTY-PROG-008",
+      "RY_External_ID__c": "RY-OFFER-008",
+      "Programme_Key": "RY-PROG-008",
       "Title__c": "Postgraduate Diploma: Creative Leadership",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -723,11 +709,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated."
+      "Notes__c": "No visible start date; no intake fabricated."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-009",
-      "Programme_Key": "RY-DIRTY-PROG-009",
+      "RY_External_ID__c": "RY-OFFER-009",
+      "Programme_Key": "RY-PROG-009",
       "Title__c": "Higher Certificate in Business Management",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -739,11 +725,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. "
+      "Notes__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-010",
-      "Programme_Key": "RY-DIRTY-PROG-010",
+      "RY_External_ID__c": "RY-OFFER-010",
+      "Programme_Key": "RY-PROG-010",
       "Title__c": "Higher Certificate in Creating Digital Content",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -755,12 +741,12 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A03,A04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated."
+      "Notes__c": "No visible start date; no intake fabricated."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-011",
-      "Programme_Key": "RY-DIRTY-PROG-011",
-      "Title__c": "  HIGHER CERTIFICATE IN GRAPHIC DESIGN  ",
+      "RY_External_ID__c": "RY-OFFER-011",
+      "Programme_Key": "RY-PROG-011",
+      "Title__c": "Higher Certificate in Graphic Design",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
       "Study_Pace__c": "Not stated",
@@ -771,11 +757,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A03,A04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated."
+      "Notes__c": "No visible start date; no intake fabricated."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-012",
-      "Programme_Key": "RY-DIRTY-PROG-012",
+      "RY_External_ID__c": "RY-OFFER-012",
+      "Programme_Key": "RY-PROG-012",
       "Title__c": "Higher Certificate in Marketing and Branding",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -787,11 +773,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A03,A04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. "
+      "Notes__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-013",
-      "Programme_Key": "RY-DIRTY-PROG-013",
+      "RY_External_ID__c": "RY-OFFER-013",
+      "Programme_Key": "RY-PROG-013",
       "Title__c": "Postgraduate Diploma in Management",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -803,11 +789,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. "
+      "Notes__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-014",
-      "Programme_Key": "RY-DIRTY-PROG-014",
+      "RY_External_ID__c": "RY-OFFER-014",
+      "Programme_Key": "RY-PROG-014",
       "Title__c": "Postgraduate Diploma in Digital Marketing",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -819,11 +805,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. "
+      "Notes__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-015",
-      "Programme_Key": "RY-DIRTY-PROG-015",
+      "RY_External_ID__c": "RY-OFFER-015",
+      "Programme_Key": "RY-PROG-015",
       "Title__c": "Advanced Diploma in Marketing & Advertising Communications",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -835,141 +821,141 @@
       "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
       "Source_Refs__c": "A04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated."
+      "Notes__c": "No visible start date; no intake fabricated."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-016",
-      "Programme_Key": "RY-DIRTY-PROG-016",
-      "Title__c": "  DESIGN THINKING  ",
+      "RY_External_ID__c": "RY-OFFER-016",
+      "Programme_Key": "RY-PROG-016",
+      "Title__c": "Design Thinking",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "10",
       "Duration_Unit__c": "Weeks",
-      "Advertised_Fee_ZAR__c": "135000",
+      "Advertised_Fee_ZAR__c": "13500",
       "Price_Status__c": "Published",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-017",
-      "Programme_Key": "RY-DIRTY-PROG-017",
+      "RY_External_ID__c": "RY-OFFER-017",
+      "Programme_Key": "RY-PROG-017",
       "Title__c": "Performance Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
-      "Duration_Unit__c": "wks",
-      "Advertised_Fee_ZAR__c": "135000",
+      "Duration_Unit__c": "Weeks",
+      "Advertised_Fee_ZAR__c": "13500",
       "Price_Status__c": "Published",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-018",
-      "Programme_Key": "RY-DIRTY-PROG-018",
+      "RY_External_ID__c": "RY-OFFER-018",
+      "Programme_Key": "RY-PROG-018",
       "Title__c": "Graphic Design Beginner",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "16",
       "Duration_Unit__c": "Weeks",
-      "Advertised_Fee_ZAR__c": "165000",
+      "Advertised_Fee_ZAR__c": "16500",
       "Price_Status__c": "Published",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-019",
-      "Programme_Key": "RY-DIRTY-PROG-019",
+      "RY_External_ID__c": "RY-OFFER-019",
+      "Programme_Key": "RY-PROG-019",
       "Title__c": "User Experience Design",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "10",
-      "Duration_Unit__c": "wks",
+      "Duration_Unit__c": "Weeks",
       "Advertised_Fee_ZAR__c": "",
       "Price_Status__c": "Not shown",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-020",
-      "Programme_Key": "RY-DIRTY-PROG-020",
+      "RY_External_ID__c": "RY-OFFER-020",
+      "Programme_Key": "RY-PROG-020",
       "Title__c": "Business Analysis",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "14",
       "Duration_Unit__c": "Weeks",
-      "Advertised_Fee_ZAR__c": "149000",
+      "Advertised_Fee_ZAR__c": "14900",
       "Price_Status__c": "Published",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-021",
-      "Programme_Key": "RY-DIRTY-PROG-021",
-      "Title__c": "  DATA ANALYSIS  ",
+      "RY_External_ID__c": "RY-OFFER-021",
+      "Programme_Key": "RY-PROG-021",
+      "Title__c": "Data Analysis",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
-      "Advertised_Fee_ZAR__c": "135000",
+      "Advertised_Fee_ZAR__c": "13500",
       "Price_Status__c": "Published",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-022",
-      "Programme_Key": "RY-DIRTY-PROG-022",
+      "RY_External_ID__c": "RY-OFFER-022",
+      "Programme_Key": "RY-PROG-022",
       "Title__c": "Storytelling for Impact & Influence",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
-      "Duration_Value__c": "60",
+      "Duration_Value__c": "6",
       "Duration_Unit__c": "Weeks",
       "Advertised_Fee_ZAR__c": "6500",
       "Price_Status__c": "Published",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-023",
-      "Programme_Key": "RY-DIRTY-PROG-023",
+      "RY_External_ID__c": "RY-OFFER-023",
+      "Programme_Key": "RY-PROG-023",
       "Title__c": "Interior Decorating",
-      "Catalogue_Section__c": "online-ed",
+      "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
-      "Duration_Unit__c": "wks",
+      "Duration_Unit__c": "Weeks",
       "Advertised_Fee_ZAR__c": "16500",
       "Price_Status__c": "Published",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-024",
-      "Programme_Key": "RY-DIRTY-PROG-024",
+      "RY_External_ID__c": "RY-OFFER-024",
+      "Programme_Key": "RY-PROG-024",
       "Title__c": "Creative Thinking",
-      "Catalogue_Section__c": "ONLINE EDUCATION ",
+      "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "7",
@@ -979,11 +965,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-025",
-      "Programme_Key": "RY-DIRTY-PROG-025",
+      "RY_External_ID__c": "RY-OFFER-025",
+      "Programme_Key": "RY-PROG-025",
       "Title__c": "Project Management",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -992,18 +978,18 @@
       "Duration_Unit__c": "Weeks",
       "Advertised_Fee_ZAR__c": "13500",
       "Price_Status__c": "Published",
-      "Source_URL__c": "",
+      "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-026",
-      "Programme_Key": "RY-DIRTY-PROG-026",
-      "Title__c": "  MEDIA PLANNING  ",
+      "RY_External_ID__c": "RY-OFFER-026",
+      "Programme_Key": "RY-PROG-026",
+      "Title__c": "Media Planning",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
-      "Study_Pace__c": "Parttime",
+      "Study_Pace__c": "Not stated",
       "Duration_Value__c": "10",
       "Duration_Unit__c": "Weeks",
       "Advertised_Fee_ZAR__c": "13500",
@@ -1011,27 +997,27 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-027",
-      "Programme_Key": "RY-DIRTY-PROG-027",
+      "RY_External_ID__c": "RY-OFFER-027",
+      "Programme_Key": "RY-PROG-027",
       "Title__c": "Mentorship",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "online",
+      "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "6",
-      "Duration_Unit__c": "wks",
+      "Duration_Unit__c": "Weeks",
       "Advertised_Fee_ZAR__c": "6500",
       "Price_Status__c": "Published",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-028",
-      "Programme_Key": "RY-DIRTY-PROG-028",
+      "RY_External_ID__c": "RY-OFFER-028",
+      "Programme_Key": "RY-PROG-028",
       "Title__c": "Sales & Account Management",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1043,11 +1029,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-029",
-      "Programme_Key": "RY-DIRTY-PROG-029",
+      "RY_External_ID__c": "RY-OFFER-029",
+      "Programme_Key": "RY-PROG-029",
       "Title__c": "Digital Content & Copywriting",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1059,28 +1045,28 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-030",
-      "Programme_Key": "RY-DIRTY-PROG-030",
+      "RY_External_ID__c": "RY-OFFER-030",
+      "Programme_Key": "RY-PROG-030",
       "Title__c": "Copywriting",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
-      "Duration_Unit__c": "wks",
+      "Duration_Unit__c": "Weeks",
       "Advertised_Fee_ZAR__c": "13500",
       "Price_Status__c": "Published",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-031",
-      "Programme_Key": "RY-DIRTY-PROG-031",
-      "Title__c": "  DATA VISUALISATION FOR DESIGNERS  ",
+      "RY_External_ID__c": "RY-OFFER-031",
+      "Programme_Key": "RY-PROG-031",
+      "Title__c": "Data Visualisation for Designers",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
@@ -1091,11 +1077,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-032",
-      "Programme_Key": "RY-DIRTY-PROG-032",
+      "RY_External_ID__c": "RY-OFFER-032",
+      "Programme_Key": "RY-PROG-032",
       "Title__c": "Graphic Design Intermediate with Adobe Photoshop",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1107,11 +1093,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-033",
-      "Programme_Key": "RY-DIRTY-PROG-033",
+      "RY_External_ID__c": "RY-OFFER-033",
+      "Programme_Key": "RY-PROG-033",
       "Title__c": "Customer Experience",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1123,11 +1109,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-034",
-      "Programme_Key": "RY-DIRTY-PROG-034",
+      "RY_External_ID__c": "RY-OFFER-034",
+      "Programme_Key": "RY-PROG-034",
       "Title__c": "Data Analysis for Marketers",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1139,28 +1125,28 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-035",
-      "Programme_Key": "RY-DIRTY-PROG-003",
+      "RY_External_ID__c": "RY-OFFER-035",
+      "Programme_Key": "RY-PROG-003",
       "Title__c": "Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "1",
-      "Duration_Unit__c": "yrs",
+      "Duration_Unit__c": "Years",
       "Advertised_Fee_ZAR__c": "",
       "Price_Status__c": "Enquire",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-036",
-      "Programme_Key": "RY-DIRTY-PROG-035",
-      "Title__c": "  MARKETING STRATEGY  ",
+      "RY_External_ID__c": "RY-OFFER-036",
+      "Programme_Key": "RY-PROG-035",
+      "Title__c": "Marketing Strategy",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
@@ -1171,11 +1157,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-037",
-      "Programme_Key": "RY-DIRTY-PROG-036",
+      "RY_External_ID__c": "RY-OFFER-037",
+      "Programme_Key": "RY-PROG-036",
       "Title__c": "Digital Marketing Professional",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1187,11 +1173,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-038",
-      "Programme_Key": "RY-DIRTY-PROG-037",
+      "RY_External_ID__c": "RY-OFFER-038",
+      "Programme_Key": "RY-PROG-037",
       "Title__c": "Social Media Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1203,11 +1189,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-039",
-      "Programme_Key": "RY-DIRTY-PROG-038",
+      "RY_External_ID__c": "RY-OFFER-039",
+      "Programme_Key": "RY-PROG-038",
       "Title__c": "Desktop Publishing with InDesign",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1219,11 +1205,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-040",
-      "Programme_Key": "RY-DIRTY-PROG-039",
+      "RY_External_ID__c": "RY-OFFER-040",
+      "Programme_Key": "RY-PROG-039",
       "Title__c": "Shopper Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1235,12 +1221,12 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-041",
-      "Programme_Key": "RY-DIRTY-PROG-040",
-      "Title__c": "  PART-TIME POSTGRADUATE DIPLOMA IN MANAGEMENT  ",
+      "RY_External_ID__c": "RY-OFFER-041",
+      "Programme_Key": "RY-PROG-040",
+      "Title__c": "Part-Time Postgraduate Diploma in Management",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Part-time",
@@ -1251,11 +1237,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-042",
-      "Programme_Key": "RY-DIRTY-PROG-041",
+      "RY_External_ID__c": "RY-OFFER-042",
+      "Programme_Key": "RY-PROG-041",
       "Title__c": "Part-Time Higher Certificate in Business Management",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1267,11 +1253,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-043",
-      "Programme_Key": "RY-DIRTY-PROG-042",
+      "RY_External_ID__c": "RY-OFFER-043",
+      "Programme_Key": "RY-PROG-042",
       "Title__c": "Part-Time Higher Certificate in Marketing and Branding",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1283,11 +1269,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-044",
-      "Programme_Key": "RY-DIRTY-PROG-012",
+      "RY_External_ID__c": "RY-OFFER-044",
+      "Programme_Key": "RY-PROG-012",
       "Title__c": "Higher Certificate in Marketing and Branding",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1299,11 +1285,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-045",
-      "Programme_Key": "RY-DIRTY-PROG-009",
+      "RY_External_ID__c": "RY-OFFER-045",
+      "Programme_Key": "RY-PROG-009",
       "Title__c": "Higher Certificate in Business Management",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1315,12 +1301,12 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-046",
-      "Programme_Key": "RY-DIRTY-PROG-043",
-      "Title__c": "  BRAND AS CAPITAL  ",
+      "RY_External_ID__c": "RY-OFFER-046",
+      "Programme_Key": "RY-PROG-043",
+      "Title__c": "Brand as Capital",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
@@ -1331,11 +1317,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-047",
-      "Programme_Key": "RY-DIRTY-PROG-044",
+      "RY_External_ID__c": "RY-OFFER-047",
+      "Programme_Key": "RY-PROG-044",
       "Title__c": "Rebel Leadership",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1347,11 +1333,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-048",
-      "Programme_Key": "RY-DIRTY-PROG-045",
+      "RY_External_ID__c": "RY-OFFER-048",
+      "Programme_Key": "RY-PROG-045",
       "Title__c": "Management Development Programme: Agency Leadership",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1363,11 +1349,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-049",
-      "Programme_Key": "RY-DIRTY-PROG-046",
+      "RY_External_ID__c": "RY-OFFER-049",
+      "Programme_Key": "RY-PROG-046",
       "Title__c": "Sports Sponsorship Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1379,11 +1365,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-050",
-      "Programme_Key": "RY-DIRTY-PROG-047",
+      "RY_External_ID__c": "RY-OFFER-050",
+      "Programme_Key": "RY-PROG-047",
       "Title__c": "Sustainable Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1395,12 +1381,12 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-051",
-      "Programme_Key": "RY-DIRTY-PROG-048",
-      "Title__c": "  OPERATIONAL FINANCE  ",
+      "RY_External_ID__c": "RY-OFFER-051",
+      "Programme_Key": "RY-PROG-048",
+      "Title__c": "Operational Finance",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
@@ -1411,11 +1397,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-052",
-      "Programme_Key": "RY-DIRTY-PROG-049",
+      "RY_External_ID__c": "RY-OFFER-052",
+      "Programme_Key": "RY-PROG-049",
       "Title__c": "Part-Time Postgraduate Diploma in Digital Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1427,11 +1413,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-053",
-      "Programme_Key": "RY-DIRTY-PROG-050",
+      "RY_External_ID__c": "RY-OFFER-053",
+      "Programme_Key": "RY-PROG-050",
       "Title__c": "Part-Time Higher Certificate in Graphic Design",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1443,11 +1429,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Screenshot says 1 year; retained as shown despite other part-time certificates showing 2 years. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Screenshot says 1 year; retained as shown despite other part-time certificates showing 2 years. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-054",
-      "Programme_Key": "RY-DIRTY-PROG-051",
+      "RY_External_ID__c": "RY-OFFER-054",
+      "Programme_Key": "RY-PROG-051",
       "Title__c": "Strategic Foresight for Leaders",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1459,11 +1445,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-055",
-      "Programme_Key": "RY-DIRTY-PROG-052",
+      "RY_External_ID__c": "RY-OFFER-055",
+      "Programme_Key": "RY-PROG-052",
       "Title__c": "AI & Executive Judgement",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1475,12 +1461,12 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11,B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-056",
-      "Programme_Key": "RY-DIRTY-PROG-053",
-      "Title__c": "  PEOPLE MANAGEMENT  ",
+      "RY_External_ID__c": "RY-OFFER-056",
+      "Programme_Key": "RY-PROG-053",
+      "Title__c": "People Management",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
@@ -1491,11 +1477,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11,B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-057",
-      "Programme_Key": "RY-DIRTY-PROG-054",
+      "RY_External_ID__c": "RY-OFFER-057",
+      "Programme_Key": "RY-PROG-054",
       "Title__c": "Public Relations",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1507,11 +1493,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11,B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-058",
-      "Programme_Key": "RY-DIRTY-PROG-055",
+      "RY_External_ID__c": "RY-OFFER-058",
+      "Programme_Key": "RY-PROG-055",
       "Title__c": "Account Leadership",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1523,11 +1509,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-059",
-      "Programme_Key": "RY-DIRTY-PROG-056",
+      "RY_External_ID__c": "RY-OFFER-059",
+      "Programme_Key": "RY-PROG-056",
       "Title__c": "B2B Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1539,11 +1525,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-060",
-      "Programme_Key": "RY-DIRTY-PROG-057",
+      "RY_External_ID__c": "RY-OFFER-060",
+      "Programme_Key": "RY-PROG-057",
       "Title__c": "AI for Copywriting",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1555,11 +1541,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-061",
-      "Programme_Key": "RY-DIRTY-PROG-058",
+      "RY_External_ID__c": "RY-OFFER-061",
+      "Programme_Key": "RY-PROG-058",
       "Title__c": "AI for Design Thinking",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1571,11 +1557,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-062",
-      "Programme_Key": "RY-DIRTY-PROG-059",
+      "RY_External_ID__c": "RY-OFFER-062",
+      "Programme_Key": "RY-PROG-059",
       "Title__c": "AI for Educators",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1587,11 +1573,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-063",
-      "Programme_Key": "RY-DIRTY-PROG-060",
+      "RY_External_ID__c": "RY-OFFER-063",
+      "Programme_Key": "RY-PROG-060",
       "Title__c": "AI for HR",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1603,11 +1589,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-064",
-      "Programme_Key": "RY-DIRTY-PROG-061",
+      "RY_External_ID__c": "RY-OFFER-064",
+      "Programme_Key": "RY-PROG-061",
       "Title__c": "AI for Management Insights",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1619,11 +1605,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-065",
-      "Programme_Key": "RY-DIRTY-PROG-062",
+      "RY_External_ID__c": "RY-OFFER-065",
+      "Programme_Key": "RY-PROG-062",
       "Title__c": "AI for User Experience",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1635,11 +1621,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-066",
-      "Programme_Key": "RY-DIRTY-PROG-063",
+      "RY_External_ID__c": "RY-OFFER-066",
+      "Programme_Key": "RY-PROG-063",
       "Title__c": "Prompt Engineering",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1651,11 +1637,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-067",
-      "Programme_Key": "RY-DIRTY-PROG-064",
+      "RY_External_ID__c": "RY-OFFER-067",
+      "Programme_Key": "RY-PROG-064",
       "Title__c": "Responsible Advertising and the Advertising Regulatory Board",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1667,11 +1653,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-068",
-      "Programme_Key": "RY-DIRTY-PROG-065",
+      "RY_External_ID__c": "RY-OFFER-068",
+      "Programme_Key": "RY-PROG-065",
       "Title__c": "Responsible Influencer Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1683,11 +1669,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-069",
-      "Programme_Key": "RY-DIRTY-PROG-066",
+      "RY_External_ID__c": "RY-OFFER-069",
+      "Programme_Key": "RY-PROG-066",
       "Title__c": "AI for Graphic Designers",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1699,11 +1685,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-070",
-      "Programme_Key": "RY-DIRTY-PROG-067",
+      "RY_External_ID__c": "RY-OFFER-070",
+      "Programme_Key": "RY-PROG-067",
       "Title__c": "Generative AI for Business",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1715,11 +1701,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-071",
-      "Programme_Key": "RY-DIRTY-PROG-068",
+      "RY_External_ID__c": "RY-OFFER-071",
+      "Programme_Key": "RY-PROG-068",
       "Title__c": "Work Readiness",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1731,11 +1717,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-072",
-      "Programme_Key": "RY-DIRTY-PROG-069",
+      "RY_External_ID__c": "RY-OFFER-072",
+      "Programme_Key": "RY-PROG-069",
       "Title__c": "Instructional Design",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1747,11 +1733,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-073",
-      "Programme_Key": "RY-DIRTY-PROG-070",
+      "RY_External_ID__c": "RY-OFFER-073",
+      "Programme_Key": "RY-PROG-070",
       "Title__c": "Customer Service Course",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1763,11 +1749,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-074",
-      "Programme_Key": "RY-DIRTY-PROG-071",
+      "RY_External_ID__c": "RY-OFFER-074",
+      "Programme_Key": "RY-PROG-071",
       "Title__c": "Digital Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1779,11 +1765,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-075",
-      "Programme_Key": "RY-DIRTY-PROG-072",
+      "RY_External_ID__c": "RY-OFFER-075",
+      "Programme_Key": "RY-PROG-072",
       "Title__c": "Search Engine Optimisation",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1795,11 +1781,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-076",
-      "Programme_Key": "RY-DIRTY-PROG-073",
+      "RY_External_ID__c": "RY-OFFER-076",
+      "Programme_Key": "RY-PROG-073",
       "Title__c": "Front-End Web Development",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1811,11 +1797,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-077",
-      "Programme_Key": "RY-DIRTY-PROG-074",
+      "RY_External_ID__c": "RY-OFFER-077",
+      "Programme_Key": "RY-PROG-074",
       "Title__c": "Website Design",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1827,11 +1813,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-078",
-      "Programme_Key": "RY-DIRTY-PROG-075",
+      "RY_External_ID__c": "RY-OFFER-078",
+      "Programme_Key": "RY-PROG-075",
       "Title__c": "MarTech & CRM Strategy",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1843,11 +1829,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-079",
-      "Programme_Key": "RY-DIRTY-PROG-076",
+      "RY_External_ID__c": "RY-OFFER-079",
+      "Programme_Key": "RY-PROG-076",
       "Title__c": "ACA Graduate Programme for Agencies",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1859,11 +1845,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-080",
-      "Programme_Key": "RY-DIRTY-PROG-077",
+      "RY_External_ID__c": "RY-OFFER-080",
+      "Programme_Key": "RY-PROG-077",
       "Title__c": "Part-Time Advanced Diploma in Digital Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1875,11 +1861,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-081",
-      "Programme_Key": "RY-DIRTY-PROG-078",
+      "RY_External_ID__c": "RY-OFFER-081",
+      "Programme_Key": "RY-PROG-078",
       "Title__c": "Design Thinking Practitioner",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1891,11 +1877,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-082",
-      "Programme_Key": "RY-DIRTY-PROG-079",
+      "RY_External_ID__c": "RY-OFFER-082",
+      "Programme_Key": "RY-PROG-079",
       "Title__c": "Project Manager",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1907,11 +1893,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-083",
-      "Programme_Key": "RY-DIRTY-PROG-080",
+      "RY_External_ID__c": "RY-OFFER-083",
+      "Programme_Key": "RY-PROG-080",
       "Title__c": "Part-Time Advanced Diploma in User Centered Design",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1923,11 +1909,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-084",
-      "Programme_Key": "RY-DIRTY-PROG-006",
+      "RY_External_ID__c": "RY-OFFER-084",
+      "Programme_Key": "RY-PROG-006",
       "Title__c": "Bachelor of Commerce in Marketing",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1939,11 +1925,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-085",
-      "Programme_Key": "RY-DIRTY-PROG-081",
+      "RY_External_ID__c": "RY-OFFER-085",
+      "Programme_Key": "RY-PROG-081",
       "Title__c": "Part-Time Advanced Diploma in Copywriting",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1955,11 +1941,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-086",
-      "Programme_Key": "RY-DIRTY-PROG-082",
+      "RY_External_ID__c": "RY-OFFER-086",
+      "Programme_Key": "RY-PROG-082",
       "Title__c": "Part-Time Advanced Diploma in Marketing & Advertising Communications",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1971,11 +1957,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-087",
-      "Programme_Key": "RY-DIRTY-PROG-008",
+      "RY_External_ID__c": "RY-OFFER-087",
+      "Programme_Key": "RY-PROG-008",
       "Title__c": "Postgraduate Diploma: Creative Leadership",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -1987,11 +1973,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-088",
-      "Programme_Key": "RY-DIRTY-PROG-002",
+      "RY_External_ID__c": "RY-OFFER-088",
+      "Programme_Key": "RY-PROG-002",
       "Title__c": "Bachelor of Arts Honours in Visual Communication Design",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -2003,11 +1989,11 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Duration not visible on this listing; not copied from another offering. No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Duration not visible on this listing; not copied from another offering. No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-089",
-      "Programme_Key": "RY-DIRTY-PROG-083",
+      "RY_External_ID__c": "RY-OFFER-089",
+      "Programme_Key": "RY-PROG-083",
       "Title__c": "Bachelor of Business Administration: Marketing and Brand Management",
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
@@ -2019,476 +2005,388 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Duration not visible on this listing; not copied from another offering. No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-001-DUP01",
-      "Programme_Key": "RY-DIRTY-PROG-001",
-      "Title__c": "Advanced diploma in Copywriting",
-      "Catalogue_Section__c": "On-campus",
-      "Delivery_Mode__c": "On-campus",
-      "Study_Pace__c": "Not stated",
-      "Duration_Value__c": "1",
-      "Duration_Unit__c": "Years",
-      "Advertised_Fee_ZAR__c": "",
-      "Price_Status__c": "Enquire",
-      "Source_URL__c": "https://www.redandyellow.co.za/on-campus",
-      "Source_Refs__c": "A01",
-      "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. No visible start date; no intake fabricated."
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-OFFER-021-DUP02",
-      "Programme_Key": "RY-DIRTY-PROG-021",
-      "Title__c": "Data analysis ",
-      "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
-      "Study_Pace__c": "Not stated",
-      "Duration_Value__c": "11",
-      "Duration_Unit__c": "Weeks",
-      "Advertised_Fee_ZAR__c": "135000",
-      "Price_Status__c": "Published",
-      "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
-      "Source_Refs__c": "A05",
-      "Observed_Date__c": "2026-09-08",
-      "Notes__c": "SYNTHETIC DIRTY-DATA EXERCISE. Values may have injected defects; source screenshots are unchanged. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Duration not visible on this listing; not copied from another offering. No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
     }
   ],
   "RY_Intake__c": [
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-003",
-      "Offering_Key": "RY-DIRTY-OFFER-003",
+      "RY_External_ID__c": "RY-INTAKE-003",
+      "Offering_Key": "RY-OFFER-003",
       "Start_Date__c": "2027-03-01"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-009",
-      "Offering_Key": "RY-DIRTY-OFFER-009",
+      "RY_External_ID__c": "RY-INTAKE-009",
+      "Offering_Key": "RY-OFFER-009",
       "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-012",
-      "Offering_Key": "RY-DIRTY-OFFER-012",
+      "RY_External_ID__c": "RY-INTAKE-012",
+      "Offering_Key": "RY-OFFER-012",
       "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-013",
-      "Offering_Key": "RY-DIRTY-OFFER-013",
+      "RY_External_ID__c": "RY-INTAKE-013",
+      "Offering_Key": "RY-OFFER-013",
       "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-014",
-      "Offering_Key": "RY-DIRTY-OFFER-014",
-      "Start_Date__c": "2097-09-28"
+      "RY_External_ID__c": "RY-INTAKE-014",
+      "Offering_Key": "RY-OFFER-014",
+      "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-016",
-      "Offering_Key": "RY-DIRTY-OFFER-016",
+      "RY_External_ID__c": "RY-INTAKE-016",
+      "Offering_Key": "RY-OFFER-016",
       "Start_Date__c": "2026-09-14"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-017",
-      "Offering_Key": "RY-DIRTY-OFFER-017",
+      "RY_External_ID__c": "RY-INTAKE-017",
+      "Offering_Key": "RY-OFFER-017",
       "Start_Date__c": "2026-09-21"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-018",
-      "Offering_Key": "RY-DIRTY-OFFER-018",
+      "RY_External_ID__c": "RY-INTAKE-018",
+      "Offering_Key": "RY-OFFER-018",
       "Start_Date__c": "2026-09-21"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-019",
-      "Offering_Key": "RY-DIRTY-OFFER-019",
+      "RY_External_ID__c": "RY-INTAKE-019",
+      "Offering_Key": "RY-OFFER-019",
       "Start_Date__c": "2026-09-21"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-020",
-      "Offering_Key": "RY-DIRTY-OFFER-020",
+      "RY_External_ID__c": "RY-INTAKE-020",
+      "Offering_Key": "RY-OFFER-020",
       "Start_Date__c": "2026-09-28"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-021",
-      "Offering_Key": "RY-DIRTY-OFFER-021",
+      "RY_External_ID__c": "RY-INTAKE-021",
+      "Offering_Key": "RY-OFFER-021",
       "Start_Date__c": "2026-09-28"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-022",
-      "Offering_Key": "RY-DIRTY-OFFER-022",
+      "RY_External_ID__c": "RY-INTAKE-022",
+      "Offering_Key": "RY-OFFER-022",
       "Start_Date__c": "2026-09-28"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-023",
-      "Offering_Key": "RY-DIRTY-OFFER-023",
+      "RY_External_ID__c": "RY-INTAKE-023",
+      "Offering_Key": "RY-OFFER-023",
       "Start_Date__c": "2026-09-28"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-024",
-      "Offering_Key": "RY-DIRTY-OFFER-024",
+      "RY_External_ID__c": "RY-INTAKE-024",
+      "Offering_Key": "RY-OFFER-024",
       "Start_Date__c": "2026-09-28"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-025",
-      "Offering_Key": "RY-DIRTY-OFFER-025",
+      "RY_External_ID__c": "RY-INTAKE-025",
+      "Offering_Key": "RY-OFFER-025",
       "Start_Date__c": "2026-09-28"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-026",
-      "Offering_Key": "RY-DIRTY-OFFER-026",
+      "RY_External_ID__c": "RY-INTAKE-026",
+      "Offering_Key": "RY-OFFER-026",
       "Start_Date__c": "2026-10-05"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-027",
-      "Offering_Key": "RY-DIRTY-OFFER-027",
+      "RY_External_ID__c": "RY-INTAKE-027",
+      "Offering_Key": "RY-OFFER-027",
       "Start_Date__c": "2026-10-05"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-028",
-      "Offering_Key": "RY-DIRTY-OFFER-028",
+      "RY_External_ID__c": "RY-INTAKE-028",
+      "Offering_Key": "RY-OFFER-028",
       "Start_Date__c": "2026-10-26"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-029",
-      "Offering_Key": "RY-DIRTY-OFFER-029",
+      "RY_External_ID__c": "RY-INTAKE-029",
+      "Offering_Key": "RY-OFFER-029",
       "Start_Date__c": "2026-10-26"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-030",
-      "Offering_Key": "RY-DIRTY-OFFER-030",
+      "RY_External_ID__c": "RY-INTAKE-030",
+      "Offering_Key": "RY-OFFER-030",
       "Start_Date__c": "2026-11-02"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-031",
-      "Offering_Key": "RY-DIRTY-OFFER-031",
+      "RY_External_ID__c": "RY-INTAKE-031",
+      "Offering_Key": "RY-OFFER-031",
       "Start_Date__c": "2026-11-02"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-032",
-      "Offering_Key": "RY-DIRTY-OFFER-032",
+      "RY_External_ID__c": "RY-INTAKE-032",
+      "Offering_Key": "RY-OFFER-032",
       "Start_Date__c": "2026-11-09"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-033",
-      "Offering_Key": "RY-DIRTY-OFFER-033",
+      "RY_External_ID__c": "RY-INTAKE-033",
+      "Offering_Key": "RY-OFFER-033",
       "Start_Date__c": "2026-11-09"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-034",
-      "Offering_Key": "RY-DIRTY-OFFER-034",
+      "RY_External_ID__c": "RY-INTAKE-034",
+      "Offering_Key": "RY-OFFER-034",
       "Start_Date__c": "2026-11-16"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-035",
-      "Offering_Key": "RY-DIRTY-OFFER-035",
+      "RY_External_ID__c": "RY-INTAKE-035",
+      "Offering_Key": "RY-OFFER-035",
       "Start_Date__c": "2026-11-16"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-036",
-      "Offering_Key": "RY-DIRTY-OFFER-036",
+      "RY_External_ID__c": "RY-INTAKE-036",
+      "Offering_Key": "RY-OFFER-036",
       "Start_Date__c": "2026-11-23"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-037",
-      "Offering_Key": "RY-DIRTY-OFFER-037",
+      "RY_External_ID__c": "RY-INTAKE-037",
+      "Offering_Key": "RY-OFFER-037",
       "Start_Date__c": "2027-01-25"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-038",
-      "Offering_Key": "RY-DIRTY-OFFER-038",
+      "RY_External_ID__c": "RY-INTAKE-038",
+      "Offering_Key": "RY-OFFER-038",
       "Start_Date__c": "2027-01-25"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-039",
-      "Offering_Key": "RY-DIRTY-OFFER-039",
+      "RY_External_ID__c": "RY-INTAKE-039",
+      "Offering_Key": "RY-OFFER-039",
       "Start_Date__c": "2027-02-01"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-040",
-      "Offering_Key": "RY-DIRTY-OFFER-040",
+      "RY_External_ID__c": "RY-INTAKE-040",
+      "Offering_Key": "RY-OFFER-040",
       "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-041",
-      "Offering_Key": "RY-DIRTY-OFFER-041",
+      "RY_External_ID__c": "RY-INTAKE-041",
+      "Offering_Key": "RY-OFFER-041",
       "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-042",
-      "Offering_Key": "RY-DIRTY-OFFER-042",
+      "RY_External_ID__c": "RY-INTAKE-042",
+      "Offering_Key": "RY-OFFER-042",
       "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-043",
-      "Offering_Key": "RY-DIRTY-OFFER-043",
+      "RY_External_ID__c": "RY-INTAKE-043",
+      "Offering_Key": "RY-OFFER-043",
       "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-044",
-      "Offering_Key": "RY-DIRTY-OFFER-044",
+      "RY_External_ID__c": "RY-INTAKE-044",
+      "Offering_Key": "RY-OFFER-044",
       "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-045",
-      "Offering_Key": "RY-DIRTY-OFFER-045",
+      "RY_External_ID__c": "RY-INTAKE-045",
+      "Offering_Key": "RY-OFFER-045",
       "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-046",
-      "Offering_Key": "RY-DIRTY-OFFER-046",
+      "RY_External_ID__c": "RY-INTAKE-046",
+      "Offering_Key": "RY-OFFER-046",
       "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-047",
-      "Offering_Key": "RY-DIRTY-OFFER-047",
+      "RY_External_ID__c": "RY-INTAKE-047",
+      "Offering_Key": "RY-OFFER-047",
       "Start_Date__c": "2027-02-15"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-048",
-      "Offering_Key": "RY-DIRTY-OFFER-048",
+      "RY_External_ID__c": "RY-INTAKE-048",
+      "Offering_Key": "RY-OFFER-048",
       "Start_Date__c": "2027-02-22"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-049",
-      "Offering_Key": "RY-DIRTY-OFFER-049",
+      "RY_External_ID__c": "RY-INTAKE-049",
+      "Offering_Key": "RY-OFFER-049",
       "Start_Date__c": "2027-02-22"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-050",
-      "Offering_Key": "RY-DIRTY-OFFER-050",
+      "RY_External_ID__c": "RY-INTAKE-050",
+      "Offering_Key": "RY-OFFER-050",
       "Start_Date__c": "2027-02-22"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-051",
-      "Offering_Key": "RY-DIRTY-OFFER-051",
+      "RY_External_ID__c": "RY-INTAKE-051",
+      "Offering_Key": "RY-OFFER-051",
       "Start_Date__c": "2027-03-01"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-052",
-      "Offering_Key": "RY-DIRTY-OFFER-052",
+      "RY_External_ID__c": "RY-INTAKE-052",
+      "Offering_Key": "RY-OFFER-052",
       "Start_Date__c": "2027-03-01"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-053",
-      "Offering_Key": "RY-DIRTY-OFFER-053",
+      "RY_External_ID__c": "RY-INTAKE-053",
+      "Offering_Key": "RY-OFFER-053",
       "Start_Date__c": "2027-03-01"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-054",
-      "Offering_Key": "RY-DIRTY-OFFER-054",
+      "RY_External_ID__c": "RY-INTAKE-054",
+      "Offering_Key": "RY-OFFER-054",
       "Start_Date__c": "2027-03-01"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-055",
-      "Offering_Key": "RY-DIRTY-OFFER-055",
+      "RY_External_ID__c": "RY-INTAKE-055",
+      "Offering_Key": "RY-OFFER-055",
       "Start_Date__c": "2027-03-01"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-056",
-      "Offering_Key": "RY-DIRTY-OFFER-056",
+      "RY_External_ID__c": "RY-INTAKE-056",
+      "Offering_Key": "RY-OFFER-056",
       "Start_Date__c": "2027-03-08"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-057",
-      "Offering_Key": "RY-DIRTY-OFFER-057",
+      "RY_External_ID__c": "RY-INTAKE-057",
+      "Offering_Key": "RY-OFFER-057",
       "Start_Date__c": "2027-03-23"
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-003-DUP01",
-      "Offering_Key": "RY-DIRTY-OFFER-003",
-      "Start_Date__c": "2027-03-01"
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-INTAKE-009-DUP02",
-      "Offering_Key": "RY-DIRTY-OFFER-009",
-      "Start_Date__c": "2027-02-15"
     }
   ],
   "Account": [
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-ACC-001",
-      "Name": "demo only - LEARNING sponsor "
+      "RY_External_ID__c": "RY-DEMO-ACC-001",
+      "Name": "DEMO ONLY - Learning Sponsor"
     }
   ],
   "Contact": [
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-CON-001",
-      "FirstName": " lerato ",
-      "LastName": "DLAMINI",
-      "Email": "lerato@example.com",
-      "Account_Key": "RY-DIRTY-DEMO-ACC-001"
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-CON-002",
-      "FirstName": "Ayesha",
-      "LastName": "Patel",
-      "Email": "",
-      "Account_Key": "RY-DIRTY-DEMO-ACC-001"
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-CON-003",
-      "FirstName": "Thabo",
-      "LastName": "Mokoena",
-      "Email": "thabo.mokoenaa@example.com",
-      "Account_Key": "RY-DIRTY-DEMO-ACC-001"
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-CON-001-DUP01",
+      "RY_External_ID__c": "RY-DEMO-CON-001",
       "FirstName": "Lerato",
       "LastName": "Dlamini",
-      "Email": "LERATO@EXAMPLE.COM",
-      "Account_Key": "RY-DIRTY-DEMO-ACC-001"
+      "Email": "lerato@example.com",
+      "Account_Key": "RY-DEMO-ACC-001"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-CON-003-DUP02",
+      "RY_External_ID__c": "RY-DEMO-CON-002",
+      "FirstName": "Ayesha",
+      "LastName": "Patel",
+      "Email": "ayesha@example.com",
+      "Account_Key": "RY-DEMO-ACC-001"
+    },
+    {
+      "RY_External_ID__c": "RY-DEMO-CON-003",
       "FirstName": "Thabo",
       "LastName": "Mokoena",
       "Email": "thabo@example.com",
-      "Account_Key": "RY-DIRTY-DEMO-ACC-001"
+      "Account_Key": "RY-DEMO-ACC-001"
     }
   ],
   "Lead": [
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-LEAD-001",
+      "RY_External_ID__c": "RY-DEMO-LEAD-001",
       "FirstName": "Sam",
       "LastName": "Demo",
       "Company": "DEMO Individual Applicant",
       "Email": "sam@example.com",
       "RY_Sample_Status__c": "New enquiry"
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-LEAD-001-DUP01",
-      "FirstName": "Sam ",
-      "LastName": "DEMO",
-      "Company": "DEMO Individual Applicant",
-      "Email": "SAM@example.com",
-      "RY_Sample_Status__c": "New enquiry"
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-LEAD-001-DUP02",
-      "FirstName": "Lerato",
-      "LastName": "Dlamini",
-      "Company": "DEMO Individual Applicant",
-      "Email": "lerato@example.com",
-      "RY_Sample_Status__c": "New enquiry"
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-LEAD-001-DUP03",
-      "FirstName": "Ayesha",
-      "LastName": "Patel",
-      "Company": "DEMO Individual Applicant",
-      "Email": "ayesha@example.com",
-      "RY_Sample_Status__c": "New enquiry"
     }
   ],
   "Campaign": [
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-CAM-001",
+      "RY_External_ID__c": "RY-DEMO-CAM-001",
       "Name": "DEMO - September Data Courses",
       "IsActive": "false",
       "StartDate": "2026-08-01",
-      "RY_Channel__c": "paid_social ",
-      "RY_Spend_ZAR__c": "20000"
-    },
-    {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-CAM-001-DUP01",
-      "Name": "demo - september data courses ",
-      "IsActive": "false",
-      "StartDate": "2026-08-01",
-      "RY_Channel__c": "paid_social ",
+      "RY_Channel__c": "Paid social",
       "RY_Spend_ZAR__c": "20000"
     }
   ],
   "CampaignMember": [
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-CM-001",
-      "Campaign_Key": "RY-DIRTY-DEMO-CAM-001",
-      "Contact_Key": "RY-DIRTY-DEMO-CON-001",
+      "RY_External_ID__c": "RY-DEMO-CM-001",
+      "Campaign_Key": "RY-DEMO-CAM-001",
+      "Contact_Key": "RY-DEMO-CON-001",
       "Lead_Key": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-CM-002",
-      "Campaign_Key": "RY-DIRTY-DEMO-CAM-001",
+      "RY_External_ID__c": "RY-DEMO-CM-002",
+      "Campaign_Key": "RY-DEMO-CAM-001",
       "Contact_Key": "",
-      "Lead_Key": "RY-DIRTY-DEMO-LEAD-001"
+      "Lead_Key": "RY-DEMO-LEAD-001"
     }
   ],
   "Opportunity": [
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-OPP-001",
+      "RY_External_ID__c": "RY-DEMO-OPP-001",
       "Name": "DEMO - Data Analysis - applicant 1",
-      "Account_Key": "RY-DIRTY-DEMO-ACC-001",
-      "Applicant_Key": "RY-DIRTY-DEMO-CON-001",
-      "Campaign_Key": "RY-DIRTY-DEMO-CAM-001",
-      "Intake_Key": "RY-DIRTY-INTAKE-021",
+      "Account_Key": "RY-DEMO-ACC-001",
+      "Applicant_Key": "RY-DEMO-CON-001",
+      "Campaign_Key": "RY-DEMO-CAM-001",
+      "Intake_Key": "RY-INTAKE-021",
       "CloseDate": "2026-09-25",
       "RY_Sample_Stage__c": "Enrolled",
-      "RY_Expected_Value_ZAR__c": "135000"
+      "RY_Expected_Value_ZAR__c": "13500"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-OPP-002",
+      "RY_External_ID__c": "RY-DEMO-OPP-002",
       "Name": "DEMO - Business Analysis - applicant 2",
-      "Account_Key": "RY-DIRTY-DEMO-ACC-001",
-      "Applicant_Key": "RY-DIRTY-DEMO-CON-002",
-      "Campaign_Key": "RY-DIRTY-DEMO-CAM-001",
-      "Intake_Key": "RY-DIRTY-INTAKE-020",
+      "Account_Key": "RY-DEMO-ACC-001",
+      "Applicant_Key": "RY-DEMO-CON-002",
+      "Campaign_Key": "RY-DEMO-CAM-001",
+      "Intake_Key": "RY-INTAKE-020",
       "CloseDate": "2026-09-25",
-      "RY_Sample_Stage__c": "application submited",
+      "RY_Sample_Stage__c": "Application submitted",
       "RY_Expected_Value_ZAR__c": "14900"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-OPP-003",
+      "RY_External_ID__c": "RY-DEMO-OPP-003",
       "Name": "DEMO - Design Thinking - applicant 3",
-      "Account_Key": "RY-DIRTY-DEMO-ACC-001",
-      "Applicant_Key": "RY-DIRTY-DEMO-CON-003",
-      "Campaign_Key": "RY-DIRTY-DEMO-CAM-001",
-      "Intake_Key": "RY-DIRTY-INTAKE-016",
-      "CloseDate": "2025-09-25",
+      "Account_Key": "RY-DEMO-ACC-001",
+      "Applicant_Key": "RY-DEMO-CON-003",
+      "Campaign_Key": "RY-DEMO-CAM-001",
+      "Intake_Key": "RY-INTAKE-016",
+      "CloseDate": "2026-09-25",
       "RY_Sample_Stage__c": "Offer accepted",
       "RY_Expected_Value_ZAR__c": "13500"
     }
   ],
   "RY_Programme_Enquiry__c": [
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-ENQ-001",
-      "Contact_Key": "RY-DIRTY-DEMO-CON-001",
+      "RY_External_ID__c": "RY-DEMO-ENQ-001",
+      "Contact_Key": "RY-DEMO-CON-001",
       "Lead_Key": "",
-      "Offering_Key": "RY-DIRTY-OFFER-021",
+      "Offering_Key": "RY-OFFER-021",
       "Enquiry_Date__c": "2026-08-15",
-      "Channel__c": "web form",
+      "Channel__c": "Website",
       "Status__c": "Application received"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-ENQ-002",
+      "RY_External_ID__c": "RY-DEMO-ENQ-002",
       "Contact_Key": "",
-      "Lead_Key": "RY-DIRTY-DEMO-LEAD-001",
-      "Offering_Key": "RY-DIRTY-OFFER-060",
+      "Lead_Key": "RY-DEMO-LEAD-001",
+      "Offering_Key": "RY-OFFER-060",
       "Enquiry_Date__c": "2026-09-01",
       "Channel__c": "Website",
-      "Status__c": "new "
+      "Status__c": "New"
     }
   ],
   "RY_Application__c": [
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-APP-001",
-      "Contact_Key": "RY-DIRTY-DEMO-CON-001",
-      "Intake_Key": "RY-DIRTY-INTAKE-021",
-      "Opportunity_Key": "RY-DIRTY-DEMO-OPP-001",
+      "RY_External_ID__c": "RY-DEMO-APP-001",
+      "Contact_Key": "RY-DEMO-CON-001",
+      "Intake_Key": "RY-INTAKE-021",
+      "Opportunity_Key": "RY-DEMO-OPP-001",
       "Submitted_Date__c": "2026-08-20",
       "Status__c": "Accepted",
-      "Decision_Date__c": "2026-08-01"
+      "Decision_Date__c": "2026-08-25"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-APP-002",
-      "Contact_Key": "RY-DIRTY-DEMO-CON-002",
-      "Intake_Key": "RY-DIRTY-INTAKE-020",
-      "Opportunity_Key": "RY-DIRTY-DEMO-OPP-002",
+      "RY_External_ID__c": "RY-DEMO-APP-002",
+      "Contact_Key": "RY-DEMO-CON-002",
+      "Intake_Key": "RY-INTAKE-020",
+      "Opportunity_Key": "RY-DEMO-OPP-002",
       "Submitted_Date__c": "2026-08-20",
-      "Status__c": "Submited",
+      "Status__c": "Submitted",
       "Decision_Date__c": ""
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-APP-003",
-      "Contact_Key": "RY-DIRTY-DEMO-CON-003",
-      "Intake_Key": "RY-DIRTY-INTAKE-016",
-      "Opportunity_Key": "RY-DIRTY-DEMO-OPP-003",
+      "RY_External_ID__c": "RY-DEMO-APP-003",
+      "Contact_Key": "RY-DEMO-CON-003",
+      "Intake_Key": "RY-INTAKE-016",
+      "Opportunity_Key": "RY-DEMO-OPP-003",
       "Submitted_Date__c": "2026-08-20",
       "Status__c": "Accepted",
       "Decision_Date__c": "2026-08-25"
@@ -2496,52 +2394,52 @@
   ],
   "RY_Student__c": [
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-STU-001",
-      "Contact_Key": "RY-DIRTY-DEMO-CON-001",
-      "Student_Number__c": " demo-ry2026001 "
+      "RY_External_ID__c": "RY-DEMO-STU-001",
+      "Contact_Key": "RY-DEMO-CON-001",
+      "Student_Number__c": "DEMO-RY2026001"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-STU-003",
-      "Contact_Key": "RY-DIRTY-DEMO-CON-003",
+      "RY_External_ID__c": "RY-DEMO-STU-003",
+      "Contact_Key": "RY-DEMO-CON-003",
       "Student_Number__c": "DEMO-RY2026003"
     }
   ],
   "RY_Enrolment__c": [
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-ENR-001",
-      "Student_Key": "RY-DIRTY-DEMO-STU-001",
-      "Application_Key": "RY-DIRTY-DEMO-APP-001",
+      "RY_External_ID__c": "RY-DEMO-ENR-001",
+      "Student_Key": "RY-DEMO-STU-001",
+      "Application_Key": "RY-DEMO-APP-001",
       "Enrolled_Date__c": "2026-09-01",
-      "Status__c": "REGISTRED ",
+      "Status__c": "Registered",
       "Agreed_Fee_ZAR__c": "13500"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-ENR-003",
-      "Student_Key": "RY-DIRTY-DEMO-STU-003",
-      "Application_Key": "RY-DIRTY-DEMO-APP-003",
+      "RY_External_ID__c": "RY-DEMO-ENR-003",
+      "Student_Key": "RY-DEMO-STU-003",
+      "Application_Key": "RY-DEMO-APP-003",
       "Enrolled_Date__c": "2026-09-02",
       "Status__c": "Registered",
-      "Agreed_Fee_ZAR__c": "125000"
+      "Agreed_Fee_ZAR__c": "12500"
     }
   ],
   "RY_Student_Progress__c": [
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-PROG-001",
-      "Enrolment_Key": "RY-DIRTY-DEMO-ENR-001",
-      "Week_Start__c": "2026-07-06",
+      "RY_External_ID__c": "RY-DEMO-PROG-001",
+      "Enrolment_Key": "RY-DEMO-ENR-001",
+      "Week_Start__c": "2026-09-28",
       "Attendance_Pct__c": "90",
       "Assessment_Average_Pct__c": "72",
       "Overdue_Assignments__c": "0",
       "Risk_Band__c": "Low"
     },
     {
-      "RY_External_ID__c": "RY-DIRTY-DEMO-PROG-002",
-      "Enrolment_Key": "RY-DIRTY-DEMO-ENR-001",
+      "RY_External_ID__c": "RY-DEMO-PROG-002",
+      "Enrolment_Key": "RY-DEMO-ENR-001",
       "Week_Start__c": "2026-10-05",
       "Attendance_Pct__c": "60",
       "Assessment_Average_Pct__c": "48",
       "Overdue_Assignments__c": "2",
-      "Risk_Band__c": "Low"
+      "Risk_Band__c": "High"
     }
   ]
 }

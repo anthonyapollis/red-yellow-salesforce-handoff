@@ -1,0 +1,7 @@
+RY_External_ID__c,FirstName,LastName,Email,Account_Key
+RY-DIRTY-DEMO-CON-001, lerato ,DLAMINI,lerato@@example.com,RY-DIRTY-DEMO-ACC-001
+RY-DIRTY-DEMO-CON-002,Ayesha,,,RY-DIRTY-DEMO-ACC-001
+RY-DIRTY-DEMO-CON-003,Thabo,Mokoena,thabo.mokoenaa@example.com,RY-DIRTY-DEMO-ACC-001
+RY-DIRTY-DEMO-CON-001-DUP01,Lerato,Dlamini,LERATO@EXAMPLE.COM,RY-DIRTY-DEMO-ACC-001
+RY-DIRTY-DEMO-CON-003-DUP02,Thabo,Mokoena,thabo@example.com,RY-DIRTY-DEMO-ACC-001
+RY-DIRTY-DEMO-CON-003,Conflicting name,Mokoena,thabo.mokoenaa@example.com,RY-DIRTY-DEMO-ACC-001

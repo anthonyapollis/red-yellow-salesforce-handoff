@@ -6,13 +6,13 @@ class ImportTests(unittest.TestCase):
  def setUp(self):self.plans,self.rows=m.load()
  def test_valid_package(self):
   counts=m.validate(self.plans,self.rows)
-  self.assertEqual(counts["RY_Programme_Offering__c"],89)
-  self.assertEqual(counts["RY_Intake__c"],47)
+  self.assertEqual(counts["RY_Programme_Offering__c"],91)
+  self.assertEqual(counts["RY_Intake__c"],49)
  def test_broken_parent_rejected(self):
   self.rows["RY_Intake__c"][0]["Offering_Key"]="MISSING"
   with self.assertRaisesRegex(ValueError,"unresolved"):m.validate(self.plans,self.rows)
  def test_campaign_member_xor(self):
-  self.rows["CampaignMember"][0]["Lead_Key"]="RY-DEMO-LEAD-001"
+  self.rows["CampaignMember"][0]["Lead_Key"]="RY-DIRTY-DEMO-LEAD-001"
   with self.assertRaisesRegex(ValueError,"exactly one"):m.validate(self.plans,self.rows)
  def test_duplicate_key_rejected(self):
   self.rows["Contact"].append(copy.deepcopy(self.rows["Contact"][0]))
@@ -29,7 +29,7 @@ class ImportTests(unittest.TestCase):
   r["Advertised_Fee_ZAR__c"]="0"
   with self.assertRaisesRegex(ValueError,"price/status"):m.validate(self.plans,self.rows)
  def test_student_application_consistency(self):
-  self.rows["RY_Enrolment__c"][0]["Student_Key"]="RY-DEMO-STU-003"
+  self.rows["RY_Enrolment__c"][0]["Student_Key"]="RY-DIRTY-DEMO-STU-003"
   with self.assertRaisesRegex(ValueError,"student/applicant"):m.validate(self.plans,self.rows)
  def test_payload_resolves_parent_and_numeric_and_omits_blank(self):
   p=next(p for p in self.plans if p["object"]=="RY_Programme_Offering__c")

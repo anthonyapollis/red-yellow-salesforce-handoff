@@ -1,7 +1,7 @@
 {
   "RY_Programme__c": [
     {
-      "RY_External_ID__c": "RY-DIRTY-PROG-001",
+      "RY_External_ID__c": "",
       "Title__c": "Advanced Diploma in Copywriting",
       "Category__c": "advanced diploma ",
       "Credential_Text__c": "",
@@ -599,7 +599,7 @@
   "RY_Programme_Offering__c": [
     {
       "RY_External_ID__c": "RY-DIRTY-OFFER-001",
-      "Programme_Key": "RY-DIRTY-PROG-001",
+      "Programme_Key": "NO_SUCH_PROGRAMME",
       "Title__c": "  ADVANCED DIPLOMA IN COPYWRITING  ",
       "Catalogue_Section__c": "On-campus",
       "Delivery_Mode__c": "On-campus",
@@ -846,7 +846,7 @@
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "10",
       "Duration_Unit__c": "Weeks",
-      "Advertised_Fee_ZAR__c": "135000",
+      "Advertised_Fee_ZAR__c": "R13,500",
       "Price_Status__c": "Published",
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
@@ -860,7 +860,7 @@
       "Catalogue_Section__c": "Online education",
       "Delivery_Mode__c": "Unconfirmed",
       "Study_Pace__c": "Not stated",
-      "Duration_Value__c": "11",
+      "Duration_Value__c": "eleven",
       "Duration_Unit__c": "wks",
       "Advertised_Fee_ZAR__c": "135000",
       "Price_Status__c": "Published",
@@ -2058,12 +2058,12 @@
     {
       "RY_External_ID__c": "RY-DIRTY-INTAKE-003",
       "Offering_Key": "RY-DIRTY-OFFER-003",
-      "Start_Date__c": "2027-03-01"
+      "Start_Date__c": "31/02/2027"
     },
     {
       "RY_External_ID__c": "RY-DIRTY-INTAKE-009",
       "Offering_Key": "RY-DIRTY-OFFER-009",
-      "Start_Date__c": "2027-02-15"
+      "Start_Date__c": "03/04/27"
     },
     {
       "RY_External_ID__c": "RY-DIRTY-INTAKE-012",
@@ -2312,13 +2312,13 @@
       "RY_External_ID__c": "RY-DIRTY-DEMO-CON-001",
       "FirstName": " lerato ",
       "LastName": "DLAMINI",
-      "Email": "lerato@example.com",
+      "Email": "lerato@@example.com",
       "Account_Key": "RY-DIRTY-DEMO-ACC-001"
     },
     {
       "RY_External_ID__c": "RY-DIRTY-DEMO-CON-002",
       "FirstName": "Ayesha",
-      "LastName": "Patel",
+      "LastName": "",
       "Email": "",
       "Account_Key": "RY-DIRTY-DEMO-ACC-001"
     },
@@ -2341,6 +2341,13 @@
       "FirstName": "Thabo",
       "LastName": "Mokoena",
       "Email": "thabo@example.com",
+      "Account_Key": "RY-DIRTY-DEMO-ACC-001"
+    },
+    {
+      "RY_External_ID__c": "RY-DIRTY-DEMO-CON-003",
+      "FirstName": "Conflicting name",
+      "LastName": "Mokoena",
+      "Email": "thabo.mokoenaa@example.com",
       "Account_Key": "RY-DIRTY-DEMO-ACC-001"
     }
   ],
@@ -2401,7 +2408,7 @@
       "RY_External_ID__c": "RY-DIRTY-DEMO-CM-001",
       "Campaign_Key": "RY-DIRTY-DEMO-CAM-001",
       "Contact_Key": "RY-DIRTY-DEMO-CON-001",
-      "Lead_Key": ""
+      "Lead_Key": "RY-DIRTY-DEMO-LEAD-001"
     },
     {
       "RY_External_ID__c": "RY-DIRTY-DEMO-CM-002",
@@ -2458,7 +2465,7 @@
     {
       "RY_External_ID__c": "RY-DIRTY-DEMO-ENQ-002",
       "Contact_Key": "",
-      "Lead_Key": "RY-DIRTY-DEMO-LEAD-001",
+      "Lead_Key": "",
       "Offering_Key": "RY-DIRTY-OFFER-060",
       "Enquiry_Date__c": "2026-09-01",
       "Channel__c": "Website",
@@ -2468,7 +2475,7 @@
   "RY_Application__c": [
     {
       "RY_External_ID__c": "RY-DIRTY-DEMO-APP-001",
-      "Contact_Key": "RY-DIRTY-DEMO-CON-001",
+      "Contact_Key": "UNKNOWN_CONTACT",
       "Intake_Key": "RY-DIRTY-INTAKE-021",
       "Opportunity_Key": "RY-DIRTY-DEMO-OPP-001",
       "Submitted_Date__c": "2026-08-20",
@@ -2513,7 +2520,7 @@
       "Application_Key": "RY-DIRTY-DEMO-APP-001",
       "Enrolled_Date__c": "2026-09-01",
       "Status__c": "REGISTRED ",
-      "Agreed_Fee_ZAR__c": "13500"
+      "Agreed_Fee_ZAR__c": "-13500"
     },
     {
       "RY_External_ID__c": "RY-DIRTY-DEMO-ENR-003",
@@ -2529,7 +2536,7 @@
       "RY_External_ID__c": "RY-DIRTY-DEMO-PROG-001",
       "Enrolment_Key": "RY-DIRTY-DEMO-ENR-001",
       "Week_Start__c": "2026-07-06",
-      "Attendance_Pct__c": "90",
+      "Attendance_Pct__c": "140",
       "Assessment_Average_Pct__c": "72",
       "Overdue_Assignments__c": "0",
       "Risk_Band__c": "Low"
@@ -2539,7 +2546,7 @@
       "Enrolment_Key": "RY-DIRTY-DEMO-ENR-001",
       "Week_Start__c": "2026-10-05",
       "Attendance_Pct__c": "60",
-      "Assessment_Average_Pct__c": "48",
+      "Assessment_Average_Pct__c": "-5",
       "Overdue_Assignments__c": "2",
       "Risk_Band__c": "Low"
     }

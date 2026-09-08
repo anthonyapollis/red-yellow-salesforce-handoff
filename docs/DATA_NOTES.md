@@ -1,3 +1,6 @@
+# DIRTY-DATA EXERCISE UPDATE
+Original reference assumptions/rules follow below. The user now requires deliberately dirty data: default imports use data/dirty_loadable. Semantic rules below are intentionally violated in selected records; treat them as profiling checks, not automatic cleaning instructions. See DIRTY_DATA_GUIDE.md and ISSUE_REGISTER.csv. Original source observations remain unchanged.
+
 # Provenance and assumptions
 89 distinct visible listings were transcribed across 17 screenshots. Repeated cards are consolidated. sources/screenshots.csv indexes every image; Source_Refs__c links offerings to images. Partial cards with visible titles are included, with unseen details blank. This is not claimed to be the complete live catalogue.
 

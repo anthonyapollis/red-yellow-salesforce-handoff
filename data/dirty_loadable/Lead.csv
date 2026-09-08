@@ -1,0 +1,5 @@
+RY_External_ID__c,FirstName,LastName,Company,Email,RY_Sample_Status__c
+RY-DIRTY-DEMO-LEAD-001,Sam,Demo,DEMO Individual Applicant,sam@example.com,New enquiry
+RY-DIRTY-DEMO-LEAD-001-DUP01,Sam ,DEMO,DEMO Individual Applicant,SAM@example.com,New enquiry
+RY-DIRTY-DEMO-LEAD-001-DUP02,Lerato,Dlamini,DEMO Individual Applicant,lerato@example.com,New enquiry
+RY-DIRTY-DEMO-LEAD-001-DUP03,Ayesha,Patel,DEMO Individual Applicant,ayesha@example.com,New enquiry

@@ -133,7 +133,7 @@ def run(args):
  plans,rows=load()
  counts=validate(plans,rows)
  selected=[p for p in plans if p["group"]=="catalogue" or args.include_demo]
- print(json.dumps({"offline_validation":"PASS","selected_counts":{p["object"]:counts[p["object"]] for p in selected}},indent=2))
+ print(json.dumps({"offline_validation":"PASS - STRUCTURE ONLY; INTENTIONAL SEMANTIC DEFECTS REMAIN","selected_counts":{p["object"]:counts[p["object"]] for p in selected}},indent=2))
  if not (args.preflight or args.apply):return
  url=os.environ.get("SF_INSTANCE_URL","");token=os.environ.get("SF_ACCESS_TOKEN","")
  if not url or not token:raise ValueError("Set SF_INSTANCE_URL and SF_ACCESS_TOKEN in your environment; never put credentials in this ZIP.")

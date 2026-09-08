@@ -1,26 +1,19 @@
-# Red & Yellow - Salesforce ERDs and data handoff
-Prepared from the job description and 17 user screenshots (8 September 2026). This is a proposed model, not an internal company export.
+# Red & Yellow - intentionally dirty Salesforce handoff
+The primary dataset is deliberately dirty, as requested. Claude should read START_HERE_CLAUDE.md and preserve the intended defects during Salesforce insertion.
 
-## Contents
-- START_HERE_CLAUDE.md: Claude handoff.
-- erds/: canonical Salesforce ERD, two archived ERDs, analytics pipeline, SVG overview and HTML viewer.
-- data/catalogue/: 89 observed listings, 83 conservative programme identities, 89 offerings and 47 dated intakes.
-- data/demo/: 22 fictional marketing, CRM, admissions and student records.
-- data/legacy/: first fictional example and earlier example-ID mappings, excluded from imports.
-- salesforce/: Salesforce DX metadata, 8 custom objects, extensions to 6 standard objects, schema, field dictionary, permission set and import plan.
-- tools/import_salesforce.py: standard-library Python importer, offline validation by default; --apply enables writes.
-- tools/test_importer.py: focused local tests.
-- sources/: screenshot provenance and source images.
-- docs/: assumptions, business rules, import guide and references.
-- validation/: local checks and manifest.
+- data/dirty_loadable/: 253 structurally valid but semantically dirty records, including business duplicates, inconsistent formatting, missing values, price/date outliers and status errors.
+- data/dirty_raw/: additional invalid dates/numbers, orphan keys, malformed email values and conflicting IDs for quarantine/cleanup exercises.
+- data/quality/: issue register and reference key mapping; evaluator answer key.
+- data/catalogue/ and data/demo/: original reference inputs; not the default import.
+- erds/: all earlier ERDs, canonical Salesforce schema, pipeline and overview.
+- salesforce/: metadata and default dirty import plan.
+- sources/: all 17 original screenshots, unchanged.
+- downloads/: complete updated ZIP in GitHub (not nested inside the ZIP itself).
 
-## Start
-Give Claude this ZIP and ask it to follow START_HERE_CLAUDE.md in your intended Salesforce org.
-After extracting, validate with:
+There are 66 loadable mutation events and 15 additional raw-tier mutation events, all deliberately injected. They are not evidence of real problems in Red & Yellow's systems.
+
     python tools/import_salesforce.py --include-demo
     python tools/test_importer.py
-Read docs/IMPORT_GUIDE.md for deployment and write commands.
+    python tools/test_dirty_data.py
 
-## Status
-No Salesforce org was connected to or modified. XML/CSV/relationship checks are local; live deployment and org-specific validation remain to be done.
-Screenshot figures are displayed catalogue observations, not independently verified current prices or accreditation conclusions. Unknown values remain blank.
+Local structural checks pass for dirty_loadable and intentionally fail for dirty_raw. No live Salesforce import has been performed. Org-specific rules may reject some intended duplicates; report those without silently cleaning or disabling rules.

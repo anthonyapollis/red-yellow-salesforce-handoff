@@ -1,35 +1,28 @@
 {
-  "status": "PASS - LOCAL VALIDATION ONLY",
-  "tests_passed": 10,
-  "metadata_xml_files_parsed": 74,
-  "catalogue_observations": 89,
-  "programme_records": 83,
-  "offering_records": 89,
-  "dated_intakes": 47,
-  "fictional_demo_records": 22,
-  "source_screenshots_included": 17,
-  "diagram_sources": 4,
+  "status": "PASS - STRUCTURAL VALIDATION; DATA INTENTIONALLY DIRTY",
+  "tests_passed": 18,
+  "tests": {
+    "importer": 10,
+    "dirty_data": 8
+  },
+  "dirty_loadable_records": 253,
+  "dirty_raw_records": 254,
+  "injected_issue_events": 81,
+  "loadable_issue_events": 66,
+  "raw_additional_issue_events": 15,
+  "reference_catalogue_observations": 89,
+  "screenshots_preserved": 17,
   "checks": [
-    "CSV target fields match schema",
-    "Every reference resolves",
-    "External IDs unique",
-    "Campaign/enquiry lead-contact XOR",
-    "Student-applicant consistency",
-    "Unique progress enrolment/week",
-    "Percent ranges",
-    "Unknown prices preserved",
-    "JSON/CSV parity",
-    "Metadata XML well formed",
-    "Lookup relationship names unique per parent",
-    "Importer AST valid",
-    "10 offline tests passed"
+    "Dirty-loadable is default plan",
+    "All dirty-loadable external IDs unique and references resolve",
+    "Business duplicates and semantic defects remain",
+    "Payload mapping does not clean dirty text",
+    "Raw dataset fails structural validation as intended",
+    "Clean reference catalogue retained"
   ],
   "not_performed": [
-    "Live Salesforce deployment",
-    "Live Salesforce import",
-    "Live org permissions/flows/validation rules check",
-    "Live website price verification",
-    "Mermaid browser rendering"
+    "Live Salesforce deployment/import",
+    "Live target duplicate/validation-rule testing"
   ],
-  "notes": "Metadata XML parsing is not Salesforce Metadata API validation. Source is portable; HTML Mermaid rendering needs internet."
+  "note": "Locally loadable does not guarantee acceptance by target-specific Salesforce rules. Preserve semantic dirt; never auto-import raw structural defects."
 }

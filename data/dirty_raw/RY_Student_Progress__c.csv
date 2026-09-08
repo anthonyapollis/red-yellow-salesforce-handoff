@@ -1,0 +1,3 @@
+RY_External_ID__c,Enrolment_Key,Week_Start__c,Attendance_Pct__c,Assessment_Average_Pct__c,Overdue_Assignments__c,Risk_Band__c
+RY-DIRTY-DEMO-PROG-001,RY-DIRTY-DEMO-ENR-001,2026-07-06,140,72,0,Low
+RY-DIRTY-DEMO-PROG-002,RY-DIRTY-DEMO-ENR-001,2026-10-05,60,-5,2,Low
