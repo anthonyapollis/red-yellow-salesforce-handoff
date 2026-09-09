@@ -44,16 +44,18 @@ API = "62.0"
 # and naming them means a field disappearing from the org fails loudly here
 # instead of silently dropping a column downstream.
 OBJECTS = {
-    "Account": ["Id", "Name", "RY_External_ID__c", "CreatedDate", "SystemModstamp"],
+    "Account": ["Id", "Name", "RY_External_ID__c", "CreatedDate",
+                "SystemModstamp", "IsDeleted"],
     "Contact": ["Id", "FirstName", "LastName", "Email", "Phone", "AccountId",
-                "RY_External_ID__c", "CreatedDate", "SystemModstamp"],
+                "RY_External_ID__c", "CreatedDate", "SystemModstamp", "IsDeleted"],
     "Lead": ["Id", "FirstName", "LastName", "Email", "Phone", "Company", "Status",
              "LeadSource", "RY_External_ID__c", "RY_Sample_Status__c",
-             "ConvertedContactId", "IsConverted", "CreatedDate", "SystemModstamp"],
+             "ConvertedContactId", "IsConverted", "CreatedDate", "SystemModstamp",
+             "IsDeleted"],
     "Opportunity": ["Id", "Name", "StageName", "Amount", "CloseDate", "IsWon",
                     "IsClosed", "AccountId", "RY_External_ID__c",
                     "RY_Sample_Stage__c", "RY_Expected_Value_ZAR__c",
-                    "CreatedDate", "SystemModstamp"],
+                    "CreatedDate", "SystemModstamp", "IsDeleted"],
 }
 
 
@@ -134,9 +136,14 @@ def main():
             summary.append({"object": obj, "rows": 0, "pages": pages})
             continue
 
-        # Deletions come back through queryAll; Salesforce flags them per row.
-        deleted = {r["Id"] for r in rows if r.get("IsDeleted")}
-        df["is_deleted"] = df["Id"].isin(deleted) if deleted else False
+        # Deletions come back through queryAll, flagged per row. IsDeleted must
+        # be in the SELECT or every deleted record is written as live - which is
+        # worse than not capturing deletions at all, because it looks like it
+        # worked. Assert rather than default to False.
+        if "IsDeleted" not in fields:
+            raise SystemExit(f"{obj}: IsDeleted missing from the field list; "
+                             f"queryAll would report deleted rows as live")
+        df["is_deleted"] = df["IsDeleted"].fillna(False).astype(bool)
 
         df["source_system"] = "SALESFORCE"
         df["source_record_id"] = df["Id"]
