@@ -9,6 +9,17 @@ Nothing below runs without credentials, and nothing writes to the org until the
 `--apply` step. The Salesforce CLI is *not* required — everything here is plain
 Python against the REST and Metadata APIs.
 
+## Short version
+
+Once the credentials are in your environment:
+
+```bash
+python salesforce/run_salesforce.py                    # validate everything, change nothing
+python salesforce/run_salesforce.py --apply --opportunity-stage "<a real StageName>"
+```
+
+The long version below explains each step and what breaks if it is skipped.
+
 ---
 
 ## 1. Create an External Client App (once)
