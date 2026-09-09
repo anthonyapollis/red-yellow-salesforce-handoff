@@ -1,54 +1,54 @@
 table ml_lead_propensity
-	lineageTag: f0a29e49-b4b2-4303-8a4a-08c1c4b73f75
+	lineageTag: d7d2a59f-2517-431d-bfe7-35a6de4c3efd
 
 	column lead_external_id
 		dataType: string
-		lineageTag: e3798a40-2049-4884-97a2-e9348d0c56f4
+		lineageTag: 3386f169-8720-4d9a-acb7-f1a84b5be95d
 		summarizeBy: none
 		sourceColumn: lead_external_id
 
 	column lead_source
 		dataType: string
-		lineageTag: b7126e7c-dd0e-4568-a59b-f4bda2db0cf6
+		lineageTag: 1a57ff14-0ed6-4d6c-b59f-086fd6eea323
 		summarizeBy: none
 		sourceColumn: lead_source
 
 	column province
 		dataType: string
-		lineageTag: f5e9aac6-af3c-45f3-916d-8110dd28e1b8
+		lineageTag: 5a7fb185-5461-4179-9e44-87f54cae6329
 		summarizeBy: none
 		sourceColumn: province
 
 	column channel
 		dataType: string
-		lineageTag: ee5cb761-a816-4da9-90f8-59ee043bea01
+		lineageTag: 8210799f-90e2-4de6-814a-08634a66a8bd
 		summarizeBy: none
 		sourceColumn: channel
 
 	column created_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: c4d71924-6612-4880-a450-d4ed599124f8
+		lineageTag: e3eb5d7c-a0e9-4fd3-9e44-561f8c7fc193
 		summarizeBy: none
 		sourceColumn: created_date
 
 	column target
 		dataType: int64
 		formatString: #,0
-		lineageTag: 85700b05-8018-42bc-a742-eee6c1cb3506
+		lineageTag: 118030ea-cd0e-475d-8bf2-c7bbdbdbf396
 		summarizeBy: sum
 		sourceColumn: target
 
 	column propensity
 		dataType: double
 		formatString: #,0.00
-		lineageTag: 15100524-aea0-41fc-bd61-897f09b57bd8
+		lineageTag: 1fa67781-0898-4148-8758-47e5f815da77
 		summarizeBy: sum
 		sourceColumn: propensity
 
 	column propensity_band
 		dataType: string
-		lineageTag: 79f345c9-660e-4d2b-881a-b277d727d7fa
+		lineageTag: 6728233d-48e1-4cd1-8551-633bf10a23f1
 		summarizeBy: none
 		sourceColumn: propensity_band
 

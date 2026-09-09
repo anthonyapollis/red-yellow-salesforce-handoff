@@ -1,95 +1,95 @@
 table sf_contact
-	lineageTag: 8c8d7186-527c-4f10-bf9a-91ab82222ffb
+	lineageTag: 272bf507-bdad-478c-8fe4-74b5bff7db4a
 
 	column Id
 		dataType: string
-		lineageTag: ee9b76f9-071d-44c4-b688-7e60bd8167d2
+		lineageTag: 9c9b8246-1679-4fb3-9016-5b4c4630e4e3
 		summarizeBy: none
 		sourceColumn: Id
 
 	column FirstName
 		dataType: string
-		lineageTag: c77a982c-eb11-47b3-bfa6-a7e88a2c838c
+		lineageTag: 74d39311-7cc9-4c42-b7ad-786d8a0f7ecc
 		summarizeBy: none
 		sourceColumn: FirstName
 
 	column LastName
 		dataType: string
-		lineageTag: c9f1beab-fd12-49a4-92ef-f143fec20dfd
+		lineageTag: 5e9d354a-3e72-4d15-88a8-3023e8d88c72
 		summarizeBy: none
 		sourceColumn: LastName
 
 	column Email
 		dataType: string
-		lineageTag: 3b917a09-e3d2-4714-a067-0506d398a411
+		lineageTag: 1e7f8691-0772-4f23-b5df-d6e569b32584
 		summarizeBy: none
 		sourceColumn: Email
 
 	column Phone
 		dataType: int64
 		formatString: #,0
-		lineageTag: d4f5ddfb-8b87-4cb2-b27e-5e9060e72a89
+		lineageTag: 9f4caa48-0b44-444b-a930-3d95088a7168
 		summarizeBy: sum
 		sourceColumn: Phone
 
 	column AccountId
 		dataType: string
-		lineageTag: 1f4a12a3-ec76-4a26-97d9-1d5604404421
+		lineageTag: 9b8b4f39-dfe1-4726-9c11-d3ce9b676a0f
 		summarizeBy: none
 		sourceColumn: AccountId
 
 	column RY_External_ID__c
 		dataType: string
-		lineageTag: 397addec-e5bf-4c4e-beef-090c65324621
+		lineageTag: 63d3b8fc-eeb6-4611-a57b-72227e1bcc71
 		summarizeBy: none
 		sourceColumn: RY_External_ID__c
 
 	column CreatedDate
 		dataType: string
-		lineageTag: b0a6f456-d685-4e0d-84f2-64187bd6fc4e
+		lineageTag: 8c2f625d-85f5-4491-83ab-2714ac13c7a7
 		summarizeBy: none
 		sourceColumn: CreatedDate
 
 	column SystemModstamp
 		dataType: string
-		lineageTag: e63f2e8b-df04-4990-97b6-798817a977ab
+		lineageTag: 83e72c89-3ef3-400f-9570-65ea99f3bfda
 		summarizeBy: none
 		sourceColumn: SystemModstamp
 
 	column IsDeleted
 		dataType: boolean
-		lineageTag: 79af376f-746b-4d09-afb8-2378f1a13edc
+		lineageTag: 932e2e17-54ff-4591-945f-62845d3c5d6e
 		summarizeBy: none
 		sourceColumn: IsDeleted
 
 	column is_deleted
 		dataType: boolean
-		lineageTag: 655d548a-3bc3-4fc8-939e-fa4da1cabc54
+		lineageTag: ff6d69fc-f582-4f1e-aa64-7471dc0baeea
 		summarizeBy: none
 		sourceColumn: is_deleted
 
 	column source_system
 		dataType: string
-		lineageTag: 74c124ea-8e65-4122-a1c9-d9f622d57329
+		lineageTag: 40dedde1-50f5-44fe-bb06-fe1195310708
 		summarizeBy: none
 		sourceColumn: source_system
 
 	column source_record_id
 		dataType: string
-		lineageTag: ce3c01fc-7db4-4319-a34d-6a90f1003d43
+		lineageTag: dd6d0e9c-18f1-4e65-b3f1-816df6285b5c
 		summarizeBy: none
 		sourceColumn: source_record_id
 
 	column source_updated_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: a881c0a8-bfb5-446b-b1ec-5adca047664e
+		lineageTag: 96209ba7-f018-4920-95a6-1608a098bee6
 		summarizeBy: none
 		sourceColumn: source_updated_at
 
 	column extracted_at
 		dataType: string
-		lineageTag: 83d9195a-9a08-4ac4-ad31-100dbc7022b6
+		lineageTag: 82c7ba0a-5e4f-419f-adc9-b9816413551d
 		summarizeBy: none
 		sourceColumn: extracted_at
 

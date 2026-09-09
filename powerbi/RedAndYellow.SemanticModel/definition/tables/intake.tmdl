@@ -1,22 +1,22 @@
 table intake
-	lineageTag: 687ad949-c1ba-430a-9cb4-3133c17dfdc5
+	lineageTag: 07165514-2a61-4fb9-932c-4087fe079407
 
 	column intake_external_id
 		dataType: string
-		lineageTag: 8f905a5b-8c48-4a8b-9eb7-7383e41377d8
+		lineageTag: c20f6e34-6dfd-4c99-a240-85b064ae71bb
 		summarizeBy: none
 		sourceColumn: intake_external_id
 
 	column offering_external_id
 		dataType: string
-		lineageTag: 5f2eb58a-7f14-4687-8ce4-6d73e5ce5b05
+		lineageTag: e8bcd123-2f10-4673-b1f6-0245969920f5
 		summarizeBy: none
 		sourceColumn: offering_external_id
 
 	column start_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: a35323c3-96ce-4cb8-a507-72448c6d6929
+		lineageTag: 7b44aca7-0894-439c-a59f-f2d4bde25bd7
 		summarizeBy: none
 		sourceColumn: start_date
 

@@ -1,121 +1,121 @@
 table sf_opportunity
-	lineageTag: 0bb2cbe7-b2dc-45bc-b027-c45ca46faf6f
+	lineageTag: 8832e217-7fb1-4b8e-9c6c-66aeba5e77cd
 
 	column Id
 		dataType: string
-		lineageTag: 20d349b7-eece-4cdc-b74d-4a99aabdf29e
+		lineageTag: 75a163cf-7829-47b4-9fc5-bf9de1c8377c
 		summarizeBy: none
 		sourceColumn: Id
 
 	column Name
 		dataType: string
-		lineageTag: d34cd9e9-58f0-4bd9-b9d7-b13b4c5dddac
+		lineageTag: 4c33f69a-47e4-403f-bfa2-22df4b046e69
 		summarizeBy: none
 		sourceColumn: Name
 
 	column StageName
 		dataType: string
-		lineageTag: 82ba5b46-b046-41e9-a061-338a2503363b
+		lineageTag: 877c4c3b-a4c2-44db-b0ae-953b933a32a6
 		summarizeBy: none
 		sourceColumn: StageName
 
 	column Amount
 		dataType: int64
 		formatString: #,0
-		lineageTag: 02cee1d6-9d9e-4be7-94aa-f34fe45a9436
+		lineageTag: 25b0ac66-9467-4d19-a0c8-f54ea6141c94
 		summarizeBy: sum
 		sourceColumn: Amount
 
 	column CloseDate
 		dataType: string
-		lineageTag: dcfec229-b59b-4d8d-99a0-3fcca1d1880f
+		lineageTag: 4b7a56f1-0f19-48d2-84c5-e15574c7c321
 		summarizeBy: none
 		sourceColumn: CloseDate
 
 	column IsWon
 		dataType: boolean
-		lineageTag: f5d676bc-7d7d-4397-ba23-d827df67b10d
+		lineageTag: fe53698b-7ab5-4ec4-8369-4991486d7eb8
 		summarizeBy: none
 		sourceColumn: IsWon
 
 	column IsClosed
 		dataType: boolean
-		lineageTag: 0e771a54-fda2-4276-a77a-c2e865ea141f
+		lineageTag: 2b1230e9-d514-4d45-a448-65e499433adc
 		summarizeBy: none
 		sourceColumn: IsClosed
 
 	column AccountId
 		dataType: int64
 		formatString: #,0
-		lineageTag: cf5d2909-67de-46d1-8724-37352b6e92eb
+		lineageTag: a00d0581-55b8-42b1-ae40-7701499e91d0
 		summarizeBy: sum
 		sourceColumn: AccountId
 
 	column RY_External_ID__c
 		dataType: string
-		lineageTag: edefa0b6-8a58-4116-8280-f46934e8f065
+		lineageTag: 700927db-75bd-4c55-abf2-09d99aae9a8b
 		summarizeBy: none
 		sourceColumn: RY_External_ID__c
 
 	column RY_Sample_Stage__c
 		dataType: string
-		lineageTag: 11509da9-bcf5-4f4f-8a05-8cf9af1821ec
+		lineageTag: 470240d5-992e-4565-aba4-0cfa13ebc71e
 		summarizeBy: none
 		sourceColumn: RY_Sample_Stage__c
 
 	column RY_Expected_Value_ZAR__c
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: 723bb237-2cf0-4516-965c-94a191c69472
+		lineageTag: 33770db4-5c12-489f-ada2-2fcbf9d4b9f3
 		summarizeBy: sum
 		sourceColumn: RY_Expected_Value_ZAR__c
 
 	column CreatedDate
 		dataType: string
-		lineageTag: da0f6ff9-48f4-483f-8163-6b5aaac5ce2b
+		lineageTag: 9b2bbdec-a0e9-4ddb-ae0f-2d5d8953b13f
 		summarizeBy: none
 		sourceColumn: CreatedDate
 
 	column SystemModstamp
 		dataType: string
-		lineageTag: 2f92afbc-3066-4aeb-b32b-3a85e1582a6d
+		lineageTag: ac744c79-257d-4be7-b4f2-477d569e2041
 		summarizeBy: none
 		sourceColumn: SystemModstamp
 
 	column IsDeleted
 		dataType: boolean
-		lineageTag: e38b0a19-cd5b-4bc3-8afe-89c816441b00
+		lineageTag: 7d635662-ca9d-4d7a-98a4-7da9a0783365
 		summarizeBy: none
 		sourceColumn: IsDeleted
 
 	column is_deleted
 		dataType: boolean
-		lineageTag: 700a855e-1c6b-4e73-82f9-9fdbf935702b
+		lineageTag: c6166f18-a087-4829-973f-3c26ebe8c372
 		summarizeBy: none
 		sourceColumn: is_deleted
 
 	column source_system
 		dataType: string
-		lineageTag: ad12bd16-4e63-4cac-84ed-e5d2106751b9
+		lineageTag: 3ed10b15-d25b-4952-bf07-b8d8e611dc11
 		summarizeBy: none
 		sourceColumn: source_system
 
 	column source_record_id
 		dataType: string
-		lineageTag: 6c4b1719-8e8e-487d-9132-dae148014eb2
+		lineageTag: 0f9528c6-8056-4a60-8873-e472e3f21a11
 		summarizeBy: none
 		sourceColumn: source_record_id
 
 	column source_updated_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: 90e367ca-528c-45a0-b242-5eb1b0626071
+		lineageTag: 029023f7-7c97-4329-bb6d-34ce34ba986d
 		summarizeBy: none
 		sourceColumn: source_updated_at
 
 	column extracted_at
 		dataType: string
-		lineageTag: 7bd570b9-69b6-455d-b969-c79e996dd386
+		lineageTag: 70e1effd-5304-4e76-82ca-523be4c049fc
 		summarizeBy: none
 		sourceColumn: extracted_at
 

@@ -4,6 +4,10 @@ model Model
 	discourageImplicitMeasures
 	sourceQueryCulture: en-ZA
 
+	annotation __PBI_TimeIntelligenceEnabled = 0
+
+	annotation PBI_ProTooling = ["DaxQueryView","TMDL"]
+
 ref table _Measures
 ref table dim_date
 ref table dim_contact

@@ -1,95 +1,95 @@
 table application
-	lineageTag: 4f461a4c-6afa-4696-92a3-e31a3ebce7ce
+	lineageTag: 959b3d66-ac2c-4bbf-82f8-d151b58833de
 
 	column application_external_id
 		dataType: string
-		lineageTag: 94b6462c-8b46-4d7e-abf6-da055a4a2ac5
+		lineageTag: 1778e284-d375-4021-8a0f-4309be0f246d
 		summarizeBy: none
 		sourceColumn: application_external_id
 
 	column opportunity_external_id
 		dataType: string
-		lineageTag: eadbfc53-757a-4a2d-a500-31cf08073962
+		lineageTag: 2624ddb5-e41d-4424-9712-64015b5b25a1
 		summarizeBy: none
 		sourceColumn: opportunity_external_id
 
 	column contact_external_id
 		dataType: string
-		lineageTag: 11c5d661-81c5-41d4-9f65-2d02c5f5448f
+		lineageTag: 75dfdcc7-b5f0-46c6-a0a3-715a78472b1d
 		summarizeBy: none
 		sourceColumn: contact_external_id
 
 	column intake_external_id
 		dataType: string
-		lineageTag: e9db2a84-e58f-4684-9f35-48b9bd38c9de
+		lineageTag: 6a235563-fc57-4701-98de-6bfee01d4e39
 		summarizeBy: none
 		sourceColumn: intake_external_id
 
 	column submitted_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: be07f47c-68f9-43fe-be30-8144d24c428a
+		lineageTag: 444d6398-2499-44df-a6f9-b0208e4f02b9
 		summarizeBy: none
 		sourceColumn: submitted_date
 
 	column decision_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 66851758-ae46-4cfd-9aa1-67f99e0a91a0
+		lineageTag: fbc9af6d-38cb-4598-956a-ee04829eca51
 		summarizeBy: none
 		sourceColumn: decision_date
 
 	column status
 		dataType: string
-		lineageTag: 484e26a0-784b-4e25-ad8a-df89d18cdbb8
+		lineageTag: 3dc14223-1646-4e6f-90f9-449064dde83c
 		summarizeBy: none
 		sourceColumn: status
 
 	column is_date_inverted
 		dataType: int64
 		formatString: #,0
-		lineageTag: 4fc1041f-3f53-420b-bb37-fbfdc82fa13e
+		lineageTag: 65f917d4-d219-4a7f-8494-044efed3bfea
 		summarizeBy: sum
 		sourceColumn: is_date_inverted
 
 	column days_to_decision
 		dataType: int64
 		formatString: #,0
-		lineageTag: cf78befa-3507-4dec-be67-064125ce5485
+		lineageTag: 13b99ede-917a-489c-9dc2-c29e17a8da65
 		summarizeBy: sum
 		sourceColumn: days_to_decision
 
 	column is_accepted
 		dataType: int64
 		formatString: #,0
-		lineageTag: c9849673-aa8c-4881-8ea6-2e6b65adb1dc
+		lineageTag: 0c6241fd-62a1-4029-913d-83d19bde8da2
 		summarizeBy: sum
 		sourceColumn: is_accepted
 
 	column source_system
 		dataType: string
-		lineageTag: 14b473c4-3827-4191-942a-d18e1ed0ba40
+		lineageTag: 96cb2353-4641-4717-8af8-54be3ee7daf0
 		summarizeBy: none
 		sourceColumn: source_system
 
 	column source_updated_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: b88735c6-c474-4d57-a707-9d0176ded95c
+		lineageTag: a931ca5b-04d3-4e28-9db6-d0fa0b29ce19
 		summarizeBy: none
 		sourceColumn: source_updated_at
 
 	column loaded_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: 1460278f-b869-46d4-8644-7c1bbb2cba77
+		lineageTag: 669c0135-b316-4377-8b0f-1323843edd3d
 		summarizeBy: none
 		sourceColumn: loaded_at
 
 	column is_late_arriving
 		dataType: int64
 		formatString: #,0
-		lineageTag: 4f91421b-377d-446a-94c9-021a4359b611
+		lineageTag: 2919ccd8-ccee-4039-815a-aa525b74d9d8
 		summarizeBy: sum
 		sourceColumn: is_late_arriving
 

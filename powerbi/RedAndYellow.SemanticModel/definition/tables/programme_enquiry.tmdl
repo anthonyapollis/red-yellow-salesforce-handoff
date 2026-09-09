@@ -1,67 +1,67 @@
 table programme_enquiry
-	lineageTag: a9278ecc-3702-42ee-a32c-2d27ec18aa27
+	lineageTag: cf3ba8fb-927a-4737-b825-4b9c55e2fb99
 
 	column enquiry_external_id
 		dataType: string
-		lineageTag: e021bd02-f5ae-4460-9357-ece7c2ab6b87
+		lineageTag: d7f9f9db-82bb-4404-a8d0-8338249d6f49
 		summarizeBy: none
 		sourceColumn: enquiry_external_id
 
 	column contact_external_id
 		dataType: string
-		lineageTag: d3cba3e4-054c-44c0-ab08-771126a8eee6
+		lineageTag: 7f322c9c-e94f-4074-8d21-264d63164370
 		summarizeBy: none
 		sourceColumn: contact_external_id
 
 	column offering_external_id
 		dataType: string
-		lineageTag: f1892318-741f-43ae-805b-e1f642089ec0
+		lineageTag: f797425d-df15-4ad3-bb03-3e9c056b715f
 		summarizeBy: none
 		sourceColumn: offering_external_id
 
 	column enquiry_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 57732b0b-ff47-4bcb-b18e-c9b0a81c928c
+		lineageTag: 7cd46f49-a0a5-498a-9e4f-55f12cfd281f
 		summarizeBy: none
 		sourceColumn: enquiry_date
 
 	column channel
 		dataType: string
-		lineageTag: 21b2c336-b8c2-4ae6-bc40-dbaa241852e8
+		lineageTag: 8398dae5-9bfa-4612-a31a-243a6aa9241f
 		summarizeBy: none
 		sourceColumn: channel
 
 	column status
 		dataType: string
-		lineageTag: bca7bd48-0826-4871-b465-18761e990459
+		lineageTag: 2fe6ce29-e766-4cad-b483-e6f44db05293
 		summarizeBy: none
 		sourceColumn: status
 
 	column source_system
 		dataType: string
-		lineageTag: 89310ff7-d764-45ae-b37c-6d65290900f4
+		lineageTag: 7e60e602-d4d0-43fe-8d64-30359d0471fc
 		summarizeBy: none
 		sourceColumn: source_system
 
 	column source_updated_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: 728c7a96-a629-4d78-a3ca-a1e71bb657b5
+		lineageTag: 13bbb054-fb74-40b6-972e-b85a81314620
 		summarizeBy: none
 		sourceColumn: source_updated_at
 
 	column loaded_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: ce22282a-8c2d-4046-a278-c98c546c42e4
+		lineageTag: d1031682-4d63-4266-b1cc-bf3b84b3cbd1
 		summarizeBy: none
 		sourceColumn: loaded_at
 
 	column is_late_arriving
 		dataType: int64
 		formatString: #,0
-		lineageTag: 0482c124-74b7-4d42-b3aa-3f11ab0d88a8
+		lineageTag: cba3d8f9-b6ae-408d-86fa-96b95c2a1f8d
 		summarizeBy: sum
 		sourceColumn: is_late_arriving
 

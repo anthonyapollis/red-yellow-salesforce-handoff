@@ -1,98 +1,98 @@
-relationship 1481cbb9-a308-4792-89d9-a345e88dfab2
+relationship c8853dd4-5320-4864-8319-d2cf657e2d65
 	fromColumn: dim_offering.programme_external_id
 	toColumn: programme.programme_external_id
 
-relationship 24712f58-84c6-4de9-aea7-d497040a8da5
+relationship 38562f67-31f2-47d4-820c-215f53456aa1
 	fromColumn: intake.offering_external_id
 	toColumn: dim_offering.offering_external_id
 
-relationship a0a6254e-6da5-47cb-8505-6cd43b454885
+relationship 949c8b8e-c385-42ae-83eb-69938a6a8d65
 	fromColumn: fct_campaign_performance.campaign_external_id
 	toColumn: dim_campaign.campaign_external_id
 
-relationship 55dc1bde-9da9-4fe2-be20-1d0f37119827
+relationship 6db50f2e-1f7d-40ab-9d69-6fbc05d2236c
 	fromColumn: fct_campaign_performance.start_date
 	toColumn: dim_date.date_day
 
-relationship 1667a1c4-f3a3-4290-a977-cc65df7b766e
+relationship 06c2498a-b878-4a94-b9d6-861dc8327c16
 	fromColumn: campaign_member.campaign_external_id
 	toColumn: dim_campaign.campaign_external_id
 
-relationship 7b9f34db-9bc8-42b9-adcc-0298f8153d45
+relationship afd891bd-dc24-4ba9-a279-fd236f5949ef
 	isActive: false
 	fromColumn: campaign_member.first_responded_date
 	toColumn: dim_date.date_day
 
-relationship e826eb36-ed30-4aa2-b81a-8a3e6f83499d
+relationship 107c0a81-02f0-4704-aa78-7a37cfcaf7be
 	fromColumn: fct_lead_conversion.created_date
 	toColumn: dim_date.date_day
 
-relationship 1a5a029e-5547-4e02-9fdb-c4c355bb134d
+relationship 230c2a5d-201d-4561-8c75-90afb0fada7b
 	fromColumn: programme_enquiry.contact_external_id
 	toColumn: dim_contact.contact_external_id
 
-relationship 6f941749-12cc-4e07-9e84-de5ef2fdc825
+relationship 8cd91f17-2b28-43d3-9b28-bc37f7f728df
 	isActive: false
 	fromColumn: programme_enquiry.offering_external_id
 	toColumn: dim_offering.offering_external_id
 
-relationship eab985b2-8cc7-46e4-adff-ebcb27a81557
+relationship e00d19f6-4f6c-40a5-9af7-8d3aa815f8ab
 	isActive: false
 	fromColumn: programme_enquiry.enquiry_date
 	toColumn: dim_date.date_day
 
-relationship 408c3891-9a15-4de6-94c9-a382e355a544
+relationship 5adbff3b-63ae-4dc4-9c23-4de16ef23d5c
 	isActive: false
 	fromColumn: application.contact_external_id
 	toColumn: dim_contact.contact_external_id
 
-relationship 7e445472-d2a0-4d2f-b4f6-169d6bf81421
+relationship 668acc91-ffd2-4037-88ed-7b108548872a
 	fromColumn: application.intake_external_id
 	toColumn: intake.intake_external_id
 
-relationship 34fbe355-a3c7-44de-900e-8d0f594771ff
+relationship d96acf0a-459d-4e8d-9e80-7d6bf11748d9
 	isActive: false
 	fromColumn: application.submitted_date
 	toColumn: dim_date.date_day
 
-relationship 847c6b9c-9667-45b1-bd16-cd1c79cd4f08
+relationship 2cf3344c-7b42-464e-bf0a-62e5a1fde6c9
 	isActive: false
 	fromColumn: enrolment.application_external_id
 	toColumn: application.application_external_id
 
-relationship bbd5c393-a0d9-4838-b0a4-de316f6d93a9
+relationship 4ca25bf4-476d-444a-9ea8-8fb7e6703671
 	fromColumn: enrolment.student_external_id
 	toColumn: student.student_external_id
 
-relationship fe974167-4d8a-4905-be77-e0c37b4f32bd
+relationship a32cf0bd-e8ea-42be-9335-5701dc9c75eb
 	isActive: false
 	fromColumn: student.contact_external_id
 	toColumn: dim_contact.contact_external_id
 
-relationship 14cd7060-2fdf-451c-b966-d282dd3bf774
+relationship f863aff1-65f2-44fd-bbb1-164fdcc25ff8
 	fromColumn: fct_student_progress_weekly.enrolment_external_id
 	toColumn: enrolment.enrolment_external_id
 
-relationship 2445a8a7-9341-40d5-92e4-2d0c3a5ffabf
+relationship c5c8128b-a586-4e0c-b65d-9a7893cbb403
 	fromColumn: fct_student_progress_weekly.week_start
 	toColumn: dim_date.date_day
 
-relationship be59d745-f7ad-45c5-8714-3a89480dcd45
+relationship 9fed085b-4351-4bcb-a56d-6b6babdd5470
 	fromColumn: fct_admissions_funnel.contact_external_id
 	toColumn: dim_contact.contact_external_id
 
-relationship 091be282-9fad-439b-8ec8-3871ff0329ce
+relationship ed353b6f-a3fd-40a3-b80d-ead120a422d6
 	fromColumn: fct_admissions_funnel.offering_external_id
 	toColumn: dim_offering.offering_external_id
 
-relationship 1408a631-7e69-4df3-b8b4-9a5feb272831
+relationship 08130baa-8883-4015-92ee-1c0d59fa34e9
 	fromColumn: fct_admissions_funnel.opportunity_created_date
 	toColumn: dim_date.date_day
 
-relationship aa96d123-fa3e-4d55-aa8f-2b2346c5b2f8
+relationship c09ec968-478c-491b-ae26-837c1f305891
 	fromColumn: ml_lead_propensity.created_date
 	toColumn: dim_date.date_day
 
-relationship b8474c85-6deb-4aa1-987a-ecd1f91785b2
+relationship 6d57ce6e-28e7-4ba0-ab71-265542434b20
 	fromColumn: ml_withdrawal_risk.enrolment_external_id
 	toColumn: enrolment.enrolment_external_id

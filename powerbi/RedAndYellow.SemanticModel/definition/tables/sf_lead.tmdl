@@ -1,127 +1,127 @@
 table sf_lead
-	lineageTag: 076dd2c5-2752-429b-bcf1-7697345b823c
+	lineageTag: 4f0d287a-0d7d-4311-ae9b-605346e91e16
 
 	column Id
 		dataType: string
-		lineageTag: 2e052602-9a10-4744-b855-dce47988c295
+		lineageTag: 675ad763-47ae-49e6-8b09-64358139c4e3
 		summarizeBy: none
 		sourceColumn: Id
 
 	column FirstName
 		dataType: string
-		lineageTag: 80fa4b02-9f63-4b62-ba47-c17a1d1d1fb6
+		lineageTag: 46ecc988-05ac-4a0e-86a7-485f1672075c
 		summarizeBy: none
 		sourceColumn: FirstName
 
 	column LastName
 		dataType: string
-		lineageTag: dbc5c06b-5356-4ec8-8af0-78074baf3686
+		lineageTag: 99e791e6-593a-4083-8218-263dd1ffedf4
 		summarizeBy: none
 		sourceColumn: LastName
 
 	column Email
 		dataType: string
-		lineageTag: 94e10bb0-b618-4452-9878-31f9bd3a854d
+		lineageTag: fea1e5d0-9063-47fe-a0a0-4a240c79899b
 		summarizeBy: none
 		sourceColumn: Email
 
 	column Phone
 		dataType: int64
 		formatString: #,0
-		lineageTag: fa81089a-802f-41b7-944e-7493a19f3c39
+		lineageTag: 5af2dc2d-c81d-4380-810f-330a6f819c98
 		summarizeBy: sum
 		sourceColumn: Phone
 
 	column Company
 		dataType: string
-		lineageTag: 31f3ae83-7aa7-4569-ac00-632e938fb129
+		lineageTag: ccb5c6b2-6021-4f8f-9473-affb0a49d1c6
 		summarizeBy: none
 		sourceColumn: Company
 
 	column Status
 		dataType: string
-		lineageTag: 98506ba0-949b-4b0b-9c60-f0e142aa3d97
+		lineageTag: 3b78b1f6-2a75-42ab-a15e-aa1bebb50f61
 		summarizeBy: none
 		sourceColumn: Status
 
 	column LeadSource
 		dataType: int64
 		formatString: #,0
-		lineageTag: 5e762aad-763d-4597-a046-99ce320a1924
+		lineageTag: ba972fca-87f9-45bc-93f1-935f06bee128
 		summarizeBy: sum
 		sourceColumn: LeadSource
 
 	column RY_External_ID__c
 		dataType: string
-		lineageTag: abbadcbf-61a4-4754-a827-e056f83de6ad
+		lineageTag: dfd765f1-27fb-4ba1-a86e-ffdabbb5f964
 		summarizeBy: none
 		sourceColumn: RY_External_ID__c
 
 	column RY_Sample_Status__c
 		dataType: string
-		lineageTag: c690ccd8-e80f-4d74-a344-33328a533e43
+		lineageTag: 3ecc23db-2747-4118-8139-083602204643
 		summarizeBy: none
 		sourceColumn: RY_Sample_Status__c
 
 	column ConvertedContactId
 		dataType: int64
 		formatString: #,0
-		lineageTag: 6f363e03-004a-4057-8f33-f5749b1166fc
+		lineageTag: 44d2060d-3fee-46a9-ad5c-777bad285d65
 		summarizeBy: sum
 		sourceColumn: ConvertedContactId
 
 	column IsConverted
 		dataType: boolean
-		lineageTag: 76d6ea79-320c-41b1-b253-046b1a176a8e
+		lineageTag: 1ad7dc0a-340e-4a4c-af25-3dce2aae818d
 		summarizeBy: none
 		sourceColumn: IsConverted
 
 	column CreatedDate
 		dataType: string
-		lineageTag: 1d1e8cb1-4bca-4404-aebc-bd32381acf9f
+		lineageTag: 7e526fcf-3508-4a0b-8481-2f6d1713d604
 		summarizeBy: none
 		sourceColumn: CreatedDate
 
 	column SystemModstamp
 		dataType: string
-		lineageTag: 02f31a22-9b0c-4a89-8393-ed70ef200f8a
+		lineageTag: af7e540e-3fa4-4798-b4d9-1bc553bf334f
 		summarizeBy: none
 		sourceColumn: SystemModstamp
 
 	column IsDeleted
 		dataType: boolean
-		lineageTag: c1838370-11ba-4a98-8972-cc7e3fbb463e
+		lineageTag: c8dadc1b-9d4f-4862-8d26-6c6de89ba285
 		summarizeBy: none
 		sourceColumn: IsDeleted
 
 	column is_deleted
 		dataType: boolean
-		lineageTag: f86a4407-7266-4d4a-84c0-948e2a659cae
+		lineageTag: 94ae1a52-5d7e-4bb9-915a-3b8afef0a391
 		summarizeBy: none
 		sourceColumn: is_deleted
 
 	column source_system
 		dataType: string
-		lineageTag: ffeb956b-57d3-4664-bbcf-3c4d54545f72
+		lineageTag: 6bd939f1-673b-4bdc-a636-90bdbbb0cb69
 		summarizeBy: none
 		sourceColumn: source_system
 
 	column source_record_id
 		dataType: string
-		lineageTag: 5025b664-e007-463d-8899-1d26b41e4d96
+		lineageTag: 0b8706b5-ee39-4eb0-9f89-ac68fa000413
 		summarizeBy: none
 		sourceColumn: source_record_id
 
 	column source_updated_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: 2f4b47fc-03cb-4c65-9654-b19b9cbfcb19
+		lineageTag: 6d13ba4f-40a3-44d8-96ca-4e64bdb5c212
 		summarizeBy: none
 		sourceColumn: source_updated_at
 
 	column extracted_at
 		dataType: string
-		lineageTag: 3cd6ceb7-5972-4535-a66f-24446cb68556
+		lineageTag: 07e8ab5b-3448-4337-ba0b-3db88acb31dc
 		summarizeBy: none
 		sourceColumn: extracted_at
 

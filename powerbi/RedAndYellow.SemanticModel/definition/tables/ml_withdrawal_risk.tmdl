@@ -1,68 +1,68 @@
 table ml_withdrawal_risk
-	lineageTag: 2753bc4f-1a15-4c66-ba2d-d7f0353169a6
+	lineageTag: 83531475-cd7a-4e71-b276-59dad6229af3
 
 	column enrolment_external_id
 		dataType: string
-		lineageTag: 692909b9-8c4b-47e5-ad87-7e330620ca88
+		lineageTag: d1ec61a5-9911-4515-bc67-6267e586a410
 		summarizeBy: none
 		sourceColumn: enrolment_external_id
 
 	column programme_title
 		dataType: string
-		lineageTag: 732fa12e-b4f2-408e-8d65-6bfac7143c64
+		lineageTag: 521a885a-2ca9-4263-9ce9-b247d44fdb82
 		summarizeBy: none
 		sourceColumn: programme_title
 
 	column delivery_mode
 		dataType: string
-		lineageTag: ccd02822-1ac4-4901-a808-4d3cb18e5adc
+		lineageTag: 8b8c738f-312f-4a83-9830-dcf5042d4cd0
 		summarizeBy: none
 		sourceColumn: delivery_mode
 
 	column att_1_4
 		dataType: double
 		formatString: #,0.00
-		lineageTag: 85f5d995-8e06-4b12-8826-307990efaa1c
+		lineageTag: c62c1adb-3e29-4aaf-9491-3fdeafafc257
 		summarizeBy: sum
 		sourceColumn: att_1_4
 
 	column ass_1_4
 		dataType: double
 		formatString: #,0.00
-		lineageTag: 56f428fd-ff4c-4e2e-aec4-5d6be4b03f82
+		lineageTag: 04ac2388-9738-45c5-adff-069abb1fc111
 		summarizeBy: sum
 		sourceColumn: ass_1_4
 
 	column overdue_1_4
 		dataType: double
 		formatString: #,0.00
-		lineageTag: 5a44a60a-b935-462b-a239-412e76cbab02
+		lineageTag: e3e352c3-4bc0-4903-ba4b-3ab25ae94fca
 		summarizeBy: sum
 		sourceColumn: overdue_1_4
 
 	column enrolment_status
 		dataType: string
-		lineageTag: 413f0785-0dc0-44a6-a82a-41dca7ca2b92
+		lineageTag: 0c38c489-95c7-4204-88c9-ab7742c64ad3
 		summarizeBy: none
 		sourceColumn: enrolment_status
 
 	column target
 		dataType: int64
 		formatString: #,0
-		lineageTag: 66c567fd-f08a-49a3-a988-5aa37e7e6110
+		lineageTag: 1b3e7355-9c22-4a2a-9e9c-efc948f38bbe
 		summarizeBy: sum
 		sourceColumn: target
 
 	column withdrawal_risk
 		dataType: double
 		formatString: #,0.00
-		lineageTag: f2b96391-c01e-40c4-b2c8-d57b2cb7f995
+		lineageTag: a33172ba-0b28-4aa6-be4d-97aef1260331
 		summarizeBy: sum
 		sourceColumn: withdrawal_risk
 
 	column risk_band
 		dataType: string
-		lineageTag: 0a63af10-1df4-416c-a8ec-b4cb0890932d
+		lineageTag: 4c634cb2-8846-4aba-80b9-9917523cb455
 		summarizeBy: none
 		sourceColumn: risk_band
 

@@ -1,98 +1,98 @@
 table dim_contact
-	lineageTag: 0fcaa00b-9bd9-4206-aea4-b12e5a43ef78
+	lineageTag: 4404c05b-4373-442d-ae36-c8820b80e9c8
 
 	column contact_external_id
 		dataType: string
-		lineageTag: ce3daeb9-239a-4264-811e-8e157119e561
+		lineageTag: cc943a39-d058-4758-88f7-43f4d5f29e5d
 		summarizeBy: none
 		sourceColumn: contact_external_id
 
 	column person_key
 		dataType: string
-		lineageTag: 9f1d7c73-74fb-453a-9070-fc981fe80312
+		lineageTag: 0a31d693-7b19-4c7f-979e-b712293e1b0c
 		summarizeBy: none
 		sourceColumn: person_key
 
 	column first_name
 		dataType: string
-		lineageTag: 1778cdd4-a951-4d94-8a51-f5340a57cdc0
+		lineageTag: 08a1422a-d52e-43ef-a297-ae408d5afc84
 		summarizeBy: none
 		sourceColumn: first_name
 
 	column last_name
 		dataType: string
-		lineageTag: add9ce7d-5a7d-4bb5-aeff-0c3f44ed9f71
+		lineageTag: 7476b95a-c648-45af-b6ba-f1c996adc724
 		summarizeBy: none
 		sourceColumn: last_name
 
 	column full_name
 		dataType: string
-		lineageTag: af194491-b6f6-4a8c-ac98-26e9a73805f0
+		lineageTag: ed3a608c-3a36-4a6c-9fd4-54e1f7d7e632
 		summarizeBy: none
 		sourceColumn: full_name
 
 	column email
 		dataType: string
-		lineageTag: f72bbb3f-6eb7-46f9-881d-90f75d11d4dc
+		lineageTag: 07b848e4-2865-453f-a15c-da4fecbe2c63
 		summarizeBy: none
 		sourceColumn: email
 
 	column phone_e164
 		dataType: string
-		lineageTag: 6b4441e8-5b83-47f3-91eb-4dfc12a968ee
+		lineageTag: 380a4192-906b-472d-bff5-b8b5ef6da98d
 		summarizeBy: none
 		sourceColumn: phone_e164
 
 	column province
 		dataType: string
-		lineageTag: ed091073-8d7e-4da1-a0c3-f700aa773a76
+		lineageTag: caa74e3e-86eb-4bfa-a11d-bf98332a2a58
 		summarizeBy: none
 		sourceColumn: province
 
 	column city
 		dataType: string
-		lineageTag: f9783a17-ba07-4e04-a3bb-dad2a314540d
+		lineageTag: 8ba8f2a1-814e-4bda-83f8-570d4f5ae6ac
 		summarizeBy: none
 		sourceColumn: city
 
 	column created_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 83f133cd-09ed-4944-90b8-841bed333144
+		lineageTag: fc216270-78bf-498c-9cfb-d7f4a24250f4
 		summarizeBy: none
 		sourceColumn: created_date
 
 	column person_record_count
 		dataType: int64
 		formatString: #,0
-		lineageTag: efd3b664-3e0f-4333-b272-0cdc0078956a
+		lineageTag: 35c8b732-092a-4f68-99de-4999dc6d76df
 		summarizeBy: sum
 		sourceColumn: person_record_count
 
 	column has_duplicates
 		dataType: int64
 		formatString: #,0
-		lineageTag: 833e9eb4-868c-470e-89ee-3fdb3af9c22f
+		lineageTag: 7a24cdb3-3812-47ad-87f1-b1e0f8cd5bb2
 		summarizeBy: sum
 		sourceColumn: has_duplicates
 
 	column acquisition_path
 		dataType: string
-		lineageTag: 875e72f2-4b0d-4c81-9009-23c1b2316143
+		lineageTag: ecd43b79-c71d-4847-b79e-e7e9461e8fda
 		summarizeBy: none
 		sourceColumn: acquisition_path
 
 	column is_email_invalid
 		dataType: int64
 		formatString: #,0
-		lineageTag: 6b7838c3-dd92-4434-b495-6b88ab1d344d
+		lineageTag: da36a1b8-f634-4783-ad8a-204a87b7f689
 		summarizeBy: sum
 		sourceColumn: is_email_invalid
 
 	column is_late_arriving
 		dataType: int64
 		formatString: #,0
-		lineageTag: 52e0bf42-a4f1-4da8-976e-40e770dc4edb
+		lineageTag: 39b7c7fd-fe6c-4813-9622-491ba8621652
 		summarizeBy: sum
 		sourceColumn: is_late_arriving
 

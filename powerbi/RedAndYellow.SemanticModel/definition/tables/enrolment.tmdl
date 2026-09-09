@@ -1,88 +1,88 @@
 table enrolment
-	lineageTag: 70b4417b-bd0f-4b9e-8859-975c0d55a991
+	lineageTag: db2d05de-9534-4b05-8667-8ece9c5b8ee3
 
 	column enrolment_external_id
 		dataType: string
-		lineageTag: 1fe0e198-5c52-4cc2-a17a-f15c2d497b85
+		lineageTag: 18fb5cad-0b62-4846-8ace-b751ad4e51c0
 		summarizeBy: none
 		sourceColumn: enrolment_external_id
 
 	column student_external_id
 		dataType: string
-		lineageTag: 2349f4d5-ae1e-4723-89ef-71115df92ba3
+		lineageTag: 903f802a-b6a7-444d-ac0b-3d0953e3245a
 		summarizeBy: none
 		sourceColumn: student_external_id
 
 	column application_external_id
 		dataType: string
-		lineageTag: 14d0645e-949e-4748-b860-e28ad016bb4d
+		lineageTag: 5597204e-da93-4edf-b36c-6960894f2e96
 		summarizeBy: none
 		sourceColumn: application_external_id
 
 	column intake_external_id
 		dataType: string
-		lineageTag: 477298c6-ff1a-4136-b4f9-e3444c62090a
+		lineageTag: 07395bbd-071b-4813-93a2-8b6837f87c23
 		summarizeBy: none
 		sourceColumn: intake_external_id
 
 	column enrolled_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 0a6233f0-dfc1-465e-93ee-cad09b08baf6
+		lineageTag: d3a19a08-0faf-4c46-a11b-46127c88ff60
 		summarizeBy: none
 		sourceColumn: enrolled_date
 
 	column agreed_fee_zar
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: 82837ef7-43cc-4e3f-aec2-04d91083e5b7
+		lineageTag: 8ebece56-7904-4521-87bc-b1843cc3e37b
 		summarizeBy: sum
 		sourceColumn: agreed_fee_zar
 
 	column is_fee_missing
 		dataType: int64
 		formatString: "R"#,0
-		lineageTag: 9dd24d49-9ac1-4e6d-9ac0-f5004d441c98
+		lineageTag: 967b98f7-78f5-4197-ad36-26579db88c2a
 		summarizeBy: sum
 		sourceColumn: is_fee_missing
 
 	column status
 		dataType: string
-		lineageTag: d3914919-3940-4d00-84aa-a6784ff05042
+		lineageTag: e897de02-3dfc-428b-879f-d8126a91eaa9
 		summarizeBy: none
 		sourceColumn: status
 
 	column is_retained
 		dataType: int64
 		formatString: #,0
-		lineageTag: 220efbf3-8458-4ccf-a7e6-02eb672337c2
+		lineageTag: d49eef13-2e40-43cb-b0bf-2eaaa369e421
 		summarizeBy: sum
 		sourceColumn: is_retained
 
 	column source_system
 		dataType: string
-		lineageTag: 3ca31a70-d2b4-4a3a-95e2-5cfa7dd3bd93
+		lineageTag: d880f095-b08a-47b2-bf9f-f075e4b7ee64
 		summarizeBy: none
 		sourceColumn: source_system
 
 	column source_updated_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: 1032dd72-7812-409e-bba0-1359d5b790f8
+		lineageTag: fd207f68-9644-4dd8-a81f-55fd7388b1b7
 		summarizeBy: none
 		sourceColumn: source_updated_at
 
 	column loaded_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: d76df263-4829-4a78-99a3-b2bcf1b2d01f
+		lineageTag: bae136b0-401b-42bd-99be-ec989db1da50
 		summarizeBy: none
 		sourceColumn: loaded_at
 
 	column is_late_arriving
 		dataType: int64
 		formatString: #,0
-		lineageTag: 4bb53a88-86a0-434b-8a30-f1c882778cb3
+		lineageTag: 5a340744-99ac-437c-ad7f-dae40ff76bf7
 		summarizeBy: sum
 		sourceColumn: is_late_arriving
 

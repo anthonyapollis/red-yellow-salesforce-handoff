@@ -391,11 +391,21 @@ def main():
     (SM / "definition" / "relationships.tmdl").write_text(
         "\n".join(rel_lines), encoding="utf-8")
 
+    # Auto date/time off. Left on, Power BI silently builds a hidden date table
+    # and a relationship for EVERY date column - reading the loaded model back
+    # showed 27 of them, against the 23 relationships we actually declare. They
+    # inflate the file, clutter the field list with date hierarchies nobody
+    # asked for, and add filter paths that can create the very ambiguity
+    # resolve_ambiguity() exists to prevent. dim_date is the date table here.
     model = ["model Model",
              "\tculture: en-ZA",
              "\tdefaultPowerBIDataSourceVersion: powerBI_V3",
              "\tdiscourageImplicitMeasures",
-             "\tsourceQueryCulture: en-ZA", ""]
+             "\tsourceQueryCulture: en-ZA",
+             "",
+             "\tannotation __PBI_TimeIntelligenceEnabled = 0",
+             "",
+             "\tannotation PBI_ProTooling = [\"DaxQueryView\",\"TMDL\"]", ""]
     for t in ["_Measures"] + TABLES:
         model.append(f"ref table {t}")
     (SM / "definition" / "model.tmdl").write_text("\n".join(model) + "\n", encoding="utf-8")

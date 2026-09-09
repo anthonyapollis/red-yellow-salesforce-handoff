@@ -1,28 +1,28 @@
 table dq_summary
-	lineageTag: 0576f000-ed77-4813-b33c-3db6f0dc4476
+	lineageTag: 95c7759b-07ec-4297-87cc-c88447c2b829
 
 	column entity
 		dataType: string
-		lineageTag: 793c5744-9031-46b8-9437-7121a2696388
+		lineageTag: 3de09993-efe5-48ab-8e9b-136b8a900d5b
 		summarizeBy: none
 		sourceColumn: entity
 
 	column issue_code
 		dataType: string
-		lineageTag: 1b357861-b953-4cad-8c3f-31a5db5e8441
+		lineageTag: d161ca1f-44d9-49cf-ab88-a6dc1ef8672f
 		summarizeBy: none
 		sourceColumn: issue_code
 
 	column issue_description
 		dataType: string
-		lineageTag: 9cbb34fb-ebdc-4fbd-8726-2202a799eb01
+		lineageTag: 11bed28a-cefe-4d03-86ef-1a198c9455dd
 		summarizeBy: none
 		sourceColumn: issue_description
 
 	column issue_count
 		dataType: int64
 		formatString: #,0
-		lineageTag: eee42d28-70cf-4e1b-868f-af15664a82d2
+		lineageTag: f497d8ba-cb7a-4c25-a1cd-bca397e6ce37
 		summarizeBy: sum
 		sourceColumn: issue_count
 
