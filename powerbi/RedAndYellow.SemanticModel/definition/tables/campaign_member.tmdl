@@ -1,81 +1,81 @@
 table campaign_member
-	lineageTag: 441e6385-37ed-4dad-b251-88d9c1c9c678
+	lineageTag: c50c96e9-f113-46c9-be59-e320924afc90
 
 	column campaign_member_external_id
 		dataType: string
-		lineageTag: 6e3058da-6f3e-4cb6-8dfe-ed48861899a4
+		lineageTag: f1175498-0c94-4b1a-9cd7-23bea36a4e35
 		summarizeBy: none
 		sourceColumn: campaign_member_external_id
 
 	column campaign_external_id
 		dataType: string
-		lineageTag: 5bcd2c74-d2f1-4ad2-b517-2b8026529c24
+		lineageTag: 79eed32b-89ce-4239-ace1-df116ace5435
 		summarizeBy: none
 		sourceColumn: campaign_external_id
 
 	column lead_external_id
 		dataType: string
-		lineageTag: 827b5312-3db3-4ac2-b21f-93cb959bb313
+		lineageTag: 66d3e442-43c7-49b2-b823-d14a6d7c5358
 		summarizeBy: none
 		sourceColumn: lead_external_id
 
 	column contact_external_id
 		dataType: string
-		lineageTag: 0238ab58-51a9-4ca0-ac79-e434d1b04005
+		lineageTag: acae592f-ddff-454d-b983-20da161a4d5f
 		summarizeBy: none
 		sourceColumn: contact_external_id
 
 	column response_status
 		dataType: string
-		lineageTag: 803f166d-29a3-4a0d-974b-effacbd7a21b
+		lineageTag: d824edc3-6f9c-4671-86d0-8d9b41044390
 		summarizeBy: none
 		sourceColumn: response_status
 
 	column first_responded_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 07d71b43-2916-42ca-b97f-0d2804e17a74
+		lineageTag: 8da587df-a6ce-4067-b6ec-a5ccdaf42d5d
 		summarizeBy: none
 		sourceColumn: first_responded_date
 
 	column is_engaged
 		dataType: int64
 		formatString: #,0
-		lineageTag: 5b38bc24-b6a4-4145-86d6-238243ed8e0a
+		lineageTag: a50382eb-e3f6-4b48-9859-0ba91e0aa184
 		summarizeBy: sum
 		sourceColumn: is_engaged
 
 	column is_unique_membership
 		dataType: int64
 		formatString: #,0
-		lineageTag: 4c09ad89-cef1-4b22-9223-a8ebcc46f46a
+		lineageTag: b7813e5b-e91b-4897-a853-8abfa3be6e49
 		summarizeBy: sum
 		sourceColumn: is_unique_membership
 
 	column source_system
 		dataType: string
-		lineageTag: 76d14462-36c7-4873-91d2-62477266f90d
+		lineageTag: c285b324-ed5e-4b63-b9ca-1461d187bab7
 		summarizeBy: none
 		sourceColumn: source_system
 
 	column source_updated_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: 84f5761d-8b1a-425d-a83d-4f5b414d523d
+		lineageTag: 20467510-1810-4e47-a8f2-e8ba8ac6ed6a
 		summarizeBy: none
 		sourceColumn: source_updated_at
 
 	column loaded_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: f374ea0d-4bcc-4a94-8538-7e44d7433fdf
+		lineageTag: e0e67462-6713-40b2-8a43-965ff0e3ac51
 		summarizeBy: none
 		sourceColumn: loaded_at
 
 	column is_late_arriving
 		dataType: int64
 		formatString: #,0
-		lineageTag: cf45839a-b75d-4746-bf37-59d332fa661e
+		lineageTag: b6c425df-25af-4fae-9c56-43f9a97d10f3
 		summarizeBy: sum
 		sourceColumn: is_late_arriving
 

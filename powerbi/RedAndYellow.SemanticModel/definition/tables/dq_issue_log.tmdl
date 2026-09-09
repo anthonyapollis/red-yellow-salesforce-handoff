@@ -1,27 +1,27 @@
 table dq_issue_log
-	lineageTag: de22c519-037a-488f-abb0-578413925b9d
+	lineageTag: cff8f8e3-dbd9-4d68-9c00-a839f627f8cf
 
 	column entity
 		dataType: string
-		lineageTag: 88346836-70e5-4055-a0b6-8706907ffe5b
+		lineageTag: 2e7a0f78-a0dc-4f44-a767-abc461dc2bee
 		summarizeBy: none
 		sourceColumn: entity
 
 	column record_id
 		dataType: string
-		lineageTag: b38dc9d6-715a-4542-ab0c-475506dec379
+		lineageTag: 7f40b79f-477f-49a2-8f08-836c2b65b4e9
 		summarizeBy: none
 		sourceColumn: record_id
 
 	column issue_code
 		dataType: string
-		lineageTag: 1615f75d-71b9-4c65-b943-a41e28d7f46a
+		lineageTag: 63c0e2d3-e8ee-465a-bad5-b9e3a18c959c
 		summarizeBy: none
 		sourceColumn: issue_code
 
 	column issue_description
 		dataType: string
-		lineageTag: f3d8eba8-4af9-4f64-b4d2-839e7b8bfabb
+		lineageTag: aac1827d-d3ea-4de8-9f65-b853ec24a1e3
 		summarizeBy: none
 		sourceColumn: issue_description
 

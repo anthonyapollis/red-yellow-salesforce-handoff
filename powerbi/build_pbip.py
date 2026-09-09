@@ -90,6 +90,80 @@ RELATIONSHIPS = [
     ("ml_withdrawal_risk", "enrolment_external_id", "enrolment", "enrolment_external_id"),
 ]
 
+# Every relationship the report's visuals actually filter across. If one of
+# these is ever pushed off the active filter path, the visual still renders and
+# still resolves - it just quietly stops responding to the slicer. Asserted at
+# build time, because that failure is invisible in the artefact.
+REQUIRED_ACTIVE = {
+    ("fct_admissions_funnel", "dim_offering"),   # Opportunities/Enrolments by category
+    ("fct_admissions_funnel", "dim_date"),       # ... over time
+    ("fct_admissions_funnel", "dim_contact"),    # ... by province
+    ("fct_campaign_performance", "dim_campaign"),
+    ("fct_campaign_performance", "dim_date"),
+    ("campaign_member", "dim_campaign"),
+    ("fct_lead_conversion", "dim_date"),
+    ("fct_student_progress_weekly", "enrolment"),
+    ("ml_withdrawal_risk", "enrolment"),
+    ("ml_lead_propensity", "dim_date"),
+    ("dim_offering", "programme"),
+}
+
+
+def resolve_ambiguity(relationships):
+    """Split the relationships into an active spanning forest and the rest.
+
+    Power BI REFUSES to open a model whose active relationships contain a cycle
+    - "ambiguous paths between X and Y" - and it is not a warning, the project
+    will not load at all. This model has 23 relationships over 17 tables, so
+    seven of them close loops: enrolment reaches dim_contact through student and
+    again through application, and several entities carry their own date join
+    while the fact they roll up to carries one too.
+
+    The redundant ones stay in the model as INACTIVE, so the diagram still reads
+    the way the ERD does and USERELATIONSHIP can reach them, but exactly one
+    path filters. Which ones give way is decided by rank(): the fact-to-dimension
+    star is kept first because that is what every measure in the report filters
+    across, then the catalogue spine, and the duplicate entity-to-dimension
+    joins yield last.
+    """
+    def rank(r):
+        ft, _fc, tt, _tc = r
+        star = ft.startswith(("fct_", "ml_"))
+        if star and tt.startswith("dim_"):
+            return 0
+        if tt == "programme" or (ft == "intake" and tt == "dim_offering"):
+            return 1
+        if star:
+            return 2
+        return 4 if tt.startswith("dim_") else 3
+
+    parent = {}
+
+    def find(x):
+        parent.setdefault(x, x)
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    active, inactive = [], []
+    for r in sorted(relationships, key=rank):
+        ra, rb = find(r[0]), find(r[2])
+        if ra == rb:
+            inactive.append(r)
+        else:
+            parent[ra] = rb
+            active.append(r)
+
+    missing = REQUIRED_ACTIVE - {(r[0], r[2]) for r in active}
+    if missing:
+        raise SystemExit(
+            "MODEL NOT WRITTEN - these relationships must stay active but were "
+            "pushed off the filter path:\n" +
+            "\n".join(f"  {a} -> {b}" for a, b in sorted(missing)))
+    return active, set(inactive)
+
+
 # Measures live on one dedicated table so the field list reads as a menu of
 # answers rather than a pile of columns.
 MEASURES = [
@@ -306,10 +380,13 @@ def main():
     (SM / "definition" / "tables" / "_Measures.tmdl").write_text(
         measures_tmdl(), encoding="utf-8")
 
+    active, inactive = resolve_ambiguity(RELATIONSHIPS)
     rel_lines = []
     for ft, fc, tt, tc in RELATIONSHIPS:
-        rel_lines += [f"relationship {tag()}",
-                      f"\tfromColumn: {ft}.{fc}",
+        rel_lines += [f"relationship {tag()}"]
+        if (ft, fc, tt, tc) in inactive:
+            rel_lines.append("\tisActive: false")
+        rel_lines += [f"\tfromColumn: {ft}.{fc}",
                       f"\ttoColumn: {tt}.{tc}", ""]
     (SM / "definition" / "relationships.tmdl").write_text(
         "\n".join(rel_lines), encoding="utf-8")

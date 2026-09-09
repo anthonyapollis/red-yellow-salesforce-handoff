@@ -1,55 +1,55 @@
 table student
-	lineageTag: 8fd0ca21-971b-4366-b61e-c5745770e8e0
+	lineageTag: 9f553c11-dc6c-4e69-8902-9d588d5fc5e8
 
 	column student_external_id
 		dataType: string
-		lineageTag: d28449e7-8f20-4d57-b9f8-93fe3d241b54
+		lineageTag: eeae0a3a-c832-471e-a79c-95695cda99b5
 		summarizeBy: none
 		sourceColumn: student_external_id
 
 	column contact_external_id
 		dataType: string
-		lineageTag: 1b35723a-08ee-40c2-ba8e-19dc53cd6a6b
+		lineageTag: 927efd6f-42cd-45f6-bdb2-c001b65870c6
 		summarizeBy: none
 		sourceColumn: contact_external_id
 
 	column student_number
 		dataType: string
-		lineageTag: 67343bcf-080b-456b-8fc2-408b697a74a4
+		lineageTag: 91ee4cbc-b1fb-4975-b2fe-684b026478e7
 		summarizeBy: none
 		sourceColumn: student_number
 
 	column enrolled_first_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 3bb89622-16b4-451d-a3d8-fd44b3008fc4
+		lineageTag: b67deec4-5bb8-4274-abc6-2c101a15f708
 		summarizeBy: none
 		sourceColumn: enrolled_first_date
 
 	column source_system
 		dataType: string
-		lineageTag: 1650b222-88a4-4bf1-b76f-95fc6b62d3f5
+		lineageTag: fdab137b-f3c3-4ef8-b07e-07991c1389d8
 		summarizeBy: none
 		sourceColumn: source_system
 
 	column source_updated_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: 3aefb91b-fe68-408a-8ad5-1791a5a07998
+		lineageTag: e558297b-e3de-4180-9008-495782e3ab6a
 		summarizeBy: none
 		sourceColumn: source_updated_at
 
 	column loaded_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: d2257483-a741-41b5-9312-4cb7c80ab338
+		lineageTag: 84da53ac-0bb8-4f99-be79-16a18ac21602
 		summarizeBy: none
 		sourceColumn: loaded_at
 
 	column is_late_arriving
 		dataType: int64
 		formatString: #,0
-		lineageTag: 8957f8cf-1a79-4b60-9b1c-853464e4ff58
+		lineageTag: da86059d-2c65-4733-a6c1-706210ae2cb8
 		summarizeBy: sum
 		sourceColumn: is_late_arriving
 

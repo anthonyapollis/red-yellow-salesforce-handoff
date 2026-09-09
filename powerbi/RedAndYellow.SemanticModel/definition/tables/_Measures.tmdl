@@ -1,270 +1,270 @@
 table _Measures
-	lineageTag: 283154d3-9d7b-4c35-b73e-cde189bb3cee
+	lineageTag: a5a293ac-f925-4c05-beb0-904cb6004222
 
 	measure 'Leads' = COUNTROWS(fct_lead_conversion)
 		formatString: #,0
 		displayFolder: 01 Marketing
-		lineageTag: 078e6163-48f1-4566-b8db-b28302ad652e
+		lineageTag: d03c074b-edb3-4dc4-a6c8-d81f136ac694
 
 	measure 'Contacts' = COUNTROWS(dim_contact)
 		formatString: #,0
 		displayFolder: 01 Marketing
-		lineageTag: da5050e6-90c1-4975-af4c-132da763a128
+		lineageTag: 5425a3a9-81ad-4e5b-b954-9434800f665d
 
 	measure 'Marketing Spend' = SUM(dim_campaign[spend_zar])
 		formatString: "R"#,0
 		displayFolder: 01 Marketing
-		lineageTag: 24e2639e-36b4-4325-91ee-65bc79eae6d1
+		lineageTag: 6eacde30-1a7e-4ad4-99d9-c617383ef065
 
 	measure 'Campaign Members' = SUM(fct_campaign_performance[members])
 		formatString: #,0
 		displayFolder: 01 Marketing
-		lineageTag: c4cfd2c1-3938-4a09-bb79-234d21c8a849
+		lineageTag: 693c7295-b435-474e-9990-fad3e57283c3
 
 	measure 'Engaged Members' = SUM(fct_campaign_performance[engaged_members])
 		formatString: #,0
 		displayFolder: 01 Marketing
-		lineageTag: d3a50f3b-825a-4ff3-b88d-b97534e0bba1
+		lineageTag: ae19b8cd-d642-46ea-850f-c182035f9386
 
 	measure 'Engagement Rate' = DIVIDE([Engaged Members], [Campaign Members])
 		formatString: 0.0%
 		displayFolder: 01 Marketing
-		lineageTag: c5c45d13-1ae7-48dd-8046-0ab5727895e6
+		lineageTag: c4270697-5b49-492f-9fa9-39fa2825feab
 
 	measure 'Enrolled Revenue' = SUM(fct_campaign_performance[enrolled_revenue_zar])
 		formatString: "R"#,0
 		displayFolder: 01 Marketing
-		lineageTag: 58ab518d-99fc-4901-9602-3926ec1c695c
+		lineageTag: 8c5d9b12-ea74-4517-87d3-65f261fee3a8
 
 	measure 'Cost per Enrolment' = DIVIDE([Marketing Spend], [Campaign Enrolments])
 		formatString: "R"#,0
 		displayFolder: 01 Marketing
-		lineageTag: 7f283a97-2c1b-40f1-8691-f0a78be6aec6
+		lineageTag: fce5a1ba-5072-4901-8277-b07ee38c2c95
 
 	measure 'Return on Ad Spend' = DIVIDE([Enrolled Revenue], [Marketing Spend])
 		formatString: 0.00
 		displayFolder: 01 Marketing
-		lineageTag: 4451858c-7b26-42d8-8391-fdf4d423e80c
+		lineageTag: 3130328c-0518-496a-a6e2-bd58a13eba21
 
 	measure 'Campaign Enrolments' = SUM(fct_campaign_performance[enrolments])
 		formatString: #,0
 		displayFolder: 01 Marketing
-		lineageTag: 9e78fbb9-184b-4d84-81c6-4a082a7454df
+		lineageTag: eb33e5c8-4721-430a-b144-fd359dbd20d7
 
 	measure 'Campaign Reach' = COUNTROWS(campaign_member)
 		formatString: #,0
 		displayFolder: 01 Marketing
-		lineageTag: 2f817a78-45e0-4735-9ec4-f75239396a52
+		lineageTag: 30791951-f3cf-421c-9886-d315c6e90532
 
 	measure 'Unique Memberships' = CALCULATE(COUNTROWS(campaign_member), campaign_member[is_unique_membership] = 1)
 		formatString: #,0
 		displayFolder: 01 Marketing
-		lineageTag: 121a5eb2-5ef4-4191-b1a0-d9c3fc6893a6
+		lineageTag: 5a779213-4f01-4d23-896a-3c0ff120887d
 
 	measure 'Responded' = CALCULATE(COUNTROWS(campaign_member), campaign_member[is_engaged] = 1)
 		formatString: #,0
 		displayFolder: 01 Marketing
-		lineageTag: 1be1f505-1b4c-4aa6-aa53-3af8937bd199
+		lineageTag: b2444ebf-b035-4692-9237-6247dde5d96f
 
 	measure 'Response Rate' = DIVIDE([Responded], [Unique Memberships])
 		formatString: 0.0%
 		displayFolder: 01 Marketing
-		lineageTag: 3acb8397-01ec-42ab-b6be-e0e64c9714bc
+		lineageTag: 0e78831c-9807-4639-8761-790fd2dd633f
 
 	measure 'Duplicate Memberships' = CALCULATE(COUNTROWS(campaign_member), campaign_member[is_unique_membership] = 0)
 		formatString: #,0
 		displayFolder: 01 Marketing
-		lineageTag: ea8f8af4-83e0-4999-9204-3bb8edf92867
+		lineageTag: 2bbb2c0e-5a6b-487b-96c6-3edf31e03b15
 
 	measure 'Opportunities' = COUNTROWS(fct_admissions_funnel)
 		formatString: #,0
 		displayFolder: 02 Admissions
-		lineageTag: 61e7b52d-2741-4cfa-9805-68178045cb23
+		lineageTag: 5c860d87-2b74-4b81-abc0-143f44ac3afa
 
 	measure 'Applications' = CALCULATE(COUNTROWS(fct_admissions_funnel), NOT ISBLANK(fct_admissions_funnel[application_external_id]))
 		formatString: #,0
 		displayFolder: 02 Admissions
-		lineageTag: 6efa2c7b-e701-4b67-ac2b-de08266dc025
+		lineageTag: be1afe8c-503b-4bb8-b000-6a22e999e5a5
 
 	measure 'Enrolments' = SUM(fct_admissions_funnel[is_enrolled])
 		formatString: #,0
 		displayFolder: 02 Admissions
-		lineageTag: 69253503-e51f-45fa-9c51-b4881263782f
+		lineageTag: aa943ae6-64d5-46db-992c-8d24cb177b3c
 
 	measure 'Opportunity to Application' = DIVIDE([Applications], [Opportunities])
 		formatString: 0.0%
 		displayFolder: 02 Admissions
-		lineageTag: 92c10187-6ed6-47a3-97e2-41ce73574b21
+		lineageTag: f30499d4-7998-45c0-9f66-0581b5463eef
 
 	measure 'Application to Enrolment' = DIVIDE([Enrolments], [Applications])
 		formatString: 0.0%
 		displayFolder: 02 Admissions
-		lineageTag: 23d2e7cc-8e68-4f2f-8d74-d97dfad561a1
+		lineageTag: 9715f67f-54ec-4fbd-9ebf-889084c5078f
 
 	measure 'Opportunity to Enrolment' = DIVIDE([Enrolments], [Opportunities])
 		formatString: 0.0%
 		displayFolder: 02 Admissions
-		lineageTag: ee57cae2-145a-4faa-bb99-56515d3d245a
+		lineageTag: c954538a-1b76-4159-bf1f-4d1f3d5eb03a
 
 	measure 'Pipeline Value' = SUM(fct_admissions_funnel[expected_value_zar])
 		formatString: "R"#,0
 		displayFolder: 02 Admissions
-		lineageTag: 3d4a897c-46f2-4ed5-b759-e75628d661ce
+		lineageTag: d04e92a3-5726-460f-b35c-e013ef5475c2
 
 	measure 'Agreed Fees' = SUM(fct_admissions_funnel[agreed_fee_zar])
 		formatString: "R"#,0
 		displayFolder: 02 Admissions
-		lineageTag: ab59d52a-2ec5-4a66-b945-8b6f1d89ff81
+		lineageTag: e2ac6e82-5d32-47aa-82cb-a82f699e71f2
 
 	measure 'Average Discount' = AVERAGE(fct_admissions_funnel[discount_pct])
 		formatString: 0.0
 		displayFolder: 02 Admissions
-		lineageTag: 3835ffb2-2fe7-44e2-be54-f2b035a0edc3
+		lineageTag: 0d7cc575-d060-459b-9c55-e4ce12314fed
 
 	measure 'Avg Days to Decision' = AVERAGE(fct_admissions_funnel[days_to_decision])
 		formatString: #,0.0
 		displayFolder: 02 Admissions
-		lineageTag: ad50c817-5d0d-4db2-91ea-125e07541677
+		lineageTag: 0387ffbc-1bc0-46b6-bf8e-8522e5467451
 
 	measure 'Tracked Weeks' = COUNTROWS(fct_student_progress_weekly)
 		formatString: #,0
 		displayFolder: 03 Student Success
-		lineageTag: 147a4e8d-4f69-4740-a1ff-a68db6226d4b
+		lineageTag: c58dc815-9b79-4562-ae97-be71a74171d5
 
 	measure 'Students At Risk' = CALCULATE(DISTINCTCOUNT(fct_student_progress_weekly[enrolment_external_id]), fct_student_progress_weekly[is_at_risk] = 1)
 		formatString: #,0
 		displayFolder: 03 Student Success
-		lineageTag: f52d92fe-8239-45be-9561-b874171bdf45
+		lineageTag: 6bd9b3d5-835e-44a0-bdca-c03baa87007f
 
 	measure 'At Risk Rate' = DIVIDE(SUM(fct_student_progress_weekly[is_at_risk]), [Tracked Weeks])
 		formatString: 0.0%
 		displayFolder: 03 Student Success
-		lineageTag: cec2c42a-a05d-4182-947a-aef13eca63d4
+		lineageTag: 4659bd60-0102-4da3-9d01-969ef6eabc5b
 
 	measure 'Avg Attendance' = AVERAGE(fct_student_progress_weekly[attendance_pct])
 		formatString: 0.0
 		displayFolder: 03 Student Success
-		lineageTag: a7e1fa91-ab86-4a3f-bd74-b1bde6a21cf8
+		lineageTag: 55054b2d-8160-4265-ab12-e63dbd73de94
 
 	measure 'Avg Assessment' = AVERAGE(fct_student_progress_weekly[assessment_average_pct])
 		formatString: 0.0
 		displayFolder: 03 Student Success
-		lineageTag: ee2eb11f-3850-4811-ab37-8edb523b2ab5
+		lineageTag: 40229edd-3046-4632-a32b-daf727b15a19
 
 	measure 'Overdue Assignments' = SUM(fct_student_progress_weekly[overdue_assignments])
 		formatString: #,0
 		displayFolder: 03 Student Success
-		lineageTag: 332f231a-be5b-41c0-99a0-610dc29d683a
+		lineageTag: 32453920-15bf-407e-9780-4749cd13e12a
 
 	measure 'Quality Issues' = COUNTROWS(dq_issue_log)
 		formatString: #,0
 		displayFolder: 04 Data Quality
-		lineageTag: 8683b8bf-6571-48ca-b844-ab3645e0e789
+		lineageTag: 7cab61a5-6328-4375-80af-9dcd2fa411fe
 
 	measure 'Duplicate Contacts' = CALCULATE([Quality Issues], dq_issue_log[issue_code] = "duplicate_person")
 		formatString: #,0
 		displayFolder: 04 Data Quality
-		lineageTag: 46664741-169d-4e48-89b2-79176ee6487b
+		lineageTag: cbe0c8d1-393e-4ff4-bc01-0ce2f93b6576
 
 	measure 'Contacts With Duplicates' = CALCULATE(COUNTROWS(dim_contact), dim_contact[has_duplicates] = 1)
 		formatString: #,0
 		displayFolder: 04 Data Quality
-		lineageTag: 32c5f3d3-f145-4aec-9231-bfaee022f94a
+		lineageTag: ea56a33a-a3a9-4452-a9fa-7e07bf48be38
 
 	measure 'Duplicate Rate' = DIVIDE([Contacts With Duplicates], [Contacts])
 		formatString: 0.0%
 		displayFolder: 04 Data Quality
-		lineageTag: 8c8a66f2-f1a6-4620-8070-0073d3e35aeb
+		lineageTag: d3095a6e-bb0b-4c2f-8e7e-fbba7685c9ad
 
 	measure 'Unresolved Provinces' = CALCULATE(COUNTROWS(dim_contact), dim_contact[province] = "Unknown")
 		formatString: #,0
 		displayFolder: 04 Data Quality
-		lineageTag: b0b41f4c-8e22-462b-9bea-ae1644982d38
+		lineageTag: d4a9a3ac-8b66-4086-b1eb-21ecce7c4aaf
 
 	measure 'CRM Accounts' = CALCULATE(COUNTROWS(sf_account), sf_account[is_deleted] = FALSE())
 		formatString: #,0
 		displayFolder: 05 Salesforce CRM
-		lineageTag: c0bd23f9-b95f-4d8c-af01-fee1b8e92fbd
+		lineageTag: bfd2cf63-4d91-47f0-829f-b433a2d5e14f
 
 	measure 'CRM Contacts' = CALCULATE(COUNTROWS(sf_contact), sf_contact[is_deleted] = FALSE())
 		formatString: #,0
 		displayFolder: 05 Salesforce CRM
-		lineageTag: 59826f12-4d0a-4e6b-9ab5-ac18cda511ca
+		lineageTag: d7bf7475-caa8-4695-8b5a-3913a5e4dff6
 
 	measure 'CRM Leads' = CALCULATE(COUNTROWS(sf_lead), sf_lead[is_deleted] = FALSE())
 		formatString: #,0
 		displayFolder: 05 Salesforce CRM
-		lineageTag: 880c797a-dfa0-461e-a056-d98c5a0bdfcc
+		lineageTag: f1ea425c-706d-4f25-a842-53cc50a93620
 
 	measure 'CRM Opportunities' = CALCULATE(COUNTROWS(sf_opportunity), sf_opportunity[is_deleted] = FALSE())
 		formatString: #,0
 		displayFolder: 05 Salesforce CRM
-		lineageTag: d93c8499-86b0-44b4-ba4c-616b97c42897
+		lineageTag: d1f1fda0-738f-40bc-b9e1-1dd00a2b3edd
 
 	measure 'CRM Pipeline Value' = CALCULATE(SUM(sf_opportunity[RY_Expected_Value_ZAR__c]), sf_opportunity[is_deleted] = FALSE())
 		formatString: "R"#,0
 		displayFolder: 05 Salesforce CRM
-		lineageTag: 768ba141-4fd4-495b-8bc7-776d06a29ff4
+		lineageTag: 701e47bd-ef0a-49b2-8b29-8f31d75a3943
 
 	measure 'CRM Records Deleted' = CALCULATE(COUNTROWS(sf_contact), sf_contact[is_deleted] = TRUE()) + CALCULATE(COUNTROWS(sf_lead), sf_lead[is_deleted] = TRUE()) + CALCULATE(COUNTROWS(sf_opportunity), sf_opportunity[is_deleted] = TRUE())
 		formatString: #,0
 		displayFolder: 05 Salesforce CRM
-		lineageTag: cc2ed7e0-549b-4c74-ae93-4ef172385fc3
+		lineageTag: 6a73ac89-3a06-4cd2-bca3-02b162f46170
 
 	measure 'CRM Contacts Missing Email' = CALCULATE(COUNTROWS(sf_contact), sf_contact[is_deleted] = FALSE(), ISBLANK(sf_contact[Email]))
 		formatString: #,0
 		displayFolder: 05 Salesforce CRM
-		lineageTag: 024ea28c-1b9b-4dc5-99c0-7ddff1cf6603
+		lineageTag: e337935b-00df-4d47-b678-c395f0badf47
 
 	measure 'Scored Leads' = COUNTROWS(ml_lead_propensity)
 		formatString: #,0
 		displayFolder: 06 Predictive
-		lineageTag: e937cdbe-0008-4d62-b463-7573c6a54c32
+		lineageTag: e800b44f-3dcd-40cf-be66-c4cd4fdc3a69
 
 	measure 'Avg Propensity' = AVERAGE(ml_lead_propensity[propensity])
 		formatString: 0.0%
 		displayFolder: 06 Predictive
-		lineageTag: 37aa1223-4255-4b8d-9027-32ac5c8c5ee1
+		lineageTag: 50ee0c38-812b-45d0-80bc-7a246ffb37d8
 
 	measure 'Priority Leads' = CALCULATE(COUNTROWS(ml_lead_propensity), ml_lead_propensity[propensity_band] = "Priority")
 		formatString: #,0
 		displayFolder: 06 Predictive
-		lineageTag: 60708d48-b882-4c88-a80a-e3573949b195
+		lineageTag: 54b65fdc-44a2-4b94-923c-75a43d08ff36
 
 	measure 'Actual Conversion Rate' = DIVIDE(SUM(ml_lead_propensity[target]), COUNTROWS(ml_lead_propensity))
 		formatString: 0.0%
 		displayFolder: 06 Predictive
-		lineageTag: b6124ad7-2fe6-4d5a-89a3-ce56c3e51744
+		lineageTag: 628a0957-6cd0-4a7d-9cb0-cd027e99c2ec
 
 	measure 'Scored Enrolments' = COUNTROWS(ml_withdrawal_risk)
 		formatString: #,0
 		displayFolder: 06 Predictive
-		lineageTag: 1fd395f0-c01c-409f-9815-80d8aa4c8487
+		lineageTag: 86f77908-969c-40b5-b5ce-2cfc101ff6b1
 
 	measure 'Avg Withdrawal Risk' = AVERAGE(ml_withdrawal_risk[withdrawal_risk])
 		formatString: 0.0%
 		displayFolder: 06 Predictive
-		lineageTag: b1b3f5a8-d1a0-44e1-a199-ca63f1fca458
+		lineageTag: 413cb594-8b6a-48b0-bd0d-47479dc75dc2
 
 	measure 'Students To Intervene' = CALCULATE(COUNTROWS(ml_withdrawal_risk), ml_withdrawal_risk[risk_band] IN {"Elevated", "Intervene"})
 		formatString: #,0
 		displayFolder: 06 Predictive
-		lineageTag: 11272780-9ef0-42e2-9d4e-2192036bea49
+		lineageTag: 101f037e-32e3-4f53-b73f-4d282fe57847
 
 	measure 'Actual Withdrawal Rate' = DIVIDE(SUM(ml_withdrawal_risk[target]), COUNTROWS(ml_withdrawal_risk))
 		formatString: 0.0%
 		displayFolder: 06 Predictive
-		lineageTag: 72c5c5a6-ca14-4412-af66-1af34449208f
+		lineageTag: 45401909-f9b1-42f2-835b-4cddd83b4530
 
 	measure 'CRM Email Completeness' = DIVIDE([CRM Contacts] - [CRM Contacts Missing Email], [CRM Contacts])
 		formatString: 0.0%
 		displayFolder: 05 Salesforce CRM
-		lineageTag: 1eee3e0a-73ba-4b7d-b0dd-658408e89a18
+		lineageTag: d8906e7f-4513-487c-a0d2-9a358ee8dcf9
 
 	column _placeholder
 		isHidden
 		dataType: string
-		lineageTag: 714eef7e-1b27-4b9c-b920-f6251d9bfc6f
+		lineageTag: 90a983d3-3c5b-4945-a963-4d544a84642c
 		summarizeBy: none
 		sourceColumn: _placeholder
 

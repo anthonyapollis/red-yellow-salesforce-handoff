@@ -1,33 +1,33 @@
 table programme
-	lineageTag: 3f6de5f0-0298-433e-8e08-d7d2b8fea12e
+	lineageTag: f3763e94-1bdc-4a9e-a696-301b25f4bcf8
 
 	column programme_external_id
 		dataType: string
-		lineageTag: 453f263d-2011-4a71-8e06-bc27fbee4f4f
+		lineageTag: ec499be5-62b4-431e-9e20-7c325bd09cb8
 		summarizeBy: none
 		sourceColumn: programme_external_id
 
 	column programme_title
 		dataType: string
-		lineageTag: 6c0da86c-d4fa-4326-8253-46a04a0cc17d
+		lineageTag: 3acc7b18-39c6-4765-9ce3-01dd9fc6676d
 		summarizeBy: none
 		sourceColumn: programme_title
 
 	column category
 		dataType: string
-		lineageTag: f44d1995-1d87-496e-ba89-1ec84988e8c4
+		lineageTag: ce80fe52-e9e1-4572-9935-f8d5e8ca6506
 		summarizeBy: none
 		sourceColumn: category
 
 	column credential_text
 		dataType: string
-		lineageTag: 6ce100b5-4992-4dd7-997d-ce60d2b3c517
+		lineageTag: 3afcd6f3-5ecd-48c4-89c6-aaa1fed0748a
 		summarizeBy: none
 		sourceColumn: credential_text
 
 	column listed_body
 		dataType: string
-		lineageTag: a92f0227-9d79-4fa7-9817-eefd28ced4f8
+		lineageTag: 2f548bf6-8134-4be8-bfc3-9594057dd2a1
 		summarizeBy: none
 		sourceColumn: listed_body
 
