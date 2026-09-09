@@ -1,234 +1,251 @@
 RY_External_ID__c,Name,Account_Key,Applicant_Key,Campaign_Key,Intake_Key,CloseDate,RY_Sample_Stage__c,RY_Expected_Value_ZAR__c
-RY-OPP-00423538,Interior Decorating - Application Received,,RY-CONT-00085539,,,2026-12-21,Application Received,13908.02
-RY-OPP-00411217,Data Analysis - Application Sent,,RY-CONT-01134532,,,2026-08-18,Application Sent,10767.93
-RY-OPP-00197257,Customer Experience - Closed Won,,RY-CONT-00029820,,,2026-11-02,Closed Won,13222.52
-RY-OPP-00664783,Sales & Account Management - Application Sent,,RY-CONT-00139681,,,2026-11-18,Application Sent,4383.17
-RY-OPP-00404118,Shopper Marketing - Closed Lost,,RY-CONT-00070131,,,2026-08-30,Closed Lost,12598.3
-RY-OPP-00581281,Higher Certificate in Business Management - Application Sent,,RY-CONT-01129134,,,2026-09-19,Application Sent,
-RY-OPP-00046438,Copywriting - Closed Lost,,RY-CONT-00170117,,,2026-10-18,Closed Lost,11221.16
-RY-OPP-00666346,Sports Sponsorship Marketing - Enquiry,,RY-CONT-00084919,,,2026-08-08,Enquiry,
-RY-OPP-00142165,Higher Certificate in Business Management - Application Sent,,RY-CONT-00205758,,,2026-08-22,Application Sent,
-RY-OPP-00209127,Management Development Programme: Agency Leadership - Offer Made,,RY-CONT-01136093,,,2026-11-02,Offer Made,33242.72
-RY-OPP-00060420,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Enquiry",,RY-CONT-00031063,,,2026-09-02,Enquiry,
-RY-OPP-00229485,Shopper Marketing - Closed Lost,,RY-CONT-00206759,,,2026-07-12,Closed Lost,12261.91
-RY-OPP-00648852,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Closed Won",,RY-CONT-01111319,,,2026-09-26,Closed Won,
-RY-OPP-00639131,Data Analysis - Closed Lost,,RY-CONT-00111840,,,2026-06-28,Closed Lost,13200.21
-RY-OPP-00328488,Strategic Foresight for Leaders - Qualification,,RY-CONT-00103760,,,2026-08-06,Qualification,26401.4
-RY-OPP-00290198,Postgraduate Diploma in Digital Marketing - Qualification,,RY-CONT-00162700,,,2026-07-28,Qualification,
-RY-OPP-00041594,Performance Marketing - Qualification,,RY-CONT-01133435,,,2026-06-07,Qualification,11919.24
-RY-OPP-00459893,Sports Sponsorship Marketing - Closed Lost,,RY-CONT-00172159,,,2026-09-29,Closed Lost,
-RY-OPP-00645708,Digital Content & Copywriting - Application Sent,,RY-CONT-00193960,,,2026-06-23,Application Sent,11809.51
-RY-OPP-00616133,Graphic Design Beginner - Qualification,,RY-CONT-00028034,,,2026-10-27,Qualification,13305.83
-RY-OPP-00585598,Mentorship - Closed Won,,RY-CONT-01116513,,,2026-06-20,Closed Won,5058.6
-RY-OPP-00532446,Design Thinking - Enquiry,,RY-CONT-00009197,,,2026-08-30,Enquiry,12389.27
-RY-OPP-00171838,Marketing Strategy - Closed Won,,RY-CONT-00135736,,,2026-09-17,Closed Won,7864.08
-RY-OPP-00657084,Part-Time Postgraduate Diploma in Management - Application Sent,,RY-CONT-01114554,,,2026-05-21,Application Sent,
-RY-OPP-00442088,Postgraduate Diploma in Management - Application Received,,RY-CONT-00160523,,,2026-10-02,Application Received,
-RY-OPP-00371855,Graphic Design Beginner - Closed Won,,RY-CONT-01124980,,,2026-06-25,Closed Won,14672.62
-RY-OPP-00031076,Postgraduate Diploma in Management - Closed Lost,,RY-CONT-00114804,,,2026-04-30,Closed Lost,
-RY-OPP-00214619,Postgraduate Diploma in Management - Qualification,,RY-CONT-00049315,,,2026-05-15,Qualification,
-RY-OPP-00605880,Project Management - Enquiry,,RY-CONT-01124182,,,2026-09-02,Enquiry,11885.39
-RY-OPP-00298580,Sports Sponsorship Marketing - Enquiry,,RY-CONT-00071199,,,2026-06-19,Enquiry,
-RY-OPP-00492578,Higher Certificate in Business Management - Closed Won,,RY-CONT-00067037,,,2026-06-20,Closed Won,
-RY-OPP-00097402,Operational Finance - Closed Lost,,RY-CONT-00062307,,,2026-05-29,Closed Lost,12266.11
-RY-OPP-00194095,Postgraduate Diploma in Digital Marketing - Qualification,,RY-CONT-00150836,,,2026-05-16,Qualification,
-RY-OPP-00322906,User Experience Design - Qualification,,RY-CONT-00173552,,,2026-04-08,Qualification,
-RY-OPP-00534371,Customer Experience - Enquiry,,RY-CONT-00163057,,,2026-03-13,Enquiry,11040.17
-RY-OPP-00488501,Desktop Publishing with InDesign - Application Received,,RY-CONT-00000773,,,2026-06-12,Application Received,
-RY-OPP-00357125,Public Relations - Application Sent,,RY-CONT-00197451,,,2026-01-12,Application Sent,11988.0
-RY-OPP-00415824,Strategic Foresight for Leaders - Closed Lost,,RY-CONT-01135278,,,2026-06-07,Closed Lost,24411.31
-RY-OPP-00654095,Design Thinking - Qualification,,RY-CONT-01135159,,,2026-01-27,Qualification,12665.87
-RY-OPP-00442114,AI & Executive Judgement - Qualification,,RY-CONT-00031498,,,2026-04-28,Qualification,21401.11
-RY-OPP-00168550,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Enquiry",,RY-CONT-00059876,,,2026-02-18,Enquiry,
-RY-OPP-00161434,Operational Finance - Closed Won,,RY-CONT-00104242,,,2025-12-18,Closed Won,11056.55
-RY-OPP-00405119,Mentorship - Closed Won,,RY-CONT-00122308,,,2026-01-22,Closed Won,5294.15
-RY-OPP-00001223,Part-Time Higher Certificate in Marketing and Branding - Application Sent,,RY-CONT-00197451,,,2026-02-17,Application Sent,
-RY-OPP-00375095,Strategic Foresight for Leaders - Offer Made,,RY-CONT-00064267,,,2026-01-16,Offer Made,21677.56
-RY-OPP-00160681,Storytelling for Impact & Influence - Closed Lost,,RY-CONT-00156231,,,2026-03-27,Closed Lost,5576.31
-RY-OPP-00422145,Part-Time Postgraduate Diploma in Management - Closed Won,,RY-CONT-00079289,,,2025-11-07,Closed Won,
-RY-OPP-00268598,Management Development Programme: Agency Leadership - Application Received,,RY-CONT-01121735,,,2026-01-16,Application Received,28796.2
-RY-OPP-00485631,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Enquiry",,RY-CONT-00115901,,,2026-02-13,Enquiry,
-RY-OPP-00158972,Digital Content & Copywriting - Closed Lost,,RY-CONT-00153682,,,2025-12-04,Closed Lost,13553.46
-RY-OPP-00667767,Brand as Capital - Enquiry,,RY-CONT-00023174,,,2025-11-29,Enquiry,25393.84
-RY-OPP-00137342,Project Management - Closed Won,,RY-CONT-01113449,,,2025-12-31,Closed Won,10356.59
-RY-OPP-00010816,Part-Time Higher Certificate in Business Management - Closed Lost,,RY-CONT-00115901,,,2026-01-21,Closed Lost,
-RY-OPP-00522112,Social Media Marketing - Offer Made,,RY-CONT-00070091,,,2025-10-01,Offer Made,
-RY-OPP-00156104,Digital Content & Copywriting - Qualification,,RY-CONT-00113250,,,2025-12-09,Qualification,12892.16
-RY-OPP-00202925,Social Media Marketing - Application Received,,RY-CONT-01138223,,,2025-12-19,Application Received,
-RY-OPP-00005943,Desktop Publishing with InDesign - Qualification,,RY-CONT-00202606,,,2025-11-13,Qualification,
-RY-OPP-00082280,Rebel Leadership - Application Received,,RY-CONT-00016694,,,2025-09-14,Application Received,21531.43
-RY-OPP-00445387,Postgraduate Diploma in Management - Application Sent,,RY-CONT-01114195,,,2025-12-21,Application Sent,
-RY-OPP-00545371,Media Planning - Offer Made,,RY-CONT-01118067,,,2025-11-14,Offer Made,11130.43
-RY-OPP-00238507,Desktop Publishing with InDesign - Qualification,,RY-CONT-00025257,,,2025-10-10,Qualification,
-RY-OPP-00106870,Creative Thinking - Application Sent,,RY-CONT-01131298,,,2025-09-11,Application Sent,4108.76
-RY-OPP-00228652,Strategic Foresight for Leaders - Application Received,,RY-CONT-00040600,,,2025-07-13,Application Received,20620.93
-RY-OPP-00026971,Postgraduate Diploma in Management - Qualification,,RY-CONT-01128611,,,2025-11-27,Qualification,
-RY-OPP-00627322,Part-Time Higher Certificate in Business Management - Application Received,,RY-CONT-00144155,,,2025-09-25,Application Received,
-RY-OPP-00448731,Rebel Leadership - Application Sent,,RY-CONT-00020625,,,2025-06-05,Application Sent,23423.82
-RY-OPP-00597653,Brand as Capital - Offer Made,,RY-CONT-00096505,,,2025-08-06,Offer Made,20032.29
-RY-OPP-00566259,Interior Decorating - Closed Lost,,RY-CONT-00159874,,,2025-08-27,Closed Lost,15013.81
-RY-OPP-00077201,Rebel Leadership - Closed Won,,RY-CONT-00182520,,,2025-08-13,Closed Won,23811.99
-RY-OPP-00675394,Higher Certificate in Business Management - Closed Won,,RY-CONT-01124980,,,2025-06-26,Closed Won,
-RY-OPP-00685302,Brand as Capital - Enquiry,,RY-CONT-01131928,,,2025-06-13,Enquiry,19941.9
-RY-OPP-00142281,Higher Certificate in Marketing and Branding - Enquiry,,RY-CONT-00082521,,,2025-04-16,Enquiry,
-RY-OPP-00654887,Sales & Account Management - Offer Made,,RY-CONT-00021343,,,2025-04-16,Offer Made,4824.13
-RY-OPP-00581742,User Experience Design - Application Received,,RY-CONT-00152347,,,2025-06-20,Application Received,
-RY-OPP-00202571,Performance Marketing - Offer Made,,RY-CONT-00067037,,,2025-07-30,Offer Made,11125.43
-RY-OPP-00230230,Business Analysis - Closed Lost,,RY-CONT-01126872,,,2025-04-28,Closed Lost,13675.22
+RY-OPP-00352985,Mentorship - Closed Won,,RY-CONT-00903359,,,2023-05-29,Closed Won,5164.82
+RY-OPP-00695855,Data Analysis - Closed Won,,RY-CONT-00472069,,,2026-07-28,Closed Won,13222.09
+RY-OPP-00316860,Social Media Marketing - Qualification,,RY-CONT-00533668,,,2023-06-07,Qualification,
+RY-OPP-00273379,Digital Marketing Professional - Offer Made,,RY-CONT-00090681,,,2024-10-01,Offer Made,
+RY-OPP-00540975,Digital Marketing Professional - Offer Made,,RY-CONT-00706485,,,2025-12-29,Offer Made,
+RY-OPP-00473912,Strategic Foresight for Leaders - Qualification,,RY-CONT-00873418,,,2025-03-12,Qualification,23085.72
+RY-OPP-00583243,Rebel Leadership - Application Sent,,RY-CONT-00376521,,,2026-11-15,Application Sent,23595.38
+RY-OPP-00265809,Part-Time Postgraduate Diploma in Management - Closed Lost,,RY-CONT-00226107,,,2024-07-18,Closed Lost,
+RY-OPP-00680566,Interior Decorating - Application Received,,RY-CONT-00382911,,,2022-09-22,Application Received,12765.33
+RY-OPP-00095787,Higher Certificate in Business Management - Enquiry,,RY-CONT-00600088,,,2022-11-03,Enquiry,
+RY-OPP-00107818,Copywriting - Qualification,,RY-CONT-00734978,,,2025-01-10,Qualification,10785.82
+RY-OPP-00635292,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Enquiry",,RY-CONT-00212015,,,2023-10-02,Enquiry,
+RY-OPP-00200292,Performance Marketing - Closed Won,,RY-CONT-01066849,,,2022-12-26,Closed Won,11274.01
+RY-OPP-00650781,Data Analysis for Marketers - Application Received,,RY-CONT-01093142,,,2025-05-19,Application Received,12312.91
+RY-OPP-00318866,Digital Marketing Professional - Application Sent,,RY-CONT-00612894,,,2022-10-15,Application Sent,
+RY-OPP-00026939,Part-Time Postgraduate Diploma in Management - Enquiry,,RY-CONT-00450973,,,2026-04-10,Enquiry,
+RY-OPP-00591396,AI & Executive Judgement - Offer Made,,RY-CONT-00906504,,,2024-03-07,Offer Made,26824.06
+RY-OPP-00226678,Customer Experience - Qualification,,RY-CONT-00239872,,,2025-12-23,Qualification,12864.79
+RY-OPP-00402647,Public Relations - Application Received,,RY-CONT-00263002,,,2025-07-24,Application Received,15756.64
+RY-OPP-00149595,Higher Certificate in Business Management - Qualification,,RY-CONT-00226883,,,2024-03-30,Qualification,
+RY-OPP-00308876,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Closed Won",,RY-CONT-00612894,,,2025-10-11,Closed Won,
+RY-OPP-00598306,Media Planning - Qualification,,RY-CONT-00434736,,,2026-04-27,Qualification,12483.01
+RY-OPP-00483895,Management Development Programme: Agency Leadership - Offer Made,,RY-CONT-00049105,,,2023-11-10,Offer Made,35638.22
+RY-OPP-00482413,Sustainable Marketing - Qualification,,RY-CONT-00470541,,,2022-09-23,Qualification,
+RY-OPP-00099299,Shopper Marketing - Closed Won,,RY-CONT-00732812,,,2025-02-21,Closed Won,15792.3
+RY-OPP-00641237,Strategic Foresight for Leaders - Closed Lost,,RY-CONT-00324185,,,2024-07-15,Closed Lost,24232.02
+RY-OPP-00441591,Digital Content & Copywriting - Qualification,,RY-CONT-00602747,,,2022-10-21,Qualification,13601.79
+RY-OPP-00667730,Design Thinking - Enquiry,,RY-CONT-00864954,,,2026-02-24,Enquiry,11269.48
+RY-OPP-00092753,Rebel Leadership - Closed Lost,,RY-CONT-00426843,,,2024-08-27,Closed Lost,20948.82
+RY-OPP-00540301,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Closed Won",,RY-CONT-00005462,,,2025-01-01,Closed Won,
+RY-OPP-00219461,Interior Decorating - Closed Won,,RY-CONT-00736407,,,2026-04-08,Closed Won,15878.13
+RY-OPP-00056852,Digital Marketing Professional - Application Received,,RY-CONT-00746609,,,2024-10-31,Application Received,
+RY-OPP-00313051,Data Visualisation for Designers - Closed Won,,RY-CONT-00433930,,,2023-09-20,Closed Won,14911.74
+RY-OPP-00405781,Desktop Publishing with InDesign - Qualification,,RY-CONT-01067588,,,2026-03-12,Qualification,
+RY-OPP-00578607,Desktop Publishing with InDesign - Application Received,,RY-CONT-00234785,,,2025-09-17,Application Received,
+RY-OPP-00608247,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Enquiry",,RY-CONT-00488536,,,2024-07-24,Enquiry,
+RY-OPP-00083949,Mentorship - Application Received,,RY-CONT-01042643,,,2024-08-22,Application Received,4713.28
+RY-OPP-00690756,People Management - Qualification,,RY-CONT-00277490,,,2024-12-12,Qualification,13489.64
+RY-OPP-00055882,Postgraduate Diploma in Digital Marketing - Closed Lost,,RY-CONT-00417707,,,2024-01-15,Closed Lost,
+RY-OPP-00127651,Part-Time Higher Certificate in Graphic Design - Application Received,,RY-CONT-00003202,,,2026-01-24,Application Received,
+RY-OPP-00378205,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Qualification",,RY-CONT-00168770,,,2024-02-09,Qualification,
+RY-OPP-00498806,Operational Finance - Closed Won,,RY-CONT-00285073,,,2024-09-27,Closed Won,12039.03
+RY-OPP-00171865,Operational Finance - Application Sent,,RY-CONT-00536482,,,2025-07-16,Application Sent,12924.73
+RY-OPP-00129303,Design Thinking - Qualification,,RY-CONT-00183133,,,2025-05-16,Qualification,13253.53
+RY-OPP-00178222,Strategic Foresight for Leaders - Application Sent,,RY-CONT-00994331,,,2023-07-07,Application Sent,25171.72
+RY-OPP-00216030,Postgraduate Diploma in Management - Application Received,,RY-CONT-00652876,,,2023-02-02,Application Received,
+RY-OPP-00339165,Postgraduate Diploma in Management - Enquiry,,RY-CONT-00003971,,,2022-05-13,Enquiry,
+RY-OPP-00059343,Part-Time Postgraduate Diploma in Digital Marketing - Closed Won,,RY-CONT-00266140,,,2022-06-18,Closed Won,
+RY-OPP-00028706,Management Development Programme: Agency Leadership - Closed Lost,,RY-CONT-00486318,,,2026-10-08,Closed Lost,27221.56
+RY-OPP-00337234,Sales & Account Management - Enquiry,,RY-CONT-00488277,,,2023-06-03,Enquiry,4096.15
+RY-OPP-00420461,Interior Decorating - Qualification,,RY-CONT-00536141,,,2026-01-11,Qualification,15065.27
+RY-OPP-00386598,Data Analysis - Application Sent,,RY-CONT-00083179,,,2023-08-16,Application Sent,10664.08
+RY-OPP-00480862,Desktop Publishing with InDesign - Application Sent,,RY-CONT-00465137,,,2024-09-06,Application Sent,
+RY-OPP-00584145,Creative Thinking - Qualification,,RY-CONT-00894708,,,2024-04-27,Qualification,4635.71
+RY-OPP-00702618,Higher Certificate in Marketing and Branding - Closed Lost,,RY-CONT-00206036,,,2025-11-29,Closed Lost,
+RY-OPP-00484313,Storytelling for Impact & Influence - Application Sent,,RY-CONT-00188064,,,2025-03-13,Application Sent,5094.71
+RY-OPP-00517028,Higher Certificate in Business Management - Qualification,,RY-CONT-00048810,,,2025-10-29,Qualification,
+RY-OPP-00031514,Postgraduate Diploma in Management - Qualification,,RY-CONT-00972253,,,2026-12-27,Qualification,
+RY-OPP-00493475,Digital Marketing Professional - Application Sent,,RY-CONT-00776344,,,2025-04-29,Application Sent,
+RY-OPP-00094621,Rebel Leadership - Closed Lost,,RY-CONT-00178993,,,2023-09-16,Closed Lost,25377.56
+RY-OPP-00178387,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Application Received",,RY-CONT-00718760,,,2025-01-05,Application Received,
+RY-OPP-00477428,Design Thinking - Application Received,,RY-CONT-00981002,,,2023-11-05,Application Received,10013.58
+RY-OPP-00236754,People Management - Application Received,,RY-CONT-00428257,,,2023-01-29,Application Received,9837.96
+RY-OPP-00684096,User Experience Design - Offer Made,,RY-CONT-00902685,,,2024-12-25,Offer Made,
+RY-OPP-00183309,Part-Time Higher Certificate in Business Management - Offer Made,,RY-CONT-00519002,,,2026-12-03,Offer Made,
+RY-OPP-00542520,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Enquiry",,RY-CONT-00950132,,,2022-03-21,Enquiry,
+RY-OPP-00182888,Brand as Capital - Application Received,,RY-CONT-00803158,,,2024-11-11,Application Received,22559.63
+RY-OPP-00431877,Operational Finance - Enquiry,,RY-CONT-00049021,,,2026-02-17,Enquiry,11574.03
+RY-OPP-00133023,Graphic Design Intermediate with Adobe Photoshop - Closed Lost,,RY-CONT-00080790,,,2024-07-04,Closed Lost,13071.66
+RY-OPP-00516237,Data Visualisation for Designers - Qualification,,RY-CONT-00545242,,,2024-06-17,Qualification,14576.39
+RY-OPP-00523563,Part-Time Postgraduate Diploma in Management - Closed Lost,,RY-CONT-00010754,,,2025-07-20,Closed Lost,
+RY-OPP-00513355,Data Analysis - Closed Won,,RY-CONT-00620275,,,2024-06-09,Closed Won,12182.69
+RY-OPP-00149622,Postgraduate Diploma in Digital Marketing - Closed Won,,RY-CONT-00324819,,,2025-01-25,Closed Won,
+RY-OPP-00293372,Data Analysis - Application Received,,RY-CONT-00937927,,,2024-08-17,Application Received,9724.34
+RY-OPP-00275009,Data Visualisation for Designers - Closed Lost,,RY-CONT-00846872,,,2023-11-04,Closed Lost,15640.19
+RY-OPP-00237744,Storytelling for Impact & Influence - Application Received,,RY-CONT-00994042,,,2022-06-17,Application Received,6256.61
+RY-OPP-00281254,Design Thinking - Application Sent,,RY-CONT-00424695,,,2026-02-06,Application Sent,10686.08
+RY-OPP-00353916,Part-Time Postgraduate Diploma in Digital Marketing - Closed Lost,,RY-CONT-00239545,,,2023-10-15,Closed Lost,
+RY-OPP-00395148,Customer Experience - Closed Won,,RY-CONT-00253392,,,2023-03-02,Closed Won,12802.97
+RY-OPP-00151754,Graphic Design Beginner - Qualification,,RY-CONT-00354118,,,2024-02-16,Qualification,13740.23
+RY-OPP-00612607,Project Management - Enquiry,,RY-CONT-00721415,,,2026-04-26,Enquiry,13254.36
+RY-OPP-00070074,Strategic Foresight for Leaders - Qualification,,RY-CONT-00472675,,,2025-10-13,Qualification,20417.27
+RY-OPP-00412472,Digital Marketing Professional - Application Sent,,RY-CONT-00708598,,,2023-09-02,Application Sent,
+RY-OPP-00511806,Higher Certificate in Marketing and Branding - Application Received,,RY-CONT-00324185,,,2022-11-03,Application Received,
+RY-OPP-00280922,Project Management - Closed Lost,,RY-CONT-00769962,,,2026-06-26,Closed Lost,11656.35
+RY-OPP-00440064,People Management - Enquiry,,RY-CONT-00010754,,,2025-01-23,Enquiry,11166.57
+RY-OPP-00480727,Brand as Capital - Closed Won,,RY-CONT-00372912,,,2025-07-27,Closed Won,26462.87
+RY-OPP-00565948,Higher Certificate in Marketing and Branding - Application Received,,RY-CONT-00376521,,,2026-12-16,Application Received,
+RY-OPP-00434468,Design Thinking - Closed Lost,,RY-CONT-01001966,,,2026-06-09,Closed Lost,10798.04
+RY-OPP-00427839,Higher Certificate in Marketing and Branding - Offer Made,,RY-CONT-00324819,,,2022-06-02,Offer Made,
+RY-OPP-00368590,People Management - Application Sent,,RY-CONT-00219195,,,2023-07-03,Application Sent,10052.38
+RY-OPP-00188698,Data Visualisation for Designers - Qualification,,RY-CONT-00353843,,,2024-11-16,Qualification,14716.09
+RY-OPP-00465702,Performance Marketing - Offer Made,,RY-CONT-00000476,,,2022-10-14,Offer Made,10288.91
+RY-OPP-00561908,People Management - Closed Won,,RY-CONT-00725111,,,2022-05-23,Closed Won,10343.94
+RY-OPP-00013159,Data Analysis for Marketers - Application Sent,,RY-CONT-00705752,,,2025-06-20,Application Sent,11135.22
+RY-OPP-00036399,User Experience Design - Closed Lost,,RY-CONT-00885774,,,2024-09-02,Closed Lost,
+RY-OPP-00151598,Interior Decorating - Offer Made,,RY-CONT-00324185,,,2026-03-03,Offer Made,14460.44
+RY-OPP-00173931,Media Planning - Closed Won,,RY-CONT-00715893,,,2027-01-04,Closed Won,11147.96
+RY-OPP-00407092,Media Planning - Closed Lost,,RY-CONT-00814136,,,2023-06-05,Closed Lost,
+RY-OPP-00317975,Public Relations - Offer Made,,RY-CONT-00652876,,,2027-01-03,Offer Made,13284.58
+RY-OPP-00269434,Part-Time Higher Certificate in Business Management - Application Sent,,RY-CONT-00321710,,,2026-06-13,Application Sent,
+RY-OPP-00650718,Operational Finance - Closed Won,,RY-CONT-00979518,,,2023-05-07,Closed Won,11782.07
+RY-OPP-00218993,Sales & Account Management - Enquiry,,RY-CONT-00001396,,,2023-08-30,Enquiry,4856.84
+RY-OPP-00631492,Graphic Design Beginner - Qualification,,RY-CONT-00895740,,,2024-04-13,Qualification,14229.23
+RY-OPP-00635374,Higher Certificate in Business Management - Application Sent,,RY-CONT-01102137,,,2026-10-22,Application Sent,
+RY-OPP-00063392,Sales & Account Management - Offer Made,,RY-CONT-00725989,,,2024-05-11,Offer Made,4071.86
+RY-OPP-00642253,AI & Executive Judgement - Application Received,,RY-CONT-00924945,,,2024-01-08,Application Received,19768.44
+RY-OPP-00587931,Part-Time Higher Certificate in Marketing and Branding - Closed Lost,,RY-CONT-00450973,,,2023-01-04,Closed Lost,
+RY-OPP-00620787,Creative Thinking - Closed Lost,,RY-CONT-00487427,,,2022-05-29,Closed Lost,3578.11
+RY-OPP-00636282,Shopper Marketing - Offer Made,,RY-CONT-01038912,,,2024-03-24,Offer Made,14089.65
+RY-OPP-00575231,Higher Certificate in Business Management - Application Sent,,RY-CONT-00086886,,,2024-06-16,Application Sent,
+RY-OPP-00480067,Higher Certificate in Marketing and Branding - Enquiry,,RY-CONT-00889799,,,2024-01-04,Enquiry,
+RY-OPP-00170481,Interior Decorating - Application Sent,,RY-CONT-00849157,,,2022-09-08,Application Sent,13469.92
+RY-OPP-00277592,Sports Sponsorship Marketing - Application Sent,,RY-CONT-00196019,,,2024-03-18,Application Sent,
+RY-OPP-00192179,Interior Decorating - Enquiry,,RY-CONT-00156043,,,2024-07-25,Enquiry,12454.09
+RY-OPP-00496971,Sales & Account Management - Qualification,,RY-CONT-01090976,,,2025-03-25,Qualification,3917.11
+RY-OPP-00322409,Postgraduate Diploma in Digital Marketing - Application Sent,,RY-CONT-00116894,,,2023-09-26,Application Sent,
+RY-OPP-00228463,Sports Sponsorship Marketing - Closed Won,,RY-CONT-00266140,,,2024-05-17,Closed Won,
+RY-OPP-00597283,Project Management - Application Sent,,RY-CONT-00916148,,,2025-08-29,Application Sent,11521.59
+RY-OPP-00171533,Postgraduate Diploma in Management - Offer Made,,RY-CONT-00736278,,,2025-08-05,Offer Made,
+RY-OPP-00265750,People Management - Closed Lost,,RY-CONT-01004979,,,2024-04-19,Closed Lost,11897.07
+RY-OPP-00345464,Social Media Marketing - Closed Lost,,RY-CONT-00590309,,,2025-08-20,Closed Lost,
+RY-OPP-00360542,User Experience Design - Enquiry,,RY-CONT-00759749,,,2026-06-04,Enquiry,
+RY-OPP-00476516,Mentorship - Application Sent,,RY-CONT-00001500,,,2023-11-15,Application Sent,5243.16
+RY-OPP-00447256,Social Media Marketing - Offer Made,,RY-CONT-01031183,,,2024-12-06,Offer Made,
+RY-OPP-00368429,Shopper Marketing - Offer Made,,RY-CONT-00072459,,,2022-06-21,Offer Made,12532.85
+RY-OPP-00154580,Graphic Design Intermediate with Adobe Photoshop - Application Received,,RY-CONT-00279410,,,2023-10-24,Application Received,12816.35
+RY-OPP-00090927,Data Analysis for Marketers - Qualification,,RY-CONT-00488536,,,2024-06-25,Qualification,12082.86
+RY-OPP-00127501,Higher Certificate in Marketing and Branding - Application Sent,,RY-CONT-00184949,,,2022-10-07,Application Sent,
+RY-OPP-00403437,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Closed Won",,RY-CONT-00784249,,,2025-03-17,Closed Won,
+RY-OPP-00097090,Brand as Capital - Closed Lost,,RY-CONT-00330319,,,2025-07-18,Closed Lost,19524.78
+RY-OPP-00155225,Higher Certificate in Marketing and Branding - Closed Won,,RY-CONT-00354118,,,2026-10-26,Closed Won,
+RY-OPP-00186284,Business Analysis - Application Sent,,RY-CONT-00030452,,,2026-10-08,Application Sent,14522.19
+RY-OPP-00035523,Business Analysis - Qualification,,RY-CONT-00285073,,,2023-01-31,Qualification,13988.28
+RY-OPP-00061699,Sustainable Marketing - Closed Lost,,RY-CONT-00612795,,,2023-05-01,Closed Lost,
+RY-OPP-00022379,Data Visualisation for Designers - Offer Made,,RY-CONT-00321710,,,2022-07-22,Offer Made,14464.63
+RY-OPP-00249481,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Closed Won",,RY-CONT-00070000,,,2023-10-25,Closed Won,
+RY-OPP-00596173,Interior Decorating - Application Sent,,RY-CONT-00166134,,,2024-02-11,Application Sent,12346.61
+RY-OPP-00658303,Data Analysis for Marketers - Enquiry,,RY-CONT-00939196,,,2026-10-04,Enquiry,12883.32
+RY-OPP-00621482,Interior Decorating - Qualification,,RY-CONT-00832308,,,2026-09-23,Qualification,13859.52
+RY-OPP-00040320,Sustainable Marketing - Application Sent,,RY-CONT-00253392,,,2025-12-12,Application Sent,
+RY-OPP-00186441,User Experience Design - Closed Won,,RY-CONT-01067588,,,2022-10-12,Closed Won,
+RY-OPP-00067773,Copywriting - Closed Won,,RY-CONT-00622048,,,2026-09-28,Closed Won,10328.05
+RY-OPP-00111068,Digital Content & Copywriting - Qualification,,RY-CONT-01031183,,,2024-05-13,Qualification,11853.75
+RY-OPP-00419328,Copywriting - Closed Won,,RY-CONT-00587469,,,2026-07-15,Closed Won,11227.58
+RY-OPP-00291570,Customer Experience - Enquiry,,RY-CONT-00910831,,,2024-10-15,Enquiry,13335.0
+RY-OPP-00297604,Digital Marketing Professional - Qualification,,RY-CONT-00881107,,,2022-12-28,Qualification,
+RY-OPP-00021951,Higher Certificate in Marketing and Branding - Closed Lost,,RY-CONT-00911542,,,2024-08-31,Closed Lost,
+RY-OPP-00105717,Part-Time Postgraduate Diploma in Digital Marketing - Enquiry,,RY-CONT-00652914,,,2024-12-13,Enquiry,
+RY-OPP-00225566,Copywriting - Application Sent,,RY-CONT-01035195,,,2024-05-10,Application Sent,10076.23
+RY-OPP-00229057,Public Relations - Closed Won,,RY-CONT-00937927,,,2023-11-20,Closed Won,13856.49
+RY-OPP-00028415,Customer Experience - Application Sent,,RY-CONT-00729860,,,2024-07-01,Application Sent,10854.11
+RY-OPP-00073809,Desktop Publishing with InDesign - Closed Won,,RY-CONT-00324819,,,2023-05-30,Closed Won,
+RY-OPP-00044446,Part-Time Higher Certificate in Marketing and Branding - Application Received,,RY-CONT-00838266,,,2025-03-09,Application Received,
+RY-OPP-00359348,Sales & Account Management - Application Received,,RY-CONT-00374345,,,2025-05-31,Application Received,4565.85
+RY-OPP-00431824,Storytelling for Impact & Influence - Application Sent,,RY-CONT-00937927,,,2025-08-11,Application Sent,6164.94
+RY-OPP-00479595,Digital Marketing Professional - Enquiry,,RY-CONT-00553673,,,2023-01-10,Enquiry,
+RY-OPP-00206458,Graphic Design Intermediate with Adobe Photoshop - Application Received,,RY-CONT-00669050,,,2024-12-17,Application Received,14941.56
+RY-OPP-00489641,Higher Certificate in Business Management - Application Sent,,RY-CONT-00188064,,,2024-05-28,Application Sent,
+RY-OPP-00025814,Mentorship - Qualification,,RY-CONT-01091526,,,2024-03-19,Qualification,
+RY-OPP-00534394,Graphic Design Intermediate with Adobe Photoshop - Application Received,,RY-CONT-00460200,,,2024-06-01,Application Received,13989.49
+RY-OPP-00643423,Public Relations - Qualification,,RY-CONT-00523345,,,2026-10-01,Qualification,12548.64
+RY-OPP-00451765,Media Planning - Application Received,,RY-CONT-00253392,,,2026-10-28,Application Received,10544.86
+RY-OPP-00310864,Desktop Publishing with InDesign - Application Sent,,RY-CONT-00723762,,,2026-03-04,Application Sent,
+RY-OPP-00546413,User Experience Design - Application Received,,RY-CONT-00736407,,,2024-09-19,Application Received,
+RY-OPP-00373204,Shopper Marketing - Offer Made,,RY-CONT-00683811,,,2023-12-11,Offer Made,12297.13
+RY-OPP-00639932,Media Planning - Qualification,,RY-CONT-00729860,,,2026-01-17,Qualification,10688.94
+RY-OPP-00562583,User Experience Design - Application Sent,,RY-CONT-00746609,,,2024-07-22,Application Sent,
+RY-OPP-00435938,Strategic Foresight for Leaders - Enquiry,,RY-CONT-00514180,,,2026-06-24,Enquiry,22233.72
+RY-OPP-00316184,Part-Time Higher Certificate in Business Management - Closed Lost,,RY-CONT-00469205,,,2024-11-28,Closed Lost,
+RY-OPP-00223185,Public Relations - Closed Lost,,RY-CONT-00612674,,,2026-07-12,Closed Lost,15040.03
+RY-OPP-00051034,Media Planning - Closed Won,,RY-CONT-00514180,,,2025-03-17,Closed Won,12858.64
+RY-OPP-00133591,User Experience Design - Qualification,,RY-CONT-00804376,,,2023-01-28,Qualification,
+RY-OPP-00497158,Part-Time Postgraduate Diploma in Management - Application Sent,,RY-CONT-00680714,,,2023-09-17,Application Sent,
+RY-OPP-00124099,Storytelling for Impact & Influence - Application Received,,RY-CONT-00369775,,,2025-04-23,Application Received,6045.02
+RY-OPP-00513381,Creative Thinking - Qualification,,RY-CONT-00286943,,,2022-07-01,Qualification,3686.4
+RY-OPP-00627233,Part-Time Postgraduate Diploma in Management - Offer Made,,RY-CONT-01071243,,,2026-03-07,Offer Made,
+RY-OPP-00023260,Part-Time Higher Certificate in Business Management - Enquiry,,RY-CONT-00906504,,,2026-06-02,Enquiry,
+RY-OPP-00417674,Shopper Marketing - Qualification,,RY-CONT-00858485,,,2026-06-18,Qualification,14774.49
+RY-OPP-00414604,Media Planning - Qualification,,RY-CONT-00718760,,,2023-08-21,Qualification,12481.5
+RY-OPP-00139410,Copywriting - Qualification,,RY-CONT-00438400,,,2022-09-06,Qualification,9820.14
+RY-OPP-00236090,Digital Marketing Professional - Closed Lost,,RY-CONT-00330494,,,2025-01-22,Closed Lost,
+RY-OPP-00242921,People Management - Closed Lost,,RY-CONT-00533668,,,2023-02-21,Closed Lost,12706.86
+RY-OPP-00640949,Higher Certificate in Business Management - Offer Made,,RY-CONT-00205318,,,2026-01-01,Offer Made,
+RY-OPP-00109562,Graphic Design Beginner - Closed Won,,RY-CONT-00168770,,,2022-12-01,Closed Won,15037.43
+RY-OPP-00167668,Marketing Strategy - Closed Lost,,RY-CONT-00536141,,,2024-04-07,Closed Lost,8846.68
+RY-OPP-00573970,Strategic Foresight for Leaders - Application Sent,,RY-CONT-00728005,,,2026-01-24,Application Sent,25192.64
+RY-OPP-00238223,Creative Thinking - Application Received,,RY-CONT-00612894,,,2025-05-02,Application Received,3933.28
+RY-OPP-00508150,Public Relations - Application Sent,,RY-CONT-00171765,,,2025-12-02,Application Sent,11882.46
+RY-OPP-00201476,Higher Certificate in Business Management - Closed Lost,,RY-CONT-00009839,,,2023-06-18,Closed Lost,
+RY-OPP-00264905,Design Thinking - Application Sent,,RY-CONT-00010617,,,2023-01-20,Application Sent,11857.72
+RY-OPP-00555331,Graphic Design Intermediate with Adobe Photoshop - Qualification,,RY-CONT-00701542,,,2022-07-13,Qualification,13687.49
+RY-OPP-00517139,Operational Finance - Qualification,,RY-CONT-00111548,,,2022-07-15,Qualification,10098.9
 RY-OPP-00625867,Mentorship - Application Sent,,RY-CONT-01126763,,,2025-05-11,Application Sent,5303.37
-RY-OPP-00450313,Strategic Foresight for Leaders - Application Sent,,RY-CONT-00114804,,,2025-05-12,Application Sent,25584.63
-RY-OPP-00450243,Project Management - Enquiry,,RY-CONT-00196021,,,2025-08-06,Enquiry,12945.45
-RY-OPP-00325047,Design Thinking - Application Sent,,RY-CONT-00091811,,,2025-07-14,Application Sent,12711.3
-RY-OPP-00339485,Desktop Publishing with InDesign - Application Sent,,RY-CONT-00082521,,,2025-07-14,Application Sent,
-RY-OPP-00232392,Public Relations - Offer Made,,RY-CONT-00185076,,,2025-05-20,Offer Made,13037.15
-RY-OPP-00120142,Management Development Programme: Agency Leadership - Closed Won,,RY-CONT-00181480,,,2025-03-29,Closed Won,31012.56
-RY-OPP-00124541,Design Thinking - Qualification,,RY-CONT-00158912,,,2025-02-04,Qualification,12704.3
-RY-OPP-00532978,Operational Finance - Enquiry,,RY-CONT-00181480,,,2025-05-22,Enquiry,13035.94
-RY-OPP-00466043,Desktop Publishing with InDesign - Qualification,,RY-CONT-01115709,,,2025-03-29,Qualification,
-RY-OPP-00054181,Media Planning - Closed Lost,,RY-CONT-00031063,,,2025-02-01,Closed Lost,10970.65
-RY-OPP-00496100,Project Management - Application Sent,,RY-CONT-00141934,,,2025-03-03,Application Sent,13403.08
-RY-OPP-00516326,Graphic Design Intermediate with Adobe Photoshop - Closed Won,,RY-CONT-00196021,,,2025-04-14,Closed Won,16458.22
-RY-OPP-00452633,Business Analysis - Closed Won,,RY-CONT-00199764,,,2025-04-21,Closed Won,13977.0
-RY-OPP-00543948,Creative Thinking - Closed Lost,,RY-CONT-00192832,,,2025-05-01,Closed Lost,4591.86
-RY-OPP-00493669,People Management - Qualification,,RY-CONT-00064746,,,2025-03-13,Qualification,12053.74
-RY-OPP-00333040,Mentorship - Enquiry,,RY-CONT-00162853,,,2025-01-08,Enquiry,5560.03
-RY-OPP-00342336,Brand as Capital - Qualification,,RY-CONT-00207051,,,2025-01-20,Qualification,26124.89
-RY-OPP-00341018,Strategic Foresight for Leaders - Application Received,,RY-CONT-00173552,,,2024-12-30,Application Received,24939.02
-RY-OPP-00037103,User Experience Design - Qualification,,RY-CONT-00060281,,,2024-11-20,Qualification,
-RY-OPP-00030765,Business Analysis - Application Sent,,RY-CONT-00110495,,,2024-12-01,Application Sent,11061.8
-RY-OPP-00326155,Project Management - Closed Won,,RY-CONT-01112129,,,2025-02-14,Closed Won,10149.57
-RY-OPP-00119382,Rebel Leadership - Closed Won,,RY-CONT-00121571,,,2024-11-05,Closed Won,23814.11
-RY-OPP-00615949,Postgraduate Diploma in Digital Marketing - Application Sent,,RY-CONT-00130319,,,2024-12-25,Application Sent,
-RY-OPP-00054838,Data Visualisation for Designers - Qualification,,RY-CONT-00088966,,,2024-12-15,Qualification,16343.1
-RY-OPP-00572307,Sports Sponsorship Marketing - Application Sent,,RY-CONT-01117735,,,2025-02-17,Application Sent,
-RY-OPP-00081922,Interior Decorating - Closed Won,,RY-CONT-00086878,,,2024-12-09,Closed Won,14518.33
-RY-OPP-00152025,Graphic Design Beginner - Closed Lost,,RY-CONT-01111994,,,2025-03-05,Closed Lost,12732.87
-RY-OPP-00522162,Social Media Marketing - Application Sent,,RY-CONT-00114394,,,2025-03-11,Application Sent,
-RY-OPP-00253519,Higher Certificate in Business Management - Closed Lost,,RY-CONT-00176417,,,2025-01-30,Closed Lost,
-RY-OPP-00381213,Higher Certificate in Business Management - Qualification,,RY-CONT-00171960,,,2024-11-07,Qualification,
-RY-OPP-00531590,Data Analysis for Marketers - Qualification,,RY-CONT-00054274,,,2024-12-12,Qualification,10956.44
-RY-OPP-00152276,Social Media Marketing - Application Sent,,RY-CONT-01114608,,,2024-09-04,Application Sent,
-RY-OPP-00243115,Graphic Design Beginner - Offer Made,,RY-CONT-00029564,,,2024-10-29,Offer Made,12195.55
-RY-OPP-00417509,Sustainable Marketing - Application Sent,,RY-CONT-01131298,,,2024-12-25,Application Sent,
-RY-OPP-00495222,Postgraduate Diploma in Management - Offer Made,,RY-CONT-00070779,,,2024-07-19,Offer Made,
-RY-OPP-00559370,People Management - Closed Lost,,RY-CONT-00156907,,,2024-11-22,Closed Lost,13486.61
-RY-OPP-00285150,Postgraduate Diploma in Digital Marketing - Closed Won,,RY-CONT-01118067,,,2024-07-03,Closed Won,
-RY-OPP-00226192,Storytelling for Impact & Influence - Closed Lost,,RY-CONT-01113449,,,2024-08-22,Closed Lost,6310.95
-RY-OPP-00688059,Part-Time Higher Certificate in Business Management - Closed Won,,RY-CONT-00133642,,,2024-09-19,Closed Won,
-RY-OPP-00050131,Desktop Publishing with InDesign - Application Sent,,RY-CONT-00023001,,,2024-08-12,Application Sent,
-RY-OPP-00224498,Part-Time Postgraduate Diploma in Digital Marketing - Enquiry,,RY-CONT-00062307,,,2024-08-18,Enquiry,
-RY-OPP-00621355,Storytelling for Impact & Influence - Qualification,,RY-CONT-00029564,,,2024-11-12,Qualification,5436.27
-RY-OPP-00095343,Customer Experience - Closed Lost,,RY-CONT-01113292,,,2024-08-01,Closed Lost,11780.71
-RY-OPP-00544323,Project Management - Application Received,,RY-CONT-00096220,,,2024-10-11,Application Received,12748.64
-RY-OPP-00419600,Part-Time Higher Certificate in Business Management - Offer Made,,RY-CONT-01133146,,,2024-10-09,Offer Made,
-RY-OPP-00444161,Shopper Marketing - Offer Made,,RY-CONT-00167071,,,2024-09-12,Offer Made,14466.38
-RY-OPP-00124743,Interior Decorating - Application Sent,,RY-CONT-00139681,,,2024-09-18,Application Sent,15521.32
-RY-OPP-00354288,Sports Sponsorship Marketing - Closed Lost,,RY-CONT-01129134,,,2024-05-08,Closed Lost,
-RY-OPP-00357894,Digital Content & Copywriting - Closed Won,,RY-CONT-01116302,,,2024-05-08,Closed Won,14495.39
-RY-OPP-00439996,Part-Time Higher Certificate in Business Management - Offer Made,,RY-CONT-01111994,,,2024-04-24,Offer Made,
-RY-OPP-00302086,Data Analysis - Offer Made,,RY-CONT-00108783,,,2024-05-05,Offer Made,12871.55
-RY-OPP-00447531,Strategic Foresight for Leaders - Closed Won,,RY-CONT-00133642,,,2024-06-29,Closed Won,21785.72
-RY-OPP-00270449,Digital Marketing Professional - Closed Lost,,RY-CONT-00176538,,,2024-05-15,Closed Lost,
-RY-OPP-00019938,User Experience Design - Closed Won,,RY-CONT-00174171,,,2024-06-13,Closed Won,
-RY-OPP-00006310,Business Analysis - Closed Lost,,RY-CONT-00188767,,,2024-05-06,Closed Lost,12869.83
-RY-OPP-00165865,Part-Time Higher Certificate in Graphic Design - Closed Won,,RY-CONT-01126739,,,2024-07-16,Closed Won,
-RY-OPP-00180443,Brand as Capital - Closed Lost,,RY-CONT-00199615,,,2024-07-06,Closed Lost,24609.2
-RY-OPP-00348032,Customer Experience - Offer Made,,RY-CONT-00205605,,,2024-03-24,Offer Made,12998.64
-RY-OPP-00009294,Higher Certificate in Marketing and Branding - Closed Won,,RY-CONT-01134532,,,2024-05-04,Closed Won,
-RY-OPP-00554397,Digital Content & Copywriting - Application Sent,,RY-CONT-00035186,,,2024-06-03,Application Sent,10776.82
-RY-OPP-00434684,Operational Finance - Application Sent,,RY-CONT-00110687,,,2024-04-06,Application Sent,12118.33
-RY-OPP-00202296,Public Relations - Enquiry,,RY-CONT-00000359,,,2024-02-20,Enquiry,12180.83
-RY-OPP-00047272,Higher Certificate in Business Management - Enquiry,,RY-CONT-00172159,,,2024-01-31,Enquiry,
-RY-OPP-00617363,Part-Time Postgraduate Diploma in Management - Closed Won,,RY-CONT-01126805,,,2024-01-18,Closed Won,
-RY-OPP-00195254,Rebel Leadership - Qualification,,RY-CONT-00108362,,,2024-02-18,Qualification,21056.25
-RY-OPP-00629491,Brand as Capital - Application Received,,RY-CONT-00056903,,,2024-03-07,Application Received,20046.68
-RY-OPP-00586463,Storytelling for Impact & Influence - Enquiry,,RY-CONT-00114804,,,2024-04-04,Enquiry,5214.46
-RY-OPP-00144822,Sustainable Marketing - Enquiry,,RY-CONT-01136302,,,2023-12-11,Enquiry,
-RY-OPP-00697885,Digital Content & Copywriting - Closed Won,,RY-CONT-00056805,,,2023-12-20,Closed Won,11759.41
-RY-OPP-00244396,Copywriting - Closed Won,,RY-CONT-01119261,,,2024-01-29,Closed Won,11167.57
-RY-OPP-00176754,Storytelling for Impact & Influence - Enquiry,,RY-CONT-00047290,,,2024-01-12,Enquiry,5270.64
-RY-OPP-00419466,Brand as Capital - Application Received,,RY-CONT-00029564,,,2024-02-22,Application Received,26900.32
-RY-OPP-00517742,User Experience Design - Application Received,,RY-CONT-00080973,,,2023-12-05,Application Received,
-RY-OPP-00562489,Data Analysis for Marketers - Closed Won,,RY-CONT-00048500,,,2024-03-20,Closed Won,10670.21
-RY-OPP-00536374,Marketing Strategy - Application Sent,,RY-CONT-00143741,,,2023-09-28,Application Sent,7635.54
-RY-OPP-00595412,Management Development Programme: Agency Leadership - Application Received,,RY-CONT-00031014,,,2023-11-02,Application Received,32367.03
-RY-OPP-00046051,Part-Time Higher Certificate in Graphic Design - Closed Lost,,RY-CONT-01112753,,,2023-12-15,Closed Lost,
-RY-OPP-00486678,Digital Marketing Professional - Offer Made,,RY-CONT-00018403,,,2023-09-06,Offer Made,
-RY-OPP-00171896,AI & Executive Judgement - Qualification,,RY-CONT-00062307,,,2024-01-15,Qualification,21194.16
-RY-OPP-00223078,Digital Marketing Professional - Enquiry,,RY-CONT-00021343,,,2023-10-25,Enquiry,
-RY-OPP-00659871,Higher Certificate in Marketing and Branding - Closed Lost,,RY-CONT-00038168,,,2023-07-28,Closed Lost,
-RY-OPP-00020939,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Offer Made",,RY-CONT-00069092,,,2023-11-01,Offer Made,
-RY-OPP-00131909,Higher Certificate in Business Management - Closed Lost,,RY-CONT-00031014,,,2023-11-17,Closed Lost,
-RY-OPP-00521081,Strategic Foresight for Leaders - Application Sent,,RY-CONT-00028716,,,2023-12-04,Application Sent,22312.71
-RY-OPP-00082298,Mentorship - Offer Made,,RY-CONT-00141934,,,2023-07-20,Offer Made,5446.96
-RY-OPP-00299058,Higher Certificate in Business Management - Enquiry,,RY-CONT-00122308,,,2023-09-27,Enquiry,
-RY-OPP-00231622,Social Media Marketing - Application Sent,,RY-CONT-00062307,,,2023-11-11,Application Sent,
-RY-OPP-00255925,AI & Executive Judgement - Enquiry,,RY-CONT-00044956,,,2023-10-28,Enquiry,21242.03
-RY-OPP-00576269,Mentorship - Enquiry,,RY-CONT-00082392,,,2023-10-08,Enquiry,6169.15
-RY-OPP-00533025,Higher Certificate in Business Management - Enquiry,,RY-CONT-00031063,,,2023-06-22,Enquiry,
-RY-OPP-00318066,Graphic Design Intermediate with Adobe Photoshop - Closed Lost,,RY-CONT-00075389,,,2023-06-18,Closed Lost,13780.19
-RY-OPP-00704614,Customer Experience - Qualification,,RY-CONT-01125437,,,2023-06-20,Qualification,11206.27
-RY-OPP-00404616,Project Management - Qualification,,RY-CONT-00182520,,,2023-06-14,Qualification,12959.59
-RY-OPP-00693228,Performance Marketing - Closed Won,,RY-CONT-00040076,,,2023-05-20,Closed Won,9727.76
-RY-OPP-00302602,Postgraduate Diploma in Digital Marketing - Application Received,,RY-CONT-00028716,,,2023-05-08,Application Received,
-RY-OPP-00586593,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Qualification",,RY-CONT-00021261,,,2023-06-09,Qualification,
-RY-OPP-00510954,Higher Certificate in Marketing and Branding - Closed Lost,,RY-CONT-00158770,,,2023-03-24,Closed Lost,
-RY-OPP-00172387,Operational Finance - Enquiry,,RY-CONT-01134085,,,2023-06-16,Enquiry,12149.58
-RY-OPP-00206296,Interior Decorating - Application Received,,RY-CONT-00144515,,,2023-07-25,Application Received,12385.74
-RY-OPP-00665024,Digital Content & Copywriting - Application Sent,,RY-CONT-00189440,,,2023-06-14,Application Sent,13248.23
-RY-OPP-00111770,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Enquiry",,RY-CONT-00122308,,,2023-04-24,Enquiry,
-RY-OPP-00569261,Part-Time Postgraduate Diploma in Digital Marketing - Closed Won,,RY-CONT-01138223,,,2023-03-30,Closed Won,
-RY-OPP-00186614,Copywriting - Application Received,,RY-CONT-00054274,,,2023-04-03,Application Received,11995.21
-RY-OPP-00630463,Part-Time Postgraduate Diploma in Digital Marketing - Application Received,,RY-CONT-01128678,,,2023-05-03,Application Received,
-RY-OPP-00334064,Media Planning - Qualification,,RY-CONT-00018637,,,2023-07-06,Qualification,11660.63
-RY-OPP-00207591,Graphic Design Beginner - Offer Made,,RY-CONT-00014096,,,2023-02-24,Offer Made,15602.67
-RY-OPP-00134973,Graphic Design Intermediate with Adobe Photoshop - Offer Made,,RY-CONT-01119248,,,2023-01-29,Offer Made,15587.06
-RY-OPP-00105023,Strategic Foresight for Leaders - Application Received,,RY-CONT-01126442,,,2023-07-03,Application Received,20172.63
-RY-OPP-00315103,Part-Time Higher Certificate in Graphic Design - Qualification,,RY-CONT-00050447,,,2023-02-15,Qualification,
-RY-OPP-00639483,Data Analysis for Marketers - Enquiry,,RY-CONT-00027026,,,2023-03-04,Enquiry,12720.4
-RY-OPP-00003429,Part-Time Higher Certificate in Business Management - Closed Won,,RY-CONT-00159874,,,2023-01-04,Closed Won,
-RY-OPP-00095756,Postgraduate Diploma in Digital Marketing - Closed Won,,RY-CONT-00182351,,,2023-03-26,Closed Won,
-RY-OPP-00037384,Strategic Foresight for Leaders - Enquiry,,RY-CONT-00144515,,,2023-01-07,Enquiry,20385.62
-RY-OPP-00581066,Postgraduate Diploma in Management - Application Sent,,RY-CONT-00100638,,,2023-01-10,Application Sent,
-RY-OPP-00434464,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Closed Won",,RY-CONT-00150223,,,2023-02-17,Closed Won,
-RY-OPP-00072019,Sports Sponsorship Marketing - Qualification,,RY-CONT-00173552,,,2022-12-18,Qualification,
-RY-OPP-00147072,Graphic Design Intermediate with Adobe Photoshop - Closed Lost,,RY-CONT-01127140,,,2023-04-10,Closed Lost,14925.42
-RY-OPP-00154761,Data Analysis - Application Received,,RY-CONT-00158912,,,2023-03-11,Application Received,11013.34
-RY-OPP-00131531,User Experience Design - Closed Won,,RY-CONT-00182536,,,2022-11-14,Closed Won,
-RY-OPP-00286098,AI & Executive Judgement - Closed Won,,RY-CONT-01114092,,,2023-02-23,Closed Won,21850.13
-RY-OPP-00011476,Part-Time Higher Certificate in Marketing and Branding - Application Sent,,RY-CONT-00116629,,,2022-11-23,Application Sent,
-RY-OPP-00234553,Social Media Marketing - Qualification,,RY-CONT-00028034,,,2022-10-07,Qualification,
-RY-OPP-00492738,Digital Content & Copywriting - Application Received,,RY-CONT-00045206,,,2022-10-02,Application Received,11820.26
-RY-OPP-00080718,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Qualification",,RY-CONT-00000773,,,2023-01-27,Qualification,
-RY-OPP-00114563,Shopper Marketing - Offer Made,,RY-CONT-00019294,,,2022-12-08,Offer Made,15774.39
-RY-OPP-00348698,Media Planning - Closed Won,,RY-CONT-01114608,,,2022-12-23,Closed Won,12923.78
-RY-OPP-00540048,Desktop Publishing with InDesign - Application Sent,,RY-CONT-00080304,,,2023-01-26,Application Sent,
-RY-OPP-00480840,Shopper Marketing - Offer Made,,RY-CONT-00044956,,,2022-10-05,Offer Made,14868.72
-RY-OPP-00464461,Marketing Strategy - Enquiry,,RY-CONT-01121149,,,2022-11-10,Enquiry,7933.21
-RY-OPP-00109631,Management Development Programme: Agency Leadership - Enquiry,,RY-CONT-01120536,,,2022-10-15,Enquiry,28955.19
-RY-OPP-00567632,Shopper Marketing - Closed Won,,RY-CONT-00160954,,,2022-09-21,Closed Won,15972.61
-RY-OPP-00137893,Data Visualisation for Designers - Closed Won,,RY-CONT-00176538,,,2022-10-25,Closed Won,16099.1
-RY-OPP-00451083,Strategic Foresight for Leaders - Qualification,,RY-CONT-01126078,,,2022-08-04,Qualification,23380.69
-RY-OPP-00640712,Strategic Foresight for Leaders - Enquiry,,RY-CONT-00209526,,,2022-12-09,Enquiry,23479.28
-RY-OPP-00666149,Customer Experience - Application Received,,RY-CONT-00162853,,,2022-08-29,Application Received,11173.33
-RY-OPP-00634992,Social Media Marketing - Application Sent,,RY-CONT-00083695,,,2022-09-27,Application Sent,
-RY-OPP-00536074,Part-Time Higher Certificate in Marketing and Branding - Qualification,,RY-CONT-00139681,,,2022-09-24,Qualification,
-RY-OPP-00034919,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Offer Made",,RY-CONT-00194464,,,2022-09-25,Offer Made,
-RY-OPP-00101405,Data Visualisation for Designers - Application Sent,,RY-CONT-00096389,,,2022-08-08,Application Sent,14002.54
-RY-OPP-00217706,Higher Certificate in Business Management - Enquiry,,RY-CONT-00158525,,,2022-07-16,Enquiry,
-RY-OPP-00572063,Customer Experience - Qualification,,RY-CONT-01135449,,,2022-10-14,Qualification,12851.86
-RY-OPP-00136895,Operational Finance - Application Sent,,RY-CONT-01137094,,,2022-10-28,Application Sent,10865.45
-RY-OPP-00498948,Brand as Capital - Application Received,,RY-CONT-00069553,,,2022-06-20,Application Received,23502.0
-RY-OPP-00476124,User Experience Design - Enquiry,,RY-CONT-00135736,,,2022-05-01,Enquiry,
-RY-OPP-00350737,Customer Experience - Closed Won,,RY-CONT-00202606,,,2022-05-20,Closed Won,12844.69
-RY-OPP-00607919,Postgraduate Diploma in Management - Enquiry,,RY-CONT-00028265,,,2022-04-23,Enquiry,
-RY-OPP-00534916,Strategic Foresight for Leaders - Closed Won,,RY-CONT-01110503,,,2022-04-05,Closed Won,23244.1
-RY-OPP-00573946,People Management - Application Sent,,RY-CONT-00190437,,,2022-08-25,Application Sent,13251.61
-RY-OPP-00005761,Data Analysis for Marketers - Qualification,,RY-CONT-00054811,,,2022-08-06,Qualification,13413.36
-RY-OPP-00017431,Strategic Foresight for Leaders - Application Sent,,RY-CONT-00105947,,,2022-05-13,Application Sent,24210.92
-RY-OPP-00304968,Part-Time Higher Certificate in Graphic Design - Closed Lost,,RY-CONT-00055525,,,2022-07-15,Closed Lost,
-RY-OPP-00629009,Sports Sponsorship Marketing - Closed Lost,,RY-CONT-00184952,,,2022-05-10,Closed Lost,
-RY-OPP-00547985,Higher Certificate in Business Management - Closed Won,,RY-CONT-00041827,,,2022-05-19,Closed Won,
-RY-OPP-00234570,User Experience Design - Offer Made,,RY-CONT-00187757,,,2022-04-05,Offer Made,
-RY-OPP-00115324,Media Planning - Qualification,,RY-CONT-01124980,,,2022-03-15,Qualification,11409.21
-RY-OPP-00111072,Data Analysis for Marketers - Enquiry,,RY-CONT-00047813,,,2022-02-21,Enquiry,11930.36
+RY-OPP-00540182,Storytelling for Impact & Influence - Application Sent,,RY-CONT-00354118,,,2026-09-15,Application Sent,4738.65
+RY-OPP-00454762,Public Relations - Enquiry,,RY-CONT-00465137,,,2025-11-23,Enquiry,13133.34
+RY-OPP-00476014,Postgraduate Diploma in Management - Closed Won,,RY-CONT-00135843,,,2026-11-09,Closed Won,
+RY-OPP-00258791,AI & Executive Judgement - Closed Lost,,RY-CONT-00206036,,,2024-12-18,Closed Lost,19556.16
+RY-OPP-00271677,Creative Thinking - Offer Made,,RY-CONT-00746609,,,2025-08-13,Offer Made,4361.87
+RY-OPP-00007042,Copywriting - Application Sent,,RY-CONT-00475603,,,2025-12-15,Application Sent,12761.65
+RY-OPP-00133216,Social Media Marketing - Enquiry,,RY-CONT-00941371,,,2026-05-07,Enquiry,
+RY-OPP-00495548,Storytelling for Impact & Influence - Closed Lost,,RY-CONT-00950132,,,2025-06-11,Closed Lost,6042.18
+RY-OPP-00506249,Part-Time Postgraduate Diploma in Management - Qualification,,RY-CONT-00487453,,,2022-10-24,Qualification,
+RY-OPP-00524339,Part-Time Higher Certificate in Graphic Design - Qualification,,RY-CONT-00212015,,,2022-06-15,Qualification,
+RY-OPP-00049620,Brand as Capital - Enquiry,,RY-CONT-01071243,,,2023-04-02,Enquiry,21541.36
+RY-OPP-00063777,Business Analysis - Closed Won,,RY-CONT-00728005,,,2022-11-17,Closed Won,13215.49
+RY-OPP-00440801,Public Relations - Application Received,,RY-CONT-00229799,,,2022-11-23,Application Received,14251.77
+RY-OPP-00336791,Digital Content & Copywriting - Enquiry,,RY-CONT-00006042,,,2025-08-24,Enquiry,12141.84
+RY-OPP-00445002,Brand as Capital - Application Sent,,RY-CONT-00729860,,,2025-05-27,Application Sent,20067.24
+RY-OPP-00304213,Media Planning - Closed Lost,,RY-CONT-00005835,,,2025-10-15,Closed Lost,10740.85
+RY-OPP-00453026,Sports Sponsorship Marketing - Application Received,,RY-CONT-00277490,,,2023-06-07,Application Received,
+RY-OPP-00266510,Postgraduate Diploma in Digital Marketing - Enquiry,,RY-CONT-00363095,,,2023-04-11,Enquiry,
+RY-OPP-00366176,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Qualification",,RY-CONT-00972253,,,2026-07-26,Qualification,
+RY-OPP-00216430,Customer Experience - Offer Made,,RY-CONT-00413114,,,2025-10-04,Offer Made,11353.63
+RY-OPP-00318043,Data Visualisation for Designers - Offer Made,,RY-CONT-00879331,,,2023-12-31,Offer Made,14518.61
+RY-OPP-00682695,Higher Certificate in Business Management - Application Received,,RY-CONT-00369775,,,2025-07-29,Application Received,
+RY-OPP-00446248,Part-Time Postgraduate Diploma in Management - Offer Made,,RY-CONT-01038367,,,2026-09-04,Offer Made,
+RY-OPP-00465200,Customer Experience - Qualification,,RY-CONT-00123989,,,2022-10-31,Qualification,10364.35
+RY-OPP-00632602,Management Development Programme: Agency Leadership - Application Received,,RY-CONT-00911542,,,2025-04-21,Application Received,34656.38
+RY-OPP-00237123,Management Development Programme: Agency Leadership - Closed Lost,,RY-CONT-00117453,,,2026-02-27,Closed Lost,30864.98
+RY-OPP-00054117,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Qualification",,RY-CONT-01031183,,,2023-08-27,Qualification,
+RY-OPP-00334443,Performance Marketing - Enquiry,,RY-CONT-00879331,,,2024-09-20,Enquiry,10317.29
+RY-OPP-00016966,Graphic Design Beginner - Closed Lost,,RY-CONT-00392531,,,2024-04-10,Closed Lost,11970.97
+RY-OPP-00117602,Rebel Leadership - Qualification,,RY-CONT-00642112,,,2026-11-24,Qualification,20115.54
+RY-OPP-00486547,Sports Sponsorship Marketing - Application Received,,RY-CONT-00428257,,,2025-02-10,Application Received,
+RY-OPP-00316075,Higher Certificate in Marketing and Branding - Closed Lost,,RY-CONT-00553673,,,2026-02-26,Closed Lost,
+RY-OPP-00346236,Higher Certificate in Business Management - Qualification,,RY-CONT-00168770,,,2025-02-08,Qualification,
+RY-OPP-00658497,Data Visualisation for Designers - Enquiry,,RY-CONT-01034330,,,2024-02-27,Enquiry,12617.46
+RY-OPP-00652000,Business Analysis - Qualification,,RY-CONT-01060755,,,2026-12-06,Qualification,10979.35
+RY-OPP-00227428,Operational Finance - Offer Made,,RY-CONT-00980346,,,2026-09-05,Offer Made,12938.2
+RY-OPP-00269357,Desktop Publishing with InDesign - Enquiry,,RY-CONT-00116894,,,2022-09-26,Enquiry,
+RY-OPP-00613784,Design Thinking - Application Received,,RY-CONT-00587469,,,2024-08-07,Application Received,10162.11
+RY-OPP-00447420,Digital Marketing Professional - Offer Made,,RY-CONT-00757563,,,2025-11-18,Offer Made,
+RY-OPP-00067485,Social Media Marketing - Closed Lost,,RY-CONT-00338756,,,2026-01-31,Closed Lost,
+RY-OPP-00337630,AI & Executive Judgement - Closed Won,,RY-CONT-00401423,,,2022-03-22,Closed Won,21486.85
+RY-OPP-00455597,Business Analysis - Enquiry,,RY-CONT-01038912,,,2025-10-26,Enquiry,12561.32
+RY-OPP-00463681,Performance Marketing - Closed Won,,RY-CONT-00004793,,,2024-08-23,Closed Won,12122.1
+RY-OPP-00347346,Sales & Account Management - Qualification,,RY-CONT-00001396,,,2024-04-18,Qualification,3636.09
+RY-OPP-00494750,Creative Thinking - Enquiry,,RY-CONT-00449759,,,2025-01-18,Enquiry,4897.05
+RY-OPP-00050175,"Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing - Closed Won",,RY-CONT-00229799,,,2022-09-18,Closed Won,
+RY-OPP-00531290,Management Development Programme: Agency Leadership - Application Received,,RY-CONT-00941371,,,2025-10-24,Application Received,28533.04
+RY-OPP-00223395,Interior Decorating - Closed Won,,RY-CONT-00973289,,,2022-05-27,Closed Won,14421.21
+RY-OPP-00321395,Interior Decorating - Application Sent,,RY-CONT-00285073,,,2026-07-27,Application Sent,15389.22
+RY-OPP-00197817,Desktop Publishing with InDesign - Application Received,,RY-CONT-00279410,,,2025-07-02,Application Received,
+RY-OPP-00218114,Graphic Design Beginner - Offer Made,,RY-CONT-00461751,,,2022-12-19,Offer Made,16471.69
+RY-OPP-00140708,Copywriting - Offer Made,,RY-CONT-00612674,,,2022-07-27,Offer Made,11752.58
+RY-OPP-00257918,Creative Thinking - Offer Made,,RY-CONT-00620275,,,2026-05-13,Offer Made,4064.57
+RY-OPP-00515974,Part-Time Postgraduate Diploma in Digital Marketing - Qualification,,RY-CONT-00151063,,,2024-03-04,Qualification,
+RY-OPP-00028098,AI & Executive Judgement - Closed Won,,RY-CONT-00470541,,,2023-09-06,Closed Won,20751.1
+RY-OPP-00703760,Higher Certificate in Business Management - Offer Made,,RY-CONT-00488536,,,2023-10-04,Offer Made,

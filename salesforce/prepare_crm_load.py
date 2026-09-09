@@ -145,7 +145,7 @@ def main():
                channel              as "RY_Channel__c",
                spend_zar            as "RY_Spend_ZAR__c"
         from main_marts.dim_campaign
-        order by start_date desc
+        order by hash(campaign_external_id)
         limit {n['Campaign']}
     """).df()
     total += w(camp.copy(), "Campaign")
@@ -162,7 +162,7 @@ def main():
         from main_marts.dim_contact c
         join read_parquet('{(REPO / "warehouse" / "raw" / "contact.parquet").as_posix()}') r
           on r.contact_external_id = c.contact_external_id
-        order by c.created_date desc
+        order by hash(c.contact_external_id)
         limit {n['Contact']}
     """).df()
     con_df["LastName"] = con_df["LastName"].fillna("Unknown").replace("", "Unknown")
@@ -181,7 +181,7 @@ def main():
         from main_staging.stg_lead l
         join read_parquet('{(REPO / "warehouse" / "raw" / "lead.parquet").as_posix()}') r
           on r.lead_external_id = l.lead_external_id
-        order by l.created_date desc
+        order by hash(l.lead_external_id)
         limit {n['Lead']}
     """).df()
     lead["LastName"] = lead["LastName"].fillna("Unknown").replace("", "Unknown")
@@ -203,7 +203,7 @@ def main():
                f.expected_value_zar            as "RY_Expected_Value_ZAR__c"
         from main_marts.fct_admissions_funnel f
         where f.contact_external_id in ({','.join(repr(x) for x in contact_ids)})
-        order by f.opportunity_created_date desc
+        order by hash(f.opportunity_external_id)
         limit {n['Opportunity']}
     """).df()
     opp["Campaign_Key"] = opp["Campaign_Key"].where(opp["Campaign_Key"].isin(camp_ids), "")

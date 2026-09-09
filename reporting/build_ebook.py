@@ -141,6 +141,23 @@ def main():
         d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
         caption(cap)
 
+    def figure_if(name, cap):
+        """Embed an evidence figure, or say plainly that it was not captured.
+
+        Silently omitting a missing figure would leave the narrative claiming
+        steps that have no evidence behind them.
+        """
+        p = FIG / name
+        if p.exists():
+            figure(name, cap)
+        else:
+            note = d.add_paragraph()
+            r = note.add_run(f"[{cap.split(' - ')[0]} not captured - "
+                             f"run reporting/capture_evidence.py]")
+            r.italic = True
+            r.font.size = Pt(8.5)
+            r.font.color.rgb = rgb(SLATE)
+
     # Cover
     p = d.add_paragraph(); p.paragraph_format.space_before = Pt(90)
     r = p.add_run("Red & Yellow"); r.bold = True; r.font.size = Pt(40)
@@ -308,6 +325,92 @@ def main():
         p = d.add_paragraph(style="List Bullet")
         r = p.add_run(f"{step}. "); r.bold = True; r.font.color.rgb = rgb(RED)
         p.add_run(text)
+
+    # ---- Salesforce integration, documented step by step -----------------
+    d.add_page_break()
+    H("Salesforce integration, step by step", 20, RED, 0)
+    d.add_paragraph(
+        "This section documents the CRM integration as it actually ran, not as it "
+        "was designed to run. Every figure below is rendered from live command "
+        "output or a live query against the org at the moment this document was "
+        "built, so it cannot describe a pipeline that no longer works.")
+
+    sf = REPO / "run_results" / "import_log.json"
+    if sf.exists():
+        import collections as _c
+        _log = json.loads(sf.read_text(encoding="utf-8"))
+        _n = _c.Counter(r["object"] for r in _log)
+        d.add_paragraph(
+            f"{len(_log):,} records were loaded across {len(_n)} objects: "
+            + ", ".join(f"{k} {v}" for k, v in sorted(_n.items())) + ".")
+
+    H("1. Establish whether the org can host the model", 13, CHARCOAL, 14)
+    d.add_paragraph(
+        "The target trial org runs Salesforce Base Edition, which permits zero "
+        "custom objects. That is an edition entitlement rather than a quota or a "
+        "permission, so no configuration changes it - and it is knowable in a "
+        "single API call. Checking first turns a failure at deploy time into a "
+        "decision at design time.")
+    figure_if("ev_01_org_check.png",
+              "Figure 5 - The org capability check. Base Edition, 10.6 GB free, "
+              "and a NO-GO on custom objects.")
+
+    H("2. Deploy what the edition does allow", 13, CHARCOAL, 12)
+    d.add_paragraph(
+        "The eight custom objects cannot deploy, but the eighteen custom fields "
+        "on standard objects can. Deploying fields without field-level security "
+        "is a trap worth naming: the fields exist, but describe() omits them and "
+        "the upsert then fails claiming the external ID is not unique - because "
+        "the API cannot see the field it is being asked to key on. The permission "
+        "set is trimmed to the deployed fields and assigned over REST.")
+    figure_if("ev_02_metadata_validate.png",
+              "Figure 6 - Metadata validated against the org. 18 of 18 components.")
+
+    H("3. Load the operational CRM slice", 13, CHARCOAL, 12)
+    d.add_paragraph(
+        "Accounts, contacts, leads and opportunities, upserted on an external ID "
+        "so the load is idempotent - re-running updates rather than duplicates. "
+        "Two things pushed back, and both were right to. Salesforce rejects the "
+        "external ID in the request body when it is already the key in the URL. "
+        "And its duplicate rules blocked leads that fuzzy-matched existing "
+        "contacts at 100% confidence - the same duplicates the warehouse's own "
+        "entity resolution finds, caught independently by the CRM.")
+    figure_if("ev_03_import_result.png",
+              "Figure 7 - What the loader wrote.")
+    figure_if("ev_04_org_counts.png",
+              "Figure 8 - What is actually in the org, queried back through the "
+              "API. The loader's claim and the org's state are different "
+              "assertions; only the second is evidence.")
+
+    H("4. Extract it back out through the API", 13, CHARCOAL, 12)
+    d.add_paragraph(
+        "This is the part the role is actually about. SOQL over the REST API, "
+        "paginating through nextRecordsUrl so the 2,000-record page limit is "
+        "handled rather than silently truncating, with the high-water mark on "
+        "SystemModstamp persisted between runs. The first run is a full load; "
+        "the second returns zero rows because nothing changed. Deletions are "
+        "captured through queryAll rather than left to linger.")
+    figure_if("ev_05_extraction.png",
+              "Figure 9 - Extraction manifest. Every row carries its source "
+              "system, source id, source update time and extraction time.")
+
+    H("5. Transform, test, and report", 13, CHARCOAL, 12)
+    d.add_paragraph(
+        "From there the extracted data joins the same warehouse the synthetic "
+        "history lives in, is cleansed once in staging, and is consumed by marts "
+        "that Power BI reads directly. The tests run on every build.")
+    figure_if("ev_06_dbt_tests.png", "Figure 10 - dbt build: models and data tests.")
+
+    # Any UI screenshots the author dropped in are appended, captioned by filename.
+    shots = sorted((REPO / "ebook" / "screenshots").glob("*.png")) + \
+        sorted((REPO / "ebook" / "screenshots").glob("*.jpg"))
+    if shots:
+        H("Screens from the org", 13, CHARCOAL, 12)
+        for sh in shots:
+            cap = sh.stem.split("_", 1)[-1].replace("_", " ")
+            d.add_picture(str(sh), width=Inches(5.9))
+            d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            caption(cap[:1].upper() + cap[1:])
 
     H("What is not claimed")
     for text in [
