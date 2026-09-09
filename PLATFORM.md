@@ -10,7 +10,7 @@ answer to all six.
 | ERDs for internal systems incl. CRM | `erds/03_salesforce_canonical.mmd` | ✅ from the original handoff |
 | ETL/ELT pipelines, preferably Apache NiFi | `nifi/build_flow.py` | ✅ built in a live NiFi |
 | Salesforce CRM extract / transform / analyse | `salesforce/`, `tools/import_salesforce.py` | ✅ load built, org not authed |
-| Power BI dashboards | `powerbi/RedAndYellow.pbip` + `reporting/` | ✅ semantic model verified; visuals to lay out |
+| Power BI dashboards | `powerbi/RedAndYellow.pbip` + `reporting/` | ✅ 4 pages, 44 visuals, 31 measures |
 | Data quality and accuracy | `models/quality/`, 51 dbt tests | ✅ scored against ground truth |
 
 ---
@@ -29,6 +29,17 @@ the ebook, and the Salesforce load.
 python run_all.py --scale dev          # ~1M rows instead of 9.4M
 python run_all.py --with-nifi --nifi-user <uuid> --nifi-password <pw>
 ```
+
+## Navigating the NiFi instance
+
+NiFi has one root per instance; a project is a top-level process group and its
+stages are nested groups. To find anything by hand, use the **search box** in
+the top toolbar - it matches process groups, processors, controller services,
+parameters and labels, and every hit names the group it lives in. Double-click a
+group to enter it; the breadcrumb bottom-left is the path back up.
+
+`python nifi/show_tree.py --user <u> --password <p>` prints the whole hierarchy
+with component counts; `nifi/FLOW_MAP.md` is the checked-in copy.
 
 ## Architecture
 
@@ -94,7 +105,7 @@ nifi/               builds the Salesforce→OneLake flow via the NiFi REST API
 fabric/             workspace/lakehouse provisioning + OneLake upload
 salesforce/         cuts the CRM slice; force-app metadata from the handoff
 reporting/          Excel workbook + ebook builders
-powerbi/            PBIP semantic model - 11 tables, 31 measures, 7 relationships
+powerbi/            PBIP - 11 tables, 31 measures, 7 relationships, 4 report pages
 warehouse/          generated data + DuckDB (gitignored)
 ```
 

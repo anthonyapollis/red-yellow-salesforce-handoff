@@ -49,7 +49,7 @@ def main():
 
     dbt_dir = REPO / "dbt_redandyellow"
     dbt_env = {"DBT_PROFILES_DIR": "."}
-    total = 7 + (1 if args.with_nifi else 0)
+    total = 8 + (1 if args.with_nifi else 0)
     t0 = time.time()
 
     step(1, total, f"Generate synthetic CRM + academic data (scale={args.scale})")
@@ -71,11 +71,16 @@ def main():
     run([PY, "reporting/build_excel.py"])
     run([PY, "reporting/build_ebook.py"])
 
-    step(7, total, "Cut the Salesforce CRM load")
+    step(7, total, "Export the marts and build the Power BI project")
+    run([PY, "powerbi/export_marts.py"])
+    run([PY, "powerbi/build_pbip.py"])
+    run([PY, "powerbi/build_report.py"])
+
+    step(8, total, "Cut the Salesforce CRM load")
     run([PY, "salesforce/prepare_crm_load.py", "--budget", str(args.budget)])
 
     if args.with_nifi:
-        step(8, total, "Build the NiFi ingestion flow")
+        step(9, total, "Build the NiFi ingestion flow")
         if not (args.nifi_user and args.nifi_password):
             sys.exit("  --with-nifi needs --nifi-user and --nifi-password "
                      "(or NIFI_USER / NIFI_PASSWORD in the environment)")
@@ -89,6 +94,7 @@ def main():
     print("  dbt_redandyellow/target/index.html       the data catalogue")
     print("  reporting/RedAndYellow_Analytics.xlsx    the workbook")
     print("  ebook/RedAndYellow_Data_Story.docx       the data story")
+    print("  powerbi/RedAndYellow.pbip                the Power BI project")
     print("  data/crm_load/                           the Salesforce load")
     print("\nStages needing credentials, not run:")
     print("  Fabric      python fabric/deploy_fabric.py --check")
