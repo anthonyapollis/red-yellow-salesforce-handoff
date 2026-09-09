@@ -58,24 +58,24 @@ def main():
     q = lambda s: con.sql(s).df()
 
     k = q("""
-      select (select count(*) from main_staging.stg_lead)                    as leads,
-             (select count(*) from main_staging.stg_contact)                 as contact_rows,
-             (select count(*) from main_marts.dim_contact)                   as contacts,
-             (select count(*) from main_marts.fct_admissions_funnel)         as opps,
-             (select count(*) from main_staging.stg_application)             as apps,
-             (select count(*) from main_staging.stg_enrolment)               as enrolments,
-             (select sum(spend_zar) from main_marts.dim_campaign)            as spend,
-             (select sum(agreed_fee_zar) from main_staging.stg_enrolment)    as revenue,
+      select (select count(*) from main_silver.stg_lead)                    as leads,
+             (select count(*) from main_silver.stg_contact)                 as contact_rows,
+             (select count(*) from main_gold.dim_contact)                   as contacts,
+             (select count(*) from main_gold.fct_admissions_funnel)         as opps,
+             (select count(*) from main_silver.stg_application)             as apps,
+             (select count(*) from main_silver.stg_enrolment)               as enrolments,
+             (select sum(spend_zar) from main_gold.dim_campaign)            as spend,
+             (select sum(agreed_fee_zar) from main_silver.stg_enrolment)    as revenue,
              (select count(*) from main_quality.dq_issue_log)                as issues
     """).iloc[0]
     chan = q("""select channel, round(sum(spend_zar)/nullif(sum(enrolments),0)) as cpe,
                        round(sum(enrolled_revenue_zar)/nullif(sum(spend_zar),0),2) as roas,
                        sum(enrolments) as enrolments
-                from main_marts.fct_campaign_performance group by 1 order by roas desc""")
+                from main_gold.fct_campaign_performance group by 1 order by roas desc""")
     risk = q("""select week_number, round(avg(attendance_pct),1) att,
                        round(avg(assessment_average_pct),1) ass,
                        round(100.0*sum(is_at_risk)/count(*),1) at_risk_pct
-                from main_marts.fct_student_progress_weekly group by 1 order by 1""")
+                from main_gold.fct_student_progress_weekly group by 1 order by 1""")
     dq = q("select issue_code, issue_count from main_quality.dq_summary order by issue_count desc limit 10")
 
     # ---- figures ----------------------------------------------------------
@@ -116,8 +116,8 @@ def main():
     # ---- additional analysis figures --------------------------------------
     prog = q("""select d.programme_title, sum(f.is_enrolled) enrolments,
                        round(avg(f.discount_pct),1) disc
-                from main_marts.fct_admissions_funnel f
-                join main_marts.dim_offering d using (offering_external_id)
+                from main_gold.fct_admissions_funnel f
+                join main_gold.dim_offering d using (offering_external_id)
                 group by 1 having sum(f.is_enrolled) > 0
                 order by enrolments desc limit 12""")
     fig, ax = plt.subplots(figsize=(6.4, 3.6))
@@ -132,8 +132,8 @@ def main():
     fig.tight_layout(); fig.savefig(FIG / "prog_demand.png"); plt.close(fig)
 
     prov = q("""select c.province, sum(f.is_enrolled) enrolments
-                from main_marts.fct_admissions_funnel f
-                join main_marts.dim_contact c using (contact_external_id)
+                from main_gold.fct_admissions_funnel f
+                join main_gold.dim_contact c using (contact_external_id)
                 group by 1 order by enrolments desc""")
     fig, ax = plt.subplots(figsize=(6.4, 2.9))
     cols = [SERIES[1] if p != "Unknown" else "#9AA5B1" for p in prov["province"]]
@@ -145,12 +145,12 @@ def main():
     fig.tight_layout(); fig.savefig(FIG / "province.png"); plt.close(fig)
 
     conv = q("""select
-        round(100.0*count(*)/ (select count(*) from main_staging.stg_lead),1) lead_to_opp,
+        round(100.0*count(*)/ (select count(*) from main_silver.stg_lead),1) lead_to_opp,
         round(100.0*sum(case when application_external_id is not null then 1 else 0 end)
               /count(*),1) opp_to_app,
         round(100.0*sum(is_enrolled)
               /nullif(sum(case when application_external_id is not null then 1 else 0 end),0),1) app_to_enrol
-        from main_marts.fct_admissions_funnel""").iloc[0]
+        from main_gold.fct_admissions_funnel""").iloc[0]
     fig, ax = plt.subplots(figsize=(6.4, 2.6))
     steps = ["Lead to\nopportunity", "Opportunity to\napplication",
              "Application to\nenrolment"]
@@ -673,6 +673,52 @@ def main():
             "as the operational metric - not a finding about Red & Yellow. On "
             "real data the effect sizes would differ, and the first job would be "
             "to check whether they hold at all.")
+
+    # ---- how the warehouse is organised ----------------------------------
+    d.add_page_break()
+    H("How the warehouse is organised", 20, RED, 0)
+    d.add_paragraph(
+        "The warehouse follows a medallion layout, and it is a real one rather "
+        "than three schema names: silver reads bronze, never the source file. "
+        "That matters because it is what makes the lineage answer the question "
+        "“what actually arrived?”. Without a bronze layer, dbt’s graph "
+        "begins at the cleansed data and the landed source is invisible to the "
+        "catalogue - you can see what a column became, but not what it was.")
+
+    tbl = d.add_table(rows=1, cols=3)
+    tbl.style = "Light List Accent 1"
+    for i, h in enumerate(["Layer", "What it holds", "Rule"]):
+        tbl.rows[0].cells[i].text = h
+    for layer, holds, rule in [
+        ("Bronze", "13 models - the landed source made queryable",
+         "No renaming, casting or filtering"),
+        ("Silver", "13 models - cleansed and conformed",
+         "Every cleansing decision lives here and nowhere else"),
+        ("Gold", "8 models - business-level facts and dimensions",
+         "Assumes clean input; never re-cleans"),
+        ("Quality", "2 models - the defect log and its summary",
+         "Describes the pipeline, not the business"),
+    ]:
+        c = tbl.add_row().cells
+        c[0].text = layer
+        c[1].text = holds
+        c[2].text = rule
+    d.add_paragraph()
+    figure_if("ev_09_medallion.png",
+              "Figure 10c - The medallion, read from dbt’s manifest. Model "
+              "counts and layer membership come from the build, so a model added "
+              "or moved shows up here rather than the picture going stale.")
+
+    H("The data model", 16, CHARCOAL, 12)
+    d.add_paragraph(
+        "The semantic model mirrors the canonical ERD rather than stopping at "
+        "aggregates: programme, offering, intake, enquiry, application, "
+        "enrolment, student and weekly progress are all present and joined, so "
+        "the chain the ERD draws can actually be walked in a report. The live "
+        "Salesforce tables and both model outputs hang off the same spine.")
+    figure_if("ev_10_data_model.png",
+              "Figure 10d - The semantic model, read from its TMDL. Facts sit at "
+              "the centre in red, dimensions on the ring.")
 
     # ---- the rest of the stack -------------------------------------------
     d.add_page_break()

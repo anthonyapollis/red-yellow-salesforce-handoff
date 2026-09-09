@@ -1,3 +1,2 @@
-database
-	compatibilityLevel: 1606
-
+database RedAndYellow
+	compatibilityLevel: 1550

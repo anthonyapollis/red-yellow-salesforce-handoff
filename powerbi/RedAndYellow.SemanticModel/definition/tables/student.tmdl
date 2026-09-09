@@ -1,0 +1,64 @@
+table student
+	lineageTag: 8fd0ca21-971b-4366-b61e-c5745770e8e0
+
+	column student_external_id
+		dataType: string
+		lineageTag: d28449e7-8f20-4d57-b9f8-93fe3d241b54
+		summarizeBy: none
+		sourceColumn: student_external_id
+
+	column contact_external_id
+		dataType: string
+		lineageTag: 1b35723a-08ee-40c2-ba8e-19dc53cd6a6b
+		summarizeBy: none
+		sourceColumn: contact_external_id
+
+	column student_number
+		dataType: string
+		lineageTag: 67343bcf-080b-456b-8fc2-408b697a74a4
+		summarizeBy: none
+		sourceColumn: student_number
+
+	column enrolled_first_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 3bb89622-16b4-451d-a3d8-fd44b3008fc4
+		summarizeBy: none
+		sourceColumn: enrolled_first_date
+
+	column source_system
+		dataType: string
+		lineageTag: 1650b222-88a4-4bf1-b76f-95fc6b62d3f5
+		summarizeBy: none
+		sourceColumn: source_system
+
+	column source_updated_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: 3aefb91b-fe68-408a-8ad5-1791a5a07998
+		summarizeBy: none
+		sourceColumn: source_updated_at
+
+	column loaded_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: d2257483-a741-41b5-9312-4cb7c80ab338
+		summarizeBy: none
+		sourceColumn: loaded_at
+
+	column is_late_arriving
+		dataType: int64
+		formatString: #,0
+		lineageTag: 8957f8cf-1a79-4b60-9b1c-853464e4ff58
+		summarizeBy: sum
+		sourceColumn: is_late_arriving
+
+	partition student = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\student.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

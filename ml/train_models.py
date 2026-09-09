@@ -113,9 +113,9 @@ def main():
             case when l.campaign_external_id is not null then 1 else 0 end as from_campaign,
             coalesce(c.spend_zar, 0)                       as campaign_spend,
             l.reached_enrolment                            as target
-        from main_marts.fct_lead_conversion l
-        join main_staging.stg_lead s using (lead_external_id)
-        left join main_marts.dim_campaign c
+        from main_gold.fct_lead_conversion l
+        join main_silver.stg_lead s using (lead_external_id)
+        left join main_gold.dim_campaign c
                on c.campaign_external_id = l.campaign_external_id
         where l.created_date is not null
     """).df()
@@ -156,7 +156,7 @@ def main():
                    avg(assessment_average_pct)    as ass_1_4,
                    sum(overdue_assignments)       as overdue_1_4,
                    max(week_number)               as weeks_seen
-            from main_marts.fct_student_progress_weekly
+            from main_gold.fct_student_progress_weekly
             where week_number <= 4
             group by 1
         )
@@ -168,9 +168,9 @@ def main():
                case when en.status = 'Withdrawn' then 1 else 0 end as target,
                en.enrolled_date
         from early e
-        join main_staging.stg_enrolment en using (enrolment_external_id)
-        left join main_staging.stg_intake i on i.intake_external_id = en.intake_external_id
-        left join main_marts.dim_offering d on d.offering_external_id = i.offering_external_id
+        join main_silver.stg_enrolment en using (enrolment_external_id)
+        left join main_silver.stg_intake i on i.intake_external_id = en.intake_external_id
+        left join main_gold.dim_offering d on d.offering_external_id = i.offering_external_id
         where e.weeks_seen >= 3
     """).df()
 

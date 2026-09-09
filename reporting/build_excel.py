@@ -104,12 +104,12 @@ def main():
 
     kpis = q(con, """
         select
-          (select count(*) from main_staging.stg_lead)                       as leads,
-          (select count(*) from main_marts.dim_contact)                      as contacts,
-          (select count(*) from main_marts.fct_admissions_funnel)            as opportunities,
-          (select sum(is_enrolled) from main_marts.fct_admissions_funnel)    as enrolments,
-          (select sum(spend_zar) from main_marts.dim_campaign)               as spend,
-          (select sum(agreed_fee_zar) from main_staging.stg_enrolment)       as revenue,
+          (select count(*) from main_silver.stg_lead)                       as leads,
+          (select count(*) from main_gold.dim_contact)                      as contacts,
+          (select count(*) from main_gold.fct_admissions_funnel)            as opportunities,
+          (select sum(is_enrolled) from main_gold.fct_admissions_funnel)    as enrolments,
+          (select sum(spend_zar) from main_gold.dim_campaign)               as spend,
+          (select sum(agreed_fee_zar) from main_silver.stg_enrolment)       as revenue,
           (select count(*) from main_quality.dq_issue_log)                   as dq_issues
     """).iloc[0]
 
@@ -132,11 +132,11 @@ def main():
 
     ws.write(r + 9, 1, "Conversion through the funnel", f["h2"])
     funnel = q(con, """
-        select 'Leads' as stage, count(*) as records, 1 as ord from main_staging.stg_lead
-        union all select 'Contacts', count(*), 2 from main_marts.dim_contact
-        union all select 'Opportunities', count(*), 3 from main_marts.fct_admissions_funnel
-        union all select 'Applications', count(*), 4 from main_staging.stg_application
-        union all select 'Enrolments', count(*), 5 from main_staging.stg_enrolment
+        select 'Leads' as stage, count(*) as records, 1 as ord from main_silver.stg_lead
+        union all select 'Contacts', count(*), 2 from main_gold.dim_contact
+        union all select 'Opportunities', count(*), 3 from main_gold.fct_admissions_funnel
+        union all select 'Applications', count(*), 4 from main_silver.stg_application
+        union all select 'Enrolments', count(*), 5 from main_silver.stg_enrolment
         order by ord
     """)[["stage", "records"]]
     end = table(ws, funnel, r + 10, 1, {"records": f["num"]})
@@ -178,7 +178,7 @@ def main():
                round(sum(enrolled_revenue_zar))  as revenue_zar,
                round(sum(spend_zar) / nullif(sum(enrolments), 0)) as cost_per_enrolment,
                round(sum(enrolled_revenue_zar) / nullif(sum(spend_zar), 0), 2) as roas
-        from main_marts.fct_campaign_performance
+        from main_gold.fct_campaign_performance
         group by 1 order by roas desc nulls last
     """)
     end = table(ws, chan, 5, 1,
@@ -223,8 +223,8 @@ def main():
                sum(f.is_enrolled)                  as enrolments,
                round(avg(f.discount_pct), 1)       as avg_discount_pct,
                round(sum(f.agreed_fee_zar))        as revenue_zar
-        from main_marts.fct_admissions_funnel f
-        join main_marts.dim_offering d using (offering_external_id)
+        from main_gold.fct_admissions_funnel f
+        join main_gold.dim_offering d using (offering_external_id)
         group by 1,2,3,4
         having count(*) > 0
         order by enrolments desc
@@ -256,7 +256,7 @@ def main():
                round(100.0 * sum(is_at_risk) / count(*), 1)    as at_risk_pct,
                round(avg(attendance_pct), 1)                   as avg_attendance_pct,
                round(avg(assessment_average_pct), 1)           as avg_assessment_pct
-        from main_marts.fct_student_progress_weekly
+        from main_gold.fct_student_progress_weekly
         group by 1 order by 1
     """)
     end = table(ws, risk, 5, 1,
@@ -427,7 +427,7 @@ def main():
         select programme_title, category, delivery_mode, study_pace,
                duration_value, duration_unit, advertised_fee_zar, price_status,
                dated_intake_count
-        from main_marts.dim_offering order by programme_title
+        from main_gold.dim_offering order by programme_title
     """)
     table(ws, cat, 5, 1, {"advertised_fee_zar": f["money"], "dated_intake_count": f["num"],
                           "duration_value": f["num"]},

@@ -1,0 +1,97 @@
+table enrolment
+	lineageTag: 62f2e7f6-c5f4-4bb7-9413-7304b857bc93
+
+	column enrolment_external_id
+		dataType: string
+		lineageTag: 0b82e287-d8c5-4afb-a8e6-a43548baa0f0
+		summarizeBy: none
+		sourceColumn: enrolment_external_id
+
+	column student_external_id
+		dataType: string
+		lineageTag: 285fc3a5-22df-4d0c-8f20-dd91a7329f86
+		summarizeBy: none
+		sourceColumn: student_external_id
+
+	column application_external_id
+		dataType: string
+		lineageTag: fdb24e7f-fc6d-4c5c-92ad-74c824422eff
+		summarizeBy: none
+		sourceColumn: application_external_id
+
+	column intake_external_id
+		dataType: string
+		lineageTag: 39b63816-dcd5-42a4-83cc-7e7e0f8e611a
+		summarizeBy: none
+		sourceColumn: intake_external_id
+
+	column enrolled_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 2fbbdf7f-a8e9-473b-8338-4d0be8801cf2
+		summarizeBy: none
+		sourceColumn: enrolled_date
+
+	column agreed_fee_zar
+		dataType: double
+		formatString: "R"#,0
+		lineageTag: 55bd1e52-caf5-4afc-9b15-af26ca72bb6b
+		summarizeBy: sum
+		sourceColumn: agreed_fee_zar
+
+	column is_fee_missing
+		dataType: int64
+		formatString: "R"#,0
+		lineageTag: 8ce91d24-c8ef-4aa8-97c5-4f287953f345
+		summarizeBy: sum
+		sourceColumn: is_fee_missing
+
+	column status
+		dataType: string
+		lineageTag: 7b140774-45d8-4886-9b3d-5594aa77ea8a
+		summarizeBy: none
+		sourceColumn: status
+
+	column is_retained
+		dataType: int64
+		formatString: #,0
+		lineageTag: 163d41e0-0177-4bf4-b02f-51ae94257afa
+		summarizeBy: sum
+		sourceColumn: is_retained
+
+	column source_system
+		dataType: string
+		lineageTag: 2b4e511e-7673-4f96-80b8-889b4a294cad
+		summarizeBy: none
+		sourceColumn: source_system
+
+	column source_updated_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: 2141ad8a-23ee-4a9c-8499-d46db48c432e
+		summarizeBy: none
+		sourceColumn: source_updated_at
+
+	column loaded_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: 3626a242-1902-44f5-89c9-e083d733fd80
+		summarizeBy: none
+		sourceColumn: loaded_at
+
+	column is_late_arriving
+		dataType: int64
+		formatString: #,0
+		lineageTag: 2f76a317-a6fd-457d-be13-129085adcf7c
+		summarizeBy: sum
+		sourceColumn: is_late_arriving
+
+	partition enrolment = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\enrolment.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

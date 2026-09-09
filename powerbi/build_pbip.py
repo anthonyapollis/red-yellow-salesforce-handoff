@@ -49,7 +49,7 @@ TABLES = [
     # the aggregated facts, so a reader could not walk programme -> offering ->
     # intake -> application -> enrolment -> progress the way the diagram does.
     "programme", "intake", "programme_enquiry", "application",
-    "enrolment", "student",
+    "enrolment", "student", "campaign_member",
     # The live CRM slice, extracted back out of Salesforce through the API.
     "sf_account", "sf_contact", "sf_lead", "sf_opportunity",
     # Model output, scored across the whole population.
@@ -65,6 +65,8 @@ RELATIONSHIPS = [
     # marketing
     ("fct_campaign_performance", "campaign_external_id", "dim_campaign", "campaign_external_id"),
     ("fct_campaign_performance", "start_date", "dim_date", "date_day"),
+    ("campaign_member", "campaign_external_id", "dim_campaign", "campaign_external_id"),
+    ("campaign_member", "first_responded_date", "dim_date", "date_day"),
     ("fct_lead_conversion", "created_date", "dim_date", "date_day"),
     # enquiry -> application -> enrolment -> progress
     ("programme_enquiry", "contact_external_id", "dim_contact", "contact_external_id"),
@@ -103,6 +105,20 @@ MEASURES = [
     ("Return on Ad Spend",
      "DIVIDE([Enrolled Revenue], [Marketing Spend])", "0.00", "01 Marketing"),
     ("Campaign Enrolments", "SUM(fct_campaign_performance[enrolments])", "#,0", "01 Marketing"),
+
+    # Reach, at membership grain rather than pre-aggregated.
+    ("Campaign Reach", "COUNTROWS(campaign_member)", "#,0", "01 Marketing"),
+    ("Unique Memberships",
+     "CALCULATE(COUNTROWS(campaign_member), campaign_member[is_unique_membership] = 1)",
+     "#,0", "01 Marketing"),
+    ("Responded",
+     "CALCULATE(COUNTROWS(campaign_member), campaign_member[is_engaged] = 1)",
+     "#,0", "01 Marketing"),
+    ("Response Rate", "DIVIDE([Responded], [Unique Memberships])", "0.0%",
+     "01 Marketing"),
+    ("Duplicate Memberships",
+     "CALCULATE(COUNTROWS(campaign_member), campaign_member[is_unique_membership] = 0)",
+     "#,0", "01 Marketing"),
 
     ("Opportunities", "COUNTROWS(fct_admissions_funnel)", "#,0", "02 Admissions"),
     ("Applications",

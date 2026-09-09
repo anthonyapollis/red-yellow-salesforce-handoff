@@ -144,7 +144,7 @@ def main():
                start_date           as "StartDate",
                channel              as "RY_Channel__c",
                spend_zar            as "RY_Spend_ZAR__c"
-        from main_marts.dim_campaign
+        from main_gold.dim_campaign
         order by hash(campaign_external_id)
         limit {n['Campaign']}
     """).df()
@@ -159,7 +159,7 @@ def main():
                r.first_name          as "FirstName",
                r.last_name           as "LastName",
                c.email               as "Email"
-        from main_marts.dim_contact c
+        from main_gold.dim_contact c
         join read_parquet('{(REPO / "warehouse" / "raw" / "contact.parquet").as_posix()}') r
           on r.contact_external_id = c.contact_external_id
         order by hash(c.contact_external_id)
@@ -178,7 +178,7 @@ def main():
                r.last_name        as "LastName",
                l.email            as "Email",
                l.lead_status      as "RY_Sample_Status__c"
-        from main_staging.stg_lead l
+        from main_silver.stg_lead l
         join read_parquet('{(REPO / "warehouse" / "raw" / "lead.parquet").as_posix()}') r
           on r.lead_external_id = l.lead_external_id
         order by hash(l.lead_external_id)
@@ -201,7 +201,7 @@ def main():
                f.close_date                    as "CloseDate",
                f.stage_name                    as "RY_Sample_Stage__c",
                f.expected_value_zar            as "RY_Expected_Value_ZAR__c"
-        from main_marts.fct_admissions_funnel f
+        from main_gold.fct_admissions_funnel f
         where f.contact_external_id in ({','.join(repr(x) for x in contact_ids)})
         order by hash(f.opportunity_external_id)
         limit {n['Opportunity']}
@@ -217,7 +217,7 @@ def main():
                campaign_external_id        as "Campaign_Key",
                contact_external_id         as "Contact_Key",
                lead_external_id            as "Lead_Key"
-        from main_staging.stg_campaign_member
+        from main_silver.stg_campaign_member
         where is_unique_membership = 1
           and campaign_external_id in ({','.join(repr(x) for x in camp_ids)})
           and (contact_external_id in ({','.join(repr(x) for x in contact_ids)})
@@ -236,7 +236,7 @@ def main():
                enquiry_date         as "Enquiry_Date__c",
                channel              as "Channel__c",
                status               as "Status__c"
-        from main_staging.stg_programme_enquiry
+        from main_silver.stg_programme_enquiry
         where contact_external_id in ({','.join(repr(x) for x in contact_ids)})
         limit {n['RY_Programme_Enquiry__c']}
     """).df()
@@ -251,7 +251,7 @@ def main():
                submitted_date          as "Submitted_Date__c",
                status                  as "Status__c",
                decision_date           as "Decision_Date__c"
-        from main_staging.stg_application
+        from main_silver.stg_application
         where opportunity_external_id in ({','.join(repr(x) for x in opp_ids)})
         limit {n['RY_Application__c']}
     """).df()
@@ -266,10 +266,10 @@ def main():
         select s.student_external_id as "RY_External_ID__c",
                s.contact_external_id as "Contact_Key",
                s.student_number      as "Student_Number__c"
-        from main_staging.stg_student s
+        from main_silver.stg_student s
         where s.student_external_id in (
             select student_external_id
-            from main_staging.stg_enrolment
+            from main_silver.stg_enrolment
             where application_external_id in ({','.join(repr(x) for x in app_ids)})
         )
         limit {n['RY_Student__c']}
@@ -284,7 +284,7 @@ def main():
                enrolled_date           as "Enrolled_Date__c",
                status                  as "Status__c",
                agreed_fee_zar          as "Agreed_Fee_ZAR__c"
-        from main_staging.stg_enrolment
+        from main_silver.stg_enrolment
         where student_external_id in ({','.join(repr(x) for x in stu_ids)})
           and application_external_id in ({','.join(repr(x) for x in app_ids)})
         limit {n['RY_Enrolment__c']}
@@ -300,7 +300,7 @@ def main():
                assessment_average_pct as "Assessment_Average_Pct__c",
                overdue_assignments    as "Overdue_Assignments__c",
                risk_band              as "Risk_Band__c"
-        from main_staging.stg_student_progress
+        from main_silver.stg_student_progress
         where enrolment_external_id in ({','.join(repr(x) for x in enr_ids)})
         order by enrolment_external_id, week_number
         limit {n['RY_Student_Progress__c']}

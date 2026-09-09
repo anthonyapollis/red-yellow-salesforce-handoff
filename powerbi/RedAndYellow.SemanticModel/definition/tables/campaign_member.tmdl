@@ -1,0 +1,90 @@
+table campaign_member
+	lineageTag: 441e6385-37ed-4dad-b251-88d9c1c9c678
+
+	column campaign_member_external_id
+		dataType: string
+		lineageTag: 6e3058da-6f3e-4cb6-8dfe-ed48861899a4
+		summarizeBy: none
+		sourceColumn: campaign_member_external_id
+
+	column campaign_external_id
+		dataType: string
+		lineageTag: 5bcd2c74-d2f1-4ad2-b517-2b8026529c24
+		summarizeBy: none
+		sourceColumn: campaign_external_id
+
+	column lead_external_id
+		dataType: string
+		lineageTag: 827b5312-3db3-4ac2-b21f-93cb959bb313
+		summarizeBy: none
+		sourceColumn: lead_external_id
+
+	column contact_external_id
+		dataType: string
+		lineageTag: 0238ab58-51a9-4ca0-ac79-e434d1b04005
+		summarizeBy: none
+		sourceColumn: contact_external_id
+
+	column response_status
+		dataType: string
+		lineageTag: 803f166d-29a3-4a0d-974b-effacbd7a21b
+		summarizeBy: none
+		sourceColumn: response_status
+
+	column first_responded_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 07d71b43-2916-42ca-b97f-0d2804e17a74
+		summarizeBy: none
+		sourceColumn: first_responded_date
+
+	column is_engaged
+		dataType: int64
+		formatString: #,0
+		lineageTag: 5b38bc24-b6a4-4145-86d6-238243ed8e0a
+		summarizeBy: sum
+		sourceColumn: is_engaged
+
+	column is_unique_membership
+		dataType: int64
+		formatString: #,0
+		lineageTag: 4c09ad89-cef1-4b22-9223-a8ebcc46f46a
+		summarizeBy: sum
+		sourceColumn: is_unique_membership
+
+	column source_system
+		dataType: string
+		lineageTag: 76d14462-36c7-4873-91d2-62477266f90d
+		summarizeBy: none
+		sourceColumn: source_system
+
+	column source_updated_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: 84f5761d-8b1a-425d-a83d-4f5b414d523d
+		summarizeBy: none
+		sourceColumn: source_updated_at
+
+	column loaded_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: f374ea0d-4bcc-4a94-8538-7e44d7433fdf
+		summarizeBy: none
+		sourceColumn: loaded_at
+
+	column is_late_arriving
+		dataType: int64
+		formatString: #,0
+		lineageTag: cf45839a-b75d-4746-bf37-59d332fa661e
+		summarizeBy: sum
+		sourceColumn: is_late_arriving
+
+	partition campaign_member = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\campaign_member.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

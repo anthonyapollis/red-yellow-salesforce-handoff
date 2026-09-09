@@ -1,105 +1,98 @@
 table dim_contact
-	lineageTag: e2366866-fe0e-42ac-b00f-3b8d6e503a8a
+	lineageTag: fef752c2-4c2b-4928-9405-25e262d099c9
 
 	column contact_external_id
 		dataType: string
-		lineageTag: d29eccbc-bbeb-4fca-8411-0858092b5509
+		lineageTag: e85d969f-cf9e-47b5-95f4-7b8fc6682a9e
 		summarizeBy: none
 		sourceColumn: contact_external_id
 
 	column person_key
 		dataType: string
-		lineageTag: 954cafff-efbb-472b-9006-ed5c72bd5849
+		lineageTag: 6210f476-5c5a-4ff3-8f61-5e8fc5d0bab1
 		summarizeBy: none
 		sourceColumn: person_key
 
 	column first_name
 		dataType: string
-		lineageTag: f04a0a71-f8d1-4841-a8f4-30493a132362
+		lineageTag: 65f3e7a3-d65b-4823-b04a-e1e82c4e0309
 		summarizeBy: none
 		sourceColumn: first_name
 
 	column last_name
 		dataType: string
-		lineageTag: dae73393-7cda-4e67-a68b-2a910d487727
+		lineageTag: 18af71ac-4a57-43cb-ba56-81576bbeb863
 		summarizeBy: none
 		sourceColumn: last_name
 
 	column full_name
 		dataType: string
-		lineageTag: 4efed44c-a151-4bbf-b551-1a36c27ad770
+		lineageTag: bb2dfffb-5fa9-4c25-a517-f990ec8f9495
 		summarizeBy: none
 		sourceColumn: full_name
 
 	column email
 		dataType: string
-		lineageTag: c6e73c6e-08f6-4ef3-802f-efa980af371b
+		lineageTag: 41b68bb3-b44d-497b-ba40-bf59e2e30835
 		summarizeBy: none
 		sourceColumn: email
 
 	column phone_e164
 		dataType: string
-		lineageTag: caf0aa94-5b6e-45a8-a54f-418d6fdcd678
+		lineageTag: c30a05a3-ed21-46b5-8d55-25fb5121f8b1
 		summarizeBy: none
 		sourceColumn: phone_e164
 
 	column province
 		dataType: string
-		lineageTag: c7a56849-e113-43f5-995c-cd3a0caf8a7c
+		lineageTag: 595c125c-536d-4a5f-9a62-837810d0c54c
 		summarizeBy: none
 		sourceColumn: province
 
 	column city
 		dataType: string
-		lineageTag: f29aa095-95e6-41a9-adb3-f50a9017b28d
+		lineageTag: b7da10f8-f7ef-4da9-b5a2-d1517e50429d
 		summarizeBy: none
 		sourceColumn: city
 
 	column created_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: d0fb4895-270b-4f94-a951-8c18d53989a7
+		lineageTag: 40dffdd0-4f12-4abb-aefa-16a977becf59
 		summarizeBy: none
 		sourceColumn: created_date
-
-		variation Variation
-			isDefault
-			relationship: f7a1b612-a3c2-4035-a620-a88003910e9d
-			defaultHierarchy: LocalDateTable_af00aae7-8fa9-4073-918f-4bfbf8eaccde.'Date Hierarchy'
-
-		annotation UnderlyingDateTimeDataType = Date
 
 	column person_record_count
 		dataType: int64
 		formatString: #,0
-		lineageTag: 29fbd05c-c9df-4f96-9c79-371d7f0b081b
+		lineageTag: d20f5898-fe78-4969-9148-559bcbfb69db
 		summarizeBy: sum
 		sourceColumn: person_record_count
 
 	column has_duplicates
 		dataType: int64
 		formatString: #,0
-		lineageTag: 9b7b5861-aa69-48e3-92b1-cf0e5bc66080
+		lineageTag: e63231da-c957-47bb-8178-c414100f2c4b
 		summarizeBy: sum
 		sourceColumn: has_duplicates
 
 	column acquisition_path
 		dataType: string
-		lineageTag: 8bbce021-3d42-4915-9ab0-c75613c34d66
+		lineageTag: c2be3705-1597-4519-9838-411c6c58f227
 		summarizeBy: none
 		sourceColumn: acquisition_path
 
 	column is_email_invalid
 		dataType: int64
 		formatString: #,0
-		lineageTag: 8832fdb8-1f0e-488a-97ad-798821b96c30
+		lineageTag: 7310c08e-d642-47b8-a609-1a0dc0803aaf
 		summarizeBy: sum
 		sourceColumn: is_email_invalid
 
 	column is_late_arriving
 		dataType: int64
 		formatString: #,0
-		lineageTag: f293d217-3d8b-4c33-bfab-bc4dd33114c1
+		lineageTag: b267cdb7-004c-4477-b323-1b1165402ad0
 		summarizeBy: sum
 		sourceColumn: is_late_arriving
 
@@ -112,4 +105,3 @@ table dim_contact
 				    Source
 
 	annotation PBI_ResultType = Table
-

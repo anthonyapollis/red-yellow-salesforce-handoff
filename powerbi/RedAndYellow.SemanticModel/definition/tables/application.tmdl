@@ -1,0 +1,104 @@
+table application
+	lineageTag: cee38d0c-c2eb-4657-873f-0713ea30c107
+
+	column application_external_id
+		dataType: string
+		lineageTag: 7e7ee352-72ee-47fe-b81a-5b742e6e7a46
+		summarizeBy: none
+		sourceColumn: application_external_id
+
+	column opportunity_external_id
+		dataType: string
+		lineageTag: 0e61a8fa-d8b9-4ec1-8da3-351bea3348c8
+		summarizeBy: none
+		sourceColumn: opportunity_external_id
+
+	column contact_external_id
+		dataType: string
+		lineageTag: be7e1a17-8b7c-4060-896f-4bcce779ae12
+		summarizeBy: none
+		sourceColumn: contact_external_id
+
+	column intake_external_id
+		dataType: string
+		lineageTag: 7fc56110-a90a-42cc-be45-42884f3bc2e3
+		summarizeBy: none
+		sourceColumn: intake_external_id
+
+	column submitted_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: ce0dac16-bd6a-4ab6-963a-bf78e04e7d30
+		summarizeBy: none
+		sourceColumn: submitted_date
+
+	column decision_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: d732fb2e-8a83-409b-a46c-e94715a24d23
+		summarizeBy: none
+		sourceColumn: decision_date
+
+	column status
+		dataType: string
+		lineageTag: dbbd3c2a-de08-4f35-bb21-efe87bf1e314
+		summarizeBy: none
+		sourceColumn: status
+
+	column is_date_inverted
+		dataType: int64
+		formatString: #,0
+		lineageTag: a78e900d-4b64-49aa-92f1-ddf05f24d1b9
+		summarizeBy: sum
+		sourceColumn: is_date_inverted
+
+	column days_to_decision
+		dataType: int64
+		formatString: #,0
+		lineageTag: 2c845273-e035-4b4d-abf9-242f06ca7e13
+		summarizeBy: sum
+		sourceColumn: days_to_decision
+
+	column is_accepted
+		dataType: int64
+		formatString: #,0
+		lineageTag: c7e8a5ae-d4b8-4c0f-8aca-d7cfee42def2
+		summarizeBy: sum
+		sourceColumn: is_accepted
+
+	column source_system
+		dataType: string
+		lineageTag: 8fd42455-d66e-4ef1-b18a-87e64d46a5af
+		summarizeBy: none
+		sourceColumn: source_system
+
+	column source_updated_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: 18aa0d6b-4753-46e0-8ee5-ebe1eaee95b4
+		summarizeBy: none
+		sourceColumn: source_updated_at
+
+	column loaded_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: fd8e4c47-b786-43f9-b67b-af07dabc6fef
+		summarizeBy: none
+		sourceColumn: loaded_at
+
+	column is_late_arriving
+		dataType: int64
+		formatString: #,0
+		lineageTag: a5f4b5c9-2936-4954-99e0-32162f05b20b
+		summarizeBy: sum
+		sourceColumn: is_late_arriving
+
+	partition application = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\application.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,77 @@
+table ml_withdrawal_risk
+	lineageTag: 964673c4-e86d-4842-84e6-c86cd67c7dc9
+
+	column enrolment_external_id
+		dataType: string
+		lineageTag: b399c794-53f2-4d47-b9fe-8d16bf159d4f
+		summarizeBy: none
+		sourceColumn: enrolment_external_id
+
+	column programme_title
+		dataType: string
+		lineageTag: 12082b32-e42e-4864-b74e-64f0326fb0c6
+		summarizeBy: none
+		sourceColumn: programme_title
+
+	column delivery_mode
+		dataType: string
+		lineageTag: e0798782-aba5-4989-9706-400ca66cdda4
+		summarizeBy: none
+		sourceColumn: delivery_mode
+
+	column att_1_4
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 44cb784e-68d0-41c4-a0c9-1f3e6579093b
+		summarizeBy: sum
+		sourceColumn: att_1_4
+
+	column ass_1_4
+		dataType: double
+		formatString: #,0.00
+		lineageTag: df5d906b-1b08-4fab-866b-e0a7af857b91
+		summarizeBy: sum
+		sourceColumn: ass_1_4
+
+	column overdue_1_4
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 22167fe6-559a-4e29-8293-25ed2f3647f3
+		summarizeBy: sum
+		sourceColumn: overdue_1_4
+
+	column enrolment_status
+		dataType: string
+		lineageTag: a8486db9-0f57-4ad9-a51e-1475ee580ee3
+		summarizeBy: none
+		sourceColumn: enrolment_status
+
+	column target
+		dataType: int64
+		formatString: #,0
+		lineageTag: fa9201da-909c-4628-9961-7a1ff359b1d3
+		summarizeBy: sum
+		sourceColumn: target
+
+	column withdrawal_risk
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 3efa94b2-a797-4c29-a462-8be6c4ddaa57
+		summarizeBy: sum
+		sourceColumn: withdrawal_risk
+
+	column risk_band
+		dataType: string
+		lineageTag: 03461fa6-cc25-4203-a522-c58a5c4736ea
+		summarizeBy: none
+		sourceColumn: risk_band
+
+	partition ml_withdrawal_risk = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\ml_withdrawal_risk.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

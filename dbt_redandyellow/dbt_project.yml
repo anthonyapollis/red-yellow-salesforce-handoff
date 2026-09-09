@@ -25,12 +25,19 @@ models:
     +persist_docs:
       relation: true
       columns: true
-    staging:
+    # Medallion. Bronze is the landed source, untouched apart from being made
+    # queryable; silver is cleansed and conformed; gold is business-level and
+    # assumes clean inputs. Quality sits beside gold rather than inside it,
+    # because it describes the pipeline rather than the business.
+    bronze:
       +materialized: view
-      +schema: staging
-    marts:
+      +schema: bronze
+    silver:
+      +materialized: view
+      +schema: silver
+    gold:
       +materialized: table
-      +schema: marts
+      +schema: gold
     quality:
       +materialized: table
       +schema: quality

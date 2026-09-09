@@ -1,0 +1,76 @@
+table programme_enquiry
+	lineageTag: 312d55b1-d2eb-43c1-8aaa-9bc8e2e95b11
+
+	column enquiry_external_id
+		dataType: string
+		lineageTag: 0b766472-fb8b-465f-9620-0b1dfb83b255
+		summarizeBy: none
+		sourceColumn: enquiry_external_id
+
+	column contact_external_id
+		dataType: string
+		lineageTag: 81c4304c-3521-43c4-83d3-4aedd71e1a2d
+		summarizeBy: none
+		sourceColumn: contact_external_id
+
+	column offering_external_id
+		dataType: string
+		lineageTag: 5c57ac0c-2b8a-440f-abe1-94545c96fa8f
+		summarizeBy: none
+		sourceColumn: offering_external_id
+
+	column enquiry_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 5815576b-f244-4991-aabb-2cca6d7b1f9a
+		summarizeBy: none
+		sourceColumn: enquiry_date
+
+	column channel
+		dataType: string
+		lineageTag: 9a79c989-fe6f-4f56-8845-fc35efdf2996
+		summarizeBy: none
+		sourceColumn: channel
+
+	column status
+		dataType: string
+		lineageTag: 0315a3b6-2d7a-4a4e-9610-be5f3f751e48
+		summarizeBy: none
+		sourceColumn: status
+
+	column source_system
+		dataType: string
+		lineageTag: e48950e7-9c17-429c-a4de-94c024475530
+		summarizeBy: none
+		sourceColumn: source_system
+
+	column source_updated_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: 081f1e43-17ae-40a1-b350-2d0d39a52d83
+		summarizeBy: none
+		sourceColumn: source_updated_at
+
+	column loaded_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: 8bd6b03a-44e8-4f82-a5ef-d9f54501714a
+		summarizeBy: none
+		sourceColumn: loaded_at
+
+	column is_late_arriving
+		dataType: int64
+		formatString: #,0
+		lineageTag: 30ecd89b-dbcc-4613-8768-a25c0b1d4365
+		summarizeBy: sum
+		sourceColumn: is_late_arriving
+
+	partition programme_enquiry = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\programme_enquiry.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

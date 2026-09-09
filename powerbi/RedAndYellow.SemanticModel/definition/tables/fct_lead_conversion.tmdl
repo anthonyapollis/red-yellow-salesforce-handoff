@@ -1,90 +1,81 @@
 table fct_lead_conversion
-	lineageTag: 943725ab-60ea-4cfa-9d26-8e9c38b4687f
+	lineageTag: f6138536-e92d-4d8c-b101-2dc5d7bb8401
 
 	column lead_external_id
 		dataType: string
-		lineageTag: 75c55b52-dc10-4637-836d-f1914a88a9f6
+		lineageTag: 77891478-906f-4759-9fd8-0203c7cad704
 		summarizeBy: none
 		sourceColumn: lead_external_id
 
 	column lead_source
 		dataType: string
-		lineageTag: 432fae9c-97ef-43cf-948c-3d023e3d4456
+		lineageTag: 4b5a9b50-c8c2-4636-bee3-126bc6c19e22
 		summarizeBy: none
 		sourceColumn: lead_source
 
 	column lead_status
 		dataType: string
-		lineageTag: c8d5929b-ec52-41ad-96d3-f20b0409cdde
+		lineageTag: 8e08f69b-fe87-4c4f-b671-2e5e223f5b38
 		summarizeBy: none
 		sourceColumn: lead_status
 
 	column province
 		dataType: string
-		lineageTag: e751bd1f-af56-41cb-aaec-be3748fbaa50
+		lineageTag: 2adbfebc-3af5-405d-a2bb-35ca27402918
 		summarizeBy: none
 		sourceColumn: province
 
 	column campaign_external_id
 		dataType: string
-		lineageTag: b1a22430-7c20-49b5-a12e-0aad4b08ae2b
+		lineageTag: 83776217-8641-4e53-9853-92b1345848b7
 		summarizeBy: none
 		sourceColumn: campaign_external_id
 
 	column created_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: cb9b5b9c-2cac-4e0c-b29a-3d73039829b5
+		lineageTag: c6cdd7aa-7a52-4f3c-8db6-0ae8f15a8145
 		summarizeBy: none
 		sourceColumn: created_date
-
-		annotation UnderlyingDateTimeDataType = Date
 
 	column is_converted
 		dataType: int64
 		formatString: #,0
-		lineageTag: d62a3993-a031-4c09-aba2-e81a935e5a04
+		lineageTag: 3d9e489e-177b-4f7b-9572-2536c84af4ee
 		summarizeBy: sum
 		sourceColumn: is_converted
 
 	column contact_external_id
 		dataType: string
-		lineageTag: 0ba90246-e4a5-414f-a91f-23a215ba2778
+		lineageTag: 4e1efdaf-0049-4e0e-aeed-226b0e217341
 		summarizeBy: none
 		sourceColumn: contact_external_id
 
 	column contact_created_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: f9795bf2-6a77-4379-8a13-f0f89028be01
+		lineageTag: 307d00c7-ab71-4877-aed4-5715c3c73fa8
 		summarizeBy: none
 		sourceColumn: contact_created_date
-
-		variation Variation
-			isDefault
-			relationship: e928dfaa-c45c-49ba-a9f2-0d1d4839cccc
-			defaultHierarchy: LocalDateTable_cfbd784e-5bbe-48e9-8128-c7b061395766.'Date Hierarchy'
-
-		annotation UnderlyingDateTimeDataType = Date
 
 	column days_to_convert
 		dataType: int64
 		formatString: #,0
-		lineageTag: b568c634-f7ca-4faa-ba19-d335f9e67021
+		lineageTag: b1e49b07-c0f7-404b-ade3-43084dfe0c46
 		summarizeBy: sum
 		sourceColumn: days_to_convert
 
 	column reached_opportunity
 		dataType: int64
 		formatString: #,0
-		lineageTag: 63187bfb-ceda-47f3-b5e5-587bc8ba3b70
+		lineageTag: 07cd7d5f-24ac-42e2-9f43-2a9725c3f8e4
 		summarizeBy: sum
 		sourceColumn: reached_opportunity
 
 	column reached_enrolment
 		dataType: int64
 		formatString: #,0
-		lineageTag: 54719b03-9dc7-412f-ac7c-0522513a4d97
+		lineageTag: 9bc76d6f-ab47-4e62-bf19-0a78b3f95ea8
 		summarizeBy: sum
 		sourceColumn: reached_enrolment
 
@@ -97,4 +88,3 @@ table fct_lead_conversion
 				    Source
 
 	annotation PBI_ResultType = Table
-

@@ -41,6 +41,261 @@ GOOD, WARN, BAD = "#4C9F70", "#F0A202", "#E03127"
 
 M = "_Measures"
 
+THEME = {
+    "name": "RedAndYellow",
+    "dataColors": [
+        "#E8262A",
+        "#FFC629",
+        "#2E6E8E",
+        "#4C9F70",
+        "#F07C1E",
+        "#8B5FBF",
+        "#C7522A",
+        "#3B7EA1",
+        "#5C6F52",
+        "#7A8B99"
+    ],
+    "background": "#FFFFFF",
+    "foreground": "#22252A",
+    "tableAccent": "#E8262A",
+    "good": "#4C9F70",
+    "neutral": "#FFC629",
+    "bad": "#E8262A",
+    "maximum": "#E8262A",
+    "center": "#FFC629",
+    "minimum": "#4C9F70",
+    "textClasses": {
+        "title": {
+            "fontSize": 13,
+            "fontFace": "Segoe UI Semibold",
+            "color": "#22252A"
+        },
+        "header": {
+            "fontSize": 11,
+            "fontFace": "Segoe UI Semibold",
+            "color": "#22252A"
+        },
+        "label": {
+            "fontSize": 9,
+            "fontFace": "Segoe UI",
+            "color": "#5A6472"
+        },
+        "callout": {
+            "fontSize": 30,
+            "fontFace": "Segoe UI Semibold",
+            "color": "#E8262A"
+        }
+    },
+    "visualStyles": {
+        "*": {
+            "*": {
+                "background": [
+                    {
+                        "show": True,
+                        "color": {
+                            "solid": {
+                                "color": "#FFFFFF"
+                            }
+                        },
+                        "transparency": 0
+                    }
+                ],
+                "border": [
+                    {
+                        "show": True,
+                        "color": {
+                            "solid": {
+                                "color": "#E2E7ED"
+                            }
+                        },
+                        "radius": 6
+                    }
+                ],
+                "dropShadow": [
+                    {
+                        "show": False
+                    }
+                ],
+                "title": [
+                    {
+                        "show": True,
+                        "fontColor": {
+                            "solid": {
+                                "color": "#22252A"
+                            }
+                        },
+                        "fontSize": 11,
+                        "fontFamily": "Segoe UI Semibold",
+                        "alignment": "left"
+                    }
+                ],
+                "categoryAxis": [
+                    {
+                        "showAxisTitle": False,
+                        "fontSize": 9,
+                        "labelColor": {
+                            "solid": {
+                                "color": "#5A6472"
+                            }
+                        },
+                        "gridlineShow": False
+                    }
+                ],
+                "valueAxis": [
+                    {
+                        "showAxisTitle": False,
+                        "fontSize": 9,
+                        "labelColor": {
+                            "solid": {
+                                "color": "#5A6472"
+                            }
+                        },
+                        "gridlineColor": {
+                            "solid": {
+                                "color": "#EDF0F4"
+                            }
+                        }
+                    }
+                ],
+                "legend": [
+                    {
+                        "show": True,
+                        "position": "Top",
+                        "showTitle": False,
+                        "fontSize": 9,
+                        "labelColor": {
+                            "solid": {
+                                "color": "#5A6472"
+                            }
+                        }
+                    }
+                ],
+                "labels": [
+                    {
+                        "fontSize": 9,
+                        "color": {
+                            "solid": {
+                                "color": "#5A6472"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "card": {
+            "*": {
+                "labels": [
+                    {
+                        "fontSize": 28,
+                        "fontFamily": "Segoe UI Semibold",
+                        "color": {
+                            "solid": {
+                                "color": "#E8262A"
+                            }
+                        }
+                    }
+                ],
+                "categoryLabels": [
+                    {
+                        "show": False
+                    }
+                ],
+                "title": [
+                    {
+                        "show": True,
+                        "fontSize": 10,
+                        "fontColor": {
+                            "solid": {
+                                "color": "#5A6472"
+                            }
+                        },
+                        "fontFamily": "Segoe UI",
+                        "alignment": "left"
+                    }
+                ],
+                "wordWrap": [
+                    {
+                        "show": False
+                    }
+                ]
+            }
+        },
+        "tableEx": {
+            "*": {
+                "columnHeaders": [
+                    {
+                        "fontSize": 9,
+                        "fontColor": {
+                            "solid": {
+                                "color": "#FFFFFF"
+                            }
+                        },
+                        "backColor": {
+                            "solid": {
+                                "color": "#22252A"
+                            }
+                        }
+                    }
+                ],
+                "values": [
+                    {
+                        "fontSize": 9,
+                        "fontColor": {
+                            "solid": {
+                                "color": "#22252A"
+                            }
+                        },
+                        "backColorPrimary": {
+                            "solid": {
+                                "color": "#FFFFFF"
+                            }
+                        },
+                        "backColorSecondary": {
+                            "solid": {
+                                "color": "#FAFBFC"
+                            }
+                        }
+                    }
+                ],
+                "grid": [
+                    {
+                        "gridVertical": False,
+                        "outlineColor": {
+                            "solid": {
+                                "color": "#E2E7ED"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "slicer": {
+            "*": {
+                "header": [
+                    {
+                        "fontSize": 9,
+                        "fontColor": {
+                            "solid": {
+                                "color": "#5A6472"
+                            }
+                        }
+                    }
+                ],
+                "items": [
+                    {
+                        "fontSize": 9,
+                        "fontColor": {
+                            "solid": {
+                                "color": "#22252A"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+
 
 def gid():
     return uuid.uuid4().hex[:20]
@@ -525,6 +780,41 @@ def main():
         raise SystemExit(1)
 
     RPT.mkdir(parents=True, exist_ok=True)
+
+    # Power BI Desktop UPGRADES a legacy project on save: it writes
+    # definition/pages/<section>/visuals/<visual>.json, sets definition.pbir to
+    # version 4.0, and DELETES report.json. After that it reads only the folder
+    # format, so regenerating report.json changes nothing on screen - which is
+    # exactly what happened: five rebuilds, none of them visible.
+    #
+    # So the generator now clears the upgraded artefacts and re-asserts the
+    # legacy format it owns. Anything Desktop added by hand is discarded, which
+    # is correct here: this report is generated, not hand-edited.
+    import shutil as _sh
+    for stale in ("definition", ".pbi", ".platform"):
+        target = RPT / stale
+        if target.is_dir():
+            _sh.rmtree(target)
+            print(f"  removed Desktop-upgraded {stale}/")
+        elif target.exists():
+            target.unlink()
+            print(f"  removed Desktop-upgraded {stale}")
+
+    (RPT / "definition.pbir").write_text(
+        '{\n  "version": "1.0",\n'
+        '  "datasetReference": {\n'
+        '    "byPath": { "path": "../RedAndYellow.SemanticModel" }\n'
+        '  }\n}\n', encoding="utf-8")
+
+    # The theme is written here, not once by hand: Desktop's upgrade carried
+    # StaticResources away with it, and a report that names a theme it does not
+    # ship renders in Power BI's default blue - which is precisely the symptom
+    # that took several rebuilds to explain.
+    theme_dir = RPT / "StaticResources" / "RegisteredResources"
+    theme_dir.mkdir(parents=True, exist_ok=True)
+    (theme_dir / "RedAndYellow.json").write_text(json.dumps(THEME, indent=2),
+                                                 encoding="utf-8")
+
     (RPT / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
 
     n_vis = sum(len(s["visualContainers"]) for s in report["sections"])

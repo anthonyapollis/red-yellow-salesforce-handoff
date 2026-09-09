@@ -1,0 +1,42 @@
+table programme
+	lineageTag: 3f6de5f0-0298-433e-8e08-d7d2b8fea12e
+
+	column programme_external_id
+		dataType: string
+		lineageTag: 453f263d-2011-4a71-8e06-bc27fbee4f4f
+		summarizeBy: none
+		sourceColumn: programme_external_id
+
+	column programme_title
+		dataType: string
+		lineageTag: 6c0da86c-d4fa-4326-8253-46a04a0cc17d
+		summarizeBy: none
+		sourceColumn: programme_title
+
+	column category
+		dataType: string
+		lineageTag: f44d1995-1d87-496e-ba89-1ec84988e8c4
+		summarizeBy: none
+		sourceColumn: category
+
+	column credential_text
+		dataType: string
+		lineageTag: 6ce100b5-4992-4dd7-997d-ce60d2b3c517
+		summarizeBy: none
+		sourceColumn: credential_text
+
+	column listed_body
+		dataType: string
+		lineageTag: a92f0227-9d79-4fa7-9817-eefd28ced4f8
+		summarizeBy: none
+		sourceColumn: listed_body
+
+	partition programme = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\programme.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

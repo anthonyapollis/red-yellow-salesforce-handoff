@@ -39,12 +39,19 @@ models:
     +persist_docs:
       relation: true
       columns: true
-    staging:
+    # Medallion. Bronze is the landed source, untouched apart from being made
+    # queryable; silver is cleansed and conformed; gold is business-level and
+    # assumes clean inputs. Quality sits beside gold rather than inside it,
+    # because it describes the pipeline rather than the business.
+    bronze:
       +materialized: view
-      +schema: staging
-    marts:
+      +schema: bronze
+    silver:
+      +materialized: view
+      +schema: silver
+    gold:
       +materialized: table
-      +schema: marts
+      +schema: gold
     quality:
       +materialized: table
       +schema: quality
@@ -1127,6 +1134,53 @@ from {{ ref('stg_contact') }}
 group by 1
 having sum(is_golden_record) <> 1
 """.lstrip()
+
+# ----------------------------------------------------------------- bronze ---
+# Bronze exists so the medallion is real in the LINEAGE, not just in the schema
+# names. Without it, silver reads Parquet directly and dbt's DAG starts at the
+# cleansed layer - the landed data is invisible to the catalogue, and there is
+# nowhere to point at when asked "what actually arrived?".
+RAW_TABLES = [
+    "campaign", "lead", "contact", "campaign_member", "opportunity",
+    "application", "student", "enrolment", "student_progress",
+    "programme_enquiry", "programme", "programme_offering", "intake",
+]
+
+for _t in RAW_TABLES:
+    FILES[f"models/bronze/br_{_t}.sql"] = (
+        "-- Bronze: the landed source made queryable, and nothing else. No\n"
+        "-- renaming, no casting, no filtering - so every silver column can be\n"
+        "-- traced back to exactly what arrived, byte for byte.\n"
+        f"select * from {{{{ ry_raw('{_t}') }}}}\n"
+    )
+
+FILES["models/bronze/_bronze.yml"] = (
+    "version: 2\n\nmodels:\n" + "".join(
+        f"  - name: br_{t}\n"
+        f"    description: >\n"
+        f"      Bronze. Raw {t} exactly as landed, with its integration metadata\n"
+        f"      (source system, source id, source update time, load time,\n"
+        f"      deletion flag) and no other change.\n"
+        for t in RAW_TABLES))
+
+
+# Silver reads bronze, not the Parquet. One substitution keeps the model SQL
+# itself unchanged and the lineage honest.
+def _to_bronze(sql: str) -> str:
+    for t in sorted(RAW_TABLES, key=len, reverse=True):
+        sql = sql.replace("{{ ry_raw('%s') }}" % t, "{{ ref('br_%s') }}" % t)
+    return sql
+
+
+# Medallion folders: staging is silver, marts are gold. Model names are left
+# alone - renaming stg_* would break every ref() and every test in one go for
+# no gain, and the folder plus schema already say which layer a model is in.
+_remapped = {}
+for _k, _v in FILES.items():
+    _nk = _k.replace("models/staging/", "models/silver/") \
+            .replace("models/marts/", "models/gold/")
+    _remapped[_nk] = _to_bronze(_v) if _nk.startswith("models/silver/") else _v
+FILES = _remapped
 
 RAW_ABS = (ROOT.parent / "warehouse" / "raw").as_posix()
 FILES["dbt_project.yml"] = FILES["dbt_project.yml"].replace("__RAW_PATH__", RAW_ABS)

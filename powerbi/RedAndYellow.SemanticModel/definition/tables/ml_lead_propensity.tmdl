@@ -1,0 +1,63 @@
+table ml_lead_propensity
+	lineageTag: e53b71b9-92e0-492d-a809-aef2fcf59684
+
+	column lead_external_id
+		dataType: string
+		lineageTag: 64a0dbd1-4d92-4a8c-b2e5-573f6f8146db
+		summarizeBy: none
+		sourceColumn: lead_external_id
+
+	column lead_source
+		dataType: string
+		lineageTag: 0437a588-ca85-4dd4-ab5f-c15dd5e62765
+		summarizeBy: none
+		sourceColumn: lead_source
+
+	column province
+		dataType: string
+		lineageTag: 468ca651-17f1-4347-83e4-37b2499a6267
+		summarizeBy: none
+		sourceColumn: province
+
+	column channel
+		dataType: string
+		lineageTag: f6a82c0c-1e0e-46f7-9dc5-cc246ec5a6ab
+		summarizeBy: none
+		sourceColumn: channel
+
+	column created_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: 54b42cbd-0c12-4e87-b337-ab58ac81d420
+		summarizeBy: none
+		sourceColumn: created_date
+
+	column target
+		dataType: int64
+		formatString: #,0
+		lineageTag: 8a1f833d-df36-4d8a-b147-b45e2fa02bcd
+		summarizeBy: sum
+		sourceColumn: target
+
+	column propensity
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 90623c90-206c-4fab-ac59-23ac820d7060
+		summarizeBy: sum
+		sourceColumn: propensity
+
+	column propensity_band
+		dataType: string
+		lineageTag: 83cd0a39-24b7-424c-8b9d-3180dc90c179
+		summarizeBy: none
+		sourceColumn: propensity_band
+
+	partition ml_lead_propensity = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\ml_lead_propensity.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

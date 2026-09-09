@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: br_campaign
+    description: >
+      Bronze. Raw campaign exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_lead
+    description: >
+      Bronze. Raw lead exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_contact
+    description: >
+      Bronze. Raw contact exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_campaign_member
+    description: >
+      Bronze. Raw campaign_member exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_opportunity
+    description: >
+      Bronze. Raw opportunity exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_application
+    description: >
+      Bronze. Raw application exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_student
+    description: >
+      Bronze. Raw student exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_enrolment
+    description: >
+      Bronze. Raw enrolment exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_student_progress
+    description: >
+      Bronze. Raw student_progress exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_programme_enquiry
+    description: >
+      Bronze. Raw programme_enquiry exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_programme
+    description: >
+      Bronze. Raw programme exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_programme_offering
+    description: >
+      Bronze. Raw programme_offering exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
+  - name: br_intake
+    description: >
+      Bronze. Raw intake exactly as landed, with its integration metadata
+      (source system, source id, source update time, load time,
+      deletion flag) and no other change.
