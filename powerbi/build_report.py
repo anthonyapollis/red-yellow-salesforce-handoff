@@ -186,7 +186,7 @@ THEME = {
             "*": {
                 "labels": [
                     {
-                        "fontSize": 28,
+                        "fontSize": 22,
                         "fontFamily": "Segoe UI Semibold",
                         "color": {
                             "solid": {
@@ -397,7 +397,7 @@ def visual(vtype, x, y, w, h, title=None, projections=None, objects=None, z=0,
     if vtype == "card":
         objects.setdefault("labels", [{"properties": {
             "color": colour(accent or RED),
-            "fontSize": {"expr": {"Literal": {"Value": "26D"}}},
+            "fontSize": {"expr": {"Literal": {"Value": "22D"}}},
             "fontFamily": lit("Segoe UI Semibold")}}])
         objects.setdefault("categoryLabels", [{"properties": {
             "show": {"expr": {"Literal": {"Value": "false"}}}}}])
@@ -482,7 +482,7 @@ def build():
              ("Enrolments", 640), ("Marketing Spend", 840), ("Enrolled Revenue", 1040)]
     v = [
         textbox(30, 20, 700, 44, [("Red & Yellow — marketing to enrolment", BIG)]),
-        textbox(30, 62, 900, 30,
+        textbox(30, 66, 900, 28,
                 [("Catalogue is real. People, campaigns and outcomes are synthetic.", SUB)]),
     ]
     for label, x in cards:
@@ -493,19 +493,19 @@ def build():
         # "Funnel by stage" while charting programme category - a label that
         # would have been read as stage-to-stage conversion and quietly
         # misinformed anyone who trusted it.
-        visual("clusteredBarChart", 30, 250, 610, 300,
+        visual("clusteredBarChart", 30, 245, 610, 260,
                "Opportunities and enrolments by programme category",
                {"Category": [("dim_offering", "category", False)],
                 "Y": [(M, "Opportunities", True), (M, "Enrolments", True)]}),
-        visual("lineChart", 660, 250, 590, 300, "Opportunities over time",
+        visual("lineChart", 660, 245, 590, 260, "Opportunities over time",
                {"Category": [("dim_date", "month_start", False)],
                 "Y": [(M, "Opportunities", True), (M, "Enrolments", True)]}),
-        visual("clusteredColumnChart", 30, 570, 610, 130, "Enrolments by province",
+        visual("clusteredColumnChart", 30, 520, 610, 180, "Enrolments by province",
                {"Category": [("dim_contact", "province", False)],
                 "Y": [(M, "Enrolments", True)]}),
-        visual("slicer", 660, 570, 290, 130, "Year",
+        visual("slicer", 660, 520, 290, 180, "Year",
                {"Values": [("dim_date", "calendar_year", False)]}),
-        visual("slicer", 960, 570, 290, 130, "Delivery mode",
+        visual("slicer", 960, 520, 290, 180, "Delivery mode",
                {"Values": [("dim_offering", "delivery_mode", False)]}),
     ]
     pages.append(page("exec", "Executive Summary", 0, v))
@@ -550,17 +550,17 @@ def build():
         textbox(30, 60, 1000, 34,
                 [("At risk = attendance under 55%, or assessment average under 50%, "
                   "or three or more overdue assignments.", SUB)]),
-        visual("card", 30, 105, 200, 100, "Applications",
+        visual("card", 30, 105, 190, 100, "Applications",
                {"Values": [(M, "Applications", True)]}),
-        visual("card", 240, 105, 200, 100, "Opportunity to Enrolment",
+        visual("card", 230, 105, 190, 100, "Opportunity to Enrolment",
                {"Values": [(M, "Opportunity to Enrolment", True)]}),
-        visual("card", 450, 105, 200, 100, "Avg Days to Decision",
+        visual("card", 430, 105, 190, 100, "Avg Days to Decision",
                {"Values": [(M, "Avg Days to Decision", True)]}),
-        visual("card", 660, 105, 200, 100, "At Risk Rate",
+        visual("card", 630, 105, 190, 100, "At Risk Rate",
                {"Values": [(M, "At Risk Rate", True)]}),
-        visual("card", 870, 105, 200, 100, "Avg Attendance",
+        visual("card", 830, 105, 190, 100, "Avg Attendance",
                {"Values": [(M, "Avg Attendance", True)]}),
-        visual("card", 1080, 105, 170, 100, "Students At Risk",
+        visual("card", 1030, 105, 190, 100, "Students At Risk",
                {"Values": [(M, "Students At Risk", True)]}),
         visual("lineChart", 30, 220, 610, 250, "Academic health by week of study",
                {"Category": [("fct_student_progress_weekly", "week_number", False)],
@@ -617,17 +617,17 @@ def build():
                 [("Extracted from the org through the REST API on a "
                   "SystemModstamp watermark. Deleted records are retained and "
                   "flagged rather than dropped, so removals are visible.", SUB)]),
-        visual("card", 30, 105, 196, 100, "CRM Accounts",
+        visual("card", 30, 105, 190, 100, "CRM Accounts",
                {"Values": [(M, "CRM Accounts", True)]}),
-        visual("card", 236, 105, 196, 100, "CRM Contacts",
+        visual("card", 230, 105, 190, 100, "CRM Contacts",
                {"Values": [(M, "CRM Contacts", True)]}),
-        visual("card", 442, 105, 196, 100, "CRM Leads",
+        visual("card", 430, 105, 190, 100, "CRM Leads",
                {"Values": [(M, "CRM Leads", True)]}),
-        visual("card", 648, 105, 196, 100, "CRM Opportunities",
+        visual("card", 630, 105, 190, 100, "CRM Opportunities",
                {"Values": [(M, "CRM Opportunities", True)]}),
-        visual("card", 854, 105, 196, 100, "CRM Pipeline Value",
+        visual("card", 830, 105, 190, 100, "CRM Pipeline Value",
                {"Values": [(M, "CRM Pipeline Value", True)]}),
-        visual("card", 1060, 105, 190, 100, "Deleted, captured",
+        visual("card", 1030, 105, 190, 100, "Deleted, captured",
                {"Values": [(M, "CRM Records Deleted", True)]}, accent=SLATE),
 
         visual("clusteredColumnChart", 30, 220, 610, 250,
@@ -662,17 +662,17 @@ def build():
                   "shown against the base rate, because an AUC means nothing "
                   "without knowing what guessing would have achieved.", SUB)]),
 
-        visual("card", 30, 105, 196, 96, "Scored leads",
+        visual("card", 30, 105, 190, 96, "Scored leads",
                {"Values": [(M, "Scored Leads", True)]}),
-        visual("card", 236, 105, 196, 96, "Priority band",
+        visual("card", 230, 105, 190, 96, "Priority band",
                {"Values": [(M, "Priority Leads", True)]}, accent=GOOD),
-        visual("card", 442, 105, 196, 96, "Actual conversion",
+        visual("card", 430, 105, 190, 96, "Actual conversion",
                {"Values": [(M, "Actual Conversion Rate", True)]}),
-        visual("card", 648, 105, 196, 96, "Scored enrolments",
+        visual("card", 630, 105, 190, 96, "Scored enrolments",
                {"Values": [(M, "Scored Enrolments", True)]}),
-        visual("card", 854, 105, 196, 96, "To intervene",
+        visual("card", 830, 105, 190, 96, "To intervene",
                {"Values": [(M, "Students To Intervene", True)]}, accent=BAD),
-        visual("card", 1060, 105, 190, 96, "Withdrawal rate",
+        visual("card", 1030, 105, 190, 96, "Withdrawal rate",
                {"Values": [(M, "Actual Withdrawal Rate", True)]}),
 
         # The bar that matters: does the model's ranking actually separate?
@@ -687,7 +687,7 @@ def build():
 
         textbox(30, 485, 1220, 46,
                 [("Marketing. ", SUBB), ("The top 5% of leads by propensity convert at 13.3%, against 2.8% in the bottom half - a 5x difference. ", SUB),
-                 ("Action: Route the Priority band to human follow-up within 24 hours and leave the Low band to automated nurture. The same team covers more pipeline without mor", SUBB)]),
+                 ("Action: Route the Priority band to human follow-up within 24 hours and leave the Low band to automated nurture. The same team covers more pipeline without more headcount.", SUBB)]),
         textbox(30, 537, 1220, 46,
                 [("Channel mix. ", SUBB), ("Referral converts at 9.8% versus Walk-in at 2.2%, on 30,421 leads. ", SUB),
                  ("Action: Rebalance spend toward Referral, and either fix the qualification criteria on Walk-in or stop paying for it.", SUBB)]),
@@ -696,7 +696,7 @@ def build():
                  ("Action: Trigger outreach at week 4 rather than at the first missed assessment. The signal is present before the student is far enough behind to recover from.", SUBB)]),
         textbox(30, 641, 1220, 46,
                 [("Early warning. ", SUBB), ("Withdrawal rate by weeks 1-4 attendance: (0, 50] 21.4%, (50, 65] 22.4%, (65, 80] 16.4%, (80, 100] 9.1% ", SUB),
-                 ("Action: Attendance below 65% in the first month is the single clearest trigger. It needs no model to act on - the model only tells you how much of the remaini", SUBB)]),
+                 ("Action: Attendance below 65% in the first month is the single clearest trigger. It needs no model to act on - the model only tells you how much of the remaining population needs attention.", SUBB)]),
     ]
     pages.append(page("ml", "Predictive & Actions", 5, v))
 
@@ -733,6 +733,23 @@ def build():
         "layoutOptimization": 0,
     }
 
+
+def validate_layout(report):
+    """Reject accidental off-canvas or overlapping visuals before Desktop sees them."""
+    problems = []
+    for sec in report["sections"]:
+        rects = []
+        for idx, vc in enumerate(sec["visualContainers"], start=1):
+            x, y, w, h = (vc["x"], vc["y"], vc["width"], vc["height"])
+            if x < 0 or y < 0 or x + w > W or y + h > H:
+                problems.append(
+                    f"{sec['displayName']}: visual {idx} is outside the {W}x{H} canvas")
+            for other_idx, ox, oy, ow, oh in rects:
+                if max(x, ox) < min(x + w, ox + ow) and max(y, oy) < min(y + h, oy + oh):
+                    problems.append(
+                        f"{sec['displayName']}: visuals {other_idx} and {idx} overlap")
+            rects.append((idx, x, y, w, h))
+    return problems
 
 def model_fields():
     """Read the TMDL back to learn what actually exists in the model."""
@@ -772,6 +789,13 @@ def main():
                     problems.append(
                         f"{sec['displayName']}: {tbl}[{prop}] is not a "
                         f"{kind.lower()} in the model")
+
+    layout_problems = validate_layout(report)
+    if layout_problems:
+        print("REPORT NOT WRITTEN - layout validation failed:")
+        for problem in layout_problems:
+            print(f"  - {problem}")
+        raise SystemExit(1)
 
     if problems:
         print("REPORT NOT WRITTEN - field references do not resolve:")
@@ -820,7 +844,7 @@ def main():
     n_vis = sum(len(s["visualContainers"]) for s in report["sections"])
     print(f"wrote {RPT / 'report.json'}")
     print(f"  {len(report['sections'])} pages, {n_vis} visuals")
-    print(f"  {checked} field references checked, all resolve against the model")
+    print(f"  {checked} field references and page layout checked, all resolve")
     for s in report["sections"]:
         print(f"    {s['ordinal'] + 1}. {s['displayName']:<26}"
               f"{len(s['visualContainers'])} visuals")

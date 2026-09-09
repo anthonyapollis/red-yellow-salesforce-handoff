@@ -41,3 +41,23 @@ is current.
 - `python reporting/export_pdf.py` regenerated a 21-page PDF through Microsoft
   Word, including one populated table of contents. Extracted PDF text contains
   `11.5 million rows` and no stale `9.4 million rows` claim.
+## Power BI design pass, generator-level
+
+I made a bounded first design pass in `powerbi/build_report.py`:
+
+- Reduced card callouts from 26–28pt to 22pt, while retaining card titles and
+  suppressing category labels. This addresses the repeated-label and clipped-
+  value issue reported from Desktop.
+- Standardised six-card rows at 190px wide with 10px gutters on Admissions,
+  Salesforce, and Predictive pages.
+- Rebalanced the Executive Summary: the two analytical charts now have 260px
+  of height and the previously unusable 130px province chart / slicers have
+  180px. I also corrected a 2px title/subtitle overlap found by the check.
+- Restored two truncated recommendation sentences on Predictive & Actions.
+- Added `validate_layout()` to reject off-canvas or overlapping visual
+  containers before the report is written.
+
+Validation: `python powerbi/build_report.py` generated 6 pages / 72 visuals
+and passed 93 semantic field references plus the new full-page layout check.
+This is geometry and model validation; a final visual rendering in Power BI
+Desktop is still needed before calling the report presentation-ready.
