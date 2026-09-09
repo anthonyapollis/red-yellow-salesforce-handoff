@@ -1,5 +1,47 @@
 [
  {
+  "object": "RY_Programme__c",
+  "file": "data/catalogue/RY_Programme__c.csv",
+  "group": "catalogue",
+  "external_id": "RY_External_ID__c",
+  "references": {},
+  "required": [
+   "Title__c"
+  ]
+ },
+ {
+  "object": "RY_Programme_Offering__c",
+  "file": "data/catalogue/RY_Programme_Offering__c.csv",
+  "group": "catalogue",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Programme_Key": [
+    "Programme__c",
+    "RY_Programme__c"
+   ]
+  },
+  "required": [
+   "Programme_Key",
+   "Title__c"
+  ]
+ },
+ {
+  "object": "RY_Intake__c",
+  "file": "data/catalogue/RY_Intake__c.csv",
+  "group": "catalogue",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Offering_Key": [
+    "Offering__c",
+    "RY_Programme_Offering__c"
+   ]
+  },
+  "required": [
+   "Offering_Key",
+   "Start_Date__c"
+  ]
+ },
+ {
   "object": "Account",
   "file": "data/crm_load/Account.csv",
   "group": "crm_load",

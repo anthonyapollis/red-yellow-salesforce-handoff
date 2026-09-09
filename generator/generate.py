@@ -562,15 +562,30 @@ def build_applications(opps, n):
 
 def build_students_enrolments(apps, intakes, offerings):
     accepted = apps[apps["status"].values == "Accepted"].reset_index(drop=True)
-    n = len(accepted)
+
+    # One human is ONE student, however many times they are accepted. An earlier
+    # version minted a student per accepted application, so anyone who came back
+    # for a second qualification appeared twice - which inflates the student
+    # count and breaks the one-student-per-contact rule the ERD states. Multiple
+    # study episodes belong on enrolments, which hang off the single student.
+    accepted = accepted.sort_values(["contact_external_id", "decision_date"])
+    first = accepted.drop_duplicates("contact_external_id", keep="first").reset_index(drop=True)
+    n = len(first)
 
     students = pd.DataFrame({
         "student_external_id": ids("RY-STU-", n),
-        "contact_external_id": accepted["contact_external_id"].values,
+        "contact_external_id": first["contact_external_id"].values,
         "student_number": [f"RY{2022 + int(i) % 5}{i:06d}" for i in range(1, n + 1)],
-        "enrolled_first_date": accepted["decision_date"].values,
-        "_src_updated": src_updated(n, accepted["decision_date"].values),
+        "enrolled_first_date": first["decision_date"].values,
+        "_src_updated": src_updated(n, first["decision_date"].values),
     })
+
+    # Every accepted application still becomes an enrolment; it just points at
+    # the student for its contact rather than at a student of its own.
+    student_by_contact = dict(zip(students["contact_external_id"],
+                                  students["student_external_id"]))
+    accepted = accepted.reset_index(drop=True)
+    n = len(accepted)
 
     fee_by_offer = dict(zip(offerings["RY_External_ID__c"], offerings["Advertised_Fee_ZAR__c"]))
     offer_by_intake = dict(zip(intakes["RY_External_ID__c"], intakes["Offering_Key"]))
@@ -585,7 +600,7 @@ def build_students_enrolments(apps, intakes, offerings):
     enrolled = accepted["decision_date"].values + rng.integers(5, 70, n).astype("timedelta64[D]")
     enrolments = pd.DataFrame({
         "enrolment_external_id": ids("RY-ENR-", n),
-        "student_external_id": students["student_external_id"].values,
+        "student_external_id": accepted["contact_external_id"].map(student_by_contact).values,
         "application_external_id": accepted["application_external_id"].values,
         "intake_external_id": accepted["intake_external_id"].values,
         "enrolled_date": enrolled,

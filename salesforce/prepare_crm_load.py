@@ -253,14 +253,20 @@ def main():
     total += w(app.copy(), "RY_Application__c")
     app_ids = set(app["RY_External_ID__c"])
 
+    # Semi-join, not a join. A student with two enrolments would come back twice
+    # from an inner join, and Salesforce rejects the second row as a duplicate
+    # external ID - the same fan-out that would have quietly duplicated
+    # dim_offering had it joined intakes directly.
     stu = con.sql(f"""
         select s.student_external_id as "RY_External_ID__c",
                s.contact_external_id as "Contact_Key",
                s.student_number      as "Student_Number__c"
         from main_staging.stg_student s
-        join main_staging.stg_enrolment e
-          on e.student_external_id = s.student_external_id
-        where e.application_external_id in ({','.join(repr(x) for x in app_ids)})
+        where s.student_external_id in (
+            select student_external_id
+            from main_staging.stg_enrolment
+            where application_external_id in ({','.join(repr(x) for x in app_ids)})
+        )
         limit {n['RY_Student__c']}
     """).df()
     total += w(stu.copy(), "RY_Student__c")
@@ -299,7 +305,12 @@ def main():
     # -- import plan for this folder ----------------------------------------
     base = json.loads((REPO / "salesforce" / "import_plan.json").read_text(encoding="utf-8"))
     by_obj = {p["object"]: p for p in base}
-    plan = []
+    # The CRM slice points at intakes, which are catalogue records. Prepending
+    # the three catalogue objects makes this plan self-contained and correctly
+    # ordered - otherwise every Opportunity fails on an unresolvable Intake_Key.
+    plan = [dict(by_obj[o]) for o in
+            ("RY_Programme__c", "RY_Programme_Offering__c", "RY_Intake__c")
+            if o in by_obj]
     for obj in HEADERS:
         p = dict(by_obj.get(obj, {"object": obj, "external_id": "RY_External_ID__c",
                                   "references": {}, "required": []}))

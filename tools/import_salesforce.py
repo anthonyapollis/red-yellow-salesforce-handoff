@@ -29,8 +29,8 @@ class API:
     body=e.read().decode(errors="replace")
     raise RuntimeError(f"{method} {path}: HTTP {e.code}: {body[:1500]}") from None
   raise RuntimeError("Request retry limit reached")
-def load(root=ROOT):
- plans=json.loads((root/"salesforce/import_plan.json").read_text())
+def load(root=ROOT,plan_path="salesforce/import_plan.json"):
+ plans=json.loads((root/plan_path).read_text())
  rows={}
  for p in plans:
   with (root/p["file"]).open(encoding="utf-8",newline="") as handle:
@@ -130,7 +130,7 @@ def preflight(api,plans,rows,stage):
   describes[obj]=d
  return describes
 def run(args):
- plans,rows=load()
+ plans,rows=load(plan_path=args.plan)
  counts=validate(plans,rows)
  selected=[p for p in plans if p["group"]=="catalogue" or args.include_demo]
  print(json.dumps({"offline_validation":"PASS","selected_counts":{p["object"]:counts[p["object"]] for p in selected}},indent=2))
@@ -174,6 +174,7 @@ def main():
  p.add_argument("--apply",action="store_true",help="Actually upsert the selected data")
  p.add_argument("--expected-host",help="Exact target Salesforce hostname, required for --apply")
  p.add_argument("--opportunity-stage",default="",help="Existing Salesforce StageName for all demo opportunities; sample business stages remain in RY_Sample_Stage__c")
+ p.add_argument("--plan",default="salesforce/import_plan.json",help="Import plan to run; use data/crm_load/import_plan.json for the generated CRM slice")
  p.add_argument("--api-version",default="66.0")
  args=p.parse_args()
  try:run(args)

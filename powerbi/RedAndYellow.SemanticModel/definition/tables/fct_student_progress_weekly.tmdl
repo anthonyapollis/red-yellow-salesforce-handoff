@@ -1,107 +1,107 @@
 table fct_student_progress_weekly
-	lineageTag: 75f832ed-b6e0-48bf-94f5-5e69b1491a6a
+	lineageTag: 14674bfd-36f5-4bd5-b981-4e81510eb37e
 
 	column progress_external_id
 		dataType: string
-		lineageTag: 9a6c9043-2764-4f8c-9b83-ecddb175782b
+		lineageTag: 5958df7c-e65d-4c99-8a04-d070f374879b
 		summarizeBy: none
 		sourceColumn: progress_external_id
 
 	column enrolment_external_id
 		dataType: string
-		lineageTag: 84b1f768-fdac-4bdd-9357-951fd4ead916
+		lineageTag: 5f57f55e-8303-4859-8ffa-497a982db058
 		summarizeBy: none
 		sourceColumn: enrolment_external_id
 
 	column student_external_id
 		dataType: string
-		lineageTag: cb496ea2-8bf7-4a58-a124-e91d8269bde0
+		lineageTag: ff314ea0-9d19-4a55-9f75-53ed6465bbef
 		summarizeBy: none
 		sourceColumn: student_external_id
 
 	column intake_external_id
 		dataType: string
-		lineageTag: df500f34-b406-4312-89b5-efc52cd48c79
+		lineageTag: d90d94d1-e67b-475f-a0f3-d6a663f65658
 		summarizeBy: none
 		sourceColumn: intake_external_id
 
 	column programme_title
 		dataType: string
-		lineageTag: f1ef5da4-c882-4ef2-8ba3-c0bde8562cf4
+		lineageTag: 7c22321a-17e4-4ce9-bf67-aeb1a78a372b
 		summarizeBy: none
 		sourceColumn: programme_title
 
 	column delivery_mode
 		dataType: string
-		lineageTag: 5dad19e4-438e-401e-bfbb-90a370a18c15
+		lineageTag: ec20b872-d8e2-4553-aa85-677d858f3c42
 		summarizeBy: none
 		sourceColumn: delivery_mode
 
 	column week_start
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 0d87f166-0b6f-4b16-b0cc-5aae9bc432cb
+		lineageTag: a7b40021-67e8-4055-b090-6cf3cddb467a
 		summarizeBy: none
 		sourceColumn: week_start
 
 	column week_number
 		dataType: int64
 		formatString: #,0
-		lineageTag: 50cd6df5-f5c5-41e6-96ea-59f96a7ece4d
+		lineageTag: a434263b-6abf-4367-81b5-4e1db9fe81f9
 		summarizeBy: sum
 		sourceColumn: week_number
 
 	column attendance_pct
 		dataType: double
 		formatString: #,0.00
-		lineageTag: add5d41a-eead-4f5d-91e1-0a5b44a60537
+		lineageTag: 327c6f0a-0477-47e0-9b0c-baec5b25bfc0
 		summarizeBy: sum
 		sourceColumn: attendance_pct
 
 	column assessment_average_pct
 		dataType: double
 		formatString: #,0.00
-		lineageTag: a85a81f0-6413-4fe3-b2ab-4785857df7e2
+		lineageTag: 4f1f85a0-50c1-4397-baf3-3eea86b59044
 		summarizeBy: sum
 		sourceColumn: assessment_average_pct
 
 	column overdue_assignments
 		dataType: int64
 		formatString: #,0
-		lineageTag: 13420c35-e2c0-4137-88d9-bc80f762b800
+		lineageTag: 3faafcce-8c6e-4155-af56-0bf803f1103a
 		summarizeBy: sum
 		sourceColumn: overdue_assignments
 
 	column risk_band
 		dataType: string
-		lineageTag: 9136ac9e-577e-455e-8dea-23beb24f1560
+		lineageTag: f56f2b6c-7021-42ee-a592-dfb1b4d6a9c8
 		summarizeBy: none
 		sourceColumn: risk_band
 
 	column is_attendance_missing
 		dataType: int64
 		formatString: #,0
-		lineageTag: dc963f57-efa5-450a-ac18-b129076ebe26
+		lineageTag: 82d3cf47-d6a9-4746-99b0-3918aee76e8c
 		summarizeBy: sum
 		sourceColumn: is_attendance_missing
 
 	column enrolment_status
 		dataType: string
-		lineageTag: f246a68a-5472-41af-9579-9176ab7840e2
+		lineageTag: d8668d02-f579-4753-8037-a518a77f0c70
 		summarizeBy: none
 		sourceColumn: enrolment_status
 
 	column is_at_risk
 		dataType: int64
 		formatString: #,0
-		lineageTag: bd1a0934-2795-4974-a5f0-07c5b5f5756b
+		lineageTag: 0438cddd-fa4e-4357-900f-3fa0982b0ba5
 		summarizeBy: sum
 		sourceColumn: is_at_risk
 
 	column attendance_4wk_avg
 		dataType: double
 		formatString: #,0.00
-		lineageTag: feb037de-ed36-4817-817e-d7f6a816e456
+		lineageTag: b27dbdff-a086-42da-bb68-f91daf87851a
 		summarizeBy: sum
 		sourceColumn: attendance_4wk_avg
 
