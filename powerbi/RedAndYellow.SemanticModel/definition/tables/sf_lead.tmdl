@@ -1,0 +1,136 @@
+table sf_lead
+	lineageTag: 01ee4dbc-a625-45a2-b4e1-52b39951ac78
+
+	column Id
+		dataType: string
+		lineageTag: 49ab39e5-39c5-44ff-9b64-573091381fc0
+		summarizeBy: none
+		sourceColumn: Id
+
+	column FirstName
+		dataType: string
+		lineageTag: 627514e8-4f57-4642-88b0-73f3ce5e10eb
+		summarizeBy: none
+		sourceColumn: FirstName
+
+	column LastName
+		dataType: string
+		lineageTag: 706759c1-6a83-44ba-a4e4-0f823d910ead
+		summarizeBy: none
+		sourceColumn: LastName
+
+	column Email
+		dataType: string
+		lineageTag: 6452c3b1-86c6-49e1-a468-201aab21bbe6
+		summarizeBy: none
+		sourceColumn: Email
+
+	column Phone
+		dataType: int64
+		formatString: #,0
+		lineageTag: 1ab4ce48-8223-4813-a7d3-9d5671d757ca
+		summarizeBy: sum
+		sourceColumn: Phone
+
+	column Company
+		dataType: string
+		lineageTag: 7d3a6a7c-075b-476b-a5ff-24fb8a7a0fd0
+		summarizeBy: none
+		sourceColumn: Company
+
+	column Status
+		dataType: string
+		lineageTag: a3de1217-01eb-434a-84b6-c332e2de77c5
+		summarizeBy: none
+		sourceColumn: Status
+
+	column LeadSource
+		dataType: int64
+		formatString: #,0
+		lineageTag: 74bb01af-0f0d-42a7-bc21-db9bfe19a186
+		summarizeBy: sum
+		sourceColumn: LeadSource
+
+	column RY_External_ID__c
+		dataType: string
+		lineageTag: 00d27cc1-bd79-456f-8f6b-f3bb47aa34ce
+		summarizeBy: none
+		sourceColumn: RY_External_ID__c
+
+	column RY_Sample_Status__c
+		dataType: string
+		lineageTag: 5a2e9608-a664-4c08-ae56-e06fa677b7fa
+		summarizeBy: none
+		sourceColumn: RY_Sample_Status__c
+
+	column ConvertedContactId
+		dataType: int64
+		formatString: #,0
+		lineageTag: 9178f68b-6c31-4378-ac8b-b99af1a7117e
+		summarizeBy: sum
+		sourceColumn: ConvertedContactId
+
+	column IsConverted
+		dataType: boolean
+		lineageTag: 76945654-2caf-48c8-be3a-463557d880e0
+		summarizeBy: none
+		sourceColumn: IsConverted
+
+	column CreatedDate
+		dataType: string
+		lineageTag: 27c4869c-8e18-4f89-8523-c3381423d924
+		summarizeBy: none
+		sourceColumn: CreatedDate
+
+	column SystemModstamp
+		dataType: string
+		lineageTag: 8b0a456c-b8e9-4b92-aee4-06f6f5dfba5e
+		summarizeBy: none
+		sourceColumn: SystemModstamp
+
+	column IsDeleted
+		dataType: boolean
+		lineageTag: 8f517b34-012f-4fae-895b-f86ad6f21205
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+	column is_deleted
+		dataType: boolean
+		lineageTag: 79c30473-b4bd-40d6-8a30-0456fbede60b
+		summarizeBy: none
+		sourceColumn: is_deleted
+
+	column source_system
+		dataType: string
+		lineageTag: b392eee7-9817-44c0-9ac8-87d00b195672
+		summarizeBy: none
+		sourceColumn: source_system
+
+	column source_record_id
+		dataType: string
+		lineageTag: 8777f1f3-766f-49ba-9e9d-96ba42a1daf0
+		summarizeBy: none
+		sourceColumn: source_record_id
+
+	column source_updated_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: 8e7e8070-bb9d-4fdb-b80a-abbc68349d7a
+		summarizeBy: none
+		sourceColumn: source_updated_at
+
+	column extracted_at
+		dataType: string
+		lineageTag: bc45d592-82af-4fab-9729-cf38bcb42fab
+		summarizeBy: none
+		sourceColumn: extracted_at
+
+	partition sf_lead = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\sf_lead.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

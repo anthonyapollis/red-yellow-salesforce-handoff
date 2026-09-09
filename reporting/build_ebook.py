@@ -111,6 +111,56 @@ def main():
     ax.xaxis.set_major_formatter(lambda x, p: f"{x/1e3:.0f}k" if x >= 1e3 else f"{x:.0f}")
     fig.tight_layout(); fig.savefig(FIG / "dq.png"); plt.close(fig)
 
+    # ---- additional analysis figures --------------------------------------
+    prog = q("""select d.programme_title, sum(f.is_enrolled) enrolments,
+                       round(avg(f.discount_pct),1) disc
+                from main_marts.fct_admissions_funnel f
+                join main_marts.dim_offering d using (offering_external_id)
+                group by 1 having sum(f.is_enrolled) > 0
+                order by enrolments desc limit 12""")
+    fig, ax = plt.subplots(figsize=(6.4, 3.6))
+    labels = [t[:44] + ("..." if len(t) > 44 else "") for t in prog["programme_title"]]
+    ax.barh(labels[::-1], prog["enrolments"][::-1], color=SERIES[2])
+    ax2 = ax.twiny()
+    ax2.plot(prog["disc"][::-1], range(len(prog)), "o", color=SERIES[1], ms=4)
+    ax2.set_xlabel("Avg discount %", fontsize=8, color=SERIES[1])
+    ax2.tick_params(axis="x", labelsize=7, colors=SERIES[1])
+    ax.set_xlabel("Enrolments")
+    ax.tick_params(axis="y", labelsize=7)
+    fig.tight_layout(); fig.savefig(FIG / "prog_demand.png"); plt.close(fig)
+
+    prov = q("""select c.province, sum(f.is_enrolled) enrolments
+                from main_marts.fct_admissions_funnel f
+                join main_marts.dim_contact c using (contact_external_id)
+                group by 1 order by enrolments desc""")
+    fig, ax = plt.subplots(figsize=(6.4, 2.9))
+    cols = [SERIES[1] if p != "Unknown" else "#9AA5B1" for p in prov["province"]]
+    ax.bar(prov["province"], prov["enrolments"], color=cols)
+    ax.set_ylabel("Enrolments")
+    ax.tick_params(axis="x", rotation=38, labelsize=7.5)
+    for lbl in ax.get_xticklabels():
+        lbl.set_ha("right")
+    fig.tight_layout(); fig.savefig(FIG / "province.png"); plt.close(fig)
+
+    conv = q("""select
+        round(100.0*count(*)/ (select count(*) from main_staging.stg_lead),1) lead_to_opp,
+        round(100.0*sum(case when application_external_id is not null then 1 else 0 end)
+              /count(*),1) opp_to_app,
+        round(100.0*sum(is_enrolled)
+              /nullif(sum(case when application_external_id is not null then 1 else 0 end),0),1) app_to_enrol
+        from main_marts.fct_admissions_funnel""").iloc[0]
+    fig, ax = plt.subplots(figsize=(6.4, 2.6))
+    steps = ["Lead to\nopportunity", "Opportunity to\napplication",
+             "Application to\nenrolment"]
+    vals = [conv.lead_to_opp, conv.opp_to_app, conv.app_to_enrol]
+    bars = ax.bar(steps, vals, color=[SERIES[0], SERIES[2], SERIES[3]], width=0.5)
+    for b, v in zip(bars, vals):
+        ax.text(b.get_x() + b.get_width() / 2, v + 1.5, f"{v:.1f}%",
+                ha="center", fontsize=9, color=CHARCOAL, weight="bold")
+    ax.set_ylabel("Conversion %")
+    ax.set_ylim(0, max(vals) * 1.28)
+    fig.tight_layout(); fig.savefig(FIG / "conversion.png"); plt.close(fig)
+
     # ---- document ---------------------------------------------------------
     d = Document()
     st = d.styles["Normal"]
@@ -194,6 +244,10 @@ def main():
         "reads the curated marts. The interesting engineering is not in any one of those "
         "tools - it is in the decisions between them, which is what this document is about.")
 
+    figure_if("ev_00_architecture.png",
+              "Figure 0 - The pipeline end to end. Each stage is a separate, "
+              "runnable component; nothing here is a diagram of an intention.")
+
     H("The numbers")
     tbl = d.add_table(rows=0, cols=2); tbl.style = "Light List Accent 1"
     for label, val in [
@@ -276,6 +330,34 @@ def main():
         "remaining 3% are records where both email and phone were dropped at source, which no "
         "amount of matching can recover.")
     figure("dq.png", "Figure 4 - Detected issues by type.")
+
+    # ---- extra analysis --------------------------------------------------
+    H("Where the demand actually is")
+    d.add_paragraph(
+        "The catalogue is real, so programme demand is the one place where the "
+        "synthetic pipeline meets Red & Yellow's actual offering. These are the "
+        "programmes carrying the most enrolments in the modelled pipeline, and "
+        "the discount being conceded to win them.")
+    figure_if("prog_demand.png",
+              "Figure 4a - Top programmes by enrolment, with average discount.")
+
+    H("Who is enrolling, and from where", 13, CHARCOAL, 12)
+    d.add_paragraph(
+        "Province is one of the dirtiest fields in the source - 'Western Cape', "
+        "'western cape', 'W Cape', 'WC' and 'Wes-Kaap' all arrive - and one of "
+        "the most useful once collapsed. Anything that cannot be resolved is "
+        "kept as Unknown rather than guessed at.")
+    figure_if("province.png",
+              "Figure 4b - Enrolments by province, after the spelling variants "
+              "are collapsed to the nine official names.")
+
+    H("The funnel as conversion, not counts", 13, CHARCOAL, 12)
+    d.add_paragraph(
+        "Absolute counts down a funnel flatter the top of it. The rates between "
+        "stages are what a marketing team can act on.")
+    figure_if("conversion.png",
+              "Figure 4c - Stage-to-stage conversion through the admissions "
+              "pipeline.")
 
     H("Blanks that are not gaps")
     d.add_paragraph(
@@ -400,6 +482,43 @@ def main():
         "history lives in, is cleansed once in staging, and is consumed by marts "
         "that Power BI reads directly. The tests run on every build.")
     figure_if("ev_06_dbt_tests.png", "Figure 10 - dbt build: models and data tests.")
+
+    # ---- the rest of the stack -------------------------------------------
+    d.add_page_break()
+    H("The pipeline infrastructure", 20, RED, 0)
+    d.add_paragraph(
+        "Two pieces of the stack are running systems rather than code in a "
+        "repository, so they are shown as they actually are - read from their "
+        "own APIs at the moment this document was built.")
+
+    H("Apache NiFi", 13, CHARCOAL, 12)
+    d.add_paragraph(
+        "NiFi has exactly one root per instance, so a project is a top-level "
+        "process group and its stages are nested groups joined by ports. That "
+        "lets each stage start, stop and version independently, and keeps the "
+        "canvas readable. Controller services sit on the project group and are "
+        "inherited, so the two stages cannot drift onto different connection "
+        "pools. Credentials come from a parameter context whose sensitive "
+        "values are empty in source control - which is why the processors are "
+        "stopped and invalid until an operator supplies them.")
+    figure_if("ev_07_nifi_flow.png",
+              "Figure 11 - The live NiFi hierarchy. RY_Salesforce_to_Fabric "
+              "holds two stage groups; the LYRA groups are unrelated work on "
+              "the same instance.")
+
+    H("Microsoft Fabric", 13, CHARCOAL, 12)
+    d.add_paragraph(
+        "The warehouse lands in OneLake as a bronze layer, partitioned by "
+        "table. Two things are worth knowing for anyone repeating this: a "
+        "workspace created through the API arrives with no capacity attached, "
+        "and every Fabric item type then fails with a 403 that reads like a "
+        "licensing problem rather than an unassigned workspace. And a trial "
+        "capacity does not stop on its own - the workspace should be deleted "
+        "when the work is done.")
+    figure_if("ev_08_fabric.png",
+              "Figure 12 - The Fabric workspace, its capacity, and what is "
+              "actually in OneLake - listed back rather than assumed from the "
+              "upload's own success message.")
 
     # Any UI screenshots the author dropped in are appended, captioned by filename.
     shots = sorted((REPO / "ebook" / "screenshots").glob("*.png")) + \

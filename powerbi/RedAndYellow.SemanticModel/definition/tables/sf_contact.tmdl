@@ -1,0 +1,104 @@
+table sf_contact
+	lineageTag: 3d7d0d6c-de61-4081-ad27-3a54b2fa7ece
+
+	column Id
+		dataType: string
+		lineageTag: d5a035c3-2275-4daa-874e-63518a43918f
+		summarizeBy: none
+		sourceColumn: Id
+
+	column FirstName
+		dataType: string
+		lineageTag: bee8ebfc-5c87-460d-961a-0c5f5c1c2bb7
+		summarizeBy: none
+		sourceColumn: FirstName
+
+	column LastName
+		dataType: string
+		lineageTag: c9b80f11-bc3c-466f-b0fb-8bbb064a6123
+		summarizeBy: none
+		sourceColumn: LastName
+
+	column Email
+		dataType: string
+		lineageTag: e9d861ce-eb40-418a-9325-1c3b76037ae3
+		summarizeBy: none
+		sourceColumn: Email
+
+	column Phone
+		dataType: int64
+		formatString: #,0
+		lineageTag: a73f4998-b25b-4a9a-9442-eb5bb7aae15a
+		summarizeBy: sum
+		sourceColumn: Phone
+
+	column AccountId
+		dataType: string
+		lineageTag: d38c438c-ab8a-461f-8b8c-f42ac1428864
+		summarizeBy: none
+		sourceColumn: AccountId
+
+	column RY_External_ID__c
+		dataType: string
+		lineageTag: 3b1d471d-3765-4c79-af08-cafdc376decd
+		summarizeBy: none
+		sourceColumn: RY_External_ID__c
+
+	column CreatedDate
+		dataType: string
+		lineageTag: a590d95a-7d28-4d4a-b1bb-2bb414507eee
+		summarizeBy: none
+		sourceColumn: CreatedDate
+
+	column SystemModstamp
+		dataType: string
+		lineageTag: 63d6f453-f497-4704-bb2c-02df68187eb6
+		summarizeBy: none
+		sourceColumn: SystemModstamp
+
+	column IsDeleted
+		dataType: boolean
+		lineageTag: 326a6c0f-2e14-48b1-86aa-665a1e5f880c
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+	column is_deleted
+		dataType: boolean
+		lineageTag: b7a85f66-e3c1-4310-8b42-50eeaecad9d4
+		summarizeBy: none
+		sourceColumn: is_deleted
+
+	column source_system
+		dataType: string
+		lineageTag: 5617a173-8015-4833-8741-e939a55ececa
+		summarizeBy: none
+		sourceColumn: source_system
+
+	column source_record_id
+		dataType: string
+		lineageTag: d38a3441-397d-48f4-b0a5-f4334ebb31d1
+		summarizeBy: none
+		sourceColumn: source_record_id
+
+	column source_updated_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: f79a2751-1ae8-4432-ab2b-973503cc491d
+		summarizeBy: none
+		sourceColumn: source_updated_at
+
+	column extracted_at
+		dataType: string
+		lineageTag: e7b5011a-282f-49ab-be8c-e814ce18b9f7
+		summarizeBy: none
+		sourceColumn: extracted_at
+
+	partition sf_contact = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\sf_contact.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

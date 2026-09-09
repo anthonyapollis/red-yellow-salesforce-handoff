@@ -23,9 +23,21 @@ SM = REPO / "powerbi" / "RedAndYellow.SemanticModel" / "definition"
 RPT = REPO / "powerbi" / "RedAndYellow.Report"
 
 W, H = 1280, 720
+
+# Red & Yellow's own identity, used with restraint: red for emphasis and the
+# primary series, yellow for highlight only. Charts run on a muted categorical
+# ramp so a ten-series chart does not turn into a warning light, and the two
+# brand colours keep their meaning.
 RED = "#E03127"
+YELLOW = "#FFC629"
 CHARCOAL = "#22252A"
 SLATE = "#5A6472"
+PAPER = "#FFFFFF"
+CANVAS = "#F7F8FA"
+RULE = "#DDE2E8"
+SERIES = ["#E03127", "#2E6E8E", "#4C9F70", "#F0A202", "#8B5FBF",
+          "#C7522A", "#3B7EA1", "#7A8B99", "#5C6F52", "#9E4A4A"]
+GOOD, WARN, BAD = "#4C9F70", "#F0A202", "#E03127"
 
 M = "_Measures"
 
@@ -55,7 +67,16 @@ def field(table, name, measure):
     return alias, ref, sel
 
 
-def visual(vtype, x, y, w, h, title=None, projections=None, objects=None, z=0):
+def series_colours(n):
+    """Explicit per-series colours, so the report does not inherit whatever
+    default theme the opener happens to have."""
+    return [{"properties": {"fill": colour(SERIES[i % len(SERIES)])},
+             "selector": {"data": [{"dataViewWildcard": {"matchingOption": 0}}],
+                          "metadata": None}} for i in range(n)]
+
+
+def visual(vtype, x, y, w, h, title=None, projections=None, objects=None, z=0,
+           accent=None, subtitle=None):
     """Build one visualContainer.
 
     projections: {"Values": [(table, name, is_measure), ...], "Category": [...]}
@@ -70,14 +91,68 @@ def visual(vtype, x, y, w, h, title=None, projections=None, objects=None, z=0):
             selects.append(sel)
             proj[role].append({"queryRef": ref})
 
-    vc_objects = {}
+    vc_objects = {
+        "background": [{"properties": {
+            "color": colour(PAPER),
+            "show": {"expr": {"Literal": {"Value": "true"}}},
+            "transparency": {"expr": {"Literal": {"Value": "0D"}}}}}],
+        "border": [{"properties": {
+            "color": colour(RULE),
+            "show": {"expr": {"Literal": {"Value": "true"}}},
+            "radius": {"expr": {"Literal": {"Value": "6D"}}}}}],
+        "dropShadow": [{"properties": {
+            "show": {"expr": {"Literal": {"Value": "false"}}}}}],
+    }
     if title:
         vc_objects["title"] = [{"properties": {
             "text": lit(title),
-            "fontColor": colour(CHARCOAL),
-            "fontSize": {"expr": {"Literal": {"Value": "12D"}}},
+            "fontColor": colour(accent or CHARCOAL),
+            "fontSize": {"expr": {"Literal": {"Value": "11D"}}},
+            "fontFamily": lit("Segoe UI Semibold"),
+            "alignment": lit("left"),
             "show": {"expr": {"Literal": {"Value": "true"}}},
         }}]
+    if subtitle:
+        vc_objects["subTitle"] = [{"properties": {
+            "text": lit(subtitle),
+            "fontColor": colour(SLATE),
+            "fontSize": {"expr": {"Literal": {"Value": "9D"}}},
+            "show": {"expr": {"Literal": {"Value": "true"}}},
+        }}]
+
+    objects = dict(objects or {})
+    # Colour the marks explicitly, and keep card values on brand red.
+    n_series = len(proj.get("Y", [])) or len(proj.get("Values", [])) or 1
+    if vtype in ("clusteredColumnChart", "clusteredBarChart", "lineChart",
+                 "areaChart", "stackedColumnChart"):
+        objects.setdefault("dataPoint", series_colours(n_series))
+        objects.setdefault("categoryAxis", [{"properties": {
+            "showAxisTitle": {"expr": {"Literal": {"Value": "false"}}},
+            "fontSize": {"expr": {"Literal": {"Value": "9D"}}},
+            "labelColor": colour(SLATE)}}])
+        objects.setdefault("valueAxis", [{"properties": {
+            "showAxisTitle": {"expr": {"Literal": {"Value": "false"}}},
+            "fontSize": {"expr": {"Literal": {"Value": "9D"}}},
+            "labelColor": colour(SLATE),
+            "gridlineColor": colour(RULE)}}])
+        objects.setdefault("legend", [{"properties": {
+            "position": lit("Top"), "labelColor": colour(SLATE),
+            "fontSize": {"expr": {"Literal": {"Value": "9D"}}},
+            "showTitle": {"expr": {"Literal": {"Value": "false"}}}}}])
+    if vtype == "card":
+        objects.setdefault("labels", [{"properties": {
+            "color": colour(accent or RED),
+            "fontSize": {"expr": {"Literal": {"Value": "26D"}}},
+            "fontFamily": lit("Segoe UI Semibold")}}])
+        objects.setdefault("categoryLabels", [{"properties": {
+            "show": {"expr": {"Literal": {"Value": "false"}}}}}])
+    if vtype == "tableEx":
+        objects.setdefault("columnHeaders", [{"properties": {
+            "fontColor": colour(PAPER), "backColor": colour(CHARCOAL),
+            "fontSize": {"expr": {"Literal": {"Value": "9D"}}}}}])
+        objects.setdefault("values", [{"properties": {
+            "fontSize": {"expr": {"Literal": {"Value": "9D"}}},
+            "fontColor": colour(CHARCOAL)}}])
 
     cfg = {
         "name": gid(),
@@ -128,8 +203,10 @@ def page(name, display, ordinal, visuals):
         "ordinal": ordinal,
         "visualContainers": visuals,
         "config": json.dumps({"objects": {"background": [{"properties": {
-            "color": colour("#FFFFFF"), "transparency": {
-                "expr": {"Literal": {"Value": "0D"}}}}}]}}),
+            "color": colour(CANVAS), "transparency": {
+                "expr": {"Literal": {"Value": "0D"}}}}}],
+            "displayArea": [{"properties": {
+                "verticalAlignment": lit("Top")}}]}}),
         "displayOption": 1,
         "width": W,
         "height": H,
@@ -276,6 +353,49 @@ def build():
                            ("dq_summary", "issue_count", False)]}),
     ]
     pages.append(page("quality", "Data Quality", 3, v))
+
+    # ---------------------------------------------------------------- 5 ----
+    v = [
+        textbox(30, 20, 900, 40, [("Salesforce CRM - live", BIG)]),
+        textbox(30, 60, 1060, 34,
+                [("Extracted from the org through the REST API on a "
+                  "SystemModstamp watermark. Deleted records are retained and "
+                  "flagged rather than dropped, so removals are visible.", SUB)]),
+        visual("card", 30, 105, 196, 100, "CRM Accounts",
+               {"Values": [(M, "CRM Accounts", True)]}),
+        visual("card", 236, 105, 196, 100, "CRM Contacts",
+               {"Values": [(M, "CRM Contacts", True)]}),
+        visual("card", 442, 105, 196, 100, "CRM Leads",
+               {"Values": [(M, "CRM Leads", True)]}),
+        visual("card", 648, 105, 196, 100, "CRM Opportunities",
+               {"Values": [(M, "CRM Opportunities", True)]}),
+        visual("card", 854, 105, 196, 100, "CRM Pipeline Value",
+               {"Values": [(M, "CRM Pipeline Value", True)]}),
+        visual("card", 1060, 105, 190, 100, "Deleted, captured",
+               {"Values": [(M, "CRM Records Deleted", True)]}, accent=SLATE),
+
+        visual("clusteredColumnChart", 30, 220, 610, 250,
+               "Opportunity pipeline by stage",
+               {"Category": [("sf_opportunity", "StageName", False)],
+                "Y": [(M, "CRM Opportunities", True)]}),
+        visual("clusteredBarChart", 660, 220, 590, 250, "Leads by status",
+               {"Category": [("sf_lead", "RY_Sample_Status__c", False)],
+                "Y": [(M, "CRM Leads", True)]}),
+
+        visual("card", 30, 485, 196, 90, "Email completeness",
+               {"Values": [(M, "CRM Email Completeness", True)]}, accent=GOOD),
+        visual("slicer", 236, 485, 200, 90, "Lead source",
+               {"Values": [("sf_lead", "LeadSource", False)]}),
+        visual("tableEx", 446, 485, 804, 215, "Contacts in the CRM",
+               {"Values": [("sf_contact", "RY_External_ID__c", False),
+                           ("sf_contact", "FirstName", False),
+                           ("sf_contact", "LastName", False),
+                           ("sf_contact", "Email", False),
+                           ("sf_contact", "is_deleted", False)]}),
+        visual("tableEx", 30, 585, 406, 115, "Accounts",
+               {"Values": [("sf_account", "Name", False)]}),
+    ]
+    pages.append(page("crm", "Salesforce CRM", 4, v))
 
     return {
         "id": 0,

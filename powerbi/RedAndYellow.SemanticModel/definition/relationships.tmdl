@@ -1,27 +1,27 @@
-relationship 879d53dc-9987-4a6e-a233-01bf08f6a916
+relationship 27c6d6f0-0c01-4217-ac0d-4c9afbbc4a7f
 	fromColumn: fct_campaign_performance.campaign_external_id
 	toColumn: dim_campaign.campaign_external_id
 
-relationship 27cfac25-edab-4f3e-9b1d-c40ba5e15b5e
+relationship 21671b1b-0e51-43a2-ad1d-46e72c510a23
 	fromColumn: fct_campaign_performance.start_date
 	toColumn: dim_date.date_day
 
-relationship f96d6693-21e7-4dcb-9ec4-258272099b9a
+relationship a0fca41e-35be-46f6-b2a4-af2fb7537577
 	fromColumn: fct_admissions_funnel.contact_external_id
 	toColumn: dim_contact.contact_external_id
 
-relationship e9739fe1-a9a0-4b09-bea6-73532ff22397
+relationship f6b9634f-31bf-40d4-aa74-cb22d75f2468
 	fromColumn: fct_admissions_funnel.offering_external_id
 	toColumn: dim_offering.offering_external_id
 
-relationship 618556a9-8884-4a69-b491-4569242d92c3
+relationship 3f7eb1ea-a084-4d41-8286-b3c622260619
 	fromColumn: fct_admissions_funnel.opportunity_created_date
 	toColumn: dim_date.date_day
 
-relationship f9830278-5e4e-406b-9241-5ecabc7272ef
+relationship e8412f20-4f31-4472-a644-e8071f24d1f3
 	fromColumn: fct_student_progress_weekly.week_start
 	toColumn: dim_date.date_day
 
-relationship e4a0ecfe-7c94-40f7-a920-6b749bd00ac9
+relationship fc76e048-8f40-4cc9-ad1b-3f9dfeedd5e7
 	fromColumn: fct_lead_conversion.created_date
 	toColumn: dim_date.date_day

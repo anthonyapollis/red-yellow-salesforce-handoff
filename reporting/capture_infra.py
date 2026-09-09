@@ -1,0 +1,194 @@
+#!/usr/bin/env python3
+"""Captures the infrastructure - NiFi, Fabric, and the architecture - as figures.
+
+The Salesforce steps already have evidence figures; these cover the rest of the
+stack. Like those, they are read from live APIs at build time rather than
+screenshotted once, so the ebook shows the pipeline as it stands on the day it
+is generated.
+
+Real UI screenshots still belong in ebook/screenshots/ - these figures prove the
+state, a screenshot shows the interface. Both are worth having.
+
+    python capture_infra.py
+"""
+from __future__ import annotations
+
+import os
+import pathlib
+import sys
+
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+REPO = pathlib.Path(__file__).resolve().parent.parent
+FIG = REPO / "ebook" / "figures"
+
+sys.path.insert(0, str(REPO / "reporting"))
+from capture_evidence import terminal_figure  # noqa: E402
+
+NIFI_BASE = "https://localhost:8443/nifi-api"
+NIFI_USER_DEFAULT = "e73f9c96-ef04-4181-a2c3-7a573cc7a24d"
+
+
+def nifi_password():
+    pw = os.environ.get("NIFI_PASSWORD", "").strip()
+    if pw:
+        return pw
+    # Kept outside the repository on purpose.
+    f = pathlib.Path("C:/Apache/NIFI_LOGIN.txt")
+    if f.exists():
+        for line in f.read_text(encoding="utf-8", errors="replace").splitlines():
+            if line.lower().startswith("password:"):
+                return line.split(":", 1)[1].strip()
+    return ""
+
+
+def nifi_text():
+    import requests
+    import urllib3
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+    pw = nifi_password()
+    if not pw:
+        raise RuntimeError("no NiFi password available")
+    user = os.environ.get("NIFI_USER") or NIFI_USER_DEFAULT
+
+    s = requests.Session()
+    s.verify = False
+    r = s.post(NIFI_BASE + "/access/token",
+               data={"username": user, "password": pw},
+               headers={"Content-Type": "application/x-www-form-urlencoded"},
+               timeout=30)
+    r.raise_for_status()
+    s.headers["Authorization"] = "Bearer " + r.text
+
+    lines = []
+
+    def walk(gid, depth=0, name=None):
+        f = s.get(NIFI_BASE + "/flow/process-groups/" + gid, timeout=60)
+        f.raise_for_status()
+        pgf = f.json()["processGroupFlow"]
+        flow = pgf["flow"]
+        nm = name or pgf["breadcrumb"]["breadcrumb"]["name"]
+        pad = "    " * depth
+        lines.append("{}{}   ({} processors, {} groups, {} connections)".format(
+            pad, nm, len(flow["processors"]), len(flow["processGroups"]),
+            len(flow["connections"])))
+        for pr in sorted(flow["processors"], key=lambda x: x["component"]["name"]):
+            c = pr["component"]
+            state = c.get("state", "")
+            lines.append("{}  - {:<28}{}".format(pad, c["name"], state))
+        for g in sorted(flow["processGroups"], key=lambda x: x["component"]["name"]):
+            walk(g["id"], depth + 1, g["component"]["name"])
+
+    root = s.get(NIFI_BASE + "/flow/process-groups/root",
+                 timeout=60).json()["processGroupFlow"]["id"]
+    walk(root)
+    return "\n".join(lines)
+
+
+def fabric_text():
+    import requests
+    sys.path.insert(0, str(REPO / "fabric"))
+    from deploy_fabric import (token, FABRIC_API, FABRIC_SCOPE,
+                               ONELAKE, ONELAKE_SCOPE)
+    from azure.identity import DefaultAzureCredential
+
+    cred = DefaultAzureCredential(exclude_managed_identity_credential=True)
+    H = {"Authorization": "Bearer " + token(cred, FABRIC_SCOPE)}
+
+    wss = requests.get(FABRIC_API + "/workspaces", headers=H, timeout=90).json()["value"]
+    ws = next(w for w in wss if w["displayName"] == "WS_RedAndYellow")
+    items = requests.get("{}/workspaces/{}/items".format(FABRIC_API, ws["id"]),
+                         headers=H, timeout=90).json()["value"]
+    caps = {c["id"]: c for c in requests.get(FABRIC_API + "/capacities",
+                                             headers=H, timeout=90).json()["value"]}
+    cap = caps.get(ws.get("capacityId"), {})
+
+    lines = ["workspace   " + ws["displayName"],
+             "id          " + ws["id"],
+             "capacity    {}   sku={}   state={}".format(
+                 cap.get("displayName", "(none)"), cap.get("sku", "-"),
+                 cap.get("state", "-")),
+             ""]
+    for it in items:
+        lines.append("  item      {:<26}{}".format(it["displayName"], it["type"]))
+
+    H2 = {"Authorization": "Bearer " + token(cred, ONELAKE_SCOPE)}
+    r = requests.get(ONELAKE + "/WS_RedAndYellow",
+                     params={"resource": "filesystem", "recursive": "true",
+                             "directory": "LH_RedAndYellow.Lakehouse/Files/bronze"},
+                     headers=H2, timeout=180)
+    paths = [x for x in r.json().get("paths", []) if not x.get("isDirectory")]
+    total = sum(int(x.get("contentLength", 0)) for x in paths)
+    lines += ["", "OneLake bronze: {} parquet files, {:.0f} MB".format(
+        len(paths), total / 1024 / 1024)]
+    for x in sorted(paths, key=lambda y: -int(y.get("contentLength", 0))):
+        lines.append("  {:>8.1f} MB  {}".format(
+            int(x["contentLength"]) / 1024 / 1024, x["name"].split("/")[-1]))
+    return "\n".join(lines)
+
+
+def architecture_figure():
+    """Draw the pipeline, so the reader sees the shape before the detail."""
+    fig, ax = plt.subplots(figsize=(9.4, 3.0))
+    fig.patch.set_facecolor("#FFFFFF")
+    ax.set_xlim(0, 100)
+    ax.set_ylim(0, 34)
+    ax.axis("off")
+
+    boxes = [
+        (1, "Salesforce\nCRM", "1,091 records\n4 objects", "#E03127"),
+        (20.5, "NiFi + REST\nextract", "incremental on\nSystemModstamp", "#F0A202"),
+        (40, "OneLake\nbronze", "13 files\n242 MB", "#2E6E8E"),
+        (59.5, "dbt\nwarehouse", "23 models\n51 tests", "#4C9F70"),
+        (79, "Power BI\n+ Excel", "5 pages\n58 visuals", "#8B5FBF"),
+    ]
+    for x, title, sub, col in boxes:
+        ax.add_patch(plt.Rectangle((x, 9), 17.5, 16, facecolor="#FFFFFF",
+                                   edgecolor=col, linewidth=2.0, zorder=2))
+        ax.add_patch(plt.Rectangle((x, 22.6), 17.5, 2.4, facecolor=col,
+                                   edgecolor=col, linewidth=0, zorder=3))
+        ax.text(x + 8.75, 18.8, title, ha="center", va="center", fontsize=9.0,
+                color="#22252A", weight="bold", zorder=4)
+        ax.text(x + 8.75, 12.6, sub, ha="center", va="center", fontsize=7.2,
+                color="#5A6472", zorder=4)
+        if x < 79:
+            ax.annotate("", xy=(x + 19.3, 17), xytext=(x + 17.8, 17),
+                        arrowprops=dict(arrowstyle="-|>", color="#8A94A0", lw=1.6))
+
+    ax.text(50, 4.0,
+            "9.4M synthetic rows in the warehouse   ·   the CRM holds the "
+            "operational slice   ·   every row carries its source and load time",
+            ha="center", fontsize=7.4, color="#5A6472")
+    fig.tight_layout(pad=0.3)
+    out = FIG / "ev_00_architecture.png"
+    fig.savefig(out, dpi=200, facecolor="#FFFFFF")
+    plt.close(fig)
+    print("  {:<34}drawn".format("ev_00_architecture.png"))
+
+
+def main():
+    FIG.mkdir(parents=True, exist_ok=True)
+    print("capturing infrastructure figures\n")
+
+    architecture_figure()
+
+    for label, fn, name in [
+        ("Apache NiFi - live process-group hierarchy", nifi_text,
+         "ev_07_nifi_flow.png"),
+        ("Microsoft Fabric - WS_RedAndYellow (live)", fabric_text,
+         "ev_08_fabric.png"),
+    ]:
+        try:
+            terminal_figure(label, fn(), name, max_lines=42)
+        except Exception as e:
+            # Say so rather than leaving a gap the ebook silently fills.
+            print("  {:<34}SKIPPED: {}".format(name, e))
+
+    print("\n  figures in {}".format(FIG))
+
+
+if __name__ == "__main__":
+    main()

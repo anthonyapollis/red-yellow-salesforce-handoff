@@ -305,6 +305,74 @@ def main():
                        columns=["injected_defect", "records"])
     table(ws, inj, 5, 7, {"records": f["num"]}, {"injected_defect": 26})
 
+    # ==================================================================== 5b =
+    # Detection scored against the ground truth, rather than asserted.
+    ws = wb.add_worksheet("DQ Scorecard")
+    ws.hide_gridlines(2)
+    ws.set_column("A:A", 2)
+    ws.write("B2", "Data quality: detected against injected", f["title"])
+    ws.write("B3", "Defects were planted at recorded rates. Recall is what the "
+                   "pipeline found, divided by what was planted - a measurement, "
+                   "not a claim.", f["sub"])
+
+    inj_counts = truth["injected_defect_counts"]
+    det = {r.issue_code: r.issue_count for r in
+           q(con, "select issue_code, issue_count from main_quality.dq_summary").itertuples()}
+    pairs = [("Duplicate humans", "duplicate_person", "duplicate_person"),
+             ("Missing attendance", "attendance_missing", "attendance_missing"),
+             ("Duplicate campaign membership", "dup_campaign_member", "duplicate_membership"),
+             ("Date inversions", "date_inversion", "date_inversion"),
+             ("Negative values", "negative_fee", "negative_value")]
+    rows = []
+    for label, ikey, dkey in pairs:
+        i, dd = inj_counts.get(ikey), det.get(dkey)
+        if i and dd is not None:
+            rows.append({"defect": label, "injected": i, "detected": dd,
+                         "recall": round(dd / i, 3)})
+    sc = pd.DataFrame(rows)
+    end = table(ws, sc, 5, 1, {"injected": f["num"], "detected": f["num"],
+                               "recall": f["dec"]}, {"defect": 34})
+    ws.merge_range(end + 1, 1, end + 3, 6,
+                   "Recall above 1.0 means the pipeline flagged more than was "
+                   "planted - de-duplication also catches collisions that arose "
+                   "naturally. Below 1.0 means some defects are unrecoverable: "
+                   "a duplicate whose email and phone were both dropped cannot "
+                   "be matched to anything.", f["note"])
+
+    # ==================================================================== 5c =
+    # The live CRM slice, read back out of Salesforce through the API.
+    sf_dir = REPO / "warehouse" / "salesforce_raw"
+    if (sf_dir / "contact.parquet").exists():
+        ws = wb.add_worksheet("Salesforce CRM")
+        ws.hide_gridlines(2)
+        ws.set_column("A:A", 2)
+        ws.write("B2", "Salesforce CRM - extracted via API", f["title"])
+        ws.write("B3", "Pulled from the org with SOQL over REST on a "
+                       "SystemModstamp watermark. Deleted records are retained "
+                       "and flagged, so removals stay visible.", f["sub"])
+
+        summary = []
+        for name in ["account", "contact", "lead", "opportunity"]:
+            p = sf_dir / f"{name}.parquet"
+            if not p.exists():
+                continue
+            dfx = pd.read_parquet(p)
+            deleted = int(dfx["is_deleted"].sum()) if "is_deleted" in dfx else 0
+            summary.append({"object": name.title(), "rows_extracted": len(dfx),
+                            "live_in_org": len(dfx) - deleted,
+                            "deleted_captured": deleted})
+        end = table(ws, pd.DataFrame(summary), 5, 1,
+                    {"rows_extracted": f["num"], "live_in_org": f["num"],
+                     "deleted_captured": f["num"]}, {"object": 16})
+
+        cdf = pd.read_parquet(sf_dir / "contact.parquet")
+        live = cdf[~cdf["is_deleted"]] if "is_deleted" in cdf else cdf
+        cols = [c for c in ["RY_External_ID__c", "FirstName", "LastName",
+                            "Email", "Id", "extracted_at"] if c in live.columns]
+        table(ws, live[cols].head(300).reset_index(drop=True), end + 2, 1, {},
+              {"Email": 34, "RY_External_ID__c": 22, "Id": 20,
+               "extracted_at": 24})
+
     # ==================================================================== 6 ==
     ws = wb.add_worksheet("Catalogue")
     ws.hide_gridlines(2)
@@ -361,7 +429,7 @@ def main():
 
     wb.close()
     size = OUT.stat().st_size / 1024
-    print(f"wrote {OUT}  ({size:,.0f} KB, 7 sheets)")
+    print(f"wrote {OUT}  ({size:,.0f} KB, {len(wb.worksheets())} sheets)")
 
 
 if __name__ == "__main__":

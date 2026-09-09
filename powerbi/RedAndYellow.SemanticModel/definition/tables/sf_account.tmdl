@@ -1,0 +1,79 @@
+table sf_account
+	lineageTag: fc87c506-b811-40bd-b29a-77e20f0de059
+
+	column Id
+		dataType: string
+		lineageTag: ebf62d5d-9528-40a3-af23-98cc96693dc7
+		summarizeBy: none
+		sourceColumn: Id
+
+	column Name
+		dataType: string
+		lineageTag: aef82b5e-0e1e-493b-98d2-9dfb08e58e4c
+		summarizeBy: none
+		sourceColumn: Name
+
+	column RY_External_ID__c
+		dataType: string
+		lineageTag: 44b4fd8d-e576-4a16-b396-0ad0ff7ba60d
+		summarizeBy: none
+		sourceColumn: RY_External_ID__c
+
+	column CreatedDate
+		dataType: string
+		lineageTag: a2e16e29-e420-4b9a-a2cf-5dff04e859f8
+		summarizeBy: none
+		sourceColumn: CreatedDate
+
+	column SystemModstamp
+		dataType: string
+		lineageTag: 5642c3a7-5c28-4c95-9a84-163d6faf8e0d
+		summarizeBy: none
+		sourceColumn: SystemModstamp
+
+	column IsDeleted
+		dataType: boolean
+		lineageTag: e83bb736-c1e1-4e3c-8a24-2d15a73f9904
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+	column is_deleted
+		dataType: boolean
+		lineageTag: 2ab0f25d-a5d1-4ee6-81b5-5fd3ad8587e3
+		summarizeBy: none
+		sourceColumn: is_deleted
+
+	column source_system
+		dataType: string
+		lineageTag: ca00d046-f546-4d95-b3d3-b368ac467b98
+		summarizeBy: none
+		sourceColumn: source_system
+
+	column source_record_id
+		dataType: string
+		lineageTag: bd4aaac0-ad4f-4924-be99-ca518896ca7c
+		summarizeBy: none
+		sourceColumn: source_record_id
+
+	column source_updated_at
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:nn:ss
+		lineageTag: f447f087-eef4-4a67-9196-61fb541ea4d1
+		summarizeBy: none
+		sourceColumn: source_updated_at
+
+	column extracted_at
+		dataType: string
+		lineageTag: 3f84de82-ef0b-4ad1-afb9-4e523468f33d
+		summarizeBy: none
+		sourceColumn: extracted_at
+
+	partition sf_account = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\sf_account.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

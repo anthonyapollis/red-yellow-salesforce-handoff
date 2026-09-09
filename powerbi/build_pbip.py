@@ -45,6 +45,8 @@ TABLES = [
     "fct_campaign_performance", "fct_admissions_funnel",
     "fct_student_progress_weekly", "fct_lead_conversion",
     "dq_issue_log", "dq_summary",
+    # The live CRM slice, extracted back out of Salesforce through the API.
+    "sf_account", "sf_contact", "sf_lead", "sf_opportunity",
 ]
 
 RELATIONSHIPS = [
@@ -111,6 +113,35 @@ MEASURES = [
     ("Unresolved Provinces",
      "CALCULATE(COUNTROWS(dim_contact), dim_contact[province] = \"Unknown\")", "#,0",
      "04 Data Quality"),
+
+    # 05 - the live CRM. Every measure filters is_deleted, because queryAll
+    # retains deleted rows on purpose and counting them would overstate the org.
+    ("CRM Accounts",
+     "CALCULATE(COUNTROWS(sf_account), sf_account[is_deleted] = FALSE())", "#,0",
+     "05 Salesforce CRM"),
+    ("CRM Contacts",
+     "CALCULATE(COUNTROWS(sf_contact), sf_contact[is_deleted] = FALSE())", "#,0",
+     "05 Salesforce CRM"),
+    ("CRM Leads",
+     "CALCULATE(COUNTROWS(sf_lead), sf_lead[is_deleted] = FALSE())", "#,0",
+     "05 Salesforce CRM"),
+    ("CRM Opportunities",
+     "CALCULATE(COUNTROWS(sf_opportunity), sf_opportunity[is_deleted] = FALSE())",
+     "#,0", "05 Salesforce CRM"),
+    ("CRM Pipeline Value",
+     "CALCULATE(SUM(sf_opportunity[RY_Expected_Value_ZAR__c]), "
+     "sf_opportunity[is_deleted] = FALSE())", '"R"#,0', "05 Salesforce CRM"),
+    ("CRM Records Deleted",
+     "CALCULATE(COUNTROWS(sf_contact), sf_contact[is_deleted] = TRUE()) + "
+     "CALCULATE(COUNTROWS(sf_lead), sf_lead[is_deleted] = TRUE()) + "
+     "CALCULATE(COUNTROWS(sf_opportunity), sf_opportunity[is_deleted] = TRUE())",
+     "#,0", "05 Salesforce CRM"),
+    ("CRM Contacts Missing Email",
+     "CALCULATE(COUNTROWS(sf_contact), sf_contact[is_deleted] = FALSE(), "
+     "ISBLANK(sf_contact[Email]))", "#,0", "05 Salesforce CRM"),
+    ("CRM Email Completeness",
+     "DIVIDE([CRM Contacts] - [CRM Contacts Missing Email], [CRM Contacts])",
+     "0.0%", "05 Salesforce CRM"),
 ]
 
 

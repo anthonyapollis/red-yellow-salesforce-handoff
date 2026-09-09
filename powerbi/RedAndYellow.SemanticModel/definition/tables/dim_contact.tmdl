@@ -1,98 +1,98 @@
 table dim_contact
-	lineageTag: e2366866-fe0e-42ac-b00f-3b8d6e503a8a
+	lineageTag: 5a412f39-ca8e-4129-bc85-5b9f14464999
 
 	column contact_external_id
 		dataType: string
-		lineageTag: d29eccbc-bbeb-4fca-8411-0858092b5509
+		lineageTag: 400bab96-af1d-4958-9edb-d6801b53b7a1
 		summarizeBy: none
 		sourceColumn: contact_external_id
 
 	column person_key
 		dataType: string
-		lineageTag: 954cafff-efbb-472b-9006-ed5c72bd5849
+		lineageTag: cfd626f6-c010-4095-a8e9-e8e0cc60c52c
 		summarizeBy: none
 		sourceColumn: person_key
 
 	column first_name
 		dataType: string
-		lineageTag: f04a0a71-f8d1-4841-a8f4-30493a132362
+		lineageTag: 24c39f19-d8ea-4e29-99d2-ab1c6de96db3
 		summarizeBy: none
 		sourceColumn: first_name
 
 	column last_name
 		dataType: string
-		lineageTag: dae73393-7cda-4e67-a68b-2a910d487727
+		lineageTag: 325c0ffb-ba84-408b-a559-d298b4c8cab8
 		summarizeBy: none
 		sourceColumn: last_name
 
 	column full_name
 		dataType: string
-		lineageTag: 4efed44c-a151-4bbf-b551-1a36c27ad770
+		lineageTag: ff393aa7-8d88-4da8-bdd5-1b23fab1f3d9
 		summarizeBy: none
 		sourceColumn: full_name
 
 	column email
 		dataType: string
-		lineageTag: c6e73c6e-08f6-4ef3-802f-efa980af371b
+		lineageTag: 0404473b-aec2-4ef9-8dcb-1697f1277540
 		summarizeBy: none
 		sourceColumn: email
 
 	column phone_e164
 		dataType: string
-		lineageTag: caf0aa94-5b6e-45a8-a54f-418d6fdcd678
+		lineageTag: 703f619f-fde3-4ee0-8cc0-c46e466770d8
 		summarizeBy: none
 		sourceColumn: phone_e164
 
 	column province
 		dataType: string
-		lineageTag: c7a56849-e113-43f5-995c-cd3a0caf8a7c
+		lineageTag: 945a988a-fcab-4266-b291-03be25009f73
 		summarizeBy: none
 		sourceColumn: province
 
 	column city
 		dataType: string
-		lineageTag: f29aa095-95e6-41a9-adb3-f50a9017b28d
+		lineageTag: 4df179dd-0cfd-4e40-8b14-634e475e30eb
 		summarizeBy: none
 		sourceColumn: city
 
 	column created_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: d0fb4895-270b-4f94-a951-8c18d53989a7
+		lineageTag: a2866a77-296a-4229-993c-7843d5992a1d
 		summarizeBy: none
 		sourceColumn: created_date
 
 	column person_record_count
 		dataType: int64
 		formatString: #,0
-		lineageTag: 29fbd05c-c9df-4f96-9c79-371d7f0b081b
+		lineageTag: 405bdeba-9ec4-402d-be04-9cbcdd2f1b88
 		summarizeBy: sum
 		sourceColumn: person_record_count
 
 	column has_duplicates
 		dataType: int64
 		formatString: #,0
-		lineageTag: 9b7b5861-aa69-48e3-92b1-cf0e5bc66080
+		lineageTag: a188abc8-7d37-4f89-8003-dd691b435964
 		summarizeBy: sum
 		sourceColumn: has_duplicates
 
 	column acquisition_path
 		dataType: string
-		lineageTag: 8bbce021-3d42-4915-9ab0-c75613c34d66
+		lineageTag: 779f5f84-f162-41f5-9f83-10617ee1fe21
 		summarizeBy: none
 		sourceColumn: acquisition_path
 
 	column is_email_invalid
 		dataType: int64
 		formatString: #,0
-		lineageTag: 8832fdb8-1f0e-488a-97ad-798821b96c30
+		lineageTag: f540298c-fd32-471d-a689-adacff3f5f01
 		summarizeBy: sum
 		sourceColumn: is_email_invalid
 
 	column is_late_arriving
 		dataType: int64
 		formatString: #,0
-		lineageTag: f293d217-3d8b-4c33-bfab-bc4dd33114c1
+		lineageTag: af7327cd-b1f2-4c1c-be32-4154a5eeeb05
 		summarizeBy: sum
 		sourceColumn: is_late_arriving
 

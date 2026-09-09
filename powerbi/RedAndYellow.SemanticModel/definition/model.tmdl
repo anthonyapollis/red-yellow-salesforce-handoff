@@ -15,3 +15,7 @@ ref table fct_student_progress_weekly
 ref table fct_lead_conversion
 ref table dq_issue_log
 ref table dq_summary
+ref table sf_account
+ref table sf_contact
+ref table sf_lead
+ref table sf_opportunity
