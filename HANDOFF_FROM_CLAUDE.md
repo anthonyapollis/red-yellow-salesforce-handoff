@@ -115,3 +115,8 @@ enforces it.
   against a warehouse rate of 4.37%). Sampling now uses a hash of the key.
   `salesforce/cleanup_stale.py` removes the first batch; it reports by default
   and deletes only with `--apply`.
+
+
+## Power BI source of truth
+
+Run python powerbi/build_report.py while Power BI Desktop is closed. It writes the generated report.json and a version 1.0 definition.pbir, then checks every visual projection against the TMDL semantic model. Power BI Desktop upgrades the project to PBIR 4.0 when it saves; that upgrade is a presentation copy, not a second source of truth. Re-run the generator before opening Desktop to see regenerated pages. Any future hand-authored PBIR 4.0 work needs its own v4 generator rather than a manual edit alongside report.json.

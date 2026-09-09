@@ -291,7 +291,7 @@ def main():
                   "dbt, Microsoft Fabric and Power BI")
     r.font.size = Pt(11.5); r.font.color.rgb = rgb(SLATE)
     p = d.add_paragraph()
-    r = p.add_run(f"\n{datetime.now():%d %B %Y}   ·   Anthony Apollis")
+    r = p.add_run(f"\n{datetime.now():%d %B %Y}   |   Anthony Apollis")
     r.font.size = Pt(10); r.font.color.rgb = rgb(SLATE)
     p = d.add_paragraph()
     r = p.add_run("\nThe programme catalogue in this document is real, transcribed from the "
@@ -556,7 +556,7 @@ def main():
             f"{len(_log):,} records were loaded across {len(_n)} objects: "
             + ", ".join(f"{k} {v}" for k, v in sorted(_n.items())) + ".")
 
-    H("1. Establish whether the org can host the model", 13, CHARCOAL, 14)
+    H("1. Establish whether the org can host the model", 16, CHARCOAL, 14)
     d.add_paragraph(
         "The target trial org runs Salesforce Base Edition, which permits zero "
         "custom objects. That is an edition entitlement rather than a quota or a "
@@ -567,7 +567,7 @@ def main():
               "Figure 5 - The org capability check. Base Edition, 10.6 GB free, "
               "and a NO-GO on custom objects.")
 
-    H("2. Deploy what the edition does allow", 13, CHARCOAL, 12)
+    H("2. Deploy what the edition does allow", 16, CHARCOAL, 12)
     d.add_paragraph(
         "The eight custom objects cannot deploy, but the eighteen custom fields "
         "on standard objects can. Deploying fields without field-level security "
@@ -578,7 +578,7 @@ def main():
     figure_if("ev_02_metadata_validate.png",
               "Figure 6 - Metadata validated against the org. 18 of 18 components.")
 
-    H("3. Load the operational CRM slice", 13, CHARCOAL, 12)
+    H("3. Load the operational CRM slice", 16, CHARCOAL, 12)
     d.add_paragraph(
         "Accounts, contacts, leads and opportunities, upserted on an external ID "
         "so the load is idempotent - re-running updates rather than duplicates. "
@@ -594,7 +594,7 @@ def main():
               "API. The loader's claim and the org's state are different "
               "assertions; only the second is evidence.")
 
-    H("4. Extract it back out through the API", 13, CHARCOAL, 12)
+    H("4. Extract it back out through the API", 16, CHARCOAL, 12)
     d.add_paragraph(
         "This is the part the role is actually about. SOQL over the REST API, "
         "paginating through nextRecordsUrl so the 2,000-record page limit is "
@@ -606,7 +606,7 @@ def main():
               "Figure 9 - Extraction manifest. Every row carries its source "
               "system, source id, source update time and extraction time.")
 
-    H("5. Transform, test, and report", 13, CHARCOAL, 12)
+    H("5. Transform, test, and report", 16, CHARCOAL, 12)
     d.add_paragraph(
         "From there the extracted data joins the same warehouse the synthetic "
         "history lives in, is cleansed once in staging, and is consumed by marts "
@@ -655,7 +655,7 @@ def main():
         figure_if("ml_importance.png",
                   "Figure 10b - What each model actually leans on.")
 
-        H("What to do about it", 13, CHARCOAL, 12)
+        H("What to do about it", 16, CHARCOAL, 12)
         for i in ml.get("insights", []):
             p = d.add_paragraph(style="List Bullet")
             r = p.add_run(f"{i['area']}. ")
@@ -665,7 +665,7 @@ def main():
             r2 = p.add_run(i["recommendation"])
             r2.italic = True
 
-        H("An honest caveat", 13, CHARCOAL, 12)
+        H("An honest caveat", 16, CHARCOAL, 12)
         d.add_paragraph(
             "These models are trained on synthetic data whose structure was put "
             "there deliberately. They demonstrate the method - time-based "
@@ -728,7 +728,7 @@ def main():
         "repository, so they are shown as they actually are - read from their "
         "own APIs at the moment this document was built.")
 
-    H("Apache NiFi", 13, CHARCOAL, 12)
+    H("Apache NiFi", 16, CHARCOAL, 12)
     d.add_paragraph(
         "NiFi has exactly one root per instance, so a project is a top-level "
         "process group and its stages are nested groups joined by ports. That "
@@ -743,7 +743,7 @@ def main():
               "holds two stage groups; the LYRA groups are unrelated work on "
               "the same instance.")
 
-    H("Microsoft Fabric", 13, CHARCOAL, 12)
+    H("Microsoft Fabric", 16, CHARCOAL, 12)
     d.add_paragraph(
         "The warehouse lands in OneLake as a bronze layer, partitioned by "
         "table. Two things are worth knowing for anyone repeating this: a "
@@ -761,7 +761,7 @@ def main():
     shots = sorted((REPO / "ebook" / "screenshots").glob("*.png")) + \
         sorted((REPO / "ebook" / "screenshots").glob("*.jpg"))
     if shots:
-        H("Screens from the org", 13, CHARCOAL, 12)
+        H("Screens from the org", 16, CHARCOAL, 12)
         for sh in shots:
             cap = sh.stem.split("_", 1)[-1].replace("_", " ")
             d.add_picture(str(sh), width=Inches(5.9))
