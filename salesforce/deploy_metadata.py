@@ -48,7 +48,7 @@ def inner(xml: str, tag: str) -> str:
     return m.group(1)
 
 
-def build_object(obj_dir: Path) -> str:
+def build_object(obj_dir: Path, standard_only: bool = False) -> str:
     """Merge one source-format object directory into a metadata-format .object."""
     parts = []
     meta = obj_dir / f"{obj_dir.name}.object-meta.xml"
@@ -56,27 +56,42 @@ def build_object(obj_dir: Path) -> str:
         parts.append(inner(meta.read_text(encoding="utf-8"), "CustomObject"))
 
     for f in sorted((obj_dir / "fields").glob("*.field-meta.xml")):
-        parts.append("<fields>" + inner(f.read_text(encoding="utf-8"), "CustomField")
-                     + "</fields>")
+        body = f.read_text(encoding="utf-8")
+        # A lookup to an object we are not deploying cannot resolve.
+        if standard_only:
+            ref = re.search(r"<referenceTo>([^<]+)</referenceTo>", body)
+            if ref and ref.group(1).endswith("__c"):
+                continue
+        parts.append("<fields>" + inner(body, "CustomField") + "</fields>")
 
     return (f'<?xml version="1.0" encoding="UTF-8"?>\n'
             f'<CustomObject xmlns="{NS}">' + "".join(parts) + "</CustomObject>")
 
 
-def build_package():
-    """Return (zip_bytes, manifest) for everything under force-app."""
-    objects, permsets = [], []
+def build_package(standard_only=False):
+    """Return (zip_bytes, manifest) for everything under force-app.
+
+    standard_only drops the custom objects and any field that looks them up.
+    Salesforce Base Edition (Starter Suite) permits zero custom objects, so on
+    such an org the only deployable part of this model is the custom fields on
+    standard objects.
+    """
+    objects, permsets, skipped = [], [], []
     buf = io.BytesIO()
 
     with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
         for d in sorted((SRC / "objects").iterdir()):
             if not d.is_dir():
                 continue
+            if standard_only and d.name.endswith("__c"):
+                skipped.append(d.name)
+                continue
+            xml = build_object(d, standard_only=standard_only)
             objects.append(d.name)
-            z.writestr(f"objects/{d.name}.object", build_object(d))
+            z.writestr(f"objects/{d.name}.object", xml)
 
         ps_dir = SRC / "permissionsets"
-        if ps_dir.exists():
+        if ps_dir.exists() and not standard_only:
             for f in sorted(ps_dir.glob("*.permissionset-meta.xml")):
                 name = f.name.replace(".permissionset-meta.xml", "")
                 permsets.append(name)
@@ -94,18 +109,28 @@ def build_package():
                    f'<?xml version="1.0" encoding="UTF-8"?>\n<Package xmlns="{NS}">'
                    f"{types}<version>{API}</version></Package>")
 
-    return buf.getvalue(), {"objects": objects, "permissionSets": permsets}
+    return buf.getvalue(), {"objects": objects, "permissionSets": permsets,
+                            "skipped": skipped}
 
 
-def post_deploy(url, token, zip_bytes, check_only):
-    """POST the zip as multipart/form-data to the Metadata deployRequest resource."""
-    opts = {"deployOptions": {
+def post_deploy(url, token, zip_bytes, check_only, test_level=None):
+    """POST the zip as multipart/form-data to the Metadata deployRequest resource.
+
+    testLevel is deliberately omitted by default. A Salesforce trial org counts
+    as a *production* org, and production rejects NoTestRun outright with
+    INVALID_OPERATION. This package contains no Apex, so letting Salesforce pick
+    the level is both valid and correct; pass --test-level RunLocalTests if an
+    org's settings demand an explicit one.
+    """
+    deploy_options = {
         "checkOnly": check_only,
         "singlePackage": True,
         "rollbackOnError": True,
-        "testLevel": "NoTestRun",
         "ignoreWarnings": False,
-    }}
+    }
+    if test_level:
+        deploy_options["testLevel"] = test_level
+    opts = {"deployOptions": deploy_options}
 
     parts = []
     parts.append(
@@ -164,14 +189,22 @@ def main():
     ap.add_argument("--check-only", action="store_true",
                     help="Validate against the org without changing anything")
     ap.add_argument("--save-zip", help="Also write the generated package to this path")
+    ap.add_argument("--standard-only", action="store_true",
+                    help="Deploy only custom fields on standard objects. Use on "
+                         "editions that do not permit custom objects.")
+    ap.add_argument("--test-level", default=None,
+                    choices=["RunLocalTests", "RunAllTestsInOrg", "NoTestRun"],
+                    help="Usually unnecessary. Production orgs reject NoTestRun.")
     args = ap.parse_args()
 
-    zip_bytes, manifest = build_package()
+    zip_bytes, manifest = build_package(args.standard_only)
     print(f"package: {len(manifest['objects'])} objects, "
           f"{len(manifest['permissionSets'])} permission sets, "
           f"{len(zip_bytes) / 1024:.1f} KB")
     for o in manifest["objects"]:
         print(f"    {o}")
+    if manifest.get("skipped"):
+        print(f"  skipped (custom objects): {', '.join(manifest['skipped'])}")
 
     if args.save_zip:
         Path(args.save_zip).write_bytes(zip_bytes)
@@ -181,7 +214,7 @@ def main():
     print(f"\ntarget org: {url}")
     print("mode: validate only (no changes)" if args.check_only else "mode: DEPLOY")
 
-    r = post_deploy(url, token, zip_bytes, args.check_only)
+    r = post_deploy(url, token, zip_bytes, args.check_only, args.test_level)
     deploy_id = r.get("id") or r.get("deployResult", {}).get("id")
     print(f"deployment {deploy_id}\n")
 

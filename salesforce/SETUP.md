@@ -1,7 +1,38 @@
 # Getting data into Salesforce
 
-The org (`business-data-62022`) is empty and has none of the RY objects, so the
-order matters: **credentials → deploy metadata → assign permissions → import data.**
+## Which org: not a Base Edition trial
+
+Verified on 2026-09-09 against `business-data-62022`:
+
+```
+OrganizationType   Base Edition        (Starter Suite)
+Custom objects     2 (Knowledge__ka / __kav - system, not user-created)
+Data storage       10,638 MB free
+Deploy result      all 8 custom objects rejected:
+                   "reached maximum number of custom objects"
+```
+
+**Base Edition permits zero custom objects.** This is an edition entitlement, not
+a quota or a permission - no configuration changes it, and the 10 GB of free
+storage is irrelevant. The 18 custom *fields* on standard objects do validate
+cleanly there (`--standard-only`), so a reduced CRM-core load is possible, but
+applications, students, enrolments, progress and the programme catalogue cannot
+exist on that org at all.
+
+**Use a free Developer Edition org instead:** https://developer.salesforce.com/signup
+
+- Free permanently, no trial expiry
+- 400 custom objects, so the full model deploys
+- 5 MB data storage - about 2,500 records, which is exactly what the default
+  `--budget 2400` in `prepare_crm_load.py` was sized against
+
+Repeat the External Client App setup below once in the new org, point
+`SF_LOGIN_URL` at its My Domain, and everything else is unchanged.
+
+---
+
+The target org starts empty and has none of the RY objects, so the order
+matters: **credentials → deploy metadata → assign permissions → import data.**
 Skipping straight to the import fails on the first record, because
 `RY_External_ID__c` does not exist yet on any object.
 
