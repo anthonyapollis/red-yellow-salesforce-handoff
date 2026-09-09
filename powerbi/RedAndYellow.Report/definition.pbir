@@ -1,8 +1,6 @@
 {
   "version": "1.0",
   "datasetReference": {
-    "byPath": {
-      "path": "../RedAndYellow.SemanticModel"
-    }
+    "byPath": { "path": "../RedAndYellow.SemanticModel" }
   }
 }

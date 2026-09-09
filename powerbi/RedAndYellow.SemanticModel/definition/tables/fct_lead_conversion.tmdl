@@ -1,81 +1,81 @@
 table fct_lead_conversion
-	lineageTag: 2cc6377b-3ba5-4eb5-83ba-e9c0355fab26
+	lineageTag: 0a3615fc-200a-4816-8ed9-247948399cea
 
 	column lead_external_id
 		dataType: string
-		lineageTag: 7ada926b-efe9-4e37-8373-024514161c63
+		lineageTag: 99d4627c-269e-4a13-9da5-e84a25ccb296
 		summarizeBy: none
 		sourceColumn: lead_external_id
 
 	column lead_source
 		dataType: string
-		lineageTag: fba3ec7b-c4fd-42d2-aa37-81043c287a9c
+		lineageTag: 29fd4a02-b5dd-4651-a1a2-f369d77626a1
 		summarizeBy: none
 		sourceColumn: lead_source
 
 	column lead_status
 		dataType: string
-		lineageTag: ca5a8992-cced-401c-b5de-caa9f0a2ee04
+		lineageTag: f58b3c2d-27b8-4d8d-9223-97dc7cff0de4
 		summarizeBy: none
 		sourceColumn: lead_status
 
 	column province
 		dataType: string
-		lineageTag: 22cad902-a9f7-4263-b19c-9f1f0594dc82
+		lineageTag: c9b862ea-b664-4c8b-ae20-3dc33b4aae37
 		summarizeBy: none
 		sourceColumn: province
 
 	column campaign_external_id
 		dataType: string
-		lineageTag: 8ce8568f-3400-4579-ae5d-6cab7f821b02
+		lineageTag: 8adaa972-bb14-479c-a899-ddd7d9c1c5d7
 		summarizeBy: none
 		sourceColumn: campaign_external_id
 
 	column created_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 009e7ea5-a072-42d4-a1be-cd2a929dfc3b
+		lineageTag: 3b083fab-dad5-47ab-8f86-4bc5a4071266
 		summarizeBy: none
 		sourceColumn: created_date
 
 	column is_converted
 		dataType: int64
 		formatString: #,0
-		lineageTag: f4fca42b-aba4-4104-aae2-fe64dbeff97d
+		lineageTag: bc9ddc3d-76cf-48df-8eda-32f1cf7f54ca
 		summarizeBy: sum
 		sourceColumn: is_converted
 
 	column contact_external_id
 		dataType: string
-		lineageTag: 4bf8f898-6a30-48bb-ba5c-c993bbfbc1e1
+		lineageTag: ad23e1ac-05c2-4dea-9f61-2b022c6280c0
 		summarizeBy: none
 		sourceColumn: contact_external_id
 
 	column contact_created_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: b02edfdf-a30e-4d19-a3ae-df26c2328f1a
+		lineageTag: c2147888-9617-47a6-8973-14831c742818
 		summarizeBy: none
 		sourceColumn: contact_created_date
 
 	column days_to_convert
 		dataType: int64
 		formatString: #,0
-		lineageTag: 463f1733-d08b-4579-beab-cb0580c1a74b
+		lineageTag: 1f89ef6a-8ac0-42ef-8471-9587fa5d6bd8
 		summarizeBy: sum
 		sourceColumn: days_to_convert
 
 	column reached_opportunity
 		dataType: int64
 		formatString: #,0
-		lineageTag: 9da10a51-a146-441c-adc4-c82cead5b78d
+		lineageTag: 5a6d0fc0-4012-4714-a94b-caf2be78a4d1
 		summarizeBy: sum
 		sourceColumn: reached_opportunity
 
 	column reached_enrolment
 		dataType: int64
 		formatString: #,0
-		lineageTag: 5ba763c4-5045-4b2f-a75a-89ac3512b750
+		lineageTag: 682ced65-586b-45e6-a56d-e436f0e72401
 		summarizeBy: sum
 		sourceColumn: reached_enrolment
 

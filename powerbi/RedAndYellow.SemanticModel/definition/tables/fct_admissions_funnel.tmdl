@@ -1,190 +1,190 @@
 table fct_admissions_funnel
-	lineageTag: 81bd47a3-2975-427c-ace8-42216c79e928
+	lineageTag: f94406ea-423d-4e78-a4b8-c65349d7a2ae
 
 	column opportunity_external_id
 		dataType: string
-		lineageTag: 32da7e43-611e-4f69-9f85-a74967b61dec
+		lineageTag: 017f8879-d8b6-4757-aaad-be939355b1d5
 		summarizeBy: none
 		sourceColumn: opportunity_external_id
 
 	column contact_external_id
 		dataType: string
-		lineageTag: 744701ae-69cc-4048-9985-5004cde2e122
+		lineageTag: 687a8d15-1dad-49ee-9b5d-0beb897c1907
 		summarizeBy: none
 		sourceColumn: contact_external_id
 
 	column province
 		dataType: string
-		lineageTag: 3d1ae14e-10b9-4a70-9c92-11d487952c56
+		lineageTag: 385f5af8-dee9-4a6d-adac-c6f857a7f35d
 		summarizeBy: none
 		sourceColumn: province
 
 	column acquisition_path
 		dataType: string
-		lineageTag: 7ae00419-669a-4687-bffe-a062ec34ca6c
+		lineageTag: 6f864da6-8bcd-4b3d-9f7c-b536c335f262
 		summarizeBy: none
 		sourceColumn: acquisition_path
 
 	column primary_campaign_external_id
 		dataType: string
-		lineageTag: 65abfda1-00bd-4a50-b344-e7df1bf9d7da
+		lineageTag: a802ecf9-82f9-4477-a6c0-79bb9eca3933
 		summarizeBy: none
 		sourceColumn: primary_campaign_external_id
 
 	column intake_external_id
 		dataType: string
-		lineageTag: 676ae0a2-adf6-480d-ad0c-3898ad6d2441
+		lineageTag: 53c96554-966a-4cb3-833e-fa4090e6dc5a
 		summarizeBy: none
 		sourceColumn: intake_external_id
 
 	column offering_external_id
 		dataType: string
-		lineageTag: 2fb231c2-1aba-49c3-9ea0-3b7766b98c08
+		lineageTag: cb0eb4be-c3d0-449e-abd0-c2f8bd08af46
 		summarizeBy: none
 		sourceColumn: offering_external_id
 
 	column programme_title
 		dataType: string
-		lineageTag: 8a72f1ca-30e3-4cfc-a476-4ed8c8208743
+		lineageTag: d1b4ed65-60c0-489d-8255-9ef591c31abf
 		summarizeBy: none
 		sourceColumn: programme_title
 
 	column category
 		dataType: string
-		lineageTag: 48364ca5-8fe7-4937-a5cb-15221e901162
+		lineageTag: ea779496-5053-4b58-81a9-aad5cd531fa7
 		summarizeBy: none
 		sourceColumn: category
 
 	column delivery_mode
 		dataType: string
-		lineageTag: fa810ed5-bd4a-4e7b-a7da-ea29e837361f
+		lineageTag: c67cbf89-1b60-4253-8652-136d4aba81df
 		summarizeBy: none
 		sourceColumn: delivery_mode
 
 	column advertised_fee_zar
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: f26bea11-1195-4eae-a759-aaa06d8fca8b
+		lineageTag: 72a01dee-d591-4b93-a211-f3f126ab1ae4
 		summarizeBy: sum
 		sourceColumn: advertised_fee_zar
 
 	column stage_name
 		dataType: string
-		lineageTag: 9ddccfbd-8a16-42b6-93e5-b911c74e4ffa
+		lineageTag: bab0e104-5f4e-4b70-afa5-d4d429d70e11
 		summarizeBy: none
 		sourceColumn: stage_name
 
 	column opportunity_created_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: e4aba048-f0ee-46ff-a3dd-b7d6fbf88255
+		lineageTag: f648460a-395c-4c69-ad90-7cf22588db73
 		summarizeBy: none
 		sourceColumn: opportunity_created_date
 
 	column close_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 20c1cf5f-7ad4-4421-8c2f-9eb91a585585
+		lineageTag: f0ece828-0f88-47a4-87bd-da3f94ed4e2a
 		summarizeBy: none
 		sourceColumn: close_date
 
 	column days_to_close
 		dataType: int64
 		formatString: #,0
-		lineageTag: d7ebe387-8b5d-45b2-91da-643d210b4259
+		lineageTag: 7c70e6a7-cadf-4b4f-abdb-30be9a3f5c72
 		summarizeBy: sum
 		sourceColumn: days_to_close
 
 	column expected_value_zar
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: 361f81c4-5483-4aab-a4c9-87690bcd60a7
+		lineageTag: 8a971ece-8276-4640-a1b7-4b6143d79ffd
 		summarizeBy: sum
 		sourceColumn: expected_value_zar
 
 	column is_won
 		dataType: boolean
-		lineageTag: 4ffa2b6c-b434-4207-8db7-27925a9ed60f
+		lineageTag: a44708aa-dd17-4dc2-943c-70a9b4d8f1dc
 		summarizeBy: none
 		sourceColumn: is_won
 
 	column application_external_id
 		dataType: string
-		lineageTag: d64fe370-0c85-4989-bbf6-b2704ca4a737
+		lineageTag: e6e6b6ed-d45f-497b-92b0-79cb10aa3e5d
 		summarizeBy: none
 		sourceColumn: application_external_id
 
 	column submitted_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 46e2e160-4801-4366-8301-42bfaa56a1f1
+		lineageTag: ca6d367c-3ad2-4d02-8777-559df6b71392
 		summarizeBy: none
 		sourceColumn: submitted_date
 
 	column decision_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 1ef17224-c0fb-45f3-8a9e-65b89c9d14d3
+		lineageTag: 3669ce49-d369-4f05-a687-4c4a414d568e
 		summarizeBy: none
 		sourceColumn: decision_date
 
 	column application_status
 		dataType: string
-		lineageTag: eb5de166-9f92-4b4c-a9b1-7ad2593e1170
+		lineageTag: 5cee7d55-3d22-4953-9b91-ef45b3b21f31
 		summarizeBy: none
 		sourceColumn: application_status
 
 	column days_to_decision
 		dataType: int64
 		formatString: #,0
-		lineageTag: 0c7b8b76-472a-471b-86a6-462bb0cec4b8
+		lineageTag: 85b491ad-a88b-46e8-bdd0-703fac7e68df
 		summarizeBy: sum
 		sourceColumn: days_to_decision
 
 	column is_date_inverted
 		dataType: int64
 		formatString: #,0
-		lineageTag: ec019db7-93ca-44c2-b506-9d212c2bbcec
+		lineageTag: 094b952c-8050-4805-8b6a-0ec021323b68
 		summarizeBy: sum
 		sourceColumn: is_date_inverted
 
 	column enrolment_external_id
 		dataType: string
-		lineageTag: 00c05d9a-589f-45e5-b4cf-fbd977635b9d
+		lineageTag: 224e8746-f84b-4890-8321-8e301a4b3b37
 		summarizeBy: none
 		sourceColumn: enrolment_external_id
 
 	column enrolled_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 18840916-f4c9-4c16-b66a-f32ec8e18f3a
+		lineageTag: 07b5e6ac-3a84-41f0-a312-a473871d63cc
 		summarizeBy: none
 		sourceColumn: enrolled_date
 
 	column agreed_fee_zar
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: 1986ce2a-b2a2-472e-a245-4411ebfe98a3
+		lineageTag: 02e6b0b6-509c-43f4-a664-6cd461ac1ca9
 		summarizeBy: sum
 		sourceColumn: agreed_fee_zar
 
 	column enrolment_status
 		dataType: string
-		lineageTag: 98a5434c-7b01-455a-892b-ffc93da8f56f
+		lineageTag: dfba129f-ae3b-4a7c-a872-b56c329323c9
 		summarizeBy: none
 		sourceColumn: enrolment_status
 
 	column is_enrolled
 		dataType: int64
 		formatString: #,0
-		lineageTag: 4bb5a055-7371-4bc5-ba83-e24467d2cf6b
+		lineageTag: f2995a62-f32e-4f85-a252-917308827981
 		summarizeBy: sum
 		sourceColumn: is_enrolled
 
 	column discount_pct
 		dataType: double
 		formatString: #,0.00
-		lineageTag: 0a1722e9-d19d-4d58-8025-09562ca61af9
+		lineageTag: f65ebc0f-a235-4334-b6ea-d91cb92cf9be
 		summarizeBy: sum
 		sourceColumn: discount_pct
 

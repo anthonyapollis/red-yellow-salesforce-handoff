@@ -1,80 +1,80 @@
 table dim_date
-	lineageTag: 84005b45-4359-4dbc-ae03-baec6210ecbe
+	lineageTag: 4ada6af9-3f2f-4d25-b97f-e816c3a94511
 	dataCategory: Time
 
 	column date_day
 		dataType: dateTime
 		isKey
 		formatString: yyyy-mm-dd
-		lineageTag: f1cd1993-cd88-458f-84b6-b9c186c130ea
+		lineageTag: ac91f037-61ea-467c-a262-d00ecf95f128
 		summarizeBy: none
 		sourceColumn: date_day
 
 	column date_key
 		dataType: int64
 		formatString: #,0
-		lineageTag: 37e24e03-6f6b-4d26-ba36-093ef1fed286
+		lineageTag: 39e28550-cca8-4c81-88a8-388753e875c3
 		summarizeBy: sum
 		sourceColumn: date_key
 
 	column calendar_year
 		dataType: int64
 		formatString: #,0
-		lineageTag: 538b0b7d-6dd0-4ba4-97a9-261fed7271d8
+		lineageTag: 1a532c44-f1d7-404d-a5e4-6054e6348013
 		summarizeBy: sum
 		sourceColumn: calendar_year
 
 	column calendar_month
 		dataType: int64
 		formatString: #,0
-		lineageTag: 9a2bf578-788f-4922-9d68-3e629b0101e2
+		lineageTag: e4c306b4-24cf-440c-be40-885827850247
 		summarizeBy: sum
 		sourceColumn: calendar_month
 
 	column month_name
 		dataType: string
-		lineageTag: 3661e772-d3c2-4ae0-8f0d-31c72ba0e353
+		lineageTag: 887f6861-af38-4b9e-a5d2-75313f14ae3b
 		summarizeBy: none
 		sourceColumn: month_name
 
 	column calendar_quarter
 		dataType: int64
 		formatString: #,0
-		lineageTag: 1ea8fb99-a3bb-46f0-b6cf-81fbf22c6063
+		lineageTag: 93e18011-921d-420e-8711-3a10381c6e2e
 		summarizeBy: sum
 		sourceColumn: calendar_quarter
 
 	column iso_week
 		dataType: int64
 		formatString: #,0
-		lineageTag: cf30fec4-4521-49ae-b315-a8fe9641a5f2
+		lineageTag: f1dc5758-bce1-4f1f-ae4f-438ef8fc12f8
 		summarizeBy: sum
 		sourceColumn: iso_week
 
 	column week_start
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: a3bad6b7-473a-4b9a-8974-6a84d0f28d9f
+		lineageTag: 9d73053a-f7bd-4f80-994d-7321c1500c23
 		summarizeBy: none
 		sourceColumn: week_start
 
 	column month_start
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: e32af60d-3131-4ca7-948b-0e3e5cd7f717
+		lineageTag: a4e21aae-4d44-4401-9549-fb0c529a0942
 		summarizeBy: none
 		sourceColumn: month_start
 
 	column is_weekend
 		dataType: int64
 		formatString: #,0
-		lineageTag: 24e42785-80ad-46d0-bc0d-62f0a0bd5947
+		lineageTag: fb45395c-53d0-4d05-b4b9-900f58fa78a2
 		summarizeBy: sum
 		sourceColumn: is_weekend
 
 	column intake_season
 		dataType: string
-		lineageTag: e4abfb59-ccf2-45a2-a605-495828d302aa
+		lineageTag: 9281ce97-5801-4773-a09e-ee4216cd0e21
 		summarizeBy: none
 		sourceColumn: intake_season
 

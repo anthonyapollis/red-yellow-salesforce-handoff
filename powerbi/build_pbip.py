@@ -229,8 +229,11 @@ def main():
         '{\n  "version": "4.2",\n  "settings": {}\n}\n', encoding="utf-8")
 
     # ---- report shell ---------------------------------------------------
+    # 1.0 = PBIR-Legacy, matching the report.json that build_report.py writes.
+    # 4.0 would tell Desktop to expect the newer definition/pages folder layout,
+    # which this project does not use, and it would fail to find one.
     (RPT / "definition.pbir").write_text(
-        '{\n  "version": "4.0",\n'
+        '{\n  "version": "1.0",\n'
         '  "datasetReference": {\n'
         '    "byPath": { "path": "../RedAndYellow.SemanticModel" }\n'
         '  }\n}\n', encoding="utf-8")

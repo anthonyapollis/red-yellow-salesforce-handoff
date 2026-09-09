@@ -1,69 +1,69 @@
 table dim_campaign
-	lineageTag: b96148ad-06e7-4ed0-ad96-109584ce7368
+	lineageTag: d98a5ed0-4ac4-4168-9a5c-8c07e57d4352
 
 	column campaign_external_id
 		dataType: string
-		lineageTag: f364c00c-5047-483b-81d9-6f40fb27b66a
+		lineageTag: 823bac8f-b9a1-4149-857f-3c6353c8e899
 		summarizeBy: none
 		sourceColumn: campaign_external_id
 
 	column campaign_name
 		dataType: string
-		lineageTag: 36d85504-3ed2-431c-b348-892b20d17f51
+		lineageTag: 588da485-8539-4976-a26b-9950995e15c8
 		summarizeBy: none
 		sourceColumn: campaign_name
 
 	column channel
 		dataType: string
-		lineageTag: 9f88b7a0-21af-4740-a7e6-53bb6b8fbcd6
+		lineageTag: 68a8e7f7-f822-4008-b26a-0dc906dc7ee4
 		summarizeBy: none
 		sourceColumn: channel
 
 	column start_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 92102018-94a5-4056-98ad-b1df7f378728
+		lineageTag: 2eeb8a9a-5950-4eaf-828c-a1a025e8bdf8
 		summarizeBy: none
 		sourceColumn: start_date
 
 	column end_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 53f043b6-ce77-441e-a921-f31903fa06a5
+		lineageTag: 007bb3a3-6764-4d0e-8182-7c673b60b353
 		summarizeBy: none
 		sourceColumn: end_date
 
 	column spend_zar
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: b897144a-4808-44e8-a212-bf8e2b03ea54
+		lineageTag: 4d33dada-4c1f-452a-8857-2ff0846e0519
 		summarizeBy: sum
 		sourceColumn: spend_zar
 
 	column is_spend_missing
 		dataType: int64
 		formatString: "R"#,0
-		lineageTag: 698e3be3-7b0f-4125-a1c5-04fa6c6a51f4
+		lineageTag: 45271257-c74e-4452-8f35-61706e9f9332
 		summarizeBy: sum
 		sourceColumn: is_spend_missing
 
 	column is_active
 		dataType: boolean
-		lineageTag: 6cdf8ba6-64f3-4e26-b9c3-f9fc4097a551
+		lineageTag: a1dfd085-eb96-41d1-acdf-603f70b69c09
 		summarizeBy: none
 		sourceColumn: is_active
 
 	column campaign_year
 		dataType: int64
 		formatString: #,0
-		lineageTag: 17442ca7-7feb-46ac-af69-bd056b10f067
+		lineageTag: c9610791-208d-4a98-9643-c36ab7cdfb45
 		summarizeBy: sum
 		sourceColumn: campaign_year
 
 	column duration_days
 		dataType: int64
 		formatString: #,0
-		lineageTag: dfe29e5f-29be-4e5c-a8fe-ababe5e7774d
+		lineageTag: a34f22db-2866-4dda-8df9-5f901d32b975
 		summarizeBy: sum
 		sourceColumn: duration_days
 
