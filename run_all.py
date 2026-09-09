@@ -79,6 +79,12 @@ def main():
     step(8, total, "Cut the Salesforce CRM load")
     run([PY, "salesforce/prepare_crm_load.py", "--budget", str(args.budget)])
 
+    # Refresh the numbers in PLATFORM.md from what was just built. Maintaining
+    # them by hand meant they drifted every time the build changed - the doc
+    # advertised a 4-page report against a 6-page one, and 9.4M rows against
+    # 11.5M. Generated, they cannot disagree with the artefacts.
+    run([PY, "reporting/update_platform_md.py"])
+
     if args.with_nifi:
         step(9, total, "Build the NiFi ingestion flow")
         if not (args.nifi_user and args.nifi_password):

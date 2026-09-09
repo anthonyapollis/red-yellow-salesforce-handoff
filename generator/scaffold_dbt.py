@@ -848,6 +848,20 @@ select 'application', application_external_id, 'date_inversion', 'Decision date 
 from {{ ref('stg_application') }} where is_date_inverted = 1
 union all
 {#-
+  Date inversion is injected into TWO tables, and for a long time only the
+  application half was detected - so the ground-truth score reported 0.64
+  recall against an injection rate that should be caught almost entirely.
+  An enrolment dated before its own application was submitted is the same
+  defect, and it needs the join because the two dates live in two tables.
+#}
+select 'enrolment', e.enrolment_external_id, 'date_inversion',
+       'Enrolled before the application was submitted'
+from {{ ref('stg_enrolment') }} e
+join {{ ref('stg_application') }} a
+  on a.application_external_id = e.application_external_id
+where e.enrolled_date < a.submitted_date
+union all
+{#-
   A null fee is only a defect when the catalogue actually advertised a price.
   Offerings priced "Enquire" legitimately carry no amount, and reporting those
   as missing data would flag the catalogue's most careful decision as an error.

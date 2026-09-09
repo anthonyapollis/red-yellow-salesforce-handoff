@@ -6,12 +6,30 @@ answer to all six.
 
 | Advert requirement | Where it lives | State |
 |---|---|---|
-| Data catalogue (dbt or similar) | `dbt_redandyellow/` + `dbt docs generate` | ✅ built, 74/74 green |
+| Data catalogue (dbt or similar) | `dbt_redandyellow/` + `dbt docs generate` | ✅ built and tested |
 | ERDs for internal systems incl. CRM | `erds/03_salesforce_canonical.mmd` | ✅ from the original handoff |
 | ETL/ELT pipelines, preferably Apache NiFi | `nifi/build_flow.py` | ✅ built in a live NiFi |
-| Salesforce CRM extract / transform / analyse | `salesforce/`, `tools/import_salesforce.py` | ✅ load built, org not authed |
-| Power BI dashboards | `powerbi/RedAndYellow.pbip` + `reporting/` | ✅ 4 pages, 44 visuals, 31 measures |
-| Data quality and accuracy | `models/quality/`, 51 dbt tests | ✅ scored against ground truth |
+| Salesforce CRM extract / transform / analyse | `salesforce/`, `tools/import_salesforce.py` | ✅ loaded into a live org, extracted back |
+| Power BI dashboards | `powerbi/RedAndYellow.pbip` + `reporting/` | ✅ built, model and report generated |
+| Data quality and accuracy | `models/quality/` + dbt tests | ✅ scored against ground truth |
+
+Every number below is written by `reporting/update_platform_md.py`, read out of the
+artefacts themselves. If a count here is wrong, the artefact is wrong — not the prose.
+
+<!-- FACTS:BEGIN -->
+
+| What | Built | Verified by |
+|---|---|---|
+| Medallion warehouse | 13 bronze, 13 silver, 8 gold, 2 quality | `dbt build` — 87/87 pass (51 data tests) |
+| Generated data | 11,512,875 rows | ground-truth manifest at `warehouse/_truth/defects.json` |
+| Power BI report | 6 pages, 72 visuals | every field reference checked against the model at build time |
+| Semantic model | 24 tables, 52 measures, 23 relationships | loaded through a tabular session |
+| Salesforce | 1,091 records across 4 objects | `verify_org_counts.py` reconciles the org against the loader |
+| Ebook | 21-page PDF | contents text extracted back out of the finished PDF |
+| Workbook | 10 sheets | sheet count read from the workbook |
+| ML — lead to enrolment propensity | AUC 0.667, top-decile lift 2.17x | held-out split by time, base rate 5.2% |
+| ML — withdrawal risk from weeks 1-4 | AUC 0.621, top-decile lift 1.67x | held-out split by time, base rate 12.5% |
+<!-- FACTS:END -->
 
 ---
 
@@ -26,7 +44,7 @@ builds and tests the warehouse on DuckDB, writes the catalogue, the Excel workbo
 the ebook, and the Salesforce load.
 
 ```bash
-python run_all.py --scale dev          # ~1M rows instead of 9.4M
+python run_all.py --scale dev          # ~1M rows instead of 11.5M
 python run_all.py --with-nifi --nifi-user <uuid> --nifi-password <pw>
 ```
 
@@ -45,7 +63,7 @@ with component counts; `nifi/FLOW_MAP.md` is the checked-in copy.
 
 ```
 Salesforce CRM ──NiFi──▶ OneLake bronze ──▶ Fabric Lakehouse ──dbt──▶ marts ──▶ Power BI
-   (thousands)                                  (9.4M rows)          tested       reports
+   (thousands)                                  (11.5M rows)          tested       reports
 ```
 
 **Salesforce holds thousands; the warehouse holds millions.** Salesforce charges
@@ -69,12 +87,15 @@ Red & Yellow's systems.
 Defects are injected at known rates and written to a ground-truth manifest at
 `warehouse/_truth/defects.json`. The pipeline's detection is scored against it.
 
+<!-- DEFECTS:BEGIN -->
+
 | Defect | Injected | Detected | Recall |
 |---|---|---|---|
-| Duplicate humans | 28,856 | 28,052 | **0.97** |
-| Missing attendance | 41,872 | 41,872 | 1.00 |
-| Duplicate campaign membership | 37,440 | 39,931 | 1.07 |
-| Date inversions | 3,863 | 2,912 | 0.75 |
+| Duplicate humans | 30,277 | 29,473 | **0.97** |
+| Missing attendance | 76,341 | 76,341 | **1.00** |
+| Duplicate campaign membership | 37,440 | 39,850 | **1.06** |
+| Date inversions | 5,118 | 5,228 | **1.02** |
+<!-- DEFECTS:END -->
 
 The remaining 3% of duplicates are records where both email and phone were dropped
 at source — genuinely unmatchable.
@@ -100,12 +121,12 @@ average fee downward and make the unpriced courses look free. A dbt test enforce
 
 ```
 generator/          data generator + dbt project scaffold
-dbt_redandyellow/   13 staging, 8 mart, 2 quality models; 51 tests
+dbt_redandyellow/   medallion warehouse: bronze / silver / gold / quality
 nifi/               builds the Salesforce→OneLake flow via the NiFi REST API
 fabric/             workspace/lakehouse provisioning + OneLake upload
 salesforce/         cuts the CRM slice; force-app metadata from the handoff
 reporting/          Excel workbook + ebook builders
-powerbi/            PBIP - 11 tables, 31 measures, 7 relationships, 4 report pages
+powerbi/            PBIP - semantic model (TMDL) + generated report
 warehouse/          generated data + DuckDB (gitignored)
 ```
 

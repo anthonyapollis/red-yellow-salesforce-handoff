@@ -78,11 +78,11 @@ REST into `warehouse/salesforce_raw/`:
 
 | | |
 |---|---|
-| `generator/` | 9.4M rows, 2.6M people, anchored to the real 83/89/47 catalogue. Defects injected at recorded rates into a ground-truth manifest so detection is scored as recall, not asserted |
+| `generator/` | 11.5M rows, 2.6M people, anchored to the real 83/89/47 catalogue. Defects injected at recorded rates into a ground-truth manifest so detection is scored as recall, not asserted |
 | `dbt_redandyellow/` | 13 staging, 8 mart, 2 quality models; 51 data tests, all passing. Cleansing macros dispatch per adapter so the same models run on DuckDB and Fabric |
 | `nifi/` | Builds the Salesforce→OneLake flow against a live NiFi over its REST API, introspecting real property descriptors rather than guessing keys |
 | `fabric/` | Workspace and lakehouse provisioning plus OneLake upload |
-| `powerbi/` | PBIP semantic model: 11 tables, 31 measures, 7 relationships, 4 pages, 44 visuals |
+| `powerbi/` | PBIP semantic model: 24 tables, 52 measures, 23 relationships, 6 pages, 72 visuals |
 | `reporting/` | Excel workbook and the data-story ebook, both built from live queries |
 
 `python run_all.py` rebuilds everything local in about 15 minutes.
@@ -107,7 +107,7 @@ enforces it.
 ## Open items
 
 - Fabric upload has not run — `az login` needs completing on the tenant.
-- The Power BI report's 44 visuals are unverified in Desktop; the semantic model
+- The Power BI report's 72 visuals are unverified in Desktop; the semantic model
   is verified by loading it through a tabular session and checking all 65 field
   references against the model.
 - An earlier CRM slice was sampled with `ORDER BY created_date DESC`, which

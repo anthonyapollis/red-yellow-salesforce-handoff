@@ -167,7 +167,7 @@ objects first, so every `Intake_Key` on an Opportunity resolves.
 
 Volume deliberately stays small: Salesforce charges storage per record at ~2 KB,
 and a Developer org holds roughly 10,000 records in total. The warehouse holds
-the 9.4M rows. Raise it with `--budget` on `prepare_crm_load.py` only against an
+the 11.5M rows. Raise it with `--budget` on `prepare_crm_load.py` only against an
 org you know has the storage.
 
 ## If it stops partway

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Builds a referentially complete Salesforce load from the generated warehouse.
 
-Why this exists, and why it is not "load the 9.4 million rows":
+Why this exists, and why it is not "load the 11.5 million rows":
 
 Salesforce charges data storage per record at roughly 2 KB. A Developer Edition
 org has ~5 MB of data storage - about 10,000 records total, across every object.
@@ -14,7 +14,7 @@ So the architecture splits the way the job advert describes it:
 
     Salesforce  = the operational CRM slice. Thousands of records, referentially
                   complete, safe to demo and safe to re-upsert.
-    Fabric      = the analytics warehouse. All 9.4M rows, where the volume,
+    Fabric      = the analytics warehouse. All 11.5M rows, where the volume,
                   the history and the data-quality work actually live.
 
 This script cuts the CRM slice. It starts from contacts, then follows the graph

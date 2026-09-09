@@ -13,7 +13,7 @@ Everything is reproducible: `python run_all.py` rebuilds the local half in about
 
 | Thing | State | How it was verified |
 |---|---|---|
-| Data generator | 9.4M rows, 2.6M people | Row counts + ground-truth defect manifest |
+| Data generator | 11.5M rows, 2.6M people | Row counts + ground-truth defect manifest |
 | Medallion warehouse | 13 bronze / 13 silver / 8 gold / 2 quality | `dbt build` — **87/87 pass** |
 | dbt catalogue | `dbt docs generate` | catalog.json + manifest.json present |
 | NiFi flow | Live, project + 2 stage groups, ports | Read back from the NiFi REST API |
@@ -23,7 +23,7 @@ Everything is reproducible: `python run_all.py` rebuilds the local half in about
 | ML | 2 models | AUC 0.667 / 0.621, lift 2.17x / 1.67x |
 | Ebook | 21-page PDF, populated TOC | Text extracted back out of the finished PDF |
 | Excel | 10 sheets | Sheet count read from the workbook |
-| Power BI | 22 tables, 23 relationships, 6 pages, 72 visuals | Model loaded via tabular ConnectFolder; 93 field refs checked |
+| Power BI | 24 tables, 23 relationships, 6 pages, 72 visuals | Model loaded via tabular ConnectFolder; 93 field refs checked |
 
 ---
 

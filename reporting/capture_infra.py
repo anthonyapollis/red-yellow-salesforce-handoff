@@ -130,6 +130,58 @@ def fabric_text():
     return "\n".join(lines)
 
 
+def _row_count(default="11.5M"):
+    """Row count from the ground-truth manifest, formatted for a caption."""
+    import json
+    m = REPO / "warehouse" / "_truth" / "defects.json"
+    if not m.exists():
+        return default
+    try:
+        return "{:.1f}M".format(json.loads(m.read_text())["total_rows"] / 1e6)
+    except Exception:
+        return default
+
+
+def _counts():
+    """The numbers printed inside the architecture boxes, read from artefacts.
+
+    These were hardcoded and had drifted badly - the figure claimed 23 models
+    and a 5-page report when there were 36 and 6. A wrong number rendered into
+    a PNG is the worst kind: no grep of the docs will ever find it.
+    """
+    import json
+    c = {}
+
+    man = REPO / "dbt_redandyellow" / "target" / "manifest.json"
+    if man.exists():
+        try:
+            m = json.loads(man.read_text(encoding="utf-8"))
+            c["models"] = sum(1 for n in m["nodes"].values()
+                              if n.get("resource_type") == "model")
+            c["tests"] = sum(1 for n in m["nodes"].values()
+                             if n.get("resource_type") == "test")
+        except Exception:
+            pass
+
+    rj = REPO / "powerbi" / "RedAndYellow.Report" / "report.json"
+    if rj.exists():
+        try:
+            r = json.loads(rj.read_text(encoding="utf-8"))
+            c["pages"] = len(r["sections"])
+            c["visuals"] = sum(len(s["visualContainers"]) for s in r["sections"])
+        except Exception:
+            pass
+
+    log = REPO / "run_results" / "import_log.json"
+    if log.exists():
+        try:
+            c["sf"] = len(json.loads(log.read_text(encoding="utf-8")))
+        except Exception:
+            pass
+
+    return c
+
+
 def architecture_figure():
     """Draw the pipeline, so the reader sees the shape before the detail."""
     fig, ax = plt.subplots(figsize=(9.4, 3.0))
@@ -138,12 +190,18 @@ def architecture_figure():
     ax.set_ylim(0, 34)
     ax.axis("off")
 
+    c = _counts()
     boxes = [
-        (1, "Salesforce\nCRM", "1,091 records\n4 objects", "#E03127"),
+        (1, "Salesforce\nCRM",
+         "{:,} records\n4 objects".format(c.get("sf", 1091)), "#E03127"),
         (20.5, "NiFi + REST\nextract", "incremental on\nSystemModstamp", "#F0A202"),
         (40, "OneLake\nbronze", "13 files\n242 MB", "#2E6E8E"),
-        (59.5, "dbt\nwarehouse", "23 models\n51 tests", "#4C9F70"),
-        (79, "Power BI\n+ Excel", "5 pages\n58 visuals", "#8B5FBF"),
+        (59.5, "dbt\nwarehouse",
+         "{} models\n{} tests".format(c.get("models", 36), c.get("tests", 51)),
+         "#4C9F70"),
+        (79, "Power BI\n+ Excel",
+         "{} pages\n{} visuals".format(c.get("pages", 6), c.get("visuals", 72)),
+         "#8B5FBF"),
     ]
     for x, title, sub, col in boxes:
         ax.add_patch(plt.Rectangle((x, 9), 17.5, 16, facecolor="#FFFFFF",
@@ -158,9 +216,12 @@ def architecture_figure():
             ax.annotate("", xy=(x + 19.3, 17), xytext=(x + 17.8, 17),
                         arrowprops=dict(arrowstyle="-|>", color="#8A94A0", lw=1.6))
 
+    # Read the row count rather than hardcoding it: the figure outlived the
+    # number once already, and a caption that disagrees with the data is worse
+    # than one that omits it.
     ax.text(50, 4.0,
-            "9.4M synthetic rows in the warehouse   ·   the CRM holds the "
-            "operational slice   ·   every row carries its source and load time",
+            f"{_row_count()} synthetic rows in the warehouse   ·   the CRM holds "
+            "the operational slice   ·   every row carries its source and load time",
             ha="center", fontsize=7.4, color="#5A6472")
     fig.tight_layout(pad=0.3)
     out = FIG / "ev_00_architecture.png"
