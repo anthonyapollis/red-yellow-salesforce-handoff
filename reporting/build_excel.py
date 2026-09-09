@@ -373,6 +373,49 @@ def main():
               {"Email": 34, "RY_External_ID__c": 22, "Id": 20,
                "extracted_at": 24})
 
+    # ==================================================================== 5d =
+    mlp = REPO / "warehouse" / "ml"
+    if (mlp / "model_report.json").exists():
+        rep = json.loads((mlp / "model_report.json").read_text(encoding="utf-8"))
+        ws = wb.add_worksheet("Predictive Models")
+        ws.hide_gridlines(2)
+        ws.set_column("A:A", 2)
+        ws.write("B2", "Predictive models", f["title"])
+        ws.write("B3", "Split by time, not at random. Features restricted to "
+                       "what is known at decision time. Metrics shown against "
+                       "the base rate, because an AUC means nothing without it.",
+                 f["sub"])
+
+        mdf = pd.DataFrame([{"model": m["model"], "train_rows": m["train_rows"],
+                             "test_rows": m["test_rows"], "base_rate": m["base_rate"],
+                             "auc": m["auc"], "pr_auc": m["pr_auc"],
+                             "top_decile_lift": m["top_decile_lift"]}
+                            for m in rep["models"]])
+        end = table(ws, mdf, 5, 1,
+                    {"train_rows": f["num"], "test_rows": f["num"],
+                     "base_rate": f["dec"], "auc": f["dec"], "pr_auc": f["dec"],
+                     "top_decile_lift": f["dec"]}, {"model": 34})
+
+        ws.write(end + 1, 1, "Feature importance", f["h2"])
+        rows = []
+        for m in rep["models"]:
+            for ft in m["features"][:8]:
+                rows.append({"model": m["model"], "feature": ft["feature"],
+                             "share_of_gain": ft["share"]})
+        end = table(ws, pd.DataFrame(rows), end + 2, 1,
+                    {"share_of_gain": f["dec"]}, {"model": 34, "feature": 24})
+
+        ws.write(end + 1, 1, "Recommendations", f["h2"])
+        ins = pd.DataFrame(rep.get("insights", []))
+        if not ins.empty:
+            end = table(ws, ins[["area", "finding", "recommendation"]], end + 2, 1,
+                        {}, {"area": 16, "finding": 62, "recommendation": 62})
+        ws.merge_range(end + 1, 1, end + 3, 6,
+                       "An AUC in the mid-0.6s is the honest result for human "
+                       "decisions with this much unexplained variation. A model "
+                       "claiming 0.95 here would mean a feature had leaked. The "
+                       "lift is the number to act on.", f["warn"])
+
     # ==================================================================== 6 ==
     ws = wb.add_worksheet("Catalogue")
     ws.hide_gridlines(2)

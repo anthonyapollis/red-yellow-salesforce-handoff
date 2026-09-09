@@ -45,18 +45,47 @@ TABLES = [
     "fct_campaign_performance", "fct_admissions_funnel",
     "fct_student_progress_weekly", "fct_lead_conversion",
     "dq_issue_log", "dq_summary",
+    # The entities the canonical ERD names. Without these the model showed only
+    # the aggregated facts, so a reader could not walk programme -> offering ->
+    # intake -> application -> enrolment -> progress the way the diagram does.
+    "programme", "intake", "programme_enquiry", "application",
+    "enrolment", "student",
     # The live CRM slice, extracted back out of Salesforce through the API.
     "sf_account", "sf_contact", "sf_lead", "sf_opportunity",
+    # Model output, scored across the whole population.
+    "ml_lead_propensity", "ml_withdrawal_risk",
 ]
 
+# One relationship per edge in erds/03_salesforce_canonical.mmd, so the model
+# navigates the way the ERD reads.
 RELATIONSHIPS = [
+    # catalogue spine
+    ("dim_offering", "programme_external_id", "programme", "programme_external_id"),
+    ("intake", "offering_external_id", "dim_offering", "offering_external_id"),
+    # marketing
     ("fct_campaign_performance", "campaign_external_id", "dim_campaign", "campaign_external_id"),
     ("fct_campaign_performance", "start_date", "dim_date", "date_day"),
+    ("fct_lead_conversion", "created_date", "dim_date", "date_day"),
+    # enquiry -> application -> enrolment -> progress
+    ("programme_enquiry", "contact_external_id", "dim_contact", "contact_external_id"),
+    ("programme_enquiry", "offering_external_id", "dim_offering", "offering_external_id"),
+    ("programme_enquiry", "enquiry_date", "dim_date", "date_day"),
+    ("application", "contact_external_id", "dim_contact", "contact_external_id"),
+    ("application", "intake_external_id", "intake", "intake_external_id"),
+    ("application", "submitted_date", "dim_date", "date_day"),
+    ("enrolment", "application_external_id", "application", "application_external_id"),
+    ("enrolment", "student_external_id", "student", "student_external_id"),
+    ("student", "contact_external_id", "dim_contact", "contact_external_id"),
+    ("fct_student_progress_weekly", "enrolment_external_id", "enrolment",
+     "enrolment_external_id"),
+    ("fct_student_progress_weekly", "week_start", "dim_date", "date_day"),
+    # aggregated funnel, kept alongside the granular chain
     ("fct_admissions_funnel", "contact_external_id", "dim_contact", "contact_external_id"),
     ("fct_admissions_funnel", "offering_external_id", "dim_offering", "offering_external_id"),
     ("fct_admissions_funnel", "opportunity_created_date", "dim_date", "date_day"),
-    ("fct_student_progress_weekly", "week_start", "dim_date", "date_day"),
-    ("fct_lead_conversion", "created_date", "dim_date", "date_day"),
+    # model output back onto the entities it scores
+    ("ml_lead_propensity", "created_date", "dim_date", "date_day"),
+    ("ml_withdrawal_risk", "enrolment_external_id", "enrolment", "enrolment_external_id"),
 ]
 
 # Measures live on one dedicated table so the field list reads as a menu of
@@ -139,6 +168,28 @@ MEASURES = [
     ("CRM Contacts Missing Email",
      "CALCULATE(COUNTROWS(sf_contact), sf_contact[is_deleted] = FALSE(), "
      "ISBLANK(sf_contact[Email]))", "#,0", "05 Salesforce CRM"),
+    # 06 - model output. Scored across the whole population, not just a holdout,
+    # so the CRM can be worked in priority order rather than in arrival order.
+    ("Scored Leads", "COUNTROWS(ml_lead_propensity)", "#,0", "06 Predictive"),
+    ("Avg Propensity", "AVERAGE(ml_lead_propensity[propensity])", "0.0%",
+     "06 Predictive"),
+    ("Priority Leads",
+     "CALCULATE(COUNTROWS(ml_lead_propensity), "
+     "ml_lead_propensity[propensity_band] = \"Priority\")", "#,0", "06 Predictive"),
+    ("Actual Conversion Rate",
+     "DIVIDE(SUM(ml_lead_propensity[target]), COUNTROWS(ml_lead_propensity))",
+     "0.0%", "06 Predictive"),
+    ("Scored Enrolments", "COUNTROWS(ml_withdrawal_risk)", "#,0", "06 Predictive"),
+    ("Avg Withdrawal Risk", "AVERAGE(ml_withdrawal_risk[withdrawal_risk])", "0.0%",
+     "06 Predictive"),
+    ("Students To Intervene",
+     "CALCULATE(COUNTROWS(ml_withdrawal_risk), "
+     "ml_withdrawal_risk[risk_band] IN {\"Elevated\", \"Intervene\"})", "#,0",
+     "06 Predictive"),
+    ("Actual Withdrawal Rate",
+     "DIVIDE(SUM(ml_withdrawal_risk[target]), COUNTROWS(ml_withdrawal_risk))",
+     "0.0%", "06 Predictive"),
+
     ("CRM Email Completeness",
      "DIVIDE([CRM Contacts] - [CRM Contacts Missing Email], [CRM Contacts])",
      "0.0%", "05 Salesforce CRM"),

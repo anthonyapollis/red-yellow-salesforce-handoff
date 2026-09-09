@@ -15,7 +15,15 @@ ref table fct_student_progress_weekly
 ref table fct_lead_conversion
 ref table dq_issue_log
 ref table dq_summary
+ref table programme
+ref table intake
+ref table programme_enquiry
+ref table application
+ref table enrolment
+ref table student
 ref table sf_account
 ref table sf_contact
 ref table sf_lead
 ref table sf_opportunity
+ref table ml_lead_propensity
+ref table ml_withdrawal_risk

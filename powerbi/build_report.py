@@ -216,6 +216,7 @@ def page(name, display, ordinal, visuals):
 TITLE = ("Segoe UI", {"fontSize": "22pt", "fontWeight": "bold", "color": CHARCOAL})
 SUB = {"fontSize": "10pt", "color": SLATE}
 BIG = {"fontSize": "22pt", "fontWeight": "bold", "color": CHARCOAL}
+SUBB = {"fontSize": "10pt", "fontWeight": "bold", "color": "#E8262A"}
 
 
 def build():
@@ -397,15 +398,79 @@ def build():
     ]
     pages.append(page("crm", "Salesforce CRM", 4, v))
 
+    # ---------------------------------------------------------------- 6 ----
+    v = [
+        textbox(30, 20, 900, 40, [("Predictive models and recommendations", BIG)]),
+        textbox(30, 60, 1080, 34,
+                [("Two models, both split by time rather than at random and "
+                  "restricted to what is known at decision time. Metrics are "
+                  "shown against the base rate, because an AUC means nothing "
+                  "without knowing what guessing would have achieved.", SUB)]),
+
+        visual("card", 30, 105, 196, 96, "Scored leads",
+               {"Values": [(M, "Scored Leads", True)]}),
+        visual("card", 236, 105, 196, 96, "Priority band",
+               {"Values": [(M, "Priority Leads", True)]}, accent=GOOD),
+        visual("card", 442, 105, 196, 96, "Actual conversion",
+               {"Values": [(M, "Actual Conversion Rate", True)]}),
+        visual("card", 648, 105, 196, 96, "Scored enrolments",
+               {"Values": [(M, "Scored Enrolments", True)]}),
+        visual("card", 854, 105, 196, 96, "To intervene",
+               {"Values": [(M, "Students To Intervene", True)]}, accent=BAD),
+        visual("card", 1060, 105, 190, 96, "Withdrawal rate",
+               {"Values": [(M, "Actual Withdrawal Rate", True)]}),
+
+        # The bar that matters: does the model's ranking actually separate?
+        visual("clusteredColumnChart", 30, 215, 610, 250,
+               "Conversion by propensity band - does the ranking separate?",
+               {"Category": [("ml_lead_propensity", "propensity_band", False)],
+                "Y": [(M, "Actual Conversion Rate", True)]}),
+        visual("clusteredColumnChart", 660, 215, 590, 250,
+               "Withdrawal rate by predicted risk band",
+               {"Category": [("ml_withdrawal_risk", "risk_band", False)],
+                "Y": [(M, "Actual Withdrawal Rate", True)]}),
+
+        textbox(30, 485, 1220, 46,
+                [("Marketing. ", SUBB), ("The top 5% of leads by propensity convert at 13.3%, against 2.8% in the bottom half - a 5x difference. ", SUB),
+                 ("Action: Route the Priority band to human follow-up within 24 hours and leave the Low band to automated nurture. The same team covers more pipeline without mor", SUBB)]),
+        textbox(30, 537, 1220, 46,
+                [("Channel mix. ", SUBB), ("Referral converts at 9.8% versus Walk-in at 2.2%, on 30,421 leads. ", SUB),
+                 ("Action: Rebalance spend toward Referral, and either fix the qualification criteria on Walk-in or stop paying for it.", SUBB)]),
+        textbox(30, 589, 1220, 46,
+                [("Retention. ", SUBB), ("168 enrolments (0.1%) are flagged Elevated or Intervene from weeks 1-4 alone, and they withdraw at 45.8% against 12.5% overall. ", SUB),
+                 ("Action: Trigger outreach at week 4 rather than at the first missed assessment. The signal is present before the student is far enough behind to recover from.", SUBB)]),
+        textbox(30, 641, 1220, 46,
+                [("Early warning. ", SUBB), ("Withdrawal rate by weeks 1-4 attendance: (0, 50] 21.4%, (50, 65] 22.4%, (65, 80] 16.4%, (80, 100] 9.1% ", SUB),
+                 ("Action: Attendance below 65% in the first month is the single clearest trigger. It needs no model to act on - the model only tells you how much of the remaini", SUBB)]),
+    ]
+    pages.append(page("ml", "Predictive & Actions", 5, v))
+
     return {
         "id": 0,
-        "resourcePackages": [],
+        # The theme has to be registered as a resource AND named in the config.
+        # Setting colours per visual does not work: Power BI resolves marks from
+        # the active theme, so a report shipped without one renders in whatever
+        # theme the person opening it happens to have - which is why the first
+        # build came out in default blue despite every visual specifying red.
+        "resourcePackages": [{
+            "resourcePackage": {
+                "disabled": False,
+                "items": [{"name": "RedAndYellow",
+                           "path": "StaticResources/RegisteredResources/"
+                                   "RedAndYellow.json",
+                           "type": 202}],
+                "name": "SharedResources",
+                "type": 2,
+            }
+        }],
         "sections": pages,
         "config": json.dumps({
             "version": "5.43",
-            "themeCollection": {"baseTheme": {"name": "CY24SU06",
-                                              "version": "5.55",
-                                              "type": 2}},
+            "themeCollection": {
+                "baseTheme": {"name": "CY24SU06", "version": "5.55", "type": 2},
+                "customTheme": {"name": "RedAndYellow",
+                                "reportVersionAtImport": "5.43", "type": 2},
+            },
             "activeSectionIndex": 0,
             "defaultDrillFilterOtherVisuals": True,
             "settings": {"useStylableVisualContainerHeader": True},

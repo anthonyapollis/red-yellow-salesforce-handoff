@@ -269,6 +269,57 @@ def src_updated(n, base_dates):
     return ts
 
 
+# --------------------------------------------------------------------------
+# latent structure
+#
+# Without this every outcome is an independent weighted draw, so nothing in the
+# data predicts anything: conversion is the same rate whatever the source,
+# withdrawal is the same rate whatever the attendance, and a model trained on it
+# scores AUC 0.50 - which is exactly what happened before this existed. Real
+# pipelines have structure, and analysis of a dataset without it is analysis of
+# noise dressed as insight.
+#
+# Each person gets a latent propensity built from things known about them, plus
+# unexplained variation. Outcomes are then drawn from that propensity rather
+# than from a flat rate. The noise term matters: it keeps the ceiling realistic,
+# so a model lands somewhere defensible instead of at a suspicious 0.99.
+# --------------------------------------------------------------------------
+
+SOURCE_EFFECT = {
+    "Referral": 0.95, "Open Day": 0.75, "Webinar": 0.55, "Career Expo": 0.35,
+    "Web Enquiry Form": 0.10, "Inbound Call": 0.30, "Partner": 0.20,
+    "Google Ads": -0.15, "Paid Social": -0.40, "Walk-in": -0.55,
+}
+PROVINCE_EFFECT = {
+    "Western Cape": 0.45, "Gauteng": 0.30, "KwaZulu-Natal": 0.05,
+    "Eastern Cape": -0.15, "Free State": -0.20, "Limpopo": -0.30,
+    "Mpumalanga": -0.25, "North West": -0.30, "Northern Cape": -0.35,
+    "Outside South Africa": -0.60,
+}
+CHANNEL_EFFECT = {
+    "Referral": 0.55, "Open day": 0.45, "Email": 0.25, "Webinar": 0.30,
+    "Organic search": 0.20, "Career expo": 0.15, "Paid social": -0.20,
+    "Google Ads": -0.10, "Radio": -0.35, "Billboard": -0.40, "Print": -0.45,
+}
+
+
+def sigmoid(x):
+    return 1.0 / (1.0 + np.exp(-x))
+
+
+def lead_propensity(source, province, has_email, has_phone, channel, n):
+    """Latent score for how likely this enquiry is to become an enrolment."""
+    z = np.full(n, -1.35)  # base rate lives here
+    z += np.array([SOURCE_EFFECT.get(s, 0.0) for s in source])
+    z += np.array([PROVINCE_EFFECT.get(p, -0.2) for p in province])
+    z += np.where(has_email, 0.45, -0.55)
+    z += np.where(has_phone, 0.25, -0.30)
+    z += np.array([CHANNEL_EFFECT.get(c, 0.0) if c else -0.15 for c in channel])
+    # Unexplained variation - the part no feature set will ever recover.
+    z += rng.normal(0, 0.85, n)
+    return z
+
+
 def people(n, prefix):
     """Shared person-shaped columns for leads and contacts."""
     first = weighted(ref.FIRST_NAMES, n)
@@ -285,6 +336,9 @@ def people(n, prefix):
         province=dirty_province(prov, n),
         _clean_first=first,
         _clean_last=last,
+        # The undirtied province, so latent effects key off the real value
+        # rather than whichever spelling variant this row happened to get.
+        _clean_province=prov,
     )
 
 
@@ -364,10 +418,29 @@ def build_campaigns(n):
 def build_leads(n, campaigns):
     p = people(n, "lead")
     created = rand_days(n, EPOCH, TODAY)
-    status = weighted(ref.LEAD_STATUSES, n)
-    camp = np.where(mask(n, 0.72),
-                    campaigns["campaign_external_id"].values[rng.integers(0, len(campaigns), n)],
-                    None)
+    source = weighted(ref.LEAD_SOURCES, n)
+    camp_idx = rng.integers(0, len(campaigns), n)
+    has_camp = mask(n, 0.72)
+    camp = np.where(has_camp, campaigns["campaign_external_id"].values[camp_idx], None)
+    camp_channel = np.where(has_camp, campaigns["channel"].values[camp_idx], None)
+
+    # Latent propensity drives status, rather than status being an independent
+    # draw. A referral from the Western Cape with an email now behaves
+    # differently from a walk-in with neither - which is what makes the data
+    # analysable and the downstream model meaningful.
+    prop = lead_propensity(source, p["_clean_province"],
+                           p["email"].notna().values,
+                           p["phone"].notna().values, camp_channel, n)
+    conv_p = sigmoid(prop)
+    is_conv = rng.random(n) < conv_p * 0.42
+
+    status = np.where(
+        is_conv, "Converted",
+        weighted([("Open - Not Contacted", 22), ("Working - Contacted", 26),
+                  ("Nurture", 16), ("Qualified", 14), ("Unqualified", 8)], n))
+    # Qualified/Working skew toward the higher-propensity unconverted leads.
+    hi = (~is_conv) & (prop > np.quantile(prop, 0.72))
+    status = np.where(hi & (rng.random(n) < 0.45), "Qualified", status)
 
     df = pd.DataFrame({
         "lead_external_id": ids("RY-LEAD-", n),
@@ -377,7 +450,7 @@ def build_leads(n, campaigns):
         "phone": p["phone"],
         "city": p["city"],
         "province": p["province"],
-        "lead_source": weighted(ref.LEAD_SOURCES, n),
+        "lead_source": source,
         "lead_status": status,
         "campaign_external_id": camp,
         "created_date": created,
@@ -385,6 +458,9 @@ def build_leads(n, campaigns):
     })
     df["_clean_first"] = p["_clean_first"]
     df["_clean_last"] = p["_clean_last"]
+    # Carried, not written: the latent score flows to contacts and on through
+    # the funnel so every stage inherits the same person's propensity.
+    df["_propensity"] = prop
     return df
 
 
@@ -411,6 +487,17 @@ def build_contacts(leads, n_direct):
         "created_date": np.concatenate([created_conv, created_direct]),
     })
     df["email"] = uniquify_emails(df["email"])
+    # Converted contacts inherit their lead's propensity; people who arrived
+    # without a lead record get their own draw, slightly higher on average
+    # because walking in already signals intent.
+    df["_propensity"] = np.concatenate([
+        conv["_propensity"].values,
+        lead_propensity(np.full(n_direct, "Web Enquiry Form"),
+                        direct["_clean_province"],
+                        pd.Series(direct["email"]).notna().values,
+                        pd.Series(direct["phone"]).notna().values,
+                        np.full(n_direct, None), n_direct) + 0.35,
+    ])
     df["_src_updated"] = src_updated(n, df["created_date"].values)
 
     # Duplicate humans: the same person enquiring twice, months apart, with a
@@ -495,6 +582,13 @@ def build_enquiries(contacts, offerings, n):
 
 
 def build_opportunities(contacts, intakes, offerings, campaigns, n):
+    # Opportunities are not a random sample of contacts: higher-propensity
+    # people are the ones who progress. Sampling with weight is what puts a
+    # real relationship between the CRM's features and its outcomes.
+    w = sigmoid(contacts["_propensity"].values)
+    w = w / w.sum()
+    pick = rng.choice(len(contacts), size=n, replace=True, p=w)
+    contacts = contacts.iloc[pick].reset_index(drop=True)
     cont_ids = contacts["contact_external_id"].values
     intake_ids = intakes["RY_External_ID__c"].values
     camp_ids = campaigns["campaign_external_id"].values
@@ -515,11 +609,27 @@ def build_opportunities(contacts, intakes, offerings, campaigns, n):
     value[m] = -value[m].abs()
 
     created = rand_days(n, EPOCH, TODAY)
-    stage = weighted(ref.OPPORTUNITY_STAGES, n)
+    # Stage depends on the person's propensity and on how expensive the
+    # offering is - a R27,000 postgraduate programme closes less readily than a
+    # short course, which is the relationship a sales team would recognise.
+    prop = contacts["_propensity"].values
+    price_drag = -np.nan_to_num(adv, nan=8000.0) / 60000.0
+    z = prop + price_drag + rng.normal(0, 0.7, n)
+    r = rng.random(n)
+    won_p = sigmoid(z) * 0.55
+    stage = np.where(
+        r < won_p, "Closed Won",
+        np.where(r < won_p + 0.16, "Closed Lost",
+                 weighted([("Enquiry", 16), ("Qualification", 20),
+                           ("Application Sent", 22), ("Application Received", 22),
+                           ("Offer Made", 20)], n)))
 
     return pd.DataFrame({
         "opportunity_external_id": ids("RY-OPP-", n),
-        "contact_external_id": cont_ids[rng.integers(0, len(cont_ids), n)],
+        # Already sampled by propensity above - re-randomising here would throw
+        # that away and put the outcome back on a contact chosen at random.
+        "contact_external_id": cont_ids,
+        "_propensity": prop,
         "intake_external_id": chosen_intake,
         "primary_campaign_external_id": np.where(mask(n, 0.66),
                                                  camp_ids[rng.integers(0, len(camp_ids), n)], None),
@@ -539,11 +649,24 @@ def build_applications(opps, n):
     n = len(eligible)
 
     submitted = eligible["created_date"].values + rng.integers(3, 60, n).astype("timedelta64[D]")
-    status = weighted(ref.APPLICATION_STATUSES, n)
+
+    # Acceptance follows the applicant's propensity; withdrawal is more common
+    # among the weakly-engaged. Independent draws here would sever the link
+    # between everything upstream and the outcome that matters.
+    aprop = eligible["_propensity"].values
+    z = aprop + 0.55 + rng.normal(0, 0.6, n)
+    r = rng.random(n)
+    acc_p = sigmoid(z) * 0.86
+    status = np.where(
+        r < acc_p, "Accepted",
+        np.where(r < acc_p + 0.10 * sigmoid(-aprop) + 0.05, "Declined",
+                 weighted([("Submitted", 30), ("Under Review", 26),
+                           ("Withdrawn", 24), ("Waitlisted", 20)], n)))
     decision = submitted + rng.integers(5, 45, n).astype("timedelta64[D]")
 
     df = pd.DataFrame({
         "application_external_id": ids("RY-APP-", n),
+        "_propensity": aprop,
         "opportunity_external_id": eligible["opportunity_external_id"].values,
         "contact_external_id": eligible["contact_external_id"].values,
         "intake_external_id": eligible["intake_external_id"].values,
@@ -597,6 +720,19 @@ def build_students_enrolments(apps, intakes, offerings):
     note("fee_missing", m.sum())
     agreed[m] = None
 
+    # Engagement is the latent that drives BOTH attendance and withdrawal, so
+    # the early-weeks signal genuinely predicts the outcome rather than the two
+    # being independent draws that happen to sit in the same table.
+    engagement = (accepted["_propensity"].values * 0.8
+                  + rng.normal(0, 0.7, n))
+    wd_p = sigmoid(-engagement) * 0.30
+    r_e = rng.random(n)
+    enrol_status = np.where(
+        r_e < wd_p, "Withdrawn",
+        np.where(r_e < wd_p + 0.07, "Deferred",
+                 np.where(r_e < wd_p + 0.12, "On Hold",
+                          np.where(rng.random(n) < 0.34, "Completed", "Active"))))
+
     enrolled = accepted["decision_date"].values + rng.integers(5, 70, n).astype("timedelta64[D]")
     enrolments = pd.DataFrame({
         "enrolment_external_id": ids("RY-ENR-", n),
@@ -605,9 +741,10 @@ def build_students_enrolments(apps, intakes, offerings):
         "intake_external_id": accepted["intake_external_id"].values,
         "enrolled_date": enrolled,
         "agreed_fee_zar": agreed,
-        "status": weighted(ref.ENROLMENT_STATUSES, n),
+        "status": enrol_status,
         "_src_updated": src_updated(n, enrolled),
     })
+    enrolments["_engagement"] = engagement
 
     # Enrolled before the application was even submitted.
     m = mask(n, DEFECTS["date_inversion"])
@@ -630,8 +767,10 @@ def build_progress(enrolments, chunk=40_000):
         week_start = base + (wk * 7).astype("timedelta64[D]")
         n = len(eid)
 
-        # Attendance decays a little each week; assessment correlates with it.
-        att = np.clip(rng.normal(84 - wk * 0.9, 14, n), 0, 100).round(1)
+        # Attendance decays a little each week and is centred on the student's
+        # engagement, so a disengaged student looks different from week one.
+        eng = np.repeat(blk["_engagement"].values, weeks)
+        att = np.clip(rng.normal(80 + eng * 9 - wk * 0.9, 11, n), 0, 100).round(1)
         assess = np.clip(att * 0.62 + rng.normal(22, 13, n), 0, 100).round(1)
         overdue = rng.poisson(np.clip((70 - att) / 22, 0, 6)).astype(int)
         risk = np.where(att < 55, "High", np.where(att < 72, "Medium", "Low"))
@@ -679,10 +818,10 @@ def main():
     total += write(campaigns, "campaign")[0]
 
     leads = build_leads(cfg["leads"], campaigns)
-    total += write(leads.drop(columns=["_clean_first", "_clean_last"]), "lead")[0]
+    total += write(leads.drop(columns=["_clean_first", "_clean_last", "_propensity"]), "lead")[0]
 
     contacts = build_contacts(leads, cfg["direct_contacts"])
-    total += write(contacts, "contact")[0]
+    total += write(contacts.drop(columns=["_propensity"]), "contact")[0]
 
     total += build_campaign_members(campaigns, leads, contacts, per_campaign=5_200)[0]
 
@@ -691,14 +830,14 @@ def main():
 
     n_opp = int(len(contacts) * 0.62)
     opps = build_opportunities(contacts, intakes, offerings, campaigns, n_opp)
-    total += write(opps, "opportunity")[0]
+    total += write(opps.drop(columns=["_propensity"]), "opportunity")[0]
 
     apps = build_applications(opps, int(n_opp * 0.72))
-    total += write(apps, "application")[0]
+    total += write(apps.drop(columns=["_propensity"]), "application")[0]
 
     students, enrolments = build_students_enrolments(apps, intakes, offerings)
     total += write(students, "student")[0]
-    total += write(enrolments, "enrolment")[0]
+    total += write(enrolments.drop(columns=["_engagement"]), "enrolment")[0]
 
     total += build_progress(enrolments)[0]
 

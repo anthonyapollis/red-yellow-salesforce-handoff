@@ -1,70 +1,70 @@
 table sf_account
-	lineageTag: fc87c506-b811-40bd-b29a-77e20f0de059
+	lineageTag: 6ac63ac9-6702-4b71-aaea-33f7e9a8709f
 
 	column Id
 		dataType: string
-		lineageTag: ebf62d5d-9528-40a3-af23-98cc96693dc7
+		lineageTag: 23ae8e3d-6015-4f61-912e-98e0340faaf7
 		summarizeBy: none
 		sourceColumn: Id
 
 	column Name
 		dataType: string
-		lineageTag: aef82b5e-0e1e-493b-98d2-9dfb08e58e4c
+		lineageTag: 1159fe9d-f55c-4e1b-a58c-daca04602cc7
 		summarizeBy: none
 		sourceColumn: Name
 
 	column RY_External_ID__c
 		dataType: string
-		lineageTag: 44b4fd8d-e576-4a16-b396-0ad0ff7ba60d
+		lineageTag: d1e824a9-6fc4-4848-a624-45ce389fb42d
 		summarizeBy: none
 		sourceColumn: RY_External_ID__c
 
 	column CreatedDate
 		dataType: string
-		lineageTag: a2e16e29-e420-4b9a-a2cf-5dff04e859f8
+		lineageTag: d99c0423-09e5-4836-929d-8318dce14a71
 		summarizeBy: none
 		sourceColumn: CreatedDate
 
 	column SystemModstamp
 		dataType: string
-		lineageTag: 5642c3a7-5c28-4c95-9a84-163d6faf8e0d
+		lineageTag: 72c3cf1b-f5dd-4a0d-8427-e138173c13b2
 		summarizeBy: none
 		sourceColumn: SystemModstamp
 
 	column IsDeleted
 		dataType: boolean
-		lineageTag: e83bb736-c1e1-4e3c-8a24-2d15a73f9904
+		lineageTag: 19105470-7f80-40c4-94ec-b9a5dc3bac04
 		summarizeBy: none
 		sourceColumn: IsDeleted
 
 	column is_deleted
 		dataType: boolean
-		lineageTag: 2ab0f25d-a5d1-4ee6-81b5-5fd3ad8587e3
+		lineageTag: fb658316-b8c8-4f36-8412-9ed3731ffd01
 		summarizeBy: none
 		sourceColumn: is_deleted
 
 	column source_system
 		dataType: string
-		lineageTag: ca00d046-f546-4d95-b3d3-b368ac467b98
+		lineageTag: 773c9229-a7e0-44ca-a6d8-695f7feaafe9
 		summarizeBy: none
 		sourceColumn: source_system
 
 	column source_record_id
 		dataType: string
-		lineageTag: bd4aaac0-ad4f-4924-be99-ca518896ca7c
+		lineageTag: fa35824e-bff9-4bc8-88a1-6c32f284c714
 		summarizeBy: none
 		sourceColumn: source_record_id
 
 	column source_updated_at
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: f447f087-eef4-4a67-9196-61fb541ea4d1
+		lineageTag: 8b7e7273-2eed-4686-a70d-392e16980878
 		summarizeBy: none
 		sourceColumn: source_updated_at
 
 	column extracted_at
 		dataType: string
-		lineageTag: 3f84de82-ef0b-4ad1-afb9-4e523468f33d
+		lineageTag: a337f82f-a067-4d95-86e9-7278b6bfd6d4
 		summarizeBy: none
 		sourceColumn: extracted_at
 

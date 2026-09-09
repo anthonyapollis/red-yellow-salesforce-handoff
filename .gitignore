@@ -16,3 +16,4 @@ dbt_packages/
 logs/
 powerbi/data/
 run_results/
+warehouse/ml/

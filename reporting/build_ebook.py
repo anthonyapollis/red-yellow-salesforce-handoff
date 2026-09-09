@@ -161,6 +161,45 @@ def main():
     ax.set_ylim(0, max(vals) * 1.28)
     fig.tight_layout(); fig.savefig(FIG / "conversion.png"); plt.close(fig)
 
+    # ---- ML figures -------------------------------------------------------
+    mlp_path = REPO / "warehouse" / "ml"
+    if (mlp_path / "lead_propensity.parquet").exists():
+        import pandas as _pd
+        lp = _pd.read_parquet(mlp_path / "lead_propensity.parquet")
+        wr = _pd.read_parquet(mlp_path / "withdrawal_risk.parquet")
+        b1 = lp.groupby("propensity_band", observed=True)["target"].mean() * 100
+        b2 = wr.groupby("risk_band", observed=True)["target"].mean() * 100
+
+        fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.7))
+        for ax, s, title, base in [
+                (axes[0], b1, "Lead conversion by propensity band",
+                 lp["target"].mean() * 100),
+                (axes[1], b2, "Withdrawal by predicted risk band",
+                 wr["target"].mean() * 100)]:
+            bars = ax.bar(s.index.astype(str), s.values,
+                          color=[SERIES[3], SERIES[2], SERIES[1], SERIES[0]][:len(s)])
+            ax.axhline(base, ls="--", lw=1, color=SLATE)
+            ax.text(len(s) - 0.5, base, f" base {base:.1f}%", fontsize=6.5,
+                    color=SLATE, va="bottom", ha="right")
+            for b, v in zip(bars, s.values):
+                ax.text(b.get_x() + b.get_width() / 2, v, f"{v:.1f}%",
+                        ha="center", va="bottom", fontsize=7, color=CHARCOAL)
+            ax.set_title(title, fontsize=8.5)
+            ax.tick_params(labelsize=7)
+            ax.set_ylim(0, max(s.values) * 1.3)
+        fig.tight_layout(); fig.savefig(FIG / "ml_bands.png"); plt.close(fig)
+
+        rep = json.loads((mlp_path / "model_report.json").read_text(encoding="utf-8"))
+        fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.7))
+        for ax, m, col in zip(axes, rep["models"], [SERIES[0], SERIES[2]]):
+            f6 = m["features"][:6][::-1]
+            ax.barh([x["feature"] for x in f6], [x["share"] * 100 for x in f6],
+                    color=col)
+            ax.set_title(m["model"], fontsize=8)
+            ax.tick_params(labelsize=7)
+            ax.set_xlabel("% of gain", fontsize=7)
+        fig.tight_layout(); fig.savefig(FIG / "ml_importance.png"); plt.close(fig)
+
     # ---- document ---------------------------------------------------------
     d = Document()
     st = d.styles["Normal"]
@@ -482,6 +521,67 @@ def main():
         "history lives in, is cleansed once in staging, and is consumed by marts "
         "that Power BI reads directly. The tests run on every build.")
     figure_if("ev_06_dbt_tests.png", "Figure 10 - dbt build: models and data tests.")
+
+    # ---- predictive models ------------------------------------------------
+    mlp = REPO / "warehouse" / "ml" / "model_report.json"
+    if mlp.exists():
+        ml = json.loads(mlp.read_text(encoding="utf-8"))
+        d.add_page_break()
+        H("Two models, and what they are worth", 20, RED, 0)
+        d.add_paragraph(
+            "Both models are split by time rather than at random, and restricted "
+            "to what is known at the moment a decision is made. The lead model "
+            "cannot see the opportunity a lead later generated; the withdrawal "
+            "model sees only the first four weeks. Leaking a downstream outcome "
+            "into the features is the easiest way to build a model with a "
+            "beautiful score and no use whatever.")
+
+        tbl = d.add_table(rows=1, cols=5)
+        tbl.style = "Light List Accent 1"
+        for i, h in enumerate(["Model", "Base rate", "AUC", "PR-AUC",
+                               "Top-decile lift"]):
+            tbl.rows[0].cells[i].text = h
+        for m in ml["models"]:
+            c = tbl.add_row().cells
+            c[0].text = m["model"]
+            c[1].text = f"{m['base_rate']*100:.1f}%"
+            c[2].text = f"{m['auc']:.3f}"
+            c[3].text = f"{m['pr_auc']:.3f}"
+            c[4].text = f"{m['top_decile_lift']:.2f}x"
+        d.add_paragraph()
+        d.add_paragraph(
+            "An AUC in the mid-0.6s is not a headline, and it should not be. "
+            "These are human decisions with a great deal of unexplained "
+            "variation; a model claiming 0.95 on this data would mean a feature "
+            "had leaked. What matters operationally is the lift: the top tenth "
+            "of leads by score converts at over twice the base rate, which is "
+            "the difference between working a list in arrival order and working "
+            "it in priority order.")
+        figure_if("ml_bands.png",
+                  "Figure 10a - Conversion by propensity band, and withdrawal by "
+                  "risk band. If the bars do not separate, the model is not "
+                  "ranking anything.")
+        figure_if("ml_importance.png",
+                  "Figure 10b - What each model actually leans on.")
+
+        H("What to do about it", 13, CHARCOAL, 12)
+        for i in ml.get("insights", []):
+            p = d.add_paragraph(style="List Bullet")
+            r = p.add_run(f"{i['area']}. ")
+            r.bold = True
+            r.font.color.rgb = rgb(RED)
+            p.add_run(i["finding"] + " ")
+            r2 = p.add_run(i["recommendation"])
+            r2.italic = True
+
+        H("An honest caveat", 13, CHARCOAL, 12)
+        d.add_paragraph(
+            "These models are trained on synthetic data whose structure was put "
+            "there deliberately. They demonstrate the method - time-based "
+            "splits, decision-time features, scoring against a base rate, lift "
+            "as the operational metric - not a finding about Red & Yellow. On "
+            "real data the effect sizes would differ, and the first job would be "
+            "to check whether they hold at all.")
 
     # ---- the rest of the stack -------------------------------------------
     d.add_page_break()
