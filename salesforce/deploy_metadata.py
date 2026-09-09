@@ -48,9 +48,14 @@ def inner(xml: str, tag: str) -> str:
     return m.group(1)
 
 
-def build_object(obj_dir: Path, standard_only: bool = False) -> str:
-    """Merge one source-format object directory into a metadata-format .object."""
-    parts = []
+def build_object(obj_dir: Path, standard_only: bool = False):
+    """Merge one source-format object directory into a metadata-format .object.
+
+    Returns (xml, deployed_field_names) where names are "Object.Field__c", so the
+    permission set can be filtered against what was actually included rather than
+    guessed at by name pattern.
+    """
+    parts, deployed = [], []
     meta = obj_dir / f"{obj_dir.name}.object-meta.xml"
     if meta.exists():
         parts.append(inner(meta.read_text(encoding="utf-8"), "CustomObject"))
@@ -62,10 +67,14 @@ def build_object(obj_dir: Path, standard_only: bool = False) -> str:
             ref = re.search(r"<referenceTo>([^<]+)</referenceTo>", body)
             if ref and ref.group(1).endswith("__c"):
                 continue
+        full = re.search(r"<fullName>([^<]+)</fullName>", body)
+        if full:
+            deployed.append(f"{obj_dir.name}.{full.group(1)}")
         parts.append("<fields>" + inner(body, "CustomField") + "</fields>")
 
-    return (f'<?xml version="1.0" encoding="UTF-8"?>\n'
-            f'<CustomObject xmlns="{NS}">' + "".join(parts) + "</CustomObject>")
+    xml = (f'<?xml version="1.0" encoding="UTF-8"?>\n'
+           f'<CustomObject xmlns="{NS}">' + "".join(parts) + "</CustomObject>")
+    return xml, deployed
 
 
 def build_package(standard_only=False):
@@ -77,6 +86,7 @@ def build_package(standard_only=False):
     standard objects.
     """
     objects, permsets, skipped = [], [], []
+    deployed_fields = set()
     buf = io.BytesIO()
 
     with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
@@ -86,19 +96,42 @@ def build_package(standard_only=False):
             if standard_only and d.name.endswith("__c"):
                 skipped.append(d.name)
                 continue
-            xml = build_object(d, standard_only=standard_only)
+            xml, flds = build_object(d, standard_only=standard_only)
+            deployed_fields.update(flds)
             objects.append(d.name)
             z.writestr(f"objects/{d.name}.object", xml)
 
         ps_dir = SRC / "permissionsets"
-        if ps_dir.exists() and not standard_only:
+        if ps_dir.exists():
             for f in sorted(ps_dir.glob("*.permissionset-meta.xml")):
                 name = f.name.replace(".permissionset-meta.xml", "")
                 permsets.append(name)
                 body = f.read_text(encoding="utf-8")
+
+                if standard_only:
+                    # Deploying fields WITHOUT field-level security leaves them
+                    # present but invisible: describe() omits them entirely, and
+                    # an upsert then fails with "external ID must be unique"
+                    # because the API cannot see the field it is keying on. So
+                    # the permission set is trimmed rather than skipped.
+                    #
+                    # Filter against what was actually deployed, not by name
+                    # pattern: Opportunity.RY_Intake__c lives on a STANDARD
+                    # object but is a lookup to a custom one, so it is skipped
+                    # above and a pattern match on the object half misses it.
+                    def keep(m):
+                        f = re.search(r"<field>([^<]+)</field>", m.group(0))
+                        return m.group(0) if f and f.group(1) in deployed_fields else ""
+
+                    body = re.sub(r"<fieldPermissions>.*?</fieldPermissions>",
+                                  keep, body, flags=re.S)
+                    # Every objectPermissions entry targets a custom object.
+                    body = re.sub(r"<objectPermissions>.*?</objectPermissions>",
+                                  "", body, flags=re.S)
+
                 if not body.lstrip().startswith("<?xml"):
                     body = '<?xml version="1.0" encoding="UTF-8"?>\n' + body
-                z.writestr(f"permissionsets/{name}.permissionSet", body)
+                z.writestr(f"permissionsets/{name}.permissionset", body)
 
         types = ""
         for members, name in ((objects, "CustomObject"), (permsets, "PermissionSet")):

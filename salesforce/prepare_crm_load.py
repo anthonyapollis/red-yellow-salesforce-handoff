@@ -109,6 +109,11 @@ def w(df: pd.DataFrame, name: str) -> int:
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--basic", action="store_true",
+                    help="Emit only Account, Contact, Lead and Opportunity - the load "
+                         "that works on an edition with no custom objects. Campaign is "
+                         "not createable on Base Edition, so campaigns and campaign "
+                         "members are excluded too.")
     ap.add_argument("--budget", type=int, default=2_400,
                     help="Total Salesforce records to emit. Default 2,400 (~4.7 MB) fits a "
                          "Developer Edition org's 5 MB ceiling. Raise it only for an org "
@@ -305,6 +310,39 @@ def main():
     # -- import plan for this folder ----------------------------------------
     base = json.loads((REPO / "salesforce" / "import_plan.json").read_text(encoding="utf-8"))
     by_obj = {p["object"]: p for p in base}
+
+    if args.basic:
+        # Only the objects an edition without custom objects can actually take.
+        # Opportunity loses Campaign_Key (Campaign is not createable) and
+        # Intake_Key (RY_Intake__c cannot exist), so those references are
+        # stripped rather than left dangling.
+        basic_objs = ["Account", "Contact", "Lead", "Opportunity"]
+        plan = []
+        for obj in basic_objs:
+            pl = dict(by_obj.get(obj, {"object": obj,
+                                       "external_id": "RY_External_ID__c",
+                                       "references": {}, "required": []}))
+            pl["file"] = f"data/crm_load/{obj}.csv"
+            pl["group"] = "crm_load"
+            pl["references"] = {k: v for k, v in pl.get("references", {}).items()
+                                if k not in ("Campaign_Key", "Intake_Key")}
+            pl["required"] = [r for r in pl.get("required", [])
+                              if r not in ("Campaign_Key", "Intake_Key")]
+            plan.append(pl)
+        (OUT / "import_plan_basic.json").write_text(json.dumps(plan, indent=1),
+                                                    encoding="utf-8")
+        # Drop the now-meaningless columns from the Opportunity file.
+        opp_csv = OUT / "Opportunity.csv"
+        df = pd.read_csv(opp_csv, dtype=str, keep_default_na=False)
+        for c in ("Campaign_Key", "Intake_Key"):
+            if c in df.columns:
+                df[c] = ""
+        df.to_csv(opp_csv, index=False)
+        print(f"\n  basic plan: {OUT / 'import_plan_basic.json'}")
+        print(f"  objects: {', '.join(basic_objs)}")
+        print("  Campaign / CampaignMember excluded - Campaign is not createable")
+        print("  on editions without custom objects.")
+        return
     # The CRM slice points at intakes, which are catalogue records. Prepending
     # the three catalogue objects makes this plan self-contained and correctly
     # ordered - otherwise every Opportunity fails on an unresolvable Intake_Key.

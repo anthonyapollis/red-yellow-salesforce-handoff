@@ -1,0 +1,57 @@
+[
+ {
+  "object": "Account",
+  "file": "data/crm_load/Account.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {},
+  "required": []
+ },
+ {
+  "object": "Contact",
+  "file": "data/crm_load/Contact.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Account_Key": [
+    "AccountId",
+    "Account"
+   ]
+  },
+  "required": [
+   "LastName"
+  ]
+ },
+ {
+  "object": "Lead",
+  "file": "data/crm_load/Lead.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {},
+  "required": [
+   "LastName",
+   "Company"
+  ]
+ },
+ {
+  "object": "Opportunity",
+  "file": "data/crm_load/Opportunity.csv",
+  "group": "crm_load",
+  "external_id": "RY_External_ID__c",
+  "references": {
+   "Account_Key": [
+    "AccountId",
+    "Account"
+   ],
+   "Applicant_Key": [
+    "RY_Applicant__c",
+    "Contact"
+   ]
+  },
+  "required": [
+   "Name",
+   "CloseDate",
+   "Applicant_Key"
+  ]
+ }
+]
