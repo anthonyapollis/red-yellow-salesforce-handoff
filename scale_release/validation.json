@@ -1,0 +1,26 @@
+{
+  "status": "PASS - FULL STREAMING STRUCTURAL CHECK",
+  "rows": 12574360,
+  "counts": {
+    "RY_Programme__c": 85,
+    "RY_Programme_Offering__c": 91,
+    "RY_Intake__c": 2184,
+    "Account": 20000,
+    "Contact": 2000000,
+    "Lead": 1000000,
+    "Campaign": 2000,
+    "CampaignMember": 3000000,
+    "Opportunity": 500000,
+    "RY_Programme_Enquiry__c": 1500000,
+    "RY_Application__c": 400000,
+    "RY_Student__c": 300000,
+    "RY_Enrolment__c": 350000,
+    "RY_Student_Progress__c": 3500000
+  },
+  "shards": 131,
+  "seconds": 305.19,
+  "limitations": [
+    "Semantic defects intentionally remain",
+    "No Salesforce API calls were made"
+  ]
+}

@@ -1,0 +1,1458 @@
+{
+  "dataset": "Red & Yellow SYNTHETIC dirty scale test",
+  "version": "scale-v1",
+  "generator_scale": 1.0,
+  "seed": "deterministic arithmetic v1",
+  "total_rows": 12574360,
+  "counts": {
+    "RY_Programme__c": 85,
+    "RY_Programme_Offering__c": 91,
+    "RY_Intake__c": 2184,
+    "Account": 20000,
+    "Contact": 2000000,
+    "Lead": 1000000,
+    "Campaign": 2000,
+    "CampaignMember": 3000000,
+    "Opportunity": 500000,
+    "RY_Programme_Enquiry__c": 1500000,
+    "RY_Application__c": 400000,
+    "RY_Student__c": 300000,
+    "RY_Enrolment__c": 350000,
+    "RY_Student_Progress__c": 3500000
+  },
+  "shard_rows": 100000,
+  "files": [
+    {
+      "object": "RY_Programme__c",
+      "file": "csv/RY_Programme__c/part-00001.csv.gz",
+      "rows": 85,
+      "first_sequence": 1,
+      "last_sequence": 85,
+      "compressed_bytes": 1654,
+      "csv_bytes": 7965,
+      "sha256": "9f5ff8b6cf9391b87e864d7d4357cf4fe490f1716bba446e8b9fe23c207fc8db"
+    },
+    {
+      "object": "RY_Programme_Offering__c",
+      "file": "csv/RY_Programme_Offering__c/part-00001.csv.gz",
+      "rows": 91,
+      "first_sequence": 1,
+      "last_sequence": 91,
+      "compressed_bytes": 3492,
+      "csv_bytes": 35551,
+      "sha256": "16af3b8f4cab9a92e72370dbf27486703f92e83ee8d127c3ddb1dbc8b245cfff"
+    },
+    {
+      "object": "RY_Intake__c",
+      "file": "csv/RY_Intake__c/part-00001.csv.gz",
+      "rows": 2184,
+      "first_sequence": 1,
+      "last_sequence": 2184,
+      "compressed_bytes": 11524,
+      "csv_bytes": 113901,
+      "sha256": "0bd4eeabecabebae27124feacb5fce2969346098d7293288cbb5cc5c90ebd01d"
+    },
+    {
+      "object": "Account",
+      "file": "csv/Account/part-00001.csv.gz",
+      "rows": 20000,
+      "first_sequence": 1,
+      "last_sequence": 20000,
+      "compressed_bytes": 98127,
+      "csv_bytes": 1020823,
+      "sha256": "62b01e76c57eea087e0040365bc18ff78a661fe7623801494df52ba0807b3b7a"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00001.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1,
+      "last_sequence": 100000,
+      "compressed_bytes": 1776279,
+      "csv_bytes": 12182356,
+      "sha256": "ed0ffffd53a92740bce72af32b81d5d413c70ea06a81b82f0ee803ca411d9b25"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00002.csv.gz",
+      "rows": 100000,
+      "first_sequence": 100001,
+      "last_sequence": 200000,
+      "compressed_bytes": 1776578,
+      "csv_bytes": 12182338,
+      "sha256": "b0bdc1fb30e5e7302f4576b839d32181d483226a14690d23f36ef35cdbbe905f"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00003.csv.gz",
+      "rows": 100000,
+      "first_sequence": 200001,
+      "last_sequence": 300000,
+      "compressed_bytes": 1776740,
+      "csv_bytes": 12182305,
+      "sha256": "d1691a3026b866da9a3e88695128693f2df418524cfaa2fcf7df1e8143d88960"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00004.csv.gz",
+      "rows": 100000,
+      "first_sequence": 300001,
+      "last_sequence": 400000,
+      "compressed_bytes": 1775603,
+      "csv_bytes": 12182345,
+      "sha256": "a0378c7ddd527da9f6324628f91060ae2025a94c581ab56bd4f66974bc54b96f"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00005.csv.gz",
+      "rows": 100000,
+      "first_sequence": 400001,
+      "last_sequence": 500000,
+      "compressed_bytes": 1776328,
+      "csv_bytes": 12182348,
+      "sha256": "7367f7ca448f728021709162952c86b32f5e5e07a910f95bab9cd8f7aa92edf5"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00006.csv.gz",
+      "rows": 100000,
+      "first_sequence": 500001,
+      "last_sequence": 600000,
+      "compressed_bytes": 1775975,
+      "csv_bytes": 12182300,
+      "sha256": "2cb15864c1dd107f558097dc8dd89c5519837ad456217153a057f2c90b7916da"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00007.csv.gz",
+      "rows": 100000,
+      "first_sequence": 600001,
+      "last_sequence": 700000,
+      "compressed_bytes": 1775637,
+      "csv_bytes": 12182344,
+      "sha256": "264deae42c1b3569e64c80922279f64cdeb7feb2457bafa2936fbc5a15361688"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00008.csv.gz",
+      "rows": 100000,
+      "first_sequence": 700001,
+      "last_sequence": 800000,
+      "compressed_bytes": 1776762,
+      "csv_bytes": 12182339,
+      "sha256": "68ac46a41cb8f95571432ca5a583463b799afd767d8d83fefaf492165b852170"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00009.csv.gz",
+      "rows": 100000,
+      "first_sequence": 800001,
+      "last_sequence": 900000,
+      "compressed_bytes": 1775778,
+      "csv_bytes": 12182300,
+      "sha256": "5a9e19c40085c8d09148d910f50da9c12bbc62146f524b12a5966cbc7f6c5531"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00010.csv.gz",
+      "rows": 100000,
+      "first_sequence": 900001,
+      "last_sequence": 1000000,
+      "compressed_bytes": 1776097,
+      "csv_bytes": 12182349,
+      "sha256": "cad5355af10b5d86b50b8e82ad5d939e3d029d6aedd8c055b479b6ca70af0875"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00011.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1000001,
+      "last_sequence": 1100000,
+      "compressed_bytes": 1776692,
+      "csv_bytes": 12182334,
+      "sha256": "4d11430cf77570a52e693d6331aa52bb776e3c749159267ab19cd0f29d723f72"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00012.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1100001,
+      "last_sequence": 1200000,
+      "compressed_bytes": 1775955,
+      "csv_bytes": 12182319,
+      "sha256": "45a27fa02020a4a258fee0d52975a9bb327fa6cacd0bf4808408c220aedd599f"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00013.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1200001,
+      "last_sequence": 1300000,
+      "compressed_bytes": 1776522,
+      "csv_bytes": 12182349,
+      "sha256": "6752cbcb33c715e54bab1dd78c25b2da268ea33c82530a8ce35542d6a2ba4581"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00014.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1300001,
+      "last_sequence": 1400000,
+      "compressed_bytes": 1776161,
+      "csv_bytes": 12182343,
+      "sha256": "d53c545f293da623168db26f172822defc05f54a625198760b7488b22a9918f2"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00015.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1400001,
+      "last_sequence": 1500000,
+      "compressed_bytes": 1776718,
+      "csv_bytes": 12182306,
+      "sha256": "80817f5e5a719b5ed3c2822bec820abf1e496fe31d3364c24a7eacf343ca2d71"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00016.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1500001,
+      "last_sequence": 1600000,
+      "compressed_bytes": 1776357,
+      "csv_bytes": 12182337,
+      "sha256": "a9716a1f2f5b055e376b832950a6c8647ef2e6aa759f6aec9fc8ee7184a88a7f"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00017.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1600001,
+      "last_sequence": 1700000,
+      "compressed_bytes": 1776982,
+      "csv_bytes": 12182316,
+      "sha256": "b094e6c696a96346d428797f41c5ae0e272badf312dfc5aa5748578d4a8a5b70"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00018.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1700001,
+      "last_sequence": 1800000,
+      "compressed_bytes": 1776756,
+      "csv_bytes": 12182324,
+      "sha256": "a1c48559d7aeb233ea7d99a31a77bfe18663e9016599860ba53200c0e337fb84"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00019.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1800001,
+      "last_sequence": 1900000,
+      "compressed_bytes": 1775491,
+      "csv_bytes": 12182348,
+      "sha256": "605924eda4010beded5360d3aa39e5fcb46aec19fbae94139d3b11db2da183b7"
+    },
+    {
+      "object": "Contact",
+      "file": "csv/Contact/part-00020.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1900001,
+      "last_sequence": 2000000,
+      "compressed_bytes": 1776643,
+      "csv_bytes": 12182311,
+      "sha256": "af8158446f98a45b563cb515ba42edc9afba4f32af512cf4c160af1435d17f3e"
+    },
+    {
+      "object": "Lead",
+      "file": "csv/Lead/part-00001.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1,
+      "last_sequence": 100000,
+      "compressed_bytes": 1630661,
+      "csv_bytes": 13896640,
+      "sha256": "62fb533c5ca44d9e8a993d1e6b16875b32218dcd905e7e8e497bdda4669846d0"
+    },
+    {
+      "object": "Lead",
+      "file": "csv/Lead/part-00002.csv.gz",
+      "rows": 100000,
+      "first_sequence": 100001,
+      "last_sequence": 200000,
+      "compressed_bytes": 1631706,
+      "csv_bytes": 13896627,
+      "sha256": "9289381ad07644b660d773bda77d95a55285985da9485eb4c0dd76660f3735af"
+    },
+    {
+      "object": "Lead",
+      "file": "csv/Lead/part-00003.csv.gz",
+      "rows": 100000,
+      "first_sequence": 200001,
+      "last_sequence": 300000,
+      "compressed_bytes": 1630884,
+      "csv_bytes": 13896586,
+      "sha256": "33901ce63631d1045a824135d2b564242c58f8cbc587b3a3c8fe82e7e9f3dc1b"
+    },
+    {
+      "object": "Lead",
+      "file": "csv/Lead/part-00004.csv.gz",
+      "rows": 100000,
+      "first_sequence": 300001,
+      "last_sequence": 400000,
+      "compressed_bytes": 1629594,
+      "csv_bytes": 13896630,
+      "sha256": "abdbad6be19abff7d887fb2712dcc6b401c9712bb68bc9aae46fd4e5c739cab9"
+    },
+    {
+      "object": "Lead",
+      "file": "csv/Lead/part-00005.csv.gz",
+      "rows": 100000,
+      "first_sequence": 400001,
+      "last_sequence": 500000,
+      "compressed_bytes": 1629408,
+      "csv_bytes": 13896639,
+      "sha256": "d910111a068691197ce85bf0934391e8e5633d942fd2784993f9ae1c2ea50149"
+    },
+    {
+      "object": "Lead",
+      "file": "csv/Lead/part-00006.csv.gz",
+      "rows": 100000,
+      "first_sequence": 500001,
+      "last_sequence": 600000,
+      "compressed_bytes": 1630004,
+      "csv_bytes": 13896583,
+      "sha256": "9c2ed73245fab6635119f587cff2efa6a0e678385aaf87b1349abb62e6ff00c6"
+    },
+    {
+      "object": "Lead",
+      "file": "csv/Lead/part-00007.csv.gz",
+      "rows": 100000,
+      "first_sequence": 600001,
+      "last_sequence": 700000,
+      "compressed_bytes": 1629538,
+      "csv_bytes": 13896632,
+      "sha256": "279e731c48c56ce7bfbd95f1e74b249e4569e612094a5b3a9cf5a2762b24d644"
+    },
+    {
+      "object": "Lead",
+      "file": "csv/Lead/part-00008.csv.gz",
+      "rows": 100000,
+      "first_sequence": 700001,
+      "last_sequence": 800000,
+      "compressed_bytes": 1629262,
+      "csv_bytes": 13896628,
+      "sha256": "101b986c01d5ac1430ecc35ee55f8854f5ac135a0ec51a268e723d7852d56ab1"
+    },
+    {
+      "object": "Lead",
+      "file": "csv/Lead/part-00009.csv.gz",
+      "rows": 100000,
+      "first_sequence": 800001,
+      "last_sequence": 900000,
+      "compressed_bytes": 1630106,
+      "csv_bytes": 13896590,
+      "sha256": "389bc63c1efbf03e1c04010e929f2cb567af1b8a9db48419e87f8c60bb1bafc9"
+    },
+    {
+      "object": "Lead",
+      "file": "csv/Lead/part-00010.csv.gz",
+      "rows": 100000,
+      "first_sequence": 900001,
+      "last_sequence": 1000000,
+      "compressed_bytes": 1630109,
+      "csv_bytes": 13896636,
+      "sha256": "d5f2f15c7253bfaa1c1b6a7fa5ce0b97c17832afbd14cd7f6a071bb762798b0f"
+    },
+    {
+      "object": "Campaign",
+      "file": "csv/Campaign/part-00001.csv.gz",
+      "rows": 2000,
+      "first_sequence": 1,
+      "last_sequence": 2000,
+      "compressed_bytes": 25544,
+      "csv_bytes": 157305,
+      "sha256": "2b9cf2ef1f0a951ebebd2b2c112221c101297507429d3020c96834a5b4714dcb"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00001.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1,
+      "last_sequence": 100000,
+      "compressed_bytes": 917575,
+      "csv_bytes": 6600052,
+      "sha256": "e67679cd2ad643af9c6f4043e54697d3024880f4d58fbfb9d7b44f3cb5c03e55"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00002.csv.gz",
+      "rows": 100000,
+      "first_sequence": 100001,
+      "last_sequence": 200000,
+      "compressed_bytes": 917589,
+      "csv_bytes": 6600052,
+      "sha256": "cc64bf2f04f483bd52a84276446d0eb4cbc469fbfff20d60679ec87ff9c9f96d"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00003.csv.gz",
+      "rows": 100000,
+      "first_sequence": 200001,
+      "last_sequence": 300000,
+      "compressed_bytes": 917594,
+      "csv_bytes": 6600052,
+      "sha256": "7742663667b0e1a1280e76ab575516027b3498bfd7fad9bd30a23a78c37da166"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00004.csv.gz",
+      "rows": 100000,
+      "first_sequence": 300001,
+      "last_sequence": 400000,
+      "compressed_bytes": 917556,
+      "csv_bytes": 6600052,
+      "sha256": "aeb545048bbc9cc3e9f3d10435955af82620f122649bbb0ca6db4fc6174415f5"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00005.csv.gz",
+      "rows": 100000,
+      "first_sequence": 400001,
+      "last_sequence": 500000,
+      "compressed_bytes": 917588,
+      "csv_bytes": 6600052,
+      "sha256": "40799aec63c2a461fa9768437e601b7ccf9aabaf61c28bee14e8fcbb67745d38"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00006.csv.gz",
+      "rows": 100000,
+      "first_sequence": 500001,
+      "last_sequence": 600000,
+      "compressed_bytes": 917594,
+      "csv_bytes": 6600052,
+      "sha256": "a7eee48b395ca160d7058d580ccd26aaaf7b2d445e7f178d5cb2a5c679cdcc62"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00007.csv.gz",
+      "rows": 100000,
+      "first_sequence": 600001,
+      "last_sequence": 700000,
+      "compressed_bytes": 917589,
+      "csv_bytes": 6600052,
+      "sha256": "2744454f7e1d4ab7de0874e98f433e9efb9f0321f299bf5ca016ccad1efd5c77"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00008.csv.gz",
+      "rows": 100000,
+      "first_sequence": 700001,
+      "last_sequence": 800000,
+      "compressed_bytes": 917587,
+      "csv_bytes": 6600052,
+      "sha256": "a5b7559ac9aaa6108c546a0d5042c11cced2ed97364b326fd5edb96ee765b006"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00009.csv.gz",
+      "rows": 100000,
+      "first_sequence": 800001,
+      "last_sequence": 900000,
+      "compressed_bytes": 917515,
+      "csv_bytes": 6600052,
+      "sha256": "54500fe7c7bd880cab6f48808b4b00c52e6875b32797872db318fe57004a8ea6"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00010.csv.gz",
+      "rows": 100000,
+      "first_sequence": 900001,
+      "last_sequence": 1000000,
+      "compressed_bytes": 917589,
+      "csv_bytes": 6600052,
+      "sha256": "368db10fff024e5f67b40bd8ad3af768226befd76abada4e651fb86c16366a7b"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00011.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1000001,
+      "last_sequence": 1100000,
+      "compressed_bytes": 917585,
+      "csv_bytes": 6600052,
+      "sha256": "64e50e0fd2620f4900fd4880d496bb460ed9537ecb643b5333cca8dbe9262f7f"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00012.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1100001,
+      "last_sequence": 1200000,
+      "compressed_bytes": 917585,
+      "csv_bytes": 6600052,
+      "sha256": "c1215cb272765a1a8ff61cb199d7237cf17c9aa78eddf493cbf4ab7dc3d16401"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00013.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1200001,
+      "last_sequence": 1300000,
+      "compressed_bytes": 917590,
+      "csv_bytes": 6600052,
+      "sha256": "1a7781548dfdfd66b9b8128c386564b21843c72223667f373007cc5432ea8f70"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00014.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1300001,
+      "last_sequence": 1400000,
+      "compressed_bytes": 917554,
+      "csv_bytes": 6600052,
+      "sha256": "5498ec56f3e7e7657366e09880d54f7ee107fa0b64e6a7738bb55543bac2dd77"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00015.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1400001,
+      "last_sequence": 1500000,
+      "compressed_bytes": 917586,
+      "csv_bytes": 6600052,
+      "sha256": "104ab89b88090bee809ea4a1d3c11d406358de24760789b4d193c7c9a4054d38"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00016.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1500001,
+      "last_sequence": 1600000,
+      "compressed_bytes": 917586,
+      "csv_bytes": 6600052,
+      "sha256": "d1cbe413b1392603b366eb22b455b97f6ca4c9004056e328f9eaa7df7f84e182"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00017.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1600001,
+      "last_sequence": 1700000,
+      "compressed_bytes": 917585,
+      "csv_bytes": 6600052,
+      "sha256": "c257ef893cb22f455019b1891298cf6876e241fb1c3946863af9fb309c430aac"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00018.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1700001,
+      "last_sequence": 1800000,
+      "compressed_bytes": 917581,
+      "csv_bytes": 6600052,
+      "sha256": "906279114fd4c977252a43ecf7c3bfc171306129de5b84426f7a554729dd8abd"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00019.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1800001,
+      "last_sequence": 1900000,
+      "compressed_bytes": 917538,
+      "csv_bytes": 6600052,
+      "sha256": "cab0610ffe23695b53e9aeb3d19a21ebff4672b949f1c78a4d355208b145ae06"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00020.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1900001,
+      "last_sequence": 2000000,
+      "compressed_bytes": 917585,
+      "csv_bytes": 6600052,
+      "sha256": "f29af2d5f90f88b9b7dd5b80aaa0f0f9041ef01dfafa6bb702416e2b98fdf73b"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00021.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2000001,
+      "last_sequence": 2100000,
+      "compressed_bytes": 920686,
+      "csv_bytes": 6700052,
+      "sha256": "20b6592a6da4d5bab6315ca37e0ac69c0dab47cf932a784dbb99c2adf40eba27"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00022.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2100001,
+      "last_sequence": 2200000,
+      "compressed_bytes": 920177,
+      "csv_bytes": 6700052,
+      "sha256": "dbcaff77a659415d02e624682327f135e215a919eb78e75c6ddd788bda1697cc"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00023.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2200001,
+      "last_sequence": 2300000,
+      "compressed_bytes": 920250,
+      "csv_bytes": 6700052,
+      "sha256": "da517c546566147b6d0e947052ce2d4d87c6e702a3bc097cbc2c973d1938f0fc"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00024.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2300001,
+      "last_sequence": 2400000,
+      "compressed_bytes": 920166,
+      "csv_bytes": 6700052,
+      "sha256": "870c580959e8ef74addb8239aa0f1a8ccf734b4342dc931bb56b377d82250700"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00025.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2400001,
+      "last_sequence": 2500000,
+      "compressed_bytes": 920147,
+      "csv_bytes": 6700052,
+      "sha256": "94b198a6e6ded940fb6879bdec7fcb373b3a9fea87a1b04d418fe87495f3f144"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00026.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2500001,
+      "last_sequence": 2600000,
+      "compressed_bytes": 920248,
+      "csv_bytes": 6700052,
+      "sha256": "c9258631424627535be256ebaf63b3d736d0b010b93dcb8492ad4e8e79ce1756"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00027.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2600001,
+      "last_sequence": 2700000,
+      "compressed_bytes": 920627,
+      "csv_bytes": 6700052,
+      "sha256": "cc6b78da910fd17930b25ca8e6800218d1c5c9db7ac0c5d63a3baea9620a9d18"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00028.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2700001,
+      "last_sequence": 2800000,
+      "compressed_bytes": 920256,
+      "csv_bytes": 6700052,
+      "sha256": "4ef98ebdbc32b02b6c513c56778a8888146bb091fee5ad1b8b354f830139cc8e"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00029.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2800001,
+      "last_sequence": 2900000,
+      "compressed_bytes": 919889,
+      "csv_bytes": 6700052,
+      "sha256": "3f9381738bc11a3b2f5f2f4494f5e6cf7ada3cc3754615a986a87cc2f1142f68"
+    },
+    {
+      "object": "CampaignMember",
+      "file": "csv/CampaignMember/part-00030.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2900001,
+      "last_sequence": 3000000,
+      "compressed_bytes": 920090,
+      "csv_bytes": 6700052,
+      "sha256": "23eef278db6c91190b7efbdd1e22d5a758d174c1c740f4b4cd6f8da014c876e0"
+    },
+    {
+      "object": "Opportunity",
+      "file": "csv/Opportunity/part-00001.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1,
+      "last_sequence": 100000,
+      "compressed_bytes": 2580085,
+      "csv_bytes": 16556660,
+      "sha256": "40ee913717dce3e4504c17b474d5625c1efb218dca0dca1b6f2cdbb5920c6c52"
+    },
+    {
+      "object": "Opportunity",
+      "file": "csv/Opportunity/part-00002.csv.gz",
+      "rows": 100000,
+      "first_sequence": 100001,
+      "last_sequence": 200000,
+      "compressed_bytes": 2579932,
+      "csv_bytes": 16556684,
+      "sha256": "21e0a185d5714f5c29de5e9726bac0aea666d44ad896a6f775e511d978609a2d"
+    },
+    {
+      "object": "Opportunity",
+      "file": "csv/Opportunity/part-00003.csv.gz",
+      "rows": 100000,
+      "first_sequence": 200001,
+      "last_sequence": 300000,
+      "compressed_bytes": 2579555,
+      "csv_bytes": 16556679,
+      "sha256": "c648afa2eedd1bf475a00a779886af6834ac1722a88e350ef5f94b4cb09341f9"
+    },
+    {
+      "object": "Opportunity",
+      "file": "csv/Opportunity/part-00004.csv.gz",
+      "rows": 100000,
+      "first_sequence": 300001,
+      "last_sequence": 400000,
+      "compressed_bytes": 2579991,
+      "csv_bytes": 16556666,
+      "sha256": "f9e216398d658f9bf5da5b34e65228fe1dba4dbfde0c6d156d543e81923bfb0e"
+    },
+    {
+      "object": "Opportunity",
+      "file": "csv/Opportunity/part-00005.csv.gz",
+      "rows": 100000,
+      "first_sequence": 400001,
+      "last_sequence": 500000,
+      "compressed_bytes": 2581082,
+      "csv_bytes": 16556677,
+      "sha256": "43147a265a66e2eec81242eb350bafd90c44fd368e1bc599ddd76c109b8ce589"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00001.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1,
+      "last_sequence": 100000,
+      "compressed_bytes": 1540244,
+      "csv_bytes": 9377723,
+      "sha256": "7b2aab8627d057bfbfde32dd0c199db670a85ec3c935ac77e483c80d95b38e67"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00002.csv.gz",
+      "rows": 100000,
+      "first_sequence": 100001,
+      "last_sequence": 200000,
+      "compressed_bytes": 1539858,
+      "csv_bytes": 9377736,
+      "sha256": "06f2538ee28ca9930c445b4965b58275a202e562fd08c571bcf4210dbb5ea3d9"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00003.csv.gz",
+      "rows": 100000,
+      "first_sequence": 200001,
+      "last_sequence": 300000,
+      "compressed_bytes": 1540047,
+      "csv_bytes": 9377736,
+      "sha256": "fdddfdd8eccd2d8ab00be1099714b24cddf05204cfc6cd718ab6bb4d127d5daa"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00004.csv.gz",
+      "rows": 100000,
+      "first_sequence": 300001,
+      "last_sequence": 400000,
+      "compressed_bytes": 1540214,
+      "csv_bytes": 9377733,
+      "sha256": "f970182ae46c8ce9a946eedbe4eff18b6da0fe533d795a5331bed2496b7af63c"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00005.csv.gz",
+      "rows": 100000,
+      "first_sequence": 400001,
+      "last_sequence": 500000,
+      "compressed_bytes": 1540313,
+      "csv_bytes": 9377738,
+      "sha256": "8168c60f16750142886ed25b374931bd5a6355c851ce62e815030b9007de546c"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00006.csv.gz",
+      "rows": 100000,
+      "first_sequence": 500001,
+      "last_sequence": 600000,
+      "compressed_bytes": 1540643,
+      "csv_bytes": 9377737,
+      "sha256": "842e1f0dbd4b9be7d308d2a63c396ad454654c0d853491f9ed99e46cef7f04d3"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00007.csv.gz",
+      "rows": 100000,
+      "first_sequence": 600001,
+      "last_sequence": 700000,
+      "compressed_bytes": 1540110,
+      "csv_bytes": 9377737,
+      "sha256": "91457e79c6d5712768c92d3ac58f4a3ea40fe7faaa8857dc954a70562480f731"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00008.csv.gz",
+      "rows": 100000,
+      "first_sequence": 700001,
+      "last_sequence": 800000,
+      "compressed_bytes": 1540348,
+      "csv_bytes": 9377718,
+      "sha256": "a089c1531fdec74b53c02e34837f7cda5f3e1f805dbdfd6656346c7b9aa0ce49"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00009.csv.gz",
+      "rows": 100000,
+      "first_sequence": 800001,
+      "last_sequence": 900000,
+      "compressed_bytes": 1540479,
+      "csv_bytes": 9377751,
+      "sha256": "0096812701332856fe6e05f7d624f3fb3b10380b563e2f0a99df8de1dd9320a0"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00010.csv.gz",
+      "rows": 100000,
+      "first_sequence": 900001,
+      "last_sequence": 1000000,
+      "compressed_bytes": 1539889,
+      "csv_bytes": 9377738,
+      "sha256": "65ef2705b539b5edc2861f8eb85142860f7af1a55b24cb509d4db47d2a8e50da"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00011.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1000001,
+      "last_sequence": 1100000,
+      "compressed_bytes": 1540074,
+      "csv_bytes": 9377704,
+      "sha256": "0f6d87ec4c45478066f314b780da61c52001c126abaab44700f2153dbce6a106"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00012.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1100001,
+      "last_sequence": 1200000,
+      "compressed_bytes": 1540156,
+      "csv_bytes": 9377757,
+      "sha256": "89d93e9f1af907896fafbf33f37d304309e0d64a26a2a947c193bef6970429d0"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00013.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1200001,
+      "last_sequence": 1300000,
+      "compressed_bytes": 1539974,
+      "csv_bytes": 9377719,
+      "sha256": "e84a48637564be9dba488ac9cc02784c52cb3d7cffe08b5f79cfc87b1b053a52"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00014.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1300001,
+      "last_sequence": 1400000,
+      "compressed_bytes": 1539843,
+      "csv_bytes": 9377736,
+      "sha256": "918ed18df8445ddc91621cb2ec95a80d2e7a0c92e053317d24941b7bcf8c7c80"
+    },
+    {
+      "object": "RY_Programme_Enquiry__c",
+      "file": "csv/RY_Programme_Enquiry__c/part-00015.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1400001,
+      "last_sequence": 1500000,
+      "compressed_bytes": 1540838,
+      "csv_bytes": 9377753,
+      "sha256": "438c1a90032f1f024746680892098f14cd08f938d7ea0518e8e3d0249ebb2675"
+    },
+    {
+      "object": "RY_Application__c",
+      "file": "csv/RY_Application__c/part-00001.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1,
+      "last_sequence": 100000,
+      "compressed_bytes": 1609898,
+      "csv_bytes": 11905984,
+      "sha256": "bee981ad11da64229710369d08c0c3b5c9203d9125c011e7df8d4109d21015c6"
+    },
+    {
+      "object": "RY_Application__c",
+      "file": "csv/RY_Application__c/part-00002.csv.gz",
+      "rows": 100000,
+      "first_sequence": 100001,
+      "last_sequence": 200000,
+      "compressed_bytes": 1609985,
+      "csv_bytes": 11905984,
+      "sha256": "36e923dc2b6633e21b7e0576711f58516767f1e6decebcdcb433f38cf588dfdf"
+    },
+    {
+      "object": "RY_Application__c",
+      "file": "csv/RY_Application__c/part-00003.csv.gz",
+      "rows": 100000,
+      "first_sequence": 200001,
+      "last_sequence": 300000,
+      "compressed_bytes": 1609377,
+      "csv_bytes": 11905985,
+      "sha256": "fda41040fff78f86a2585c18171d754b1a2a92139d3f743a35116b4d09ce6665"
+    },
+    {
+      "object": "RY_Application__c",
+      "file": "csv/RY_Application__c/part-00004.csv.gz",
+      "rows": 100000,
+      "first_sequence": 300001,
+      "last_sequence": 400000,
+      "compressed_bytes": 1557444,
+      "csv_bytes": 11455984,
+      "sha256": "6b18e9b551129a4245391bf692550f9b0f620d3a0b20031d69fa904354add773"
+    },
+    {
+      "object": "RY_Student__c",
+      "file": "csv/RY_Student__c/part-00001.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1,
+      "last_sequence": 100000,
+      "compressed_bytes": 792994,
+      "csv_bytes": 6008742,
+      "sha256": "512ca18e26d66bf93a843e06b2efe3c7aec6143d6353e4ba0647ed7740110442"
+    },
+    {
+      "object": "RY_Student__c",
+      "file": "csv/RY_Student__c/part-00002.csv.gz",
+      "rows": 100000,
+      "first_sequence": 100001,
+      "last_sequence": 200000,
+      "compressed_bytes": 793208,
+      "csv_bytes": 6008744,
+      "sha256": "fd18e09b0a9433084932bcc670aea85974602844280333764a4276a944bba184"
+    },
+    {
+      "object": "RY_Student__c",
+      "file": "csv/RY_Student__c/part-00003.csv.gz",
+      "rows": 100000,
+      "first_sequence": 200001,
+      "last_sequence": 300000,
+      "compressed_bytes": 793168,
+      "csv_bytes": 6008744,
+      "sha256": "bab15487d723e7febb4d05a1955c7ca40c5066acf2d38cbc1240e17b4ebd42fb"
+    },
+    {
+      "object": "RY_Enrolment__c",
+      "file": "csv/RY_Enrolment__c/part-00001.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1,
+      "last_sequence": 100000,
+      "compressed_bytes": 1311671,
+      "csv_bytes": 9356637,
+      "sha256": "1b3a0247f1c526293a706c8b94d079ab6525e4226ab426ebed6a4ed2970bc800"
+    },
+    {
+      "object": "RY_Enrolment__c",
+      "file": "csv/RY_Enrolment__c/part-00002.csv.gz",
+      "rows": 100000,
+      "first_sequence": 100001,
+      "last_sequence": 200000,
+      "compressed_bytes": 1311682,
+      "csv_bytes": 9356641,
+      "sha256": "0fafd98f71aafc542b8c74c1fd73dae226ef0e7f86894fdab0b5dfea5655bf26"
+    },
+    {
+      "object": "RY_Enrolment__c",
+      "file": "csv/RY_Enrolment__c/part-00003.csv.gz",
+      "rows": 100000,
+      "first_sequence": 200001,
+      "last_sequence": 300000,
+      "compressed_bytes": 1311243,
+      "csv_bytes": 9356642,
+      "sha256": "202cf88d8009b79f3ac5f77ee4d408ce1b78be1e07bf4be50d82fc17d798638f"
+    },
+    {
+      "object": "RY_Enrolment__c",
+      "file": "csv/RY_Enrolment__c/part-00004.csv.gz",
+      "rows": 50000,
+      "first_sequence": 300001,
+      "last_sequence": 350000,
+      "compressed_bytes": 655639,
+      "csv_bytes": 4678364,
+      "sha256": "40dd3f5a5687379819c530b3458e843a74acbf9ed95558e1c74b3177e75cef6e"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00001.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1,
+      "last_sequence": 100000,
+      "compressed_bytes": 1155149,
+      "csv_bytes": 6753373,
+      "sha256": "5ccb362f87ae1551cc8aa5760f856b77f107826fc04126aee1223573ccbb3194"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00002.csv.gz",
+      "rows": 100000,
+      "first_sequence": 100001,
+      "last_sequence": 200000,
+      "compressed_bytes": 1155052,
+      "csv_bytes": 6753369,
+      "sha256": "5027782c2dee51f5f1a8fbb9167f500fa4d6a966d328044aa24ab61ee39ddd94"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00003.csv.gz",
+      "rows": 100000,
+      "first_sequence": 200001,
+      "last_sequence": 300000,
+      "compressed_bytes": 1155045,
+      "csv_bytes": 6753370,
+      "sha256": "bd44c3bac7556274a97cc1545ae66addbad78240c2b10c772beb53cdf7e253f7"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00004.csv.gz",
+      "rows": 100000,
+      "first_sequence": 300001,
+      "last_sequence": 400000,
+      "compressed_bytes": 1154786,
+      "csv_bytes": 6753368,
+      "sha256": "98b914569abaee67a79d3b7b92a65446e605601627eff22a1300d357e852f2e9"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00005.csv.gz",
+      "rows": 100000,
+      "first_sequence": 400001,
+      "last_sequence": 500000,
+      "compressed_bytes": 1155031,
+      "csv_bytes": 6753379,
+      "sha256": "f8d96f80c2374edb2f00614ee33642b3c219d8ea9b7d19d5ea6218ebef376d72"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00006.csv.gz",
+      "rows": 100000,
+      "first_sequence": 500001,
+      "last_sequence": 600000,
+      "compressed_bytes": 1154841,
+      "csv_bytes": 6753378,
+      "sha256": "4ec6e235259db12cecf0f840c2bed7820e7a651e37ec2ca409a797adba7f6757"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00007.csv.gz",
+      "rows": 100000,
+      "first_sequence": 600001,
+      "last_sequence": 700000,
+      "compressed_bytes": 1154932,
+      "csv_bytes": 6753372,
+      "sha256": "83f916e7a831a6fbfb24c060ee63411c8141facd3c59c0add9f5c1ec3090c851"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00008.csv.gz",
+      "rows": 100000,
+      "first_sequence": 700001,
+      "last_sequence": 800000,
+      "compressed_bytes": 1155075,
+      "csv_bytes": 6753373,
+      "sha256": "785b6785758ca5ae1e82d1d6b0ffcaaaa6bb105ad19fcf72ec44b778dd7a303e"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00009.csv.gz",
+      "rows": 100000,
+      "first_sequence": 800001,
+      "last_sequence": 900000,
+      "compressed_bytes": 1155057,
+      "csv_bytes": 6753365,
+      "sha256": "9cb7670cb1a5be596143fc5c00b22fc43550b99b15475b3d227b12fdefbf330c"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00010.csv.gz",
+      "rows": 100000,
+      "first_sequence": 900001,
+      "last_sequence": 1000000,
+      "compressed_bytes": 1155312,
+      "csv_bytes": 6753371,
+      "sha256": "af77b97ae12c34676e09f464d36c24a1aafe9a5e2db78e7efb55822b0d8bc27a"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00011.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1000001,
+      "last_sequence": 1100000,
+      "compressed_bytes": 1155094,
+      "csv_bytes": 6753375,
+      "sha256": "3ac057384587f7b03b54bf32042a8138d2172d0a862b2eedc8c0b1624c343d3d"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00012.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1100001,
+      "last_sequence": 1200000,
+      "compressed_bytes": 1154611,
+      "csv_bytes": 6753380,
+      "sha256": "1365ce285c56fbb68ad8fd1646b83509853467707d97fde8443a68f704976565"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00013.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1200001,
+      "last_sequence": 1300000,
+      "compressed_bytes": 1154999,
+      "csv_bytes": 6753376,
+      "sha256": "cddb58b5a9cf10cd7b3f8e22aed7812ed75f531034dee9adc8e96351ec20cab8"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00014.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1300001,
+      "last_sequence": 1400000,
+      "compressed_bytes": 1155250,
+      "csv_bytes": 6753368,
+      "sha256": "b196e45d34aa2bef6ee74f6ce0248d4ffd65eaa0ff5a49722022984a173728ab"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00015.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1400001,
+      "last_sequence": 1500000,
+      "compressed_bytes": 1155055,
+      "csv_bytes": 6753371,
+      "sha256": "3351ce6aab262d6a8219c657a649f4d285ed74cad844a125c08f744da90edd01"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00016.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1500001,
+      "last_sequence": 1600000,
+      "compressed_bytes": 1154891,
+      "csv_bytes": 6753367,
+      "sha256": "a367d1f0eaa18874b57677da61fa14062aa76871bf1d5ae804308e6254996f7d"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00017.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1600001,
+      "last_sequence": 1700000,
+      "compressed_bytes": 1155358,
+      "csv_bytes": 6753371,
+      "sha256": "9e704443ff2e9d871e2a36e6fa5e5aa8183c941d934fbc2bb9bc0173e2eaef1f"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00018.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1700001,
+      "last_sequence": 1800000,
+      "compressed_bytes": 1155162,
+      "csv_bytes": 6753382,
+      "sha256": "02ce5e5d6f0146fd09a3246a60b1e136fa82092dbd428361ba5e5aed7c4324a6"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00019.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1800001,
+      "last_sequence": 1900000,
+      "compressed_bytes": 1155021,
+      "csv_bytes": 6753378,
+      "sha256": "d3b112918d01f37b1d68bc8f888855f0f49be511a9be64d605d9f6beb2c5c4bc"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00020.csv.gz",
+      "rows": 100000,
+      "first_sequence": 1900001,
+      "last_sequence": 2000000,
+      "compressed_bytes": 1154731,
+      "csv_bytes": 6753369,
+      "sha256": "7fd61b211b10cca77094265612b78b04a3a68795c2878ae75ddf786f1e4c3842"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00021.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2000001,
+      "last_sequence": 2100000,
+      "compressed_bytes": 1155100,
+      "csv_bytes": 6753370,
+      "sha256": "53f70eb593a50ccb2d55475bcd66dfdf026ae104e17d19468b6f4a8b33e69293"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00022.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2100001,
+      "last_sequence": 2200000,
+      "compressed_bytes": 1155135,
+      "csv_bytes": 6753372,
+      "sha256": "737e325fca3ac8817c477719e4b21fc391153143cf07c85bbcde5c94926b250a"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00023.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2200001,
+      "last_sequence": 2300000,
+      "compressed_bytes": 1154765,
+      "csv_bytes": 6753366,
+      "sha256": "a2cb49313631bf309a328a7d189837373dbb6492a10be99783d1c47888e5d368"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00024.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2300001,
+      "last_sequence": 2400000,
+      "compressed_bytes": 1155144,
+      "csv_bytes": 6753375,
+      "sha256": "9c20b93dd1bdd07938276ce1a1f460456ff804f6434e8cdbc9aee271523710a3"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00025.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2400001,
+      "last_sequence": 2500000,
+      "compressed_bytes": 1155103,
+      "csv_bytes": 6753383,
+      "sha256": "212ac98ebe110e5ca97c530a24ba186eac01bbab6637dda62f937b17ccf351f7"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00026.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2500001,
+      "last_sequence": 2600000,
+      "compressed_bytes": 1155076,
+      "csv_bytes": 6753373,
+      "sha256": "aeab4b785ce7fcfe1d7418cc6501f9828bcc6ec810e139624b03f90349b4a0dd"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00027.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2600001,
+      "last_sequence": 2700000,
+      "compressed_bytes": 1154974,
+      "csv_bytes": 6753369,
+      "sha256": "693b945218df7a79e0d68aab694804f13ba3ed30fd14af96e55dcd96a2bdd1c6"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00028.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2700001,
+      "last_sequence": 2800000,
+      "compressed_bytes": 1154908,
+      "csv_bytes": 6753368,
+      "sha256": "69bf9c316d66362bf61b4772c392ebf350b99a71e4ad817ca00b01e027badeb4"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00029.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2800001,
+      "last_sequence": 2900000,
+      "compressed_bytes": 1155596,
+      "csv_bytes": 6753372,
+      "sha256": "9ad3adf790b85f13216d892e5c0f9d5215cd84f3bf9d31b11d134048770f1e9d"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00030.csv.gz",
+      "rows": 100000,
+      "first_sequence": 2900001,
+      "last_sequence": 3000000,
+      "compressed_bytes": 1155283,
+      "csv_bytes": 6753372,
+      "sha256": "63d2944445bd832e22ca7b189f4c4a8e9ffba9ea4c50be5709cf4dcefda1a34c"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00031.csv.gz",
+      "rows": 100000,
+      "first_sequence": 3000001,
+      "last_sequence": 3100000,
+      "compressed_bytes": 1154918,
+      "csv_bytes": 6753378,
+      "sha256": "2baaab35296083e60693782196bf2adcf2a5f51b2576530d254bb1f0eece92d6"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00032.csv.gz",
+      "rows": 100000,
+      "first_sequence": 3100001,
+      "last_sequence": 3200000,
+      "compressed_bytes": 1155208,
+      "csv_bytes": 6753379,
+      "sha256": "9e66c7dc9cbc9ece55e548d6f8e968fd658486234370b7db7c80b383c5051a7a"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00033.csv.gz",
+      "rows": 100000,
+      "first_sequence": 3200001,
+      "last_sequence": 3300000,
+      "compressed_bytes": 1154685,
+      "csv_bytes": 6753368,
+      "sha256": "6fceea70c514f2bbb423b43f8718b2763d79d24b5ea59b24687d3dfd319ea7c8"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00034.csv.gz",
+      "rows": 100000,
+      "first_sequence": 3300001,
+      "last_sequence": 3400000,
+      "compressed_bytes": 1155411,
+      "csv_bytes": 6753370,
+      "sha256": "1ce74ffb648a8c7ef9a7b5709c25c6cd23b49f8d24d4ead1010256d467392818"
+    },
+    {
+      "object": "RY_Student_Progress__c",
+      "file": "csv/RY_Student_Progress__c/part-00035.csv.gz",
+      "rows": 100000,
+      "first_sequence": 3400001,
+      "last_sequence": 3500000,
+      "compressed_bytes": 1155101,
+      "csv_bytes": 6753370,
+      "sha256": "8408b6df0b0dbfe4b5ce98863705f8ea7e56d3e06b1afef9415c538be3e14c24"
+    }
+  ],
+  "quality": {
+    "RY_Programme__c": {
+      "rows_with_injected_mutations": 0,
+      "mutation_events": {},
+      "note": "Catalogue retains small dirty seed; its issues are recorded in the repository's issue register."
+    },
+    "RY_Programme_Offering__c": {
+      "rows_with_injected_mutations": 0,
+      "mutation_events": {},
+      "note": "Catalogue retains small dirty seed; its issues are recorded in the repository's issue register."
+    },
+    "RY_Intake__c": {
+      "rows_with_injected_mutations": 0,
+      "mutation_events": {},
+      "note": "Catalogue retains small dirty seed; its issues are recorded in the repository's issue register."
+    },
+    "Account": {
+      "rows_with_injected_mutations": 800,
+      "mutation_events": {
+        "business_duplicate_name": 800
+      },
+      "note": "Flag counts may overlap on the same row."
+    },
+    "Contact": {
+      "rows_with_injected_mutations": 1001325,
+      "mutation_events": {
+        "phone_format": 259740,
+        "country_alias": 222222,
+        "missing_phone": 181818,
+        "name_whitespace_case": 153846,
+        "missing_email": 117647,
+        "email_case": 99072,
+        "surname_case": 86956,
+        "city_format": 68965,
+        "suspect_email": 57525,
+        "business_duplicate_identity": 40000
+      },
+      "note": "Flag counts may overlap on the same row."
+    },
+    "Lead": {
+      "rows_with_injected_mutations": 592366,
+      "mutation_events": {
+        "cross_object_duplicate_identity": 200000,
+        "phone_format": 129870,
+        "status_typo": 142857,
+        "country_alias": 111111,
+        "missing_phone": 90909,
+        "name_whitespace_case": 76923,
+        "missing_email": 58823,
+        "email_case": 49536,
+        "surname_case": 43478,
+        "city_format": 34482,
+        "suspect_email": 28763,
+        "business_duplicate_identity": 20000
+      },
+      "note": "Flag counts may overlap on the same row."
+    },
+    "Campaign": {
+      "rows_with_injected_mutations": 190,
+      "mutation_events": {
+        "channel_alias": 153,
+        "business_duplicate_name": 40
+      },
+      "note": "Flag counts may overlap on the same row."
+    },
+    "CampaignMember": {
+      "rows_with_injected_mutations": 0,
+      "mutation_events": {},
+      "note": "Flag counts may overlap on the same row."
+    },
+    "Opportunity": {
+      "rows_with_injected_mutations": 53298,
+      "mutation_events": {
+        "status_typo": 29411,
+        "amount_outlier": 13513,
+        "close_date_outlier": 12195
+      },
+      "note": "Flag counts may overlap on the same row."
+    },
+    "RY_Programme_Enquiry__c": {
+      "rows_with_injected_mutations": 162539,
+      "mutation_events": {
+        "channel_alias": 88235,
+        "status_case": 78947
+      },
+      "note": "Flag counts may overlap on the same row."
+    },
+    "RY_Application__c": {
+      "rows_with_injected_mutations": 31190,
+      "mutation_events": {
+        "status_case": 23529,
+        "decision_before_submission": 8139
+      },
+      "note": "Flag counts may overlap on the same row."
+    },
+    "RY_Student__c": {
+      "rows_with_injected_mutations": 13043,
+      "mutation_events": {
+        "student_number_format": 13043
+      },
+      "note": "Flag counts may overlap on the same row."
+    },
+    "RY_Enrolment__c": {
+      "rows_with_injected_mutations": 29491,
+      "mutation_events": {
+        "status_typo": 20588,
+        "fee_outlier": 9459
+      },
+      "note": "Flag counts may overlap on the same row."
+    },
+    "RY_Student_Progress__c": {
+      "rows_with_injected_mutations": 229699,
+      "mutation_events": {
+        "risk_evidence_mismatch": 120689,
+        "zero_mark_placeholder": 112903
+      },
+      "note": "Flag counts may overlap on the same row."
+    }
+  },
+  "elapsed_seconds": 1082.2,
+  "synthetic_intakes": "2015-2026, two starts/year/offering; fabricated for load testing, not website facts",
+  "warning": "Not the institution's actual customer volume. Org storage and API capacity must be checked before Salesforce import."
+}

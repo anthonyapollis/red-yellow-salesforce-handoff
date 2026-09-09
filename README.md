@@ -17,3 +17,8 @@ There are 66 loadable mutation events and 15 additional raw-tier mutation events
     python tools/test_dirty_data.py
 
 Local structural checks pass for dirty_loadable and intentionally fail for dirty_raw. No live Salesforce import has been performed. Org-specific rules may reject some intended duplicates; report those without silently cleaning or disabling rules.
+
+## Large synthetic data
+
+A 12.6-million-row synthetic dirty dataset is published as a GitHub Release asset, not in normal Git history. See docs/SCALE_DATA_GUIDE.md.
+

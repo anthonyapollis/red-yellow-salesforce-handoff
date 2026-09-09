@@ -1,0 +1,101 @@
+RY_External_ID__c,FirstName,LastName,Company,Email,Phone,City,Country,RY_Sample_Status__c
+RYSCALE-LEAD-000000001,David,Ndlovu,DEMO Individual Applicant,prospect000000001@example.com,+27 00 0000001,Johannesburg,South Africa,New enquiry
+RYSCALE-LEAD-000000002,Kabelo,Botha,DEMO Individual Applicant,prospect000000002@example.com,+27 00 0000002,Durban,South Africa,New enquiry
+RYSCALE-LEAD-000000003,Karabo,Mokoena,DEMO Individual Applicant,prospect000000003@example.com,+27 00 0000003,Pretoria,South Africa,New enquiry
+RYSCALE-LEAD-000000004,Naledi,Maseko,DEMO Individual Applicant,prospect000000004@example.com,+27 00 0000004,Gqeberha,South Africa,New enquiry
+RYSCALE-LEAD-000000005,Zanele,Mokoena,DEMO Individual Applicant,customer000000035@example.com,+27 00 0000005,Bloemfontein,South Africa,New enquiry
+RYSCALE-LEAD-000000006,Amina,Patel,DEMO Individual Applicant,prospect000000006@example.com,+27 00 0000006,Polokwane,South Africa,New enquiry
+RYSCALE-LEAD-000000007,Thabo,Smith,DEMO Individual Applicant,prospect000000007@example.com,+27-00-0000007,Kimberley,South Africa,new enqurey 
+RYSCALE-LEAD-000000008,Lwazi,Khumalo,DEMO Individual Applicant,prospect000000008@example.com,+27 00 0000008,Cape Town,South Africa,New enquiry
+RYSCALE-LEAD-000000009,Emma,Nkosi,DEMO Individual Applicant,prospect000000009@example.com,+27 00 0000009,Johannesburg,ZA,New enquiry
+RYSCALE-LEAD-000000010,Mpho,Patel,DEMO Individual Applicant,customer000000070@example.com,+27 00 0000010,Durban,South Africa,New enquiry
+RYSCALE-LEAD-000000011,Zanele,Williams,DEMO Individual Applicant,prospect000000011@example.com,,Pretoria,South Africa,New enquiry
+RYSCALE-LEAD-000000012,Nomsa,Jacobs,DEMO Individual Applicant,prospect000000012@example.com,+27 00 0000012,Gqeberha,South Africa,New enquiry
+RYSCALE-LEAD-000000013, daniel ,Adams,DEMO Individual Applicant,prospect000000013@example.com,+27 00 0000013,Bloemfontein,South Africa,New enquiry
+RYSCALE-LEAD-000000014,Ayesha,Petersen,DEMO Individual Applicant,prospect000000014@example.com,+27-00-0000014,Polokwane,South Africa,new enqurey 
+RYSCALE-LEAD-000000015,Emma,Nkosi,DEMO Individual Applicant,customer000000105@example.com,+27 00 0000015,Kimberley,South Africa,New enquiry
+RYSCALE-LEAD-000000016,Nandi,Dlamini,DEMO Individual Applicant,prospect000000016@example.com,+27 00 0000016,Cape Town,South Africa,New enquiry
+RYSCALE-LEAD-000000017,Ravi,Ndlovu,DEMO Individual Applicant,,+27 00 0000017,Johannesburg,South Africa,New enquiry
+RYSCALE-LEAD-000000018,Fatima,Botha,DEMO Individual Applicant,prospect000000018@example.com,+27 00 0000018,Durban,ZA,New enquiry
+RYSCALE-LEAD-000000019,Imran,Mokoena,DEMO Individual Applicant,PROSPECT000000019@EXAMPLE.COM,+27 00 0000019,Pretoria,South Africa,New enquiry
+RYSCALE-LEAD-000000020,Buhle,Jacobs,DEMO Individual Applicant,customer000000140@example.com,+27 00 0000020,Gqeberha,South Africa,New enquiry
+RYSCALE-LEAD-000000021,Sipho,Molefe,DEMO Individual Applicant,prospect000000021@example.com,+27-00-0000021,Bloemfontein,South Africa,new enqurey 
+RYSCALE-LEAD-000000022,Mpho,Patel,DEMO Individual Applicant,prospect000000022@example.com,,Polokwane,South Africa,New enquiry
+RYSCALE-LEAD-000000023,Sizwe,SMITH,DEMO Individual Applicant,prospect000000023@example.com,+27 00 0000023,Kimberley,South Africa,New enquiry
+RYSCALE-LEAD-000000024,Lerato,Khumalo,DEMO Individual Applicant,prospect000000024@example.com,+27 00 0000024,Cape Town,South Africa,New enquiry
+RYSCALE-LEAD-000000025,Thabo,Naidoo,DEMO Individual Applicant,customer000000175@example.com,+27 00 0000025,Johannesburg,South Africa,New enquiry
+RYSCALE-LEAD-000000026, kabelo ,Hassan,DEMO Individual Applicant,prospect000000026@example.com,+27 00 0000026,Durban,South Africa,New enquiry
+RYSCALE-LEAD-000000027,Karabo,Williams,DEMO Individual Applicant,prospect000000027@example.com,+27 00 0000027,Pretoria,ZA,New enquiry
+RYSCALE-LEAD-000000028,Naledi,Jacobs,DEMO Individual Applicant,prospect000000028@example.com,+27-00-0000028,Gqeberha,South Africa,new enqurey 
+RYSCALE-LEAD-000000029,Siyanda,Adams,DEMO Individual Applicant,prospect000000029@example.com,+27 00 0000029,BLOEMFONTEIN ,South Africa,New enquiry
+RYSCALE-LEAD-000000030,Fatima,Botha,DEMO Individual Applicant,customer000000210@example.com,+27 00 0000030,Polokwane,South Africa,New enquiry
+RYSCALE-LEAD-000000031,Thabo,Naidoo,DEMO Individual Applicant,prospect000000031.typo@example.com,+27 00 0000031,Kimberley,South Africa,New enquiry
+RYSCALE-LEAD-000000032,Lwazi,Dlamini,DEMO Individual Applicant,prospect000000032@example.com,+27 00 0000032,Cape Town,South Africa,New enquiry
+RYSCALE-LEAD-000000033,Emma,Ndlovu,DEMO Individual Applicant,prospect000000033@example.com,,Johannesburg,South Africa,New enquiry
+RYSCALE-LEAD-000000034,Chloe,Botha,DEMO Individual Applicant,,+27 00 0000034,Durban,South Africa,New enquiry
+RYSCALE-LEAD-000000035,Siyanda,Molefe,DEMO Individual Applicant,customer000000245@example.com,+27-00-0000035,Pretoria,South Africa,new enqurey 
+RYSCALE-LEAD-000000036,Nomsa,Maseko,DEMO Individual Applicant,prospect000000036@example.com,+27 00 0000036,Gqeberha,ZA,New enquiry
+RYSCALE-LEAD-000000037,Daniel,Molefe,DEMO Individual Applicant,prospect000000037@example.com,+27 00 0000037,Bloemfontein,South Africa,New enquiry
+RYSCALE-LEAD-000000038,Ayesha,Patel,DEMO Individual Applicant,PROSPECT000000038@EXAMPLE.COM,+27 00 0000038,Polokwane,South Africa,New enquiry
+RYSCALE-LEAD-000000039, priya ,Smith,DEMO Individual Applicant,prospect000000039@example.com,+27 00 0000039,Kimberley,South Africa,New enquiry
+RYSCALE-LEAD-000000040,Nandi,Khumalo,DEMO Individual Applicant,customer000000280@example.com,+27 00 0000040,Cape Town,South Africa,New enquiry
+RYSCALE-LEAD-000000041,Ravi,Nkosi,DEMO Individual Applicant,prospect000000041@example.com,+27 00 0000041,Johannesburg,South Africa,New enquiry
+RYSCALE-LEAD-000000042,Fatima,Hassan,DEMO Individual Applicant,prospect000000042@example.com,+27-00-0000042,Durban,South Africa,new enqurey 
+RYSCALE-LEAD-000000043,Imran,Williams,DEMO Individual Applicant,prospect000000043@example.com,+27 00 0000043,Pretoria,South Africa,New enquiry
+RYSCALE-LEAD-000000044,Buhle,Jacobs,DEMO Individual Applicant,prospect000000044@example.com,,Gqeberha,South Africa,New enquiry
+RYSCALE-LEAD-000000045,Karabo,Williams,DEMO Individual Applicant,customer000000315@example.com,+27 00 0000045,Bloemfontein,ZA,New enquiry
+RYSCALE-LEAD-000000046,Mpho,PETERSEN,DEMO Individual Applicant,prospect000000046@example.com,+27 00 0000046,Polokwane,South Africa,New enquiry
+RYSCALE-LEAD-000000047,Sizwe,Naidoo,DEMO Individual Applicant,prospect000000047@example.com,+27 00 0000047,Kimberley,South Africa,New enquiry
+RYSCALE-LEAD-000000048,Lerato,Dlamini,DEMO Individual Applicant,prospect000000048@example.com,+27 00 0000048,Cape Town,South Africa,New enquiry
+RYSCALE-LEAD-000000049,David,Ndlovu,DEMO Individual Applicant,prospect000000049@example.com,+27-00-0000049,Johannesburg,South Africa,new enqurey 
+RYSCALE-LEAD-000000050,Daniel,Adams,DEMO Individual Applicant,customer000000349@example.com,+27 00 0000049,Johannesburg,South Africa,New enquiry
+RYSCALE-LEAD-000000051,Karabo,Mokoena,DEMO Individual Applicant,,+27 00 0000051,Pretoria,South Africa,New enquiry
+RYSCALE-LEAD-000000052, naledi ,Maseko,DEMO Individual Applicant,prospect000000052@example.com,+27 00 0000052,Gqeberha,South Africa,New enquiry
+RYSCALE-LEAD-000000053,Siyanda,Molefe,DEMO Individual Applicant,prospect000000053@example.com,+27 00 0000053,Bloemfontein,South Africa,New enquiry
+RYSCALE-LEAD-000000054,Amina,Patel,DEMO Individual Applicant,prospect000000054@example.com,+27 00 0000054,Polokwane,ZA,New enquiry
+RYSCALE-LEAD-000000055,David,Ndlovu,DEMO Individual Applicant,customer000000385@example.com,,Kimberley,South Africa,New enquiry
+RYSCALE-LEAD-000000056,Lwazi,Khumalo,DEMO Individual Applicant,prospect000000056@example.com,+27-00-0000056,Cape Town,South Africa,new enqurey 
+RYSCALE-LEAD-000000057,Emma,Nkosi,DEMO Individual Applicant,PROSPECT000000057@EXAMPLE.COM,+27 00 0000057,Johannesburg,South Africa,New enquiry
+RYSCALE-LEAD-000000058,Chloe,Hassan,DEMO Individual Applicant,prospect000000058@example.com,+27 00 0000058,DURBAN ,South Africa,New enquiry
+RYSCALE-LEAD-000000059,Zanele,Williams,DEMO Individual Applicant,prospect000000059@example.com,+27 00 0000059,Pretoria,South Africa,New enquiry
+RYSCALE-LEAD-000000060,Nomsa,Maseko,DEMO Individual Applicant,customer000000420@example.com,+27 00 0000060,Gqeberha,South Africa,New enquiry
+RYSCALE-LEAD-000000061,Daniel,Adams,DEMO Individual Applicant,prospect000000061@example.com,+27 00 0000061,Bloemfontein,South Africa,New enquiry
+RYSCALE-LEAD-000000062,Ayesha,Petersen,DEMO Individual Applicant,prospect000000062.typo@example.com,+27 00 0000062,Polokwane,South Africa,New enquiry
+RYSCALE-LEAD-000000063,Priya,Naidoo,DEMO Individual Applicant,prospect000000063@example.com,+27-00-0000063,Kimberley,ZA,new enqurey 
+RYSCALE-LEAD-000000064,Nandi,Dlamini,DEMO Individual Applicant,prospect000000064@example.com,+27 00 0000064,Cape Town,South Africa,New enquiry
+RYSCALE-LEAD-000000065, sizwe ,Smith,DEMO Individual Applicant,customer000000455@example.com,+27 00 0000065,Johannesburg,South Africa,New enquiry
+RYSCALE-LEAD-000000066,Fatima,Botha,DEMO Individual Applicant,prospect000000066@example.com,,Durban,South Africa,New enquiry
+RYSCALE-LEAD-000000067,Imran,Mokoena,DEMO Individual Applicant,prospect000000067@example.com,+27 00 0000067,Pretoria,South Africa,New enquiry
+RYSCALE-LEAD-000000068,Buhle,Maseko,DEMO Individual Applicant,,+27 00 0000068,Gqeberha,South Africa,New enquiry
+RYSCALE-LEAD-000000069,Sipho,MOLEFE,DEMO Individual Applicant,prospect000000069@example.com,+27 00 0000069,Bloemfontein,South Africa,New enquiry
+RYSCALE-LEAD-000000070,Chloe,Hassan,DEMO Individual Applicant,customer000000490@example.com,+27-00-0000070,Polokwane,South Africa,new enqurey 
+RYSCALE-LEAD-000000071,Sizwe,Smith,DEMO Individual Applicant,prospect000000071@example.com,+27 00 0000071,Kimberley,South Africa,New enquiry
+RYSCALE-LEAD-000000072,Lerato,Khumalo,DEMO Individual Applicant,prospect000000072@example.com,+27 00 0000072,Cape Town,ZA,New enquiry
+RYSCALE-LEAD-000000073,David,Nkosi,DEMO Individual Applicant,prospect000000073@example.com,+27 00 0000073,Johannesburg,South Africa,New enquiry
+RYSCALE-LEAD-000000074,Kabelo,Hassan,DEMO Individual Applicant,prospect000000074@example.com,+27 00 0000074,Durban,South Africa,New enquiry
+RYSCALE-LEAD-000000075,Sipho,Adams,DEMO Individual Applicant,customer000000525@example.com,+27 00 0000075,Pretoria,South Africa,New enquiry
+RYSCALE-LEAD-000000076,Naledi,Jacobs,DEMO Individual Applicant,PROSPECT000000076@EXAMPLE.COM,+27 00 0000076,Gqeberha,South Africa,New enquiry
+RYSCALE-LEAD-000000077,Siyanda,Adams,DEMO Individual Applicant,prospect000000077@example.com,,Bloemfontein,South Africa,new enqurey 
+RYSCALE-LEAD-000000078, amina ,Petersen,DEMO Individual Applicant,prospect000000078@example.com,+27 00 0000078,Polokwane,South Africa,New enquiry
+RYSCALE-LEAD-000000079,Thabo,Naidoo,DEMO Individual Applicant,prospect000000079@example.com,+27 00 0000079,Kimberley,South Africa,New enquiry
+RYSCALE-LEAD-000000080,Lwazi,Dlamini,DEMO Individual Applicant,customer000000560@example.com,+27 00 0000080,Cape Town,South Africa,New enquiry
+RYSCALE-LEAD-000000081,Emma,Ndlovu,DEMO Individual Applicant,prospect000000081@example.com,+27 00 0000081,Johannesburg,ZA,New enquiry
+RYSCALE-LEAD-000000082,Chloe,Botha,DEMO Individual Applicant,prospect000000082@example.com,+27 00 0000082,Durban,South Africa,New enquiry
+RYSCALE-LEAD-000000083,Zanele,Mokoena,DEMO Individual Applicant,prospect000000083@example.com,+27 00 0000083,Pretoria,South Africa,New enquiry
+RYSCALE-LEAD-000000084,Nomsa,Maseko,DEMO Individual Applicant,prospect000000084@example.com,+27-00-0000084,Gqeberha,South Africa,new enqurey 
+RYSCALE-LEAD-000000085,Imran,Mokoena,DEMO Individual Applicant,,+27 00 0000085,Bloemfontein,South Africa,New enquiry
+RYSCALE-LEAD-000000086,Ayesha,Patel,DEMO Individual Applicant,prospect000000086@example.com,+27 00 0000086,Polokwane,South Africa,New enquiry
+RYSCALE-LEAD-000000087,Priya,Smith,DEMO Individual Applicant,prospect000000087@example.com,+27 00 0000087,KIMBERLEY ,South Africa,New enquiry
+RYSCALE-LEAD-000000088,Nandi,Khumalo,DEMO Individual Applicant,prospect000000088@example.com,,Cape Town,South Africa,New enquiry
+RYSCALE-LEAD-000000089,Ravi,Nkosi,DEMO Individual Applicant,prospect000000089@example.com,+27 00 0000089,Johannesburg,South Africa,New enquiry
+RYSCALE-LEAD-000000090,Amina,Patel,DEMO Individual Applicant,customer000000630@example.com,+27 00 0000090,Durban,ZA,New enquiry
+RYSCALE-LEAD-000000091, imran ,Williams,DEMO Individual Applicant,prospect000000091@example.com,+27-00-0000091,Pretoria,South Africa,new enqurey 
+RYSCALE-LEAD-000000092,Buhle,JACOBS,DEMO Individual Applicant,prospect000000092@example.com,+27 00 0000092,Gqeberha,South Africa,New enquiry
+RYSCALE-LEAD-000000093,Sipho,Adams,DEMO Individual Applicant,prospect000000093.typo@example.com,+27 00 0000093,Bloemfontein,South Africa,New enquiry
+RYSCALE-LEAD-000000094,Mpho,Petersen,DEMO Individual Applicant,prospect000000094@example.com,+27 00 0000094,Polokwane,South Africa,New enquiry
+RYSCALE-LEAD-000000095,Ravi,Nkosi,DEMO Individual Applicant,CUSTOMER000000665@EXAMPLE.COM,+27 00 0000095,Kimberley,South Africa,New enquiry
+RYSCALE-LEAD-000000096,Lerato,Dlamini,DEMO Individual Applicant,prospect000000096@example.com,+27 00 0000096,Cape Town,South Africa,New enquiry
+RYSCALE-LEAD-000000097,David,Ndlovu,DEMO Individual Applicant,prospect000000097@example.com,+27 00 0000097,Johannesburg,South Africa,New enquiry
+RYSCALE-LEAD-000000098,Kabelo,Botha,DEMO Individual Applicant,prospect000000098@example.com,+27-00-0000098,Durban,South Africa,new enqurey 
+RYSCALE-LEAD-000000099,Karabo,Mokoena,DEMO Individual Applicant,prospect000000099@example.com,,Pretoria,ZA,New enquiry
+RYSCALE-LEAD-000000100,Karabo,Williams,DEMO Individual Applicant,customer000000699@example.com,+27 00 0000099,Pretoria,South Africa,New enquiry
