@@ -19,6 +19,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml.ns import qn
+from docx.oxml import OxmlElement
 from docx.shared import Inches, Pt, RGBColor
 
 REPO = Path(__file__).resolve().parent.parent
@@ -208,13 +210,43 @@ def main():
     st.paragraph_format.space_after = Pt(7)
     st.paragraph_format.line_spacing = 1.14
 
-    def H(text, size=17, color=CHARCOAL, space_before=16):
-        p = d.add_paragraph()
+    # Chapter numbering. Real Word heading styles are used rather than bold
+    # paragraphs, because a table-of-contents field can only find headings -
+    # styled text that merely looks like a heading is invisible to it.
+    counters = {1: 0, 2: 0, 3: 0}
+
+    def H(text, size=17, color=CHARCOAL, space_before=16, number=True):
+        level = 1 if size >= 20 else (2 if size >= 16 else 3)
+        if number:
+            counters[level] += 1
+            for deeper in range(level + 1, 4):
+                counters[deeper] = 0
+            label = ".".join(str(counters[i]) for i in range(1, level + 1))
+            text = f"{label}  {text}"
+
+        p = d.add_heading("", level=level)
         p.paragraph_format.space_before = Pt(space_before)
         r = p.add_run(text)
         r.bold = True
         r.font.size = Pt(size)
         r.font.color.rgb = rgb(color)
+        r.font.name = "Calibri"
+        return p
+
+    def toc_field():
+        """Insert a TOC field. Word populates it when the document is opened
+        or converted; python-docx cannot compute page numbers itself."""
+        p = d.add_paragraph()
+        run = p.add_run()
+        fld = OxmlElement("w:fldSimple")
+        fld.set(qn("w:instr"), r'TOC \o "1-3" \h \z \u')
+        inner = OxmlElement("w:r")
+        t = OxmlElement("w:t")
+        t.text = ("Right-click here and choose Update Field to build the "
+                  "contents list.")
+        inner.append(t)
+        fld.append(inner)
+        run._r.addnext(fld)
         return p
 
     def caption(text):
@@ -267,6 +299,65 @@ def main():
                   "enrolment is synthetic. Nothing here is an export from Red & Yellow's "
                   "own systems.")
     r.italic = True; r.font.size = Pt(9); r.font.color.rgb = rgb(SLATE)
+    d.add_page_break()
+
+    # ---- contents --------------------------------------------------------
+    p = d.add_paragraph()
+    r = p.add_run("Contents")
+    r.bold = True
+    r.font.size = Pt(20)
+    r.font.color.rgb = rgb(RED)
+    toc_field()
+    d.add_page_break()
+
+    # ---- introduction ----------------------------------------------------
+    H("Introduction", 20, RED, 0)
+    d.add_paragraph(
+        "Red & Yellow advertised for a Data Analytics Engineer whose brief is "
+        "CRM integration: build the pipelines, catalogue the data, model it, and "
+        "put it in front of people who make decisions. The advert names six "
+        "things - a data catalogue, ERDs for internal systems, ETL preferably in "
+        "Apache NiFi, Salesforce data extracted and analysed, Power BI "
+        "dashboards, and data quality held to a standard.")
+    d.add_paragraph(
+        "This document is the working answer to all six, and it is written to be "
+        "checked rather than admired. Every figure in it is generated from a live "
+        "query or a live API call at the moment the document is built, so nothing "
+        "here can describe a pipeline that has stopped working. Where something "
+        "does not work, or could not be done, it says so.")
+
+    H("How to read it", 16, CHARCOAL, 12)
+    for label, text in [
+        ("The numbers first",
+         "Chapter 2 sets out what was built and how much of it there is."),
+        ("Then the decisions",
+         "Chapters 3 to 8 cover the modelling choices that are actually "
+         "arguable - spend attribution, de-duplication, what a blank means - "
+         "and what happened when each was got wrong first."),
+        ("Then the evidence",
+         "Chapters 9 to 11 show the Salesforce integration step by step, the "
+         "two predictive models with their metrics against a base rate, and the "
+         "running NiFi and Fabric infrastructure."),
+        ("Finally the limits",
+         "The last chapter is what this work does not claim."),
+    ]:
+        pr = d.add_paragraph(style="List Bullet")
+        rr = pr.add_run(f"{label}. ")
+        rr.bold = True
+        rr.font.color.rgb = rgb(RED)
+        pr.add_run(text)
+
+    d.add_paragraph()
+    warn = d.add_paragraph()
+    wr = warn.add_run(
+        "One thing to hold in mind throughout: the programme catalogue is real, "
+        "transcribed from Red & Yellow's public site. Everything about people - "
+        "every lead, contact, application, enrolment and result - is synthetic, "
+        "and the relationships between them were put there deliberately so the "
+        "pipeline had something to find. That makes this a demonstration of "
+        "method, not a finding about Red & Yellow.")
+    wr.italic = True
+    wr.font.color.rgb = rgb(SLATE)
     d.add_page_break()
 
     H("What this is", 20, RED, 0)

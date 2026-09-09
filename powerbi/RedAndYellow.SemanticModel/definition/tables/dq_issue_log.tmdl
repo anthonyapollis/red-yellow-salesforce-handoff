@@ -1,27 +1,27 @@
 table dq_issue_log
-	lineageTag: eff6bbaa-a983-46b3-9d7b-03b7ccaee50a
+	lineageTag: 01a617a8-d104-4bba-b3b4-1f57b10ac5dd
 
 	column entity
 		dataType: string
-		lineageTag: 1b3d07b6-452d-4f6a-94b8-788d3f320244
+		lineageTag: 1c9b616e-658c-4d64-bf34-42bc6c0b7c55
 		summarizeBy: none
 		sourceColumn: entity
 
 	column record_id
 		dataType: string
-		lineageTag: 3ea0a000-b2b3-4bd2-ab77-639d6619e1ed
+		lineageTag: 3d4d5103-2bda-4f13-a917-fd687778fa94
 		summarizeBy: none
 		sourceColumn: record_id
 
 	column issue_code
 		dataType: string
-		lineageTag: 580196f6-98cf-4393-a223-0acf8c685963
+		lineageTag: 69daf900-dabc-4c1b-841a-933db421095b
 		summarizeBy: none
 		sourceColumn: issue_code
 
 	column issue_description
 		dataType: string
-		lineageTag: b2b499d3-e68c-4dec-9931-626fbd92bd42
+		lineageTag: 24ddae06-4c5f-466f-96ca-e07e55100241
 		summarizeBy: none
 		sourceColumn: issue_description
 
@@ -34,3 +34,4 @@ table dq_issue_log
 				    Source
 
 	annotation PBI_ResultType = Table
+

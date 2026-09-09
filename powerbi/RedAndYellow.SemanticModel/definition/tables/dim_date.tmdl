@@ -1,80 +1,82 @@
 table dim_date
-	lineageTag: fb6fdf16-37cd-4f4e-9a89-f59ddeb475d2
+	lineageTag: 89b99869-d86e-4678-a494-45a91837cc0e
 	dataCategory: Time
 
 	column date_day
 		dataType: dateTime
 		isKey
 		formatString: yyyy-mm-dd
-		lineageTag: 12b3690f-1f86-4321-837b-0d4ff86f1c1a
+		lineageTag: 4ff2ba6e-c030-49f9-b1ae-ff4072c85d20
 		summarizeBy: none
 		sourceColumn: date_day
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column date_key
 		dataType: int64
 		formatString: #,0
-		lineageTag: 51167016-41d3-4928-8e12-4cb22bfe9f22
+		lineageTag: 579f9043-26ea-4d4c-9150-9c2a855090b8
 		summarizeBy: sum
 		sourceColumn: date_key
 
 	column calendar_year
 		dataType: int64
 		formatString: #,0
-		lineageTag: a7b194dd-579a-4ef2-b920-4b274f69a938
+		lineageTag: 6dc72ebc-df41-4ca2-9a13-8bc33aa0635d
 		summarizeBy: sum
 		sourceColumn: calendar_year
 
 	column calendar_month
 		dataType: int64
 		formatString: #,0
-		lineageTag: f4154457-0991-4f75-8a85-fbd433071e9d
+		lineageTag: 61c44feb-a44c-4dec-9407-63b89bcd9ac4
 		summarizeBy: sum
 		sourceColumn: calendar_month
 
 	column month_name
 		dataType: string
-		lineageTag: dd272023-da3f-4c44-838e-ee1a78f1edb1
+		lineageTag: 962d628c-a539-4f32-9834-a7f3b76233a1
 		summarizeBy: none
 		sourceColumn: month_name
 
 	column calendar_quarter
 		dataType: int64
 		formatString: #,0
-		lineageTag: 3dc74863-21f2-4f16-9e11-589d30d11e2f
+		lineageTag: d0353752-1421-41ce-8c62-1b7fe4a8aa24
 		summarizeBy: sum
 		sourceColumn: calendar_quarter
 
 	column iso_week
 		dataType: int64
 		formatString: #,0
-		lineageTag: 15258d10-133f-4aa6-9edd-3b203a63c780
+		lineageTag: 5bb4de5e-6b4f-48b6-b014-719327f4e9f1
 		summarizeBy: sum
 		sourceColumn: iso_week
 
 	column week_start
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: 49d33fa9-cf14-4a90-8388-3b01f6809846
+		lineageTag: 596c86c3-2d20-464d-b3df-28983175ed13
 		summarizeBy: none
 		sourceColumn: week_start
 
 	column month_start
 		dataType: dateTime
 		formatString: yyyy-mm-dd hh:nn:ss
-		lineageTag: 68fd3fa7-b007-4061-a519-b5482567d878
+		lineageTag: 0d75d593-9baa-4809-803e-724d3815fc8d
 		summarizeBy: none
 		sourceColumn: month_start
 
 	column is_weekend
 		dataType: int64
 		formatString: #,0
-		lineageTag: 721bcb74-daf4-401d-82a4-00cca9577962
+		lineageTag: 0abc8264-7e3a-4f3a-bd7c-1638771846ad
 		summarizeBy: sum
 		sourceColumn: is_weekend
 
 	column intake_season
 		dataType: string
-		lineageTag: 9c4cfd14-508a-4d06-82fd-8cdcbd97824c
+		lineageTag: 6ffda3fa-c36e-4785-82f4-dbf30264fec8
 		summarizeBy: none
 		sourceColumn: intake_season
 
@@ -87,3 +89,4 @@ table dim_date
 				    Source
 
 	annotation PBI_ResultType = Table
+

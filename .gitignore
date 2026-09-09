@@ -17,3 +17,8 @@ logs/
 powerbi/data/
 run_results/
 warehouse/ml/
+
+# Power BI Desktop local caches - .abf is the model data cache and runs to
+# hundreds of MB, well past GitHub's 100 MB file limit. Never source.
+.pbi/
+*.abf

@@ -1,110 +1,117 @@
 table dim_offering
-	lineageTag: 6c49db42-5d60-4035-aa58-ab3f1ef83404
+	lineageTag: 8099a977-2db9-40be-816d-3b1574f6ccfd
 
 	column offering_external_id
 		dataType: string
-		lineageTag: 3757a46b-d136-460f-b89b-fb0e62cd07fb
+		lineageTag: 79c002c7-8c1b-4812-8ca3-e137c3cdccd3
 		summarizeBy: none
 		sourceColumn: offering_external_id
 
 	column programme_external_id
 		dataType: string
-		lineageTag: 1fb55f75-f3d4-44f6-8c21-e6841ab624e5
+		lineageTag: 45d11220-0240-4ee5-be5d-721ca402b883
 		summarizeBy: none
 		sourceColumn: programme_external_id
 
 	column programme_title
 		dataType: string
-		lineageTag: 90d77195-a38d-491a-b661-fedbe1787714
+		lineageTag: ff12cc61-db8a-47ba-b0c8-41feca0cdcdf
 		summarizeBy: none
 		sourceColumn: programme_title
 
 	column category
 		dataType: string
-		lineageTag: 2bafdc59-8fb7-4cdd-a705-6c7530ea96bd
+		lineageTag: 91c3e313-edf4-4e92-ac6d-5a8ff8cdc3b6
 		summarizeBy: none
 		sourceColumn: category
 
 	column listed_body
 		dataType: string
-		lineageTag: 86c5e9e0-f0e7-413e-8f48-f0b6671a1e6d
+		lineageTag: 20ea7338-d26e-4305-b347-691e1716f5fa
 		summarizeBy: none
 		sourceColumn: listed_body
 
 	column offering_title
 		dataType: string
-		lineageTag: f1c0bd76-ccac-4950-bf1e-41f0b206736e
+		lineageTag: e50d920d-3750-496e-93fe-b8f983d9b5b6
 		summarizeBy: none
 		sourceColumn: offering_title
 
 	column catalogue_section
 		dataType: string
-		lineageTag: 90d24270-fcf3-4040-bf1d-699ed611e5e4
+		lineageTag: 4ce832af-d03e-49f0-806a-3fa40d87e490
 		summarizeBy: none
 		sourceColumn: catalogue_section
 
 	column delivery_mode
 		dataType: string
-		lineageTag: 2e6e66d8-cfec-4fcb-9608-66b18e28471a
+		lineageTag: 5936a697-db69-4ef0-8848-758658cd4a95
 		summarizeBy: none
 		sourceColumn: delivery_mode
 
 	column study_pace
 		dataType: string
-		lineageTag: 418fb57d-e783-4b2f-9a60-208b176e19d0
+		lineageTag: 96e64fce-2dfb-4ec5-8ba6-a7fae5bf3a12
 		summarizeBy: none
 		sourceColumn: study_pace
 
 	column duration_value
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: f02e22d6-8831-4ce0-bd0c-351fbe17dd02
+		lineageTag: 4078a69d-49dd-4f3a-a823-f067cad3ae19
 		summarizeBy: sum
 		sourceColumn: duration_value
 
 	column duration_unit
 		dataType: string
-		lineageTag: 1086c6b7-7423-4e14-b48b-1d7d2fe97227
+		lineageTag: 9de35be4-fe22-49b2-9741-3d78fe3d3992
 		summarizeBy: none
 		sourceColumn: duration_unit
 
 	column advertised_fee_zar
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: 85fffcf2-86d7-485d-8ad1-0733f7b6dae4
+		lineageTag: 17b1c095-5ffa-4667-ba7f-89f2a82faf4a
 		summarizeBy: sum
 		sourceColumn: advertised_fee_zar
 
 	column price_status
 		dataType: string
-		lineageTag: 125f0257-ac4c-49a2-a202-3ef68ce497a1
+		lineageTag: b1a4d272-5b7b-4d49-a591-31ba4886eb5b
 		summarizeBy: none
 		sourceColumn: price_status
 
 	column is_price_on_enquiry
 		dataType: int64
 		formatString: #,0
-		lineageTag: b6ad14da-12cb-414c-aff1-f67981287cff
+		lineageTag: 57990ee5-607b-4ae7-835c-c0d4c1cc3271
 		summarizeBy: sum
 		sourceColumn: is_price_on_enquiry
 
 	column source_url
 		dataType: string
-		lineageTag: a943c031-04b2-4526-b9d4-7e5c66dcf02c
+		lineageTag: 0326ee17-70dc-483e-8b71-9576f5d7eb2c
 		summarizeBy: none
 		sourceColumn: source_url
 
 	column observed_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 437de017-a4ac-4264-840d-360b8b9f4a03
+		lineageTag: ba2c11b1-52a8-450a-adcc-4a7b073993fb
 		summarizeBy: none
 		sourceColumn: observed_date
+
+		variation Variation
+			isDefault
+			relationship: 3b80f4a6-fc2e-43a5-b4dd-de9d5d9f0adc
+			defaultHierarchy: LocalDateTable_257056a1-dca0-46ca-a296-57d16444c752.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column dated_intake_count
 		dataType: int64
 		formatString: #,0
-		lineageTag: 756df85e-d8bf-47ce-bd4c-630233393d5c
+		lineageTag: 714d9db9-e12e-4ff6-a13f-c07939f7915f
 		summarizeBy: sum
 		sourceColumn: dated_intake_count
 
@@ -117,3 +124,4 @@ table dim_offering
 				    Source
 
 	annotation PBI_ResultType = Table
+

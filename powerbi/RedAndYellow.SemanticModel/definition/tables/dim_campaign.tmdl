@@ -1,69 +1,83 @@
 table dim_campaign
-	lineageTag: 297d47f1-3721-4a56-b4e3-d8847c8d0638
+	lineageTag: ccc891b1-0672-4ece-9296-7e1ba7015d45
 
 	column campaign_external_id
 		dataType: string
-		lineageTag: cb70d449-7a0f-4358-bd61-2744479bc0f8
+		lineageTag: a1e10d7c-f5da-48f2-8aa3-3a2efd3ddecd
 		summarizeBy: none
 		sourceColumn: campaign_external_id
 
 	column campaign_name
 		dataType: string
-		lineageTag: 2dd56ed6-ff7a-4956-86b2-ad55530e240a
+		lineageTag: 9a31a79c-7980-4682-83d5-b3fc649b657f
 		summarizeBy: none
 		sourceColumn: campaign_name
 
 	column channel
 		dataType: string
-		lineageTag: ee4ed1c0-a2ef-4540-924e-caecb0b427e6
+		lineageTag: c04897e0-42f8-4e3c-abb3-ce7aa1639d20
 		summarizeBy: none
 		sourceColumn: channel
 
 	column start_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: ce3e82a6-bd71-43b8-9c90-c23ae4dcb8b4
+		lineageTag: 7fe842d9-a617-491b-81bf-b8bcb73cb056
 		summarizeBy: none
 		sourceColumn: start_date
+
+		variation Variation
+			isDefault
+			relationship: 953d9347-b093-4ce6-b165-2f4ae5f5f413
+			defaultHierarchy: LocalDateTable_d1d842cc-8b1d-4895-be97-4b9d06db7e02.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column end_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: ed837fef-3944-48f6-9d71-078dc7979adb
+		lineageTag: ab4d1bf8-9b08-4f71-b685-ab6967cbcdb3
 		summarizeBy: none
 		sourceColumn: end_date
+
+		variation Variation
+			isDefault
+			relationship: 3d5e7666-9ef3-427a-be03-1754b6142ca0
+			defaultHierarchy: LocalDateTable_7b914faa-ab46-4f4e-b330-a24be0cea20b.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column spend_zar
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: c77bba30-a1f7-4492-952e-ebb47fc5f060
+		lineageTag: 9ab84d1b-58a6-4ce7-8377-a3b0dc6b1e56
 		summarizeBy: sum
 		sourceColumn: spend_zar
 
 	column is_spend_missing
 		dataType: int64
 		formatString: "R"#,0
-		lineageTag: 5bf607ee-5c52-493a-add0-8a0472931779
+		lineageTag: 9a040060-e731-473c-b2a5-3aa4e8a2476d
 		summarizeBy: sum
 		sourceColumn: is_spend_missing
 
 	column is_active
 		dataType: boolean
-		lineageTag: f3774c5d-c5e8-4212-9004-dc40f4af956b
+		lineageTag: 634589a3-1852-4697-afd8-1390558f9a8a
 		summarizeBy: none
 		sourceColumn: is_active
 
 	column campaign_year
 		dataType: int64
 		formatString: #,0
-		lineageTag: 39a7922c-cd93-402c-9d01-88c8e6977fcd
+		lineageTag: e6484956-aea2-4ec0-9916-7d212bb92d9b
 		summarizeBy: sum
 		sourceColumn: campaign_year
 
 	column duration_days
 		dataType: int64
 		formatString: #,0
-		lineageTag: 1beb653e-026b-437a-bdd1-2239931016c8
+		lineageTag: 01cea48a-f410-4492-bf0e-0e39112393ae
 		summarizeBy: sum
 		sourceColumn: duration_days
 
@@ -76,3 +90,4 @@ table dim_campaign
 				    Source
 
 	annotation PBI_ResultType = Table
+

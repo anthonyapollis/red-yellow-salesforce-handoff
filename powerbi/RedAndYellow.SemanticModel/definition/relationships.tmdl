@@ -1,83 +1,73 @@
-relationship 85879374-94db-48ff-9f13-4c00e1165402
-	fromColumn: dim_offering.programme_external_id
-	toColumn: programme.programme_external_id
-
-relationship ae52aa1e-019e-40d7-b8b6-f7e9308b6267
-	fromColumn: intake.offering_external_id
-	toColumn: dim_offering.offering_external_id
-
-relationship c008d764-1591-46cb-a844-cce39cdcb154
+relationship 879d53dc-9987-4a6e-a233-01bf08f6a916
 	fromColumn: fct_campaign_performance.campaign_external_id
 	toColumn: dim_campaign.campaign_external_id
 
-relationship b109ca13-0132-4c4e-8763-7413c135d5c2
+relationship 27cfac25-edab-4f3e-9b1d-c40ba5e15b5e
 	fromColumn: fct_campaign_performance.start_date
 	toColumn: dim_date.date_day
 
-relationship 23749db0-d532-424d-94b6-887426390662
-	fromColumn: fct_lead_conversion.created_date
-	toColumn: dim_date.date_day
-
-relationship ca1de78d-b199-4612-a636-a6f04a0b78cb
-	fromColumn: programme_enquiry.contact_external_id
-	toColumn: dim_contact.contact_external_id
-
-relationship 54ae6dcf-30a4-4aa3-8ed1-8a58313965c3
-	fromColumn: programme_enquiry.offering_external_id
-	toColumn: dim_offering.offering_external_id
-
-relationship 660f34c1-6495-4cf1-9d8d-4f354560b257
-	fromColumn: programme_enquiry.enquiry_date
-	toColumn: dim_date.date_day
-
-relationship b86923ad-cc8b-416a-a502-e9d8f1082800
-	fromColumn: application.contact_external_id
-	toColumn: dim_contact.contact_external_id
-
-relationship 6e592b23-a341-46b2-a91a-39744af7dca6
-	fromColumn: application.intake_external_id
-	toColumn: intake.intake_external_id
-
-relationship ca8417c5-6b90-4af2-8128-22d06b1c75bd
-	fromColumn: application.submitted_date
-	toColumn: dim_date.date_day
-
-relationship 55d1cf1a-96c9-44cf-ab94-44b7258ce7c1
-	fromColumn: enrolment.application_external_id
-	toColumn: application.application_external_id
-
-relationship 9ade2e21-8a5d-4a82-bdc3-c59709b15110
-	fromColumn: enrolment.student_external_id
-	toColumn: student.student_external_id
-
-relationship c3d260d2-f95c-4107-be5a-f93ab3623573
-	fromColumn: student.contact_external_id
-	toColumn: dim_contact.contact_external_id
-
-relationship fc258a44-20ee-4047-a8c6-268713c90d2d
-	fromColumn: fct_student_progress_weekly.enrolment_external_id
-	toColumn: enrolment.enrolment_external_id
-
-relationship c01398e6-889d-41b9-85ef-c4e61f8e3951
-	fromColumn: fct_student_progress_weekly.week_start
-	toColumn: dim_date.date_day
-
-relationship 10f52926-8df5-493e-b664-2278925d6d1e
+relationship f96d6693-21e7-4dcb-9ec4-258272099b9a
 	fromColumn: fct_admissions_funnel.contact_external_id
 	toColumn: dim_contact.contact_external_id
 
-relationship 69ea4bda-08c6-4dd5-8eea-2991348f1b1c
+relationship e9739fe1-a9a0-4b09-bea6-73532ff22397
 	fromColumn: fct_admissions_funnel.offering_external_id
 	toColumn: dim_offering.offering_external_id
 
-relationship 8991713a-02e1-47c3-8563-dd7d5707ce9e
+relationship 618556a9-8884-4a69-b491-4569242d92c3
 	fromColumn: fct_admissions_funnel.opportunity_created_date
 	toColumn: dim_date.date_day
 
-relationship 2b1734f8-519a-4449-a31b-f0670ad9f820
-	fromColumn: ml_lead_propensity.created_date
+relationship f9830278-5e4e-406b-9241-5ecabc7272ef
+	fromColumn: fct_student_progress_weekly.week_start
 	toColumn: dim_date.date_day
 
-relationship 58141ff8-b4b4-40d2-bb4f-375f443f6084
-	fromColumn: ml_withdrawal_risk.enrolment_external_id
-	toColumn: enrolment.enrolment_external_id
+relationship e4a0ecfe-7c94-40f7-a920-6b749bd00ac9
+	fromColumn: fct_lead_conversion.created_date
+	toColumn: dim_date.date_day
+
+relationship f7a1b612-a3c2-4035-a620-a88003910e9d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_contact.created_date
+	toColumn: LocalDateTable_af00aae7-8fa9-4073-918f-4bfbf8eaccde.Date
+
+relationship 3b80f4a6-fc2e-43a5-b4dd-de9d5d9f0adc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_offering.observed_date
+	toColumn: LocalDateTable_257056a1-dca0-46ca-a296-57d16444c752.Date
+
+relationship 953d9347-b093-4ce6-b165-2f4ae5f5f413
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_campaign.start_date
+	toColumn: LocalDateTable_d1d842cc-8b1d-4895-be97-4b9d06db7e02.Date
+
+relationship 3d5e7666-9ef3-427a-be03-1754b6142ca0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_campaign.end_date
+	toColumn: LocalDateTable_7b914faa-ab46-4f4e-b330-a24be0cea20b.Date
+
+relationship 103a4823-6fec-4db4-8803-969ba4715a7a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fct_admissions_funnel.close_date
+	toColumn: LocalDateTable_04ab5b05-e086-41a7-8a4f-32aa3caa39d6.Date
+
+relationship 27b7aef5-15eb-455d-8d8f-92ad52f6d4ad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fct_admissions_funnel.submitted_date
+	toColumn: LocalDateTable_7dcebde4-8c54-46ff-98f5-f1d0a2a0df4c.Date
+
+relationship f8c957a6-52b6-493c-9d5f-0d61d616ea4a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fct_admissions_funnel.decision_date
+	toColumn: LocalDateTable_1d32a228-fd39-4fb8-801e-85bce7068e03.Date
+
+relationship 92c1ff3e-474e-4049-a6c6-9de84bf1fb94
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fct_admissions_funnel.enrolled_date
+	toColumn: LocalDateTable_760cb9da-bca6-4fa3-91c6-64990449c3f6.Date
+
+relationship e928dfaa-c45c-49ba-a9f2-0d1d4839cccc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fct_lead_conversion.contact_created_date
+	toColumn: LocalDateTable_cfbd784e-5bbe-48e9-8128-c7b061395766.Date
+

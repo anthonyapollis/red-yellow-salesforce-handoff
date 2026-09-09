@@ -1,119 +1,121 @@
 table fct_campaign_performance
-	lineageTag: af58637a-1b8f-4dba-bb31-7fa221dd3826
+	lineageTag: 9cceaab4-e0b0-4c41-af19-42f0b60d9d1f
 
 	column campaign_external_id
 		dataType: string
-		lineageTag: d7b70181-2b7b-4305-bd72-bbeefeeef665
+		lineageTag: d6941d2e-019c-43fe-bf6c-423eaf5f62ba
 		summarizeBy: none
 		sourceColumn: campaign_external_id
 
 	column campaign_name
 		dataType: string
-		lineageTag: 5c18cb04-805b-4bc2-adad-9c43167c5fc1
+		lineageTag: 1ed5e225-d143-47ae-a876-0c6119b451f2
 		summarizeBy: none
 		sourceColumn: campaign_name
 
 	column channel
 		dataType: string
-		lineageTag: 6303203f-4755-4ac8-ad3a-936c3857bdf0
+		lineageTag: 202f418d-a38a-46a0-8bab-b734307f832e
 		summarizeBy: none
 		sourceColumn: channel
 
 	column start_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 3f8f374d-59f4-46cb-84cd-d49d09f00a2e
+		lineageTag: c8865696-0fbe-4cf5-ae14-6d5fb05f2804
 		summarizeBy: none
 		sourceColumn: start_date
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column campaign_year
 		dataType: int64
 		formatString: #,0
-		lineageTag: 95895457-e72c-4a84-9430-db547a023031
+		lineageTag: 6c6ed814-ece0-4769-a07a-ae203933b00b
 		summarizeBy: sum
 		sourceColumn: campaign_year
 
 	column spend_zar
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: bfbcfffb-3b41-4816-87e4-0d7d5d0ac382
+		lineageTag: f6e89c9d-3575-418a-acd4-e581e2db739d
 		summarizeBy: sum
 		sourceColumn: spend_zar
 
 	column members
 		dataType: int64
 		formatString: #,0
-		lineageTag: 4c8042a6-25d4-4ee4-935c-de3580006f10
+		lineageTag: 27a67fd6-aa3b-4b89-b85b-b329c367e39a
 		summarizeBy: sum
 		sourceColumn: members
 
 	column engaged_members
 		dataType: double
 		formatString: #,0.00
-		lineageTag: 38cf6612-d366-4b93-b369-e1db4e039e10
+		lineageTag: 96098bfb-69d9-4d7e-94df-dcb60b9ab7aa
 		summarizeBy: sum
 		sourceColumn: engaged_members
 
 	column opportunities
 		dataType: int64
 		formatString: #,0
-		lineageTag: efa36826-3565-4b3b-adb5-771bb931a7dd
+		lineageTag: 262d589d-67bd-4e98-81e6-fa8fc20d50a5
 		summarizeBy: sum
 		sourceColumn: opportunities
 
 	column won_opportunities
 		dataType: double
 		formatString: #,0.00
-		lineageTag: 4d310559-c676-4e22-83eb-82d9588c460e
+		lineageTag: 76983221-5252-4be4-88cb-b18f3a3a6acc
 		summarizeBy: sum
 		sourceColumn: won_opportunities
 
 	column enrolments
 		dataType: int64
 		formatString: #,0
-		lineageTag: 700a5e02-99b7-4918-af82-199fe6a8c1d9
+		lineageTag: 5d47a733-6f34-4948-8fd3-df1b92151933
 		summarizeBy: sum
 		sourceColumn: enrolments
 
 	column pipeline_value_zar
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: 83659912-ddff-4821-a51e-394eb64e31c4
+		lineageTag: 2e4cd179-a148-4090-8d92-6f0b820083ba
 		summarizeBy: sum
 		sourceColumn: pipeline_value_zar
 
 	column enrolled_revenue_zar
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: fd3942dc-0fcb-4151-811d-1ac34e2c7d1b
+		lineageTag: 487c95bd-2a4a-49b2-ac07-bf381b3beb00
 		summarizeBy: sum
 		sourceColumn: enrolled_revenue_zar
 
 	column member_to_opp_pct
 		dataType: double
 		formatString: #,0.00
-		lineageTag: 3732f928-ffb8-4822-a593-473ec5cca301
+		lineageTag: 78423a40-6c4c-48ab-bcfc-17a2b23f615b
 		summarizeBy: sum
 		sourceColumn: member_to_opp_pct
 
 	column opp_to_enrol_pct
 		dataType: double
 		formatString: #,0.00
-		lineageTag: deee7517-008a-471e-af1e-a209e4d29d4c
+		lineageTag: 4023e220-456f-4d55-8385-9f50867d7447
 		summarizeBy: sum
 		sourceColumn: opp_to_enrol_pct
 
 	column cost_per_enrolment_zar
 		dataType: double
 		formatString: "R"#,0
-		lineageTag: e4a63e5b-15cb-4c2d-8b15-938914cb0f33
+		lineageTag: 1aeef1f0-5def-4eff-976b-64d77ff8c0dd
 		summarizeBy: sum
 		sourceColumn: cost_per_enrolment_zar
 
 	column roas
 		dataType: double
 		formatString: #,0.00
-		lineageTag: 50bd5b1a-4616-450b-9f52-753f0a313c50
+		lineageTag: bd7f82c6-5ee5-4c53-8a1d-958d2c37f673
 		summarizeBy: sum
 		sourceColumn: roas
 
@@ -126,3 +128,4 @@ table fct_campaign_performance
 				    Source
 
 	annotation PBI_ResultType = Table
+
