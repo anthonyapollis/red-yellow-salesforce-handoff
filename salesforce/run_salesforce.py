@@ -49,10 +49,14 @@ def main():
                     help="A StageName that already exists in the target org")
     args = ap.parse_args()
 
-    total = 5
+    total = 6
 
     step(1, total, "Authenticate")
     run([PY, "salesforce/sf_auth.py"])
+
+    step(2, total, "Check the org can host the model")
+    # Exits non-zero on a NO-GO, which stops the run before anything is attempted.
+    run([PY, "salesforce/check_org.py"])
 
     # Resolve the host here so --expected-host cannot drift from the token.
     sys.path.insert(0, str(HERE))
@@ -61,10 +65,10 @@ def main():
     host = urlparse(url).hostname
     print(f"\n  resolved host: {host}")
 
-    step(2, total, "Validate the data offline (no org contact)")
+    step(3, total, "Validate the data offline (no org contact)")
     run([PY, "tools/import_salesforce.py", "--plan", PLAN, "--include-demo"])
 
-    step(3, total, "Validate the metadata against the org (no changes)")
+    step(4, total, "Validate the metadata against the org (no changes)")
     run([PY, "salesforce/deploy_metadata.py", "--check-only"])
 
     if not args.apply:
@@ -78,7 +82,7 @@ def main():
         print("with INSUFFICIENT_ACCESS on the first record.")
         return
 
-    step(4, total, "Deploy the metadata")
+    step(5, total, "Deploy the metadata")
     run([PY, "salesforce/deploy_metadata.py"])
     print("\n  Assign the RY_Demo_Import permission set now:")
     print("  Setup > Permission Sets > RY Demo Import > Manage Assignments")
@@ -87,7 +91,7 @@ def main():
     except EOFError:
         print("  (non-interactive: continuing - assign it first if the import fails)")
 
-    step(5, total, "Import the data")
+    step(6, total, "Import the data")
     run([PY, "tools/import_salesforce.py", "--plan", PLAN, "--include-demo",
          "--apply", "--expected-host", host,
          "--opportunity-stage", args.opportunity_stage])

@@ -40,6 +40,17 @@ Nothing below runs without credentials, and nothing writes to the org until the
 `--apply` step. The Salesforce CLI is *not* required — everything here is plain
 Python against the REST and Metadata APIs.
 
+## Check the org first
+
+```bash
+python salesforce/check_org.py
+```
+
+Reports the edition, storage and custom-object headroom, and says GO, PARTIAL or
+NO-GO in one call. Run it before repeating the app setup on any new org - it
+would have caught the Base Edition problem in thirty seconds instead of at the
+deploy step.
+
 ## Short version
 
 Once the credentials are in your environment:
