@@ -19,6 +19,7 @@ workspace when the project is done, or when the trial ends.
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -40,6 +41,29 @@ CHUNK = 4 * 1024 * 1024  # OneLake append limit is well above this; 4 MB is a sa
 
 
 def token(cred, scope):
+    """Get a token for `scope`, preferring the Azure CLI directly.
+
+    azure-identity's AzureCliCredential shells out to `az` with a short timeout
+    and its own environment assumptions; it raised CredentialUnavailableError
+    ("Failed to invoke the Azure CLI") here even though `az account show` worked
+    in the same session. Asking the CLI ourselves is one subprocess with a
+    generous timeout, and it fails with the CLI's own message rather than a
+    wrapper's. The library credential stays as the fallback.
+    """
+    import json as _json
+    import subprocess
+
+    resource = scope[:-len("/.default")] if scope.endswith("/.default") else scope
+    try:
+        r = subprocess.run(
+            ["az", "account", "get-access-token", "--resource", resource,
+             "-o", "json", "--only-show-errors"],
+            capture_output=True, text=True, timeout=180,
+            shell=(os.name == "nt"))
+        if r.returncode == 0 and r.stdout.strip():
+            return _json.loads(r.stdout)["accessToken"]
+    except Exception:
+        pass
     return cred.get_token(scope).token
 
 
@@ -61,6 +85,40 @@ def ensure_workspace(cred, name):
                                                "description": "Red & Yellow CRM analytics"})
     print(f"  workspace  {name} (created)")
     return w["id"]
+
+
+def ensure_capacity(cred, ws_id, prefer=None):
+    """Attach the workspace to a Fabric capacity if it has none.
+
+    A workspace created through the API lands on no capacity, and every Fabric
+    item type then fails with 403 FeatureNotAvailable - which reads like a
+    licensing problem rather than an unassigned workspace. Lakehouses,
+    warehouses and notebooks all need a capacity behind them.
+    """
+    ws = api(cred, "GET", f"/workspaces/{ws_id}")
+    if ws.get("capacityId"):
+        print(f"  capacity   already assigned ({ws['capacityId']})")
+        return ws["capacityId"]
+
+    caps = [c for c in api(cred, "GET", "/capacities").get("value", [])
+            if c.get("state") == "Active"]
+    if not caps:
+        sys.exit("  no active Fabric capacity on this tenant - a workspace "
+                 "without one cannot hold a lakehouse")
+
+    chosen = None
+    if prefer:
+        chosen = next((c for c in caps if prefer.lower() in
+                       (c.get("displayName") or "").lower()), None)
+    # Prefer a trial capacity over Premium-Per-User: PPU does not carry Fabric
+    # item types, so assigning it would fail the same way a moment later.
+    chosen = chosen or next((c for c in caps if (c.get("sku") or "").upper()
+                             .startswith("FT")), None) or caps[0]
+
+    api(cred, "POST", f"/workspaces/{ws_id}/assignToCapacity",
+        json={"capacityId": chosen["id"]})
+    print(f"  capacity   {chosen['displayName']} ({chosen['sku']}) assigned")
+    return chosen["id"]
 
 
 def ensure_lakehouse(cred, ws_id, name):
@@ -103,6 +161,8 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--workspace", default="WS_RedAndYellow")
     ap.add_argument("--lakehouse", default="LH_RedAndYellow")
+    ap.add_argument("--capacity", default="Trial",
+                    help="Substring of the capacity name to prefer")
     ap.add_argument("--check", action="store_true",
                     help="Authenticate and list workspaces; write nothing")
     ap.add_argument("--device-code", action="store_true",
@@ -122,6 +182,7 @@ def main():
         return
 
     ws_id = ensure_workspace(cred, args.workspace)
+    ensure_capacity(cred, ws_id, prefer=args.capacity)
     ensure_lakehouse(cred, ws_id, args.lakehouse)
 
     files = sorted(RAW.glob("*.parquet"))
