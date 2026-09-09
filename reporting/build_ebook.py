@@ -76,7 +76,7 @@ def main():
                        round(avg(assessment_average_pct),1) ass,
                        round(100.0*sum(is_at_risk)/count(*),1) at_risk_pct
                 from main_gold.fct_student_progress_weekly group by 1 order by 1""")
-    dq = q("select issue_code, issue_count from main_quality.dq_summary order by issue_count desc limit 10")
+    dq = q("select issue_code, sum(issue_count) as issue_count from main_quality.dq_summary group by issue_code order by issue_count desc limit 10")
 
     # ---- figures ----------------------------------------------------------
     fig, ax = plt.subplots(figsize=(6.4, 3.0))
@@ -367,7 +367,7 @@ def main():
         "CRM data extracted and analysed, Power BI dashboards, and data quality held to a "
         "standard. This document is the working answer to all six, built end to end on a "
         "dataset of "
-        f"{k.leads + k.contact_rows:,.0f} people and 9.4 million rows.")
+        f"{k.leads + k.contact_rows:,.0f} people and {truth['total_rows'] / 1_000_000:.1f} million rows.")
     d.add_paragraph(
         "The architecture follows the shape the role describes. Salesforce is the operational "
         "CRM. NiFi replicates it into a lakehouse. dbt cleanses, tests and documents. Power BI "

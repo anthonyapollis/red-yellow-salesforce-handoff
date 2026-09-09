@@ -187,6 +187,13 @@ def main():
                  "cost_per_enrolment": f["money"], "roas": f["dec"]},
                 {"channel": 18})
 
+    # Keep derived commercial measures live in Excel. The cached result preserves
+    # chart rendering in previewers that do not recalculate formulas.
+    for excel_row, rec in enumerate(chan.itertuples(index=False), start=7):
+        ws.write_formula(excel_row - 1, 8, f"=G{excel_row}/F{excel_row}",
+                         f["money"], rec.cost_per_enrolment)
+        ws.write_formula(excel_row - 1, 9, f"=H{excel_row}/G{excel_row}",
+                         f["dec"], rec.roas)
     c1 = wb.add_chart({"type": "column"})
     c1.add_series({"name": "Cost per enrolment (R)",
                    "categories": ["Campaign Performance", 6, 1, 5 + len(chan), 1],
@@ -232,7 +239,7 @@ def main():
     """)
     end = table(ws, prog, 5, 1,
                 {"advertised_fee_zar": f["money"], "opportunities": f["num"],
-                 "enrolments": f["num"], "avg_discount_pct": f["dec"],
+                 "enrolments": f["num"], "avg_discount_pct": f["pct"],
                  "revenue_zar": f["money"]},
                 {"programme_title": 46, "category": 22, "delivery_mode": 16})
 
@@ -253,7 +260,7 @@ def main():
         select week_number,
                count(*)                                        as students_tracked,
                sum(is_at_risk)                                 as at_risk,
-               round(100.0 * sum(is_at_risk) / count(*), 1)    as at_risk_pct,
+               round(sum(is_at_risk) / count(*), 3)           as at_risk_pct,
                round(avg(attendance_pct), 1)                   as avg_attendance_pct,
                round(avg(assessment_average_pct), 1)           as avg_assessment_pct
         from main_gold.fct_student_progress_weekly
@@ -261,7 +268,7 @@ def main():
     """)
     end = table(ws, risk, 5, 1,
                 {"students_tracked": f["num"], "at_risk": f["num"],
-                 "at_risk_pct": f["dec"], "avg_attendance_pct": f["dec"],
+                 "at_risk_pct": f["pct"], "avg_attendance_pct": f["dec"],
                  "avg_assessment_pct": f["dec"]})
 
     c3 = wb.add_chart({"type": "line"})
@@ -317,7 +324,7 @@ def main():
 
     inj_counts = truth["injected_defect_counts"]
     det = {r.issue_code: r.issue_count for r in
-           q(con, "select issue_code, issue_count from main_quality.dq_summary").itertuples()}
+           q(con, "select issue_code, sum(issue_count) as issue_count from main_quality.dq_summary group by issue_code").itertuples()}
     pairs = [("Duplicate humans", "duplicate_person", "duplicate_person"),
              ("Missing attendance", "attendance_missing", "attendance_missing"),
              ("Duplicate campaign membership", "dup_campaign_member", "duplicate_membership"),
@@ -331,7 +338,7 @@ def main():
                          "recall": round(dd / i, 3)})
     sc = pd.DataFrame(rows)
     end = table(ws, sc, 5, 1, {"injected": f["num"], "detected": f["num"],
-                               "recall": f["dec"]}, {"defect": 34})
+                               "recall": f["pct"]}, {"defect": 34})
     ws.merge_range(end + 1, 1, end + 3, 6,
                    "Recall above 1.0 means the pipeline flagged more than was "
                    "planted - de-duplication also catches collisions that arose "
