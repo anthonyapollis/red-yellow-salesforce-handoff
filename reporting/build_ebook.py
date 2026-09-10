@@ -308,6 +308,37 @@ def main():
     ax.set_ylim(0, max(vals) * 1.28)
     fig.tight_layout(); fig.savefig(FIG / "conversion.png"); plt.close(fig)
 
+    # ---- two-platform architecture figure --------------------------------
+    fig, axes = plt.subplots(2, 1, figsize=(6.6, 3.7))
+    for ax, title, nodes, colors in [
+        (axes[0], "Option A - Google Cloud first (proposed)",
+         ["Website / GA4", "BigQuery raw", "Dataform", "Marts", "Power BI or Looker"],
+         [RED, "#4285F4", "#34A853", "#4285F4", CHARCOAL]),
+        (axes[1], "Option B - Microsoft Fabric first (proposed)",
+         ["Website / GA4", "NiFi / API", "OneLake bronze", "Fabric + dbt", "Power BI"],
+         [RED, "#F4A300", "#F4A300", "#007C83", CHARCOAL]),
+    ]:
+        ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
+        ax.text(0.01, 0.86, title, fontsize=9, fontweight="bold", color=CHARCOAL)
+        xs = [0.10, 0.30, 0.50, 0.70, 0.90]
+        for i, (x, node) in enumerate(zip(xs, nodes)):
+            fc = "#FFF4D6" if i in (0, 2) else "#FFFFFF"
+            ec = colors[i]
+            box = plt.Rectangle((x-0.085, 0.28), 0.17, 0.30,
+                                facecolor=fc, edgecolor=ec, linewidth=1.4,
+                                transform=ax.transAxes)
+            ax.add_patch(box)
+            ax.text(x, 0.43, node, ha="center", va="center",
+                    fontsize=7.2, color=CHARCOAL, wrap=True)
+            if i < len(nodes)-1:
+                ax.annotate("", xy=(xs[i+1]-0.095, 0.43),
+                            xytext=(x+0.095, 0.43),
+                            xycoords=ax.transAxes,
+                            arrowprops={"arrowstyle": "->", "color": RED, "lw": 1.2})
+    fig.tight_layout(pad=0.4)
+    fig.savefig(FIG / "platform_options.png", dpi=180)
+    plt.close(fig)
+
     # ---- ML figures -------------------------------------------------------
     mlp_path = REPO / "warehouse" / "ml"
     if (mlp_path / "lead_propensity.parquet").exists():
@@ -1166,6 +1197,35 @@ def main():
     figure("ga4_to_fabric.png",
            "Figure 13 - GA4 can feed the platform through the Data API without BigQuery, or through native raw-event export to BigQuery.")
 
+
+    H("Two cloud platforms, one client decision", 16, CHARCOAL, 12)
+    d.add_paragraph(
+        "The project is intentionally portable so the client can choose between "
+        "a Google Cloud-first and a Microsoft Fabric-first operating model. The "
+        "business definitions, Salesforce boundary, source keys, quality rules, "
+        "course-risk logic and Power BI semantic model stay the same; the landing "
+        "and transformation services change.")
+    d.add_paragraph(
+        "Google Cloud is the stronger candidate when native GA4 raw-event export, "
+        "BigQuery and a Google-first data team are the priority. BigQuery can hold "
+        "raw events and Dataform can version, test and schedule the SQL models. "
+        "Microsoft Fabric is the stronger candidate when Power BI, Microsoft "
+        "identity and OneLake governance are already standard. The GA4 Data API "
+        "can feed NiFi and OneLake without BigQuery; native raw-event export "
+        "still requires BigQuery, followed by a Fabric connector.")
+    d.add_paragraph(
+        "The client should choose after two short pilots using the same acceptance "
+        "pack: Salesforce reconciliation, GA4 row-count and date checks, "
+        "transformation tests, Power BI refresh, course-risk outputs, cost "
+        "guardrails and a replayed failure. The current repository proves the "
+        "Salesforce, OneLake bronze, DuckDB/dbt, Power BI, ML and SEO components; "
+        "neither cloud target is claimed as a completed production deployment.")
+    figure_if("platform_options.png",
+              "Figure 14 - Equivalent Google Cloud and Microsoft Fabric options. "
+              "The client selects the target after comparing the same acceptance pack.")
+    d.add_paragraph(
+        "The full decision matrix, trade-offs and pilot acceptance criteria are "
+        "in docs/PLATFORM_OPTIONS.md.")
 
     H("Website SEO audit findings", 16, CHARCOAL, 12)
     d.add_paragraph(
