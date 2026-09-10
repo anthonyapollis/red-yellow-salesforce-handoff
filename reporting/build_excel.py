@@ -24,14 +24,14 @@ OUT = REPO / "reporting" / "RedAndYellow_Analytics.xlsx"
 # Red & Yellow's own identity, used sparingly: red for emphasis, yellow for
 # highlight, charcoal for text. Charts stay on a muted categorical ramp so a
 # ten-series chart does not turn into a warning light.
-RED = "#E03127"
-YELLOW = "#FFC629"
-CHARCOAL = "#22252A"
-SLATE = "#5A6472"
+RED = "#F52635"
+YELLOW = "#FFB71B"
+CHARCOAL = "#1D1D1B"
+SLATE = "#60646B"
 PAPER = "#FFFFFF"
 RULE = "#D8DDE4"
-SERIES = ["#E03127", "#F0A202", "#2E6E8E", "#4C9F70", "#8B5FBF",
-          "#C7522A", "#3B7EA1", "#7A8B99", "#D4A03C", "#5C6F52", "#9E4A4A"]
+SERIES = ["#F52635", "#E39B16", "#007C83", "#008C45", "#7D3C6A",
+          "#D9574A", "#2C6FA3", "#707A84", "#FFB71B", "#5B7250", "#9E3540"]
 
 
 def q(con, sql):
@@ -52,8 +52,8 @@ def main():
         title=wb.add_format({"font_size": 22, "bold": True, "font_color": CHARCOAL,
                              "font_name": "Calibri"}),
         sub=wb.add_format({"font_size": 11, "font_color": SLATE, "font_name": "Calibri"}),
-        h2=wb.add_format({"font_size": 13, "bold": True, "font_color": CHARCOAL,
-                          "bottom": 1, "border_color": RULE}),
+        h2=wb.add_format({"font_size": 13, "bold": True, "font_color": RED,
+                          "bottom": 2, "border_color": YELLOW}),
         hdr=wb.add_format({"bold": True, "font_color": PAPER, "bg_color": CHARCOAL,
                            "align": "left", "valign": "vcenter", "text_wrap": True,
                            "border": 1, "border_color": CHARCOAL}),
@@ -68,8 +68,8 @@ def main():
                              "valign": "top", "text_wrap": True}),
         kpi_box=wb.add_format({"bg_color": "#FBFBFC", "border": 1, "border_color": RULE}),
         note=wb.add_format({"font_size": 10, "font_color": SLATE, "italic": True,
-                            "text_wrap": True, "valign": "top"}),
-        warn=wb.add_format({"font_size": 10, "font_color": CHARCOAL, "bg_color": "#FFF6D6",
+                            "bg_color": "#FFF9F0", "text_wrap": True, "valign": "top"}),
+        warn=wb.add_format({"font_size": 10, "font_color": CHARCOAL, "bg_color": "#FFF3D6",
                             "text_wrap": True, "valign": "top", "border": 1,
                             "border_color": YELLOW}),
     )

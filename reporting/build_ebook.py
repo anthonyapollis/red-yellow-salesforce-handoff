@@ -28,18 +28,19 @@ DB = REPO / "warehouse" / "redandyellow.duckdb"
 OUT = REPO / "ebook" / "RedAndYellow_Data_Story.docx"
 FIG = REPO / "ebook" / "figures"
 
-RED = "#E03127"
-YELLOW = "#FFC629"
-CHARCOAL = "#22252A"
-SLATE = "#5A6472"
-SERIES = ["#E03127", "#F0A202", "#2E6E8E", "#4C9F70", "#8B5FBF", "#C7522A"]
+RED = "#F52635"
+YELLOW = "#FFB71B"
+CHARCOAL = "#1D1D1B"
+SLATE = "#60646B"
+SERIES = ["#F52635", "#E39B16", "#007C83", "#008C45", "#7D3C6A", "#D9574A"]
 
 plt.rcParams.update({
     "figure.dpi": 200, "font.size": 9, "font.family": "DejaVu Sans",
-    "axes.edgecolor": "#C8CED6", "axes.labelcolor": CHARCOAL,
+    "axes.edgecolor": "#DDD5C8", "axes.labelcolor": CHARCOAL,
     "text.color": CHARCOAL, "xtick.color": SLATE, "ytick.color": SLATE,
     "axes.spines.top": False, "axes.spines.right": False, "axes.grid": True,
-    "grid.color": "#E8ECF1", "grid.linewidth": 0.7, "axes.axisbelow": True,
+    "axes.facecolor": "#FFFDF9", "figure.facecolor": "#FFFFFF",
+    "grid.color": "#EEE7DC", "grid.linewidth": 0.7, "axes.axisbelow": True,
 })
 
 
@@ -136,7 +137,7 @@ def main():
                 join main_gold.dim_contact c using (contact_external_id)
                 group by 1 order by enrolments desc""")
     fig, ax = plt.subplots(figsize=(6.4, 2.9))
-    cols = [SERIES[1] if p != "Unknown" else "#9AA5B1" for p in prov["province"]]
+    cols = [SERIES[1] if p != "Unknown" else "#A7AAA7" for p in prov["province"]]
     ax.bar(prov["province"], prov["enrolments"], color=cols)
     ax.set_ylabel("Enrolments")
     ax.tick_params(axis="x", rotation=38, labelsize=7.5)

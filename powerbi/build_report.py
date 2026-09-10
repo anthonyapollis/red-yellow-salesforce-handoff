@@ -28,62 +28,62 @@ W, H = 1280, 720
 # primary series, yellow for highlight only. Charts run on a muted categorical
 # ramp so a ten-series chart does not turn into a warning light, and the two
 # brand colours keep their meaning.
-RED = "#E03127"
-YELLOW = "#FFC629"
-CHARCOAL = "#22252A"
-SLATE = "#5A6472"
+RED = "#F52635"
+YELLOW = "#FFB71B"
+CHARCOAL = "#1D1D1B"
+SLATE = "#60646B"
 PAPER = "#FFFFFF"
-CANVAS = "#F7F8FA"
-RULE = "#DDE2E8"
-SERIES = ["#E03127", "#2E6E8E", "#4C9F70", "#F0A202", "#8B5FBF",
-          "#C7522A", "#3B7EA1", "#7A8B99", "#5C6F52", "#9E4A4A"]
-GOOD, WARN, BAD = "#4C9F70", "#F0A202", "#E03127"
+CANVAS = "#FFF9F0"
+RULE = "#E5DED2"
+SERIES = ["#F52635", "#007C83", "#008C45", "#E39B16", "#7D3C6A",
+          "#D9574A", "#2C6FA3", "#707A84", "#5B7250", "#9E3540"]
+GOOD, WARN, BAD = "#008C45", "#E39B16", "#F52635"
 
 M = "_Measures"
 
 THEME = {
     "name": "RedAndYellow",
     "dataColors": [
-        "#E8262A",
-        "#FFC629",
-        "#2E6E8E",
-        "#4C9F70",
-        "#F07C1E",
-        "#8B5FBF",
-        "#C7522A",
-        "#3B7EA1",
-        "#5C6F52",
-        "#7A8B99"
+        "#F52635",
+        "#FFB71B",
+        "#007C83",
+        "#008C45",
+        "#E56A2C",
+        "#7D3C6A",
+        "#D9574A",
+        "#2C6FA3",
+        "#5B7250",
+        "#707A84"
     ],
     "background": "#FFFFFF",
-    "foreground": "#22252A",
-    "tableAccent": "#E8262A",
-    "good": "#4C9F70",
-    "neutral": "#FFC629",
-    "bad": "#E8262A",
-    "maximum": "#E8262A",
-    "center": "#FFC629",
-    "minimum": "#4C9F70",
+    "foreground": "#1D1D1B",
+    "tableAccent": "#F52635",
+    "good": "#008C45",
+    "neutral": "#FFB71B",
+    "bad": "#F52635",
+    "maximum": "#F52635",
+    "center": "#FFB71B",
+    "minimum": "#008C45",
     "textClasses": {
         "title": {
             "fontSize": 13,
             "fontFace": "Segoe UI Semibold",
-            "color": "#22252A"
+            "color": "#1D1D1B"
         },
         "header": {
             "fontSize": 11,
             "fontFace": "Segoe UI Semibold",
-            "color": "#22252A"
+            "color": "#1D1D1B"
         },
         "label": {
             "fontSize": 9,
             "fontFace": "Segoe UI",
-            "color": "#5A6472"
+            "color": "#60646B"
         },
         "callout": {
             "fontSize": 30,
             "fontFace": "Segoe UI Semibold",
-            "color": "#E8262A"
+            "color": "#F52635"
         }
     },
     "visualStyles": {
@@ -121,7 +121,7 @@ THEME = {
                         "show": True,
                         "fontColor": {
                             "solid": {
-                                "color": "#22252A"
+                                "color": "#1D1D1B"
                             }
                         },
                         "fontSize": 11,
@@ -135,7 +135,7 @@ THEME = {
                         "fontSize": 9,
                         "labelColor": {
                             "solid": {
-                                "color": "#5A6472"
+                                "color": "#60646B"
                             }
                         },
                         "gridlineShow": False
@@ -147,7 +147,7 @@ THEME = {
                         "fontSize": 9,
                         "labelColor": {
                             "solid": {
-                                "color": "#5A6472"
+                                "color": "#60646B"
                             }
                         },
                         "gridlineColor": {
@@ -165,7 +165,7 @@ THEME = {
                         "fontSize": 9,
                         "labelColor": {
                             "solid": {
-                                "color": "#5A6472"
+                                "color": "#60646B"
                             }
                         }
                     }
@@ -175,7 +175,7 @@ THEME = {
                         "fontSize": 9,
                         "color": {
                             "solid": {
-                                "color": "#5A6472"
+                                "color": "#60646B"
                             }
                         }
                     }
@@ -190,7 +190,7 @@ THEME = {
                         "fontFamily": "Segoe UI Semibold",
                         "color": {
                             "solid": {
-                                "color": "#E8262A"
+                                "color": "#F52635"
                             }
                         }
                     }
@@ -206,7 +206,7 @@ THEME = {
                         "fontSize": 10,
                         "fontColor": {
                             "solid": {
-                                "color": "#5A6472"
+                                "color": "#60646B"
                             }
                         },
                         "fontFamily": "Segoe UI",
@@ -232,7 +232,7 @@ THEME = {
                         },
                         "backColor": {
                             "solid": {
-                                "color": "#22252A"
+                                "color": "#1D1D1B"
                             }
                         }
                     }
@@ -242,7 +242,7 @@ THEME = {
                         "fontSize": 9,
                         "fontColor": {
                             "solid": {
-                                "color": "#22252A"
+                                "color": "#1D1D1B"
                             }
                         },
                         "backColorPrimary": {
@@ -276,7 +276,7 @@ THEME = {
                         "fontSize": 9,
                         "fontColor": {
                             "solid": {
-                                "color": "#5A6472"
+                                "color": "#60646B"
                             }
                         }
                     }
@@ -286,7 +286,7 @@ THEME = {
                         "fontSize": 9,
                         "fontColor": {
                             "solid": {
-                                "color": "#22252A"
+                                "color": "#1D1D1B"
                             }
                         }
                     }
@@ -471,7 +471,7 @@ def page(name, display, ordinal, visuals):
 TITLE = ("Segoe UI", {"fontSize": "22pt", "fontWeight": "bold", "color": CHARCOAL})
 SUB = {"fontSize": "10pt", "color": SLATE}
 BIG = {"fontSize": "22pt", "fontWeight": "bold", "color": CHARCOAL}
-SUBB = {"fontSize": "10pt", "fontWeight": "bold", "color": "#E8262A"}
+SUBB = {"fontSize": "10pt", "fontWeight": "bold", "color": "#F52635"}
 
 
 def build():

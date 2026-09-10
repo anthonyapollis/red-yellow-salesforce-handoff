@@ -25,12 +25,12 @@ MANIFEST = REPO / "dbt_redandyellow" / "target" / "manifest.json"
 TMDL = REPO / "powerbi" / "RedAndYellow.SemanticModel" / "definition"
 
 LAYERS = [
-    ("bronze", "Bronze", "#C77B30", "landed exactly as it arrived"),
-    ("silver", "Silver", "#7A8B99", "cleansed and conformed"),
-    ("gold", "Gold", "#D4A03C", "business-level, assumes clean input"),
-    ("quality", "Quality", "#2E6E8E", "describes the pipeline, not the business"),
+    ("bronze", "Bronze", "#E39B16", "landed exactly as it arrived"),
+    ("silver", "Silver", "#707A84", "cleansed and conformed"),
+    ("gold", "Gold", "#FFB71B", "business-level, assumes clean input"),
+    ("quality", "Quality", "#007C83", "describes the pipeline, not the business"),
 ]
-CHARCOAL, SLATE, PAPER = "#22252A", "#5A6472", "#FFFFFF"
+CHARCOAL, SLATE, PAPER = "#1D1D1B", "#60646B", "#FFFFFF"
 
 
 def medallion_figure():
@@ -82,7 +82,7 @@ def medallion_figure():
         if i < len(LAYERS) - 1:
             ax.add_patch(FancyArrowPatch((left + w + 0.2, 21), (left + w + 1.8, 21),
                                          arrowstyle="-|>", mutation_scale=13,
-                                         color="#8A94A0", lw=1.6, zorder=5))
+                                         color="#8C857C", lw=1.6, zorder=5))
 
     ax.text(50, 1.8,
             f"{sum(len(v) for v in by_layer.values())} models   ·   {tests} data tests   "
@@ -138,8 +138,8 @@ def data_model_figure():
 
     for t, (px, py) in pos.items():
         is_fact = t in facts
-        colour = "#E03127" if is_fact else ("#2E6E8E" if t.startswith(("dim_", "sf_"))
-                                            else "#4C9F70")
+        colour = "#F52635" if is_fact else ("#007C83" if t.startswith(("dim_", "sf_"))
+                                            else "#008C45")
         label = t.replace("fct_", "").replace("dim_", "").replace("ml_", "")[:20]
         ax.add_patch(FancyBboxPatch((px - 0.145, py - 0.038), 0.29, 0.076,
                                     boxstyle="round,pad=0.012,rounding_size=0.02",

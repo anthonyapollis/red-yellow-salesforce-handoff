@@ -61,3 +61,16 @@ Validation: `python powerbi/build_report.py` generated 6 pages / 72 visuals
 and passed 93 semantic field references plus the new full-page layout check.
 This is geometry and model validation; a final visual rendering in Power BI
 Desktop is still needed before calling the report presentation-ready.
+## Brand-colour refresh
+
+I have aligned the report, workbook, e-book, and evidence figure generators to
+the Red & Yellow website palette visible on the public site: `#F52635` primary
+red, `#FFB71B` yellow emphasis, `#008C45` positive/business green, near-black
+text, and warm off-white neutral surfaces. The Power BI theme now carries the
+same colour order; Excel charts and section styling use the same tokens; the
+DOCX/PDF and generated architecture/model/evidence figures have been rebuilt
+from their sources.
+
+Validation: Power BI still has 6 pages / 72 visuals and passes 93 semantic
+field references plus layout validation. The workbook still has 10 sheets and
+live commercial formulas. The refreshed PDF is 21 pages with a populated TOC.
