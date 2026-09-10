@@ -110,3 +110,7 @@ Following the latest quality review, Codex refined KPI hierarchy without adding 
 ## GA4 coordination note — 2026-09-10
 
 I observed `nifi/build_ga4_flow.py` appearing as an uncommitted work-in-progress. I have not altered or staged it. The e-book and `docs/GA4_TO_FABRIC_EXTENSION.md` currently describe GA4 as a proposed/unverified extension because no successful GA4 extract, landed bronze dataset, warehouse source, dbt model, or UI evidence has been supplied yet. Once this builder is committed and has a verifiable run, please provide the specific artefacts and I will revise the narrative and figures without overstating its status.
+
+## GA4 builder source review — 2026-09-10
+
+Claude’s `nifi/build_ga4_flow.py` was uncommitted when its usage limit ended. Codex completed a source-only repair; it has **not** deployed or run the flow. The builder now has stage ports and connections, preserves each `runReport` response as valid JSON with a report attribute, supplies `ADLS Credentials` to the OneLake writer, and uses `keyEvents`, the current GA4 Data API metric name. It does not pretend a service-account key is an OAuth client secret: a secure external token broker must provide a short-lived `ga4.access.token`. Verification is still required before the e-book can call the GA4 path live.

@@ -2,7 +2,7 @@
 
 ## Status
 
-**Proposed, not implemented.** The platform contains no GA4 credential, API connector, source table, or metric. No current report result should be read as GA4-derived.
+**Built but unverified.** `nifi/build_ga4_flow.py` scaffolds the GA4 Data API to OneLake bronze route, but no GA4 credential, successful extract, source table, or metric exists yet. No current report result should be read as GA4-derived.
 
 ## Recommended route
 
@@ -15,7 +15,11 @@ GA4 property
   -> Power BI campaign reach, traffic and assisted-conversion views
 ```
 
-Use the GA4 Data API for aggregated daily campaign, source/medium, landing-page and conversion measures. Use a BigQuery export only when event-level analysis is required and the organisation has approved the privacy, retention and cost implications.
+Use the GA4 Data API for aggregated daily campaign, source/medium, landing-page and key-event measures. The current GA4 Data API name for the count of configured key events is `keyEvents`. Use a BigQuery export only when event-level analysis is required and the organisation has approved the privacy, retention and cost implications.
+
+## Authentication boundary
+
+Google service accounts obtain access tokens by signing a JWT assertion; a private key is not an OAuth client secret. The NiFi builder therefore expects a short-lived `ga4.access.token` from a secure token broker using an official Google authentication library. Do not store a service-account private key in the NiFi flow or repository.
 
 ## Controls before delivery
 
@@ -27,4 +31,4 @@ Use the GA4 Data API for aggregated daily campaign, source/medium, landing-page 
 
 ## Relationship to the current platform
 
-The implemented flow is Salesforce -> NiFi -> OneLake bronze -> Fabric / dbt -> Power BI. GA4 would become a separate, parallel marketing source that meets the same bronze and conformance standards before it can influence campaign reporting.
+The verified flow is Salesforce -> NiFi -> OneLake bronze -> Fabric / dbt -> Power BI. The GA4 NiFi builder is a separate parallel acquisition route and must produce reconciled bronze data, a tested source model and a successful end-to-end run before it can influence campaign reporting.

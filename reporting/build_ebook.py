@@ -115,9 +115,9 @@ def main():
     ax.xaxis.set_major_formatter(lambda x, p: f"{x/1e3:.0f}k" if x >= 1e3 else f"{x:.0f}")
     fig.tight_layout(); fig.savefig(FIG / "dq.png"); plt.close(fig)
 
-    # Proposed only: no GA4 credential, connector, or source table exists in this
-    # project. This figure explains the next integration without passing it off
-    # as an operating pipeline.
+    # A GA4 NiFi builder exists, but it has no credentialed successful run or
+    # landed source table. This figure explains the extension without passing
+    # it off as an operating pipeline.
     fig, ax = plt.subplots(figsize=(6.4, 2.35))
     ax.axis("off")
     boxes = [
@@ -823,8 +823,8 @@ def main():
 
     H("GA4 to Fabric — the next integration, not a claimed result", 16, CHARCOAL, 12)
     d.add_paragraph(
-        "GA4 is not configured in this repository: there is no GA4 credential, "
-        "connector or warehouse source table, and no report number uses GA4 data. "
+        "A GA4 NiFi builder is included, but it has no configured GA4 credential, "
+        "successful extract or warehouse source table, and no report number uses GA4 data. "
         "The practical next route is a scheduled GA4 Data API extract or a BigQuery "
         "export into an immutable OneLake bronze partition by event date. A dbt "
         "staging model would then conform date and campaign keys before a gold "
