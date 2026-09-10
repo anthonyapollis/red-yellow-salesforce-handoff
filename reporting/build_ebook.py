@@ -1051,6 +1051,10 @@ def main():
               "holds two stage groups; the LYRA groups are unrelated work on "
               "the same instance.")
 
+    figure_if("12_NiFi_salesforce_to_fabric_clean.png",
+              "Figure 11a - Clean NiFi capture of the Salesforce-to-Fabric process group; "
+              "browser tabs and the Windows taskbar are removed.")
+    
     H("Microsoft Fabric", 16, CHARCOAL, 12)
     d.add_paragraph(
         "Fabric Warehouse bronze is verified. All 13 landed source tables are present in "
@@ -1117,6 +1121,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

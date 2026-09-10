@@ -39,3 +39,20 @@ DuckDB is the validated transformation runtime. Fabric bronze is loaded, but Fab
 
 Use paginated REST/Bulk extracts plus CDC or replication APIs where supported; a `SystemModstamp` filter alone does not prove complete replication. Commit destination writes before a checkpoint, retain `source_system`, `source_id`, source-modification time, load time and deletion state, and reconcile totals after each backfill. In production, student progress may stay in an LMS and join CRM only in the analytics layer.
 
+
+### GA4 to Microsoft Fabric
+
+GA4 has two supported ingestion patterns:
+
+1. Aggregated reporting: call the GA4 Data API runReport method for the dimensions and metrics needed for campaign, source/medium, landing-page and conversion reporting. NiFi can schedule the call, write JSON or CSV to OneLake bronze, and let dbt/Fabric conform campaign and date keys.
+2. Raw event analytics: link the GA4 property to a Google Cloud project and enable the native BigQuery Export. GA4 writes event tables such as events_YYYYMMDD to BigQuery. Fabric Data Factory then copies or incrementally queries those tables through its Google BigQuery connector into OneLake or Fabric Warehouse bronze.
+
+The second route is the right choice for event-parameter, session-path and attribution analysis; the first is sufficient for a compact campaign dashboard. BigQuery is therefore optional for API aggregates but required for GA4 native raw-event export. Consent settings, event filtering, Google Cloud permissions, Fabric connection credentials and regional/data-residency choices must be agreed before enabling the feed.
+
+Recommended production flow:
+
+GA4 property -> BigQuery Export (raw events) -> Fabric Data Factory Copy activity -> OneLake bronze -> dbt/Fabric silver and gold -> Power BI
+
+Use a dated bronze partition, retain the GA4 event date and ingestion timestamp, deduplicate on the event identity available in the export, and reconcile source versus landed event totals before publishing measures. Do not join user-level identifiers into Salesforce; use campaign, source/medium and date keys for the first CRM/marketing use case.
+
+References: GA4 BigQuery Export (https://support.google.com/analytics/answer/9823238), GA4 export schema (https://support.google.com/analytics/answer/7029846), and Microsoft Fabric Google BigQuery connector (https://learn.microsoft.com/en-us/fabric/data-factory/connector-google-bigquery-overview).
