@@ -89,3 +89,12 @@ shared brand palette, and rebuilt the e-book. The 23-page PDF now embeds the
 canonical ERD with its caption. The remaining real UI evidence is only NiFi
 and Fabric (plus an optional refreshed Power BI canvas); those still require an
 authenticated browser session and should not be replaced with synthetic images.
+## Catalogue price and brand-asset refresh — 2026-09-10
+
+Codex has refreshed six catalogue source records from Red & Yellow's current public learning journey (`WEB-20260910`): User Experience Design (R13,500), Digital Marketing Professional (R24,500), Social Media Marketing (R14,900), Desktop Publishing with InDesign (R16,500), Sports Sponsorship Marketing (R19,750), and Sustainable Marketing (R10,900). Both `data/catalogue/RY_Programme_Offering__c.csv` and `catalogue_observations.csv` carry the same fee, status, source, reference and observation date. Existing qualifications that say **Enquire for price** remain blank; no price has been estimated.
+
+The user-supplied logo and brand imagery are now packaged beneath `powerbi/assets/` and `ebook/assets/`. `reporting/build_ebook.py` embeds the logo, the Creative Magic / Commercial Logic visual, and the learner image; it has been rebuilt to DOCX and a 23-page PDF.
+
+`powerbi/build_report.py` now uses a native Image visual with a portable embedded data URI, adding the supplied logo to every page. Do **not** regenerate `RedAndYellow.Report/report.json` while Power BI Desktop is open: close Desktop first, then run `python powerbi/build_report.py` and open the `.pbip` again. This change has passed Python compilation; it still needs its normal generator/layout validation after that safe rebuild.
+
+The raw catalogue refresh is source-of-truth only. The synthetic CRM and warehouse outputs should be regenerated through `generator/generate.py` when the Desktop session is closed; do not hand-edit generated data files.

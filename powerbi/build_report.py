@@ -13,6 +13,7 @@ otherwise show up as a broken visual only after someone opens the report.
 """
 from __future__ import annotations
 
+import base64
 import json
 import re
 import uuid
@@ -21,6 +22,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 SM = REPO / "powerbi" / "RedAndYellow.SemanticModel" / "definition"
 RPT = REPO / "powerbi" / "RedAndYellow.Report"
+LOGO = REPO / "powerbi" / "assets" / "red-yellow-logo.png"
 
 W, H = 1280, 720
 
@@ -449,7 +451,41 @@ def textbox(x, y, w, h, runs, z=0):
             "config": json.dumps(cfg), "filters": "[]"}
 
 
+def logo_visual(x=1120, y=18, w=130, h=70, z=20):
+    """Embed the supplied Red & Yellow logo using Power BI's native Image visual.
+
+    A data URI keeps the PBIP portable: the report needs no external URL or
+    separate deployment step to render its brand mark.
+    """
+    if not LOGO.exists():
+        raise SystemExit(f"Missing brand asset: {LOGO}")
+    payload = base64.b64encode(LOGO.read_bytes()).decode("ascii")
+    image_url = f"data:image/png;base64,{payload}"
+    cfg = {
+        "name": gid(),
+        "layouts": [{"id": 0, "position": {"x": x, "y": y, "z": z,
+                                           "width": w, "height": h}}],
+        "singleVisual": {
+            "visualType": "image",
+            "drillFilterOtherVisuals": True,
+            "objects": {"image": [{"properties": {
+                "imageUrl": lit(image_url),
+                "scaling": lit("Fit"),
+            }}]},
+            "vcObjects": {
+                "background": [{"properties": {"show": {
+                    "expr": {"Literal": {"Value": "false"}}}}}],
+                "border": [{"properties": {"show": {
+                    "expr": {"Literal": {"Value": "false"}}}}}],
+            },
+        },
+    }
+    return {"x": x, "y": y, "z": z, "width": w, "height": h,
+            "config": json.dumps(cfg), "filters": "[]"}
+
+
 def page(name, display, ordinal, visuals):
+    visuals = [*visuals, logo_visual()]
     return {
         "id": ordinal,
         "name": f"ReportSection{gid()}",

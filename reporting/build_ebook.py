@@ -27,6 +27,7 @@ REPO = Path(__file__).resolve().parent.parent
 DB = REPO / "warehouse" / "redandyellow.duckdb"
 OUT = REPO / "ebook" / "RedAndYellow_Data_Story.docx"
 FIG = REPO / "ebook" / "figures"
+ASSET = REPO / "ebook" / "assets"
 
 RED = "#F52635"
 YELLOW = "#FFB71B"
@@ -280,8 +281,23 @@ def main():
             r.font.size = Pt(8.5)
             r.font.color.rgb = rgb(SLATE)
 
+    def brand_image(name, cap=None, width=6.1):
+        """Place a user-supplied Red & Yellow brand image when it is packaged.
+
+        The e-book remains reproducible: it never reaches back into Downloads.
+        """
+        path = ASSET / name
+        if not path.exists():
+            raise SystemExit(f"Missing brand asset: {path}")
+        d.add_picture(str(path), width=Inches(width))
+        d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        if cap:
+            caption(cap)
+
     # Cover
-    p = d.add_paragraph(); p.paragraph_format.space_before = Pt(90)
+    p = d.add_paragraph(); p.paragraph_format.space_before = Pt(18)
+    brand_image("red-yellow-logo.png", width=1.35)
+    p = d.add_paragraph(); p.paragraph_format.space_before = Pt(18)
     r = p.add_run("Red & Yellow"); r.bold = True; r.font.size = Pt(40)
     r.font.color.rgb = rgb(RED)
     p = d.add_paragraph()
@@ -374,6 +390,8 @@ def main():
         "CRM. NiFi replicates it into a lakehouse. dbt cleanses, tests and documents. Power BI "
         "reads the curated marts. The interesting engineering is not in any one of those "
         "tools - it is in the decisions between them, which is what this document is about.")
+    brand_image("creative-magic-commercial-logic.png",
+                "Red & Yellow's Creative Magic and Commercial Logic — the brand idea that frames this data story.")
 
     figure_if("ev_00_architecture.png",
               "Figure 0 - The pipeline end to end. Each stage is a separate, "
@@ -481,6 +499,8 @@ def main():
     figure_if("province.png",
               "Figure 4b - Enrolments by province, after the spelling variants "
               "are collapsed to the nine official names.")
+    brand_image("student-cohort.jfif",
+                "Red & Yellow student community — supplied brand image used as context for the learner journey.")
 
     H("The funnel as conversion, not counts", 13, CHARCOAL, 12)
     d.add_paragraph(
