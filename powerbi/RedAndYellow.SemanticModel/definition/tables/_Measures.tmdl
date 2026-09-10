@@ -261,6 +261,20 @@ table _Measures
 		displayFolder: 05 Salesforce CRM
 		lineageTag: ddc4c3ce-64f2-4912-a911-a5cee9d4e009
 
+	measure 'Marketing Enrolment Rate' = DIVIDE([Campaign Enrolments], [Campaign Members])
+		formatString: 0.0%
+		displayFolder: 01 Marketing
+		lineageTag: 1f7b90d6-28f3-4a15-b7e0-8da2dcb17f24
+
+	measure 'Spend per Response' = DIVIDE([Marketing Spend], [Responded])
+		formatString: "R"#,0
+		displayFolder: 01 Marketing
+		lineageTag: 5f44d75d-53b9-44c4-a87d-01d8d14e987d
+
+	measure 'Revenue per Member' = DIVIDE([Enrolled Revenue], [Campaign Members])
+		formatString: "R"#,0
+		displayFolder: 01 Marketing
+		lineageTag: 2be5fb2f-a176-46a4-8e8e-6f0a64e9e8a4
 	column _placeholder
 		isHidden
 		dataType: string

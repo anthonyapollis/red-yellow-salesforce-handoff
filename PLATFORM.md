@@ -22,10 +22,10 @@ artefacts themselves. If a count here is wrong, the artefact is wrong — not th
 |---|---|---|
 | Medallion warehouse | 13 bronze, 13 silver, 8 gold, 2 quality | `dbt build` — 87/87 pass (51 data tests) |
 | Generated data | 11,512,875 rows | ground-truth manifest at `warehouse/_truth/defects.json` |
-| Power BI report | 6 pages, 72 visuals | every field reference checked against the model at build time |
-| Semantic model | 24 tables, 52 measures, 23 relationships | loaded through a tabular session |
+| Power BI report | 7 pages, 93 visuals | every field reference checked against the model at build time |
+| Semantic model | 24 tables, 55 measures, 23 relationships | loaded through a tabular session |
 | Salesforce | 1,091 records across 4 objects | `verify_org_counts.py` reconciles the org against the loader |
-| Ebook | 21-page PDF | contents text extracted back out of the finished PDF |
+| Ebook | 26-page PDF | contents text extracted back out of the finished PDF |
 | Workbook | 10 sheets | sheet count read from the workbook |
 | ML — lead to enrolment propensity | AUC 0.667, top-decile lift 2.17x | held-out split by time, base rate 5.2% |
 | ML — withdrawal risk from weeks 1-4 | AUC 0.621, top-decile lift 1.67x | held-out split by time, base rate 12.5% |
