@@ -469,6 +469,8 @@ def main():
     def figure(name, cap):
         d.add_picture(str(FIG / name), width=Inches(6.1))
         d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        d.paragraphs[-1].paragraph_format.keep_with_next = True
+        d.paragraphs[-1].paragraph_format.space_after = Pt(4)
         caption(cap)
 
     def figure_if(name, cap):
@@ -488,6 +490,8 @@ def main():
         if alt.exists():
             d.add_picture(str(alt), width=Inches(6.1))
             d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            d.paragraphs[-1].paragraph_format.keep_with_next = True
+            d.paragraphs[-1].paragraph_format.space_after = Pt(4)
             caption(cap)
         else:
             note = d.add_paragraph()
@@ -507,6 +511,8 @@ def main():
             raise SystemExit(f"Missing brand asset: {path}")
         d.add_picture(str(path), width=Inches(width))
         d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        d.paragraphs[-1].paragraph_format.keep_with_next = True
+        d.paragraphs[-1].paragraph_format.space_after = Pt(4)
         if cap:
             caption(cap)
 
@@ -1154,8 +1160,10 @@ def main():
         "enrolments and student-progress spine. Archived diagrams are not implementation targets.")
     erd_shot = REPO / "ebook" / "screenshots" / "03_Canonical_ERD.png"
     if erd_shot.exists():
-        d.add_picture(str(erd_shot), width=Inches(6.2))
+        d.add_picture(str(erd_shot), width=Inches(6.1))
         d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        d.paragraphs[-1].paragraph_format.keep_with_next = True
+        d.paragraphs[-1].paragraph_format.space_after = Pt(4)
         caption("Canonical Salesforce ERD — complete implementation target, rendered from erds/overview.svg.")
     else:
         d.add_paragraph("[Canonical ERD capture is missing; render erds/overview.svg before release.]")
@@ -1348,8 +1356,10 @@ def main():
             if sh.name == '03_Canonical_ERD.png':
                 continue
             cap = sh.stem.split("_", 1)[-1].replace("_", " ")
-            d.add_picture(str(sh), width=Inches(5.9))
+            d.add_picture(str(sh), width=Inches(6.1))
             d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            d.paragraphs[-1].paragraph_format.keep_with_next = True
+            d.paragraphs[-1].paragraph_format.space_after = Pt(4)
             caption(cap[:1].upper() + cap[1:])
 
     H("What is not claimed")
