@@ -4,6 +4,10 @@
 
 The platform uses Salesforce-shaped operational data and catalogue data through Apache NiFi, OneLake, dbt and Power BI. The programme catalogue and public prices are sourced from Red & Yellow’s public site; people, campaign performance and academic outcomes are synthetic demonstration data.
 
+### Verified Salesforce write-back
+
+The target Base Edition org contains the operational CRM slice that belongs in Salesforce: 25 Accounts, 408 Contacts, 408 Leads and 250 Opportunities (1,091 records tagged with RY_External_ID__c). salesforce/verify_org_counts.py queried the org and matched every tagged count to run_results/import_log.json. The supplied data-types reference is applied: operational CRM records live in Salesforce; raw GA4/clickstream, detailed history and ML training data remain in the warehouse.
+
 ### Verified paths
 
 - Salesforce operational slice: loaded and extracted through the REST API with external IDs, `SystemModstamp`, source timestamps and deletion flags retained.

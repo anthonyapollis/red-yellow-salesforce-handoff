@@ -23,5 +23,5 @@ After extracting, validate with:
 Read docs/IMPORT_GUIDE.md for deployment and write commands.
 
 ## Status
-No Salesforce org was connected to or modified. XML/CSV/relationship checks are local; live deployment and org-specific validation remain to be done.
+Salesforce Base Edition org verified and modified through the REST API. The reduced standard-object slice contains 25 Accounts, 408 Contacts, 408 Leads and 250 Opportunities (1,091 tagged records), reconciled against run_results/import_log.json. Custom-object deployment remains blocked by the edition entitlement.
 Screenshot figures are displayed catalogue observations, not independently verified current prices or accreditation conclusions. Unknown values remain blank.

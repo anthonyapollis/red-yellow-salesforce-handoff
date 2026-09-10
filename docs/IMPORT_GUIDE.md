@@ -45,4 +45,4 @@ Expected host must match SF_INSTANCE_URL. --apply is the write switch. This pack
 
 Claude can instead use an available Salesforce connector or Data Loader. Follow import_plan.json and resolve parent IDs/relationship mappings correctly.
 Do not load data/all_records.json in addition to the CSVs: it repeats those same records.
-Verify scoped counts, relationships and business rules after import. No live Salesforce test was performed during ZIP creation.
+Verify scoped counts, relationships and business rules after import. The current Base Edition org has been verified live with salesforce/verify_org_counts.py; rerun that check for any different target org.

@@ -771,13 +771,24 @@ def main():
 
     H("3. Load the operational CRM slice", 16, CHARCOAL, 12)
     d.add_paragraph(
-        "Accounts, contacts, leads and opportunities, upserted on an external ID "
-        "so the load is idempotent - re-running updates rather than duplicates. "
-        "Two things pushed back, and both were right to. Salesforce rejects the "
-        "external ID in the request body when it is already the key in the URL. "
-        "And its duplicate rules blocked leads that fuzzy-matched existing "
-        "contacts at 100% confidence - the same duplicates the warehouse's own "
-        "entity resolution finds, caught independently by the CRM.")
+        "The supplied Salesforce Data Types reference was applied at the system "
+        "boundary: Accounts, Contacts, Leads and Opportunities are operational "
+        "CRM records, while raw GA4/clickstream events, detailed history and ML "
+        "training data stay in the warehouse. These four standard objects were "
+        "upserted on an external ID so the load is idempotent - re-running updates "
+        "rather than duplicates. Two things pushed back, and both were right to. "
+        "Salesforce rejects the external ID in the request body when it is already "
+        "the key in the URL. Its duplicate rules also blocked leads that fuzzy-"
+        "matched existing contacts at 100% confidence - the same duplicates the "
+        "warehouse's own entity resolution finds, caught independently by the CRM.")
+    d.add_paragraph(
+        "Live reconciliation on 10 September 2026 found 25 Accounts, 408 Contacts, "
+        "408 Leads and 250 Opportunities: 1,091 tagged records in total, with every "
+        "count matching run_results/import_log.json. The Base Edition org cannot host "
+        "the proposed custom Programme, Application, Student, Enrolment or Progress "
+        "objects, and it does not support the campaign load in this reduced path. "
+        "Those detailed objects remain in the warehouse until a Developer Edition or "
+        "another edition with the required object entitlements is selected.")
     figure_if("ev_03_import_result.png",
               "Figure 7 - What the loader wrote.")
     figure_if("ev_04_org_counts.png",
