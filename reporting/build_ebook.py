@@ -115,6 +115,38 @@ def main():
     ax.xaxis.set_major_formatter(lambda x, p: f"{x/1e3:.0f}k" if x >= 1e3 else f"{x:.0f}")
     fig.tight_layout(); fig.savefig(FIG / "dq.png"); plt.close(fig)
 
+    # Proposed only: no GA4 credential, connector, or source table exists in this
+    # project. This figure explains the next integration without passing it off
+    # as an operating pipeline.
+    fig, ax = plt.subplots(figsize=(6.4, 2.35))
+    ax.axis("off")
+    boxes = [
+        (0.02, "GA4 property", "event and campaign data"),
+        (0.22, "Data API /\nBigQuery export", "scheduled, consent-aware"),
+        (0.45, "OneLake bronze", "ga4 / event_date partition"),
+        (0.66, "Fabric + dbt", "conform campaign and date"),
+        (0.86, "Power BI", "attribution and reach"),
+    ]
+    for i, (x, title, sub) in enumerate(boxes):
+        fill = "#FFF7E3" if i in (0, 2) else "#FFFFFF"
+        edge = RED if i == 0 else (YELLOW if i == 2 else "#DDD5C8")
+        patch = matplotlib.patches.FancyBboxPatch((x, 0.36), 0.12, 0.34,
+            boxstyle="round,pad=0.014,rounding_size=0.02", linewidth=1.2,
+            edgecolor=edge, facecolor=fill, transform=ax.transAxes)
+        ax.add_patch(patch)
+        ax.text(x + 0.06, 0.57, title, transform=ax.transAxes, ha="center",
+                va="center", fontsize=8, fontweight="bold", color=CHARCOAL)
+        ax.text(x + 0.06, 0.42, sub, transform=ax.transAxes, ha="center",
+                va="center", fontsize=6.6, color=SLATE)
+        if i < len(boxes) - 1:
+            ax.annotate("", xy=(boxes[i + 1][0] - 0.008, 0.53),
+                        xytext=(x + 0.128, 0.53), xycoords=ax.transAxes,
+                        arrowprops={"arrowstyle": "->", "color": RED, "lw": 1.5})
+    ax.text(0.5, 0.12, "Proposed extension — not configured or counted in the current platform",
+            transform=ax.transAxes, ha="center", va="center", fontsize=7.6,
+            color=SLATE, style="italic")
+    fig.tight_layout(); fig.savefig(FIG / "ga4_to_fabric.png"); plt.close(fig)
+
     # ---- additional analysis figures --------------------------------------
     prog = q("""select d.programme_title, sum(f.is_enrolled) enrolments,
                        round(avg(f.discount_pct),1) disc
@@ -695,6 +727,17 @@ def main():
             "real data the effect sizes would differ, and the first job would be "
             "to check whether they hold at all.")
 
+        H("From AI score to a human decision", 16, CHARCOAL, 12)
+        d.add_paragraph(
+            "The model outputs are warehouse tables, not autonomous CRM actions. "
+            "The lead-propensity score orders a worklist: a recruiter can spend "
+            "their next call on the leads most likely to enrol, while still seeing "
+            "the band and the underlying CRM record. The withdrawal-risk score is "
+            "an early-warning list for a student-success team. It should trigger a "
+            "conversation or support offer, never an automated adverse decision. "
+            "Power BI exposes the score distribution and observed outcomes so a "
+            "team can see whether the ranking remains useful before operationalising it.")
+
     # ---- how the warehouse is organised ----------------------------------
     d.add_page_break()
     H("How the warehouse is organised", 20, RED, 0)
@@ -777,6 +820,19 @@ def main():
               "Figure 12 - The Fabric workspace, its capacity, and what is "
               "actually in OneLake - listed back rather than assumed from the "
               "upload's own success message.")
+
+    H("GA4 to Fabric — the next integration, not a claimed result", 16, CHARCOAL, 12)
+    d.add_paragraph(
+        "GA4 is not configured in this repository: there is no GA4 credential, "
+        "connector or warehouse source table, and no report number uses GA4 data. "
+        "The practical next route is a scheduled GA4 Data API extract or a BigQuery "
+        "export into an immutable OneLake bronze partition by event date. A dbt "
+        "staging model would then conform date and campaign keys before a gold "
+        "attribution mart joins aggregate reach and traffic to the campaign spine "
+        "already used by Power BI. Keep user-level analytics identifiers out of "
+        "the CRM join; campaign, source and date are enough for the first use case.")
+    figure("ga4_to_fabric.png",
+           "Figure 13 - Proposed GA4 extension. It is intentionally separated from the verified Salesforce-to-Fabric flow.")
 
     # Any UI screenshots the author dropped in are appended, captioned by filename.
     shots = sorted((REPO / "ebook" / "screenshots").glob("*.png")) + \

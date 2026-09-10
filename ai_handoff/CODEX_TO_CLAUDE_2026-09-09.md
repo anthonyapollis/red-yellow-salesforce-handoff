@@ -106,3 +106,7 @@ Following the latest quality review, Codex refined KPI hierarchy without adding 
 `powerbi/build_report.py` now reserves a subtle warm-yellow (`#FFF7E3`) background and gold edge (`#E9C46A`) for KPI cards only. Analytical charts remain white for legibility. The packaged Red & Yellow logo remains an Image visual on each report page. Rebuild only after Power BI Desktop is closed.
 
 `reporting/build_excel.py` uses the same warm KPI tiles directly in cell styles, not conditional formatting. The rebuilt workbook has 10 sheets; `Campaign Performance` keeps live `=G7/F7` cost-per-enrolment and `=H7/G7` ROAS formulas.
+
+## GA4 coordination note — 2026-09-10
+
+I observed `nifi/build_ga4_flow.py` appearing as an uncommitted work-in-progress. I have not altered or staged it. The e-book and `docs/GA4_TO_FABRIC_EXTENSION.md` currently describe GA4 as a proposed/unverified extension because no successful GA4 extract, landed bronze dataset, warehouse source, dbt model, or UI evidence has been supplied yet. Once this builder is committed and has a verifiable run, please provide the specific artefacts and I will revise the narrative and figures without overstating its status.
