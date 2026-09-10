@@ -65,3 +65,6 @@ into Paint and save here under the filename above.
 APIs. Those are genuine evidence and they belong in the ebook, but they are
 **not** UI screenshots and Anthony has repeatedly rejected them as a stand-in.
 If you cannot authenticate, say so rather than filling the gap with a render.
+## dbt evidence
+
+The local dbt run is documented in docs/DBT_EVIDENCE.md. Its run-result screenshot is generated from dbt_redandyellow/target/run_results.json at ebook/figures/ev_06_dbt_tests.png; the medallion and model-lineage views are ev_09_medallion.png and ev_10_data_model.png. These are reproducible evidence figures rather than claims of a Fabric UI capture.

@@ -697,6 +697,7 @@ def main():
         "history lives in, is cleansed once in staging, and is consumed by marts "
         "that Power BI reads directly. The tests run on every build.")
     figure_if("ev_06_dbt_tests.png", "Figure 10 - dbt build: models and data tests.")
+    d.add_paragraph("The reproducible run record, delivery-mode check and DuckDB/Fabric scope are documented in docs/DBT_EVIDENCE.md.")
 
     # ---- predictive models ------------------------------------------------
     mlp = REPO / "warehouse" / "ml" / "model_report.json"
@@ -915,4 +916,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

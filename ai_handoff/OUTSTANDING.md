@@ -12,7 +12,7 @@ covers the ambiguous-relationship fix and why `REQUIRED_ACTIVE` exists.
 
 ## 1. Screenshots — Anthony's top ask, raised five times, still not done
 
-`ebook/screenshots/` contains only a README. `build_ebook.py` already embeds
+The screenshot folder now contains the canonical ERD and Power BI evidence image. The dbt run evidence is generated from target/run_results.json into ebook/figures/ev_06_dbt_tests.png. build_ebook.py embeds
 anything dropped in there and captions it from the filename
 (`01_NiFi_flow_canvas.png` → "NiFi flow canvas"), so this closes with one
 rebuild once the images exist.
@@ -21,7 +21,7 @@ He wants three specifically: **NiFi, the ERD, and Fabric.**
 
 | Which | State | What is needed |
 |---|---|---|
-| **ERD** | `erds/overview.svg` and `erds/index.html` already exist | Pure rendering — no login. Open `erds/index.html` in a browser and capture, or convert `overview.svg` to PNG. **This one is unblocked and should be done first.** |
+| **ERD** | ebook/screenshots/03_Canonical_ERD.png | Done. Rendered from the canonical ERD source. |
 | **NiFi** | Was **not running** — port 8443 was closed. I issued a start; it takes 6–8 minutes | Needs a browser login at `https://localhost:8443/nifi`. Credentials are in `C:\Apache\NIFI_LOGIN.txt` (outside the repo). I am not permitted to type passwords into login forms, which is why this never got done. |
 | **Fabric** | Workspace is live and now has a Warehouse too | Needs a Microsoft login at `app.fabric.microsoft.com`. Same constraint. |
 

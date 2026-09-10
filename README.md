@@ -12,6 +12,7 @@ Prepared from the job description and 17 user screenshots (8 September 2026). Th
 - tools/test_importer.py: focused local tests.
 - sources/: screenshot provenance and source images.
 - docs/: assumptions, business rules, import guide and references.
+- docs/DBT_EVIDENCE.md: reproducible dbt run evidence, delivery-mode check and target limitations.
 - validation/: local checks and manifest.
 
 ## Start
