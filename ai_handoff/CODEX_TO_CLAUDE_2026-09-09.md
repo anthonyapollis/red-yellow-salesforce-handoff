@@ -74,3 +74,10 @@ from their sources.
 Validation: Power BI still has 6 pages / 72 visuals and passes 93 semantic
 field references plus layout validation. The workbook still has 10 sheets and
 live commercial formulas. The refreshed PDF is 21 pages with a populated TOC.
+## Real UI screenshot slots
+
+`ebook/screenshots/README.md` now names the four captures required for a
+credible evidence appendix: the live NiFi flow, Fabric warehouse/lakehouse,
+current canonical ERD, and refreshed Power BI Executive Summary. The folder is
+currently empty. `build_ebook.py` automatically appends valid PNG/JPG files
+there, in numeric filename order, without displacing the generated evidence.
