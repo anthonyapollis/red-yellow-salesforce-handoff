@@ -83,7 +83,7 @@ THEME = {
             "color": "#1D1D1B"
         },
         "label": {
-            "fontSize": 9,
+            "fontSize": 10,
             "fontFace": "Segoe UI",
             "color": "#60646B"
         },
@@ -139,7 +139,7 @@ THEME = {
                 "categoryAxis": [
                     {
                         "showAxisTitle": False,
-                        "fontSize": 9,
+                        "fontSize": 10,
                         "labelColor": {
                             "solid": {
                                 "color": "#60646B"
@@ -151,7 +151,7 @@ THEME = {
                 "valueAxis": [
                     {
                         "showAxisTitle": False,
-                        "fontSize": 9,
+                        "fontSize": 10,
                         "labelColor": {
                             "solid": {
                                 "color": "#60646B"
@@ -169,7 +169,7 @@ THEME = {
                         "show": True,
                         "position": "Top",
                         "showTitle": False,
-                        "fontSize": 9,
+                        "fontSize": 10,
                         "labelColor": {
                             "solid": {
                                 "color": "#60646B"
@@ -179,7 +179,7 @@ THEME = {
                 ],
                 "labels": [
                     {
-                        "fontSize": 9,
+                        "fontSize": 10,
                         "color": {
                             "solid": {
                                 "color": "#60646B"
@@ -231,7 +231,7 @@ THEME = {
             "*": {
                 "columnHeaders": [
                     {
-                        "fontSize": 9,
+                        "fontSize": 10,
                         "fontColor": {
                             "solid": {
                                 "color": "#FFFFFF"
@@ -246,7 +246,7 @@ THEME = {
                 ],
                 "values": [
                     {
-                        "fontSize": 9,
+                        "fontSize": 10,
                         "fontColor": {
                             "solid": {
                                 "color": "#1D1D1B"
@@ -280,7 +280,7 @@ THEME = {
             "*": {
                 "header": [
                     {
-                        "fontSize": 9,
+                        "fontSize": 10,
                         "fontColor": {
                             "solid": {
                                 "color": "#60646B"
@@ -290,7 +290,7 @@ THEME = {
                 ],
                 "items": [
                     {
-                        "fontSize": 9,
+                        "fontSize": 10,
                         "fontColor": {
                             "solid": {
                                 "color": "#1D1D1B"
@@ -378,7 +378,7 @@ def visual(vtype, x, y, w, h, title=None, projections=None, objects=None, z=0,
         vc_objects["subTitle"] = [{"properties": {
             "text": lit(subtitle),
             "fontColor": colour(SLATE),
-            "fontSize": {"expr": {"Literal": {"Value": "9D"}}},
+            "fontSize": {"expr": {"Literal": {"Value": "10D"}}},
             "show": {"expr": {"Literal": {"Value": "true"}}},
         }}]
 
@@ -390,16 +390,16 @@ def visual(vtype, x, y, w, h, title=None, projections=None, objects=None, z=0,
         objects.setdefault("dataPoint", series_colours(n_series))
         objects.setdefault("categoryAxis", [{"properties": {
             "showAxisTitle": {"expr": {"Literal": {"Value": "false"}}},
-            "fontSize": {"expr": {"Literal": {"Value": "9D"}}},
+            "fontSize": {"expr": {"Literal": {"Value": "10D"}}},
             "labelColor": colour(SLATE)}}])
         objects.setdefault("valueAxis", [{"properties": {
             "showAxisTitle": {"expr": {"Literal": {"Value": "false"}}},
-            "fontSize": {"expr": {"Literal": {"Value": "9D"}}},
+            "fontSize": {"expr": {"Literal": {"Value": "10D"}}},
             "labelColor": colour(SLATE),
             "gridlineColor": colour(RULE)}}])
         objects.setdefault("legend", [{"properties": {
             "position": lit("Top"), "labelColor": colour(SLATE),
-            "fontSize": {"expr": {"Literal": {"Value": "9D"}}},
+            "fontSize": {"expr": {"Literal": {"Value": "10D"}}},
             "showTitle": {"expr": {"Literal": {"Value": "false"}}}}}])
     if vtype == "card":
         # KPI tiles are the only warm surfaces on the page. Charts remain white
@@ -421,9 +421,9 @@ def visual(vtype, x, y, w, h, title=None, projections=None, objects=None, z=0,
     if vtype == "tableEx":
         objects.setdefault("columnHeaders", [{"properties": {
             "fontColor": colour(PAPER), "backColor": colour(CHARCOAL),
-            "fontSize": {"expr": {"Literal": {"Value": "9D"}}}}}])
+            "fontSize": {"expr": {"Literal": {"Value": "10D"}}}}}])
         objects.setdefault("values", [{"properties": {
-            "fontSize": {"expr": {"Literal": {"Value": "9D"}}},
+            "fontSize": {"expr": {"Literal": {"Value": "10D"}}},
             "fontColor": colour(CHARCOAL)}}])
 
     cfg = {
@@ -554,7 +554,7 @@ def build():
         visual("clusteredColumnChart", 30, 520, 610, 180, "Enrolments by province",
                {"Category": [("dim_contact", "province", False)],
                 "Y": [(M, "Enrolments", True)]}),
-        visual("slicer", 660, 520, 290, 180, "Year",
+        visual("slicer", 660, 520, 290, 180, "Calendar year",
                {"Values": [("dim_date", "calendar_year", False)]}),
         visual("slicer", 960, 520, 290, 180, "On/off campus",
                {"Values": [("dim_offering", "delivery_mode", False)]}),
@@ -588,7 +588,7 @@ def build():
         visual("clusteredColumnChart", 520, 220, 480, 250, "Return on ad spend by channel",
                {"Category": [("dim_campaign", "channel", False)],
                 "Y": [(M, "Return on Ad Spend", True)]}),
-        visual("slicer", 1010, 220, 240, 250, "Channel",
+        visual("slicer", 1010, 220, 240, 250, "Acquisition channel",
                {"Values": [("dim_campaign", "channel", False)]}),
         visual("tableEx", 30, 485, 1220, 215, "Campaigns",
                {"Values": [("dim_campaign", "campaign_name", False),
@@ -654,7 +654,7 @@ def build():
                {"Values": [(M, "Duplicate Rate", True)]}),
         visual("card", 750, 105, 230, 100, "Unresolved Provinces",
                {"Values": [(M, "Unresolved Provinces", True)]}),
-        visual("slicer", 990, 105, 260, 100, "Entity",
+        visual("slicer", 990, 105, 260, 100, "Issue entity",
                {"Values": [("dq_issue_log", "entity", False)]}),
         visual("clusteredBarChart", 30, 220, 610, 250, "Issues by type",
                {"Category": [("dq_issue_log", "issue_code", False)],
@@ -672,7 +672,7 @@ def build():
 
     # ---------------------------------------------------------------- 5 ----
     v = [
-        textbox(30, 20, 900, 40, [("Salesforce CRM - live", BIG)]),
+        textbox(30, 20, 900, 40, [("Salesforce CRM - extracted", BIG)]),
         textbox(30, 60, 1060, 34,
                 [("Extracted from the org through the REST API on a "
                   "SystemModstamp watermark. Deleted records are retained and "
@@ -794,7 +794,7 @@ def build():
                "Revenue per member by channel",
                {"Category": [("dim_campaign", "channel", False)],
                 "Y": [(M, "Revenue per Member", True)]}),
-        visual("slicer", 1010, 220, 240, 250, "Channel",
+        visual("slicer", 1010, 220, 240, 250, "Acquisition channel",
                {"Values": [("dim_campaign", "channel", False)]}),
         visual("tableEx", 30, 485, 1220, 215, "Channel scorecard",
                {"Values": [("dim_campaign", "channel", False),
@@ -961,4 +961,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

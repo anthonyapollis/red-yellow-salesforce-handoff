@@ -33,7 +33,7 @@
       "color": "#1D1D1B"
     },
     "label": {
-      "fontSize": 9,
+      "fontSize": 10,
       "fontFace": "Segoe UI",
       "color": "#60646B"
     },
@@ -89,7 +89,7 @@
         "categoryAxis": [
           {
             "showAxisTitle": false,
-            "fontSize": 9,
+            "fontSize": 10,
             "labelColor": {
               "solid": {
                 "color": "#60646B"
@@ -101,7 +101,7 @@
         "valueAxis": [
           {
             "showAxisTitle": false,
-            "fontSize": 9,
+            "fontSize": 10,
             "labelColor": {
               "solid": {
                 "color": "#60646B"
@@ -119,7 +119,7 @@
             "show": true,
             "position": "Top",
             "showTitle": false,
-            "fontSize": 9,
+            "fontSize": 10,
             "labelColor": {
               "solid": {
                 "color": "#60646B"
@@ -129,7 +129,7 @@
         ],
         "labels": [
           {
-            "fontSize": 9,
+            "fontSize": 10,
             "color": {
               "solid": {
                 "color": "#60646B"
@@ -181,7 +181,7 @@
       "*": {
         "columnHeaders": [
           {
-            "fontSize": 9,
+            "fontSize": 10,
             "fontColor": {
               "solid": {
                 "color": "#FFFFFF"
@@ -196,7 +196,7 @@
         ],
         "values": [
           {
-            "fontSize": 9,
+            "fontSize": 10,
             "fontColor": {
               "solid": {
                 "color": "#1D1D1B"
@@ -230,7 +230,7 @@
       "*": {
         "header": [
           {
-            "fontSize": 9,
+            "fontSize": 10,
             "fontColor": {
               "solid": {
                 "color": "#60646B"
@@ -240,7 +240,7 @@
         ],
         "items": [
           {
-            "fontSize": 9,
+            "fontSize": 10,
             "fontColor": {
               "solid": {
                 "color": "#1D1D1B"
