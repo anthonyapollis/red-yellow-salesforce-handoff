@@ -534,7 +534,7 @@ def build():
     v = [
         textbox(30, 20, 700, 44, [("Red & Yellow — marketing to enrolment", BIG)]),
         textbox(30, 66, 900, 28,
-                [("Catalogue is real. People, campaigns and outcomes are synthetic.", SUB)]),
+                [("What: headline funnel and geography. Why: orient demand and value. How: use Calendar year and On/off campus.", SUB)]),
     ]
     for label, x in cards:
         v.append(visual("card", x, 110, 190, 110, label,
@@ -565,8 +565,7 @@ def build():
     v = [
         textbox(30, 20, 900, 40, [("Campaign performance", BIG)]),
         textbox(30, 60, 1000, 34,
-                [("Spend is aggregated at campaign grain before it meets enrolments, "
-                  "so a campaign's cost is never multiplied by its row count.", SUB)]),
+                [("What: spend, response and ROAS. Why: protect budget from misleading joins. How: select Acquisition channel.", SUB)]),
         visual("card", 30, 105, 200, 100, "Marketing Spend",
                {"Values": [(M, "Marketing Spend", True)]}),
         visual("card", 240, 105, 200, 100, "Cost per Enrolment",
@@ -608,8 +607,7 @@ def build():
     v = [
         textbox(30, 20, 900, 40, [("Admissions and student success", BIG)]),
         textbox(30, 60, 1000, 34,
-                [("At risk = attendance under 55%, or assessment average under 50%, "
-                  "or three or more overdue assignments.", SUB)]),
+                [("What: admissions flow and learner health. Why: find friction and early risk. How: compare programme and week.", SUB)]),
         visual("card", 30, 105, 190, 100, "Applications",
                {"Values": [(M, "Applications", True)]}),
         visual("card", 230, 105, 190, 100, "Opportunity to Enrolment",
@@ -644,8 +642,7 @@ def build():
     v = [
         textbox(30, 20, 900, 40, [("Data quality", BIG)]),
         textbox(30, 60, 1050, 34,
-                [("Defects were injected at known rates and recorded in a ground-truth "
-                  "manifest. These are what the pipeline caught.", SUB)]),
+                [("What: detected data defects. Why: make trust measurable. How: filter Issue entity, then open Issue detail.", SUB)]),
         visual("card", 30, 105, 230, 100, "Quality Issues",
                {"Values": [(M, "Quality Issues", True)]}),
         visual("card", 270, 105, 230, 100, "Duplicate Contacts",
@@ -674,9 +671,7 @@ def build():
     v = [
         textbox(30, 20, 900, 40, [("Salesforce CRM - extracted", BIG)]),
         textbox(30, 60, 1060, 34,
-                [("Extracted from the org through the REST API on a "
-                  "SystemModstamp watermark. Deleted records are retained and "
-                  "flagged rather than dropped, so removals are visible.", SUB)]),
+                [("What: extracted CRM records. Why: reconcile operational truth. How: inspect deleted flags and email completeness.", SUB)]),
         visual("card", 30, 105, 190, 100, "CRM Accounts",
                {"Values": [(M, "CRM Accounts", True)]}),
         visual("card", 230, 105, 190, 100, "CRM Contacts",
@@ -725,10 +720,7 @@ def build():
     v = [
         textbox(30, 20, 900, 40, [("Predictive models and recommendations", BIG)]),
         textbox(30, 60, 1080, 34,
-                [("Two models, both split by time rather than at random and "
-                  "restricted to what is known at decision time. Metrics are "
-                  "shown against the base rate, because an AUC means nothing "
-                  "without knowing what guessing would have achieved.", SUB)]),
+                [("What: decision-time model scores. Why: prioritise action safely. How: compare bands before assigning a human queue.", SUB)]),
 
         visual("card", 30, 105, 190, 96, "Scored leads",
                {"Values": [(M, "Scored Leads", True)]}),
@@ -772,8 +764,7 @@ def build():
     v = [
         textbox(30, 20, 900, 40, [("Marketing analytics", BIG)]),
         textbox(30, 60, 1040, 34,
-                [("Campaign reach, response, enrolment and value at campaign grain. "
-                  "Use this page to decide which channels deserve the next rand.", SUB)]),
+                [("What: reach through revenue. Why: choose the next rand. How: select Acquisition channel and read the scorecard.", SUB)]),
         visual("card", 30, 105, 190, 100, "Campaign Reach",
                {"Values": [(M, "Campaign Reach", True)]}),
         visual("card", 230, 105, 190, 100, "Responded",
@@ -815,9 +806,7 @@ def build():
     v = [
         textbox(30, 20, 900, 40, [("Recommendations & solutions", BIG)]),
         textbox(30, 60, 1080, 34,
-                [("Use the signal, assign an owner, and measure the result. "
-                  "These actions are grounded in the modelled funnel, CRM quality, "
-                  "marketing mix and early-warning data.", SUB)]),
+                [("What: actions and owners. Why: turn a signal into change. How: follow the 90-day rollout and measure outcomes.", SUB)]),
         visual("card", 30, 105, 190, 96, "Priority leads",
                {"Values": [(M, "Priority Leads", True)]}, accent=GOOD),
         visual("card", 230, 105, 190, 96, "Conversion rate",

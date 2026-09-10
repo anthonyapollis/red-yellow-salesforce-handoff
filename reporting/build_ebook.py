@@ -417,6 +417,13 @@ def main():
         rr.font.color.rgb = rgb(RED)
         pr.add_run(text)
 
+    H("What, why and how", 16, CHARCOAL, 12)
+    d.add_paragraph(
+        "Every section follows the same reading rule. What names the data or decision "
+        "being shown. Why explains the business question it answers. How tells the "
+        "reader which filter, comparison or action to use next. The captions and "
+        "dashboard subtitles use the same language so the document and report remain "
+        "self-explanatory when they are read separately.")
     d.add_paragraph()
     warn = d.add_paragraph()
     wr = warn.add_run(
