@@ -895,6 +895,35 @@ def build():
     ]
     pages.append(page("actions", "Recommendations & Solutions", 8, v))
 
+    # ---------------------------------------------------------------- 10 ----
+    v = [
+        textbox(30, 20, 900, 40, [("BA & SA improvement backlog", BIG)]),
+        textbox(30, 60, 1060, 34,
+                [("What: translate website and platform findings into delivery work. Why: remove ambiguity at the business and system boundaries. How: assign owners, acceptance evidence and release gates.", SUB)]),
+        visual("card", 30, 105, 190, 96, "Leads",
+               {"Values": [(M, "Leads", True)]}),
+        visual("card", 230, 105, 190, 96, "Funnel conversion",
+               {"Values": [(M, "Opportunity to Enrolment", True)]}),
+        visual("card", 430, 105, 190, 96, "Email completeness",
+               {"Values": [(M, "CRM Email Completeness", True)]}, accent=GOOD),
+        visual("card", 630, 105, 190, 96, "At-risk rate",
+               {"Values": [(M, "At Risk Rate", True)]}, accent=WARN),
+        visual("card", 830, 105, 190, 96, "Marketing spend",
+               {"Values": [(M, "Marketing Spend", True)]}),
+        visual("card", 1030, 105, 190, 96, "Withdrawal rate",
+               {"Values": [(M, "Actual Withdrawal Rate", True)]}, accent=BAD),
+        textbox(30, 225, 590, 220,
+                [("Business analysis improvements\n", {"fontSize": "15pt", "fontWeight": "bold", "color": RED}),
+                 ("Define one catalogue and KPI dictionary for on-campus and online delivery; label every metric with source system and as-of date; agree funnel denominators and attribution; and turn each signal into a user story with an owner, SLA and outcome measure. Website evidence to prioritise: non-200 sitemap URLs, missing metadata, unclear price status and broken application paths.", SUB)]),
+        textbox(660, 225, 590, 220,
+                [("Systems analysis improvements\n", {"fontSize": "15pt", "fontWeight": "bold", "color": RED}),
+                 ("Choose the GA4 Data API or native BigQuery route deliberately; keep analytics identifiers separate from CRM external IDs; add watermarks, run IDs, rejects, retries and replay paths to NiFi/Fabric; enforce metadata and structured-data controls by page template; and document model version, drift checks and human review for dropout-risk actions.", SUB)]),
+        textbox(30, 480, 1220, 190,
+                [("Release gates\n", {"fontSize": "15pt", "fontWeight": "bold", "color": RED}),
+                 ("Now: repair or approve non-200 sitemap entries, publish source-of-truth definitions, remove blank-only slicers and finish Fabric SQL compatibility. Next: activate the selected GA4 route, add ingestion observability and template SEO controls. Then: connect website campaign events to CRM attribution and pilot course-risk interventions with measured outcomes. These are recommendations from the analysed website and platform evidence; they are not claims that production website changes have already shipped.", SUB)]),
+    ]
+    pages.append(page("ba_sa", "BA & SA Improvements", 9, v))
+
     return {
         "id": 0,
         # The theme has to be registered as a resource AND named in the config.

@@ -1187,6 +1187,34 @@ def main():
         "schema; enforce one H1; improve programme and application internal links; "
         "then rerun the crawl and reconcile coverage before release.")
 
+    H("Business analysis and systems analysis improvements", 16, CHARCOAL, 12)
+    d.add_paragraph(
+        "The website audit is also a requirements and architecture signal. The "
+        "problems repeat by page template and system boundary, so the useful "
+        "response is a BA/SA backlog with owners, acceptance evidence and release "
+        "controls rather than a list of isolated edits. The detailed register is "
+        "in docs/BA_SA_IMPROVEMENTS.md.")
+    d.add_paragraph(
+        "Business analysis priorities: agree one catalogue and KPI dictionary "
+        "across on-campus and online delivery; label every count by source system "
+        "and as-of date; define funnel denominators and attribution rules; and "
+        "turn the marketing, admissions, student-success and data-quality signals "
+        "into user stories with an owner, SLA and outcome measure.")
+    d.add_paragraph(
+        "Systems analysis priorities: choose the GA4 Data API route when curated "
+        "metrics are sufficient, or the native BigQuery route when raw events are "
+        "needed; keep website identifiers separate from CRM external IDs; add "
+        "watermarks, run IDs, reject counts, retries and replay paths to NiFi and "
+        "Fabric; and enforce website metadata, structured-data, heading and image "
+        "controls at the template level.")
+    d.add_paragraph(
+        "The first release gate is explicit: non-200 sitemap entries are repaired "
+        "or approved as redirects, catalogue and KPI definitions reconcile across "
+        "Power BI and the warehouse, no slicer is blank-only, and every ML action "
+        "has human review and a recorded outcome. These are improvements identified "
+        "from the analysed website and platform evidence; no production website "
+        "change is claimed here.")
+
     # Any UI screenshots the author dropped in are appended, captioned by filename.
     shots = sorted((REPO / "ebook" / "screenshots").glob("*.png")) + \
         sorted((REPO / "ebook" / "screenshots").glob("*.jpg"))
