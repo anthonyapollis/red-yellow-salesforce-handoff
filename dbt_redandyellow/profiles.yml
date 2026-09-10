@@ -1,6 +1,7 @@
 # Two targets, same models.
 #   duckdb  - local, runs today, no cloud auth. Reads warehouse/raw/*.parquet.
 #   fabric  - Microsoft Fabric Warehouse over the SQL endpoint (Entra ID).
+#   bigquery - Google Cloud target using Application Default Credentials.
 #
 # Fabric needs FABRIC_SERVER / FABRIC_DATABASE in the environment; auth is
 # interactive Entra ID by default so no secret is stored in this repo.
@@ -24,3 +25,14 @@ redandyellow:
       trust_cert: false
       threads: 4
       retries: 2
+
+    bigquery:
+      type: bigquery
+      method: oauth
+      project: "{{ env_var('BIGQUERY_PROJECT', 'replace-with-gcp-project') }}"
+      dataset: "{{ env_var('BIGQUERY_DATASET', 'ry_analytics') }}"
+      location: "{{ env_var('BIGQUERY_LOCATION', 'africa-south1') }}"
+      threads: 4
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1

@@ -445,8 +445,8 @@ def main():
         {"area": "Catalogue", "signal": "Enquire-for-price offerings have no defensible numeric fee.",
          "solution": "Keep fee null with a price status; add values only from verified source evidence.",
          "owner": "Data stewardship", "success_measure": "No unknown price reported as zero"},
-        {"area": "Platform", "signal": "Fabric silver/gold and GA4 remain gated by external execution.",
-         "solution": "Fix T-SQL compatibility, rerun dbt in Fabric, then add GA4 as dated bronze.",
+        {"area": "Platform", "signal": "Fabric silver/gold remains gated by external execution; GA4 can use the Data API without BigQuery or native BigQuery export for raw events.",
+         "solution": "Keep the Data API route for aggregated campaign KPIs; use native BigQuery export for raw events, then run the shared dbt graph on the BigQuery target.",
          "owner": "Data engineering", "success_measure": "Passing Fabric run and reconciled GA4 mart"},
     ])
     end = table(ws, action_rows, 5, 1, {}, {

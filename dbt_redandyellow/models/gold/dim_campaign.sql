@@ -8,5 +8,5 @@ select
     c.is_spend_missing,
     c.is_active,
     extract(year from c.start_date) as campaign_year,
-    date_diff('day', c.start_date, c.end_date) as duration_days
+    {{ ry_date_diff_days('c.start_date', 'c.end_date') }} as duration_days
 from {{ ref('stg_campaign') }} c

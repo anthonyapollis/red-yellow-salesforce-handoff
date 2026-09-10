@@ -19,6 +19,16 @@
   end
 {% endmacro %}
 
+{#- BigQuery REGEXP_CONTAINS uses RE2 and no DuckDB global flag. -#}
+{% macro bigquery__ry_clean_email(col) %}
+  case
+    when {{ col }} is null then null
+    when regexp_contains(lower(trim(cast({{ col }} as string))), r'^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$')
+      then lower(trim(cast({{ col }} as string)))
+    else null
+  end
+{% endmacro %}
+
 {% macro fabric__ry_clean_email(col) %}
   case
     when {{ col }} is null then null
@@ -47,6 +57,19 @@
       then '+27' || substr(regexp_replace({{ col }}, '[^0-9]', '', 'g'), 2)
     when length(regexp_replace({{ col }}, '[^0-9]', '', 'g')) = 9
       then '+27' || regexp_replace({{ col }}, '[^0-9]', '', 'g')
+    else null
+  end
+{% endmacro %}
+
+{% macro bigquery__ry_clean_phone(col) %}
+  {%- set digits -%}
+    regexp_replace(cast({{ col }} as string), r'[^0-9]', '')
+  {%- endset -%}
+  case
+    when {{ col }} is null then null
+    when length({{ digits }}) = 11 and substr({{ digits }}, 1, 2) = '27' then concat('+', {{ digits }})
+    when length({{ digits }}) = 10 and substr({{ digits }}, 1, 1) = '0' then concat('+27', substr({{ digits }}, 2))
+    when length({{ digits }}) = 9 then concat('+27', {{ digits }})
     else null
   end
 {% endmacro %}

@@ -12,7 +12,7 @@ select
     cast(close_date as date)   as close_date,
     is_won,
     case when stage_name in ('Closed Won', 'Closed Lost') then 1 else 0 end as is_closed,
-    date_diff('day', cast(created_date as date), cast(close_date as date)) as days_to_close,
+    {{ ry_date_diff_days('cast(created_date as date)', 'cast(close_date as date)') }} as days_to_close,
     source_system, source_updated_at, loaded_at,
     {{ ry_is_late_arriving() }} as is_late_arriving
 from src

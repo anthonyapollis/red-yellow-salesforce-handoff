@@ -136,40 +136,44 @@ def main():
     ax.xaxis.set_major_formatter(lambda x, p: f"{x/1e3:.0f}k" if x >= 1e3 else f"{x:.0f}")
     fig.tight_layout(); fig.savefig(FIG / "dq.png"); plt.close(fig)
 
-    # A GA4 NiFi builder exists, but it has no credentialed successful run or
-    # landed source table. This figure explains the extension without passing
-    # it off as an operating pipeline.
-    fig, ax = plt.subplots(figsize=(7.2, 2.65))
+    # GA4 can use the Data API without BigQuery, or native BigQuery export for raw events.
+    fig, ax = plt.subplots(figsize=(7.2, 3.25))
     ax.axis("off")
-    # Five equal-width cards with a deliberate gap. The earlier version let
-    # the long Data API label and subtitles run into adjacent cards.
-    boxes = [
-        (0.015, "GA4\nproperty", "event + campaign\ndata"),
-        (0.215, "Data API /\nBigQuery export", "scheduled,\nconsent-aware"),
-        (0.415, "OneLake\nbronze", "ga4 / event_date\npartition"),
-        (0.615, "Fabric + dbt", "conform campaign\nand date"),
-        (0.815, "Power BI", "attribution\nand reach"),
+    cards = [
+        (0.02, 0.40, 0.14, 0.24, "GA4\nproperty", "source\nevents", "#FFF7E3", RED),
+        (0.22, 0.63, 0.20, 0.22, "Data API", "aggregated\nreports", "#FFFFFF", RED),
+        (0.22, 0.17, 0.20, 0.22, "BigQuery\nexport", "raw event\ntables", "#FFFFFF", YELLOW),
+        (0.50, 0.40, 0.18, 0.24, "OneLake\nbronze", "dated\npartitions", "#FFF7E3", YELLOW),
+        (0.72, 0.40, 0.13, 0.24, "Fabric +\ndbt", "conform\nmodels", "#FFFFFF", "#DDD5C8"),
+        (0.88, 0.40, 0.10, 0.24, "Power\nBI", "KPIs", "#FFFFFF", "#DDD5C8"),
     ]
-    for i, (x, title, sub) in enumerate(boxes):
-        fill = "#FFF7E3" if i in (0, 2) else "#FFFFFF"
-        edge = RED if i == 0 else (YELLOW if i == 2 else "#DDD5C8")
-        patch = matplotlib.patches.FancyBboxPatch((x, 0.30), 0.15, 0.43,
-            boxstyle="round,pad=0.012,rounding_size=0.02", linewidth=1.2,
-            edgecolor=edge, facecolor=fill, transform=ax.transAxes)
-        ax.add_patch(patch)
-        ax.text(x + 0.075, 0.575, title, transform=ax.transAxes, ha="center",
-                va="center", fontsize=7.8, linespacing=1.0,
+    for x, y, w, h, title, sub, fill, edge in cards:
+        ax.add_patch(matplotlib.patches.FancyBboxPatch(
+            (x, y), w, h, boxstyle="round,pad=0.012,rounding_size=0.02",
+            linewidth=1.2, edgecolor=edge, facecolor=fill, transform=ax.transAxes))
+        ax.text(x + w / 2, y + h * 0.63, title, transform=ax.transAxes,
+                ha="center", va="center", fontsize=7.4, linespacing=1.0,
                 fontweight="bold", color=CHARCOAL)
-        ax.text(x + 0.075, 0.405, sub, transform=ax.transAxes, ha="center",
-                va="center", fontsize=6.3, linespacing=1.0, color=SLATE)
-        if i < len(boxes) - 1:
-            ax.annotate("", xy=(boxes[i + 1][0] - 0.012, 0.515),
-                        xytext=(x + 0.158, 0.515), xycoords=ax.transAxes,
-                        arrowprops={"arrowstyle": "->", "color": RED, "lw": 1.5})
-    ax.text(0.5, 0.115, "Proposed extension - not configured or counted in the current platform",
-            transform=ax.transAxes, ha="center", va="center", fontsize=8.0,
+        ax.text(x + w / 2, y + h * 0.27, sub, transform=ax.transAxes,
+                ha="center", va="center", fontsize=6.2, linespacing=1.0, color=SLATE)
+    def arrow(x1, y1, x2, y2):
+        ax.annotate("", xy=(x2, y2), xytext=(x1, y1), xycoords=ax.transAxes,
+                    arrowprops={"arrowstyle": "->", "color": RED, "lw": 1.5})
+    arrow(0.165, 0.56, 0.215, 0.74)
+    arrow(0.165, 0.48, 0.215, 0.28)
+    arrow(0.425, 0.74, 0.49, 0.56)
+    arrow(0.425, 0.28, 0.49, 0.48)
+    arrow(0.685, 0.52, 0.715, 0.52)
+    arrow(0.855, 0.52, 0.875, 0.52)
+    ax.text(0.32, 0.91, "No BigQuery required", transform=ax.transAxes,
+            ha="center", va="center", fontsize=7.0, color=RED, fontweight="bold")
+    ax.text(0.32, 0.08, "BigQuery required for native raw-event export",
+            transform=ax.transAxes, ha="center", va="center", fontsize=7.0,
+            color=SLATE, fontweight="bold")
+    ax.text(0.50, 0.03, "Two valid GA4 routes; neither is a claimed live run in this project",
+            transform=ax.transAxes, ha="center", va="center", fontsize=7.5,
             color=SLATE, style="italic")
-    fig.tight_layout(pad=0.4)
+    fig.tight_layout(pad=0.35)
     fig.savefig(FIG / "ga4_to_fabric.png", dpi=180)
     plt.close(fig)
 
@@ -939,18 +943,21 @@ def main():
     figure_if("ev_08_fabric.png",
               "Figure 12 - The Fabric workspace, its capacity, and what is actually in OneLake.")
 
-    H("GA4 to Fabric — the next integration, not a claimed result", 16, CHARCOAL, 12)
+    H("GA4 to Fabric - two valid routes, not a claimed result", 16, CHARCOAL, 12)
     d.add_paragraph(
         "A GA4 NiFi builder is included, but it has no configured GA4 credential, "
         "successful extract or warehouse source table, and no report number uses GA4 data. "
-        "The practical next route is a scheduled GA4 Data API extract or a BigQuery "
-        "export into an immutable OneLake bronze partition by event date. A dbt "
-        "staging model would then conform date and campaign keys before a gold "
-        "attribution mart joins aggregate reach and traffic to the campaign spine "
-        "already used by Power BI. Keep user-level analytics identifiers out of "
-        "the CRM join; campaign, source and date are enough for the first use case.")
+        "BigQuery is not required when the Data API is used: runReport returns the "
+        "aggregated dimensions and metrics needed for campaign, source/medium and "
+        "landing-page reporting, and NiFi can write those results directly to OneLake. "
+        "BigQuery is required for GA4 native raw-event export, which produces richer "
+        "events_YYYYMMDD tables for event-parameter and session-path analysis. Either "
+        "route can land in a dated bronze partition before dbt conforms campaign and "
+        "date keys for Power BI. Keep user-level analytics identifiers out of the CRM "
+        "join; campaign, source and date are enough for the first use case.")
     figure("ga4_to_fabric.png",
-           "Figure 13 - Proposed GA4 extension. It is intentionally separated from the verified Salesforce-to-Fabric flow.")
+           "Figure 13 - GA4 can feed the platform through the Data API without BigQuery, or through native raw-event export to BigQuery.")
+
 
     # Any UI screenshots the author dropped in are appended, captioned by filename.
     shots = sorted((REPO / "ebook" / "screenshots").glob("*.png")) + \

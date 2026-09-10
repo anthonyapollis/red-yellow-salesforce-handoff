@@ -6,17 +6,15 @@ are the two halves of the acquisition story: GA4 says how someone arrived,
 Salesforce says what happened to them afterwards, and the warehouse joins the
 two on campaign and landing page.
 
-Why the GA4 Data API and not the BigQuery export
-------------------------------------------------
-GA4's native BigQuery export is the richer path - event-level rows, free, and
-the usual production answer. It is not the path here, for a reason worth
-stating: it lands data in BigQuery, so "GA4 to Fabric" becomes "BigQuery to
-Fabric", and the interesting engineering moves into a Data Factory copy or a
-OneLake shortcut. The advert asks for NiFi. The Data API keeps the extract in
-NiFi where it can be seen, scheduled and reasoned about, and it returns exactly
-the acquisition dimensions this warehouse joins on.
+Why this builder uses the GA4 Data API
+----------------------------------------
+The Data API is a direct GA4 route: BigQuery is not required, and runReport
+returns the aggregated acquisition dimensions and metrics this warehouse joins
+on. GA4 also offers a native BigQuery export for richer event-level analysis.
+That second route is intentionally documented as an alternative rather than
+silently represented as a live source in this NiFi flow.
 
-docs/GA4_TO_FABRIC_EXTENSION.md sets out both paths and when each is right.
+docs/GA4_TO_FABRIC_EXTENSION.md sets out both paths, their grain and when each is right.
 
 Idempotent: re-running deletes and rebuilds the process group.
 

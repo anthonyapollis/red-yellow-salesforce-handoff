@@ -10,7 +10,7 @@ select
     -- Decided before submitted: keep the row, flag the impossibility.
     case when decision_date < submitted_date then 1 else 0 end as is_date_inverted,
     case when decision_date >= submitted_date
-         then date_diff('day', cast(submitted_date as date), cast(decision_date as date))
+         then {{ ry_date_diff_days('cast(submitted_date as date)', 'cast(decision_date as date)') }}
          end as days_to_decision,
     case when status = 'Accepted' then 1 else 0 end as is_accepted,
     source_system, source_updated_at, loaded_at,
