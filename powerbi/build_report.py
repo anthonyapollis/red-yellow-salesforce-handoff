@@ -40,7 +40,7 @@ CANVAS = "#FFF9F0"
 # brand without competing with the accent-coloured figure they carry, and it
 # separates the number band from the charts below, which stay white so the
 # data ink reads cleanly.
-TILE = "#FFF4DC"
+TILE, TILE_EDGE = "#FFF7E3", "#E9C46A"   # KPI tile ground and its edge
 RULE = "#E5DED2"
 SERIES = ["#F52635", "#007C83", "#008C45", "#E39B16", "#7D3C6A",
           "#D9574A", "#2C6FA3", "#707A84", "#5B7250", "#9E3540"]
@@ -355,7 +355,7 @@ def visual(vtype, x, y, w, h, title=None, projections=None, objects=None, z=0,
 
     vc_objects = {
         "background": [{"properties": {
-            "color": colour(TILE if vtype == "card" else PAPER),
+            "color": colour(PAPER),
             "show": {"expr": {"Literal": {"Value": "true"}}},
             "transparency": {"expr": {"Literal": {"Value": "0D"}}}}}],
         "border": [{"properties": {
@@ -405,11 +405,11 @@ def visual(vtype, x, y, w, h, title=None, projections=None, objects=None, z=0,
         # KPI tiles are the only warm surfaces on the page. Charts remain white
         # so their marks and labels keep their contrast.
         vc_objects["background"] = [{"properties": {
-            "color": colour("#FFF7E3"),
+            "color": colour(TILE),
             "show": {"expr": {"Literal": {"Value": "true"}}},
             "transparency": {"expr": {"Literal": {"Value": "0D"}}}}}]
         vc_objects["border"] = [{"properties": {
-            "color": colour("#E9C46A"),
+            "color": colour(TILE_EDGE),
             "show": {"expr": {"Literal": {"Value": "true"}}},
             "radius": {"expr": {"Literal": {"Value": "6D"}}}}}]
         objects.setdefault("labels", [{"properties": {
