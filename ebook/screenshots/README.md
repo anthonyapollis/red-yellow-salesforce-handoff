@@ -33,15 +33,28 @@ sign in. That is the whole blocker — nothing technical.
   Capture that listing. Worth also capturing the Lakehouse's `Files/bronze`
   showing the 13 parquet folders.
 - **NiFi** — `https://localhost:8443/nifi`. NiFi is **not running by default**;
-  start it first and give it 6–8 minutes:
+  start it and give it 6–8 minutes (it spends most of that unpacking 119 NAR
+  files, during which the port refuses connections and it looks dead):
 
   ```
   C:\Apache\nifi-2.9.0-bin\nifi-2.9.0\bin\nifi.cmd start
   ```
 
-  Log in with the credentials in `C:\Apache\NIFI_LOGIN.txt` (deliberately kept
-  outside this repo), then open the `RY_Salesforce_to_Fabric` process group and
-  capture the canvas with the stage groups visible.
+  Confirm it is actually serving before blaming the browser:
+
+  ```powershell
+  Invoke-WebRequest https://localhost:8443/nifi/ -SkipCertificateCheck
+  ```
+
+  Two things then stand between the browser and the canvas, and neither is a
+  fault:
+  1. **A self-signed certificate.** Chrome shows "Your connection is not
+     private" — Advanced → Proceed to localhost. A human has to make that call.
+  2. **The login.** Credentials are in `C:\Apache\NIFI_LOGIN.txt`, deliberately
+     kept outside this repo.
+
+  Then open the `RY_Salesforce_to_Fabric` process group and capture the canvas
+  with the stage groups visible.
 
 Windows: `Win+Shift+S` captures a region straight to the clipboard, then paste
 into Paint and save here under the filename above.
