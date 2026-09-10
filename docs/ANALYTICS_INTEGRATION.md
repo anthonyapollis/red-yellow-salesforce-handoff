@@ -9,7 +9,7 @@ The platform uses Salesforce-shaped operational data and catalogue data through 
 - Salesforce operational slice: loaded and extracted through the REST API with external IDs, `SystemModstamp`, source timestamps and deletion flags retained.
 - Fabric bronze: the `raw_salesforce` schema contains all 13 landed tables. It includes 1,500,000 leads, 1,138,726 contacts, 2,533,440 campaign members, 706,010 opportunities, 494,352 applications, 168,157 enrolments and 2,101,053 student-progress rows.
 - Fabric connectivity: the Warehouse accepts Azure CLI authentication through ODBC Driver 17; the generated dbt Fabric profile and a bronze model both pass.
-- Power BI: the report has executive, campaign, admissions, quality, CRM and predictive pages, with a seventh Marketing Analytics page defined in the generator for the next safe rebuild.
+- Power BI: the report has executive, campaign, admissions, quality, CRM and predictive pages, with Marketing Analytics and Recommendations & Solutions pages. The action page links each signal to an owner, intervention and success measure.
 
 ### Current limitation
 

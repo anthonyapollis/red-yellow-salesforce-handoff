@@ -771,6 +771,63 @@ def main():
             "Power BI exposes the score distribution and observed outcomes so a "
             "team can see whether the ranking remains useful before operationalising it.")
 
+    # ---- recommendations and solutions -----------------------------------
+    d.add_page_break()
+    H("Recommendations and solutions", 20, RED, 0)
+    d.add_paragraph(
+        "The dashboard is most useful when each signal ends in a decision. "
+        "The table below turns the observed patterns into a practical owner, "
+        "intervention and success measure. It is a control plan for the next "
+        "operating cycle, not a claim that synthetic outcomes will repeat in "
+        "the live organisation.")
+
+    tbl = d.add_table(rows=1, cols=4)
+    tbl.style = "Light List Accent 1"
+    for i, h in enumerate(["Area", "Signal", "Solution", "Success measure"]):
+        tbl.rows[0].cells[i].text = h
+    for area, signal, solution, measure in [
+        ("Acquisition", "Channel response, enrolment rate and revenue per member diverge.",
+         "Run a controlled budget test toward the best-performing channel; set a stop rule for spend without response.",
+         "ROAS, spend per response and revenue per member improve without increasing total spend."),
+        ("Admissions", "Priority propensity leads convert at a much higher rate than the lower bands.",
+         "Route Priority leads to a named human queue within 24 hours and leave Low-band leads in automated nurture.",
+         "Response SLA and conversion rate improve; top-band lift remains stable on a holdout."),
+        ("Student success", "First-month attendance below 65% is associated with materially higher withdrawal.",
+         "Trigger a support conversation at week 4, log the intervention and compare with the prior cohort.",
+         "Week-4 attendance rises and withdrawal falls for comparable cohorts."),
+        ("CRM quality", "Blank-only filters, duplicate people and missing contact fields weaken follow-up.",
+         "Require external IDs, email and campaign membership at capture; send exceptions to a daily queue.",
+         "Email completeness rises, duplicate rate falls and unresolved issues are closed within SLA."),
+        ("Catalogue", "Enquire-for-price offerings have no defensible numeric fee.",
+         "Keep price as null with an explicit status; add a verified fee only when the public source supplies one.",
+         "No unknown price is reported as zero and fee refreshes retain source evidence."),
+        ("Platform", "Bronze is verified; silver/gold Fabric execution and GA4 are still gated.",
+         "Finish DuckDB-to-T-SQL compatibility fixes, rerun dbt in Fabric, then add GA4 as a separate dated bronze source.",
+         "A passing Fabric run and a reconciled GA4-to-campaign mart before production reporting."),
+    ]:
+        cells = tbl.add_row().cells
+        for i, value in enumerate([area, signal, solution, measure]):
+            cells[i].text = value
+
+    H("90-day implementation sequence", 16, CHARCOAL, 12)
+    for phase, text in [
+        ("Days 0-30 - Stabilise",
+         "Confirm field rules, remove blank-bound slicers, assign the Priority queue and baseline the KPI cards."),
+        ("Days 31-60 - Test",
+         "Run channel and follow-up holdouts, log student-support interventions and keep spend and cohort definitions fixed."),
+        ("Days 61-90 - Scale",
+         "Promote only interventions that beat baseline, publish the weekly action list and monitor model drift by delivery mode and channel."),
+    ]:
+        p = d.add_paragraph(style="List Bullet")
+        r = p.add_run(f"{phase}. ")
+        r.bold = True
+        r.font.color.rgb = rgb(RED)
+        p.add_run(text)
+    d.add_paragraph(
+        "No model score should make an automated adverse decision. Scores order a "
+        "worklist for a human team; the team records the action and the outcome so "
+        "the recommendation can be challenged and improved.")
+
     # ---- how the warehouse is organised ----------------------------------
     d.add_page_break()
     H("How the warehouse is organised", 20, RED, 0)

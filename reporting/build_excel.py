@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Builds the Red & Yellow analytics workbook from the dbt marts.
 
-One workbook, eight sheets, native Excel charts (not pasted images) so every
+One workbook with summary, action, detail and evidence sheets, using native Excel charts (not pasted images) so every
 number stays traceable to the cell it came from and the reader can re-sort and
 re-filter without asking anyone to regenerate anything.
 
@@ -422,6 +422,46 @@ def main():
                        "decisions with this much unexplained variation. A model "
                        "claiming 0.95 here would mean a feature had leaked. The "
                        "lift is the number to act on.", f["warn"])
+
+    # ==================================================================== 6 ==
+    ws = wb.add_worksheet("Recommendations")
+    ws.hide_gridlines(2)
+    ws.set_column("A:A", 2)
+    ws.write("B2", "Recommendations and solutions", f["title"])
+    ws.write("B3", "An action register linked to the report signals, owners and measurable outcomes.", f["sub"])
+    action_rows = pd.DataFrame([
+        {"area": "Acquisition", "signal": "Channel response, enrolment rate and revenue per member diverge.",
+         "solution": "Test budget toward the strongest channel and set a stop rule for spend without response.",
+         "owner": "Marketing", "success_measure": "ROAS, spend per response and revenue per member"},
+        {"area": "Admissions", "signal": "Priority propensity leads convert at a higher rate.",
+         "solution": "Route Priority leads to a human queue within 24 hours; automate Low-band nurture.",
+         "owner": "Admissions", "success_measure": "Response SLA, conversion rate and top-band lift"},
+        {"area": "Student success", "signal": "Attendance below 65% in month one predicts higher withdrawal.",
+         "solution": "Trigger a week-4 support conversation and log the intervention.",
+         "owner": "Student success", "success_measure": "Week-4 attendance and withdrawal rate"},
+        {"area": "CRM quality", "signal": "Blank-only filters, duplicates and missing contact fields weaken follow-up.",
+         "solution": "Require external IDs, email and campaign membership; queue exceptions daily.",
+         "owner": "CRM + Data", "success_measure": "Email completeness, duplicate rate and issue SLA"},
+        {"area": "Catalogue", "signal": "Enquire-for-price offerings have no defensible numeric fee.",
+         "solution": "Keep fee null with a price status; add values only from verified source evidence.",
+         "owner": "Data stewardship", "success_measure": "No unknown price reported as zero"},
+        {"area": "Platform", "signal": "Fabric silver/gold and GA4 remain gated by external execution.",
+         "solution": "Fix T-SQL compatibility, rerun dbt in Fabric, then add GA4 as dated bronze.",
+         "owner": "Data engineering", "success_measure": "Passing Fabric run and reconciled GA4 mart"},
+    ])
+    end = table(ws, action_rows, 5, 1, {}, {
+        "area": 18, "signal": 54, "solution": 62, "owner": 18, "success_measure": 44})
+    ws.freeze_panes(6, 1)
+    ws.write(end + 1, 1, "90-day rollout", f["h2"])
+    rollout = [
+        ("Days 0-30 - Stabilise", "Confirm field rules, remove blank-bound slicers, assign the Priority queue and baseline KPI cards."),
+        ("Days 31-60 - Test", "Run channel and follow-up holdouts, log student-support interventions and keep cohort definitions fixed."),
+        ("Days 61-90 - Scale", "Promote only interventions that beat baseline and monitor model drift by delivery mode and channel."),
+    ]
+    for i, (phase, action) in enumerate(rollout, start=end + 2):
+        ws.write(i, 1, phase, f["h2"])
+        ws.merge_range(i, 2, i, 6, action, f["note"])
+    ws.write(end + 6, 1, "Model scores order a human worklist; they must never make an automated adverse decision.", f["warn"])
 
     # ==================================================================== 6 ==
     ws = wb.add_worksheet("Catalogue")

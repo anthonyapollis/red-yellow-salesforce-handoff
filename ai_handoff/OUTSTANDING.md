@@ -96,7 +96,7 @@ all three `fct_admissions_funnel` edges active). But:
 
 - **A freshly opened PBIP holds no data until refreshed.** Every `COUNTROWS`
   returned blank before refresh. Open it, hit Refresh, wait several minutes,
-  *then* judge the visuals. The generator now materializes seven pages and validates 118 field references; do not judge blank cards before refresh.
+  *then* judge the visuals. The generator now materializes eight pages and validates 124 field references; do not judge blank cards before refresh.
 - The design pass and Marketing Analytics page are committed and generated. A populated Desktop review remains
   the last presentation check before calling the report presentation-ready.
 - **Do not save from Desktop** — it upgrades to PBIR 4.0, deletes `report.json`

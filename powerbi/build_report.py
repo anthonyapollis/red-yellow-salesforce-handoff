@@ -809,6 +809,54 @@ def build():
     ]
     pages.append(page("marketing", "Marketing Analytics", 6, v))
 
+    # ---------------------------------------------------------------- 8 ----
+    # Turn the findings into an operating plan. Every recommendation names the
+    # intervention and the measure that should move.
+    v = [
+        textbox(30, 20, 900, 40, [("Recommendations & solutions", BIG)]),
+        textbox(30, 60, 1080, 34,
+                [("Use the signal, assign an owner, and measure the result. "
+                  "These actions are grounded in the modelled funnel, CRM quality, "
+                  "marketing mix and early-warning data.", SUB)]),
+        visual("card", 30, 105, 190, 96, "Priority leads",
+               {"Values": [(M, "Priority Leads", True)]}, accent=GOOD),
+        visual("card", 230, 105, 190, 96, "Conversion rate",
+               {"Values": [(M, "Actual Conversion Rate", True)]}),
+        visual("card", 430, 105, 190, 96, "Email completeness",
+               {"Values": [(M, "CRM Email Completeness", True)]}, accent=GOOD),
+        visual("card", 630, 105, 190, 96, "Withdrawal rate",
+               {"Values": [(M, "Actual Withdrawal Rate", True)]}, accent=BAD),
+        visual("card", 830, 105, 190, 96, "Duplicate rate",
+               {"Values": [(M, "Duplicate Rate", True)]}, accent=WARN),
+        visual("card", 1030, 105, 190, 96, "Enrolment rate",
+               {"Values": [(M, "Marketing Enrolment Rate", True)]}, accent=GOOD),
+
+        textbox(30, 225, 295, 145,
+                [("1  Acquire efficiently\n", {"fontSize": "13pt", "fontWeight": "bold", "color": RED}),
+                 ("Shift the next test budget toward the channels with the strongest response, enrolment rate and revenue per member. Put a stop rule on channels that spend without converting.\n\nOwner: Marketing | Measure: ROAS, spend per response, revenue per member", SUB)]),
+        textbox(340, 225, 295, 145,
+                [("2  Convert faster\n", {"fontSize": "13pt", "fontWeight": "bold", "color": RED}),
+                 ("Route Priority leads to a named human queue within 24 hours. Keep Low-band leads in automated nurture so the team spends its scarce call time where the ranking separates.\n\nOwner: Admissions | Measure: response SLA, conversion rate, top-band lift", SUB)]),
+        textbox(650, 225, 295, 145,
+                [("3  Retain earlier\n", {"fontSize": "13pt", "fontWeight": "bold", "color": RED}),
+                 ("Trigger a support conversation when first-month attendance falls below 65% or the risk band reaches Elevated. Record the intervention and compare withdrawal outcomes with the prior cohort.\n\nOwner: Student success | Measure: week-4 attendance, withdrawal rate", SUB)]),
+        textbox(960, 225, 290, 145,
+                [("4  Repair the data loop\n", {"fontSize": "13pt", "fontWeight": "bold", "color": RED}),
+                 ("Make email, external IDs and campaign membership required at capture; send exceptions to a daily queue. Keep unknown prices as unknown and never turn them into zero.\n\nOwner: CRM + Data | Measure: completeness, duplicate rate, unresolved issues", SUB)]),
+
+        textbox(30, 405, 1220, 34, [("90-day rollout", {"fontSize": "16pt", "fontWeight": "bold", "color": CHARCOAL})]),
+        textbox(30, 450, 390, 210,
+                [("Days 0-30 | Stabilise\n", {"fontSize": "13pt", "fontWeight": "bold", "color": RED}),
+                 ("Confirm the CRM field rules, remove blank-only filters, assign the Priority lead queue, and baseline the six KPI cards.\n\nSuccess: no blank-bound slicers, a named owner for each queue, and a refresh that passes the dbt quality gate.", SUB)]),
+        textbox(445, 450, 390, 210,
+                [("Days 31-60 | Test\n", {"fontSize": "13pt", "fontWeight": "bold", "color": RED}),
+                 ("Run channel and follow-up experiments with holdout groups. Compare Referral and Walk-in qualification, and log every student-support intervention from week 1.\n\nSuccess: measured lift in response or conversion, with spend and cohort definitions unchanged.", SUB)]),
+        textbox(860, 450, 390, 210,
+                [("Days 61-90 | Scale\n", {"fontSize": "13pt", "fontWeight": "bold", "color": RED}),
+                 ("Promote only interventions that beat the baseline, publish the weekly action list, and monitor model drift and data quality by delivery mode and channel.\n\nSuccess: repeatable operating cadence, documented decisions, and no automated adverse action from a model score.", SUB)]),
+    ]
+    pages.append(page("actions", "Recommendations & Solutions", 7, v))
+
     return {
         "id": 0,
         # The theme has to be registered as a resource AND named in the config.
