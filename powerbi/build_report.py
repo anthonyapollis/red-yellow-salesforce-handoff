@@ -556,7 +556,7 @@ def build():
                 "Y": [(M, "Enrolments", True)]}),
         visual("slicer", 660, 520, 290, 180, "Year",
                {"Values": [("dim_date", "calendar_year", False)]}),
-        visual("slicer", 960, 520, 290, 180, "Delivery mode",
+        visual("slicer", 960, 520, 290, 180, "On/off campus",
                {"Values": [("dim_offering", "delivery_mode", False)]}),
     ]
     pages.append(page("exec", "Executive Summary", 0, v))

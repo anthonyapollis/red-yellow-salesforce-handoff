@@ -6,8 +6,8 @@
 Part-Time titles remain separate programme identities pending confirmation. BBA "in" versus colon title variants are deliberately not auto-merged. Earlier proposed merges are candidates, not performed here.
 
 ## Delivery and classification
-On-campus listings have proposed On-campus delivery.
-Online-ed listings have Catalogue_Section__c = Online education and Delivery_Mode__c = Unconfirmed: a page section alone does not establish actual delivery.
+On-campus listings are classified as On-campus.
+Online education listings are classified as Off-campus for reporting, while Catalogue_Section__c remains Online education as the source label. This is a delivery-mode mapping for analytics, not a claim about accreditation or study pace.
 Study pace is Part-time only when the title says so, otherwise Not stated.
 Category__c is a proposed title/context classification, not an official accreditation category. CHE/QCTO/SETA labels are preserved as listed source text, not asserted to be awarding bodies.
 Micro-course credential text is blank when not visible.

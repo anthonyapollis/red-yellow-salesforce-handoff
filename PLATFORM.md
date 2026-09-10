@@ -21,7 +21,7 @@ artefacts themselves. If a count here is wrong, the artefact is wrong — not th
 | What | Built | Verified by |
 |---|---|---|
 | Medallion warehouse | 13 bronze, 13 silver, 8 gold, 2 quality | `dbt build` — 87/87 pass (51 data tests) |
-| Generated data | 11,512,875 rows | ground-truth manifest at `warehouse/_truth/defects.json` |
+| Generated data | 11,518,608 rows | ground-truth manifest at `warehouse/_truth/defects.json` |
 | Power BI report | 7 pages, 93 visuals | every field reference checked against the model at build time |
 | Semantic model | 24 tables, 55 measures, 23 relationships | loaded through a tabular session |
 | Salesforce | 1,091 records across 4 objects | `verify_org_counts.py` reconciles the org against the loader |
@@ -92,9 +92,9 @@ Defects are injected at known rates and written to a ground-truth manifest at
 | Defect | Injected | Detected | Recall |
 |---|---|---|---|
 | Duplicate humans | 30,277 | 29,473 | **0.97** |
-| Missing attendance | 76,341 | 76,341 | **1.00** |
+| Missing attendance | 76,384 | 76,384 | **1.00** |
 | Duplicate campaign membership | 37,440 | 39,850 | **1.06** |
-| Date inversions | 5,118 | 5,228 | **1.02** |
+| Date inversions | 5,127 | 5,237 | **1.02** |
 <!-- DEFECTS:END -->
 
 The remaining 3% of duplicates are records where both email and phone were dropped

@@ -828,7 +828,7 @@
       "Programme_Key": "RY-PROG-016",
       "Title__c": "Design Thinking",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "10",
       "Duration_Unit__c": "Weeks",
@@ -837,14 +837,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-017",
       "Programme_Key": "RY-PROG-017",
       "Title__c": "Performance Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -853,14 +853,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-018",
       "Programme_Key": "RY-PROG-018",
       "Title__c": "Graphic Design Beginner",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "16",
       "Duration_Unit__c": "Weeks",
@@ -869,14 +869,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-019",
       "Programme_Key": "RY-PROG-019",
       "Title__c": "User Experience Design",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "10",
       "Duration_Unit__c": "Weeks",
@@ -885,14 +885,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-020",
       "Programme_Key": "RY-PROG-020",
       "Title__c": "Business Analysis",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "14",
       "Duration_Unit__c": "Weeks",
@@ -901,14 +901,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-021",
       "Programme_Key": "RY-PROG-021",
       "Title__c": "Data Analysis",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -917,14 +917,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-022",
       "Programme_Key": "RY-PROG-022",
       "Title__c": "Storytelling for Impact & Influence",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "6",
       "Duration_Unit__c": "Weeks",
@@ -933,14 +933,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-023",
       "Programme_Key": "RY-PROG-023",
       "Title__c": "Interior Decorating",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -949,14 +949,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-024",
       "Programme_Key": "RY-PROG-024",
       "Title__c": "Creative Thinking",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "7",
       "Duration_Unit__c": "Weeks",
@@ -965,14 +965,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-025",
       "Programme_Key": "RY-PROG-025",
       "Title__c": "Project Management",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -981,14 +981,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-026",
       "Programme_Key": "RY-PROG-026",
       "Title__c": "Media Planning",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "10",
       "Duration_Unit__c": "Weeks",
@@ -997,14 +997,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-027",
       "Programme_Key": "RY-PROG-027",
       "Title__c": "Mentorship",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "6",
       "Duration_Unit__c": "Weeks",
@@ -1013,14 +1013,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-028",
       "Programme_Key": "RY-PROG-028",
       "Title__c": "Sales & Account Management",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "7",
       "Duration_Unit__c": "Weeks",
@@ -1029,14 +1029,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-029",
       "Programme_Key": "RY-PROG-029",
       "Title__c": "Digital Content & Copywriting",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "13",
       "Duration_Unit__c": "Weeks",
@@ -1045,14 +1045,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-030",
       "Programme_Key": "RY-PROG-030",
       "Title__c": "Copywriting",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1061,14 +1061,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-031",
       "Programme_Key": "RY-PROG-031",
       "Title__c": "Data Visualisation for Designers",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "12",
       "Duration_Unit__c": "Weeks",
@@ -1077,14 +1077,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-032",
       "Programme_Key": "RY-PROG-032",
       "Title__c": "Graphic Design Intermediate with Adobe Photoshop",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "15",
       "Duration_Unit__c": "Weeks",
@@ -1093,14 +1093,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-033",
       "Programme_Key": "RY-PROG-033",
       "Title__c": "Customer Experience",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1109,14 +1109,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A07",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-034",
       "Programme_Key": "RY-PROG-034",
       "Title__c": "Data Analysis for Marketers",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1125,14 +1125,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-035",
       "Programme_Key": "RY-PROG-003",
       "Title__c": "Higher Occupational Certificate: Advertiser, Specialising in Digital Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "1",
       "Duration_Unit__c": "Years",
@@ -1141,14 +1141,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-036",
       "Programme_Key": "RY-PROG-035",
       "Title__c": "Marketing Strategy",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "6",
       "Duration_Unit__c": "Weeks",
@@ -1157,14 +1157,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-037",
       "Programme_Key": "RY-PROG-036",
       "Title__c": "Digital Marketing Professional",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "16",
       "Duration_Unit__c": "Weeks",
@@ -1173,14 +1173,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-038",
       "Programme_Key": "RY-PROG-037",
       "Title__c": "Social Media Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "10",
       "Duration_Unit__c": "Weeks",
@@ -1189,14 +1189,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-039",
       "Programme_Key": "RY-PROG-038",
       "Title__c": "Desktop Publishing with InDesign",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1205,14 +1205,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A08",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-040",
       "Programme_Key": "RY-PROG-039",
       "Title__c": "Shopper Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1221,14 +1221,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-041",
       "Programme_Key": "RY-PROG-040",
       "Title__c": "Part-Time Postgraduate Diploma in Management",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Part-time",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Years",
@@ -1237,14 +1237,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-042",
       "Programme_Key": "RY-PROG-041",
       "Title__c": "Part-Time Higher Certificate in Business Management",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Part-time",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Years",
@@ -1253,14 +1253,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-043",
       "Programme_Key": "RY-PROG-042",
       "Title__c": "Part-Time Higher Certificate in Marketing and Branding",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Part-time",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Years",
@@ -1269,14 +1269,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-044",
       "Programme_Key": "RY-PROG-012",
       "Title__c": "Higher Certificate in Marketing and Branding",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "1",
       "Duration_Unit__c": "Years",
@@ -1285,14 +1285,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-045",
       "Programme_Key": "RY-PROG-009",
       "Title__c": "Higher Certificate in Business Management",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "1",
       "Duration_Unit__c": "Years",
@@ -1301,14 +1301,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A09",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-046",
       "Programme_Key": "RY-PROG-043",
       "Title__c": "Brand as Capital",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "7",
       "Duration_Unit__c": "Weeks",
@@ -1317,14 +1317,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section. Executive education classification is proposed from course context; check official category."
     },
     {
       "RY_External_ID__c": "RY-OFFER-047",
       "Programme_Key": "RY-PROG-044",
       "Title__c": "Rebel Leadership",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "7",
       "Duration_Unit__c": "Weeks",
@@ -1333,14 +1333,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section. Executive education classification is proposed from course context; check official category."
     },
     {
       "RY_External_ID__c": "RY-OFFER-048",
       "Programme_Key": "RY-PROG-045",
       "Title__c": "Management Development Programme: Agency Leadership",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "6",
       "Duration_Unit__c": "Months",
@@ -1349,14 +1349,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section. Executive education classification is proposed from course context; check official category."
     },
     {
       "RY_External_ID__c": "RY-OFFER-049",
       "Programme_Key": "RY-PROG-046",
       "Title__c": "Sports Sponsorship Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "10",
       "Duration_Unit__c": "Weeks",
@@ -1365,14 +1365,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-050",
       "Programme_Key": "RY-PROG-047",
       "Title__c": "Sustainable Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "9",
       "Duration_Unit__c": "Weeks",
@@ -1381,14 +1381,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Price not fully visible; not inferred from another listing. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-051",
       "Programme_Key": "RY-PROG-048",
       "Title__c": "Operational Finance",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1397,14 +1397,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A10",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-052",
       "Programme_Key": "RY-PROG-049",
       "Title__c": "Part-Time Postgraduate Diploma in Digital Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Part-time",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Years",
@@ -1413,14 +1413,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-053",
       "Programme_Key": "RY-PROG-050",
       "Title__c": "Part-Time Higher Certificate in Graphic Design",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Part-time",
       "Duration_Value__c": "1",
       "Duration_Unit__c": "Years",
@@ -1429,14 +1429,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Screenshot says 1 year; retained as shown despite other part-time certificates showing 2 years. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Screenshot says 1 year; retained as shown despite other part-time certificates showing 2 years. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-054",
       "Programme_Key": "RY-PROG-051",
       "Title__c": "Strategic Foresight for Leaders",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "7",
       "Duration_Unit__c": "Weeks",
@@ -1445,14 +1445,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section. Executive education classification is proposed from course context; check official category."
     },
     {
       "RY_External_ID__c": "RY-OFFER-055",
       "Programme_Key": "RY-PROG-052",
       "Title__c": "AI & Executive Judgement",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "7",
       "Duration_Unit__c": "Weeks",
@@ -1461,14 +1461,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11,B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation. Executive education classification is proposed from course context; check official category."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section. Executive education classification is proposed from course context; check official category."
     },
     {
       "RY_External_ID__c": "RY-OFFER-056",
       "Programme_Key": "RY-PROG-053",
       "Title__c": "People Management",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1477,14 +1477,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11,B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-057",
       "Programme_Key": "RY-PROG-054",
       "Title__c": "Public Relations",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1493,14 +1493,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "A11,B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-058",
       "Programme_Key": "RY-PROG-055",
       "Title__c": "Account Leadership",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "13",
       "Duration_Unit__c": "Weeks",
@@ -1509,14 +1509,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-059",
       "Programme_Key": "RY-PROG-056",
       "Title__c": "B2B Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1525,14 +1525,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-060",
       "Programme_Key": "RY-PROG-057",
       "Title__c": "AI for Copywriting",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Weeks",
@@ -1541,14 +1541,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B01",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-061",
       "Programme_Key": "RY-PROG-058",
       "Title__c": "AI for Design Thinking",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Weeks",
@@ -1557,14 +1557,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-062",
       "Programme_Key": "RY-PROG-059",
       "Title__c": "AI for Educators",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "1",
       "Duration_Unit__c": "Weeks",
@@ -1573,14 +1573,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-063",
       "Programme_Key": "RY-PROG-060",
       "Title__c": "AI for HR",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Weeks",
@@ -1589,14 +1589,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-064",
       "Programme_Key": "RY-PROG-061",
       "Title__c": "AI for Management Insights",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Weeks",
@@ -1605,14 +1605,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-065",
       "Programme_Key": "RY-PROG-062",
       "Title__c": "AI for User Experience",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Weeks",
@@ -1621,14 +1621,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-066",
       "Programme_Key": "RY-PROG-063",
       "Title__c": "Prompt Engineering",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Weeks",
@@ -1637,14 +1637,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B02",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-067",
       "Programme_Key": "RY-PROG-064",
       "Title__c": "Responsible Advertising and the Advertising Regulatory Board",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "3",
       "Duration_Unit__c": "Weeks",
@@ -1653,14 +1653,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-068",
       "Programme_Key": "RY-PROG-065",
       "Title__c": "Responsible Influencer Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "1",
       "Duration_Unit__c": "Hours",
@@ -1669,14 +1669,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-069",
       "Programme_Key": "RY-PROG-066",
       "Title__c": "AI for Graphic Designers",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Weeks",
@@ -1685,14 +1685,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-070",
       "Programme_Key": "RY-PROG-067",
       "Title__c": "Generative AI for Business",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1701,14 +1701,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-071",
       "Programme_Key": "RY-PROG-068",
       "Title__c": "Work Readiness",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "8",
       "Duration_Unit__c": "Weeks",
@@ -1717,14 +1717,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-072",
       "Programme_Key": "RY-PROG-069",
       "Title__c": "Instructional Design",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "12",
       "Duration_Unit__c": "Weeks",
@@ -1733,14 +1733,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B03",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-073",
       "Programme_Key": "RY-PROG-070",
       "Title__c": "Customer Service Course",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "7",
       "Duration_Unit__c": "Weeks",
@@ -1749,14 +1749,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-074",
       "Programme_Key": "RY-PROG-071",
       "Title__c": "Digital Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "10",
       "Duration_Unit__c": "Weeks",
@@ -1765,14 +1765,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-075",
       "Programme_Key": "RY-PROG-072",
       "Title__c": "Search Engine Optimisation",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "10",
       "Duration_Unit__c": "Weeks",
@@ -1781,14 +1781,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-076",
       "Programme_Key": "RY-PROG-073",
       "Title__c": "Front-End Web Development",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1797,14 +1797,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-077",
       "Programme_Key": "RY-PROG-074",
       "Title__c": "Website Design",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1813,14 +1813,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-078",
       "Programme_Key": "RY-PROG-075",
       "Title__c": "MarTech & CRM Strategy",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "11",
       "Duration_Unit__c": "Weeks",
@@ -1829,14 +1829,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B04",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-079",
       "Programme_Key": "RY-PROG-076",
       "Title__c": "ACA Graduate Programme for Agencies",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "1",
       "Duration_Unit__c": "Years",
@@ -1845,14 +1845,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-080",
       "Programme_Key": "RY-PROG-077",
       "Title__c": "Part-Time Advanced Diploma in Digital Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Part-time",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Years",
@@ -1861,14 +1861,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-081",
       "Programme_Key": "RY-PROG-078",
       "Title__c": "Design Thinking Practitioner",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "1",
       "Duration_Unit__c": "Years",
@@ -1877,14 +1877,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-082",
       "Programme_Key": "RY-PROG-079",
       "Title__c": "Project Manager",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Years",
@@ -1893,14 +1893,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-083",
       "Programme_Key": "RY-PROG-080",
       "Title__c": "Part-Time Advanced Diploma in User Centered Design",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Part-time",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Years",
@@ -1909,14 +1909,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-084",
       "Programme_Key": "RY-PROG-006",
       "Title__c": "Bachelor of Commerce in Marketing",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "3",
       "Duration_Unit__c": "Years",
@@ -1925,14 +1925,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B05",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-085",
       "Programme_Key": "RY-PROG-081",
       "Title__c": "Part-Time Advanced Diploma in Copywriting",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Part-time",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Years",
@@ -1941,14 +1941,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-086",
       "Programme_Key": "RY-PROG-082",
       "Title__c": "Part-Time Advanced Diploma in Marketing & Advertising Communications",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Part-time",
       "Duration_Value__c": "2",
       "Duration_Unit__c": "Years",
@@ -1957,14 +1957,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-087",
       "Programme_Key": "RY-PROG-008",
       "Title__c": "Postgraduate Diploma: Creative Leadership",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "1",
       "Duration_Unit__c": "Years",
@@ -1973,14 +1973,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "No visible start date; no intake fabricated. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "No visible start date; no intake fabricated. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-088",
       "Programme_Key": "RY-PROG-002",
       "Title__c": "Bachelor of Arts Honours in Visual Communication Design",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "",
       "Duration_Unit__c": "",
@@ -1989,14 +1989,14 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Duration not visible on this listing; not copied from another offering. No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Duration not visible on this listing; not copied from another offering. No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education listing; classified as Off-campus for reporting from the source section."
     },
     {
       "RY_External_ID__c": "RY-OFFER-089",
       "Programme_Key": "RY-PROG-083",
       "Title__c": "Bachelor of Business Administration: Marketing and Brand Management",
       "Catalogue_Section__c": "Online education",
-      "Delivery_Mode__c": "Unconfirmed",
+      "Delivery_Mode__c": "Off-campus",
       "Study_Pace__c": "Not stated",
       "Duration_Value__c": "",
       "Duration_Unit__c": "",
@@ -2005,7 +2005,7 @@
       "Source_URL__c": "https://www.redandyellow.co.za/online-ed",
       "Source_Refs__c": "B06",
       "Observed_Date__c": "2026-09-08",
-      "Notes__c": "Duration not visible on this listing; not copied from another offering. No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education is the page section; actual delivery mode requires confirmation."
+      "Notes__c": "Duration not visible on this listing; not copied from another offering. No visible start date; no intake fabricated. Price not fully visible; not inferred from another listing. Online education listing; classified as Off-campus for reporting from the source section."
     }
   ],
   "RY_Intake__c": [

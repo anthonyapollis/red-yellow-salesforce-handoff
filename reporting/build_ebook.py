@@ -900,8 +900,8 @@ def main():
         "This is a proposed model, not Red & Yellow's actual Salesforce configuration. The "
         "real org may already map these concepts onto Education Cloud or EDA objects.",
         "The catalogue was transcribed from 17 screenshots of the public site on 8 September "
-        "2026. It is not claimed to be the complete live catalogue, and page section alone "
-        "was not treated as proof of delivery mode.",
+        "2026. It is not claimed to be the complete live catalogue. "
+        "For reporting, On-campus remains On-campus and listings in the Online education section are classified as Off-campus; the source section is retained separately.",
         "All people, campaign spend, application outcomes and student results are synthetic. "
         "Progress dated after the capture date is an illustrative scenario, not a forecast.",
         "DuckDB is fully validated. Fabric bronze loading and dbt connectivity are verified, but "
@@ -915,5 +915,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
