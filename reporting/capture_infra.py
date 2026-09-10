@@ -193,15 +193,15 @@ def architecture_figure():
     c = _counts()
     boxes = [
         (1, "Salesforce\nCRM",
-         "{:,} records\n4 objects".format(c.get("sf", 1091)), "#E03127"),
-        (20.5, "NiFi + REST\nextract", "incremental on\nSystemModstamp", "#F0A202"),
-        (40, "OneLake\nbronze", "13 files\n242 MB", "#2E6E8E"),
+         "{:,} records\n4 objects".format(c.get("sf", 1091)), "#F52635"),
+        (20.5, "NiFi + REST\nextract", "incremental on\nSystemModstamp", "#E39B16"),
+        (40, "OneLake\nbronze", "13 files\n242 MB", "#007C83"),
         (59.5, "dbt\nwarehouse",
          "{} models\n{} tests".format(c.get("models", 36), c.get("tests", 51)),
-         "#4C9F70"),
+         "#008C45"),
         (79, "Power BI\n+ Excel",
          "{} pages\n{} visuals".format(c.get("pages", 6), c.get("visuals", 72)),
-         "#8B5FBF"),
+         "#7D3C6A"),
     ]
     for x, title, sub, col in boxes:
         ax.add_patch(plt.Rectangle((x, 9), 17.5, 16, facecolor="#FFFFFF",
@@ -209,12 +209,12 @@ def architecture_figure():
         ax.add_patch(plt.Rectangle((x, 22.6), 17.5, 2.4, facecolor=col,
                                    edgecolor=col, linewidth=0, zorder=3))
         ax.text(x + 8.75, 18.8, title, ha="center", va="center", fontsize=9.0,
-                color="#22252A", weight="bold", zorder=4)
+                color="#1D1D1B", weight="bold", zorder=4)
         ax.text(x + 8.75, 12.6, sub, ha="center", va="center", fontsize=7.2,
-                color="#5A6472", zorder=4)
+                color="#60646B", zorder=4)
         if x < 79:
             ax.annotate("", xy=(x + 19.3, 17), xytext=(x + 17.8, 17),
-                        arrowprops=dict(arrowstyle="-|>", color="#8A94A0", lw=1.6))
+                        arrowprops=dict(arrowstyle="-|>", color="#8C857C", lw=1.6))
 
     # Read the row count rather than hardcoding it: the figure outlived the
     # number once already, and a caption that disagrees with the data is worse
@@ -222,7 +222,7 @@ def architecture_figure():
     ax.text(50, 4.0,
             f"{_row_count()} synthetic rows in the warehouse   ·   the CRM holds "
             "the operational slice   ·   every row carries its source and load time",
-            ha="center", fontsize=7.4, color="#5A6472")
+            ha="center", fontsize=7.4, color="#60646B")
     fig.tight_layout(pad=0.3)
     out = FIG / "ev_00_architecture.png"
     fig.savefig(out, dpi=200, facecolor="#FFFFFF")
