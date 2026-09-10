@@ -81,3 +81,11 @@ credible evidence appendix: the live NiFi flow, Fabric warehouse/lakehouse,
 current canonical ERD, and refreshed Power BI Executive Summary. The folder is
 currently empty. `build_ebook.py` automatically appends valid PNG/JPG files
 there, in numeric filename order, without displacing the generated evidence.
+## ERD evidence completed
+
+I rendered the existing project-owned `erds/overview.svg` to
+`ebook/screenshots/03_Canonical_ERD.png` at 1740×1500, refreshed it to the
+shared brand palette, and rebuilt the e-book. The 23-page PDF now embeds the
+canonical ERD with its caption. The remaining real UI evidence is only NiFi
+and Fabric (plus an optional refreshed Power BI canvas); those still require an
+authenticated browser session and should not be replaced with synthetic images.
