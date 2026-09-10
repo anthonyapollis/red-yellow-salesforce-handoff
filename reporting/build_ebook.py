@@ -139,34 +139,39 @@ def main():
     # A GA4 NiFi builder exists, but it has no credentialed successful run or
     # landed source table. This figure explains the extension without passing
     # it off as an operating pipeline.
-    fig, ax = plt.subplots(figsize=(6.4, 2.35))
+    fig, ax = plt.subplots(figsize=(7.2, 2.65))
     ax.axis("off")
+    # Five equal-width cards with a deliberate gap. The earlier version let
+    # the long Data API label and subtitles run into adjacent cards.
     boxes = [
-        (0.02, "GA4 property", "event and campaign data"),
-        (0.22, "Data API /\nBigQuery export", "scheduled, consent-aware"),
-        (0.45, "OneLake bronze", "ga4 / event_date partition"),
-        (0.66, "Fabric + dbt", "conform campaign and date"),
-        (0.86, "Power BI", "attribution and reach"),
+        (0.015, "GA4\nproperty", "event + campaign\ndata"),
+        (0.215, "Data API /\nBigQuery export", "scheduled,\nconsent-aware"),
+        (0.415, "OneLake\nbronze", "ga4 / event_date\npartition"),
+        (0.615, "Fabric + dbt", "conform campaign\nand date"),
+        (0.815, "Power BI", "attribution\nand reach"),
     ]
     for i, (x, title, sub) in enumerate(boxes):
         fill = "#FFF7E3" if i in (0, 2) else "#FFFFFF"
         edge = RED if i == 0 else (YELLOW if i == 2 else "#DDD5C8")
-        patch = matplotlib.patches.FancyBboxPatch((x, 0.36), 0.12, 0.34,
-            boxstyle="round,pad=0.014,rounding_size=0.02", linewidth=1.2,
+        patch = matplotlib.patches.FancyBboxPatch((x, 0.30), 0.15, 0.43,
+            boxstyle="round,pad=0.012,rounding_size=0.02", linewidth=1.2,
             edgecolor=edge, facecolor=fill, transform=ax.transAxes)
         ax.add_patch(patch)
-        ax.text(x + 0.06, 0.57, title, transform=ax.transAxes, ha="center",
-                va="center", fontsize=8, fontweight="bold", color=CHARCOAL)
-        ax.text(x + 0.06, 0.42, sub, transform=ax.transAxes, ha="center",
-                va="center", fontsize=6.6, color=SLATE)
+        ax.text(x + 0.075, 0.575, title, transform=ax.transAxes, ha="center",
+                va="center", fontsize=7.8, linespacing=1.0,
+                fontweight="bold", color=CHARCOAL)
+        ax.text(x + 0.075, 0.405, sub, transform=ax.transAxes, ha="center",
+                va="center", fontsize=6.3, linespacing=1.0, color=SLATE)
         if i < len(boxes) - 1:
-            ax.annotate("", xy=(boxes[i + 1][0] - 0.008, 0.53),
-                        xytext=(x + 0.128, 0.53), xycoords=ax.transAxes,
+            ax.annotate("", xy=(boxes[i + 1][0] - 0.012, 0.515),
+                        xytext=(x + 0.158, 0.515), xycoords=ax.transAxes,
                         arrowprops={"arrowstyle": "->", "color": RED, "lw": 1.5})
-    ax.text(0.5, 0.12, "Proposed extension — not configured or counted in the current platform",
-            transform=ax.transAxes, ha="center", va="center", fontsize=7.6,
+    ax.text(0.5, 0.115, "Proposed extension - not configured or counted in the current platform",
+            transform=ax.transAxes, ha="center", va="center", fontsize=8.0,
             color=SLATE, style="italic")
-    fig.tight_layout(); fig.savefig(FIG / "ga4_to_fabric.png"); plt.close(fig)
+    fig.tight_layout(pad=0.4)
+    fig.savefig(FIG / "ga4_to_fabric.png", dpi=180)
+    plt.close(fig)
 
     # ---- additional analysis figures --------------------------------------
     prog = q("""select d.programme_title, sum(f.is_enrolled) enrolments,

@@ -16,6 +16,7 @@ Number the files so they land in the intended order.
 | File | State |
 |---|---|
 | `03_Canonical_ERD.png` | **Done.** Rendered from `erds/overview.svg`, brand palette. |
+| 06_PowerBI_predictive_actions.png | **Done.** Cropped to the report canvas; desktop chrome and taskbar removed. The original is retained under raw/. |
 | `04_Fabric_workspace.png` | **Outstanding.** |
 | `05_NiFi_flow_canvas.png` | **Outstanding.** |
 
