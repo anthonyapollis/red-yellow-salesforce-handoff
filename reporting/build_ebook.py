@@ -339,6 +339,39 @@ def main():
     fig.savefig(FIG / "platform_options.png", dpi=180)
     plt.close(fig)
 
+    # ---- GA4, DV360 and Campaign Manager 360 architecture figure --------
+    fig, axes = plt.subplots(3, 1, figsize=(6.6, 4.9))
+    rows = [
+        ("Easy curated route",
+         ["GA4 Data API", "DV360 / CM360 APIs", "NiFi or Cloud Run", "OneLake / BigQuery", "Power BI"],
+         [RED, "#4285F4", "#F4A300", "#F4A300", CHARCOAL]),
+        ("Google-native raw-event route",
+         ["GA4 export", "DV360 / CM360 transfer", "BigQuery raw", "Dataform", "Power BI or Fabric"],
+         [RED, "#4285F4", "#4285F4", "#34A853", CHARCOAL]),
+        ("Fabric-first reporting route",
+         ["GA4 / GMP sources", "API or BigQuery", "Fabric Data Factory", "OneLake + dbt", "Power BI"],
+         [RED, "#F4A300", "#F4A300", "#007C83", CHARCOAL]),
+    ]
+    for ax, (title, nodes, colors) in zip(axes, rows):
+        ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
+        ax.text(0.01, 0.84, title, fontsize=8.7, fontweight="bold", color=CHARCOAL)
+        xs = [0.10, 0.30, 0.50, 0.70, 0.90]
+        for i, (x, node) in enumerate(zip(xs, nodes)):
+            fc = "#FFF4D6" if i in (0, 2) else "#FFFFFF"
+            box = plt.Rectangle((x-0.085, 0.22), 0.17, 0.34,
+                                facecolor=fc, edgecolor=colors[i], linewidth=1.3,
+                                transform=ax.transAxes)
+            ax.add_patch(box)
+            ax.text(x, 0.39, node, ha="center", va="center",
+                    fontsize=6.7, color=CHARCOAL, wrap=True)
+            if i < len(nodes)-1:
+                ax.annotate("", xy=(xs[i+1]-0.095, 0.39),
+                            xytext=(x+0.095, 0.39), xycoords=ax.transAxes,
+                            arrowprops={"arrowstyle": "->", "color": RED, "lw": 1.1})
+    fig.tight_layout(pad=0.35)
+    fig.savefig(FIG / "ga4_gmp_to_fabric.png", dpi=180)
+    plt.close(fig)
+
     # ---- ML figures -------------------------------------------------------
     mlp_path = REPO / "warehouse" / "ml"
     if (mlp_path / "lead_propensity.parquet").exists():
@@ -1226,6 +1259,37 @@ def main():
     d.add_paragraph(
         "The full decision matrix, trade-offs and pilot acceptance criteria are "
         "in docs/PLATFORM_OPTIONS.md.")
+
+    H("GA4, DV360 and Campaign Manager 360 into BigQuery and Fabric", 16, CHARCOAL, 12)
+    d.add_paragraph(
+        "There is an easy route when the client only needs campaign and landing-page "
+        "metrics: call the GA4 Data API and the DV360 or Campaign Manager 360 reporting "
+        "APIs on a schedule, land the files through NiFi or a small cloud job, and "
+        "write dated partitions to OneLake or BigQuery. This avoids BigQuery for GA4 "
+        "curated reports, but it does not provide every raw GA4 event parameter.")
+    d.add_paragraph(
+        "Use the Google-native route when raw event or log-level analysis is required. "
+        "GA4 native export writes raw events to BigQuery; DV360 reporting can be "
+        "generated through the Bid Manager API, and Campaign Manager 360 reports can "
+        "be created and run through its Reports API. Where the account has the "
+        "relevant Google Marketing Platform transfer entitlement, those exports can "
+        "land in Google Cloud storage or BigQuery before transformation.")
+    d.add_paragraph(
+        "For a Fabric-first client, Fabric Data Factory can copy BigQuery data into "
+        "OneLake, after which the existing Fabric Warehouse/dbt and Power BI model "
+        "applies. There is no single direct DV360/CM360-to-Fabric connector that "
+        "replaces source authentication, report scheduling and schema control; the "
+        "API or BigQuery landing step remains the clean boundary.")
+    d.add_paragraph(
+        "The practical choice is therefore driven by grain: choose APIs for a small, "
+        "curated daily scorecard; choose BigQuery export or transfer for raw event, "
+        "path-to-conversion or log-level analysis; and choose the Fabric landing "
+        "route when Power BI and Microsoft governance are already strategic.")
+    figure_if("ga4_gmp_to_fabric.png",
+              "Figure 15 - Three implementation patterns for GA4, DV360 and Campaign Manager 360.")
+    d.add_paragraph(
+        "The step-by-step setup, field contracts and source links are in "
+        "docs/GA4_DV360_CM360_FABRIC_GUIDE.md.")
 
     H("Website SEO audit findings", 16, CHARCOAL, 12)
     d.add_paragraph(
