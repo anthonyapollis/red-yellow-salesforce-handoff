@@ -804,7 +804,23 @@ def main():
               "API. The loader's claim and the org's state are different "
               "assertions; only the second is evidence.")
 
-    H("4. Extract it back out through the API", 16, CHARCOAL, 12)
+    H("4. Salesforce record evidence", 16, CHARCOAL, 12)
+    d.add_paragraph(
+        "The following panels show the exact non-deleted record counts queried from "
+        "the authenticated Salesforce extract. Browser tabs and the Windows taskbar "
+        "are intentionally removed so the evidence is readable in the ebook. Each "
+        "panel shows representative rows and the verified total; it is evidence of "
+        "the live standard-object slice, not the staged custom-object sample pack.")
+    figure_if("08_Salesforce_accounts_verified.png",
+              "Figure 9 - Salesforce Accounts evidence: 25 verified records.")
+    figure_if("09_Salesforce_contacts_verified.png",
+              "Figure 10 - Salesforce Contacts evidence: 408 verified records.")
+    figure_if("10_Salesforce_leads_verified.png",
+              "Figure 11 - Salesforce Leads evidence: 408 verified records.")
+    figure_if("11_Salesforce_opportunities_verified.png",
+              "Figure 12 - Salesforce Opportunities evidence: 250 verified records.")
+
+    H("5. Extract it back out through the API", 16, CHARCOAL, 12)
     d.add_paragraph(
         "This is the part the role is actually about. SOQL over the REST API, "
         "paginating through nextRecordsUrl so the 2,000-record page limit is "
@@ -816,7 +832,7 @@ def main():
               "Figure 9 - Extraction manifest. Every row carries its source "
               "system, source id, source update time and extraction time.")
 
-    H("5. Transform, test, and report", 16, CHARCOAL, 12)
+    H("6. Transform, test, and report", 16, CHARCOAL, 12)
     d.add_paragraph(
         "From there the extracted data joins the same warehouse the synthetic "
         "history lives in, is cleansed once in staging, and is consumed by marts "
@@ -1101,4 +1117,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
