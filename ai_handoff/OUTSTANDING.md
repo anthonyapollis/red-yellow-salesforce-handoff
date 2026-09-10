@@ -88,17 +88,17 @@ dbt would then materialise silver and gold in the warehouse.
 
 ---
 
-## 4. Power BI — opens now, but nobody has seen it rendered
+## 4. Power BI — generated; fresh populated Desktop review still open
 
 The ambiguous-path fix is verified: Desktop loads the project, `msmdsrv` hosts
 the model, and I queried the relationships back over the tabular MCP (7 inactive,
 all three `fct_admissions_funnel` edges active). But:
 
 - **A freshly opened PBIP holds no data until refreshed.** Every `COUNTROWS`
-  returned blank. Open it, hit Refresh, wait several minutes (158 MB of parquet),
-  *then* judge the visuals. Do not conclude the measures are broken.
-- Your design pass is committed but has never been seen rendered with data. That
-  is the last step before calling the report presentation-ready.
+  returned blank before refresh. Open it, hit Refresh, wait several minutes,
+  *then* judge the visuals. The generator now materializes seven pages and validates 118 field references; do not judge blank cards before refresh.
+- The design pass and Marketing Analytics page are committed and generated. A populated Desktop review remains
+  the last presentation check before calling the report presentation-ready.
 - **Do not save from Desktop** — it upgrades to PBIR 4.0, deletes `report.json`
   and takes `StaticResources/` (the theme) with it.
 - If you add a visual that filters across a new pair of tables, add that pair to
