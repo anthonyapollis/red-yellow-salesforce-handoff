@@ -36,6 +36,11 @@ CHARCOAL = "#1D1D1B"
 SLATE = "#60646B"
 PAPER = "#FFFFFF"
 CANVAS = "#FFF9F0"
+# KPI tiles sit on a light yellow rather than white: it ties them to the
+# brand without competing with the accent-coloured figure they carry, and it
+# separates the number band from the charts below, which stay white so the
+# data ink reads cleanly.
+TILE = "#FFF4DC"
 RULE = "#E5DED2"
 SERIES = ["#F52635", "#007C83", "#008C45", "#E39B16", "#7D3C6A",
           "#D9574A", "#2C6FA3", "#707A84", "#5B7250", "#9E3540"]
@@ -350,7 +355,7 @@ def visual(vtype, x, y, w, h, title=None, projections=None, objects=None, z=0,
 
     vc_objects = {
         "background": [{"properties": {
-            "color": colour(PAPER),
+            "color": colour(TILE if vtype == "card" else PAPER),
             "show": {"expr": {"Literal": {"Value": "true"}}},
             "transparency": {"expr": {"Literal": {"Value": "0D"}}}}}],
         "border": [{"properties": {
@@ -397,6 +402,16 @@ def visual(vtype, x, y, w, h, title=None, projections=None, objects=None, z=0,
             "fontSize": {"expr": {"Literal": {"Value": "9D"}}},
             "showTitle": {"expr": {"Literal": {"Value": "false"}}}}}])
     if vtype == "card":
+        # KPI tiles are the only warm surfaces on the page. Charts remain white
+        # so their marks and labels keep their contrast.
+        vc_objects["background"] = [{"properties": {
+            "color": colour("#FFF7E3"),
+            "show": {"expr": {"Literal": {"Value": "true"}}},
+            "transparency": {"expr": {"Literal": {"Value": "0D"}}}}}]
+        vc_objects["border"] = [{"properties": {
+            "color": colour("#E9C46A"),
+            "show": {"expr": {"Literal": {"Value": "true"}}},
+            "radius": {"expr": {"Literal": {"Value": "6D"}}}}}]
         objects.setdefault("labels", [{"properties": {
             "color": colour(accent or RED),
             "fontSize": {"expr": {"Literal": {"Value": "22D"}}},
@@ -558,20 +573,29 @@ def build():
                {"Values": [(M, "Cost per Enrolment", True)]}),
         visual("card", 450, 105, 200, 100, "Return on Ad Spend",
                {"Values": [(M, "Return on Ad Spend", True)]}),
-        visual("card", 660, 105, 200, 100, "Engagement Rate",
+        visual("card", 660, 105, 190, 100, "Engagement Rate",
                {"Values": [(M, "Engagement Rate", True)]}),
-        visual("slicer", 870, 105, 380, 100, "Channel",
-               {"Values": [("dim_campaign", "channel", False)]}),
-        visual("clusteredColumnChart", 30, 220, 610, 250, "Cost per enrolment by channel",
+        # Reach was missing entirely: the page showed what was spent and what
+        # came back without the audience in between, so a poor return could not
+        # be read as "few people" versus "wrong people".
+        visual("card", 860, 105, 190, 100, "Campaign Reach",
+               {"Values": [(M, "Campaign Reach", True)]}),
+        visual("card", 1060, 105, 190, 100, "Response Rate",
+               {"Values": [(M, "Response Rate", True)]}, accent=GOOD),
+        visual("clusteredColumnChart", 30, 220, 480, 250, "Cost per enrolment by channel",
                {"Category": [("dim_campaign", "channel", False)],
                 "Y": [(M, "Cost per Enrolment", True)]}),
-        visual("clusteredColumnChart", 660, 220, 590, 250, "Return on ad spend by channel",
+        visual("clusteredColumnChart", 520, 220, 480, 250, "Return on ad spend by channel",
                {"Category": [("dim_campaign", "channel", False)],
                 "Y": [(M, "Return on Ad Spend", True)]}),
+        visual("slicer", 1010, 220, 240, 250, "Channel",
+               {"Values": [("dim_campaign", "channel", False)]}),
         visual("tableEx", 30, 485, 1220, 215, "Campaigns",
                {"Values": [("dim_campaign", "campaign_name", False),
                            ("dim_campaign", "channel", False),
                            (M, "Campaign Members", True),
+                           (M, "Responded", True),
+                           (M, "Response Rate", True),
                            (M, "Opportunities", True),
                            (M, "Campaign Enrolments", True),
                            (M, "Marketing Spend", True),
@@ -674,18 +698,26 @@ def build():
                {"Category": [("sf_lead", "RY_Sample_Status__c", False)],
                 "Y": [(M, "CRM Leads", True)]}),
 
-        visual("card", 30, 485, 196, 90, "Email completeness",
+        # The slicer that stood here bound sf_lead[LeadSource], which is empty
+        # for every one of the 816 extracted records - it could only ever offer
+        # "(Blank)". A filter over a field the org never populates is worse than
+        # no filter: it looks like the data is missing rather than the field.
+        # Two CRM data-quality figures earn the space instead.
+        visual("card", 30, 485, 196, 100, "Email completeness",
                {"Values": [(M, "CRM Email Completeness", True)]}, accent=GOOD),
-        visual("slicer", 236, 485, 200, 90, "Lead source",
-               {"Values": [("sf_lead", "LeadSource", False)]}),
+        visual("card", 30, 595, 196, 105, "Contacts missing email",
+               {"Values": [(M, "CRM Contacts Missing Email", True)]}, accent=WARN),
+        # Accounts had 115px and showed three of 25 rows, clipping the rest.
+        # Stacking the two figures in a narrow left column frees the full
+        # height of the band for the table.
+        visual("tableEx", 236, 485, 200, 215, "Accounts",
+               {"Values": [("sf_account", "Name", False)]}),
         visual("tableEx", 446, 485, 804, 215, "Contacts in the CRM",
                {"Values": [("sf_contact", "RY_External_ID__c", False),
                            ("sf_contact", "FirstName", False),
                            ("sf_contact", "LastName", False),
                            ("sf_contact", "Email", False),
                            ("sf_contact", "is_deleted", False)]}),
-        visual("tableEx", 30, 585, 406, 115, "Accounts",
-               {"Values": [("sf_account", "Name", False)]}),
     ]
     pages.append(page("crm", "Salesforce CRM", 4, v))
 

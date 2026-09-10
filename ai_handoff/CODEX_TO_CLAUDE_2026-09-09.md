@@ -98,3 +98,11 @@ The user-supplied logo and brand imagery are now packaged beneath `powerbi/asset
 `powerbi/build_report.py` now uses a native Image visual with a portable embedded data URI, adding the supplied logo to every page. Do **not** regenerate `RedAndYellow.Report/report.json` while Power BI Desktop is open: close Desktop first, then run `python powerbi/build_report.py` and open the `.pbip` again. This change has passed Python compilation; it still needs its normal generator/layout validation after that safe rebuild.
 
 The raw catalogue refresh is source-of-truth only. The synthetic CRM and warehouse outputs should be regenerated through `generator/generate.py` when the Desktop session is closed; do not hand-edit generated data files.
+
+## Presentation refinement — 2026-09-10
+
+Following the latest quality review, Codex refined KPI hierarchy without adding redundant top-line metrics. The executive view already carries operational scale; Campaign, Admissions, CRM, Quality and Predictive pages carry the decision KPIs (ROAS, cost per enrolment, conversion, risk, CRM pipeline, completeness, defects and model outcomes).
+
+`powerbi/build_report.py` now reserves a subtle warm-yellow (`#FFF7E3`) background and gold edge (`#E9C46A`) for KPI cards only. Analytical charts remain white for legibility. The packaged Red & Yellow logo remains an Image visual on each report page. Rebuild only after Power BI Desktop is closed.
+
+`reporting/build_excel.py` uses the same warm KPI tiles directly in cell styles, not conditional formatting. The rebuilt workbook has 10 sheets; `Campaign Performance` keeps live `=G7/F7` cost-per-enrolment and `=H7/G7` ROAS formulas.

@@ -63,10 +63,12 @@ def main():
         pct=wb.add_format({"num_format": "0.0%", "border": 1, "border_color": RULE}),
         dec=wb.add_format({"num_format": "0.00", "border": 1, "border_color": RULE}),
         kpi_v=wb.add_format({"font_size": 26, "bold": True, "font_color": RED,
-                             "align": "center", "valign": "vcenter"}),
+                             "align": "center", "valign": "vcenter",
+                             "bg_color": "#FFF7E3", "border": 1, "border_color": "#E9C46A"}),
         kpi_l=wb.add_format({"font_size": 10, "font_color": SLATE, "align": "center",
-                             "valign": "top", "text_wrap": True}),
-        kpi_box=wb.add_format({"bg_color": "#FBFBFC", "border": 1, "border_color": RULE}),
+                             "valign": "top", "text_wrap": True,
+                             "bg_color": "#FFF7E3", "border": 1, "border_color": "#E9C46A"}),
+        kpi_box=wb.add_format({"bg_color": "#FFF7E3", "border": 1, "border_color": "#E9C46A"}),
         note=wb.add_format({"font_size": 10, "font_color": SLATE, "italic": True,
                             "bg_color": "#FFF9F0", "text_wrap": True, "valign": "top"}),
         warn=wb.add_format({"font_size": 10, "font_color": CHARCOAL, "bg_color": "#FFF3D6",
@@ -127,8 +129,6 @@ def main():
         rr = r + (i // 3) * 4
         ws.merge_range(rr, c, rr + 1, c + 2, value, f["kpi_v"])
         ws.merge_range(rr + 2, c, rr + 2, c + 2, f"{label} - {sub}", f["kpi_l"])
-        ws.conditional_format(rr, c, rr + 2, c + 2,
-                              {"type": "no_errors", "format": f["kpi_box"]})
 
     ws.write(r + 9, 1, "Conversion through the funnel", f["h2"])
     funnel = q(con, """
