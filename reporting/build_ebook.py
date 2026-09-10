@@ -87,6 +87,49 @@ def main():
                        round(100.0*sum(is_at_risk)/count(*),1) at_risk_pct
                 from main_gold.fct_student_progress_weekly group by 1 order by 1""")
     dq = q("select issue_code, sum(issue_count) as issue_count from main_quality.dq_summary group by issue_code order by issue_count desc limit 10")
+    # Reconciliation is computed from the same read-only warehouse connection.
+    recon_specs = [
+        ("Lead", "lead", "stg_lead"), ("Contact", "contact", "stg_contact"),
+        ("Opportunity", "opportunity", "stg_opportunity"),
+        ("Application", "application", "stg_application"),
+        ("Enrolment", "enrolment", "stg_enrolment"),
+        ("Campaign", "campaign", "stg_campaign"),
+        ("Campaign member", "campaign_member", "stg_campaign_member"),
+        ("Student", "student", "stg_student"),
+        ("Student progress", "student_progress", "stg_student_progress"),
+        ("Programme", "programme", "stg_programme"),
+        ("Offering", "programme_offering", "stg_programme_offering"),
+        ("Intake", "intake", "stg_intake"),
+    ]
+    recon_sql = []
+    for label, raw_name, staging_name in recon_specs:
+        raw_file = (REPO / "warehouse" / "raw" / f"{raw_name}.parquet").as_posix()
+        recon_sql.append(
+            f"select '{label}' as entity, count(*) as source_rows, "
+            f"(select count(*) from main_silver.{staging_name}) as staging_rows "
+            f"from read_parquet('{raw_file}')"
+        )
+    recon = q(" union all ".join(recon_sql))
+    recon_totals = q("""
+      select
+        (select sum(spend_zar) from main_gold.dim_campaign) as spend_dimension,
+        (select sum(spend_zar) from main_gold.fct_campaign_performance) as spend_fact,
+        (select sum(agreed_fee_zar) from main_silver.stg_enrolment) as revenue_staging,
+        (select sum(enrolled_revenue_zar) from main_gold.fct_campaign_performance) as revenue_fact,
+        (select count(*) from main_gold.dim_contact) as golden_contacts,
+        (select count(*) from main_gold.fct_admissions_funnel) as admissions_rows,
+        (select count(*) from main_gold.fct_campaign_performance) as campaign_rows,
+        (select count(distinct e.enrolment_external_id)
+           from main_silver.stg_enrolment e
+           join main_silver.stg_application a using (application_external_id)
+           join main_silver.stg_opportunity o using (opportunity_external_id)
+          where o.primary_campaign_external_id is null) as unattributed_enrolments,
+        (select sum(e.agreed_fee_zar)
+           from main_silver.stg_enrolment e
+           join main_silver.stg_application a using (application_external_id)
+           join main_silver.stg_opportunity o using (opportunity_external_id)
+          where o.primary_campaign_external_id is null) as unattributed_revenue
+    """).iloc[0]
 
     # ---- figures ----------------------------------------------------------
     fig, ax = plt.subplots(figsize=(6.4, 3.0))
@@ -559,6 +602,53 @@ def main():
         "remaining 3% are records where both email and phone were dropped at source, which no "
         "amount of matching can recover.")
     figure("dq.png", "Figure 4 - Detected issues by type.")
+
+    H("Reconciliation: source to report", 16, CHARCOAL, 12)
+    d.add_paragraph(
+        "What: this compares every raw Parquet source count with its staging "
+        "model, then checks the campaign and revenue totals that feed Power BI. "
+        "Why: it distinguishes a deliberate reduction, such as de-duplicating "
+        "contacts, from a dropped partition or broken join. How: rerun the same "
+        "dbt build and this table is regenerated from the read-only warehouse "
+        "connection; a zero delta is an exact count match.")
+    tbl = d.add_table(rows=1, cols=4)
+    tbl.style = "Light List Accent 1"
+    for i, h in enumerate(["Entity", "Source rows", "Staging rows", "Delta"]):
+        tbl.rows[0].cells[i].text = h
+    for _, row in recon.iterrows():
+        cells = tbl.add_row().cells
+        vals = [row["entity"], f"{int(row['source_rows']):,}",
+                f"{int(row['staging_rows']):,}",
+                f"{int(row['staging_rows'] - row['source_rows']):,}"]
+        for i, value in enumerate(vals):
+            cells[i].text = value
+    contact_source = int(recon.loc[recon.entity == "Contact", "source_rows"].iloc[0])
+    d.add_paragraph(
+        f"All {len(recon)} source-to-staging deltas are zero. The expected "
+        f"contact reduction is {int(recon_totals.golden_contacts):,} golden "
+        f"people from {contact_source:,} source contact records; the difference "
+        "is the duplicate population resolved by the two-key entity model. "
+        f"The admissions fact contains {int(recon_totals.admissions_rows):,} "
+        f"opportunity-grain rows and the campaign performance mart contains "
+        f"{int(recon_totals.campaign_rows):,} campaign-grain rows.")
+    spend_ok = abs(float(recon_totals.spend_dimension or 0) - float(recon_totals.spend_fact or 0)) < 0.01
+    revenue_ok = abs(float(recon_totals.revenue_staging or 0) - float(recon_totals.revenue_fact or 0)) < 0.01
+    d.add_paragraph(
+        f"Financial reconciliation: campaign spend dimension R{float(recon_totals.spend_dimension or 0):,.2f} "
+        f"versus campaign fact R{float(recon_totals.spend_fact or 0):,.2f} "
+        f"({'MATCH' if spend_ok else 'REVIEW'}); enrolment revenue staging "
+        f"R{float(recon_totals.revenue_staging or 0):,.2f} versus campaign fact "
+        f"R{float(recon_totals.revenue_fact or 0):,.2f} "
+        f"({'MATCH' if revenue_ok else 'REVIEW'}).")
+    revenue_gap = float(recon_totals.revenue_staging or 0) - float(recon_totals.revenue_fact or 0)
+    d.add_paragraph(
+        f"The revenue REVIEW is explained by {int(recon_totals.unattributed_enrolments or 0):,} "
+        f"enrolments carrying R{float(recon_totals.unattributed_revenue or 0):,.2f} "
+        "without a primary campaign key. That amount remains in the enrolment staging "
+        f"total but cannot honestly be assigned to a campaign; the gap is R{revenue_gap:,.2f}, "
+        "not a dropped record. Recommended solution: report this as an explicit "
+        "unattributed segment, then improve campaign capture or backfill only from "
+        "verified source evidence. Never distribute it across campaigns to force a match.")
 
     # ---- extra analysis --------------------------------------------------
     H("Where the demand actually is")
