@@ -789,6 +789,14 @@ def main():
         "objects, and it does not support the campaign load in this reduced path. "
         "Those detailed objects remain in the warehouse until a Developer Edition or "
         "another edition with the required object entitlements is selected.")
+    d.add_paragraph(
+        "Keep the populations separate when reading this report. The staged CRM "
+        "sample pack in data/crm_load contains 48 Campaigns, 74 CampaignMembers, "
+        "162 Applications, 84 Enrolments, 192 Programme Enquiries, 81 Students and "
+        "192 Student Progress rows; these are not live Salesforce records in the "
+        "Base Edition org. The larger synthetic analytics population lives in "
+        "warehouse/raw, Fabric raw_salesforce and the DuckDB gold model used by "
+        "Power BI, Excel and this ebook.")
     figure_if("ev_03_import_result.png",
               "Figure 7 - What the loader wrote.")
     figure_if("ev_04_org_counts.png",
@@ -1093,3 +1101,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
