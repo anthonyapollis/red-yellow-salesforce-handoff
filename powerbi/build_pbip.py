@@ -194,6 +194,11 @@ MEASURES = [
      "CALCULATE(COUNTROWS(campaign_member), campaign_member[is_unique_membership] = 0)",
      "#,0", "01 Marketing"),
 
+    ("Marketing Enrolment Rate", "DIVIDE([Campaign Enrolments], [Unique Memberships])", "0.0%", "01 Marketing"),
+    ("Spend per Response", "DIVIDE([Marketing Spend], [Responded])", '"R"#,0', "01 Marketing"),
+    ("Revenue per Member", "DIVIDE([Enrolled Revenue], [Unique Memberships])", '"R"#,0', "01 Marketing"),
+    ("Duplicate Membership Rate", "DIVIDE([Duplicate Memberships], [Campaign Reach])", "0.0%", "01 Marketing"),
+
     ("Opportunities", "COUNTROWS(fct_admissions_funnel)", "#,0", "02 Admissions"),
     ("Applications",
      "CALCULATE(COUNTROWS(fct_admissions_funnel), "
@@ -439,3 +444,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

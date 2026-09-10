@@ -36,9 +36,11 @@ vars:
 
 models:
   redandyellow:
+    # dbt-fabric does not implement ALTER COMMENT; documentation remains in the
+    # generated dbt artefacts rather than being persisted as Warehouse comments.
     +persist_docs:
-      relation: true
-      columns: true
+      relation: false
+      columns: false
     # Medallion. Bronze is the landed source, untouched apart from being made
     # queryable; silver is cleansed and conformed; gold is business-level and
     # assumes clean inputs. Quality sits beside gold rather than inside it,
@@ -81,11 +83,11 @@ redandyellow:
 
     fabric:
       type: fabric
-      driver: "ODBC Driver 18 for SQL Server"
-      server: "{{ env_var('FABRIC_SERVER', 'not-set.datawarehouse.fabric.microsoft.com') }}"
+      driver: "ODBC Driver 17 for SQL Server"
+      host: "{{ env_var('FABRIC_SERVER', 'not-set.datawarehouse.fabric.microsoft.com') }}"
       database: "{{ env_var('FABRIC_DATABASE', 'WH_RedAndYellow') }}"
       schema: dbo
-      authentication: "{{ env_var('FABRIC_AUTH', 'ActiveDirectoryInteractive') }}"
+      authentication: "{{ env_var('FABRIC_AUTH', 'CLI') }}"
       encrypt: true
       trust_cert: false
       threads: 4
@@ -1178,6 +1180,23 @@ FILES["models/bronze/_bronze.yml"] = (
         for t in RAW_TABLES))
 
 
+# The Fabric target resolves bronze relations through this source declaration;
+# DuckDB instead reads the same landed parquet files directly in ry_raw().
+# Keeping it in the generator prevents regeneration from dropping the remote source.
+FILES["models/bronze/_sources.yml"] = (
+    "version: 2\n\n"
+    "sources:\n"
+    "  - name: raw_salesforce\n"
+    "    description: >\n"
+    "      Raw Salesforce-shaped records landed in the Fabric Warehouse by\n"
+    "      fabric/load_warehouse.py. These are the immutable inputs to bronze.\n"
+    "    database: \"{{ target.database }}\"\n"
+    "    schema: raw_salesforce\n"
+    "    tables:\n" + "".join(
+        f"      - name: {t}\n"
+        f"        description: Raw landed {t} records.\n"
+        for t in RAW_TABLES))
+
 # Silver reads bronze, not the Parquet. One substitution keeps the model SQL
 # itself unchanged and the lineage honest.
 def _to_bronze(sql: str) -> str:
@@ -1205,3 +1224,6 @@ for rel, content in FILES.items():
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(content, encoding="utf-8")
 print(f"wrote {len(FILES)} project/macro files to {ROOT}")
+
+
+

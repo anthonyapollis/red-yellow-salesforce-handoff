@@ -74,6 +74,14 @@ def main():
                        round(sum(enrolled_revenue_zar)/nullif(sum(spend_zar),0),2) as roas,
                        sum(enrolments) as enrolments
                 from main_gold.fct_campaign_performance group by 1 order by roas desc""")
+    mkt = q("""select channel,
+                       sum(members) as reach,
+                       sum(engaged_members) as responded,
+                       sum(enrolments) as enrolments,
+                       round(100.0 * sum(engaged_members) / nullif(sum(members), 0), 1) as response_rate,
+                       round(sum(enrolled_revenue_zar) / nullif(sum(spend_zar), 0), 2) as roas
+                from main_gold.fct_campaign_performance
+                group by 1 order by roas desc""")
     risk = q("""select week_number, round(avg(attendance_pct),1) att,
                        round(avg(assessment_average_pct),1) ass,
                        round(100.0*sum(is_at_risk)/count(*),1) at_risk_pct
@@ -99,6 +107,19 @@ def main():
     for lbl in ax.get_xticklabels():
         lbl.set_ha("right")
     fig.tight_layout(); fig.savefig(FIG / "cpe.png"); plt.close(fig)
+
+    fig, axes = plt.subplots(1, 2, figsize=(6.4, 2.8))
+    axes[0].bar(mkt["channel"], mkt["response_rate"], color=SERIES[0])
+    axes[0].set_ylabel("Response rate %")
+    axes[0].tick_params(axis="x", rotation=34, labelsize=7)
+    for lbl in axes[0].get_xticklabels():
+        lbl.set_ha("right")
+    axes[1].bar(mkt["channel"], mkt["roas"], color=SERIES[2])
+    axes[1].set_ylabel("Return on ad spend")
+    axes[1].tick_params(axis="x", rotation=34, labelsize=7)
+    for lbl in axes[1].get_xticklabels():
+        lbl.set_ha("right")
+    fig.tight_layout(); fig.savefig(FIG / "marketing_efficiency.png"); plt.close(fig)
 
     fig, ax = plt.subplots(figsize=(6.4, 3.0))
     ax.plot(risk["week_number"], risk["att"], color=SERIES[0], lw=2, label="Attendance %")
@@ -465,6 +486,17 @@ def main():
         "the resulting return on ad spend looks spectacular. A dbt test compares total spend "
         "in the fact against total spend in the dimension and fails the build if they diverge.")
     figure("cpe.png", "Figure 2 - Cost per enrolment by channel.")
+    H("Marketing analytics, from audience to value", 16, CHARCOAL, 12)
+    d.add_paragraph(
+        "The marketing page separates reach, response, enrolment and value. "
+        "Response rate tells the team whether a channel is reaching an interested audience; "
+        "cost per enrolment tells it what that audience costs to convert; return on ad spend "
+        "tests whether the resulting fees justify the investment. Revenue per member and spend "
+        "per response make the same comparison usable before a campaign has accumulated enough "
+        "enrolments for a stable cost-per-enrolment figure.")
+    figure("marketing_efficiency.png",
+           "Figure 2a - Campaign response rate and return on ad spend by channel. "
+           "Both are calculated at campaign grain before they are aggregated.")
 
     H("Student success as an early warning")
     w1, wl = risk.iloc[0], risk.iloc[-1]
@@ -773,6 +805,19 @@ def main():
               "counts and layer membership come from the build, so a model added "
               "or moved shows up here rather than the picture going stale.")
 
+    H("Full canonical Salesforce ERD", 16, CHARCOAL, 12)
+    d.add_paragraph(
+        "The complete canonical ERD is included here as the source-of-truth relationship map. "
+        "It includes the public catalogue objects, Salesforce operational objects, applications, "
+        "enrolments and student-progress spine. Archived diagrams are not implementation targets.")
+    erd_shot = REPO / "ebook" / "screenshots" / "03_Canonical_ERD.png"
+    if erd_shot.exists():
+        d.add_picture(str(erd_shot), width=Inches(6.2))
+        d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        caption("Canonical Salesforce ERD — complete implementation target, rendered from erds/overview.svg.")
+    else:
+        d.add_paragraph("[Canonical ERD capture is missing; render erds/overview.svg before release.]")
+
     H("The data model", 16, CHARCOAL, 12)
     d.add_paragraph(
         "The semantic model mirrors the canonical ERD rather than stopping at "
@@ -809,17 +854,20 @@ def main():
 
     H("Microsoft Fabric", 16, CHARCOAL, 12)
     d.add_paragraph(
-        "The warehouse lands in OneLake as a bronze layer, partitioned by "
-        "table. Two things are worth knowing for anyone repeating this: a "
-        "workspace created through the API arrives with no capacity attached, "
-        "and every Fabric item type then fails with a 403 that reads like a "
-        "licensing problem rather than an unassigned workspace. And a trial "
-        "capacity does not stop on its own - the workspace should be deleted "
-        "when the work is done.")
+        "Fabric Warehouse bronze is verified. All 13 landed source tables are present in "
+        "raw_salesforce: 1.50 million leads, 1.14 million contacts, 2.53 million campaign "
+        "members, 706 thousand opportunities, 494 thousand applications and 2.10 million "
+        "student-progress rows, with the programme catalogue tables alongside them. The Azure "
+        "CLI dbt connection and a bronze campaign view both passed. The silver and gold Fabric "
+        "build is intentionally not claimed as complete: its remaining failures are documented "
+        "DuckDB-to-T-SQL compatibility work, including date and join syntax.")
+    d.add_paragraph(
+        "The bronze land is partitioned by table in OneLake. A workspace created through the API "
+        "arrives with no capacity attached, and every Fabric item type then fails with a 403 that "
+        "looks like licensing rather than an unassigned workspace. Trial capacity does not stop "
+        "on its own, so delete the project workspace when the demonstration is complete.")
     figure_if("ev_08_fabric.png",
-              "Figure 12 - The Fabric workspace, its capacity, and what is "
-              "actually in OneLake - listed back rather than assumed from the "
-              "upload's own success message.")
+              "Figure 12 - The Fabric workspace, its capacity, and what is actually in OneLake.")
 
     H("GA4 to Fabric — the next integration, not a claimed result", 16, CHARCOAL, 12)
     d.add_paragraph(
@@ -840,6 +888,8 @@ def main():
     if shots:
         H("Screens from the org", 16, CHARCOAL, 12)
         for sh in shots:
+            if sh.name == '03_Canonical_ERD.png':
+                continue
             cap = sh.stem.split("_", 1)[-1].replace("_", " ")
             d.add_picture(str(sh), width=Inches(5.9))
             d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -854,10 +904,9 @@ def main():
         "was not treated as proof of delivery mode.",
         "All people, campaign spend, application outcomes and student results are synthetic. "
         "Progress dated after the capture date is an illustrative scenario, not a forecast.",
-        "The pipeline has been validated locally against DuckDB and a live NiFi instance. "
-        "Deployment to a Salesforce org and a Fabric workspace requires credentials that are "
-        "deliberately absent from this repository.",
-    ]:
+        "DuckDB is fully validated. Fabric bronze loading and dbt connectivity are verified, but "
+        "the Fabric silver and gold build has documented DuckDB-to-T-SQL compatibility errors. "
+        "No downstream Fabric transformation result is claimed until those are corrected and rerun.",    ]:
         d.add_paragraph(text, style="List Bullet")
 
     d.save(str(OUT))
@@ -866,3 +915,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

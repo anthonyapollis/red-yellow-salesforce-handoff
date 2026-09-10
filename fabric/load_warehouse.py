@@ -113,9 +113,10 @@ def main():
     cn.autocommit = True
     cur = cn.cursor()
 
-    cur.execute("if not exists (select 1 from sys.schemas where name = ?) "
-                "exec('create schema " + SCHEMA + "')", SCHEMA)
-
+    # --check is a read-only probe. Create the raw schema only for an actual load.
+    if not args.check:
+        cur.execute("if not exists (select 1 from sys.schemas where name = ?) "
+                    "exec('create schema " + SCHEMA + "')", SCHEMA)
     for t in tables:
         if args.check:
             try:
@@ -145,3 +146,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw_salesforce
+    description: >
+      Raw Salesforce-shaped records landed in the Fabric Warehouse by
+      fabric/load_warehouse.py. These are the immutable inputs to bronze.
+    database: "{{ target.database }}"
+    schema: raw_salesforce
+    tables:
+      - name: campaign
+        description: Raw landed campaign records.
+      - name: lead
+        description: Raw landed lead records.
+      - name: contact
+        description: Raw landed contact records.
+      - name: campaign_member
+        description: Raw landed campaign_member records.
+      - name: opportunity
+        description: Raw landed opportunity records.
+      - name: application
+        description: Raw landed application records.
+      - name: student
+        description: Raw landed student records.
+      - name: enrolment
+        description: Raw landed enrolment records.
+      - name: student_progress
+        description: Raw landed student_progress records.
+      - name: programme_enquiry
+        description: Raw landed programme_enquiry records.
+      - name: programme
+        description: Raw landed programme records.
+      - name: programme_offering
+        description: Raw landed programme_offering records.
+      - name: intake
+        description: Raw landed intake records.

@@ -22,9 +22,11 @@ vars:
 
 models:
   redandyellow:
+    # dbt-fabric does not implement ALTER COMMENT; documentation remains in the
+    # generated dbt artefacts rather than being persisted as Warehouse comments.
     +persist_docs:
-      relation: true
-      columns: true
+      relation: false
+      columns: false
     # Medallion. Bronze is the landed source, untouched apart from being made
     # queryable; silver is cleansed and conformed; gold is business-level and
     # assumes clean inputs. Quality sits beside gold rather than inside it,

@@ -15,11 +15,11 @@ redandyellow:
 
     fabric:
       type: fabric
-      driver: "ODBC Driver 18 for SQL Server"
-      server: "{{ env_var('FABRIC_SERVER', 'not-set.datawarehouse.fabric.microsoft.com') }}"
+      driver: "ODBC Driver 17 for SQL Server"
+      host: "{{ env_var('FABRIC_SERVER', 'not-set.datawarehouse.fabric.microsoft.com') }}"
       database: "{{ env_var('FABRIC_DATABASE', 'WH_RedAndYellow') }}"
       schema: dbo
-      authentication: "{{ env_var('FABRIC_AUTH', 'ActiveDirectoryInteractive') }}"
+      authentication: "{{ env_var('FABRIC_AUTH', 'CLI') }}"
       encrypt: true
       trust_cert: false
       threads: 4

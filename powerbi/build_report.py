@@ -768,6 +768,47 @@ def build():
     ]
     pages.append(page("ml", "Predictive & Actions", 5, v))
 
+    # ---------------------------------------------------------------- 7 ----
+    v = [
+        textbox(30, 20, 900, 40, [("Marketing analytics", BIG)]),
+        textbox(30, 60, 1040, 34,
+                [("Campaign reach, response, enrolment and value at campaign grain. "
+                  "Use this page to decide which channels deserve the next rand.", SUB)]),
+        visual("card", 30, 105, 190, 100, "Campaign Reach",
+               {"Values": [(M, "Campaign Reach", True)]}),
+        visual("card", 230, 105, 190, 100, "Responded",
+               {"Values": [(M, "Responded", True)]}),
+        visual("card", 430, 105, 190, 100, "Response Rate",
+               {"Values": [(M, "Response Rate", True)]}, accent=GOOD),
+        visual("card", 630, 105, 190, 100, "Marketing Enrolment Rate",
+               {"Values": [(M, "Marketing Enrolment Rate", True)]}, accent=GOOD),
+        visual("card", 830, 105, 190, 100, "Spend per Response",
+               {"Values": [(M, "Spend per Response", True)]}),
+        visual("card", 1030, 105, 190, 100, "Revenue per Member",
+               {"Values": [(M, "Revenue per Member", True)]}),
+        visual("clusteredColumnChart", 30, 220, 480, 250,
+               "Responses and enrolments by channel",
+               {"Category": [("dim_campaign", "channel", False)],
+                "Y": [(M, "Responded", True), (M, "Campaign Enrolments", True)]}),
+        visual("clusteredColumnChart", 520, 220, 480, 250,
+               "Revenue per member by channel",
+               {"Category": [("dim_campaign", "channel", False)],
+                "Y": [(M, "Revenue per Member", True)]}),
+        visual("slicer", 1010, 220, 240, 250, "Channel",
+               {"Values": [("dim_campaign", "channel", False)]}),
+        visual("tableEx", 30, 485, 1220, 215, "Channel scorecard",
+               {"Values": [("dim_campaign", "channel", False),
+                           (M, "Campaign Reach", True),
+                           (M, "Response Rate", True),
+                           (M, "Marketing Enrolment Rate", True),
+                           (M, "Marketing Spend", True),
+                           (M, "Spend per Response", True),
+                           (M, "Cost per Enrolment", True),
+                           (M, "Return on Ad Spend", True),
+                           (M, "Revenue per Member", True)]}),
+    ]
+    pages.append(page("marketing", "Marketing Analytics", 6, v))
+
     return {
         "id": 0,
         # The theme has to be registered as a resource AND named in the config.
@@ -920,3 +961,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
