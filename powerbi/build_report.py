@@ -40,7 +40,7 @@ CANVAS = "#FFF9F0"
 # brand without competing with the accent-coloured figure they carry, and it
 # separates the number band from the charts below, which stay white so the
 # data ink reads cleanly.
-TILE, TILE_EDGE = "#FFF7E3", "#E9C46A"   # KPI tile ground and its edge
+TILE, TILE_EDGE = "#FFF4D6", "#E9C46A"   # KPI tile ground and its edge
 RULE = "#E5DED2"
 SERIES = ["#F52635", "#007C83", "#008C45", "#E39B16", "#7D3C6A",
           "#D9574A", "#2C6FA3", "#707A84", "#5B7250", "#9E3540"]
@@ -499,8 +499,18 @@ def logo_visual(x=1120, y=18, w=130, h=70, z=20):
             "config": json.dumps(cfg), "filters": "[]"}
 
 
+def brand_wordmark(x=1120, y=12, w=145, h=72, z=20):
+    """Native text wordmark fallback for Desktop builds where image visuals
+    render as an empty placeholder instead of showing a data URI."""
+    return textbox(x, y, w, h, [
+        ("Red", {"fontSize": "15pt", "fontWeight": "bold", "color": RED}),
+        (" & ", {"fontSize": "15pt", "fontWeight": "bold", "color": CHARCOAL}),
+        ("Yellow", {"fontSize": "15pt", "fontWeight": "bold", "color": YELLOW}),
+    ], z=z)
+
+
 def page(name, display, ordinal, visuals):
-    visuals = [*visuals, logo_visual()]
+    visuals = [*visuals, brand_wordmark()]
     return {
         "id": ordinal,
         "name": f"ReportSection{gid()}",
@@ -998,3 +1008,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
