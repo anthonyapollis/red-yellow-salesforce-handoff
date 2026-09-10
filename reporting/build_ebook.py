@@ -238,6 +238,44 @@ def main():
     ax.tick_params(axis="y", labelsize=7)
     fig.tight_layout(); fig.savefig(FIG / "prog_demand.png"); plt.close(fig)
 
+    # Course ranking is based on the decision-time withdrawal model. Keep both
+    # the best and highest-risk courses visible, with a minimum cohort size so
+    # tiny samples cannot create a misleading league table.
+    if (REPO / "warehouse" / "ml" / "withdrawal_risk.parquet").exists():
+        import pandas as _pd
+        _wr = _pd.read_parquet(REPO / "warehouse" / "ml" / "withdrawal_risk.parquet")
+        _course = (_wr.groupby("programme_title", observed=True)
+                   .agg(records=("target", "size"),
+                        dropout_rate=("target", "mean"),
+                        attendance=("att_1_4", "mean"),
+                        assessment=("ass_1_4", "mean"))
+                   .query("records >= 100")
+                   .sort_values("dropout_rate"))
+        if not _course.empty:
+            _best = _course.head(6)
+            _risk = _course.tail(6).sort_values("dropout_rate", ascending=False)
+            _rank = _pd.concat([_best, _risk]).drop_duplicates()
+            fig, ax = plt.subplots(figsize=(6.4, 3.7))
+            labs = [str(t)[:42] + ("..." if len(str(t)) > 42 else "")
+                    for t in _rank.index]
+            cols = [SERIES[2] if v <= _course["dropout_rate"].median()
+                    else SERIES[0] for v in _rank["dropout_rate"]]
+            bars = ax.barh(labs[::-1], (_rank["dropout_rate"] * 100)[::-1],
+                           color=cols[::-1])
+            ax.set_xlabel("Observed withdrawal rate in the modelled cohort (%)")
+            ax.tick_params(axis="y", labelsize=7)
+            for b, v in zip(bars, (_rank["dropout_rate"] * 100)[::-1]):
+                ax.text(v + 0.08, b.get_y() + b.get_height()/2, f"{v:.1f}%",
+                        va="center", fontsize=7, color=CHARCOAL)
+            ax.axvline(_course["dropout_rate"].median() * 100, ls="--",
+                       lw=1, color=SLATE)
+            ax.text(0.99, 0.02, "teal = lower risk; red = higher risk",
+                    transform=ax.transAxes, ha="right", fontsize=7,
+                    color=SLATE)
+            fig.tight_layout()
+            fig.savefig(FIG / "prog_risk.png")
+            plt.close(fig)
+
     prov = q("""select c.province, sum(f.is_enrolled) enrolments
                 from main_gold.fct_admissions_funnel f
                 join main_gold.dim_contact c using (contact_external_id)
@@ -376,8 +414,17 @@ def main():
         steps that have no evidence behind them.
         """
         p = FIG / name
+        # Evidence captures are kept in ebook/screenshots so they can also be
+        # reused as standalone review artefacts. Fall back to that directory
+        # when a figure is not part of the generated chart set.
         if p.exists():
             figure(name, cap)
+            return
+        alt = REPO / "ebook" / "screenshots" / name
+        if alt.exists():
+            d.add_picture(str(alt), width=Inches(6.1))
+            d.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            caption(cap)
         else:
             note = d.add_paragraph()
             r = note.add_run(f"[{cap.split(' - ')[0]} not captured - "
@@ -659,6 +706,38 @@ def main():
         "the discount being conceded to win them.")
     figure_if("prog_demand.png",
               "Figure 4a - Top programmes by enrolment, with average discount.")
+
+    _risk_path = REPO / "warehouse" / "ml" / "withdrawal_risk.parquet"
+    if _risk_path.exists():
+        import pandas as _pd
+        _course = (_pd.read_parquet(_risk_path)
+                   .groupby("programme_title", observed=True)
+                   .agg(records=("target", "size"),
+                        dropout_rate=("target", "mean"),
+                        attendance=("att_1_4", "mean"))
+                   .query("records >= 100")
+                   .sort_values("dropout_rate"))
+        if not _course.empty:
+            _best = _course.iloc[0]
+            _highest = _course.iloc[-1]
+            H("Course performance and early dropout risk", 13, CHARCOAL, 12)
+            d.add_paragraph(
+                f"Courses are ranked on the same first-four-week withdrawal model "
+                f"used in Power BI. Among cohorts with at least 100 records, "
+                f"{_best.name} has the lowest observed withdrawal rate "
+                f"({_best.dropout_rate*100:.1f}%), while {_highest.name} is highest "
+                f"({_highest.dropout_rate*100:.1f}%). These are modelled synthetic "
+                f"cohorts, so the ranking is a prioritisation signal rather than a "
+                f"claim about the real institution.")
+            d.add_paragraph(
+                "Use the ranking with attendance and assessment together: a course "
+                "moves into early-warning review when first-month attendance falls "
+                "below 65% or the predicted band is Elevated. Review cohort size, "
+                "delivery mode and fee context before changing course marketing or "
+                "student-support policy.")
+            figure_if("prog_risk.png",
+                      "Figure 4a - Lowest- and highest-withdrawal courses among "
+                      "modelled cohorts of at least 100 records.")
 
     H("Who is enrolling, and from where", 13, CHARCOAL, 12)
     d.add_paragraph(
@@ -1088,6 +1167,26 @@ def main():
            "Figure 13 - GA4 can feed the platform through the Data API without BigQuery, or through native raw-event export to BigQuery.")
 
 
+    H("Website SEO audit findings", 16, CHARCOAL, 12)
+    d.add_paragraph(
+        "A read-only crawl of every URL in the public XML sitemap was completed on "
+        "10 September 2026. It covered 561 sitemap URLs, 435 live HTTP 200 pages, "
+        "titles, meta descriptions, canonical links, headings, social tags, JSON-LD, "
+        "image alt text and mobile viewport markup. The full page-level results are "
+        "in docs/SEO_AUDIT_2026-09-10.md with one machine-readable record per URL.")
+    d.add_paragraph(
+        "The highest-priority findings are 126 sitemap URLs returning a non-200 "
+        "response, 5 pages without a title, 169 pages without a meta description, "
+        "435 live pages without a canonical link, 425 pages with more than one H1, "
+        "435 pages missing core Open Graph and Twitter card tags, 435 pages without "
+        "JSON-LD structured data and 310 images with missing or empty alt text.")
+    d.add_paragraph(
+        "Recommended sequence: repair sitemap and redirect hygiene; define one "
+        "metadata contract for programme, catalogue, blog and corporate templates; "
+        "add self-canonicals, social tags, BreadcrumbList and appropriate course "
+        "schema; enforce one H1; improve programme and application internal links; "
+        "then rerun the crawl and reconcile coverage before release.")
+
     # Any UI screenshots the author dropped in are appended, captioned by filename.
     shots = sorted((REPO / "ebook" / "screenshots").glob("*.png")) + \
         sorted((REPO / "ebook" / "screenshots").glob("*.jpg"))
@@ -1121,7 +1220,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-

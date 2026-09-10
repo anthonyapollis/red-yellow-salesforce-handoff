@@ -499,13 +499,13 @@ def logo_visual(x=1120, y=18, w=130, h=70, z=20):
             "config": json.dumps(cfg), "filters": "[]"}
 
 
-def brand_wordmark(x=1120, y=12, w=145, h=72, z=20):
+def brand_wordmark(x=1115, y=8, w=155, h=82, z=20):
     """Native text wordmark fallback for Desktop builds where image visuals
     render as an empty placeholder instead of showing a data URI."""
     return textbox(x, y, w, h, [
-        ("Red", {"fontSize": "15pt", "fontWeight": "bold", "color": RED}),
-        (" & ", {"fontSize": "15pt", "fontWeight": "bold", "color": CHARCOAL}),
-        ("Yellow", {"fontSize": "15pt", "fontWeight": "bold", "color": YELLOW}),
+        ("Red ", {"fontSize": "17pt", "fontWeight": "bold", "color": RED}),
+        ("&", {"fontSize": "28pt", "fontWeight": "bold", "color": CHARCOAL}),
+        (" Yellow", {"fontSize": "17pt", "fontWeight": "bold", "color": YELLOW}),
     ], z=z)
 
 
@@ -770,6 +770,45 @@ def build():
     ]
     pages.append(page("ml", "Predictive & Actions", 5, v))
 
+    # ---------------------------------------------------------------- 6 ----
+    # A dedicated course view makes the model actionable: the reader can rank
+    # programmes by observed withdrawal and compare that signal with the
+    # decision-time risk score, attendance and assessment.
+    v = [
+        textbox(30, 20, 900, 40, [("Course performance and early risk", BIG)]),
+        textbox(30, 60, 1060, 34,
+                [("What: rank courses by learner outcomes. Why: find where support is needed. How: filter delivery mode and compare actual withdrawal with the model score.", SUB)]),
+        visual("card", 30, 105, 190, 96, "Scored enrolments",
+               {"Values": [(M, "Scored Enrolments", True)]}),
+        visual("card", 230, 105, 190, 96, "Actual withdrawal",
+               {"Values": [(M, "Actual Withdrawal Rate", True)]}, accent=BAD),
+        visual("card", 430, 105, 190, 96, "Predicted risk",
+               {"Values": [(M, "Avg Withdrawal Risk", True)]}, accent=WARN),
+        visual("card", 630, 105, 190, 96, "Avg attendance",
+               {"Values": [(M, "Avg Attendance", True)]}),
+        visual("card", 830, 105, 190, 96, "Avg assessment",
+               {"Values": [(M, "Avg Assessment", True)]}),
+        visual("card", 1030, 105, 190, 96, "To intervene",
+               {"Values": [(M, "Students To Intervene", True)]}, accent=BAD),
+        visual("clusteredBarChart", 30, 220, 760, 300,
+               "Course withdrawal ranking (lower is better)",
+               {"Category": [("ml_withdrawal_risk", "programme_title", False)],
+                "Y": [(M, "Actual Withdrawal Rate", True)]}),
+        visual("tableEx", 810, 220, 440, 300, "Course risk detail",
+               {"Values": [("ml_withdrawal_risk", "programme_title", False),
+                           ("ml_withdrawal_risk", "delivery_mode", False),
+                           (M, "Actual Withdrawal Rate", True),
+                           (M, "Avg Withdrawal Risk", True),
+                           (M, "Avg Attendance", True),
+                           (M, "Avg Assessment", True)]}),
+        visual("slicer", 30, 545, 300, 125, "Delivery mode",
+               {"Values": [("ml_withdrawal_risk", "delivery_mode", False)]}),
+        textbox(350, 545, 900, 125,
+                [("How to act. ", SUBB),
+                 ("Treat Elevated risk or first-month attendance below 65% as a human-review queue. Start with the highest-withdrawal courses, check cohort size and delivery mode, offer support, and measure withdrawal after intervention. The synthetic model ranks risk; it does not make an automated student decision.", SUB)]),
+    ]
+    pages.append(page("course", "Course Risk Ranking", 6, v))
+
     # ---------------------------------------------------------------- 7 ----
     v = [
         textbox(30, 20, 900, 40, [("Marketing analytics", BIG)]),
@@ -808,7 +847,7 @@ def build():
                            (M, "Return on Ad Spend", True),
                            (M, "Revenue per Member", True)]}),
     ]
-    pages.append(page("marketing", "Marketing Analytics", 6, v))
+    pages.append(page("marketing", "Marketing Analytics", 7, v))
 
     # ---------------------------------------------------------------- 8 ----
     # Turn the findings into an operating plan. Every recommendation names the
@@ -854,7 +893,7 @@ def build():
                 [("Days 61-90 | Scale\n", {"fontSize": "13pt", "fontWeight": "bold", "color": RED}),
                  ("Promote only interventions that beat the baseline, publish the weekly action list, and monitor model drift and data quality by delivery mode and channel.\n\nSuccess: repeatable operating cadence, documented decisions, and no automated adverse action from a model score.", SUB)]),
     ]
-    pages.append(page("actions", "Recommendations & Solutions", 7, v))
+    pages.append(page("actions", "Recommendations & Solutions", 8, v))
 
     return {
         "id": 0,
@@ -1008,5 +1047,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
