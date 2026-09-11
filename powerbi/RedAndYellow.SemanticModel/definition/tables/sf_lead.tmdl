@@ -26,11 +26,12 @@ table sf_lead
 		sourceColumn: Email
 
 	column Phone
-		dataType: int64
-		formatString: #,0
+		dataType: string
 		lineageTag: 5af2dc2d-c81d-4380-810f-330a6f819c98
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
 
 	column Company
 		dataType: string
@@ -45,11 +46,12 @@ table sf_lead
 		sourceColumn: Status
 
 	column LeadSource
-		dataType: int64
-		formatString: #,0
+		dataType: string
 		lineageTag: ba972fca-87f9-45bc-93f1-935f06bee128
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: LeadSource
+
+		annotation SummarizationSetBy = Automatic
 
 	column RY_External_ID__c
 		dataType: string
@@ -64,11 +66,12 @@ table sf_lead
 		sourceColumn: RY_Sample_Status__c
 
 	column ConvertedContactId
-		dataType: int64
-		formatString: #,0
+		dataType: string
 		lineageTag: 44d2060d-3fee-46a9-ad5c-777bad285d65
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: ConvertedContactId
+
+		annotation SummarizationSetBy = Automatic
 
 	column IsConverted
 		dataType: boolean
@@ -129,8 +132,10 @@ table sf_lead
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\sf_lead.parquet"))
+				    Source = Parquet.Document(File.Contents("data\sf_lead.parquet"))
 				in
 				    Source
 
 	annotation PBI_ResultType = Table
+
+

@@ -96,3 +96,5 @@ relationship c09ec968-478c-491b-ae26-837c1f305891
 relationship 6d57ce6e-28e7-4ba0-ab71-265542434b20
 	fromColumn: ml_withdrawal_risk.enrolment_external_id
 	toColumn: enrolment.enrolment_external_id
+
+

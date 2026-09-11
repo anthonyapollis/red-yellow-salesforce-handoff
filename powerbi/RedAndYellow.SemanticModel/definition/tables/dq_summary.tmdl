@@ -30,8 +30,10 @@ table dq_summary
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\dq_summary.parquet"))
+				    Source = Parquet.Document(File.Contents("data\dq_summary.parquet"))
 				in
 				    Source
 
 	annotation PBI_ResultType = Table
+
+

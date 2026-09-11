@@ -3,10 +3,15 @@ model Model
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	discourageImplicitMeasures
 	sourceQueryCulture: en-ZA
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
 
-	annotation __PBI_TimeIntelligenceEnabled = 0
+annotation __PBI_TimeIntelligenceEnabled = 0
 
-	annotation PBI_ProTooling = ["DaxQueryView","TMDL"]
+annotation PBI_ProTooling = ["DaxQueryView","TMDL","DevMode"]
+
+annotation PBI_QueryOrder = ["_Measures","dim_date","dim_contact","dim_offering","dim_campaign","fct_campaign_performance","fct_admissions_funnel","fct_student_progress_weekly","fct_lead_conversion","dq_issue_log","dq_summary","programme","intake","programme_enquiry","application","enrolment","student","campaign_member","sf_account","sf_contact","sf_lead","sf_opportunity","ml_lead_propensity","ml_withdrawal_risk"]
 
 ref table _Measures
 ref table dim_date
@@ -32,3 +37,5 @@ ref table sf_lead
 ref table sf_opportunity
 ref table ml_lead_propensity
 ref table ml_withdrawal_risk
+
+

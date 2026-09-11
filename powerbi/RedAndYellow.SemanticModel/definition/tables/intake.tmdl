@@ -20,12 +20,16 @@ table intake
 		summarizeBy: none
 		sourceColumn: start_date
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	partition intake = m
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\intake.parquet"))
+				    Source = Parquet.Document(File.Contents("data\intake.parquet"))
 				in
 				    Source
 
 	annotation PBI_ResultType = Table
+
+

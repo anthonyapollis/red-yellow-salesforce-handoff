@@ -26,11 +26,12 @@ table sf_contact
 		sourceColumn: Email
 
 	column Phone
-		dataType: int64
-		formatString: #,0
+		dataType: string
 		lineageTag: 9f4caa48-0b44-444b-a930-3d95088a7168
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
 
 	column AccountId
 		dataType: string
@@ -97,8 +98,10 @@ table sf_contact
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\sf_contact.parquet"))
+				    Source = Parquet.Document(File.Contents("data\sf_contact.parquet"))
 				in
 				    Source
 
 	annotation PBI_ResultType = Table
+
+

@@ -26,12 +26,16 @@ table dim_campaign
 		summarizeBy: none
 		sourceColumn: start_date
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column end_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
 		lineageTag: e3ef4626-6f62-4bb3-aa22-d08cba8c0687
 		summarizeBy: none
 		sourceColumn: end_date
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column spend_zar
 		dataType: double
@@ -71,8 +75,10 @@ table dim_campaign
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\dim_campaign.parquet"))
+				    Source = Parquet.Document(File.Contents("data\dim_campaign.parquet"))
 				in
 				    Source
 
 	annotation PBI_ResultType = Table
+
+

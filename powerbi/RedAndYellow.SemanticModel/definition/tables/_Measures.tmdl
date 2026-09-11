@@ -1,12 +1,12 @@
 table _Measures
 	lineageTag: cac529ad-2548-4c35-a6d6-d2dd1890212d
 
-	measure 'Leads' = COUNTROWS(fct_lead_conversion)
+	measure Leads = COUNTROWS(fct_lead_conversion)
 		formatString: #,0
 		displayFolder: 01 Marketing
 		lineageTag: 6a986d62-9663-42f5-9f47-5dc7e4a74054
 
-	measure 'Contacts' = COUNTROWS(dim_contact)
+	measure Contacts = COUNTROWS(dim_contact)
 		formatString: #,0
 		displayFolder: 01 Marketing
 		lineageTag: 13690fba-2bb5-49b3-b287-e134c6fa2f88
@@ -61,7 +61,7 @@ table _Measures
 		displayFolder: 01 Marketing
 		lineageTag: 9332f27f-00a3-439e-b3ea-791950b99231
 
-	measure 'Responded' = CALCULATE(COUNTROWS(campaign_member), campaign_member[is_engaged] = 1)
+	measure Responded = CALCULATE(COUNTROWS(campaign_member), campaign_member[is_engaged] = 1)
 		formatString: #,0
 		displayFolder: 01 Marketing
 		lineageTag: eec1c438-360b-4b76-922d-4845ccc94872
@@ -76,17 +76,17 @@ table _Measures
 		displayFolder: 01 Marketing
 		lineageTag: a3c13560-9445-4825-8ab7-c5d7f2ce1257
 
-	measure 'Opportunities' = COUNTROWS(fct_admissions_funnel)
+	measure Opportunities = COUNTROWS(fct_admissions_funnel)
 		formatString: #,0
 		displayFolder: 02 Admissions
 		lineageTag: 25dd5319-a2e6-45af-9ded-3a483979ec72
 
-	measure 'Applications' = CALCULATE(COUNTROWS(fct_admissions_funnel), NOT ISBLANK(fct_admissions_funnel[application_external_id]))
+	measure Applications = CALCULATE(COUNTROWS(fct_admissions_funnel), NOT ISBLANK(fct_admissions_funnel[application_external_id]))
 		formatString: #,0
 		displayFolder: 02 Admissions
 		lineageTag: a7b93e0a-3c3b-4b6a-80b3-8b03c0a78747
 
-	measure 'Enrolments' = SUM(fct_admissions_funnel[is_enrolled])
+	measure Enrolments = SUM(fct_admissions_funnel[is_enrolled])
 		formatString: #,0
 		displayFolder: 02 Admissions
 		lineageTag: 68d5e54e-5000-4b4c-b4c1-4166c6b4fced
@@ -275,9 +275,10 @@ table _Measures
 		formatString: "R"#,0
 		displayFolder: 01 Marketing
 		lineageTag: 2be5fb2f-a176-46a4-8e8e-6f0a64e9e8a4
+
 	column _placeholder
-		isHidden
 		dataType: string
+		isHidden
 		lineageTag: 91e19d0b-d510-48a8-8411-8d88ecf663b3
 		summarizeBy: none
 		sourceColumn: _placeholder
@@ -289,3 +290,5 @@ table _Measures
 				    Source = #table(type table [_placeholder = text], {{""}})
 				in
 				    Source
+
+

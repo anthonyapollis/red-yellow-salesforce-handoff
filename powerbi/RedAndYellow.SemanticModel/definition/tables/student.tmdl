@@ -26,6 +26,8 @@ table student
 		summarizeBy: none
 		sourceColumn: enrolled_first_date
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column source_system
 		dataType: string
 		lineageTag: 7d31230c-9798-491b-80a2-e43625a2bf93
@@ -57,8 +59,10 @@ table student
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\student.parquet"))
+				    Source = Parquet.Document(File.Contents("data\student.parquet"))
 				in
 				    Source
 
 	annotation PBI_ResultType = Table
+
+

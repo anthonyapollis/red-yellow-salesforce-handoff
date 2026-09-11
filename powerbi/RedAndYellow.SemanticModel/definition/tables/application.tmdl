@@ -32,12 +32,16 @@ table application
 		summarizeBy: none
 		sourceColumn: submitted_date
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column decision_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
 		lineageTag: fbc9af6d-38cb-4598-956a-ee04829eca51
 		summarizeBy: none
 		sourceColumn: decision_date
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column status
 		dataType: string
@@ -97,8 +101,10 @@ table application
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\application.parquet"))
+				    Source = Parquet.Document(File.Contents("data\application.parquet"))
 				in
 				    Source
 
 	annotation PBI_ResultType = Table
+
+

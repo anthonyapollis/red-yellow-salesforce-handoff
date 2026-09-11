@@ -32,6 +32,8 @@ table enrolment
 		summarizeBy: none
 		sourceColumn: enrolled_date
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column agreed_fee_zar
 		dataType: double
 		formatString: "R"#,0
@@ -90,8 +92,10 @@ table enrolment
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\enrolment.parquet"))
+				    Source = Parquet.Document(File.Contents("data\enrolment.parquet"))
 				in
 				    Source
 
 	annotation PBI_ResultType = Table
+
+

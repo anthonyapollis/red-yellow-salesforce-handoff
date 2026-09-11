@@ -20,11 +20,12 @@ table sf_opportunity
 		sourceColumn: StageName
 
 	column Amount
-		dataType: int64
-		formatString: #,0
+		dataType: string
 		lineageTag: 25b0ac66-9467-4d19-a0c8-f54ea6141c94
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
 
 	column CloseDate
 		dataType: string
@@ -45,11 +46,12 @@ table sf_opportunity
 		sourceColumn: IsClosed
 
 	column AccountId
-		dataType: int64
-		formatString: #,0
+		dataType: string
 		lineageTag: a00d0581-55b8-42b1-ae40-7701499e91d0
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: AccountId
+
+		annotation SummarizationSetBy = Automatic
 
 	column RY_External_ID__c
 		dataType: string
@@ -123,8 +125,10 @@ table sf_opportunity
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\sf_opportunity.parquet"))
+				    Source = Parquet.Document(File.Contents("data\sf_opportunity.parquet"))
 				in
 				    Source
 
 	annotation PBI_ResultType = Table
+
+

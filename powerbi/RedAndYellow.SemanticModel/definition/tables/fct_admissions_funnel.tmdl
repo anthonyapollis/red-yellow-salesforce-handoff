@@ -81,12 +81,16 @@ table fct_admissions_funnel
 		summarizeBy: none
 		sourceColumn: opportunity_created_date
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column close_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
 		lineageTag: 0ee40ba3-9aed-40d1-9b04-02e990a97d95
 		summarizeBy: none
 		sourceColumn: close_date
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column days_to_close
 		dataType: int64
@@ -121,12 +125,16 @@ table fct_admissions_funnel
 		summarizeBy: none
 		sourceColumn: submitted_date
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column decision_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
 		lineageTag: dbdafbea-3b51-41a5-9ddb-d848bab3e33a
 		summarizeBy: none
 		sourceColumn: decision_date
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column application_status
 		dataType: string
@@ -161,6 +169,8 @@ table fct_admissions_funnel
 		summarizeBy: none
 		sourceColumn: enrolled_date
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column agreed_fee_zar
 		dataType: double
 		formatString: "R"#,0
@@ -192,8 +202,10 @@ table fct_admissions_funnel
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\fct_admissions_funnel.parquet"))
+				    Source = Parquet.Document(File.Contents("data\fct_admissions_funnel.parquet"))
 				in
 				    Source
 
 	annotation PBI_ResultType = Table
+
+

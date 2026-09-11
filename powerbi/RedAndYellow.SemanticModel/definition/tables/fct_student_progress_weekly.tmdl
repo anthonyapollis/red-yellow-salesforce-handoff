@@ -44,6 +44,8 @@ table fct_student_progress_weekly
 		summarizeBy: none
 		sourceColumn: week_start
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column week_number
 		dataType: int64
 		formatString: #,0
@@ -109,8 +111,10 @@ table fct_student_progress_weekly
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\fct_student_progress_weekly.parquet"))
+				    Source = Parquet.Document(File.Contents("data\fct_student_progress_weekly.parquet"))
 				in
 				    Source
 
 	annotation PBI_ResultType = Table
+
+
