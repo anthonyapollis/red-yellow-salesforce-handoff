@@ -98,7 +98,7 @@ table sf_contact
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("data\sf_contact.parquet"))
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\sf_contact.parquet"))
 				in
 				    Source
 

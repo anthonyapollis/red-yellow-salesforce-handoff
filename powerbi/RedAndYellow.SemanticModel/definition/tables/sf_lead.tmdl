@@ -132,7 +132,7 @@ table sf_lead
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("data\sf_lead.parquet"))
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\sf_lead.parquet"))
 				in
 				    Source
 

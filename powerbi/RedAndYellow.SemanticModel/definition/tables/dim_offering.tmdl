@@ -114,7 +114,7 @@ table dim_offering
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("data\dim_offering.parquet"))
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\dim_offering.parquet"))
 				in
 				    Source
 

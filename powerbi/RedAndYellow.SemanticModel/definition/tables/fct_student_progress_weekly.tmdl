@@ -111,7 +111,7 @@ table fct_student_progress_weekly
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("data\fct_student_progress_weekly.parquet"))
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\fct_student_progress_weekly.parquet"))
 				in
 				    Source
 

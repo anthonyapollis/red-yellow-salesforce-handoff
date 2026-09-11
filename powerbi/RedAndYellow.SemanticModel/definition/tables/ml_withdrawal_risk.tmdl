@@ -70,7 +70,7 @@ table ml_withdrawal_risk
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("data\ml_withdrawal_risk.parquet"))
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\ml_withdrawal_risk.parquet"))
 				in
 				    Source
 

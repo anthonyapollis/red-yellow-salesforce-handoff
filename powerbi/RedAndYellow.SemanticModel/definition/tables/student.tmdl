@@ -59,7 +59,7 @@ table student
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("data\student.parquet"))
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\student.parquet"))
 				in
 				    Source
 

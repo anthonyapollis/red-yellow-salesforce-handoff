@@ -71,7 +71,7 @@ table programme_enquiry
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents("data\programme_enquiry.parquet"))
+				    Source = Parquet.Document(File.Contents("C:\Users\Anthony.DESKTOP-ES5HL78\Downloads\red-yellow-salesforce-handoff\powerbi\data\programme_enquiry.parquet"))
 				in
 				    Source
 
