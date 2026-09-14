@@ -23,6 +23,6 @@ select
         rows between 3 preceding and current row
     ) as attendance_4wk_avg
 from {{ ref('stg_student_progress') }} p
-join {{ ref('stg_enrolment') }} e using (enrolment_external_id)
-left join {{ ref('stg_intake') }} i using (intake_external_id)
-left join {{ ref('dim_offering') }} d using (offering_external_id)
+join {{ ref('stg_enrolment') }} e on e.enrolment_external_id = p.enrolment_external_id
+left join {{ ref('stg_intake') }} i on i.intake_external_id = e.intake_external_id
+left join {{ ref('dim_offering') }} d on d.offering_external_id = i.offering_external_id

@@ -15,6 +15,6 @@ select
 from {{ ref('stg_lead') }} l
 left join {{ ref('stg_contact') }} c
        on c.converted_from_lead_id = l.lead_external_id and c.is_golden_record = 1
-left join {{ ref('stg_opportunity') }} o using (contact_external_id)
-left join {{ ref('stg_application') }} a using (opportunity_external_id)
-left join {{ ref('stg_enrolment') }} e using (application_external_id)
+left join {{ ref('stg_opportunity') }} o on o.contact_external_id = c.contact_external_id
+left join {{ ref('stg_application') }} a on a.opportunity_external_id = o.opportunity_external_id
+left join {{ ref('stg_enrolment') }} e on e.application_external_id = a.application_external_id

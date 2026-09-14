@@ -4,6 +4,6 @@ select
     "RY_External_ID__c"      as programme_external_id,
     trim("Title__c")         as programme_title,
     "Category__c"            as category,
-    nullif(trim(coalesce(cast("Credential_Text__c" as string), '')), '') as credential_text,
-    nullif(trim(coalesce(cast("Listed_Body__c" as string), '')), '')     as listed_body
+    nullif(trim(coalesce({{ ry_text('"Credential_Text__c"') }}, '')), '') as credential_text,
+    nullif(trim(coalesce({{ ry_text('"Listed_Body__c"') }}, '')), '')     as listed_body
 from src

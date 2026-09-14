@@ -20,13 +20,14 @@ artefacts themselves. If a count here is wrong, the artefact is wrong — not th
 
 | What | Built | Verified by |
 |---|---|---|
-| Medallion warehouse | 13 bronze, 13 silver, 8 gold, 2 quality | `dbt build` — 87/87 pass (51 data tests) |
+| Medallion warehouse | 13 bronze, 13 silver, 8 gold, 2 quality | `dbt build` on DuckDB — 87/87 pass, 2026-09-14 (51 data tests) |
+| Same warehouse on Microsoft Fabric | bronze, silver, gold and quality in `WH_RedAndYellow` | `dbt build --target fabric` — 87/87 pass, 2026-09-14 |
 | Generated data | 11,518,608 rows | ground-truth manifest at `warehouse/_truth/defects.json` |
-| Power BI report | 7 pages, 93 visuals | every field reference checked against the model at build time |
+| Power BI report | 10 pages, 135 visuals | every field reference checked against the model at build time |
 | Semantic model | 24 tables, 55 measures, 23 relationships | loaded through a tabular session |
 | Salesforce | 1,091 records across 4 objects | `verify_org_counts.py` reconciles the org against the loader |
-| Ebook | 26-page PDF | contents text extracted back out of the finished PDF |
-| Workbook | 10 sheets | sheet count read from the workbook |
+| Ebook | 39-page PDF | contents text extracted back out of the finished PDF |
+| Workbook | 11 sheets | sheet count read from the workbook |
 | ML — lead to enrolment propensity | AUC 0.667, top-decile lift 2.17x | held-out split by time, base rate 5.2% |
 | ML — withdrawal risk from weeks 1-4 | AUC 0.621, top-decile lift 1.67x | held-out split by time, base rate 12.5% |
 <!-- FACTS:END -->

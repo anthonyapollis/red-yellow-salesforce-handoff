@@ -32,9 +32,14 @@ they are genuine evidence, but they are not what he asked for.
 
 ---
 
-## 2. dbt on Fabric — I got most of the way, it is not finished
+## 2. dbt on Fabric — DONE (2026-09-14)
 
-This was "never run" in my earlier handoff. It is now nearly runnable.
+**Resolved.** `dbt build --target fabric` passes **87/87** on the Warehouse, and a
+26-metric comparison against DuckDB on identical inputs is **26/26 identical**.
+Details, including four engine bugs found along the way, are in
+`ai_handoff/CLAUDE_TO_CODEX_2026-09-14.md`. Use `FABRIC_AUTH=ActiveDirectoryAccessToken`
+(see that note, §4) — CLI auth fails intermittently. The history below is kept
+for the traps it records.
 
 **Done and verified:**
 - `fabric/create_warehouse.py` — creates `WH_RedAndYellow`. **Already run**; the
@@ -80,11 +85,11 @@ This was "never run" in my earlier handoff. It is now nearly runnable.
 
 ---
 
-## 3. Fabric holds bronze only
+## 3. Fabric medallion — DONE (2026-09-14)
 
-No silver, no gold, no Delta tables, no notebook run. The medallion is real in
-dbt and only bronze-deep in OneLake. Finishing §2 would fix this properly, since
-dbt would then materialise silver and gold in the warehouse.
+**Resolved.** Bronze, silver, gold and quality are all materialised in
+`WH_RedAndYellow` by dbt. OneLake bronze was re-uploaded from the current raw
+data first, so Fabric and DuckDB now hold the same vintage.
 
 ---
 

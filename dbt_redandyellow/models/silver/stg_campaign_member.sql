@@ -9,7 +9,7 @@ deduped as (
             order by first_responded_date, campaign_member_external_id
         ) as member_seq
     from src
-    where not is_deleted
+    where {{ ry_is_false('is_deleted') }}
 )
 
 select

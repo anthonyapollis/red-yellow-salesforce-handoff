@@ -10,17 +10,17 @@ with members as (
            sum(is_engaged)        as engaged_members
     from {{ ref('stg_campaign_member') }}
     where is_unique_membership = 1
-    group by 1
+    group by campaign_external_id
 ),
 
 opps as (
     select primary_campaign_external_id as campaign_external_id,
            count(*)                     as opportunities,
-           sum(case when is_won then 1 else 0 end) as won_opportunities,
+           sum(case when {{ ry_is_true('is_won') }} then 1 else 0 end) as won_opportunities,
            sum(expected_value_zar)      as pipeline_value_zar
     from {{ ref('stg_opportunity') }}
     where primary_campaign_external_id is not null
-    group by 1
+    group by primary_campaign_external_id
 ),
 
 enrolled as (
@@ -28,10 +28,10 @@ enrolled as (
            count(distinct e.enrolment_external_id) as enrolments,
            sum(e.agreed_fee_zar)                   as enrolled_revenue_zar
     from {{ ref('stg_enrolment') }} e
-    join {{ ref('stg_application') }} a using (application_external_id)
-    join {{ ref('stg_opportunity') }} o using (opportunity_external_id)
+    join {{ ref('stg_application') }} a on a.application_external_id = e.application_external_id
+    join {{ ref('stg_opportunity') }} o on o.opportunity_external_id = a.opportunity_external_id
     where o.primary_campaign_external_id is not null
-    group by 1
+    group by o.primary_campaign_external_id
 )
 
 select
@@ -57,6 +57,6 @@ select
     case when c.spend_zar > 0 and e.enrolled_revenue_zar is not null
          then round(e.enrolled_revenue_zar / c.spend_zar, 2) end as roas
 from {{ ref('dim_campaign') }} c
-left join members  m using (campaign_external_id)
-left join opps     o using (campaign_external_id)
-left join enrolled e using (campaign_external_id)
+left join members  m on m.campaign_external_id = c.campaign_external_id
+left join opps     o on o.campaign_external_id = c.campaign_external_id
+left join enrolled e on e.campaign_external_id = c.campaign_external_id

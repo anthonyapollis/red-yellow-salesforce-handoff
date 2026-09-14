@@ -89,25 +89,32 @@
 {% endmacro %}
 
 
-{#- Collapse province spelling drift to the nine official names #}
+{#- Collapse province spelling drift to the nine official names.
+
+  trim() is load-bearing, and its absence was only found by running the same
+  models on two engines. The generator injects "Gauteng " with a trailing space
+  as deliberate dirt. DuckDB compared it literally and filed 4,733 real Gauteng
+  contacts under 'Unknown'; the Fabric Warehouse matched them, but only because
+  T-SQL ignores trailing spaces in = and IN. Neither engine was cleaning the
+  value - one got lucky. Trimming makes both do it on purpose. #}
 {% macro ry_clean_province(col) %}
   case
     when {{ col }} is null then 'Unknown'
-    when lower(replace(replace({{ col }}, '-', ' '), '  ', ' ')) in
+    when lower(replace(replace(trim({{ col }}), '-', ' '), '  ', ' ')) in
          ('western cape', 'w cape', 'wc', 'wes kaap', 'kaapstad') then 'Western Cape'
-    when lower(replace(replace({{ col }}, '-', ' '), '  ', ' ')) in
+    when lower(replace(replace(trim({{ col }}), '-', ' '), '  ', ' ')) in
          ('gauteng', 'gp', 'jhb', 'johannesburg') then 'Gauteng'
-    when lower(replace(replace({{ col }}, '-', ' '), '  ', ' ')) in
+    when lower(replace(replace(trim({{ col }}), '-', ' '), '  ', ' ')) in
          ('kwazulu natal', 'kzn') then 'KwaZulu-Natal'
-    when lower(replace(replace({{ col }}, '-', ' '), '  ', ' ')) in
+    when lower(replace(replace(trim({{ col }}), '-', ' '), '  ', ' ')) in
          ('eastern cape', 'ec', 'e cape', 'oos kaap') then 'Eastern Cape'
-    when lower(replace(replace({{ col }}, '-', ' '), '  ', ' ')) in
+    when lower(replace(replace(trim({{ col }}), '-', ' '), '  ', ' ')) in
          ('free state', 'fs') then 'Free State'
-    when lower(replace(replace({{ col }}, '-', ' '), '  ', ' ')) = 'limpopo' then 'Limpopo'
-    when lower(replace(replace({{ col }}, '-', ' '), '  ', ' ')) = 'mpumalanga' then 'Mpumalanga'
-    when lower(replace(replace({{ col }}, '-', ' '), '  ', ' ')) = 'north west' then 'North West'
-    when lower(replace(replace({{ col }}, '-', ' '), '  ', ' ')) = 'northern cape' then 'Northern Cape'
-    when lower(replace(replace({{ col }}, '-', ' '), '  ', ' ')) like 'outside%' then 'Outside South Africa'
+    when lower(replace(replace(trim({{ col }}), '-', ' '), '  ', ' ')) = 'limpopo' then 'Limpopo'
+    when lower(replace(replace(trim({{ col }}), '-', ' '), '  ', ' ')) = 'mpumalanga' then 'Mpumalanga'
+    when lower(replace(replace(trim({{ col }}), '-', ' '), '  ', ' ')) = 'north west' then 'North West'
+    when lower(replace(replace(trim({{ col }}), '-', ' '), '  ', ' ')) = 'northern cape' then 'Northern Cape'
+    when lower(replace(replace(trim({{ col }}), '-', ' '), '  ', ' ')) like 'outside%' then 'Outside South Africa'
     else 'Unknown'
   end
 {% endmacro %}

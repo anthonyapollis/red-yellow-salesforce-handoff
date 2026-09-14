@@ -32,8 +32,8 @@ select
          then round(100.0 * (d.advertised_fee_zar - e.agreed_fee_zar)
                     / d.advertised_fee_zar, 2) end as discount_pct
 from {{ ref('stg_opportunity') }} o
-left join {{ ref('dim_contact') }} c  using (contact_external_id)
-left join {{ ref('stg_intake') }} i   using (intake_external_id)
-left join {{ ref('dim_offering') }} d using (offering_external_id)
-left join {{ ref('stg_application') }} a using (opportunity_external_id)
-left join {{ ref('stg_enrolment') }} e using (application_external_id)
+left join {{ ref('dim_contact') }} c  on c.contact_external_id = o.contact_external_id
+left join {{ ref('stg_intake') }} i   on i.intake_external_id = o.intake_external_id
+left join {{ ref('dim_offering') }} d on d.offering_external_id = i.offering_external_id
+left join {{ ref('stg_application') }} a on a.opportunity_external_id = o.opportunity_external_id
+left join {{ ref('stg_enrolment') }} e on e.application_external_id = a.application_external_id

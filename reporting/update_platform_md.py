@@ -39,6 +39,21 @@ def facts():
         f["tests"] = sum(1 for n in m["nodes"].values()
                          if n.get("resource_type") == "test")
 
+    # Pass counts come from each engine's run_results.json - the record of what
+    # actually ran. The earlier version counted nodes in the manifest and printed
+    # that as "N/N pass", so a failed build would still have claimed a clean run.
+    for key, target in (("duckdb", "target"), ("fabric", "target_fabric")):
+        rr = REPO / "dbt_redandyellow" / target / "run_results.json"
+        if rr.exists():
+            r = json.loads(rr.read_text(encoding="utf-8"))
+            statuses = [x["status"] for x in r["results"]]
+            f[f"{key}_run"] = {
+                "passed": sum(s in ("pass", "success") for s in statuses),
+                "total": len(statuses),
+                "when": r["metadata"]["generated_at"][:10],
+                "target": (r.get("args") or {}).get("target"),
+            }
+
     rj = REPO / "powerbi" / "RedAndYellow.Report" / "report.json"
     if rj.exists():
         r = json.loads(rj.read_text(encoding="utf-8"))
@@ -111,8 +126,15 @@ def build_table(f):
         L.append(f"| Medallion warehouse | {lay.get('bronze',0)} bronze, "
                  f"{lay.get('silver',0)} silver, {lay.get('gold',0)} gold, "
                  f"{lay.get('quality',0)} quality | "
-                 f"`dbt build` — {f['models'] + f['tests']}/"
-                 f"{f['models'] + f['tests']} pass ({f['tests']} data tests) |")
+                 + (f"`dbt build` on DuckDB — {f['duckdb_run']['passed']}/"
+                    f"{f['duckdb_run']['total']} pass, {f['duckdb_run']['when']} "
+                    f"({f['tests']} data tests) |"
+                    if "duckdb_run" in f else "no DuckDB run recorded |"))
+    run = f.get("fabric_run")
+    if run and run["target"] == "fabric":
+        L.append(f"| Same warehouse on Microsoft Fabric | bronze, silver, gold and "
+                 f"quality in `WH_RedAndYellow` | `dbt build --target fabric` — "
+                 f"{run['passed']}/{run['total']} pass, {run['when']} |")
     if "rows" in f:
         L.append(f"| Generated data | {f['rows']:,} rows | "
                  f"ground-truth manifest at `warehouse/_truth/defects.json` |")

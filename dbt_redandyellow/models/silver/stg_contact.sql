@@ -21,7 +21,7 @@ cleaned as (
         cast(created_date as date)                     as created_date,
         source_system, source_updated_at, loaded_at, is_deleted
     from src
-    where not is_deleted
+    where {{ ry_is_false('is_deleted') }}
 ),
 
 {#-
@@ -44,7 +44,7 @@ cleaned as (
 #}
 email_anchor as (
     select email, min(contact_external_id) as anchor
-    from cleaned where email is not null group by 1
+    from cleaned where email is not null group by email
 ),
 
 phone_anchor as (
@@ -52,7 +52,7 @@ phone_anchor as (
            min(contact_external_id) as anchor
     from cleaned
     where phone_e164 is not null and last_name is not null
-    group by 1, 2
+    group by phone_e164, lower(last_name)
 ),
 
 linked as (

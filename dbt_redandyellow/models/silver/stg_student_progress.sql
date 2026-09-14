@@ -12,4 +12,4 @@ select
     source_system, source_updated_at, loaded_at,
     {{ ry_is_late_arriving() }} as is_late_arriving
 from src
-where not is_deleted
+where {{ ry_is_false('is_deleted') }}

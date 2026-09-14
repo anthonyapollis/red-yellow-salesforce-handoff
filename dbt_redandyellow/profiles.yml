@@ -21,6 +21,14 @@ redandyellow:
       database: "{{ env_var('FABRIC_DATABASE', 'WH_RedAndYellow') }}"
       schema: dbo
       authentication: "{{ env_var('FABRIC_AUTH', 'CLI') }}"
+      # Set FABRIC_AUTH=ActiveDirectoryAccessToken and FABRIC_ACCESS_TOKEN to a
+      # token from `az account get-access-token --resource
+      # https://database.windows.net/` when CLI mode fails with "Failed to invoke
+      # the Azure CLI". dbt-fabric's token cache has no lock, so every thread
+      # spawns `az` at once against azure-identity's 10-second subprocess timeout;
+      # a token fetched once up front avoids the race entirely. Ignored unless
+      # that auth mode is selected, and never printed by `dbt debug`.
+      access_token: "{{ env_var('FABRIC_ACCESS_TOKEN', '') }}"
       encrypt: true
       trust_cert: false
       threads: 4

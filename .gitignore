@@ -22,3 +22,10 @@ warehouse/ml/
 # hundreds of MB, well past GitHub's 100 MB file limit. Never source.
 .pbi/
 *.abf
+
+# Fabric dbt run output and local packaging
+target_fabric/
+fabric_dbt_build.log
+RedAndYellow_*_Package/
+RedAndYellow_*_Package.zip
+duckdb_dbt_build.log

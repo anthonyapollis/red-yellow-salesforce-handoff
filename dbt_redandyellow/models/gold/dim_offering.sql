@@ -7,7 +7,7 @@
 with intake_counts as (
     select offering_external_id, count(*) as dated_intake_count
     from {{ ref('stg_intake') }}
-    group by 1
+    group by offering_external_id
 )
 select
     o.offering_external_id,
@@ -28,5 +28,5 @@ select
     o.observed_date,
     coalesce(ic.dated_intake_count, 0) as dated_intake_count
 from {{ ref('stg_programme_offering') }} o
-left join {{ ref('stg_programme') }} p using (programme_external_id)
-left join intake_counts ic using (offering_external_id)
+left join {{ ref('stg_programme') }} p on p.programme_external_id = o.programme_external_id
+left join intake_counts ic on ic.offering_external_id = o.offering_external_id
