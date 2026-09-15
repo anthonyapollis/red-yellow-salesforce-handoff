@@ -1,3 +1,11 @@
+## Portfolio downloads
+
+- [Project landing page](https://anthonyapollis.github.io/red-yellow-salesforce-handoff/)
+- [Power BI + data + ebook PDF + Excel ZIP](https://github.com/anthonyapollis/red-yellow-salesforce-handoff/releases/download/portfolio-v1/RedAndYellow_PowerBI_Portable.zip)
+- [Power BI source](powerbi/)
+
+Extract the entire ZIP, run Setup-DataPaths.ps1, then open RedAndYellow.pbip in Power BI Desktop and refresh. Run setup again after moving the folder.
+
 # Red & Yellow - Salesforce ERDs and data handoff
 Prepared from the job description and 17 user screenshots (8 September 2026). This is a proposed model, not an internal company export.
 
