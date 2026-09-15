@@ -1,6 +1,6 @@
 ## Portfolio downloads
 
-- [Project landing page](https://anthonyapollis.github.io/red-yellow-salesforce-handoff/)
+- [Project landing page](https://anthonyapollis.github.io/education-analytics/)
 - [Power BI + data + ebook PDF + Excel ZIP](https://github.com/anthonyapollis/red-yellow-salesforce-handoff/releases/download/portfolio-v1/RedAndYellow_PowerBI_Portable.zip)
 - [Power BI source](powerbi/)
 
