@@ -1,7 +1,7 @@
 ## Portfolio downloads
 
 - [Project landing page](https://anthonyapollis.github.io/education-analytics/)
-- [Power BI + data + ebook PDF + Excel ZIP](https://github.com/anthonyapollis/red-yellow-salesforce-handoff/releases/download/portfolio-v1/RedAndYellow_PowerBI_Portable.zip)
+- [Power BI + data + ebook PDF + Excel ZIP](https://github.com/anthonyapollis/anthonyapollis.github.io/releases/download/education-analytics-v1/RedAndYellow_PowerBI_Portable.zip)
 - [Power BI source](powerbi/)
 
 Extract the entire ZIP, run Setup-DataPaths.ps1, then open RedAndYellow.pbip in Power BI Desktop and refresh. Run setup again after moving the folder.
